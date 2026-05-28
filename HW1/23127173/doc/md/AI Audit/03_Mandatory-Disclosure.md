@@ -1,6 +1,6 @@
 # Mandatory Disclosure
 
-"Requirement 1 dataset, summary table, CSV, and draft report were generated and formatted with assistance from Codex / ChatGPT. I provided or corrected the source job details in the 10 `job-*.md` files, then reviewed the generated summaries, salary fields, AI relevance, and AI impact analysis. The LinkedIn screenshots and source links were collected manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, or fake evidence."
+"Requirement 1 dataset, Requirement 2 software-defect dataset, summary tables, CSV, and draft report sections were generated and formatted with assistance from Codex / ChatGPT. I provided or corrected source job details for Requirement 1, and I reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes. The LinkedIn screenshots and source links were collected or verified manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, or fake evidence."
 
 ## Student confirmation
 
