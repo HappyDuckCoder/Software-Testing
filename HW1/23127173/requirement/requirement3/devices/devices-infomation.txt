@@ -1,0 +1,6 @@
+San pham: Remote dieu khien dieu hoa
+Hang: Casper
+Model: Remote U25 Series
+Nam san xuat: Not visible on provided device evidence
+Serial number: Not visible on provided device evidence
+Anh minh chung: devices/devices.jpg

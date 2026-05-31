@@ -12,12 +12,16 @@
 - [x] Khong yeu cau AI tao screenshot/link/evidence gia.
 - [x] Ghi nhan prompt va output chinh trong AI Audit Report.
 - [x] Danh dau cac phan AI chi co the suy luan khi screenshot khong hien chi tiet day du.
+- [x] Khong yeu cau AI tao anh remote + the sinh vien, video test, actual result, hoac defect evidence cho Requirement 3.
 
 ## 3. Truoc khi nop bai
 
 - [x] Moi artifact AI ho tro da co dong audit.
 - [x] Cac thong tin khong duoc xac minh duoc gan nhan "Not disclosed", "Not visible", hoac "data-quality-note".
 - [x] 10 file job-id da duoc chuan hoa tu JD QA/QC/Tester/Verification/Data Test.
+- [x] Requirement 3: da co anh remote + the sinh vien trong `requirement3/devices/devices.jpg` va da dien hang/model theo thong tin sinh vien cung cap.
+- [x] Requirement 3: da co 5 link video trong `requirement3/video-youtube-test/link-video.md`.
+- [ ] Requirement 3: sinh vien can bo sung serial da che 4 ky tu giua neu tim thay, kiem tra quyen truy cap video, cap nhat cac Actual/Verdict con thieu, va chi log defect khi test that.
 - [ ] Sinh vien can tu dien lop/khoa, chu ky, va bo sung prompt log neu co prompt ngoai phien nay.
 
 ## 4. Cam doan cuoi cung
@@ -29,5 +33,5 @@ Trach nhiem cuoi cung ve do chinh xac, tinh nguyen ban, va liem chinh cua bai no
 | Ho ten sinh vien | Duc Hai |
 | MSSV | 23127173 |
 | Mon hoc | CS423 / CSC13003 - Kiem chung Phan mem |
-| Ngay | 2026-05-28 |
+| Ngay | 2026-05-31 |
 | Chu ky | Chua ky |
