@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.17)  31 MAY 2026 17:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.17)  31 MAY 2026 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,7 +961,113 @@ Overfull \hbox (5.27199pt too wide) in paragraph at lines 335--336
 eck-list, GitHub
  []
 
-[6] [7] [8] (main-report.aux)
+[6]
+Underfull \hbox (badness 1715) in paragraph at lines 371--371
+\T5/cmr/m/n/12 sources, CSV, and
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 371--371
+\T5/cmr/m/n/12 AI im-pact are in-
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 371--371
+\T5/cmr/m/n/12 cluded; salary/not-
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 371--371
+\T5/cmr/m/n/12 screen-shots need a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\T5/cmr/m/n/12 Software De-fects
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\T5/cmr/m/n/12 20 pub-lic de-fects
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 371--371
+\T5/cmr/m/n/12 with source, sever-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+\T5/cmr/m/n/12 ity, con-se-quence,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+\T5/cmr/m/n/12 bias/hallucination
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\T5/cmr/m/n/12 Physical-product
+ []
+
+
+Underfull \hbox (badness 7814) in paragraph at lines 371--371
+[]|\T5/cmr/m/n/12 Device photo, 18
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+\T5/cmr/m/n/12 user-name screen-
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 371--371
+\T5/cmr/m/n/12 shots are in-cluded;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+\T5/cmr/m/n/12 con-firmed de-fects
+ []
+
+
+Underfull \hbox (badness 2042) in paragraph at lines 371--371
+\T5/cmr/m/n/12 tory dis-clo-sure are
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\T5/cmr/m/n/12 Checklist, pri-vacy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+\T5/cmr/m/n/12 check-list, prompt
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 371--371
+\T5/cmr/m/n/12 log, and real ev-i-
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 371--371
+\T5/cmr/m/n/12 dence ar-ti-facts are
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\T5/cmr/bx/n/12 Proposed self-
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8] (main-report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -987,7 +1093,7 @@ tex/vnr/vnr12.pfb><C:/Users/Duck/AppData/Local/Programs/MiKTeX/fonts/type1/vnte
 x/vnr/vnti12.pfb><C:/Users/Duck/AppData/Local/Programs/MiKTeX/fonts/type1/vntex
 /vnr/vntt10.pfb><C:/Users/Duck/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/
 vnr/vntt12.pfb>
-Output written on main-report.pdf (9 pages, 153213 bytes).
+Output written on main-report.pdf (9 pages, 153823 bytes).
 PDF statistics:
  174 PDF objects out of 1000 (max. 8388607)
  28 named destinations out of 1000 (max. 500000)

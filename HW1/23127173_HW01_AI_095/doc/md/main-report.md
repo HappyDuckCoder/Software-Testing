@@ -143,16 +143,17 @@ Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de 
 - [x] Cac truong chua xac minh duoc duoc ghi ro nhu `Not disclosed` hoac `Not visible`.
 - [x] Can kiem tra lan cuoi quyen truy cap video YouTube, source link, screenshot account name va GitHub Issues truoc khi nop.
 
-## 11. Self-assessment
+## 11. Self-assessment theo rubric
 
-| Hang muc | Tu danh gia |
-| --- | --- |
-| Requirement 1 | Dat ve noi dung va artifact; can tu kiem tra lai screenshot/account name/ngay dang tin truoc khi nop |
-| Requirement 2 | Dat ve cau truc va noi dung 20 loi; can mo lai source link neu muon xac minh lan cuoi |
-| Requirement 3 | Dat phan lon artifact; rui ro chinh la moi co 4 confirmed defects thay vi >= 5 |
-| AI Audit / Prompt Log / Disclosure | Dat ve cau truc, da co 17 artifact audit |
-| AI CLO | Dat G9.1 va G9.3 |
-| Diem tu danh gia de xuat | 085/100 |
+| Muc | Noi dung | Diem toi da | Tu danh gia | Ghi chu |
+| --- | --- | --- | --- | --- |
+| 1 | Job Market 2026+ | 40 | 38 | Da co 10 job, screenshot, source, CSV, AI impact; mot so muc salary/not disclosed va screenshot can tu kiem tra lan cuoi. |
+| 2 | Software Defects 2022-2026 | 20 | 20 | Da co 20 defect cong khai, source, severity, hau qua, giai phap va AI bias/hallucination note. |
+| 3 | Physical-product test design | 25 | 22 | Da co thiet bi, anh, 18 test case, 5 video, GitHub Issues va screenshot username; rui ro chinh la moi co 4 confirmed defects thay vi muc tieu >= 5. |
+| AI-1 | AI Audit Report | 8 | 8 | Da co AI Audit Report va log artifact AI ho tro. |
+| AI-2 | AI Critique + Disclosure | 4 | 4 | Da co critique, mandatory disclosure va khai bao AI. |
+| AI-3 | AI Checklist + anti-cheat artifacts | 3 | 3 | Da co checklist, privacy checklist, prompt log, anh/video/screenshot evidence that. |
+| Tong |  | 100 | 95 | Tu danh gia de xuat: 95/100. |
 
 ## 12. Cam doan va chu ky
 
