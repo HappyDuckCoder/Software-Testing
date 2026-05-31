@@ -30,8 +30,8 @@ Trach nhiem cuoi cung ve do chinh xac, tinh nguyen ban, va liem chinh cua bai no
 
 | Muc | Gia tri |
 | --- | --- |
-| Ho ten sinh vien | Duc Hai |
+| Ho ten sinh vien | Trần Hải Đức |
 | MSSV | 23127173 |
 | Mon hoc | CS423 / CSC13003 - Kiem chung Phan mem |
 | Ngay | 2026-05-31 |
-| Chu ky | Chua ky |
+| Chu ky | Trần Hải Đức |
