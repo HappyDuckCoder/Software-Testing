@@ -1,394 +1,804 @@
 \documentclass[12pt, a4paper]{article}
 
+% ── Encoding & fonts ──────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[T1,T5]{fontenc}
-\usepackage[vietnamese,english]{babel}
-\usepackage{geometry}
+
+
+% ── Page layout ───────────────────────────────────────────────────────────────
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.8cm, right=2.5cm]{geometry}
+
+% ── Core packages ─────────────────────────────────────────────────────────────
+\usepackage{xcolor}
+\usepackage{amsmath, amssymb}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{enumitem}
-\usepackage{multirow}
 \usepackage{tabularx}
-\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{titletoc}
 \usepackage{parskip}
 
-\geometry{
-  top=2.5cm,
-  bottom=2.5cm,
-  left=3cm,
-  right=2.5cm
-}
+\usepackage{setspace}
+\usepackage{mdframed}
+\usepackage{colortbl}
+\usepackage[hidelinks]{hyperref}
 
-% Colors
-\definecolor{primaryblue}{RGB}{30, 70, 140}
-\definecolor{lightgray}{RGB}{245, 245, 245}
-\definecolor{darkgray}{RGB}{80, 80, 80}
-\definecolor{passgreen}{RGB}{34, 139, 34}
-\definecolor{failred}{RGB}{180, 30, 30}
-\definecolor{warnorng}{RGB}{200, 100, 0}
+% ── Colors ────────────────────────────────────────────────────────────────────
+\definecolor{PrimaryBlue}{RGB}{25, 65, 130}
+\definecolor{AccentBlue}{RGB}{52, 120, 200}
+\definecolor{LightBlue}{RGB}{235, 243, 255}
+\definecolor{TableHeader}{RGB}{220, 232, 248}
+\definecolor{TableAlt}{RGB}{248, 251, 255}
+\definecolor{PassGreen}{RGB}{34, 139, 34}
+\definecolor{FailRed}{RGB}{180, 30, 30}
+\definecolor{WarnOrange}{RGB}{200, 100, 0}
+\definecolor{PendingGray}{RGB}{100, 100, 100}
+\definecolor{HighSev}{RGB}{180, 30, 30}
+\definecolor{MedSev}{RGB}{200, 130, 0}
+\definecolor{LowSev}{RGB}{60, 150, 60}
+\definecolor{CritSev}{RGB}{140, 0, 0}
+\definecolor{DarkGray}{RGB}{60, 60, 60}
+\definecolor{RuleGray}{RGB}{180, 180, 180}
 
-% Section formatting
-\titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{\thesection\quad}[\titlerule]
-\titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{}{0em}{\thesubsection\quad}
+% ── Section formatting ────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\Large\bfseries\color{PrimaryBlue}}
+  {\thesection}{1em}{}
+  [\vspace{-4pt}\color{AccentBlue}\rule{\linewidth}{1.5pt}\vspace{2pt}]
 
-% Header / Footer
+\titleformat{\subsection}
+  {\large\bfseries\color{DarkGray}}
+  {\thesubsection}{1em}{}
+  [\vspace{-2pt}\color{RuleGray}\rule{\linewidth}{0.5pt}]
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{DarkGray}}
+  {\thesubsubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\titlespacing*{\subsection}{0pt}{14pt}{6pt}
+
+% ── Header & Footer ───────────────────────────────────────────────────────────
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\small HW01-AI Report \textbar{} Software Testing}
-\lhead{\small Trần Hải Đức -- 23127173}
-\rfoot{\small Page \thepage}
-\setlength{\headheight}{14pt}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\color{DarkGray}HW01-AI Main Report \textbar\ Software Testing}
+\fancyhead[R]{\small\color{DarkGray}Tran Hai Duc \textbar\ 23127173}
+\fancyfoot[C]{\small\color{DarkGray}\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\setlength{\headheight}{15pt}
 
-% Hyperref setup
-\hypersetup{
-  colorlinks=true,
-  linkcolor=primaryblue,
-  urlcolor=primaryblue,
-  pdfauthor={Trần Hải Đức},
-  pdftitle={HW01-AI Main Report -- Software Testing}
-}
-
-% Table helpers
+% ── Table helpers ─────────────────────────────────────────────────────────────
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
-\newcommand{\pass}{\textcolor{passgreen}{\textbf{Pass}}}
-\newcommand{\fail}{\textcolor{failred}{\textbf{Fail}}}
-\newcommand{\achieved}{\textcolor{passgreen}{\textbf{Achieved}}}
-\newcommand{\partialach}{\textcolor{warnorng}{\textbf{Partially Achieved}}}
-\newcommand{\incomplete}{\textcolor{warnorng}{\textbf{INCOMPLETE}}}
+% Colored row commands
+\newcommand{\headerrow}{\rowcolor{TableHeader}}
+\newcommand{\altrow}{\rowcolor{TableAlt}}
 
-% ============================================================
+% Verdict commands
+\newcommand{\vpass}{\textcolor{PassGreen}{\textbf{Pass}}}
+\newcommand{\vfail}{\textcolor{FailRed}{\textbf{Fail}}}
+\newcommand{\vpending}{\textcolor{PendingGray}{\textit{Pending}}}
+\newcommand{\achieved}{\textcolor{PassGreen}{\textbf{Achieved}}}
+\newcommand{\partach}{\textcolor{WarnOrange}{\textbf{Partial}}}
+\newcommand{\notach}{\textcolor{FailRed}{\textbf{Not Achieved}}}
+\newcommand{\incompl}{\textcolor{WarnOrange}{\textbf{INCOMPLETE}}}
+\newcommand{\sopen}{\textcolor{FailRed}{\textbf{Open}}}
+
+% Severity commands
+\newcommand{\scrit}{\textcolor{CritSev}{\textbf{Critical}}}
+\newcommand{\shigh}{\textcolor{HighSev}{\textbf{High}}}
+\newcommand{\smed}{\textcolor{MedSev}{\textbf{Medium}}}
+\newcommand{\slow}{\textcolor{LowSev}{\textbf{Low}}}
+
+% Info box
+\newmdenv[
+  linecolor=AccentBlue,
+  backgroundcolor=LightBlue,
+  linewidth=1.5pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  roundcorner=4pt
+]{infobox}
+
+% Hyperref
+\hypersetup{
+  pdftitle={HW01-AI Main Report},
+  pdfauthor={Tran Hai Duc},
+  pdfsubject={Software Testing -- HW01-AI},
+  colorlinks=true,
+  linkcolor=PrimaryBlue,
+  urlcolor=AccentBlue,
+  citecolor=PrimaryBlue
+}
+
+% ══════════════════════════════════════════════════════════════════════════════
 \begin{document}
+\setlength{\parskip}{5pt}
 
-% ============================================================
-% TITLE PAGE
-% ============================================================
+% ── Title Page ────────────────────────────────────────────────────────────────
 \begin{titlepage}
-  \centering
-  \vspace*{2cm}
-  {\Huge\bfseries\color{primaryblue} HW01-AI Main Report\par}
-  \vspace{0.5cm}
-  {\large Software Testing\par}
-  \vspace{2cm}
+\pagecolor{PrimaryBlue}
+\color{white}
+\centering
+\vspace*{3cm}
 
-  \begin{tabular}{L{5cm} L{8cm}}
-    \toprule
-    \textbf{Field} & \textbf{Value} \\
-    \midrule
-    Full Name       & Trần Hải Đức \\
-    Student ID      & 23127173 \\
-    Assignment Code & HW01-AI \\
-    Course          & Software Testing \\
-    \multirow{5}{=}{\textbf{Instructors}}
-                    & Dr. Lam Quang Vu \\
-                    & Dr. Tran Duy Hoang \\
-                    & MSc. Tran Thi Bich Hanh \\
-                    & MSc. Truong Phuoc Loc \\
-                    & MSc. Ho Tuan Thanh \\
-    Report Date     & 2026-05-31 \\
-    AI Policy       & Open -- mandatory declaration and AI Audit Report attachment \\
-    \bottomrule
-  \end{tabular}
+{\fontsize{36}{44}\bfseries HW01-AI\par}
+\vspace{0.3cm}
+{\fontsize{20}{26}\bfseries Main Report\par}
+\vspace{0.5cm}
+{\large\itshape Software Testing\par}
 
-  \vfill
-  {\small Ho Chi Minh City, May 2026}
+\vspace{1.5cm}
+\color{white!70!PrimaryBlue}\rule{10cm}{0.8pt}\color{white}
+\vspace{1.5cm}
+
+{\Large\bfseries Tran Hai Duc\par}
+\vspace{0.3cm}
+{\large Student ID: 23127173\par}
+
+\vspace{2cm}
+
+\begin{tabular}{@{}ll@{}}
+\textbf{Course:}      & Software Testing \\[4pt]
+\textbf{Instructors:} & Dr.\ Lam Quang Vu \\
+                      & Dr.\ Tran Duy Hoang \\
+                      & MSc.\ Tran Thi Bich Hanh \\
+                      & MSc.\ Truong Phuoc Loc \\
+                      & MSc.\ Ho Tuan Thanh \\[4pt]
+\textbf{Date:}        & 2026-05-31 \\[4pt]
+\textbf{AI Policy:}   & Open -- mandatory declaration \& AI Audit Report \\
+\end{tabular}
+
+\vfill
+{\small Ho Chi Minh City University of Science -- VNUHCM\par}
 \end{titlepage}
+\nopagecolor
 
+% ── Table of Contents ─────────────────────────────────────────────────────────
 \tableofcontents
 \newpage
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{General Information}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{L{4cm} X}
+\begin{tabularx}{\textwidth}{@{} L{4cm} X @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{Field} & \textbf{Value} \\
 \midrule
-Full Name       & Trần Hải Đức \\
+Full Name       & Tran Hai Duc \\
+\rowcolor{TableAlt}
 Student ID      & 23127173 \\
-Assignment Code & HW01-AI \\
+Assignment      & HW01-AI \\
+\rowcolor{TableAlt}
 Course          & Software Testing \\
-Instructors     & Dr. Lam Quang Vu; Dr. Tran Duy Hoang; MSc. Tran Thi Bich Hanh; MSc. Truong Phuoc Loc; MSc. Ho Tuan Thanh \\
+Instructors     & Dr.\ Lam Quang Vu;\ Dr.\ Tran Duy Hoang;\ MSc.\ Tran Thi Bich Hanh;\ MSc.\ Truong Phuoc Loc;\ MSc.\ Ho Tuan Thanh \\
+\rowcolor{TableAlt}
 Report Date     & 2026-05-31 \\
 AI Policy       & Open -- mandatory declaration and AI Audit Report attachment \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Submitted Artifact Summary}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-\begin{longtable}{@{} L{4.5cm} p{9.5cm} @{}}
+\begin{longtable}{@{} L{4.8cm} p{9.2cm} @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{Artifact Group} & \textbf{Path} \\
 \midrule
 \endfirsthead
 \toprule
+\rowcolor{TableHeader}
 \textbf{Artifact Group} & \textbf{Path} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-Requirement 1 report          & {\small\ttfamily HW1/23127173/requirement/requirement1/\allowbreak requirement1.md} \\[2pt]
-Requirement 1 job data        & {\small\ttfamily HW1/23127173/requirement/requirement1/\allowbreak jobs-data/} \\[2pt]
-Requirement 1 AI Mindmap Review & {\small\ttfamily HW1/23127173/requirement/requirement1/\allowbreak AI-Mindmap-Review/\allowbreak ai-mindmap-review.md} \\[2pt]
-Requirement 2 report          & {\small\ttfamily HW1/23127173/requirement/requirement2/\allowbreak requirement2.md} \\[2pt]
-Requirement 3 report          & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak requirement3.md} \\[2pt]
-Requirement 3 device evidence & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak devices/devices.jpg} \\[2pt]
-Requirement 3 video links     & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak video-youtube-test/link-video.md} \\[2pt]
-Requirement 3 AI screenshot   & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak screenshot-AI/screenshot-chat-ai.png} \\[2pt]
-Requirement 3 GitHub Issues & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak github-issues/} \\[2pt]
-Requirement 3 GitHub screenshots & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak github-issues/screenshot-defect/} \\[2pt]
-AI Audit Report               & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 01\_AI-Audit-Report.md} \\[2pt]
-AI Critique                   & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 02\_AI-Critique.md} \\[2pt]
-Mandatory Disclosure          & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 03\_Mandatory-Disclosure.md} \\[2pt]
-AI Privacy Checklist          & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 04\_AI-Privacy-Checklist.md} \\[2pt]
-Prompt Log                    & {\small\ttfamily HW1/23127173/doc/md/\allowbreak appendixA-prompt-log.md} \\[2pt]
-Submission Checklist          & {\small\ttfamily HW1/23127173/checklist.md} \\
+Requirement 1 report
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement1/\allowbreak requirement1.md} \\[2pt]
+\rowcolor{TableAlt}
+Requirement 1 job data
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement1/\allowbreak jobs-data/} \\[2pt]
+Requirement 1 AI Mindmap Review
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement1/\allowbreak AI-Mindmap-Review/ai-mindmap-review.md} \\[2pt]
+\rowcolor{TableAlt}
+Requirement 2 report
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement2/\allowbreak requirement2.md} \\[2pt]
+Requirement 3 report
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement3/\allowbreak requirement3.md} \\[2pt]
+\rowcolor{TableAlt}
+Requirement 3 device evidence
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement3/\allowbreak devices/devices.jpg} \\[2pt]
+Requirement 3 video links
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement3/\allowbreak video-youtube-test/link-video.md} \\[2pt]
+\rowcolor{TableAlt}
+Requirement 3 AI screenshot
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement3/\allowbreak screenshot-AI/screenshot-chat-ai.png} \\[2pt]
+Requirement 3 GitHub Issue drafts
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement3/\allowbreak github-issues/} \\[2pt]
+\rowcolor{TableAlt}
+Requirement 3 GitHub Issues screenshots
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/requirement/requirement3/\allowbreak github-issues/screenshot-defect/} \\[2pt]
+AI Audit Report
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/doc/md/AI~Audit/\allowbreak 01\_AI-Audit-Report.md} \\[2pt]
+\rowcolor{TableAlt}
+AI Critique
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/doc/md/AI~Audit/\allowbreak 02\_AI-Critique.md} \\[2pt]
+Mandatory Disclosure
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/doc/md/AI~Audit/\allowbreak 03\_Mandatory-Disclosure.md} \\[2pt]
+\rowcolor{TableAlt}
+AI Privacy Checklist
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/doc/md/AI~Audit/\allowbreak 04\_AI-Privacy-Checklist.md} \\[2pt]
+Prompt Log
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/doc/md/\allowbreak appendixA-prompt-log.md} \\[2pt]
+\rowcolor{TableAlt}
+Submission Checklist
+  & {\small\ttfamily HW1/23127173\_HW01\_AI\_095/checklist.md} \\
+\bottomrule
 \end{longtable}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Requirement 1 -- QA/QC Job Market 2026+}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-Requirement 1 collected \textbf{10 QA/QC job postings} within 60 days prior to the collection date of \textbf{2026-05-28}. The dataset consists of 10 Markdown job-detail files, 10 screenshots, and one summary CSV file.
+\subsection{Scope of Collection}
+
+Ten QA/QC job postings were collected within 60 days prior to the collection date of \textbf{2026-05-28}. Each posting includes a source link, screenshot with account name, job description, required skills, salary information, and an AI impact analysis. The dataset is compiled from 10 \texttt{job-*.md} files in \texttt{jobs-data/job-description/} and 10 screenshots in \texttt{jobs-data/images/}.
+
+Collection account displayed in screenshots: \texttt{Duc Hai -- Student at VNUHCM -- University of Science}.
+
+\subsection{Job Posting Summary}
+
+\begin{longtable}{@{} C{0.7cm} L{3.2cm} L{2.2cm} L{2cm} L{2.5cm} L{3.2cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{Position} & \textbf{Company} & \textbf{Location} & \textbf{Salary} & \textbf{AI / Automation} \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{Position} & \textbf{Company} & \textbf{Location} & \textbf{Salary} & \textbf{AI / Automation} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+01 & QA -- Software / Device Manager & OptiSigns & HCMC & Competitive, undisclosed & Automation testing (bonus) \\
+\rowcolor{TableAlt}
+02 & Software QA Dev Engineer / SDET & NVIDIA & Cu Chi, HCMC & Not disclosed & AI tools, model testing, LLM benchmarking \\
+03 & QA Engineer & Dwarves Foundation & Hybrid, HCMC & USD 1,800--2,000 & ML testing, data-output validation \\
+\rowcolor{TableAlt}
+04 & Automation QA Engineer (AI-First) & OPSWAT & HCMC & Not disclosed & AI-first testing, self-healing automation \\
+05 & Design Verification Engineer & Hyphen Deux & SHTP, HCMC & Up to USD 5,000 & Regression automation, verification tooling \\
+\rowcolor{TableAlt}
+06 & Full-stack Test Engineer & KMS Technology & Hybrid/Remote & Attractive, undisclosed & AI chat tools, coding assistants, prompt writing \\
+07 & Senior QA Tester (Casual Games) & SUN.STUDIO & HCMC & Not disclosed & AI mentioned in hiring support only \\
+\rowcolor{TableAlt}
+08 & QC Engineer & Merkle & HCMC & Not disclosed & Prompt regression, AI output evaluation, AI-agent safety \\
+09 & Data Test Engineer & HCLTech Vietnam & Hybrid, HCMC & Not disclosed & Automated data validation, data quality tools \\
+\rowcolor{TableAlt}
+10 & Quality Assurance Engineer & Quantum Movement & District 3, HCMC & Not disclosed & Automation, computer vision / motion-tracking \\
+\bottomrule
+\end{longtable}
+
+\subsection{Job Descriptions and Key Skills}
+
+\begin{longtable}{@{} C{0.7cm} L{5.8cm} L{7.5cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{Job Description} & \textbf{Key Skills} \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{Job Description} & \textbf{Key Skills} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+01 & Manage QA for software and devices, build QA strategy, test lifecycle, defect tracking, metrics/reporting, compliance, mentoring. & 5+ yr software/hardware QA, lead QA team, test process, automation tools, communication. \\
+\rowcolor{TableAlt}
+02 & Create test matrices, test plans, test cases, automation framework, bug lifecycle, verify customer issues/fixes. & 3+ yr QA, Linux/Unix, shell/Python, API/UI automation, failure analysis, AI tools, LLM benchmarking. \\
+03 & Automation testing API/backend/UI, shift-left, CI/CD, defect tracking, ML output validation, security/auth/API integration. & 5+ yr automation, Playwright, Cypress, RestAssured, Postman, Golang/TypeScript/Ruby/Python/Java, Docker. \\
+\rowcolor{TableAlt}
+04 & Build automation framework for OESIS, API/system/compatibility testing, CI integration, AI-driven test coverage. & QA automation, Robot Framework/Python, API testing, Git/CI, Agile, AI/ML testing concepts. \\
+05 & Verification test plan, simulation/emulation/FPGA, debug waveform, coverage analysis, formal verification, regression. & Verilog/SystemVerilog, UVM, Perl/Python/TCL, PCIe/USB/DDR, CDNS EDA. \\
+\rowcolor{TableAlt}
+06 & Manual/automation testing, automate functional/regression/performance tests, increase end-to-end coverage. & API/web/mobile testing, Selenium/Playwright, C\#/Java/JS/Python, Postman, Git, AI tools (nice-to-have). \\
+07 & Ensure no critical bugs at release, test ads/analytics/localization/ANR/UI\-UX/performance/device compatibility. & Senior game testing, test checklists/templates, bug lifecycle, communication, ISTQB preferred. \\
+\rowcolor{TableAlt}
+08 & Establish QC process for Salesforce CRM and AI solutions, automation framework, AI testing procedure, quality reporting. & 2--3 yr QC/QA, Selenium/Playwright/Cypress, API testing, Salesforce, AI tools, prompt regression. \\
+09 & Data testing for banking project, ETL testing, AWS data services, data warehouse and data quality framework. & Python/Rust/Go/Java, SQL, AWS Lambda/Glue/Athena/S3, Redshift, dbt, Great Expectations, Soda. \\
+\rowcolor{TableAlt}
+10 & Test mobile/web app, hardware integration, sensor responsiveness, video recording stability, backend API integration. & 7+ yr QA, Selenium/Appium/XCUITest, REST API, Flutter, ReactJS, Flipper, Android Studio Profiler. \\
+\bottomrule
+\end{longtable}
+
+\subsection{AI Impact Analysis}
+
+\begin{longtable}{@{} C{0.7cm} L{13.3cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{AI Impact Analysis} \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{AI Impact Analysis} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+01 & AI can aggregate defect trends, QA metrics, and release risks, but the QA manager still makes strategy and mentoring decisions. \\
+\rowcolor{TableAlt}
+02 & AI expands QA into model testing and LLM benchmarking, requiring testers to understand both automation and model behaviour. \\
+03 & ML/data validation requires clear oracles; AI can generate tests, but QA must determine correctness, safety, and stability of outputs. \\
+\rowcolor{TableAlt}
+04 & AI-first testing increases coverage and reduces automation maintenance, but generated/self-healing tests must be reviewed. \\
+05 & AI can assist with log reading and coverage-gap suggestions, but design verification requires technical evidence and domain knowledge. \\
+\rowcolor{TableAlt}
+06 & AI tools support research, debugging, test snippets, and documentation; QA must still validate output and protect sensitive data. \\
+07 & AI can generate checklist ideas, but game QA requires real playtesting, UX perception, and device/performance validation. \\
+\rowcolor{TableAlt}
+08 & QC for AI solutions must include prompt regression, output quality, model degradation, and AI-agent safety before go-live. \\
+09 & AI can generate SQL/data checks, but banking data testing requires traceability and reproducible results. \\
+\rowcolor{TableAlt}
+10 & AI can suggest mobile automation and profiler log analysis, but senior QA must verify on real devices, sensors, and performance. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Requirement Compliance}
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{X C{3cm}}
+\begin{tabularx}{\textwidth}{@{} X C{3cm} @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{Criterion} & \textbf{Status} \\
 \midrule
-10 QA/QC job postings collected                              & \achieved \\
-Each posting has a source link                               & \achieved \\
-Each posting has a screenshot                                & \achieved \\
-Each posting has job description and required skills         & \achieved \\
-Each posting has salary or explicit ``not disclosed'' note   & \partialach \\
-$\geq$3 postings mention AI / LLM / Automation-AI           & \achieved{} (Jobs 02, 03, 04, 06, 08) \\
-Each posting has an AI Impact Analysis                       & \achieved \\
+10/10 postings are QA/QC/Tester/Verification/Data Test roles & \achieved \\
+\rowcolor{TableAlt}
+Each posting has a source link and screenshot in the repository & \achieved \\
+Each posting has job description and required skills in \texttt{job-*.md} & \achieved \\
+\rowcolor{TableAlt}
+$\geq$3 postings mention AI/LLM/Automation-AI explicitly & \achieved{} (Jobs 02, 03, 04, 06, 08) \\
+Salary disclosed per JD (Job 03: USD 1,800--2,000; Job 05: up to USD 5,000; others: undisclosed) & \partach \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Key Observation:} The 2026+ QA/QC market extends well beyond traditional manual and automation testing to encompass SDET, AI/LLM testing, data testing, Salesforce/AI solution QC, device/mobile QA, and design verification. AI tools assist in test generation, log analysis, documentation, and metric aggregation; however, QA engineers remain responsible for verifying results, protecting data, and owning release decisions.
+\begin{infobox}
+\textbf{Key Observation:} The 2026+ QA/QC market extends well beyond traditional manual and automation testing to encompass SDET, AI/LLM testing, data testing, Salesforce/AI solution QC, device/mobile QA, and design verification. AI assists with test generation, log analysis, documentation, and metric aggregation; however, QA engineers remain responsible for verifying results, protecting data, and owning release decisions.
+\end{infobox}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Requirement 2 -- 20 Software Defects (2022--2026)}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-Requirement 2 compiles \textbf{20 publicly documented software defects} from 2022 to 2026. Each defect entry includes a source link, description, severity, consequences, remediation, and a note on how an AI might produce biased or hallucinated explanations for that defect.
+\subsection{Scope}
+
+Twenty publicly documented software defects from 2022--2026 were compiled. Each entry includes a source link, description, severity, consequences, remediation, and a note on how AI might produce biased or hallucinated explanations. The list prioritises defects with public sources across security vulnerabilities, outages, cloud misconfiguration, AI hallucination, prompt injection, AI bias, and data exposure.
+
+\subsection{Defect Summary Table}
+
+{\small
+\begin{longtable}{@{} C{0.6cm} C{0.7cm} L{2.8cm} L{2.6cm} L{2.4cm} L{2.4cm} L{2.5cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{Year} & \textbf{Defect / Incident} & \textbf{Severity} & \textbf{Consequences} & \textbf{Remediation} & \textbf{AI Bias / Hallucination Risk} \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{TableHeader}
+\textbf{ID} & \textbf{Year} & \textbf{Defect / Incident} & \textbf{Severity} & \textbf{Consequences} & \textbf{Remediation} & \textbf{AI Bias / Hallucination Risk} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+01 & 2024 & CrowdStrike Falcon Channel File 291 outage & \scrit & Millions of Windows BSOD; aviation, healthcare, banking disrupted. & Staged rollout, canary, content validation, auto-rollback. & AI may hallucinate this as a Microsoft cyberattack; it was a content-update defect in CrowdStrike. \\
+\rowcolor{TableAlt}
+02 & 2023 & FAA NOTAM outage & \scrit & Thousands of US flights delayed/grounded. & Change control, backup/restore rehearsal, DB sync tests. & AI may bias toward ``aging system'' and miss the specific change-management failure. \\
+03 & 2022 & Atlassian Confluence CVE-2022-26134 (OGNL RCE) & \scrit & Servers compromised, webshells installed, crypto-mining, data theft. & Upgrade, WAF rules, IOC scanning, rotate secrets. & AI may hallucinate this as XSS because both involve input injection; must clarify OGNL/RCE. \\
+\rowcolor{TableAlt}
+04 & 2022 & OpenSSL CVE-2022-3602 / CVE-2022-3786 (buffer overflow) & \shigh & DoS or potential RCE depending on environment. & Update OpenSSL, rebuild containers/base images. & AI may hallucinate this as ``Heartbleed 2''; different CVE, different mechanism. \\
+05 & 2023 & MOVEit Transfer CVE-2023-34362 (SQL injection) & \scrit & Data exfiltration across many organisations, ransomware extortion. & Emergency patch, disable public access, forensic scan, rotate credentials. & AI may hallucinate the issue as SFTP encryption; root cause is SQL injection in the web app. \\
+\rowcolor{TableAlt}
+06 & 2024 & XZ Utils backdoor CVE-2024-3094 & \scrit & Risk of remote unauthorised access on affected Linux systems. & Roll back to safe version, pin dependencies, verify tarballs, harden maintainer review. & AI may bias toward ``open source is insecure''; the lesson is supply-chain governance. \\
+07 & 2023 & Toyota cloud misconfiguration data exposure & \shigh & Customer/connected-car data exposed; privacy and reputation impact. & Cloud posture management, least privilege, public-bucket detection, periodic audit. & AI may hallucinate a deliberate attack; public sources confirm misconfiguration. \\
+\rowcolor{TableAlt}
+08 & 2023 & ChatGPT Redis bug exposed chat/payment data & \shigh & Chat titles and payment metadata of some ChatGPT Plus users exposed. & Patch library, test race conditions, cache isolation, postmortem, user notification. & AI may hallucinate the model ``self-disclosed'' training data; the real bug was a system/cache issue. \\
+09 & 2024 & Google Gemini image generation bias & \smed & Loss of trust, image generation feature suspended. & Context-aware safety rules, bias tests, human review, diverse evaluation datasets. & AI may bias that ``diversity is a bug''; the real issue is applying rules out of context. \\
+\rowcolor{TableAlt}
+10 & 2024 & Air Canada chatbot hallucinated refund policy & \shigh & Air Canada held legally liable for chatbot misinformation. & RAG with accurate policy sources, response citation, guardrails, human escalation. & This is a direct hallucination: AI generated wrong policy and presented it as authoritative. \\
+11 & 2024 & DPD chatbot jailbreak / prompt injection & \smed & Brand damage, DPD partially disabled the chatbot. & Prompt-injection hardening, output moderation, role constraints, safe fallback. & AI may hallucinate the chatbot ``spontaneously'' misbehaved; it was prompted/jailbroken after a faulty update. \\
+\rowcolor{TableAlt}
+12 & 2023 & Chevrolet dealer chatbot agreed to \$1 Tahoe & \smed & Viral incident, brand damage, chatbot removed. & Prevent LLM from quoting/contracting, rule-based boundaries, legal disclaimers. & AI may hallucinate this as a legally binding contract; the bot had no legal authority to sell a car. \\
+13 & 2023 & Samsung employees leaked confidential data to ChatGPT & \shigh & IP and confidential data exposed; Samsung tightened AI policy. & Enterprise AI policy, DLP, prompt logging, private/on-prem model, employee training. & AI may blame ChatGPT entirely; the incident is a shadow-AI/process control and user data-handling failure. \\
+\rowcolor{TableAlt}
+14 & 2023 & Microsoft AI researchers exposed 38~TB via SAS token & \shigh & 38~TB of internal private data potentially accessible/modifiable/deletable. & Least-privilege SAS, short-lived tokens, secret scanning, CI policy, access review. & AI may hallucinate a model leak; reality is cloud access-token misconfiguration by the AI team. \\
+15 & 2024 & Microsoft Recall privacy/security design issue & \shigh & Microsoft delayed rollout; heavy criticism on privacy/security. & Opt-in, encryption, local auth, sensitive-data filtering, red-team, privacy threat modelling. & AI may bias that ``on-device is safe''; on-device still has risk if malware or another user accesses the data. \\
+\rowcolor{TableAlt}
+16 & 2024 & Polyfill.io supply-chain attack & \scrit & Hundreds of thousands of websites at risk of redirect/malware. & Remove polyfill.io, self-host, SRI/CSP, dependency inventory, third-party script monitoring. & AI may hallucinate an npm package bug; reality is a third-party CDN/domain supply-chain takeover. \\
+17 & 2025 & DeepSeek exposed database with chat history/API data & \shigh & Prompts, tokens/API keys, internal details, and user privacy at risk. & Authenticate the database, network isolation, secret rotation, logging hygiene. & AI may introduce political bias about ``Chinese AI''; analysis should focus on the misconfigured database. \\
+\rowcolor{TableAlt}
+18 & 2023 & 23andMe credential stuffing/data exposure & \shigh & Personal and genetic data of millions of users affected. & Mandatory MFA, password reset, rate limiting, bot detection, anomaly detection. & AI may hallucinate a SQL injection; 23andMe stated no evidence of a breach in their own systems. \\
+19 & 2023 & CitrixBleed CVE-2023-4966 & \scrit & Session hijacking, LockBit ransomware activity, unauthorised network access. & Patch, terminate active sessions, rotate credentials/tokens, IOC hunting, segmentation. & AI may say patching is sufficient; CitrixBleed requires killing sessions and rotating tokens because tokens were already stolen. \\
+\rowcolor{TableAlt}
+20 & 2024 & OpenSSH regreSSHion CVE-2024-6387 & \scrit & Remote attacker may gain root access on affected systems. & Upgrade OpenSSH, reduce LoginGraceTime, restrict network exposure, scan assets. & AI may hallucinate this is a completely new SSH bug; it is a regression of a bug patched in 2006. \\
+\bottomrule
+\end{longtable}
+}
+
+\subsection{Statistics}
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{X C{3cm}}
+\begin{tabularx}{\textwidth}{@{} X C{3.5cm} @{}}
 \toprule
-\textbf{Criterion} & \textbf{Status} \\
+\rowcolor{TableHeader}
+\textbf{Metric} & \textbf{Result} \\
 \midrule
-20 publicly known software defects                                  & \achieved \\
-All defects fall within the 2022--2026 period                       & \achieved \\
-Source link provided for each defect                                & \achieved \\
-Description / severity / consequences / remediation included        & \achieved \\
-$\geq$5 defects related to AI/LLM                                   & \achieved{} (9 out of 20) \\
-All 20 entries include AI bias/hallucination notes                  & \achieved \\
+Total defects & 20 \\
+\rowcolor{TableAlt}
+Period covered & 2022--2026 \\
+AI/LLM-related defects & 9/20 (IDs 08, 09, 10, 11, 12, 13, 14, 15, 17) \\
+\rowcolor{TableAlt}
+AI/LLM categories & Hallucination, prompt injection/jailbreak, bias, data exposure, AI privacy/security design \\
+All 20 entries have AI bias/hallucination note & \achieved \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Key Observation:} Defects from 2022--2026 highlight that QA/QC must address security vulnerabilities, cloud misconfiguration, supply-chain attacks, service outages, data privacy breaches, and AI behavioural failures. For AI/LLM systems, bugs may reside in prompts, guardrails, retrieval data, tool access permissions, and model reasoning paths.
+\begin{infobox}
+\textbf{Key Observation:} Defects from 2022--2026 show that modern QA/QC must address not only functionality but also security, data integrity, deployment processes, supply-chain integrity, and AI behaviour. For AI/LLM systems, bugs often reside in prompts, retrieval data, guardrails, tool access permissions, privacy policies, and model reasoning paths. QA must combine traditional test cases with threat modelling, data validation, red-team prompt testing, and post-deployment monitoring.
+\end{infobox}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Requirement 3 -- Test Cases for a Physical Product}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
 \subsection{Device Under Test}
 
-The selected device is the \textbf{Casper Remote U25 Series air-conditioner remote control}. A photo of the remote together with the student ID card is provided in \texttt{devices/devices.jpg}.
+The selected product is the \textbf{Casper Remote U25 Series} air-conditioner remote control. The remote features an LCD display and the following main buttons: Power, Mode, Speed, Turbo, iSAVE, Baby Care, Temperature +/-, L/R Swing, U/D Swing, Menu, and OK.
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{L{4cm} X}
+\begin{tabularx}{\textwidth}{@{} L{4.5cm} X @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{Field} & \textbf{Value} \\
 \midrule
-Device            & Casper Remote U25 Series Air-Conditioner Remote \\
-Photo with ID     & \achieved \\
-Brand/Model       & \achieved \\
-Year / Serial     & Not visible on provided device evidence \\
-Number of test cases  & 18 \\
-Number of evidence videos & 5 video links \\
-AI-missed edge cases  & TC-16, TC-17, TC-18 \\
-Confirmed defects & 4 defects from TC-08, TC-13, TC-14, TC-16 \\
-GitHub Issues & 4 real issues in \texttt{HappyDuckCoder/Software-Testing}; username screenshots are stored in \texttt{github-issues/screenshot-defect/} \\
+Product & Air-conditioner remote control \\
+\rowcolor{TableAlt}
+Brand & Casper \\
+Model & Remote U25 Series \\
+\rowcolor{TableAlt}
+Year of manufacture & Not visible on device evidence \\
+Serial number & Not visible on device evidence \\
+\rowcolor{TableAlt}
+Device photo & \texttt{devices/devices.jpg} -- remote + student ID card in same frame \\
+Video evidence & \texttt{video-youtube-test/link-video.md} -- 5 YouTube Shorts links \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Student-Discovered Edge Cases}
+\subsection{Test Assumptions}
 
-The following three edge cases were identified by the student after reviewing AI-generated test cases:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item The remote has batteries installed and the LCD display is functional.
+  \item The corresponding air conditioner is operating normally and receiving IR signals from the remote.
+  \item The tester stands at close range, pointing the remote at the AC receiver, unless the test case specifies blocking the signal or changing distance/angle.
+  \item Actual results and defect conclusions are based solely on real-device testing. The table below contains 15 initial test cases and 3 supplementary edge cases discovered by the student.
+\end{itemize}
+
+\subsection{Test Case Suite}
+
+{\small
+\begin{longtable}{@{} C{1cm} L{2.5cm} L{1.8cm} L{3cm} L{2.8cm} L{1.8cm} C{1cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{TC ID} & \textbf{Objective} & \textbf{Input} & \textbf{Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Verdict} \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{TableHeader}
+\textbf{TC ID} & \textbf{Objective} & \textbf{Input} & \textbf{Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Verdict} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+TC-01 & Verify basic power on/off via Power button. & Power button (red). & 1. Point remote at AC. 2. Press Power to turn on. 3. Wait for AC response. 4. Press Power again to turn off. & AC turns on/off accordingly; remote shows clear power state; AC beeps or responds. & As expected. & \vpass \\
+\rowcolor{TableAlt}
+TC-02 & Verify switching to Cool mode. & Mode button $\to$ Cool. & 1. Turn on AC. 2. Press Mode until LCD shows \texttt{COOL}. 3. Wait 10--20 s. & LCD shows Cool; AC switches to cooling; fan/flap responds stably. & As expected. & \vpass \\
+TC-03 & Verify temperature increment/decrement within valid range. & \texttt{+} and \texttt{-} buttons. & 1. Enable Cool. 2. Press \texttt{+} repeatedly to upper limit. 3. Press \texttt{-} repeatedly to lower limit. & Temperature changes step by step; does not exceed AC's supported range; LCD does not freeze or show garbage. & As expected. & \vpass \\
+\rowcolor{TableAlt}
+TC-04 & Verify Speed button cycles fan speed. & Speed button. & 1. Enable Cool. 2. Press Speed repeatedly. 3. Observe fan-speed icon and actual fan. & Each press cycles to next speed in loop; AC responds correctly. & Fan audibly quieter at silent, louder at turbo. & \vpass \\
+TC-05 & Verify Turbo mode. & Turbo button. & 1. Enable Cool. 2. Press Turbo. 3. Wait 10--20 s. 4. Press Turbo again to disable if applicable. & Turbo engages/disengages clearly; AC increases capacity/fan as designed; LCD shows corresponding icon. & As expected. & \vpass \\
+\rowcolor{TableAlt}
+TC-06 & Verify L/R Swing. & L/R Swing button. & 1. Turn on AC. 2. Press L/R Swing. 3. Observe left/right louver movement. 4. Press again to stop/reposition. & Left/right louver moves or changes state as commanded; no sticking. & As expected. & \vpass \\
+TC-07 & Verify U/D Swing. & U/D Swing button. & 1. Turn on AC. 2. Press U/D Swing. 3. Observe up/down louver movement. 4. Press again to stop/reposition. & Up/down louver moves or changes state as commanded; no sticking. & As expected. & \vpass \\
+\rowcolor{TableAlt}
+TC-08 & Verify iSAVE saves/restores configuration. & Temperature, Mode, Speed, iSAVE button. & 1. Set Cool, temperature X, speed Y. 2. Press iSAVE. 3. Change to different config. 4. Press iSAVE again. & Remote/AC restores saved config or activates energy-saving mode per manual. & iSAVE only saves initial state; re-pressing iSAVE does not update saved config. & \vfail \\
+TC-09 & Verify Baby Care does not conflict with Turbo. & Baby Care and Turbo buttons. & 1. Enable Cool. 2. Press Baby Care. 3. Press Turbo. 4. Observe LCD and AC response. & System handles priority clearly: either prevents both from being active simultaneously or disables conflicting mode; no contradictory LCD state. & As expected. & \vpass \\
+\rowcolor{TableAlt}
+TC-10 & Verify Menu/OK navigates sub-features. & Menu and OK buttons. & 1. Press Menu. 2. Navigate with directional keys if available. 3. Press OK. 4. Wait for timeout. & Menu displays/changes items correctly; OK confirms action; idle timeout exits menu safely. & As expected. & \vpass \\
+TC-11 & Verify rapid repeated Power presses. & Power button $\times$5 in 3 s. & 1. Point remote at AC. 2. Press Power 5 times rapidly. 3. Observe LCD and AC. & Final state matches press count; remote does not freeze; AC not left in half-on/half-off state. & As expected. & \vpass \\
+\rowcolor{TableAlt}
+TC-12 & Verify holding \texttt{+}/\texttt{-} beyond limits. & Hold \texttt{+} 5 s, hold \texttt{-} 5 s. & 1. Enable Cool. 2. Hold \texttt{+} to upper limit, continue 5 s. 3. Repeat with \texttt{-}. & Remote clamps at limit; no overflow; no unexpected value jump. & As expected. & \vpass \\
+TC-13 & Verify commands are rejected when IR emitter is blocked. & Hand/paper blocking IR emitter. & 1. Turn on AC. 2. Block IR emitter on remote. 3. Press Mode or Speed. 4. Unblock and press again. & When blocked, AC does not change state (LCD may still update); after unblocking, new commands are received normally. & AC still responds normally even with emitter blocked. & \vfail \\
+\rowcolor{TableAlt}
+TC-14 & Verify limited angle/distance acceptance. & Distance 5--7 m, off-axis angle. & 1. Stand 5--7 m from AC. 2. Tilt remote left/right. 3. Press Power/Mode. 4. Repeat pointing straight ahead. & Commands only reliable within supported angle/distance; out-of-range attempts fail clearly, not silently. & AC responded at all tested angles without failure. & \vfail \\
+TC-15 & Verify LCD dim and low-battery indicator. & Weak/near-empty batteries. & 1. Observe LCD with current batteries. 2. If low battery present, try sending Power/Mode. 3. Replace with fresh batteries and repeat. & Remote shows clear low-battery indication; commands do not intermittently misfire; fresh batteries restore stability. & Batteries still full; test deferred. & \vpending \\
+\rowcolor{TableAlt}
+TC-16 & \textit{Edge case:} AC should only power on via Power button. & AC off; press Turbo, Mode, Speed. & 1. Confirm AC is off. 2. Do not press Power. 3. Press Turbo, then Mode, then Speed. 4. Observe AC and remote LCD. & AC must not power on when only feature buttons are pressed; only Power button turns on the AC. & Pressing Turbo/Mode/Speed turned the AC on. & \vfail \\
+TC-17 & \textit{Edge case:} Switching from Cool to Dry automatically adjusts fan speed. & In Cool mode; press Mode to switch to Dry. & 1. Turn on AC in Cool mode. 2. Set fan speed above minimum. 3. Press Mode to switch to Dry. 4. Observe fan speed after mode change. & When switching to Dry, AC automatically adjusts fan speed to a level appropriate for dehumidification. & Fan automatically dropped to minimum speed. & \vpass \\
+\rowcolor{TableAlt}
+TC-18 & \textit{Edge case:} Baby Care locks fixed configuration. & Baby Care active; press \texttt{+}, \texttt{-}, L/R Swing, U/D Swing. & 1. Turn on AC. 2. Press Baby Care. 3. Try to increase/decrease temperature. 4. Try to change airflow direction. 5. Observe LCD and AC. & While Baby Care is active, protective/comfort settings are fixed; temperature and airflow direction changes are not permitted. & Could not increase/decrease temperature or change airflow direction while Baby Care was active. & \vpass \\
+\bottomrule
+\end{longtable}
+}
+
+\subsection{Videos with Evidence}
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{C{1.5cm} X C{1.8cm}}
+\begin{tabularx}{\textwidth}{@{} C{1.5cm} C{1.5cm} X @{}}
 \toprule
-\textbf{TC} & \textbf{Description} & \textbf{Verdict} \\
+\rowcolor{TableHeader}
+\textbf{Video} & \textbf{TC} & \textbf{Evidence / Link} \\
 \midrule
-TC-16 & The air conditioner can only be powered on via the Power button; however, Turbo, Mode, and Speed buttons can independently turn the unit on. & \fail \\
-TC-17 & Switching from Cool to Dry mode automatically reduces fan speed to the lowest setting. & \pass \\
-TC-18 & Baby Care mode locks configuration parameters such as temperature and airflow direction. & \pass \\
+V1 & TC-01 & \href{https://youtube.com/shorts/sGEjxL-i4Ts?feature=share}{YouTube Shorts} -- demonstrates real Power command sent by remote. \\
+\rowcolor{TableAlt}
+V2 & TC-02 & \href{https://youtube.com/shorts/9te5ZgJJPrM?feature=share}{YouTube Shorts} -- demonstrates Cool mode on LCD and AC. \\
+V3 & TC-03 & \href{https://youtube.com/shorts/CZnAIcFSs0g?feature=share}{YouTube Shorts} -- demonstrates temperature increment/decrement within limits. \\
+\rowcolor{TableAlt}
+V4 & TC-05 & \href{https://youtube.com/shorts/6q_QbNK5G1E?feature=share}{YouTube Shorts} -- demonstrates Turbo button. \\
+V5 & TC-18 & \href{https://youtube.com/shorts/wzYjL1a-N4A}{YouTube Shorts} -- demonstrates Baby Care locking configuration. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Confirmed Defects}
+\subsection{Defect Log}
+
+The defects below were derived from test cases with a \textbf{Fail} verdict: TC-08, TC-13, TC-14, and TC-16. Test cases with Pass or Pending verdicts are not counted as defects to avoid recording unsupported issues.
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{C{1.8cm} C{2cm} X}
+\begin{tabularx}{\textwidth}{@{} C{1.2cm} C{1.2cm} L{2.5cm} L{2.8cm} L{2.5cm} C{1.2cm} C{1.2cm} @{}}
 \toprule
-\textbf{Defect ID} & \textbf{Related TC} & \textbf{Summary} \\
+\rowcolor{TableHeader}
+\textbf{Defect} & \textbf{TC} & \textbf{Summary} & \textbf{Expected} & \textbf{Actual} & \textbf{Severity} & \textbf{Status} \\
 \midrule
-D-01 & TC-08 & iSAVE does not save or update the most recent configuration. \\
-D-02 & TC-13 & Remote continues to operate even when the IR emitter is physically blocked. \\
-D-03 & TC-14 & Air conditioner accepts commands at all tested angles of inclination. \\
-D-04 & TC-16 & Turbo / Mode / Speed buttons can power on the unit while the air conditioner is off. \\
+D-01 & TC-08 & iSAVE does not save/update most recent configuration. & iSAVE saves or restores config as user intends. & iSAVE only stores the first state; subsequent presses do not update saved config. & \smed & \sopen \\
+\rowcolor{TableAlt}
+D-02 & TC-13 & Remote operates normally even when IR emitter is physically blocked. & AC should not receive commands when IR emitter is blocked. & AC responds normally despite emitter being blocked. & \slow & \sopen \\
+D-03 & TC-14 & AC accepts commands at all tested angles without showing any range limitation. & Commands should fail or be unreliable outside supported angle/distance. & Commands accepted at all tested angles. & \slow & \sopen \\
+\rowcolor{TableAlt}
+D-04 & TC-16 & Feature buttons (Turbo/Mode/Speed) can power on the AC while it is off. & Only the Power button should turn on the AC. & Pressing Turbo, Mode, or Speed turns on the AC. & \shigh & \sopen \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Note:} The requirement target is $\geq$5 confirmed defects; currently only 4 have been confirmed. No defects were fabricated. If the target must be met, additional testing must be conducted and defects added only upon real evidence.
+\begin{infobox}
+\textbf{Note:} The requirement target is $\geq$5 confirmed defects; currently only 4 have been confirmed. No defects were fabricated. Additional testing must be conducted, and defects may only be added upon real-world evidence.
+\end{infobox}
 
-\textbf{Bug screenshots policy:} HW01 does not use FIT Mantis. The four confirmed defects have been logged as GitHub Issues \#1 to \#4 in the personal repository \texttt{HappyDuckCoder/Software-Testing}. The issue links are recorded in \texttt{github-issues/github-issues-links.md}. The issue-list screenshot and individual issue screenshots are stored in \texttt{github-issues/screenshot-defect/} and show the GitHub username \texttt{HappyDuckCoder}.
+\subsection{Student-Discovered Edge Cases (AI-Missed)}
 
-% ============================================================
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{@{} C{1.2cm} X L{5cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{TC} & \textbf{Edge Case Description} & \textbf{Why AI Tends to Miss It} \\
+\midrule
+TC-16 & AC should only power on via the Power button; however, feature buttons (Turbo/Mode/Speed) can also turn the unit on. & AI typically treats Turbo/Mode/Speed as post-power-on feature buttons, so it overlooks the precondition ``AC is off'' and the unintended power-on behaviour. \\
+\rowcolor{TableAlt}
+TC-17 & Switching from Cool to Dry automatically reduces fan speed to minimum. & AI usually only checks that the LCD changes mode and does not test the side-effect of mode change on fan speed. \\
+TC-18 & Baby Care mode locks temperature and airflow direction controls. & AI typically only tests Baby Care on/off toggling; it misses the safety/comfort constraint that prevents user adjustments while Baby Care is active. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A screenshot of the AI chat session is provided in \texttt{screenshot-AI/screenshot-chat-ai.png} to confirm that these edge cases were not generated in the AI baseline prompt. This screenshot is genuine evidence collected manually, not generated by AI.
+
+\subsection{GitHub Issues for Defect Screenshots}
+
+Defects are logged as GitHub Issues in the personal repository \texttt{HappyDuckCoder/Software-Testing}. Draft files were created locally and then posted manually.
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{@{} C{1.2cm} X L{5.5cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{Defect} & \textbf{Local Draft File} & \textbf{Status} \\
+\midrule
+D-01 & {\small\ttfamily github-issues/D-01-isave-not-saving-\allowbreak latest-config.md} & GitHub Issue \#1 created; screenshot: \texttt{D01.png} \\
+\rowcolor{TableAlt}
+D-02 & {\small\ttfamily github-issues/D-02-remote-works-when-\allowbreak ir-blocked.md} & GitHub Issue \#2 created; screenshot: \texttt{D02.png} \\
+D-03 & {\small\ttfamily github-issues/D-03-commands-work-at-\allowbreak all-tested-angles.md} & GitHub Issue \#3 created; screenshot: \texttt{D03.png} \\
+\rowcolor{TableAlt}
+D-04 & {\small\ttfamily github-issues/D-04-feature-buttons-\allowbreak power-on-ac.md} & GitHub Issue \#4 created; screenshot: \texttt{D04.png} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Issue links are recorded in \texttt{github-issues/github-issues-links.md}. The issues list screenshot at \texttt{screenshot-defect/list-defect.png} displays the GitHub username \texttt{HappyDuckCoder}.
+
+\subsection{Requirement Compliance}
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{@{} X C{3cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{Criterion} & \textbf{Status} \\
+\midrule
+One specific household device selected & \achieved \\
+\rowcolor{TableAlt}
+Device photo + student ID card & \achieved \\
+Brand/model; year/serial (partially visible) & \partach \\
+\rowcolor{TableAlt}
+15+ test cases with Objective/Input/Steps/Expected/Actual/Verdict & \achieved{} (18 total) \\
+$\geq$5 test cases with video $\leq$60 s & \achieved{} (5 YouTube Shorts: TC-01,02,03,05,18) \\
+\rowcolor{TableAlt}
+$\geq$3 edge cases AI did not generate & \achieved{} (TC-16, TC-17, TC-18) \\
+$\geq$5 confirmed defects from device & \notach{} (4 confirmed: D-01 to D-04) \\
+\rowcolor{TableAlt}
+AI not used to generate prohibited evidence & \achieved \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ══════════════════════════════════════════════════════════════════════════════
 \section{AI CLO / Bloom-AI Outcomes}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{L{3.5cm} X L{5cm} C{2cm}}
+\begin{tabularx}{\textwidth}{@{} L{3cm} X L{4.5cm} C{2cm} @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{CLO} & \textbf{Requirement} & \textbf{Evidence} & \textbf{Status} \\
 \midrule
-G9.1 -- Understand & Request AI to generate a QA/QC role mindmap, then identify errors. & \texttt{ai-mindmap-review.md} & \achieved \\
-G9.3 -- Analyse & Analyse AI output and find $\geq$3 edge cases the AI missed. & TC-16, TC-17, TC-18; \texttt{screenshot-chat-ai.png} & \achieved \\
+G9.1 -- Understand & Request AI to generate a QA/QC role mindmap, then identify errors. & \texttt{AI-Mindmap-Review/\allowbreak{}ai-mindmap-review.md} & \achieved \\
+\rowcolor{TableAlt}
+G9.3 -- Analyse & Analyse AI output and find $\geq$3 edge cases that AI missed. & TC-16, TC-17, TC-18; \texttt{screenshot-AI/\allowbreak{}screenshot-chat-ai.png} & \achieved \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-In the mindmap review, the initial AI output omitted: Data Test Engineer, Design Verification, Device/Mobile QA, and the distinction between AI-assisted QA and AI/LLM system testing. The student confirmed these omissions as valid after cross-referencing all 10 jobs from Requirement 1 and produced a corrected mindmap.
+In the mindmap review, the initial AI output omitted: Data Test Engineer, Design Verification, Device/Mobile QA, and the distinction between AI-assisted QA and AI/LLM system testing. The student confirmed these omissions as valid deficiencies after cross-referencing all 10 jobs from Requirement 1 and produced a corrected mindmap.
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{AI Audit Summary}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{L{6cm} C{4cm}}
+\begin{tabularx}{\textwidth}{@{} X C{4cm} @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{Metric} & \textbf{Result} \\
 \midrule
-Total AI-generated artifacts audited & 17 \\
-VALID                                & 0 \\
-INVALID                              & 0 \\
-INCOMPLETE                           & 17 \\
+Total AI-generated artifacts audited & 19 \\
+\rowcolor{TableAlt}
+VALID & 0 \\
+INVALID & 0 \\
+\rowcolor{TableAlt}
+INCOMPLETE & 19 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-All AI-generated artifacts are marked \incomplete{} because AI was used solely to create drafts, standardise formatting, aggregate data, and offer suggestions. The student must verify every artifact against primary evidence: job screenshots, source links, videos, device photos, actual results, and defect evidence.
+All AI-generated artifacts are marked \incompl{} because AI was used only to create drafts, standardise formatting, aggregate data, and offer suggestions. The student must verify every artifact against primary evidence: job screenshots, source links, videos, device photos, actual results, and defect evidence.
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{AI Critique}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-In HW01, AI was most useful in an editorial and structural role: standardising 10 Job Descriptions from Requirement 1 into Markdown/CSV, aggregating the 20 software defects for Requirement 2, proposing test cases for the air-conditioner remote in Requirement 3, scaffolding the G9.1 mindmap, drafting an English LaTeX version of the final report, converting the confirmed defect log into local GitHub Issue drafts, and updating the report after the student added real GitHub Issues screenshots. However, the audit shows that all 17 artifacts should be considered \textbf{INCOMPLETE} until primary evidence is verified by the student. AI can write coherently, but it cannot view screenshots, guarantee that links remain valid, execute tests on real hardware, or substitute for prohibited evidence such as device photos, videos, actual results, real GitHub Issues, or defect proof.
+In HW01, AI was most useful in an editorial and structural role: standardising 10 JDs from Requirement 1 into Markdown/CSV, aggregating the 20 software defects for Requirement 2, proposing test cases for the air-conditioner remote in Requirement 3, scaffolding the G9.1 mindmap, converting defect logs into GitHub Issue drafts, updating the report after the student added real GitHub Issue screenshots, embedding full Requirement 1/2/3 content into the main report, and synchronising the \LaTeX{}/PDF from Markdown. Nevertheless, the audit shows all 19 artifacts should be considered \textbf{INCOMPLETE} until primary evidence is verified by the student. AI can write coherently, but it cannot view screenshots, guarantee link validity, run tests on real hardware, or substitute for prohibited evidence such as device photos, videos, actual results, real GitHub Issues, or defect proof.
 
 AI errors fell into three main categories:
 
-\begin{enumerate}[leftmargin=*, label=\arabic*.]
+\begin{enumerate}[leftmargin=*, itemsep=4pt]
   \item \textbf{Over-inference:} When job descriptions were ambiguous, AI inferred AI skills for generic automation roles or interpreted undisclosed salaries without sufficient basis.
-  \item \textbf{Representation bias:} AI's training skews toward web/software QA patterns, so the initial mindmap omitted data testing, design verification, device/mobile QA, and AI-agent safety. The student confirmed these omissions as valid after comparing against the 10 collected jobs.
-  \item \textbf{Untested physical states:} For the air-conditioner remote, AI generated well-structured button-press test cases but overlooked physical preconditions such as the unit being powered off (TC-16), mode-transition side effects (TC-17), and configuration-lock behaviour under Baby Care (TC-18).
+  \item \textbf{Representation bias:} AI training skews toward web/software QA patterns, so the initial mindmap omitted data testing, design verification, device/mobile QA, and AI-agent safety. The student confirmed these omissions as valid after cross-referencing the 10 collected jobs.
+  \item \textbf{Untested physical states:} For the air-conditioner remote, AI generated well-structured button-press test cases but overlooked physical preconditions such as the unit being powered off (TC-16), mode-transition side effects on fan speed (TC-17), and configuration-lock behaviour under Baby Care (TC-18).
 \end{enumerate}
 
-\textbf{Lesson learned:} AI should not be treated as the final source of truth. The correct workflow is: let AI draft, separate AI output from primary evidence, cross-reference against screenshots/links/real hardware, record audit verdicts, and only conclude Pass/Fail/defect upon real-world observation. AI accelerates the process; quality assurance and academic integrity remain the student's responsibility.
+\begin{infobox}
+\textbf{Lesson Learned:} AI must not be treated as the final source of truth. The correct workflow is: \emph{let AI draft $\to$ separate AI output from primary evidence $\to$ cross-reference against screenshots/links/real hardware $\to$ record audit verdicts $\to$ conclude Pass/Fail/defect only upon real-world observation.} AI accelerates the process; quality assurance and academic integrity remain the student's responsibility.
+\end{infobox}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Mandatory Disclosure}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-\begin{quote}
-\textit{Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, GitHub Issue draft text, draft report sections, and the English LaTeX report draft were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote air-conditioner test cases. I added student-found edge cases TC-16, TC-17, and TC-18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. I used Claude with the prompt ``cho toi ban latex bang tieng anh dua tren noi dung tren'' to draft an English LaTeX version from my existing report content. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in \texttt{doc/md/AI Audit/01\_AI-Audit-Report.md}. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence.}
-\end{quote}
+\begin{mdframed}[linecolor=RuleGray, backgroundcolor=gray!5, linewidth=1pt,
+  innerleftmargin=12pt, innerrightmargin=12pt, innertopmargin=10pt, innerbottommargin=10pt]
+\itshape
+Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, main report, \LaTeX{} translation draft, GitHub Issue draft text, and draft report sections were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote air-conditioner test cases. I added student-found edge cases TC-16, TC-17, and TC-18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in \texttt{doc/md/AI Audit/01\_AI-Audit-Report.md}. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence.
+\end{mdframed}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Privacy and Responsible AI Use}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-\begin{itemize}[leftmargin=*]
+\begin{itemize}[leftmargin=*, itemsep=4pt]
   \item[$\checkmark$] The assignment permits AI use under an Open policy, with mandatory declaration.
   \item[$\checkmark$] All key prompts are logged in \texttt{appendixA-prompt-log.md}.
   \item[$\checkmark$] Every AI-assisted artifact is listed in the AI Audit Report.
   \item[$\checkmark$] AI was not used to generate job screenshots, device photos with student ID, test videos, actual results, or defect evidence.
-  \item[$\checkmark$] AI-assisted GitHub Issue drafts are only local draft text; real issues and the username screenshot must be created and verified manually by the student.
+  \item[$\checkmark$] GitHub Issue drafts assisted by AI are draft text only; real issues and username screenshots must be created/verified manually.
   \item[$\checkmark$] All unverifiable fields are explicitly marked \texttt{Not disclosed} or \texttt{Not visible}.
-  \item[$\checkmark$] Final checks for YouTube video access, source links, screenshot account names, and GitHub Issues are pending before submission.
+  \item[$\checkmark$] Final checks for YouTube video access, source links, screenshot account names, and GitHub Issues are required before submission.
 \end{itemize}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Self-Assessment}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-\begin{table}[h!]
-\centering
-\begin{tabularx}{\textwidth}{L{2cm} X C{2cm} C{2cm} X}
+\begin{longtable}{@{} >{\centering\arraybackslash}p{1cm} >{\raggedright\arraybackslash}p{4.8cm} >{\centering\arraybackslash}p{1.3cm} >{\centering\arraybackslash}p{1.3cm} >{\raggedright\arraybackslash}p{5.2cm} @{}}
 \toprule
-\textbf{Item} & \textbf{Rubric Area} & \textbf{Max} & \textbf{Self} & \textbf{Note} \\
+\textbf{\#} & \textbf{Item} & \textbf{Max} & \textbf{Self} & \textbf{Notes} \\
 \midrule
-1 & Job Market 2026+ & 40 & 38 & 10 jobs, screenshots, sources, CSV, and AI impact are included; salary/not-disclosed fields and screenshots need a final manual check. \\
-2 & Software Defects 2022--2026 & 20 & 20 & 20 public defects with source, severity, consequence, remediation, and AI bias/hallucination note. \\
-3 & Physical-product test design & 25 & 22 & Device photo, 18 test cases, 5 videos, GitHub Issues, and username screenshots are included; main risk is only 4 confirmed defects instead of the target $\geq$5. \\
-AI-1 & AI Audit Report & 8 & 8 & AI Audit Report is included. \\
-AI-2 & AI Critique + Disclosure & 4 & 4 & Critique and mandatory disclosure are included. \\
-AI-3 & AI Checklist + anti-cheat artifacts & 3 & 3 & Checklist, privacy checklist, prompt log, and real evidence artifacts are included. \\
+\endfirsthead
+\toprule
+\textbf{\#} & \textbf{Item} & \textbf{Max} & \textbf{Self} & \textbf{Notes} \\
 \midrule
-\textbf{Total} & & \textbf{100} & \textbf{95} & \textbf{Proposed self-score: 95 / 100.} \\
+\endhead
 \bottomrule
-\end{tabularx}
-\end{table}
+\endfoot
+1 & Job Market 2026+ & 40 & 38 & 10 jobs, screenshots, sources, CSV, AI impact; salary and screenshot items need one final check. \\[3pt]
+2 & Software Defects 2022--2026 & 20 & 20 & 20 public defects with sources, severity, consequences, remediation, and AI bias/hallucination notes. \\[3pt]
+3 & Physical-product test design & 25 & 22 & Device, photo, 18 test cases, 5 videos, GitHub Issues with username screenshot; primary risk: only 4 confirmed defects vs.\ $\geq$5 target. \\[3pt]
+AI-1 & AI Audit Report & 8 & 8 & AI Audit Report present; 19 AI-assisted artifacts logged. \\[3pt]
+AI-2 & AI Critique + Disclosure & 4 & 4 & Critique, mandatory disclosure, and AI declaration complete. \\[3pt]
+AI-3 & AI Checklist + Anti-cheat artifacts & 3 & 3 & Checklist, privacy checklist, prompt log, real photo/video/screenshot evidence all present. \\
+\midrule
+\multicolumn{2}{@{}l}{\cellcolor{TableHeader}\textbf{Total}} & \cellcolor{TableHeader}\textbf{100} & \cellcolor{TableHeader}\textbf{95} & \cellcolor{TableHeader}\textbf{Proposed self-score: 95 / 100} \\
+\bottomrule
+\end{longtable}
 
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 \section{Declaration and Signature}
-% ============================================================
+% ══════════════════════════════════════════════════════════════════════════════
 
-I hereby declare that all prohibited evidence -- including job posting screenshots with account name, device photos with student ID, test videos, actual results, and defect evidence -- was not generated by AI. All AI-assisted sections have been declared in the AI Audit Report and Appendix~A Prompt Log.
+I hereby declare that all prohibited evidence --- including job posting screenshots with account name, device photos with student ID, test videos, actual results, and defect evidence --- was \textbf{not} generated by AI. All AI-assisted sections have been declared in the AI Audit Report and Appendix~A Prompt Log.
 
 \vspace{1.5cm}
 
 \begin{table}[h!]
 \centering
-\begin{tabularx}{\textwidth}{L{4cm} X}
+\begin{tabularx}{\textwidth}{@{} L{4cm} X @{}}
 \toprule
+\rowcolor{TableHeader}
 \textbf{Field} & \textbf{Value} \\
 \midrule
-Full Name   & Trần Hải Đức \\
+Full Name   & Tran Hai Duc \\
+\rowcolor{TableAlt}
 Student ID  & 23127173 \\
 Date Signed & 2026-05-31 \\
-Signature   & \textit{Trần Hải Đức} \\
+\rowcolor{TableAlt}
+Signature   & \textit{Tran Hai Duc} \\
 \bottomrule
 \end{tabularx}
 \end{table}
