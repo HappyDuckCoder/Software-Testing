@@ -688,8 +688,83 @@ G9.3 -- Analyse & Analyse AI output and find $\geq$3 edge cases that AI missed. 
 In the mindmap review, the initial AI output omitted: Data Test Engineer, Design Verification, Device/Mobile QA, and the distinction between AI-assisted QA and AI/LLM system testing. The student confirmed these omissions as valid deficiencies after cross-referencing all 10 jobs from Requirement 1 and produced a corrected mindmap.
 
 % ══════════════════════════════════════════════════════════════════════════════
-\section{AI Audit Summary}
+\section{AI Audit Report -- Full Content}
 % ══════════════════════════════════════════════════════════════════════════════
+
+\subsection{Student and AI-use Information}
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{@{} L{5cm} X @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{Field} & \textbf{Value} \\
+\midrule
+Student name & Tran Hai Duc \\
+\rowcolor{TableAlt}
+Student ID & 23127173 \\
+Assignment & HW01-AI \\
+\rowcolor{TableAlt}
+Updated date & 2026-05-31 \\
+AI tools used & Codex / ChatGPT; Claude; Pandoc for TeX conversion \\
+\rowcolor{TableAlt}
+AI usage policy & Open, mandatory disclosure and audit required \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Audit Table}
+
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{} C{0.6cm} L{2.8cm} L{3.1cm} C{2.7cm} L{4.8cm} @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{\#} & \textbf{Prompt / Tool} & \textbf{AI Output} & \textbf{Verdict} & \textbf{Reason and Student Verification} \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{TableHeader}
+\textbf{\#} & \textbf{Prompt / Tool} & \textbf{AI Output} & \textbf{Verdict} & \textbf{Reason and Student Verification} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Codex / ChatGPT, 2026-05-28: read AI templates, job links, screenshots, update CSV, Requirement 1, AI Audit, policies. & Initial drafts for job Markdown files, job summary CSV, Requirement 1, and AI Audit. & \incompl{} & Needed comparison with real screenshots and job descriptions. Student later corrected links, screenshots, job details, and salary notes. \\[3pt]
+\rowcolor{TableAlt}
+2 & Codex / ChatGPT with web crawl, 2026-05-28: crawl/search job details and update Requirement 1. & Public job detail crawl/search and dataset/report update. & \incompl{} & Public pages may differ from screenshots or LinkedIn view. Student manually reviewed and edited the 10 job files. \\[3pt]
+3 & Codex / ChatGPT, 2026-05-28: reformat the 10 job-id files, summary, Requirement 1, and audit. & Reformatted 10 job Markdown files, regenerated CSV, shortened Requirement 1, updated audit/disclosure/prompt log. & \incompl{} & AI helped structure JD data, but student must verify screenshots, posting date, salary, and link fields. \\[3pt]
+\rowcolor{TableAlt}
+4 & Codex / ChatGPT with web search, 2026-05-28: do Requirement 2 and audit. & 20 software defects from 2022--2026 with source, description, severity, consequence, fix, and AI bias/hallucination note. & \incompl{} & Incidents/advisories must be checked against primary sources to avoid wrong year, severity, or cause. \\[3pt]
+5 & Codex / ChatGPT, 2026-05-31: do Requirement 3 for the air-conditioner remote and check policy. & Test-design draft for Casper remote: device declaration, 15 test cases, video suggestions, defect candidates, and AI-missed edge cases. & \incompl{} & AI cannot replace testing on the physical device and cannot create prohibited evidence such as photos, videos, or real results. \\[3pt]
+\rowcolor{TableAlt}
+6 & Codex / ChatGPT, 2026-05-31: add device information: Casper, Remote U25 Series, device photo. & Updated Requirement 3 and device info with brand/model/photo; marked year and serial as not visible. & \incompl{} & AI only inserted information provided by the student; no serial/year/actual result/video was fabricated. \\[3pt]
+7 & Codex / ChatGPT, 2026-05-31: add TC16--TC18 student-found edge cases. & Added TC16--TC18 as official edge cases, kept TC11--TC15 as normal test cases, updated actual/verdict. & \incompl{} & Actual results for TC16--TC18 came from student observation; AI only formatted them. \\[3pt]
+\rowcolor{TableAlt}
+8 & Codex / ChatGPT, 2026-05-31: update Requirement 3 with YouTube links. & Inserted 5 YouTube Shorts links for TC-01, TC-02, TC-03, TC-05, and TC-18. & \incompl{} & AI inserted links supplied by the student but did not verify duration, voice, or accessibility of each video. \\[3pt]
+9 & Codex / ChatGPT, 2026-05-31: rewrite defects from failed cases. & Rewrote defect log as 4 confirmed defects from TC-08, TC-13, TC-14, and TC-16. & \incompl{} & AI converted failed test cases into structured defect reports; it did not invent a fifth defect. \\[3pt]
+\rowcolor{TableAlt}
+10 & Codex / ChatGPT, 2026-05-31: review Requirement 1 and create checklist. & Created checklist for Requirement 1: files, screenshots, CSV, report, salary, AI impact, and final verification items. & \incompl{} & AI can check text/files but cannot visually guarantee every screenshot contains account name/date unless manually reviewed. \\[3pt]
+11 & Codex / ChatGPT, 2026-05-31: extend checklist for Requirement 2 and 3. & Expanded checklist with Requirement 2 and Requirement 3 compliance, evidence, and unresolved risks. & \incompl{} & Student still must manually verify videos, YouTube access, screenshots, and GitHub Issues. \\[3pt]
+\rowcolor{TableAlt}
+12 & Codex / ChatGPT, 2026-05-31: add AI Mindmap Review. & Created AI mindmap review with baseline AI output, 4 AI omissions/errors confirmed by student, corrected mindmap, and G9.1/G9.3 mapping. & \incompl{} & Student must ensure the critique reflects their own comparison with the 10 job postings. \\[3pt]
+13 & Codex / ChatGPT, 2026-05-31: create final main report from Requirements 1--3 and audit files. & Drafted main report with student information, instructors, R1/R2/R3 summary, AI CLO, audit summary, critique, disclosure, self-assessment, and signature. & \incompl{} & Main report is a synthesis; evidence and links still require final student verification. \\[3pt]
+\rowcolor{TableAlt}
+14 & Codex / ChatGPT, 2026-05-31: rewrite Requirement 1/2/3 with Vietnamese accents. & Rewrote the three requirement Markdown files with Vietnamese accents while preserving IDs, links, and technical terms. & \incompl{} & Student must review that accent conversion did not change technical meaning, verdicts, severity, salary, or sources. \\[3pt]
+15 & Claude, 2026-05-31: generate English LaTeX from Markdown report. & Produced/proposed an English LaTeX report draft from the Markdown main report. & \incompl{} & Translation/conversion may lose paths, alter meaning, or desynchronise audit and defect counts. \\[3pt]
+\rowcolor{TableAlt}
+16 & Codex / ChatGPT, 2026-05-31: create local GitHub Issue drafts for confirmed defects. & Created four local issue drafts and \texttt{github-issues-links.md}; updated reports/audit to note real GitHub Issues were still required. & \incompl{} & Local drafts are not real GitHub Issues and cannot replace username screenshots. \\[3pt]
+17 & Codex / ChatGPT, 2026-05-31: update after real GitHub Issue screenshots were added. & Updated links, defect drafts, Requirement 3, checklist, main report, and audit for issues \#1--\#4 in \texttt{HappyDuckCoder/Software-Testing}. & \incompl{} & AI only read file names/observed screenshots; student must keep original screenshots and ensure repo access remains valid. \\[3pt]
+\rowcolor{TableAlt}
+18 & Codex / ChatGPT, 2026-05-31: embed full Requirement 1/2/3 content into main report. & Added full R1, R2, R3 content to the Markdown main report: job tables, AI impact, 20 defects, 18 test cases, videos, defects, edge cases, policy, GitHub Issues. & \incompl{} & AI only merged existing repository content; student must check paths, tables, Vietnamese text, and PDF readability. \\[3pt]
+19 & Codex / ChatGPT + Pandoc, 2026-05-31: synchronise TeX/PDF from Markdown after full R1/R2/R3 embedding. & Regenerated TeX and built PDF from the Markdown main report. & \incompl{} & Pandoc converts format only; student must inspect layout, page breaks, links, fonts, and wide tables. \\[3pt]
+\rowcolor{TableAlt}
+20 & Codex / ChatGPT + Pandoc, 2026-05-31: add full AI Audit to main report, not only summary; update Markdown and LaTeX without PDF build. & Embedded full AI Audit Report, AI Critique, Mandatory Disclosure, and Privacy Checklist into main report; synchronised LaTeX content without rebuilding PDF. & \incompl{} & AI only merged existing audit content and TeX text; student must review headings, long tables, and disclosure visibility. \\
+\end{longtable}
+}
+
+\subsection{AI Accuracy Summary}
 
 \begin{table}[h!]
 \centering
@@ -698,23 +773,27 @@ In the mindmap review, the initial AI output omitted: Data Test Engineer, Design
 \rowcolor{TableHeader}
 \textbf{Metric} & \textbf{Result} \\
 \midrule
-Total AI-generated artifacts audited & 19 \\
+Total AI-generated artifacts audited & 20 \\
 \rowcolor{TableAlt}
 VALID & 0 \\
 INVALID & 0 \\
 \rowcolor{TableAlt}
-INCOMPLETE & 19 \\
+INCOMPLETE & 20 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-All AI-generated artifacts are marked \incompl{} because AI was used only to create drafts, standardise formatting, aggregate data, and offer suggestions. The student must verify every artifact against primary evidence: job screenshots, source links, videos, device photos, actual results, and defect evidence.
+All AI-supported artifacts are marked \incompl{} because AI was used for drafting, formatting, translation, conversion, aggregation, and suggestions only. The student remains responsible for verifying primary evidence: job screenshots, source links, videos, device photo, actual results, GitHub Issues, username screenshots, and defect evidence.
+
+\subsection{When AI Should and Should Not Be Used}
+
+AI is suitable for standardising format, summarising long job descriptions, detecting missing fields, suggesting test ideas, and turning rough observations into structured tables. AI must not be used to create or replace original evidence such as screenshots, account names, posting dates, salary evidence, source links, device photos, test videos, actual results, GitHub Issues screenshots, or defect proof. For HW01, AI is an editorial/checking assistant; the student is responsible for source verification, real-device testing, and final submission integrity.
 
 % ══════════════════════════════════════════════════════════════════════════════
-\section{AI Critique}
+\section{AI Critique -- Full Content}
 % ══════════════════════════════════════════════════════════════════════════════
 
-In HW01, AI was most useful in an editorial and structural role: standardising 10 JDs from Requirement 1 into Markdown/CSV, aggregating the 20 software defects for Requirement 2, proposing test cases for the air-conditioner remote in Requirement 3, scaffolding the G9.1 mindmap, converting defect logs into GitHub Issue drafts, updating the report after the student added real GitHub Issue screenshots, embedding full Requirement 1/2/3 content into the main report, and synchronising the \LaTeX{}/PDF from Markdown. Nevertheless, the audit shows all 19 artifacts should be considered \textbf{INCOMPLETE} until primary evidence is verified by the student. AI can write coherently, but it cannot view screenshots, guarantee link validity, run tests on real hardware, or substitute for prohibited evidence such as device photos, videos, actual results, real GitHub Issues, or defect proof.
+In HW01, AI was most useful in an editorial and structural role: standardising 10 JDs from Requirement 1 into Markdown/CSV, aggregating the 20 software defects for Requirement 2, proposing test cases for the air-conditioner remote in Requirement 3, scaffolding the G9.1 mindmap, converting defect logs into GitHub Issue drafts, updating the report after the student added real GitHub Issue screenshots, embedding full Requirement 1/2/3 content into the main report, synchronising the \LaTeX{}/PDF from Markdown, and embedding full AI Audit content into the main report instead of leaving only a summary. Nevertheless, the audit shows all 20 artifacts should be considered \textbf{INCOMPLETE} until primary evidence is verified by the student. AI can write coherently, but it cannot view screenshots, guarantee link validity, run tests on real hardware, or substitute for prohibited evidence such as device photos, videos, actual results, real GitHub Issues, or defect proof.
 
 AI errors fell into three main categories:
 
@@ -729,7 +808,7 @@ AI errors fell into three main categories:
 \end{infobox}
 
 % ══════════════════════════════════════════════════════════════════════════════
-\section{Mandatory Disclosure}
+\section{Mandatory Disclosure -- Full Content}
 % ══════════════════════════════════════════════════════════════════════════════
 
 \begin{mdframed}[linecolor=RuleGray, backgroundcolor=gray!5, linewidth=1pt,
@@ -738,19 +817,63 @@ AI errors fell into three main categories:
 Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, main report, \LaTeX{} translation draft, GitHub Issue draft text, and draft report sections were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote air-conditioner test cases. I added student-found edge cases TC-16, TC-17, and TC-18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in \texttt{doc/md/AI Audit/01\_AI-Audit-Report.md}. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence.
 \end{mdframed}
 
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{@{} L{4cm} X @{}}
+\toprule
+\rowcolor{TableHeader}
+\textbf{Field} & \textbf{Value} \\
+\midrule
+Full name & Tran Hai Duc \\
+\rowcolor{TableAlt}
+Student ID & 23127173 \\
+Assignment & HW01-AI \\
+\rowcolor{TableAlt}
+Date & 2026-05-31 \\
+Signature & Tran Hai Duc \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 % ══════════════════════════════════════════════════════════════════════════════
-\section{Privacy and Responsible AI Use}
+\section{AI Privacy and Responsible Use Checklist -- Full Content}
 % ══════════════════════════════════════════════════════════════════════════════
 
+\subsection{Before Using AI}
+
 \begin{itemize}[leftmargin=*, itemsep=4pt]
-  \item[$\checkmark$] The assignment permits AI use under an Open policy, with mandatory declaration.
-  \item[$\checkmark$] All key prompts are logged in \texttt{appendixA-prompt-log.md}.
-  \item[$\checkmark$] Every AI-assisted artifact is listed in the AI Audit Report.
-  \item[$\checkmark$] AI was not used to generate job screenshots, device photos with student ID, test videos, actual results, or defect evidence.
-  \item[$\checkmark$] GitHub Issue drafts assisted by AI are draft text only; real issues and username screenshots must be created/verified manually.
-  \item[$\checkmark$] All unverifiable fields are explicitly marked \texttt{Not disclosed} or \texttt{Not visible}.
-  \item[$\checkmark$] Final checks for YouTube video access, source links, screenshot account names, and GitHub Issues are required before submission.
+  \item[$\checkmark$] Confirmed the assignment permits AI use under an Open policy with mandatory disclosure.
+  \item[$\checkmark$] Read the AI Audit Report requirement in \texttt{HW1/requirement/HW1-requirement.md}.
+  \item[$\checkmark$] Understood prohibited AI-generated artifacts: job screenshots with account name, device photo with student ID, test videos, GitHub Issues screenshots with username, and prompt-log timestamps.
 \end{itemize}
+
+\subsection{While Using AI}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+  \item[$\checkmark$] Did not input sensitive third-party personal data.
+  \item[$\checkmark$] Did not ask AI to create fake screenshots, fake links, or fake evidence.
+  \item[$\checkmark$] GitHub Issue drafts assisted by AI are only draft text; real issues and username screenshots were created/verified manually.
+  \item[$\checkmark$] Recorded main prompts and outputs in the AI Audit Report.
+  \item[$\checkmark$] Marked AI-inferred parts when screenshots did not contain enough detail.
+  \item[$\checkmark$] Did not ask AI to create the remote + student ID photo, videos, actual results, or defect evidence for Requirement 3.
+\end{itemize}
+
+\subsection{Before Submission}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+  \item[$\checkmark$] Every AI-supported artifact has an audit row.
+  \item[$\checkmark$] Unverified fields are marked as \texttt{Not disclosed}, \texttt{Not visible}, or data-quality notes.
+  \item[$\checkmark$] The 10 job-id files are standardised from QA/QC/Tester/Verification/Data Test job descriptions.
+  \item[$\checkmark$] Requirement 3 includes the real remote + student ID photo in \texttt{requirement3/devices/devices.jpg}.
+  \item[$\checkmark$] Requirement 3 includes 5 video links in \texttt{requirement3/video-youtube-test/link-video.md}.
+  \item[$\checkmark$] Requirement 3 includes real GitHub Issues and screenshots showing the GitHub username.
+  \item[$\square$] Student should still verify video access, source links, screenshot account names, and final PDF layout before submission.
+  \item[$\square$] Student should fill class/faculty information if the official submission form requires it.
+\end{itemize}
+
+\subsection{Final Responsibility Statement}
+
+Final responsibility for accuracy, originality, evidence authenticity, and academic integrity belongs to the student. Any undeclared AI use is considered an academic integrity violation.
 
 % ══════════════════════════════════════════════════════════════════════════════
 \section{Self-Assessment}
@@ -770,7 +893,7 @@ Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test
 1 & Job Market 2026+ & 40 & 38 & 10 jobs, screenshots, sources, CSV, AI impact; salary and screenshot items need one final check. \\[3pt]
 2 & Software Defects 2022--2026 & 20 & 20 & 20 public defects with sources, severity, consequences, remediation, and AI bias/hallucination notes. \\[3pt]
 3 & Physical-product test design & 25 & 22 & Device, photo, 18 test cases, 5 videos, GitHub Issues with username screenshot; primary risk: only 4 confirmed defects vs.\ $\geq$5 target. \\[3pt]
-AI-1 & AI Audit Report & 8 & 8 & AI Audit Report present; 19 AI-assisted artifacts logged. \\[3pt]
+AI-1 & AI Audit Report & 8 & 8 & AI Audit Report present; 20 AI-assisted artifacts logged. \\[3pt]
 AI-2 & AI Critique + Disclosure & 4 & 4 & Critique, mandatory disclosure, and AI declaration complete. \\[3pt]
 AI-3 & AI Checklist + Anti-cheat artifacts & 3 & 3 & Checklist, privacy checklist, prompt log, real photo/video/screenshot evidence all present. \\
 \midrule

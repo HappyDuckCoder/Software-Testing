@@ -35,15 +35,16 @@
 | Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Anh GitHub Issues nam trong `github-issues/screenshot-defect`; sua noi dung va bo sung audit." | Cap nhat `github-issues-links.md`, 4 draft defect, `requirement3.md`, checklist, main report Markdown/LaTeX va audit de ghi nhan GitHub Issues that trong repo `HappyDuckCoder/Software-Testing`, issue `#1` den `#4`, va screenshot `list-defect.png`, `D01.png` den `D04.png`. | INCOMPLETE | AI chi doc ten file/quan sat screenshot de cap nhat tai lieu. AI khong tao GitHub Issues that, khong tao/chinh sua screenshot, va khong the dam bao link con truy cap duoc neu repo private hoac quyen thay doi sau nay. | Sinh vien can giu screenshot goc trong `screenshot-defect/`, dam bao repo/issue truy cap duoc theo yeu cau nop bai, va khong dung AI tao evidence. |
 | Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Trong main report toi can the hien day du noi dung cua ca requirement1, requirement2, requirement3, khong chi nhac den; bo sung audit." | Cap nhat `doc/md/main-report.md` de nhung day du noi dung tu `requirement1.md`, `requirement2.md`, `requirement3.md`: bang 10 job, mo ta cong viec/skills, AI impact, 20 software defects, thong ke, 18 test case, video, defect log, edge cases, doi chieu policy va GitHub Issues. | INCOMPLETE | AI chi ho tro ghep va cau truc lai noi dung da co san trong repo. Viec nay khong thay the viec sinh vien xac minh screenshot, source link, video, actual result, GitHub Issues va cac bang chung goc. | Sinh vien can doc lai main report sau khi nhung noi dung day du de dam bao khong bi lech duong dan, mat bang, sai dau tieng Viet, hoac lap heading gay kho doc trong PDF. |
 | Tool: Codex / ChatGPT + Pandoc. Thoi gian: 2026-05-31. Prompt/task: Dong bo `doc/pdf/main-report.tex` va `doc/pdf/main-report.pdf` tu `doc/md/main-report.md` sau khi main report da nhung day du Requirement 1/2/3. | Tao lai `doc/pdf/main-report.tex` va build `doc/pdf/main-report.pdf` bang Pandoc/XeLaTeX tu Markdown moi. | INCOMPLETE | Pandoc chi chuyen doi dinh dang, khong xac minh noi dung. Bang dai co the can sinh vien mo PDF kiem tra lai layout, page break, link, font va viec bang co bi tran trang hay khong. | Sinh vien can mo file PDF cuoi cung de kiem tra hinh thuc truoc khi nop; neu rubric yeu cau format rieng, can chinh lai style PDF. |
+| Tool: Codex / ChatGPT + Pandoc. Thoi gian: 2026-05-31. Prompt: "Toi muon main report phai co day du AI audit chu khong summary; khong can build PDF, bo sung MD sau do bo sung LaTeX." | Cap nhat `doc/md/main-report.md` de nhung day du 4 artifact AI Audit: `01_AI-Audit-Report.md`, `02_AI-Critique.md`, `03_Mandatory-Disclosure.md`, `04_AI-Privacy-Checklist.md`; sau do dong bo `doc/pdf/main-report.tex` tu Markdown, khong build PDF. | INCOMPLETE | AI chi ghep lai noi dung audit da co san vao main report va sinh TeX. Sinh vien van can doc lai main report/TeX de dam bao heading, bang dai va noi dung disclosure hien dung. | Sinh vien can nop kem cac file audit goc va main report da nhung full audit; neu export PDF sau do thi can kiem tra layout lai. |
 
 ## 3. Tong ket do chinh xac AI
 
 | Chi so | So luong | Ti le |
 | --- | --- | --- |
-| Tong artifact AI sinh da audit | 19 | 100% |
+| Tong artifact AI sinh da audit | 20 | 100% |
 | VALID | 0 | 0% |
 | INVALID | 0 | 0% |
-| INCOMPLETE | 19 | 100% |
+| INCOMPLETE | 20 | 100% |
 
 ## 4. Ket luan - khi nao nen / khong nen dung AI?
 

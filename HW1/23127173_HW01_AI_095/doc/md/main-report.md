@@ -277,39 +277,150 @@ File `github-issues/github-issues-links.md` đã ghi link issue thật trong rep
 
 Trong mindmap review, AI output ban dau bo sot Data Test Engineer, Design Verification, Device/Mobile QA va phan biet AI-assisted QA voi AI/LLM system testing. Sinh vien da confirm cac loi/sot thieu nay sau khi doi chieu 10 job Requirement 1 va viet ban mindmap da sua.
 
-## 7. AI Audit Summary
+## 7. AI Audit Report - Nội dung đầy đủ
 
-| Chi so | Ket qua |
+Phần này chép đầy đủ nội dung từ doc/md/AI Audit/01_AI-Audit-Report.md để main report tự chứa AI Audit Report, không chỉ tóm tắt.
+
+### AI Audit Report - HW01
+
+#### 1. Thong tin sinh vien
+
+| Muc | Gia tri |
 | --- | --- |
-| Tong artifact AI sinh da audit | 19 |
-| VALID | 0 |
-| INVALID | 0 |
-| INCOMPLETE | 19 |
+| Ho ten sinh vien | Duc Hai |
+| MSSV | 23127173 |
+| Lop / Khoa | Chua dien |
+| Ma bai tap | HW01-AI |
+| Ngay cap nhat | 2026-05-31 |
+| Cong cu AI da dung | Codex / ChatGPT; Claude |
+| Co dung AI | Co |
 
-Tat ca artifact AI duoc danh dau `INCOMPLETE` vi AI chi duoc dung de tao draft, chuan hoa format, tong hop va goi y. Sinh vien phai xac minh bang chung goc: screenshot job, source link, video, anh thiet bi, actual result va defect evidence.
+#### 2. Bang audit - 1 hang / artifact
 
-## 8. AI Critique
+| (1) Prompt + Cong cu | (2) Output AI | (3) Verdict | (4) Ly do / doi chieu | (5) Ban SV sua |
+| --- | --- | --- | --- | --- |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-28. Prompt: "Doc AI templates, doc link/job md, dien thong tin con thieu, cap nhat CSV, viet Requirement 1, bo sung AI Audit, review theo HW-Policies.md." | Tao ban nhap ban dau cho `job-*.md`, `job-summary.csv`, `requirement1.md`, va AI Audit. | INCOMPLETE | Output ban dau can duoc doi chieu lai voi screenshot va JD that. | Sinh vien da cap nhat lai screenshot/link/JD chi tiet; ban cu khong con la nguon chinh. |
+| Tool: Codex / ChatGPT + web crawl. Thoi gian: 2026-05-28. Prompt: "Sua lai thong tin cac file md, summary, requirement1; scrape/crawl thong tin tu link; bo sung AI audit." | Crawl/search public job detail, cap nhat lai dataset va report. | INCOMPLETE | Crawl ho tro thu thap, nhung LinkedIn/public pages co the khong dong bo voi screenshot. | Sinh vien da tu sua noi dung 10 file job-id bang JD chi tiet; cac canh bao crawl cu da duoc bo. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-28. Prompt: "Toi vua sua lai noi dung cho 10 file job-id; format lai cac job id; hay sua, bo sung, bo cac phan khong can thiet cho job-summary requirement1 va ai audit." | Format lai 10 file `job-*.md`; tao lai `job-summary.csv`; viet gon `requirement1.md`; cap nhat AI audit/disclosure/prompt log. | INCOMPLETE | AI ho tro bien JD thanh bang tom tat va phan tich AI impact. Sinh vien van can xac minh screenshot, ngay dang, va cac muc salary/link truoc khi nop. | Ban nop hien tai giu cac muc khong cong khai la "Not disclosed" va chi ghi salary cu the khi JD co neu. |
+| Tool: Codex / ChatGPT + web search. Thoi gian: 2026-05-28. Prompt: "Doc requirement 2 trong HW1-requirement.md, tra loi cau hoi trong requirement2.md, bo sung AI audit." | Tao bang 20 loi phan mem 2022-2026 trong `requirement2.md`, gom source link, mo ta, severity, hau qua, giai phap va truong hop AI bias/hallucination cho tung loi. | INCOMPLETE | AI co ich de tong hop nhieu nguon, nhung cac incident/security advisory can duoc sinh vien kiem tra lai voi source goc de tranh nham nam, nham severity hoac dien giai sai nguyen nhan. | Sinh vien can review lai 20 source link, bo sung screenshot/source archive neu giang vien yeu cau, va dieu chinh severity neu rubric dung thang diem rieng. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Doc requirement 3 trong HW1-requirement.md, doc cac audit cu va appendix, lam requirement3 cho remote dieu hoa trong anh, bo sung appendix/AI audit, check lai policy." | Tao ban thiet ke `requirement3.md` cho remote dieu hoa: khai bao thiet bi, 15 test case, de xuat 5 video, defect candidates, va 3 edge cases AI de bo sot. | INCOMPLETE | Theo ISTQB, test case can co tien dieu kien, input, steps, expected result, actual result va verdict; AI co the thiet ke test nhap, nhung khong the thay the viec chay tren san pham vat ly. Requirement cung cam AI tao anh thiet bi, video va screenshot minh chung, nen artifact nay chi la ban thiet ke. | Sinh vien da bo sung hang/model va anh remote + the sinh vien; van can quay >= 5 video, cap nhat Actual/Verdict sau khi chay, va chi log defect khi tai hien tren thiet bi that. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Bo sung thong tin thiet bi: hang Casper, model Remote U25 Series, anh minh chung devices.jpg, bo sung AI audit." | Cap nhat `requirement3.md` va `devices-infomation.txt` voi hang/model/anh minh chung; ghi ro nam san xuat va serial chua hien tren evidence. | INCOMPLETE | AI chi ho tro dien thong tin do sinh vien cung cap va doi chieu anh co ton tai; AI khong duoc tu tao serial, nam san xuat, actual result, video, hay defect evidence. | Sinh vien can kiem tra mat sau/nap pin neu muon bo sung serial da che 4 ky tu giua; neu khong thay thi giu "Not visible on provided device evidence". |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "TC11-TC15 khong phai edge case nhung toi van giu lai; bo sung 3 edge case do toi tim ra: TC16, TC17, TC18; bo sung bai lam va AI audit." | Cap nhat `requirement3.md` de giu TC11-TC15 nhu test case thuong, them TC16-TC18 la edge case chinh thuc, ghi actual/verdict, va cap nhat doi chieu requirement. | INCOMPLETE | AI chi ho tro bien ket qua sinh vien cung cap thanh bang test case/audit. Actual result cua TC16-TC18 la quan sat tu sinh vien, khong phai AI tao; can giu video/screenshot chat minh chung de thoa yeu cau edge case AI khong tim duoc. | Sinh vien da thay edge case AI bo sot bang TC16-TC18 va giu TC11-TC15 trong bo test; can bo sung video minh chung va link GitHub Issue/defect neu nop chinh thuc. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Link YouTube toi de o video-youtube-test/link-video.md; hay cap nhat requirement3 va audit." | Doc file `video-youtube-test/link-video.md`, cap nhat bang video minh chung trong `requirement3.md`, va doi trang thai video thanh Dat. | INCOMPLETE | AI chi doc va chen link do sinh vien cung cap; AI khong tao video, khong xac minh duoc thoi luong/voice/noi dung thuc te cua YouTube Shorts neu khong mo tung video. Requirement yeu cau video that co giong noi sinh vien, nen sinh vien phai tu dam bao cac link la YouTube Unlisted/Shorts hop le va moi video <= 60 giay. | Sinh vien da cung cap 5 link cho TC-01, TC-02, TC-03, TC-05 va TC-18 trong `link-video.md`; truoc khi nop can kiem tra quyen truy cap link va screenshot/ghi ro link trong report. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Dua tren cac case Fail, hay viet lai defect, sua bai lam va bo sung AI audit." | Viet lai defect log trong `requirement3.md` thanh 4 defect confirmed dua tren TC-08, TC-13, TC-14 va TC-16; cap nhat muc doi chieu requirement ve so defect. | INCOMPLETE | AI chi ho tro chuyen cac failed test case thanh defect report co Summary, Steps, Expected, Actual, Severity va Status. Do chi co 4 test case Fail trong bang hien tai, AI khong duoc tu tao defect thu 5 de lam dep rubric. | Sinh vien can tao GitHub Issues tu 4 defect confirmed nay; neu muon dat muc tieu >= 5 defect thi can chay them test va chi bo sung defect moi khi co bang chung thuc te. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Review lai Requirement 1 xem toi da lam day du cac yeu cau, co day du file chua, lam checklist vao checklist.md, bo sung audit." | Tao `HW1/23127173/checklist.md` de doi chieu Requirement 1 voi file hien co: 10 job markdown, 10 screenshot, CSV, report tong hop, salary, AI impact va cac viec can tu xac minh. | INCOMPLETE | AI co the kiem tra su ton tai file va noi dung text trong repo, nhung khong the dam bao bang mat thu cong rang moi screenshot deu hien account name/ngay dang ro rang neu khong mo tung anh trong quy trinh nop bai. Checklist vi vay danh dau cac muc can sinh vien tu xac minh lan cuoi. | Sinh vien can dung checklist de mo tung screenshot, kiem tra ngay dang/account name, export PDF va dong goi zip dung policy truoc khi nop. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Lam tuong tu cho Requirement 2 va 3, bo sung checklist va bo sung audit." | Mo rong `HW1/23127173/checklist.md` voi checklist Requirement 2 va Requirement 3, gom noi dung dat/chua dat, file minh chung va viec can lam truoc khi nop. | INCOMPLETE | AI co the doi chieu file text va su ton tai artifact trong repo, nhung khong the tu xac minh noi dung video, giong noi that, quyen truy cap YouTube, hay screenshot chat AI co doc ro neu sinh vien khong kiem tra thu cong. Checklist vi vay giu cac muc nay o trang thai can tu xac minh. | Sinh vien can dung checklist de kiem tra link/video/screenshot, tao GitHub Issues cho defect, va neu can thi chay them test de tim defect thu 5. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Bo sung AI-Mindmap-Review/ai-mindmap-review.md, review lai theo ke hoach do, bo sung checklist va AI audit." | Tao `requirement/requirement1/AI-Mindmap-Review/ai-mindmap-review.md` gom prompt, mindmap AI ban dau, 4 loi/sot thieu do AI tao ra va sinh vien confirm, ban mindmap da sua va mapping G9.1/G9.3; cap nhat checklist va audit. | INCOMPLETE | Artifact nay dap ung G9.1 o muc co cau truc, nhung sinh vien can doc lai va dam bao cac loi/sua doi that su phan anh cach hieu cua minh ve 10 job Requirement 1. AI khong duoc xem la nguon su that cuoi cung cho thi truong viec lam. | Sinh vien giu mindmap da sua, co the dan vao main report/PDF va dung no de giai thich trong oral defense neu bi hoi ve AI CLO. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Dua vao requirement1, requirement2, requirement3, cac file audit; lam ban main report cuoi cung, bo sung audit, ky ten, lay giang vien trong requirement." | Tao `doc/md/main-report.md` gom thong tin sinh vien, giang vien/tro giang, tom tat 3 requirement, AI CLO, AI Audit Summary, Critique, Disclosure, Privacy checklist, Self-assessment va chu ky typed name. | INCOMPLETE | Main report la ban tong hop tu cac artifact da co; AI co the sap xep va bien tap, nhung sinh vien can kiem tra lan cuoi cac bang chung goc, export PDF, dong goi zip va dam bao cac link/video/GitHub Issues truy cap duoc. | Sinh vien da cung cap ho ten va StudentID; ban report co chu ky typed name `Trần Hải Đức` va danh sach giang vien/tro giang lay tu requirement. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Toi can cac file requirement1.md requirement2.md requirement3.md can phai viet co dau." | Viet lai `requirement1.md`, `requirement2.md`, `requirement3.md` bang tieng Viet co dau, giu nguyen ID, link, duong dan artifact va cac thuat ngu ky thuat can thiet. | INCOMPLETE | AI ho tro bien tap ngon ngu va dau tieng Viet, nhung sinh vien can doc lai de dam bao khong lam sai nghia ket qua test, source link, salary, severity, defect hoac verdict. | Sinh vien can review lai 3 file sau khi chuyen co dau, dac biet cac dong Actual/Verdict va defect trong Requirement 3. |
+| Tool: Claude. Thoi gian: 2026-05-31. Prompt: Dán nội dung main report Markdown và yêu cầu "cho tôi bản latex bằng tiếng anh dựa trên nội dung trên". | Claude tạo/đề xuất bản LaTeX tiếng Anh dựa trên `doc/md/main-report.md`. | INCOMPLETE | AI có thể dịch sai thuật ngữ, làm mất đường dẫn artifact, đổi nghĩa verdict, hoặc làm lệch số liệu audit/defect khi chuyển Markdown sang LaTeX tiếng Anh. Bản LaTeX là artifact phái sinh nên vẫn cần audit và review. | Sinh viên cần đối chiếu bản LaTeX với `main-report.md`, kiểm tra tên, StudentID, số artifact audit, defect count, link evidence và nội dung disclosure trước khi dùng để export PDF/nộp. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Tao cac draft Markdown cho GitHub Issues dua tren defect confirmed; bo sung audit, report va noi dung neu can." | Tao 4 draft GitHub Issue local cho D-01 den D-04 va file `github-issues-links.md`; cap nhat `requirement3.md`, `main-report.md`, `main-report.tex`, checklist va audit de ghi ro GitHub Issues/screenshot username la evidence can bo sung. | INCOMPLETE | AI chi chuyen defect log da co thanh ban nhap issue. Cac file local khong phai GitHub Issues that va khong thay the screenshot trang Issues co GitHub username theo requirement. | Sinh vien can tao issue that tren repo GitHub ca nhan, dan URL vao `github-issues/github-issues-links.md`, chup screenshot trang Issues co username, va khong dung AI de tao/chinh sua screenshot evidence. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Anh GitHub Issues nam trong `github-issues/screenshot-defect`; sua noi dung va bo sung audit." | Cap nhat `github-issues-links.md`, 4 draft defect, `requirement3.md`, checklist, main report Markdown/LaTeX va audit de ghi nhan GitHub Issues that trong repo `HappyDuckCoder/Software-Testing`, issue `#1` den `#4`, va screenshot `list-defect.png`, `D01.png` den `D04.png`. | INCOMPLETE | AI chi doc ten file/quan sat screenshot de cap nhat tai lieu. AI khong tao GitHub Issues that, khong tao/chinh sua screenshot, va khong the dam bao link con truy cap duoc neu repo private hoac quyen thay doi sau nay. | Sinh vien can giu screenshot goc trong `screenshot-defect/`, dam bao repo/issue truy cap duoc theo yeu cau nop bai, va khong dung AI tao evidence. |
+| Tool: Codex / ChatGPT. Thoi gian: 2026-05-31. Prompt: "Trong main report toi can the hien day du noi dung cua ca requirement1, requirement2, requirement3, khong chi nhac den; bo sung audit." | Cap nhat `doc/md/main-report.md` de nhung day du noi dung tu `requirement1.md`, `requirement2.md`, `requirement3.md`: bang 10 job, mo ta cong viec/skills, AI impact, 20 software defects, thong ke, 18 test case, video, defect log, edge cases, doi chieu policy va GitHub Issues. | INCOMPLETE | AI chi ho tro ghep va cau truc lai noi dung da co san trong repo. Viec nay khong thay the viec sinh vien xac minh screenshot, source link, video, actual result, GitHub Issues va cac bang chung goc. | Sinh vien can doc lai main report sau khi nhung noi dung day du de dam bao khong bi lech duong dan, mat bang, sai dau tieng Viet, hoac lap heading gay kho doc trong PDF. |
+| Tool: Codex / ChatGPT + Pandoc. Thoi gian: 2026-05-31. Prompt/task: Dong bo `doc/pdf/main-report.tex` va `doc/pdf/main-report.pdf` tu `doc/md/main-report.md` sau khi main report da nhung day du Requirement 1/2/3. | Tao lai `doc/pdf/main-report.tex` va build `doc/pdf/main-report.pdf` bang Pandoc/XeLaTeX tu Markdown moi. | INCOMPLETE | Pandoc chi chuyen doi dinh dang, khong xac minh noi dung. Bang dai co the can sinh vien mo PDF kiem tra lai layout, page break, link, font va viec bang co bi tran trang hay khong. | Sinh vien can mo file PDF cuoi cung de kiem tra hinh thuc truoc khi nop; neu rubric yeu cau format rieng, can chinh lai style PDF. |
+| Tool: Codex / ChatGPT + Pandoc. Thoi gian: 2026-05-31. Prompt: "Toi muon main report phai co day du AI audit chu khong summary; khong can build PDF, bo sung MD sau do bo sung LaTeX." | Cap nhat `doc/md/main-report.md` de nhung day du 4 artifact AI Audit: `01_AI-Audit-Report.md`, `02_AI-Critique.md`, `03_Mandatory-Disclosure.md`, `04_AI-Privacy-Checklist.md`; sau do dong bo `doc/pdf/main-report.tex` tu Markdown, khong build PDF. | INCOMPLETE | AI chi ghep lai noi dung audit da co san vao main report va sinh TeX. Sinh vien van can doc lai main report/TeX de dam bao heading, bang dai va noi dung disclosure hien dung. | Sinh vien can nop kem cac file audit goc va main report da nhung full audit; neu export PDF sau do thi can kiem tra layout lai. |
 
-Trong HW01, AI huu ich nhat o vai tro bien tap va cau truc hoa: no giup chuan hoa 10 JD Requirement 1 thanh Markdown/CSV, tong hop 20 software defects cho Requirement 2, de xuat test case cho remote dieu hoa trong Requirement 3, tao khung mindmap G9.1, chuyen defect log thanh draft GitHub Issues, cap nhat report sau khi sinh vien bo sung screenshot GitHub Issues that, nhung day du noi dung Requirement 1/2/3 vao main report, va dong bo ban TeX/PDF tu Markdown. Tuy nhien, audit cho thay 19/19 artifact deu chi nen xem la **INCOMPLETE** cho den khi sinh vien xac minh bang chung goc. AI co the viet mach lac, nhung khong nhin thay day du screenshot, khong dam bao link con dung, khong tu chay test tren thiet bi that, va khong the tao thay evidence bi cam nhu anh thiet bi, video, actual result, GitHub Issues that hay defect proof.
+#### 3. Tong ket do chinh xac AI
+
+| Chi so | So luong | Ti le |
+| --- | --- | --- |
+| Tong artifact AI sinh da audit | 20 | 100% |
+| VALID | 0 | 0% |
+| INVALID | 0 | 0% |
+| INCOMPLETE | 20 | 100% |
+
+#### 4. Ket luan - khi nao nen / khong nen dung AI?
+
+Nen dung AI de chuan hoa format, rut gon JD dai thanh bang tom tat, phat hien truong thieu, de xuat test idea, va bien test idea thanh bang co cau truc. Khong nen dung AI de tao hoac thay the bang chung goc nhu screenshot, account name, ngay dang tin, muc luong, link job, anh thiet bi, video test, actual result, hoac defect evidence. Voi HW01, AI phu hop lam tro ly bien tap/kiem tra, con sinh vien phai chiu trach nhiem xac minh nguon, chay test tren thiet bi that, va cap nhat ket qua truoc khi nop.
+
+#### 5. Mandatory Disclosure
+
+"Requirement 1 dataset, Requirement 2 defect dataset, Requirement 3 test-design draft, summary tables, CSV, main report, LaTeX translation draft, GitHub Issue draft text, and report sections were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1 and reviewed the generated summaries, salary fields, AI relevance, AI impact analysis, software-defect sources, severity, consequences, fixes, AI bias/hallucination notes, Requirement 3 test ideas, and local GitHub Issue drafts. The screenshots, source links, physical device photo, videos, actual test results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence."
+
+#### 6. Chu ky
+
+| Muc | Gia tri |
+| --- | --- |
+| Ho ten sinh vien | Trần Hải Đức |
+| MSSV | 23127173 |
+| Lop / Khoa | Chua dien |
+| Mon hoc | CS423 / CSC13003 - Kiem chung Phan mem |
+| Giang vien | Dr. Lam Quang Vu; Dr. Tran Duy Hoang; MSc. Tran Thi Bich Hanh; MSc. Truong Phuoc Loc; MSc. Ho Tuan Thanh |
+| Ngay | 2026-05-31 |
+| Chu ky | Trần Hải Đức |
+
+## 8. AI Critique - Nội dung đầy đủ
+
+Phần này chép đầy đủ nội dung từ doc/md/AI Audit/02_AI-Critique.md.
+
+### AI Critique
+
+Trong HW01, AI huu ich nhat o vai tro bien tap va cau truc hoa: no giup chuan hoa 10 JD Requirement 1 thanh Markdown/CSV, tong hop 20 software defects cho Requirement 2, de xuat test case cho remote dieu hoa trong Requirement 3, tao khung mindmap G9.1, chuyen defect log thanh draft GitHub Issues, cap nhat report sau khi sinh vien bo sung screenshot GitHub Issues that, nhung day du noi dung Requirement 1/2/3 vao main report, dong bo ban TeX/PDF tu Markdown, va nhung day du AI Audit vao main report thay vi chi de summary. Tuy nhien, audit cho thay 20/20 artifact deu chi nen xem la **INCOMPLETE** cho den khi sinh vien xac minh bang chung goc. AI co the viet mach lac, nhung khong nhin thay day du screenshot, khong dam bao link con dung, khong tu chay test tren thiet bi that, va khong the tao thay evidence bi cam nhu anh thiet bi, video, actual result, GitHub Issues that hay defect proof.
 
 AI sai chu yeu o ba diem. Thu nhat, AI de suy luan qua muc khi JD khong noi ro, vi du gan nhan AI skill cho automation hoac dien giai salary khong cong khai. Thu hai, AI co bias ve cac mau QA pho bien tren web/software, nen mindmap ban dau bo sot data testing, design verification, device/mobile QA va AI-agent safety; sinh vien da confirm cac sot thieu nay la loi hop le sau khi doi chieu 10 job. Thu ba, voi remote dieu hoa, AI tao test case dep theo nut bam nhung bo qua trang thai vat ly/tien dieu kien nhu may dang tat, chuyen Cool sang Dry, va Baby Care khoa cau hinh.
 
-Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de AI tao draft, tach output AI khoi evidence goc, doi chieu voi screenshot/link/thiet bi that, ghi verdict audit, va chi ket luan Pass/Fail/defect khi co quan sat thuc te. AI tang toc do, nhung trach nhiem chat luong va liem chinh van thuoc ve sinh vien.
+Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de AI tao draft, tach output AI khoi evidence goc, doi chieu voi screenshot/link/thiet bi that/GitHub Issues that, ghi verdict audit, va chi ket luan Pass/Fail/defect khi co quan sat thuc te. AI tang toc do, nhung trach nhiem chat luong va liem chinh van thuoc ve sinh vien.
 
-## 9. Mandatory Disclosure
+## 9. Mandatory Disclosure - Nội dung đầy đủ
 
-"Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, main report, LaTeX translation draft, GitHub Issue draft text, and draft report sections were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote-air-conditioner test cases. I added student-found edge cases TC16, TC17, and TC18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence."
+Phần này chép đầy đủ nội dung từ doc/md/AI Audit/03_Mandatory-Disclosure.md.
 
-## 10. Privacy & Responsible Use
+### Mandatory Disclosure
 
-- [x] Bai tap cho phep dung AI theo policy Open, nhung bat buoc khai bao.
-- [x] Moi prompt chinh da duoc ghi trong `appendixA-prompt-log.md`.
-- [x] Moi artifact AI ho tro da co dong trong AI Audit Report.
-- [x] Khong dung AI tao screenshot job, anh thiet bi + the sinh vien, video test, actual result hoac defect evidence.
-- [x] GitHub Issue drafts do AI ho tro chi la ban nhap; issue that va screenshot username phai do sinh vien tao/kiem tra thu cong.
-- [x] Cac truong chua xac minh duoc duoc ghi ro nhu `Not disclosed` hoac `Not visible`.
-- [x] Can kiem tra lan cuoi quyen truy cap video YouTube, source link, screenshot account name va GitHub Issues truoc khi nop.
+"Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, AI mindmap review, checklist, summary tables, CSV, main report, LaTeX translation draft, GitHub Issue draft text, and draft report sections were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote-air-conditioner test cases. I added student-found edge cases TC16, TC17, and TC18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence."
 
+#### Student confirmation
+
+| Muc | Gia tri |
+| --- | --- |
+| Ho ten sinh vien | Trần Hải Đức |
+| MSSV | 23127173 |
+| Bai tap | HW01-AI |
+| Ngay | 2026-05-31 |
+| Chu ky | Trần Hải Đức |
+
+## 10. AI Privacy & Responsible Use Checklist - Nội dung đầy đủ
+
+Phần này chép đầy đủ nội dung từ doc/md/AI Audit/04_AI-Privacy-Checklist.md.
+
+### AI Privacy & Responsible Use Checklist
+
+#### 1. Truoc khi dung AI
+
+- [x] Da xac nhan bai tap cho phep dung AI o muc Open nhung bat buoc khai bao.
+- [x] Da doc yeu cau AI Audit Report trong `HW1/requirement/HW1-requirement.md`.
+- [x] Hieu artifact khong duoc AI tao: screenshot job posting co account name, anh thiet bi + the sinh vien, video test, GitHub Issues screenshot co username, prompt log timestamp.
+
+#### 2. Trong khi dung AI
+
+- [x] Khong nhap du lieu ca nhan nhay cam cua ben thu ba.
+- [x] Khong yeu cau AI tao screenshot/link/evidence gia.
+- [x] GitHub Issue draft do AI ho tro chi la noi dung nhap; issue that va screenshot username phai do sinh vien tao/kiem tra thu cong.
+- [x] Ghi nhan prompt va output chinh trong AI Audit Report.
+- [x] Danh dau cac phan AI chi co the suy luan khi screenshot khong hien chi tiet day du.
+- [x] Khong yeu cau AI tao anh remote + the sinh vien, video test, actual result, hoac defect evidence cho Requirement 3.
+
+#### 3. Truoc khi nop bai
+
+- [x] Moi artifact AI ho tro da co dong audit.
+- [x] Cac thong tin khong duoc xac minh duoc gan nhan "Not disclosed", "Not visible", hoac "data-quality-note".
+- [x] 10 file job-id da duoc chuan hoa tu JD QA/QC/Tester/Verification/Data Test.
+- [x] Requirement 3: da co anh remote + the sinh vien trong `requirement3/devices/devices.jpg` va da dien hang/model theo thong tin sinh vien cung cap.
+- [x] Requirement 3: da co 5 link video trong `requirement3/video-youtube-test/link-video.md`.
+- [ ] Requirement 3: sinh vien can bo sung serial da che 4 ky tu giua neu tim thay, kiem tra quyen truy cap video, cap nhat cac Actual/Verdict con thieu, va chi log defect khi test that.
+- [ ] Sinh vien can tu dien lop/khoa, chu ky, va bo sung prompt log neu co prompt ngoai phien nay.
+
+#### 4. Cam doan cuoi cung
+
+Trach nhiem cuoi cung ve do chinh xac, tinh nguyen ban, va liem chinh cua bai nop thuoc ve sinh vien. Moi viec dung AI khong khai bao deu bi xem la vi pham liem chinh hoc thuat.
+
+| Muc | Gia tri |
+| --- | --- |
+| Ho ten sinh vien | Trần Hải Đức |
+| MSSV | 23127173 |
+| Mon hoc | CS423 / CSC13003 - Kiem chung Phan mem |
+| Ngay | 2026-05-31 |
+| Chu ky | Trần Hải Đức |
 ## 11. Self-assessment theo rubric
 
 | Muc | Noi dung | Diem toi da | Tu danh gia | Ghi chu |
@@ -317,7 +428,7 @@ Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de 
 | 1 | Job Market 2026+ | 40 | 38 | Da co 10 job, screenshot, source, CSV, AI impact; mot so muc salary/not disclosed va screenshot can tu kiem tra lan cuoi. |
 | 2 | Software Defects 2022-2026 | 20 | 20 | Da co 20 defect cong khai, source, severity, hau qua, giai phap va AI bias/hallucination note. |
 | 3 | Physical-product test design | 25 | 22 | Da co thiet bi, anh, 18 test case, 5 video, GitHub Issues va screenshot username; rui ro chinh la moi co 4 confirmed defects thay vi muc tieu >= 5. |
-| AI-1 | AI Audit Report | 8 | 8 | Da co AI Audit Report va log artifact AI ho tro, tong cong 19 artifact. |
+| AI-1 | AI Audit Report | 8 | 8 | Da co AI Audit Report va log artifact AI ho tro, tong cong 20 artifact. |
 | AI-2 | AI Critique + Disclosure | 4 | 4 | Da co critique, mandatory disclosure va khai bao AI. |
 | AI-3 | AI Checklist + anti-cheat artifacts | 3 | 3 | Da co checklist, privacy checklist, prompt log, anh/video/screenshot evidence that. |
 | Tong |  | 100 | 95 | Tu danh gia de xuat: 95/100. |
@@ -332,4 +443,6 @@ Toi cam doan cac bang chung bi cam AI tao, bao gom screenshot job co account nam
 | Student ID | 23127173 |
 | Ngay ky | 2026-05-31 |
 | Chu ky | Trần Hải Đức |
+
+
 
