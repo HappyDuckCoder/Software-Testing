@@ -1,0 +1,16 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}General Information}{2}{section.1}%
+\contentsline {section}{\numberline {2}Submitted Artifact Summary}{2}{section.2}%
+\contentsline {section}{\numberline {3}Requirement 1 -- QA/QC Job Market 2026+}{3}{section.3}%
+\contentsline {section}{\numberline {4}Requirement 2 -- 20 Software Defects (2022--2026)}{3}{section.4}%
+\contentsline {section}{\numberline {5}Requirement 3 -- Test Cases for a Physical Product}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Device Under Test}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Student-Discovered Edge Cases}{4}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Confirmed Defects}{4}{subsection.5.3}%
+\contentsline {section}{\numberline {6}AI CLO / Bloom-AI Outcomes}{5}{section.6}%
+\contentsline {section}{\numberline {7}AI Audit Summary}{5}{section.7}%
+\contentsline {section}{\numberline {8}AI Critique}{6}{section.8}%
+\contentsline {section}{\numberline {9}Mandatory Disclosure}{6}{section.9}%
+\contentsline {section}{\numberline {10}Privacy and Responsible AI Use}{7}{section.10}%
+\contentsline {section}{\numberline {11}Self-Assessment}{7}{section.11}%
+\contentsline {section}{\numberline {12}Declaration and Signature}{7}{section.12}%

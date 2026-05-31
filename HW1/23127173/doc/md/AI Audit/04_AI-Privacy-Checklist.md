@@ -4,12 +4,13 @@
 
 - [x] Da xac nhan bai tap cho phep dung AI o muc Open nhung bat buoc khai bao.
 - [x] Da doc yeu cau AI Audit Report trong `HW1/requirement/HW1-requirement.md`.
-- [x] Hieu artifact khong duoc AI tao: screenshot job posting co account name, anh thiet bi + the sinh vien, video test, prompt log timestamp.
+- [x] Hieu artifact khong duoc AI tao: screenshot job posting co account name, anh thiet bi + the sinh vien, video test, GitHub Issues screenshot co username, prompt log timestamp.
 
 ## 2. Trong khi dung AI
 
 - [x] Khong nhap du lieu ca nhan nhay cam cua ben thu ba.
 - [x] Khong yeu cau AI tao screenshot/link/evidence gia.
+- [x] GitHub Issue draft do AI ho tro chi la noi dung nhap; issue that va screenshot username phai do sinh vien tao/kiem tra thu cong.
 - [x] Ghi nhan prompt va output chinh trong AI Audit Report.
 - [x] Danh dau cac phan AI chi co the suy luan khi screenshot khong hien chi tiet day du.
 - [x] Khong yeu cau AI tao anh remote + the sinh vien, video test, actual result, hoac defect evidence cho Requirement 3.

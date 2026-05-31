@@ -24,6 +24,8 @@
 | Requirement 3 device evidence | `HW1/23127173/requirement/requirement3/devices/devices.jpg` |
 | Requirement 3 video links | `HW1/23127173/requirement/requirement3/video-youtube-test/link-video.md` |
 | Requirement 3 AI screenshot | `HW1/23127173/requirement/requirement3/screenshot-AI/screenshot-chat-ai.png` |
+| Requirement 3 GitHub Issue drafts | `HW1/23127173/requirement/requirement3/github-issues/` |
+| Requirement 3 GitHub Issues screenshots | `HW1/23127173/requirement/requirement3/github-issues/screenshot-defect/` |
 | AI Audit Report | `HW1/23127173/doc/md/AI Audit/01_AI-Audit-Report.md` |
 | AI Critique | `HW1/23127173/doc/md/AI Audit/02_AI-Critique.md` |
 | Mandatory Disclosure | `HW1/23127173/doc/md/AI Audit/03_Mandatory-Disclosure.md` |
@@ -76,6 +78,7 @@ San pham duoc chon la remote dieu hoa Casper Remote U25 Series. Anh minh chung r
 | So video minh chung | 5 video/link |
 | Edge case AI bo sot | TC-16, TC-17, TC-18 |
 | Defect confirmed | 4 defect tu TC-08, TC-13, TC-14, TC-16 |
+| GitHub Issues | Da co 4 issue that trong repo `HappyDuckCoder/Software-Testing`; co screenshot username trong `github-issues/screenshot-defect/` |
 
 Ba edge case sinh vien tu tim ra:
 
@@ -96,6 +99,8 @@ Defect confirmed:
 
 Luu y: muc tieu requirement la tim >= 5 defect, nhung hien tai chi co 4 confirmed defects. Khong tao defect gia; neu can dat muc tieu >= 5, sinh vien can chay them test va chi bo sung defect khi co bang chung thuc te.
 
+Bug screenshots policy: HW01 khong dung FIT Mantis. Bon defect confirmed da duoc log bang GitHub Issues trong repo ca nhan `HappyDuckCoder/Software-Testing`, tu issue `#1` den `#4`. Link issue duoc ghi trong `requirement/requirement3/github-issues/github-issues-links.md`; screenshot danh sach issue va tung issue nam trong `requirement/requirement3/github-issues/screenshot-defect/` va hien GitHub username `HappyDuckCoder`.
+
 ## 6. AI CLO / Bloom-AI
 
 | CLO | Yeu cau | Bang chung | Trang thai |
@@ -109,16 +114,16 @@ Trong mindmap review, AI output ban dau bo sot Data Test Engineer, Design Verifi
 
 | Chi so | Ket qua |
 | --- | --- |
-| Tong artifact AI sinh da audit | 13 |
+| Tong artifact AI sinh da audit | 17 |
 | VALID | 0 |
 | INVALID | 0 |
-| INCOMPLETE | 13 |
+| INCOMPLETE | 17 |
 
 Tat ca artifact AI duoc danh dau `INCOMPLETE` vi AI chi duoc dung de tao draft, chuan hoa format, tong hop va goi y. Sinh vien phai xac minh bang chung goc: screenshot job, source link, video, anh thiet bi, actual result va defect evidence.
 
 ## 8. AI Critique
 
-Trong HW01, AI huu ich nhat o vai tro bien tap va cau truc hoa: no giup chuan hoa 10 JD Requirement 1 thanh Markdown/CSV, tong hop 20 software defects cho Requirement 2, de xuat test case cho remote dieu hoa trong Requirement 3, va tao khung mindmap G9.1. Tuy nhien, audit cho thay 13/13 artifact deu chi nen xem la **INCOMPLETE** cho den khi sinh vien xac minh bang chung goc. AI co the viet mach lac, nhung khong nhin thay day du screenshot, khong dam bao link con dung, khong tu chay test tren thiet bi that, va khong the tao thay evidence bi cam nhu anh thiet bi, video, actual result hay defect proof.
+Trong HW01, AI huu ich nhat o vai tro bien tap va cau truc hoa: no giup chuan hoa 10 JD Requirement 1 thanh Markdown/CSV, tong hop 20 software defects cho Requirement 2, de xuat test case cho remote dieu hoa trong Requirement 3, tao khung mindmap G9.1, chuyen defect log thanh draft GitHub Issues, va cap nhat report sau khi sinh vien bo sung screenshot GitHub Issues that. Tuy nhien, audit cho thay 17/17 artifact deu chi nen xem la **INCOMPLETE** cho den khi sinh vien xac minh bang chung goc. AI co the viet mach lac, nhung khong nhin thay day du screenshot, khong dam bao link con dung, khong tu chay test tren thiet bi that, va khong the tao thay evidence bi cam nhu anh thiet bi, video, actual result, GitHub Issues that hay defect proof.
 
 AI sai chu yeu o ba diem. Thu nhat, AI de suy luan qua muc khi JD khong noi ro, vi du gan nhan AI skill cho automation hoac dien giai salary khong cong khai. Thu hai, AI co bias ve cac mau QA pho bien tren web/software, nen mindmap ban dau bo sot data testing, design verification, device/mobile QA va AI-agent safety; sinh vien da confirm cac sot thieu nay la loi hop le sau khi doi chieu 10 job. Thu ba, voi remote dieu hoa, AI tao test case dep theo nut bam nhung bo qua trang thai vat ly/tien dieu kien nhu may dang tat, chuyen Cool sang Dry, va Baby Care khoa cau hinh.
 
@@ -126,7 +131,7 @@ Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de 
 
 ## 9. Mandatory Disclosure
 
-"Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, and draft report sections were generated and formatted with assistance from Codex / ChatGPT. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote-air-conditioner test cases. I added student-found edge cases TC16, TC17, and TC18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. The LinkedIn screenshots, source links, physical device photo, videos, actual results, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, or fake evidence."
+"Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, main report, LaTeX translation draft, GitHub Issue draft text, and draft report sections were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote-air-conditioner test cases. I added student-found edge cases TC16, TC17, and TC18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in `doc/md/AI Audit/01_AI-Audit-Report.md`. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence."
 
 ## 10. Privacy & Responsible Use
 
@@ -134,6 +139,7 @@ Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de 
 - [x] Moi prompt chinh da duoc ghi trong `appendixA-prompt-log.md`.
 - [x] Moi artifact AI ho tro da co dong trong AI Audit Report.
 - [x] Khong dung AI tao screenshot job, anh thiet bi + the sinh vien, video test, actual result hoac defect evidence.
+- [x] GitHub Issue drafts do AI ho tro chi la ban nhap; issue that va screenshot username phai do sinh vien tao/kiem tra thu cong.
 - [x] Cac truong chua xac minh duoc duoc ghi ro nhu `Not disclosed` hoac `Not visible`.
 - [x] Can kiem tra lan cuoi quyen truy cap video YouTube, source link, screenshot account name va GitHub Issues truoc khi nop.
 
@@ -144,7 +150,7 @@ Bai hoc la khong dung AI nhu nguon su that cuoi cung. Cach cong tac dung la: de 
 | Requirement 1 | Dat ve noi dung va artifact; can tu kiem tra lai screenshot/account name/ngay dang tin truoc khi nop |
 | Requirement 2 | Dat ve cau truc va noi dung 20 loi; can mo lai source link neu muon xac minh lan cuoi |
 | Requirement 3 | Dat phan lon artifact; rui ro chinh la moi co 4 confirmed defects thay vi >= 5 |
-| AI Audit / Prompt Log / Disclosure | Dat ve cau truc, da co 12 artifact audit |
+| AI Audit / Prompt Log / Disclosure | Dat ve cau truc, da co 17 artifact audit |
 | AI CLO | Dat G9.1 va G9.3 |
 | Diem tu danh gia de xuat | 085/100 |
 

@@ -139,3 +139,12 @@ Requirement 3 da dat phan lon artifact: co anh thiet bi + the sinh vien, hang/mo
 ## 14. Ket luan AI CLO
 
 Sau khi bo sung `AI-Mindmap-Review/ai-mindmap-review.md`, phan AI CLO da co bang chung cho ca G9.1 va G9.3. Diem can nho khi nop la dua file mindmap review vao zip/PDF hoac dan vao main report de nguoi cham thay ro phan CLO nay.
+
+## GitHub Issues / Bug Screenshots - Requirement 3
+
+| Hang muc | Trang thai | Ghi chu |
+| --- | --- | --- |
+| Khong dung FIT Mantis cho HW01 | Dat | Requirement yeu cau dung GitHub Issues thay cho FIT Mantis. |
+| Draft GitHub Issues local cho defect confirmed | Dat | Da co 4 draft trong `requirement/requirement3/github-issues/`. |
+| Link GitHub Issues that | Dat | Da co link issue `#1` den `#4` trong `github-issues/github-issues-links.md`. |
+| Screenshot trang Issues co GitHub username | Dat | Da co `screenshot-defect/list-defect.png` va `D01.png` den `D04.png`, hien username `HappyDuckCoder`. |

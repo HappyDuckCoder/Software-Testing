@@ -1,0 +1,395 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T5]{fontenc}
+\usepackage[vietnamese,english]{babel}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2.5cm
+}
+
+% Colors
+\definecolor{primaryblue}{RGB}{30, 70, 140}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+\definecolor{darkgray}{RGB}{80, 80, 80}
+\definecolor{passgreen}{RGB}{34, 139, 34}
+\definecolor{failred}{RGB}{180, 30, 30}
+\definecolor{warnorng}{RGB}{200, 100, 0}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{\thesection\quad}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{}{0em}{\thesubsection\quad}
+
+% Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small HW01-AI Report \textbar{} Software Testing}
+\lhead{\small Trần Hải Đức -- 23127173}
+\rfoot{\small Page \thepage}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Hyperref setup
+\hypersetup{
+  colorlinks=true,
+  linkcolor=primaryblue,
+  urlcolor=primaryblue,
+  pdfauthor={Trần Hải Đức},
+  pdftitle={HW01-AI Main Report -- Software Testing}
+}
+
+% Table helpers
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand{\pass}{\textcolor{passgreen}{\textbf{Pass}}}
+\newcommand{\fail}{\textcolor{failred}{\textbf{Fail}}}
+\newcommand{\achieved}{\textcolor{passgreen}{\textbf{Achieved}}}
+\newcommand{\partialach}{\textcolor{warnorng}{\textbf{Partially Achieved}}}
+\newcommand{\incomplete}{\textcolor{warnorng}{\textbf{INCOMPLETE}}}
+
+% ============================================================
+\begin{document}
+
+% ============================================================
+% TITLE PAGE
+% ============================================================
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\Huge\bfseries\color{primaryblue} HW01-AI Main Report\par}
+  \vspace{0.5cm}
+  {\large Software Testing\par}
+  \vspace{2cm}
+
+  \begin{tabular}{L{5cm} L{8cm}}
+    \toprule
+    \textbf{Field} & \textbf{Value} \\
+    \midrule
+    Full Name       & Trần Hải Đức \\
+    Student ID      & 23127173 \\
+    Assignment Code & HW01-AI \\
+    Course          & Software Testing \\
+    \multirow{5}{=}{\textbf{Instructors}}
+                    & Dr. Lam Quang Vu \\
+                    & Dr. Tran Duy Hoang \\
+                    & MSc. Tran Thi Bich Hanh \\
+                    & MSc. Truong Phuoc Loc \\
+                    & MSc. Ho Tuan Thanh \\
+    Report Date     & 2026-05-31 \\
+    AI Policy       & Open -- mandatory declaration and AI Audit Report attachment \\
+    \bottomrule
+  \end{tabular}
+
+  \vfill
+  {\small Ho Chi Minh City, May 2026}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{General Information}
+% ============================================================
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{L{4cm} X}
+\toprule
+\textbf{Field} & \textbf{Value} \\
+\midrule
+Full Name       & Trần Hải Đức \\
+Student ID      & 23127173 \\
+Assignment Code & HW01-AI \\
+Course          & Software Testing \\
+Instructors     & Dr. Lam Quang Vu; Dr. Tran Duy Hoang; MSc. Tran Thi Bich Hanh; MSc. Truong Phuoc Loc; MSc. Ho Tuan Thanh \\
+Report Date     & 2026-05-31 \\
+AI Policy       & Open -- mandatory declaration and AI Audit Report attachment \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ============================================================
+\section{Submitted Artifact Summary}
+% ============================================================
+
+\begin{longtable}{@{} L{4.5cm} p{9.5cm} @{}}
+\toprule
+\textbf{Artifact Group} & \textbf{Path} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Artifact Group} & \textbf{Path} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Requirement 1 report          & {\small\ttfamily HW1/23127173/requirement/requirement1/\allowbreak requirement1.md} \\[2pt]
+Requirement 1 job data        & {\small\ttfamily HW1/23127173/requirement/requirement1/\allowbreak jobs-data/} \\[2pt]
+Requirement 1 AI Mindmap Review & {\small\ttfamily HW1/23127173/requirement/requirement1/\allowbreak AI-Mindmap-Review/\allowbreak ai-mindmap-review.md} \\[2pt]
+Requirement 2 report          & {\small\ttfamily HW1/23127173/requirement/requirement2/\allowbreak requirement2.md} \\[2pt]
+Requirement 3 report          & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak requirement3.md} \\[2pt]
+Requirement 3 device evidence & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak devices/devices.jpg} \\[2pt]
+Requirement 3 video links     & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak video-youtube-test/link-video.md} \\[2pt]
+Requirement 3 AI screenshot   & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak screenshot-AI/screenshot-chat-ai.png} \\[2pt]
+Requirement 3 GitHub Issues & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak github-issues/} \\[2pt]
+Requirement 3 GitHub screenshots & {\small\ttfamily HW1/23127173/requirement/requirement3/\allowbreak github-issues/screenshot-defect/} \\[2pt]
+AI Audit Report               & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 01\_AI-Audit-Report.md} \\[2pt]
+AI Critique                   & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 02\_AI-Critique.md} \\[2pt]
+Mandatory Disclosure          & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 03\_Mandatory-Disclosure.md} \\[2pt]
+AI Privacy Checklist          & {\small\ttfamily HW1/23127173/doc/md/AI~Audit/\allowbreak 04\_AI-Privacy-Checklist.md} \\[2pt]
+Prompt Log                    & {\small\ttfamily HW1/23127173/doc/md/\allowbreak appendixA-prompt-log.md} \\[2pt]
+Submission Checklist          & {\small\ttfamily HW1/23127173/checklist.md} \\
+\end{longtable}
+
+% ============================================================
+\section{Requirement 1 -- QA/QC Job Market 2026+}
+% ============================================================
+
+Requirement 1 collected \textbf{10 QA/QC job postings} within 60 days prior to the collection date of \textbf{2026-05-28}. The dataset consists of 10 Markdown job-detail files, 10 screenshots, and one summary CSV file.
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{X C{3cm}}
+\toprule
+\textbf{Criterion} & \textbf{Status} \\
+\midrule
+10 QA/QC job postings collected                              & \achieved \\
+Each posting has a source link                               & \achieved \\
+Each posting has a screenshot                                & \achieved \\
+Each posting has job description and required skills         & \achieved \\
+Each posting has salary or explicit ``not disclosed'' note   & \partialach \\
+$\geq$3 postings mention AI / LLM / Automation-AI           & \achieved{} (Jobs 02, 03, 04, 06, 08) \\
+Each posting has an AI Impact Analysis                       & \achieved \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Key Observation:} The 2026+ QA/QC market extends well beyond traditional manual and automation testing to encompass SDET, AI/LLM testing, data testing, Salesforce/AI solution QC, device/mobile QA, and design verification. AI tools assist in test generation, log analysis, documentation, and metric aggregation; however, QA engineers remain responsible for verifying results, protecting data, and owning release decisions.
+
+% ============================================================
+\section{Requirement 2 -- 20 Software Defects (2022--2026)}
+% ============================================================
+
+Requirement 2 compiles \textbf{20 publicly documented software defects} from 2022 to 2026. Each defect entry includes a source link, description, severity, consequences, remediation, and a note on how an AI might produce biased or hallucinated explanations for that defect.
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{X C{3cm}}
+\toprule
+\textbf{Criterion} & \textbf{Status} \\
+\midrule
+20 publicly known software defects                                  & \achieved \\
+All defects fall within the 2022--2026 period                       & \achieved \\
+Source link provided for each defect                                & \achieved \\
+Description / severity / consequences / remediation included        & \achieved \\
+$\geq$5 defects related to AI/LLM                                   & \achieved{} (9 out of 20) \\
+All 20 entries include AI bias/hallucination notes                  & \achieved \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Key Observation:} Defects from 2022--2026 highlight that QA/QC must address security vulnerabilities, cloud misconfiguration, supply-chain attacks, service outages, data privacy breaches, and AI behavioural failures. For AI/LLM systems, bugs may reside in prompts, guardrails, retrieval data, tool access permissions, and model reasoning paths.
+
+% ============================================================
+\section{Requirement 3 -- Test Cases for a Physical Product}
+% ============================================================
+
+\subsection{Device Under Test}
+
+The selected device is the \textbf{Casper Remote U25 Series air-conditioner remote control}. A photo of the remote together with the student ID card is provided in \texttt{devices/devices.jpg}.
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{L{4cm} X}
+\toprule
+\textbf{Field} & \textbf{Value} \\
+\midrule
+Device            & Casper Remote U25 Series Air-Conditioner Remote \\
+Photo with ID     & \achieved \\
+Brand/Model       & \achieved \\
+Year / Serial     & Not visible on provided device evidence \\
+Number of test cases  & 18 \\
+Number of evidence videos & 5 video links \\
+AI-missed edge cases  & TC-16, TC-17, TC-18 \\
+Confirmed defects & 4 defects from TC-08, TC-13, TC-14, TC-16 \\
+GitHub Issues & 4 real issues in \texttt{HappyDuckCoder/Software-Testing}; username screenshots are stored in \texttt{github-issues/screenshot-defect/} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Student-Discovered Edge Cases}
+
+The following three edge cases were identified by the student after reviewing AI-generated test cases:
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{C{1.5cm} X C{1.8cm}}
+\toprule
+\textbf{TC} & \textbf{Description} & \textbf{Verdict} \\
+\midrule
+TC-16 & The air conditioner can only be powered on via the Power button; however, Turbo, Mode, and Speed buttons can independently turn the unit on. & \fail \\
+TC-17 & Switching from Cool to Dry mode automatically reduces fan speed to the lowest setting. & \pass \\
+TC-18 & Baby Care mode locks configuration parameters such as temperature and airflow direction. & \pass \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Confirmed Defects}
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{C{1.8cm} C{2cm} X}
+\toprule
+\textbf{Defect ID} & \textbf{Related TC} & \textbf{Summary} \\
+\midrule
+D-01 & TC-08 & iSAVE does not save or update the most recent configuration. \\
+D-02 & TC-13 & Remote continues to operate even when the IR emitter is physically blocked. \\
+D-03 & TC-14 & Air conditioner accepts commands at all tested angles of inclination. \\
+D-04 & TC-16 & Turbo / Mode / Speed buttons can power on the unit while the air conditioner is off. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Note:} The requirement target is $\geq$5 confirmed defects; currently only 4 have been confirmed. No defects were fabricated. If the target must be met, additional testing must be conducted and defects added only upon real evidence.
+
+\textbf{Bug screenshots policy:} HW01 does not use FIT Mantis. The four confirmed defects have been logged as GitHub Issues \#1 to \#4 in the personal repository \texttt{HappyDuckCoder/Software-Testing}. The issue links are recorded in \texttt{github-issues/github-issues-links.md}. The issue-list screenshot and individual issue screenshots are stored in \texttt{github-issues/screenshot-defect/} and show the GitHub username \texttt{HappyDuckCoder}.
+
+% ============================================================
+\section{AI CLO / Bloom-AI Outcomes}
+% ============================================================
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{L{3.5cm} X L{5cm} C{2cm}}
+\toprule
+\textbf{CLO} & \textbf{Requirement} & \textbf{Evidence} & \textbf{Status} \\
+\midrule
+G9.1 -- Understand & Request AI to generate a QA/QC role mindmap, then identify errors. & \texttt{ai-mindmap-review.md} & \achieved \\
+G9.3 -- Analyse & Analyse AI output and find $\geq$3 edge cases the AI missed. & TC-16, TC-17, TC-18; \texttt{screenshot-chat-ai.png} & \achieved \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+In the mindmap review, the initial AI output omitted: Data Test Engineer, Design Verification, Device/Mobile QA, and the distinction between AI-assisted QA and AI/LLM system testing. The student confirmed these omissions as valid after cross-referencing all 10 jobs from Requirement 1 and produced a corrected mindmap.
+
+% ============================================================
+\section{AI Audit Summary}
+% ============================================================
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{L{6cm} C{4cm}}
+\toprule
+\textbf{Metric} & \textbf{Result} \\
+\midrule
+Total AI-generated artifacts audited & 17 \\
+VALID                                & 0 \\
+INVALID                              & 0 \\
+INCOMPLETE                           & 17 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+All AI-generated artifacts are marked \incomplete{} because AI was used solely to create drafts, standardise formatting, aggregate data, and offer suggestions. The student must verify every artifact against primary evidence: job screenshots, source links, videos, device photos, actual results, and defect evidence.
+
+% ============================================================
+\section{AI Critique}
+% ============================================================
+
+In HW01, AI was most useful in an editorial and structural role: standardising 10 Job Descriptions from Requirement 1 into Markdown/CSV, aggregating the 20 software defects for Requirement 2, proposing test cases for the air-conditioner remote in Requirement 3, scaffolding the G9.1 mindmap, drafting an English LaTeX version of the final report, converting the confirmed defect log into local GitHub Issue drafts, and updating the report after the student added real GitHub Issues screenshots. However, the audit shows that all 17 artifacts should be considered \textbf{INCOMPLETE} until primary evidence is verified by the student. AI can write coherently, but it cannot view screenshots, guarantee that links remain valid, execute tests on real hardware, or substitute for prohibited evidence such as device photos, videos, actual results, real GitHub Issues, or defect proof.
+
+AI errors fell into three main categories:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item \textbf{Over-inference:} When job descriptions were ambiguous, AI inferred AI skills for generic automation roles or interpreted undisclosed salaries without sufficient basis.
+  \item \textbf{Representation bias:} AI's training skews toward web/software QA patterns, so the initial mindmap omitted data testing, design verification, device/mobile QA, and AI-agent safety. The student confirmed these omissions as valid after comparing against the 10 collected jobs.
+  \item \textbf{Untested physical states:} For the air-conditioner remote, AI generated well-structured button-press test cases but overlooked physical preconditions such as the unit being powered off (TC-16), mode-transition side effects (TC-17), and configuration-lock behaviour under Baby Care (TC-18).
+\end{enumerate}
+
+\textbf{Lesson learned:} AI should not be treated as the final source of truth. The correct workflow is: let AI draft, separate AI output from primary evidence, cross-reference against screenshots/links/real hardware, record audit verdicts, and only conclude Pass/Fail/defect upon real-world observation. AI accelerates the process; quality assurance and academic integrity remain the student's responsibility.
+
+% ============================================================
+\section{Mandatory Disclosure}
+% ============================================================
+
+\begin{quote}
+\textit{Requirement 1 dataset, Requirement 2 software-defect dataset, Requirement 3 test-design draft, summary tables, CSV, mindmap review, checklist, GitHub Issue draft text, draft report sections, and the English LaTeX report draft were generated and formatted with assistance from Codex / ChatGPT and Claude. I provided or corrected source job details for Requirement 1, reviewed the generated Requirement 2 defect list, sources, severity, consequences, fixes, and AI bias/hallucination notes, and reviewed/modified the Requirement 3 remote air-conditioner test cases. I added student-found edge cases TC-16, TC-17, and TC-18 about off-state feature buttons, Cool-to-Dry fan adjustment, and Baby Care fixed configuration. I used Claude with the prompt ``cho toi ban latex bang tieng anh dua tren noi dung tren'' to draft an English LaTeX version from my existing report content. The LinkedIn screenshots, source links, physical device photo, videos, actual results, real GitHub Issues, GitHub Issues screenshot, and defect evidence are collected or verified manually by me. The detailed AI Audit Report is attached in \texttt{doc/md/AI Audit/01\_AI-Audit-Report.md}. I confirm I did not use AI to generate any prohibited artifact, including job posting screenshots with account name, physical device photos, videos, GitHub Issues screenshots, or fake evidence.}
+\end{quote}
+
+% ============================================================
+\section{Privacy and Responsible AI Use}
+% ============================================================
+
+\begin{itemize}[leftmargin=*]
+  \item[$\checkmark$] The assignment permits AI use under an Open policy, with mandatory declaration.
+  \item[$\checkmark$] All key prompts are logged in \texttt{appendixA-prompt-log.md}.
+  \item[$\checkmark$] Every AI-assisted artifact is listed in the AI Audit Report.
+  \item[$\checkmark$] AI was not used to generate job screenshots, device photos with student ID, test videos, actual results, or defect evidence.
+  \item[$\checkmark$] AI-assisted GitHub Issue drafts are only local draft text; real issues and the username screenshot must be created and verified manually by the student.
+  \item[$\checkmark$] All unverifiable fields are explicitly marked \texttt{Not disclosed} or \texttt{Not visible}.
+  \item[$\checkmark$] Final checks for YouTube video access, source links, screenshot account names, and GitHub Issues are pending before submission.
+\end{itemize}
+
+% ============================================================
+\section{Self-Assessment}
+% ============================================================
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{L{4.5cm} X}
+\toprule
+\textbf{Item} & \textbf{Self-Assessment} \\
+\midrule
+Requirement 1 & Achieved in content and artifacts; screenshots/account names/posting dates need a final review before submission. \\
+Requirement 2 & Structure and content of 20 defects achieved; source links should be re-opened for a final verification if required. \\
+Requirement 3 & Most artifacts achieved; primary risk is only 4 confirmed defects instead of the required $\geq$5. \\
+AI Audit / Prompt Log / Disclosure & Structure achieved; 17 artifacts audited. \\
+AI CLO & G9.1 and G9.3 achieved. \\
+\midrule
+\textbf{Proposed Self-Score} & \textbf{085 / 100} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ============================================================
+\section{Declaration and Signature}
+% ============================================================
+
+I hereby declare that all prohibited evidence -- including job posting screenshots with account name, device photos with student ID, test videos, actual results, and defect evidence -- was not generated by AI. All AI-assisted sections have been declared in the AI Audit Report and Appendix~A Prompt Log.
+
+\vspace{1.5cm}
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{L{4cm} X}
+\toprule
+\textbf{Field} & \textbf{Value} \\
+\midrule
+Full Name   & Trần Hải Đức \\
+Student ID  & 23127173 \\
+Date Signed & 2026-05-31 \\
+Signature   & \textit{Trần Hải Đức} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\end{document}
