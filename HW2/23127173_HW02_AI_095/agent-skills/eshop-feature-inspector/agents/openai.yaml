@@ -1,0 +1,3 @@
+display_name: EShop Feature Inspector
+short_description: Inspects one EShop feature and prepares a feature brief for HW02 testing.
+default_prompt: Use this skill to inspect my selected EShop feature and produce a feature brief with inputs, flows, rules, assumptions, and verification tasks.

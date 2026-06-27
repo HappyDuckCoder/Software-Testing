@@ -1,0 +1,3 @@
+display_name: GitHub Bug Writer
+short_description: Converts failed EShop tests into GitHub Issue-ready bug reports.
+default_prompt: Use this skill to turn my failed EShop test case and evidence into a GitHub Issue-ready bug report.
