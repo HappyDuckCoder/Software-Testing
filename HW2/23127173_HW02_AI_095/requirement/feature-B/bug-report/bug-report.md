@@ -7,7 +7,7 @@
 | BUG-B-01 | Bug của FR-11 | API `GET /api/orders/:id` cho phép xem chi tiết đơn hàng của người khác | Critical | Cao | Đã tái hiện | B-DT-13, B-BVA-05 | `domain-testing/B-DT-13.png`, `boundary-value-analysis/B-BVA-05.png` |
 | WARNING-B-01 | Warning liên feature FR-10 | Người dùng vẫn thấy nút hủy cho đơn đang ở trạng thái `shipping`; backend cũng không chặn `shipping` theo mã nguồn | Major | Cao | Đã tái hiện qua UI, đã đối chiếu thêm mã nguồn backend | B-DT-09, B-BVA-07 | `domain-testing/B-DT-09.png`, `boundary-value-analysis/B-BVA-07.png` |
 
-GitHub Issue: minh chứng ở 23127173_HW02_AI_095\requirement\feature-B\bug-report\screenshots
+Ảnh minh chứng GitHub issue/screenshot bug nằm trong `bug-report/screenshots`: `BUG-B-01-1.png`, `BUG-B-01-2.png`, `WARNING-B-01-1.png`, `WARNING-B-01-2.png`.
 
 ## 2. BUG-B-01 - Lộ chi tiết đơn hàng không thuộc người dùng hiện tại
 
@@ -51,10 +51,7 @@ Trong `Eshop/backend/server.js`, route chi tiết đơn hàng đang được kha
 
 ```js
 app.get("/api/orders/:id", (req, res) => {
-  db.get("SELECT * FROM orders WHERE id = ?", [req.params.id], (err, order) => {
-    if (!order) return res.status(404).json({ error: "Order not found" });
-    res.json(order);
-  });
+  db.get("SELECT * FROM orders WHERE id = ?", [req.params.id], ...);
 });
 ```
 

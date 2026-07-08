@@ -7,7 +7,7 @@
 | BUG-A-01 | Frontend kiểm tra số điện thoại trái với quy tắc FR-04 trong README | Major | Cao | Đã tái hiện khi chạy UI | A-DT-06, A-DT-08, A-DT-12, A-BVA-02, A-BVA-03, A-BVA-05, A-BVA-06 | Screenshot trong `domain-testing` và `boundary-value-analysis`; `Profile.jsx` dòng regex phone |
 | BUG-A-02 | API `PUT /api/users/me` cho phép user thường tự đổi `role` thành `admin` | Critical | Cao | Đã tái hiện khi gọi API | A-DT-17 | Screenshot/log API `A-DT-017.png`; `backend/server.js` route cập nhật hồ sơ |
 
-GitHub Issue: chờ bổ sung link issue thật sau khi tạo trên repository nộp bài.
+Ảnh minh chứng GitHub issue/screenshot bug nằm trong `bug-report/screenshots`: `BUG-A-01-1.png`, `BUG-A-01-2.png`, `BUG-A-02-1.png`, `BUG-A-02-2.png`. Nếu giảng viên yêu cầu link issue thật, cần gắn thêm URL issue vào đây trước khi nộp.
 
 ## 2. BUG-A-01 - Frontend kiểm tra số điện thoại trái đặc tả FR-04
 

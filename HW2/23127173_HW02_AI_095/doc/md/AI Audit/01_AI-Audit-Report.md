@@ -34,15 +34,16 @@
 | Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt: "tôi nghĩ là có nhiều ảnh minh chứng có thể sử dụng lại từ feature C, bạn hãy copy các ảnh đó cho feature D và đặt tên là D-DT- hoặc D-BVA-, feature nào test rồi thì không test lại nữa; cập nhật audit" | Copy các ảnh minh chứng trùng rule FR-10 từ Feature C sang Feature D với tên D-DT/D-BVA tương ứng; cập nhật Domain Testing, BVA và `feature-D-mobile-report.md`. Sau cập nhật, Feature D có 25 test thiết kế, 16 test đã có evidence, 14 Pass, 2 Fail, 9 chưa chạy. | INCOMPLETE | Việc dùng lại evidence là hợp lý vì các case admin transition của Feature C và Feature D kiểm tra cùng endpoint/rule FR-10. Tuy nhiên D-DT-07/D-BVA-07 về user hủy đơn `shipping` vẫn chưa có bằng chứng trực tiếp nên chưa được đánh dấu đã chạy. | Sinh viên cần test tiếp các case chưa có evidence trực tiếp, đặc biệt D-DT-07/D-BVA-07, rồi cập nhật bug report và gap analysis của Feature D. |
 | Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt: "bổ sung feature-D-mobile boundary-value-analysis do một số case đã bị trùng ở domain-testing; copy hình ảnh và đặt tên là D-BVA-, cập nhật audit" | Copy thêm evidence trùng từ Domain Testing sang BVA cho Feature D: `D-DT-07.png -> D-BVA-07.png` và `D-DT-10.png -> D-BVA-10.png`. Cập nhật `D-BVA-07` thành Fail, `D-BVA-10` thành Pass, và cập nhật `feature-D-mobile-report.md` thành 25 test thiết kế, 22 đã có evidence, 18 Pass, 4 Fail, 3 chưa chạy. | INCOMPLETE | Bổ sung evidence hợp lý vì các BVA này kiểm tra cùng thao tác với Domain Testing. Vẫn INCOMPLETE vì D-BVA còn một số case chưa có evidence riêng hoặc cần đối chiếu cuối với report/bug/gap sau khi test hết. | Sinh viên cần rà lại ảnh minh chứng và tiếp tục cập nhật Feature D bug report/AI gap analysis sau khi chốt toàn bộ kết quả. |
 | Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt tổng hợp các lượt hỏi lệnh API test trong conversation cho Feature A/B/C/D | Cung cấp các bộ lệnh CMD/PowerShell/cURL để test API cho Feature A, B, C và D: đăng nhập lấy token, gọi profile/order/admin endpoints, tạo đơn checkout, đổi trạng thái admin, hủy đơn user, kiểm tra token thiếu/sai, order không thuộc user, trạng thái lạ, HTML/XSS address, và các transition FR-10. | INCOMPLETE | Các lệnh API giúp sinh viên chạy SUT thật nhanh hơn, nhưng AI không tự chạy trên máy sinh viên và không tự tạo bằng chứng. Một số lệnh cần sinh viên thay đúng `order_id`, trạng thái hiện tại và môi trường backend/frontend đang chạy. | Sinh viên phải tự chạy lệnh, chụp screenshot/log response, cập nhật Actual/Verdict/Evidence trong từng bảng A/B/C/D; không được coi command output do AI mô tả là bằng chứng thật nếu chưa chạy. |
+| Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt: "dựa vào feature-D-mobile domain-testing và boundary-value-analysis viết lại bug-report, feature-D-mobile-report; tự review và viết ai-gap-analysis; tiếng Việt có dấu, dễ hiểu; cập nhật audit" | Viết lại `feature-D-mobile-report.md`, `bug-report.md` và `ai-gap-analysis.md` theo kết quả cuối: 25 test đã chạy, 21 Pass, 4 Fail. Ghi nhận 2 bug chính của FR-10: user hủy được đơn `shipping` và admin chuyển được `canceled -> delivered`. | INCOMPLETE | Output đã bám vào kết quả test thật và evidence hiện có, nhưng vẫn cần sinh viên rà cuối tên ảnh, tạo GitHub Issue nếu rubric yêu cầu, và đồng bộ số liệu này vào báo cáo/PDF chính. | Sinh viên cần kiểm tra lại report cuối, gắn issue thật cho BUG-D-01/BUG-D-02 nếu cần, và đảm bảo Feature C/B cross-reference không mâu thuẫn với Feature D. |
 
 ## 3. Tong ket do chinh xac AI
 
 | Chi so | So luong | Ti le |
 | --- | ---: | ---: |
-| Tong artifact AI sinh da audit | 17 | 100% |
+| Tong artifact AI sinh da audit | 23 | 100% |
 | VALID | 0 | 0% |
 | INVALID | 0 | 0% |
-| INCOMPLETE | 17 | 100% |
+| INCOMPLETE | 23 | 100% |
 
 ## 4. Ket luan - khi nao nen / khong nen dung AI?
 
@@ -50,7 +51,7 @@ Nen dung AI de lap roadmap, tao khung bao cao, chuan hoa bang test case, goi y p
 
 ## 5. Mandatory Disclosure draft
 
-"The roadmap, report structure, checklist, prompt log, Agent Skills, Feature A/B/C/D test designs, Vietnamese artifact revisions, Feature A, Feature B, and Feature C report/bug/gap revisions, Feature B warning reclassification, Feature D-mobile test-case readability revision, Feature D evidence reuse updates, API command guidance for A/B/C/D testing, and AI Audit entries were generated with assistance from Codex / ChatGPT. I reviewed and will modify the feature selection, testing method, executed results, bug reports, AI gap analysis, Agent Skill demo, and final report. Actual test execution, screenshots, GitHub Issues, videos, and final judgments are verified by me. The detailed AI Audit Report is attached as Appendix A."
+"The roadmap, report structure, checklist, prompt log, Agent Skills, Feature A/B/C/D test designs, Vietnamese artifact revisions, Feature A/B/C/D report/bug/gap revisions, Feature B warning reclassification, Feature D-mobile test-case readability revision, Feature D evidence reuse updates, Feature D-mobile encoding/format cleanup, API command guidance for A/B/C/D testing, final consistency/coverage review, README/checklist/main-report updates, AI Critique, AI Privacy Checklist, and AI Audit entries were generated with assistance from Codex / ChatGPT. I reviewed and will modify the feature selection, testing method, executed results, bug reports, AI gap analysis, Agent Skill demo, and final report. Actual test execution, screenshots, GitHub Issues, videos, and final judgments are verified by me. The detailed AI Audit Report is attached as Appendix A."
 
 ## 6. Phu luc audit lenh API da duoc AI ho tro
 
@@ -71,3 +72,63 @@ Nen dung AI de lap roadmap, tao khung bao cao, chuan hoa bang test case, goi y p
 | Giang vien / Tro giang | Dr. Lam Quang Vu; Dr. Tran Duy Hoang; MSc. Tran Thi Bich Hanh; MSc. Truong Phuoc Loc; MSc. Ho Tuan Thanh |
 | Ngay | 2026-07-08 |
 | Chu ky | Tran Hai Duc |
+
+## 8. Audit addendum - Final consistency and coverage review
+
+| Muc | Gia tri |
+| --- | --- |
+| Tool | Codex / ChatGPT |
+| Thoi gian | 2026-07-08 +07:00 |
+| Prompt | "review lai tinh consistency cua toan bo HW2; review tinh day du test case cua toan bo HW2; review xem da khop voi Lab\\HW2\\requirement\\HW2-requirement.md chua; cap nhat ai audit" |
+| Output AI | Ra soat toan bo HW2, cap nhat `README.md`, `checklist.md`, `doc/md/main-report.md`, tao `doc/md/hw2-consistency-coverage-review.md`, viet lai AI Critique, cap nhat AI Privacy Checklist va Mandatory Disclosure. |
+| Verdict | INCOMPLETE |
+| Ly do | Review xac nhan 4 feature da co Domain Testing, BVA, bug report, AI gap analysis va 101/101 test da chay. Tuy nhien cac bang chung ngoai Markdown nhu GitHub Issue that, PDF, video demo Agent Skill va commit log that van can sinh vien bo sung truoc khi nop. |
+| Ban sinh vien can sua | Tao/link GitHub Issues, export PDF, quay demo Agent Skill, paste commit log that, va dong bo prompt log neu muon no day du nhu AI Audit. |
+
+## 9. Audit addendum - Consistency formatting for Domain Testing, BVA and Feature D report
+
+| Muc | Gia tri |
+| --- | --- |
+| Tool | Codex / ChatGPT |
+| Thoi gian | 2026-07-08 +07:00 |
+| Prompt | "cac file domain-testing.md va boundary-value-analysis.md cua ca 4 feature A B C D chua consistency ve cach trinh bay; tuong tu cho feature-i-mobile-report.md; toi muon chung consistency hon; bo sung audit" |
+| Output AI | Chuan hoa cach trinh bay cho 8 file `domain-testing.md` va `boundary-value-analysis.md`: them muc thong tin chung/quy uoc trinh bay, them bang tom tat ket qua cho A/B/C, viet lai sach hon hai file Domain/BVA cua Feature D-mobile, va viet lai `feature-D-mobile-report.md` theo cung format voi B/C report. |
+| Verdict | INCOMPLETE |
+| Ly do | Format da nhat quan hon va khong doi test ID/verdict/evidence chinh. Tuy nhien sinh vien van can doc lai ban cuoi trong Markdown/PDF de dam bao rendering bang dai, duong dan anh va encoding tieng Viet hien dung. |
+| Ban sinh vien can sua | Review file sau khi export PDF, dam bao cac bang khong tran trang, va bo sung GitHub Issue/PDF/video/commit log that neu chua co. |
+
+## 10. Audit addendum - Evidence path normalization
+
+| Muc | Gia tri |
+| --- | --- |
+| Tool | Codex / ChatGPT |
+| Thoi gian | 2026-07-08 +07:00 |
+| Prompt | "chua consistency ve path file minh chung" |
+| Output AI | Chuan hoa duong dan minh chung trong cac file Markdown thuoc `requirement` ve dang tuong doi ngan: `domain-testing/...png`, `boundary-value-analysis/...png`, va `bug-report/screenshots/...png`; loai bo cac prefix dai nhu `23127173_HW02_AI_095\\requirement\\feature-*\\...`. |
+| Verdict | INCOMPLETE |
+| Ly do | Path da nhat quan hon trong Markdown, nhung sinh vien van can mo/preview report sau khi export PDF de dam bao link anh render dung trong moi moi truong nop bai. |
+| Ban sinh vien can sua | Khi dong goi zip/PDF, kiem tra lai anh co nam dung thu muc tuong doi va cac link trong bug report/GitHub Issue co mo duoc. |
+
+## 11. Audit addendum - Feature D-mobile encoding and formatting cleanup
+
+| Muc | Gia tri |
+| --- | --- |
+| Tool | Codex / ChatGPT |
+| Thoi gian | 2026-07-08 +07:00 |
+| Prompt | "ban review lai Lab\\HW2\\23127173_HW02_AI_095\\requirement\\feature-D-mobile\\domain-testing\\domain-testing.md, Lab\\HW2\\23127173_HW02_AI_095\\requirement\\feature-D-mobile\\boundary-value-analysis\\boundary-value-analysis.md loi dinh dang hay gi do" |
+| Output AI | Kiem tra va phat hien hai file Feature D-mobile Domain Testing/BVA bi loi mojibake tieng Viet. Viet lai sach hai file bang UTF-8, giu nguyen ID test, verdict, so lieu tong ket va duong dan minh chung tuong doi. |
+| Verdict | INCOMPLETE |
+| Ly do | Da sua loi hien thi/encoding trong Markdown, nhung sinh vien van can preview lai khi export PDF de dam bao bang dai va tieng Viet co dau render dung. |
+| Ban sinh vien can sua | Mo lai hai file trong editor/PDF preview, doi chieu anh minh chung va so lieu voi report cuoi truoc khi nop. |
+
+## 12. Audit addendum - Final submission readiness review and evidence-folder update
+
+| Muc | Gia tri |
+| --- | --- |
+| Tool | Codex / ChatGPT |
+| Thoi gian | 2026-07-09 +07:00 |
+| Prompt | "cac anh github nam trong cac thu muc kieu Lab\\HW2\\23127173_HW02_AI_095\\requirement\\feature-D-mobile\\bug-report\\screenshots; review lai lan nua xem toi san sang nop chua; ngoai ra cham lai diem toan bai, toi muon duoc it nhat 95/100, cap nhat audit" va "toi se bo cot video demo... thay video demo thanh folder chua cac anh..." |
+| Output AI | Ra soat lai deliverable HW02, xac nhan PNG evidence hop le, sua bug report Feature B bi loi encoding, ghi ro anh minh chung GitHub/bug nam trong `bug-report/screenshots`, cap nhat README/checklist/main-report theo huong bo cot demo video trong test summary va thay bang thu muc anh minh chung. Tu danh gia muc tieu 95/100 khi cac artifact Markdown/evidence da day du; PDF va video skill se do sinh vien tu bo sung khi dong goi. |
+| Verdict | INCOMPLETE |
+| Ly do | Markdown va evidence folders da san sang hon cho muc tieu 95, nhung diem cuoi cung van phu thuoc vao viec sinh vien export PDF, bo sung video demo skill neu rubric yeu cau, va gan URL GitHub Issue that neu giang vien bat buoc. |
+| Ban sinh vien can sua | Export PDF, kiem tra render bang/anh, cap nhat link video demo skill neu can, va gan URL issue that neu rubric yeu cau ngoai screenshot. |

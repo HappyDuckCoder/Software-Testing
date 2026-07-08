@@ -2,28 +2,31 @@
 
 ## 1. Before Using AI
 
-* [ ] Confirmed the AI level required for HW02.
-* [ ] Read the course AI policy and templates.
-* [ ] Confirmed that evidence such as screenshots, videos, actual results, and GitHub Issues must be real and verified.
-* [ ] Removed private credentials, tokens, and personal data before prompting AI.
+* [x] Confirmed the AI level required for HW02.
+* [x] Read the course AI policy and templates.
+* [x] Confirmed that evidence such as screenshots, videos, actual results, and GitHub Issues must be real and verified.
+* [x] Removed private credentials, tokens, and personal data before prompting AI.
 
 ## 2. While Using AI
 
-* [ ] Logged every prompt and AI output in `doc/md/appendixA-prompt-log.md`.
-* [ ] Did not paste private account passwords, tokens, or sensitive data into AI.
-* [ ] Did not paste copyrighted/private material beyond what is allowed for coursework.
-* [ ] Tagged AI-generated artifacts in the AI Audit Report.
+* [x] Logged major AI interactions in `doc/md/AI Audit/01_AI-Audit-Report.md`.
+* [ ] Fully mirrored every later interaction in `doc/md/appendixA-prompt-log.md`.
+* [x] Did not use AI-generated text as fake execution evidence.
+* [x] Did not paste private passwords, long-lived tokens, or sensitive personal data into AI.
+* [x] Tagged AI-generated artifacts in the AI Audit Report.
 
 ## 3. Before Submission
 
-* [ ] All AI-generated artifacts are audited.
-* [ ] All AI-suggested rules/test cases are checked against EShop behavior.
-* [ ] All actual results are from real execution, not AI guesses.
-* [ ] AI Critique is 200-300 words.
-* [ ] Mandatory Disclosure is included.
-* [ ] README test summary is complete.
-* [ ] Main report is exported to Markdown and PDF.
-* [ ] Ready for 5-7 minute oral defense.
+* [x] All AI-generated feature artifacts are audited at artifact level.
+* [x] AI-suggested rules/test cases were checked against EShop repo and executed results.
+* [x] Actual results in feature tables are based on SUT execution/evidence prepared by the student.
+* [x] AI Critique is 200-300 words.
+* [x] Mandatory Disclosure is included.
+* [x] README test summary is complete.
+* [ ] Main report and AI Audit have been exported to PDF.
+* [ ] GitHub Issue links/screenshots have been attached for all bugs.
+* [ ] Agent Skill demo video link has been added.
+* [ ] Git commit log has been pasted from real repository history.
 
 ## 4. Final Responsibility
 
@@ -33,5 +36,5 @@ I understand that final responsibility for correctness, originality, and academi
 | --- | --- |
 | Student name | Trần Hải Đức |
 | Student ID | 23127173 |
-| Date | 2026-06-27 |
+| Date | 2026-07-08 |
 | Signature | Trần Hải Đức |

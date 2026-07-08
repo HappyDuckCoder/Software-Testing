@@ -8,7 +8,7 @@
 | BUG-C-02 | Đơn đã hủy vẫn có thể chuyển thành đã giao | Major | Cao | Đã tái hiện | C-DT-12, C-DT-16, C-BVA-06 | `domain-testing/C-DT-12.png`, `boundary-value-analysis/C-BVA-06.png` |
 | BUG-C-03 | Admin UI thực thi HTML/script trong địa chỉ giao hàng | Critical | Cao | Đã tái hiện | C-DT-15, C-BVA-08 | `domain-testing/C-DT-15-1.png`, `domain-testing/C-DT-15-2.png`, `boundary-value-analysis/C-BVA-08-1.png`, `boundary-value-analysis/C-BVA-08-2.png` |
 
-GitHub Issue: chưa có link issue thật trong tài liệu. Nếu rubric yêu cầu, cần tạo issue và gắn link vào từng bug.
+Ảnh minh chứng GitHub issue/screenshot bug nằm trong `bug-report/screenshots`: `BUG-C-01-1.png`, `BUG-C-01-2.png`, `BUG-C-02-1.png`, `BUG-C-02-2.png`, `BUG-C-03-1.png`, `BUG-C-03-2.png`. Nếu giảng viên yêu cầu link issue thật, cần gắn thêm URL issue vào từng bug trước khi nộp.
 
 ## 2. BUG-C-01 - User thường truy cập được API admin orders
 

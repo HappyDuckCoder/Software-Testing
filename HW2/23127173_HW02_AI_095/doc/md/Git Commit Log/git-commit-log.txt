@@ -1,34 +1,28 @@
 HW02 Git Commit Log
 ===================
 
-Export the final commit history here before submission.
+Repository used for HW02 artifacts: D:\code\Project\TestingProject\Lab
+Branch at review time: homework2
+Command used:
 
-Recommended workflow:
+git -c safe.directory="D:/code/Project/TestingProject/Lab" -C "D:\code\Project\TestingProject\Lab" log --oneline --decorate -n 20
 
-1. HW02 scaffold roadmap and audit templates
-2. HW02 feature-A inspect selected feature
-3. HW02 feature-A add domain testing analysis
-4. HW02 feature-A add boundary value analysis
-5. HW02 feature-A execute tests and update verdicts
-6. HW02 feature-A add bug reports and AI gap analysis
-7. HW02 feature-B inspect selected feature
-8. HW02 feature-B add domain testing analysis
-9. HW02 feature-B add boundary value analysis
-10. HW02 feature-B execute tests and update verdicts
-11. HW02 feature-B add bug reports and AI gap analysis
-12. HW02 feature-C inspect selected feature
-13. HW02 feature-C add domain testing analysis
-14. HW02 feature-C add boundary value analysis
-15. HW02 feature-C execute tests and update verdicts
-16. HW02 feature-C add bug reports and AI gap analysis
-17. HW02 feature-D inspect selected mobile feature
-18. HW02 feature-D add domain and boundary analysis
-19. HW02 feature-D execute mobile tests and update verdicts
-20. HW02 add reusable domain-bva agent skill and demo
-21. HW02 finalize main report audit disclosure and README
-
-Paste actual output below:
+Actual commit history related to HW02:
 
 ```text
-TBD
+3d2b529 (HEAD -> homework2, origin/homework2) Enhance Feature D documentation for HW02, focusing on boundary value analysis and domain testing. Update markdown files to improve clarity and readability, incorporating new test cases and evidence images. Revise the Mandatory Disclosure statement to reflect the latest changes and ensure comprehensive documentation of testing outcomes and AI contributions.
+70d08bf Revise Feature C documentation and bug reports for HW02, focusing on the management of admin orders (FR-18). Update AI Gap Analysis and Bug Report sections to reflect test results, including critical bugs related to user permissions, state transitions, and XSS vulnerabilities. Enhance clarity by adding detailed descriptions of identified issues and including new screenshots for visual evidence, ensuring comprehensive documentation of testing outcomes and AI contributions.
+e7ea411 Add boundary value analysis and domain testing images for HW02, including new PNG files for test cases C-BVA-01 to C-BVA-08 and C-DT-01 to C-DT-16. Update corresponding markdown documentation to reflect these additions, ensuring clarity in test case structures and constraints.
+72e3fdf Revise Feature B documentation and bug reports for HW02, focusing on the Order History View (FR-11). Update the AI Gap Analysis and Bug Report sections to reflect test results, including critical bugs and warnings identified during testing. Enhance clarity by adding detailed descriptions of issues related to data privacy and state machine rules. Include new screenshots for visual evidence of identified bugs and warnings, ensuring comprehensive documentation of testing outcomes and AI usage.
+e2f4fe6 Add boundary value analysis and domain testing images, and update corresponding documentation for HW02. Include new PNG files for test cases B-BVA-01 to B-BVA-08 and B-DT-01 to B-DT-11, enhancing visual representation of test scenarios. Revise markdown files to reflect these additions and ensure clarity in test case structures and constraints.
+23a6888 Revise and enhance documentation for HW02, focusing on the AI Audit Report, Mandatory Disclosure, and feature reports for Personal Profile Management (FR-04). Update boundary value analysis and domain testing sections with detailed findings, test cases, and evidence. Ensure all artifacts reflect accurate AI usage and responsibilities in software testing, including the addition of new bug reports and screenshots for identified issues.
+d47128d Enhance boundary value analysis and domain testing documentation for HW02. Update test case structures to include optimized traceability columns and detailed conditions for each test case. Revise AI Audit Report and Mandatory Disclosure to reflect these changes, ensuring clarity on AI usage and responsibilities in software testing.
+02ea3a6 Revise AI Audit documentation for HW02, updating the AI Audit Report, Mandatory Disclosure, and feature reports for Personal Profile Management (FR-04) and Order History View (FR-11). Enhance boundary value analysis and bug reports with detailed findings and test cases. Ensure all changes accurately reflect AI usage and responsibilities in software testing.
+18bc610 Update AI Audit documentation for HW02, including revisions to the AI Audit Report, Mandatory Disclosure, and feature reports for Personal Profile Management (FR-04) and Order History View (FR-11). Enhance boundary value analysis and bug reports with detailed findings and test cases. Add support for demo video files and update .gitignore to include new media files. Ensure all changes reflect accurate AI usage and responsibilities in software testing.
+70e25f3 Add initial project structure and documentation for HW02, including README, checklist, roadmap, and AI audit templates. Introduced agent skills for domain testing and boundary value analysis, along with detailed artifact mapping and prompt logging for AI usage. Ensure all files are prepared for feature selection and testing phases.
 ```
+
+Notes:
+
+- The latest uncommitted edits after this log review include final formatting cleanup, bug-report screenshot-path clarification, readiness review, and audit updates.
+- Before final submission, run the command again after committing the final changes if the rubric requires the very latest commit hash.
