@@ -1,6 +1,6 @@
 ---
 name: domain-testing-designer
-description: Design Domain Testing artifacts for HW02 EShop features. Use when Codex needs to transform an inspected EShop feature into input domains, valid and invalid equivalence classes, representative values, constraints between variables, and Domain Testing test cases with Objective, Input, Preconditions, Steps, Expected, Actual, Verdict, and Evidence columns.
+description: Design Domain Testing artifacts for HW02 EShop features. Use when Codex needs to transform an inspected EShop feature into input domains, valid and invalid equivalence classes, representative values, constraints between variables, and optimized Domain Testing test cases with traceability to Class ID/constraints.
 ---
 
 # Domain Testing Designer
@@ -17,8 +17,13 @@ description: Design Domain Testing artifacts for HW02 EShop features. Use when C
    - invalid input classes,
    - role/state constraints,
    - combinations likely to expose bugs.
-7. Leave `Actual`, `Verdict`, and `Evidence` as `Not run` until the student executes the test.
-8. Add a short review note explaining what AI may have missed.
+7. Optimize test cases:
+   - A valid/happy-path test case should satisfy as many valid equivalence classes and cross-variable constraints as possible.
+   - A negative test case should contain exactly one invalid equivalence class when possible, while keeping all other input variables valid.
+   - Every test case input must explicitly include values for all variables listed in `## 1. Input Domain`, even if the value is `N/A`, `unchanged`, or `not sent`.
+   - Every test case must include a `Satisfied classes / conditions` column listing the covered Class IDs and Constraint IDs.
+8. Leave `Actual`, `Verdict`, and `Evidence` as `Not run` until the student executes the test.
+9. Add a short review note explaining what AI may have missed.
 
 ## Output Format
 
@@ -38,10 +43,10 @@ description: Design Domain Testing artifacts for HW02 EShop features. Use when C
 | --- | --- | --- | --- |
 
 ## 4. Domain Test Cases
-| ID | Objective | Input | Preconditions | Steps | Expected | Actual | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ID | Objective | Satisfied classes / conditions | Input | Preconditions | Steps | Expected | Actual | Verdict | Evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ```
 
 ## Quality Bar
 
-Every test case must be traceable to at least one equivalence class or constraint. Do not create generic UI smoke tests unless they support the domain analysis.
+Every test case must be traceable to at least one equivalence class or constraint. Prefer fewer, stronger optimized test cases over many redundant cases. Do not create generic UI smoke tests unless they support the domain analysis.

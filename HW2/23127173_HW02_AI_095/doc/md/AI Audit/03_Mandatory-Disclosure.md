@@ -2,7 +2,7 @@
 
 ## Disclosure Statement
 
-"The roadmap, initial folder structure, report templates, checklist, prompt log, Agent Skills, source-based Feature A/B/C/D test designs, Vietnamese revision of requirement artifacts, and AI Audit entries were generated with assistance from Codex / ChatGPT. I reviewed and will modify the feature selection, Domain Testing analysis, Boundary Value Analysis, test cases, actual execution results, bug reports, AI gap analysis, Agent Skill demo, and final report. Actual SUT execution, screenshots, GitHub Issues, videos, and final verdicts are verified by me. I confirm I did not use AI to generate fake evidence or any prohibited artifact. The detailed AI Audit Report is attached as Appendix A."
+"The roadmap, initial folder structure, report templates, checklist, prompt log, Agent Skills, source-based Feature A/B/C/D test designs, Vietnamese revision of requirement artifacts, optimized test-case traceability columns, and AI Audit entries were generated with assistance from Codex / ChatGPT. I reviewed and will modify the feature selection, Domain Testing analysis, Boundary Value Analysis, test cases, actual execution results, bug reports, AI gap analysis, Agent Skill demo, and final report. Actual SUT execution, screenshots, GitHub Issues, videos, and final verdicts are verified by me. I confirm I did not use AI to generate fake evidence or any prohibited artifact. The detailed AI Audit Report is attached as Appendix A."
 
 ## Student Signature
 
