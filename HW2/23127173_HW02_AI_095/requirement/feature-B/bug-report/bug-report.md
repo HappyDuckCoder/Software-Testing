@@ -1,110 +1,128 @@
-﻿# Bug Report - FR-11 Xem lịch sử đơn hàng của user
+# Bug/Warning Report - Feature B: FR-11 Xem lịch sử đơn hàng của người dùng
 
-## 1. Tổng quan lỗi
+## 1. Tổng quan lỗi đã ghi nhận
 
-| Bug ID | Tóm tắt | Mức độ | Ưu tiên | Trạng thái | Test liên quan | Bằng chứng |
-| --- | --- | --- | --- | --- | --- | --- |
-| BUG-B-01 | API `GET /api/orders/:id` trả chi tiết đơn hàng mà không xác thực và không kiểm tra chủ sở hữu | Critical | Cao | Xác định từ mã nguồn, chờ thực thi xác nhận | B-DT-13, B-BVA-04, B-BVA-05 | `backend/server.js` route chi tiết đơn |
-| BUG-B-02 | UI lịch sử đơn hàng hiển thị nút hủy cho đơn đang `shipping` | Major | Cao | Xác định từ mã nguồn, chờ thực thi xác nhận | B-DT-09, B-DT-14 | `Profile.jsx` điều kiện hiển thị nút hủy |
+| ID | Loại | Tóm tắt | Mức độ | Ưu tiên | Trạng thái | Test phát hiện | Bằng chứng |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| BUG-B-01 | Bug của FR-11 | API `GET /api/orders/:id` cho phép xem chi tiết đơn hàng của người khác | Critical | Cao | Đã tái hiện | B-DT-13, B-BVA-05 | `domain-testing/B-DT-13.png`, `boundary-value-analysis/B-BVA-05.png` |
+| WARNING-B-01 | Warning liên feature FR-10 | Người dùng vẫn thấy nút hủy cho đơn đang ở trạng thái `shipping`; backend cũng không chặn `shipping` theo mã nguồn | Major | Cao | Đã tái hiện qua UI, đã đối chiếu thêm mã nguồn backend | B-DT-09, B-BVA-07 | `domain-testing/B-DT-09.png`, `boundary-value-analysis/B-BVA-07.png` |
 
-GitHub Issue: chờ bổ sung link issue thật sau khi xác nhận bằng SUT.
+GitHub Issue: minh chứng ở 23127173_HW02_AI_095\requirement\feature-B\bug-report\screenshots
 
-## 2. BUG-B-01 - API chi tiết đơn có thể làm lộ đơn hàng của user khác
+## 2. BUG-B-01 - Lộ chi tiết đơn hàng không thuộc người dùng hiện tại
 
 ### Mô tả
 
-FR-11 yêu cầu user chỉ xem lịch sử đơn hàng của chính mình. API `GET /api/orders/my-orders` đã lọc theo `req.user.id`, nhưng route `GET /api/orders/:id` lại không dùng middleware xác thực và không kiểm tra `user_id`. Vì vậy bất kỳ client nào biết `order_id` đều có thể gọi API chi tiết đơn.
+FR-11 yêu cầu người dùng chỉ được xem lịch sử đơn hàng của chính mình. API danh sách `GET /api/orders/my-orders` đã lọc theo `req.user.id`, nhưng API chi tiết `GET /api/orders/:id` chỉ truy vấn theo `id`. Khi đăng nhập bằng user khác và gọi trực tiếp mã đơn không thuộc user đó, hệ thống vẫn trả dữ liệu đơn hàng.
 
-### Môi trường
+### Môi trường kiểm thử
 
 | Mục | Giá trị |
 | --- | --- |
 | Ứng dụng | EShop backend API |
-| Feature | FR-11 Xem lịch sử đơn hàng |
+| Feature | FR-11 - Xem lịch sử đơn hàng của người dùng |
 | Endpoint lỗi | `GET /api/orders/:id` |
-| Thành phần mã nguồn | `Eshop/backend/server.js` |
+| File mã nguồn liên quan | `Eshop/backend/server.js` |
+| Test liên quan | B-DT-13, B-BVA-05 |
 
 ### Bước tái hiện
 
-1. Tạo hoặc tìm một đơn hàng thuộc user A.
-2. Không gửi token, hoặc đăng nhập bằng user B.
-3. Gửi request `GET /api/orders/<id-cua-user-A>`.
-4. Quan sát response.
+1. Đăng nhập bằng một tài khoản user hợp lệ.
+2. Lấy token của user đó.
+3. Chọn một `order_id` đang thuộc user khác, ví dụ đơn của admin hoặc user khác.
+4. Gửi request `GET /api/orders/<order_id-cua-user-khac>`.
+5. Quan sát response trả về.
 
 ### Kết quả mong đợi
 
-API phải yêu cầu bearer token hợp lệ. Nếu token thuộc user khác, API phải trả 403 hoặc 404, không được trả dữ liệu đơn hàng.
+API phải từ chối truy cập nếu đơn hàng không thuộc user hiện tại. Kết quả hợp lệ nên là `403 Forbidden` hoặc `404 Order not found`, và không được trả bất kỳ dữ liệu chi tiết đơn hàng nào.
 
-### Kết quả thực tế dự kiến theo mã nguồn
+### Kết quả thực tế
 
-Route trả đơn hàng theo `id` trực tiếp nếu đơn tồn tại, không cần token và không kiểm tra chủ sở hữu.
+API trả chi tiết đơn hàng của user khác. Kết quả này được ghi nhận trong B-DT-13 và B-BVA-05 với verdict `Fail`.
 
 ### Tác động
 
-Lỗi này có thể làm lộ thông tin đơn hàng như mã đơn, tổng tiền, trạng thái, địa chỉ giao hàng và thời điểm tạo đơn. Đây là lỗi bảo mật và riêng tư dữ liệu.
+Đây là lỗi bảo mật dữ liệu. Người dùng có thể xem thông tin đơn hàng không thuộc mình nếu đoán hoặc biết `order_id`, bao gồm mã đơn, tổng tiền, trạng thái, địa chỉ giao hàng và thời điểm tạo đơn.
 
 ### Nguyên nhân mã nguồn
 
-Trong `backend/server.js`, route chi tiết đơn hiện là:
+Trong `Eshop/backend/server.js`, route chi tiết đơn hàng đang được khai báo không có middleware xác thực và không lọc theo chủ sở hữu:
 
 ```js
 app.get("/api/orders/:id", (req, res) => {
-  db.get("SELECT * FROM orders WHERE id = ?", [req.params.id], ...);
+  db.get("SELECT * FROM orders WHERE id = ?", [req.params.id], (err, order) => {
+    if (!order) return res.status(404).json({ error: "Order not found" });
+    res.json(order);
+  });
 });
 ```
 
-Route không có `authenticateToken` và query không có điều kiện `user_id = req.user.id`.
-
 ### Hướng sửa đề xuất
 
-1. Thêm `authenticateToken` cho route `GET /api/orders/:id`.
-2. Với user thường, query phải lọc `WHERE id = ? AND user_id = ?`.
-3. Nếu muốn admin xem mọi đơn, tách route admin riêng và kiểm tra `role='admin'`.
-4. Chạy lại B-DT-13, B-BVA-04 và B-BVA-05.
+1. Thêm `authenticateToken` cho `GET /api/orders/:id`.
+2. Nếu người gọi là user thường, query phải dùng `WHERE id = ? AND user_id = ?`.
+3. Nếu admin cần xem mọi đơn, nên dùng route admin riêng và kiểm tra role rõ ràng.
+4. Chạy lại B-DT-13 và B-BVA-05 sau khi sửa.
 
-## 3. BUG-B-02 - User có thể hủy/nhìn thấy nút hủy đơn đang giao
+## 3. WARNING-B-01 - FR-11 hiển thị thao tác không hợp lệ do rule FR-10
 
 ### Mô tả
 
-Theo FR-10, user chỉ được hủy đơn khi trạng thái là `pending` hoặc `confirmed`. Tuy nhiên UI lịch sử đơn hàng trong `/profile` chỉ ẩn nút hủy khi trạng thái là `delivered` hoặc `canceled`. Do đó đơn `shipping` vẫn hiện nút hủy.
+Theo FR-10, người dùng chỉ được hủy đơn khi trạng thái là `pending` hoặc `confirmed`. Tuy nhiên trong lịch sử đơn hàng ở `/profile`, đơn `shipping` vẫn hiển thị nút hủy. Vì quy tắc cấm hủy đơn `shipping` thuộc FR-10, trường hợp này được ghi nhận là warning của Feature B thay vì bug trực tiếp của FR-11.
 
-### Môi trường
+### Môi trường kiểm thử
 
 | Mục | Giá trị |
 | --- | --- |
-| Ứng dụng | EShop web |
-| Feature | FR-11 kết hợp rule trạng thái FR-10 |
-| Thành phần lỗi | `Eshop/frontend-web/src/pages/Profile.jsx` |
-| API liên quan | `PUT /api/orders/:id/cancel` |
+| Ứng dụng | EShop web frontend và backend API |
+| Feature liên quan | FR-11 hiển thị dữ liệu, FR-10 định nghĩa state machine |
+| File frontend liên quan | `Eshop/frontend-web/src/pages/Profile.jsx` |
+| Endpoint backend liên quan | `PUT /api/orders/:id/cancel` |
+| Test liên quan | B-DT-09, B-BVA-07 |
 
 ### Bước tái hiện
 
-1. Tạo một đơn hàng cho user.
-2. Dùng admin chuyển đơn sang trạng thái `shipping`.
+1. Tạo một đơn hàng thuộc user hiện tại.
+2. Chuyển trạng thái đơn sang `shipping`.
 3. Đăng nhập bằng user sở hữu đơn.
-4. Mở `/profile` và xem bảng lịch sử đơn hàng.
-5. Kiểm tra cột thao tác của đơn `shipping`.
+4. Mở trang `/profile`.
+5. Quan sát dòng đơn có trạng thái `Đang giao`.
 
 ### Kết quả mong đợi
 
-Đơn `shipping` không được hiển thị nút hủy. Nếu user gọi API hủy trực tiếp, backend cũng phải từ chối.
+Đơn đang `shipping` chỉ được hiển thị trạng thái, không được hiển thị nút hủy. Nếu user gọi trực tiếp API hủy đơn `shipping`, backend cũng phải từ chối.
 
-### Kết quả thực tế dự kiến theo mã nguồn
+### Kết quả thực tế
 
-UI vẫn hiển thị nút hủy vì điều kiện hiện tại chỉ ẩn nút khi:
-
-```js
-o.status !== "delivered" && o.status !== "canceled"
-```
-
-Ngoài ra backend cancel route cũng chỉ từ chối `delivered` và `canceled`, nên `shipping` có thể bị hủy.
+UI vẫn hiển thị nút hủy cho đơn `shipping`. Kết quả này được ghi nhận trong B-DT-09 và B-BVA-07 với verdict `Warning` vì FR-11 đang bộc lộ một thao tác không hợp lệ theo quy tắc trạng thái của FR-10. Khi đối chiếu mã nguồn backend, route hủy đơn cũng chỉ chặn `delivered` và `canceled`, nên `shipping` chưa được bảo vệ ở tầng API.
 
 ### Tác động
 
-User có thể hủy đơn đang giao, làm sai quy trình xử lý đơn hàng và gây mâu thuẫn giữa trạng thái vận chuyển thực tế với dữ liệu hệ thống.
+Người dùng có thể thực hiện thao tác không hợp lệ trên đơn đang giao. Nếu backend cũng cho phép cập nhật, dữ liệu đơn hàng sẽ chuyển từ `shipping` sang `canceled`, gây sai lệch quy trình xử lý đơn. Tuy nhiên trách nhiệm nghiệp vụ gốc nằm ở FR-10, nên không tính đây là bug chính của FR-11.
+
+### Nguyên nhân mã nguồn
+
+Trong `Eshop/frontend-web/src/pages/Profile.jsx`, điều kiện hiển thị nút hủy chỉ ẩn nút khi đơn đã `delivered` hoặc `canceled`:
+
+```jsx
+{o.status !== "delivered" && o.status !== "canceled" && (
+  <button onClick={() => cancelOrder(o.id)}>Hủy</button>
+)}
+```
+
+Trong `Eshop/backend/server.js`, route hủy đơn cũng chỉ chặn `delivered` và `canceled`, chưa chặn `shipping`.
 
 ### Hướng sửa đề xuất
 
-1. UI chỉ hiển thị nút hủy khi `status` là `pending` hoặc `confirmed`.
-2. Backend `PUT /api/orders/:id/cancel` chỉ cho phép hủy khi `order.status === "pending" || order.status === "confirmed"`.
-3. Chạy lại B-DT-09 và B-DT-14, đồng thời đối chiếu thêm D-DT-07/D-BVA-07 của Feature D.
+1. Frontend chỉ hiển thị nút hủy khi `o.status === "pending" || o.status === "confirmed"`.
+2. Backend `PUT /api/orders/:id/cancel` chỉ cho phép hủy khi trạng thái hiện tại là `pending` hoặc `confirmed`.
+3. Chạy lại B-DT-09, B-DT-14, B-BVA-07 và các test Feature D liên quan tới state machine.
+
+## 4. Ghi chú không lập bug riêng
+
+| Trường hợp | Kết quả | Lý do |
+| --- | --- | --- |
+| B-BVA-08 - trạng thái lạ `returned` | Pass, UI không crash và hiển thị nhãn dự phòng | Có thể cải thiện màu fallback để dễ phân biệt hơn, nhưng chưa đủ điều kiện lập bug chức năng. |
+| B-DT-05/B-DT-06 - thiếu hoặc sai token ở `/api/orders/my-orders` | Pass | API danh sách lịch sử đơn hàng xử lý đúng 401/403. |
+| B-BVA-04 - mã đơn không tồn tại | Pass | API trả `404 Order not found` đúng mong đợi. |
