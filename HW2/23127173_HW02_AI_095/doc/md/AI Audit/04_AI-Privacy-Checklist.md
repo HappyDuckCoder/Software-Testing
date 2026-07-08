@@ -10,7 +10,7 @@
 ## 2. While Using AI
 
 * [x] Logged major AI interactions in `doc/md/AI Audit/01_AI-Audit-Report.md`.
-* [ ] Fully mirrored every later interaction in `doc/md/appendixA-prompt-log.md`.
+* [x] Mirrored the major artifact-changing interactions in `doc/md/appendixA-prompt-log.md`.
 * [x] Did not use AI-generated text as fake execution evidence.
 * [x] Did not paste private passwords, long-lived tokens, or sensitive personal data into AI.
 * [x] Tagged AI-generated artifacts in the AI Audit Report.
@@ -23,10 +23,10 @@
 * [x] AI Critique is 200-300 words.
 * [x] Mandatory Disclosure is included.
 * [x] README test summary is complete.
-* [ ] Main report and AI Audit have been exported to PDF.
+* [x] Main report and AI Audit have been exported to PDF.
 * [ ] GitHub Issue links/screenshots have been attached for all bugs.
-* [ ] Agent Skill demo video link has been added.
-* [ ] Git commit log has been pasted from real repository history.
+* [x] Agent Skill demo video link has been added.
+* [x] Git commit log has been pasted from real repository history.
 
 ## 4. Final Responsibility
 
@@ -36,5 +36,5 @@ I understand that final responsibility for correctness, originality, and academi
 | --- | --- |
 | Student name | Trần Hải Đức |
 | Student ID | 23127173 |
-| Date | 2026-07-08 |
+| Date | 2026-07-09 |
 | Signature | Trần Hải Đức |

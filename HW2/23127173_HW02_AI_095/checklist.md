@@ -20,9 +20,9 @@ Scope: toàn bộ HW02 sau khi đã hoàn thành test case Feature A/B/C/D.
 | Privacy Checklist | Done | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | Đã tick theo trạng thái hiện tại |
 | Git commit log | Done/Refresh after final commit | `doc/md/Git Commit Log/git-commit-log.txt` | Đã paste log thật của nhánh `homework2`; nên chạy lại sau commit cuối |
 | Agent Skill source | Done | `agent-skills/` | Có các skill phục vụ inspection, Domain Testing, BVA, bug report, gap analysis |
-| Agent Skill demo video | Student will add later | `agent-skills/demo-videos/link-video.md` | Sinh viên sẽ tự bổ sung link video demo skill sau nếu rubric yêu cầu |
+| Agent Skill demo video | Done | `agent-skills/demo-videos/link-video.md` | Đã có link demo skill cho Feature A - FR-04 |
 | Main report Markdown | Done | `doc/md/main-report.md` | Đã cập nhật số liệu và feature |
-| Main report PDF | Student will export | `doc/pdf/` | Sinh viên sẽ tự export PDF khi đóng gói nộp bài |
+| Main report PDF | Done | `doc/pdf/main-report.pdf`, `doc/pdf/AI-Audit-Appendix.pdf` | Đã export PDF bằng Pandoc/XeLaTeX |
 | README self-assessment + test summary | Done | `README.md` | Đã cập nhật theo số liệu cuối |
 
 ## 2. Feature-Level Checklist
@@ -49,8 +49,8 @@ Scope: toàn bộ HW02 sau khi đã hoàn thành test case Feature A/B/C/D.
 | Risk | Mitigation |
 | --- | --- |
 | Có screenshot GitHub/bug nhưng chưa gắn URL issue thật | Nếu giảng viên yêu cầu URL, thêm link issue vào từng bug report; hiện ảnh nằm trong `bug-report/screenshots` |
-| Chưa export PDF | Sinh viên export `doc/md/main-report.md` và AI Audit sang PDF khi đóng gói |
-| Link video demo Agent Skill còn TBD | Sinh viên tự bổ sung sau tại `agent-skills/demo-videos/link-video.md` nếu rubric yêu cầu |
+| PDF render cần kiểm tra lần cuối | Đã export PDF; mở lại trước khi zip để kiểm tra layout bảng theo yêu cầu cá nhân |
+| Link video demo Agent Skill | Đã bổ sung link trong `agent-skills/demo-videos/link-video.md`; kiểm tra link mở được trước khi nộp |
 | Git commit log cần cập nhật sau commit cuối | Sau khi chốt bài, chạy lại `git log --oneline --decorate --stat -- HW2/23127173_HW02_AI_095` và thay phần log nếu cần |
 | Feature D gọi là Mobile nhưng evidence chủ yếu là API/web flow | Trong báo cáo cần nói rõ đây là kiểm thử rule FR-10 phục vụ mobile/user flow, chưa phải native mobile UI test đầy đủ |
 | Prompt log chưa đầy đủ bằng AI Audit | Có thể bổ sung prompt log hoặc dùng AI Audit làm nguồn chính, nhưng tốt nhất nên đồng bộ trước khi nộp |

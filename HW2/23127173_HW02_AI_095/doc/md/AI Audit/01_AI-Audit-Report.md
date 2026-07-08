@@ -40,10 +40,10 @@
 
 | Chi so | So luong | Ti le |
 | --- | ---: | ---: |
-| Tong artifact AI sinh da audit | 23 | 100% |
+| Tong artifact AI sinh da audit | 24 | 100% |
 | VALID | 0 | 0% |
 | INVALID | 0 | 0% |
-| INCOMPLETE | 23 | 100% |
+| INCOMPLETE | 24 | 100% |
 
 ## 4. Ket luan - khi nao nen / khong nen dung AI?
 
@@ -132,3 +132,15 @@ Nen dung AI de lap roadmap, tao khung bao cao, chuan hoa bang test case, goi y p
 | Verdict | INCOMPLETE |
 | Ly do | Markdown va evidence folders da san sang hon cho muc tieu 95, nhung diem cuoi cung van phu thuoc vao viec sinh vien export PDF, bo sung video demo skill neu rubric yeu cau, va gan URL GitHub Issue that neu giang vien bat buoc. |
 | Ban sinh vien can sua | Export PDF, kiem tra render bang/anh, cap nhat link video demo skill neu can, va gan URL issue that neu rubric yeu cau ngoai screenshot. |
+
+## 13. Audit addendum - Prompt log sync and full main report composition
+
+| Muc | Gia tri |
+| --- | --- |
+| Tool | Codex / ChatGPT |
+| Thoi gian | 2026-07-09 +07:00 |
+| Prompt | "cap nhat Lab\\HW2\\23127173_HW02_AI_095\\doc\\md\\appendixA-prompt-log.md; main-report se la ban ket hop noi dung day du cua feature-A report, feature-B report, feature-C domain-testing, feature-D-mobile report, toan bo thu muc AI Audit" |
+| Output AI | Cap nhat prompt log theo cac interaction chinh cua HW02 va tao lai `doc/md/main-report.md` thanh ban tong hop day du, gom Feature A report, Feature B report, Feature C Domain Testing, Feature D-mobile report va toan bo cac file trong `doc/md/AI Audit`. |
+| Verdict | INCOMPLETE |
+| Ly do | Main report da gom noi dung Markdown can nop, nhung sinh vien van can preview/export PDF de dam bao cac bang dai render dung va khong bi tran trang. |
+| Ban sinh vien can sua | Doc lai ban main report sau khi export PDF, sua layout neu bang qua rong, va cap nhat lai prompt log neu co them interaction AI truoc khi nop. |

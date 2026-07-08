@@ -46,7 +46,7 @@
 | Artifact | Đường dẫn | Trạng thái |
 | --- | --- | --- |
 | Main report Markdown | `doc/md/main-report.md` | Đã cập nhật nội dung tổng hợp |
-| Main report PDF | `doc/pdf/main-report.pdf` | Sẽ export khi đóng gói nộp bài |
+| Main report PDF | `doc/pdf/main-report.pdf` | Đã export |
 | Domain Testing report | `requirement/feature-*/domain-testing/domain-testing.md` | Đã có cho 4 feature |
 | Boundary Value Analysis report | `requirement/feature-*/boundary-value-analysis/boundary-value-analysis.md` | Đã có cho 4 feature |
 | Bug report Markdown | `requirement/feature-*/bug-report/bug-report.md` | Đã có cho 4 feature |
@@ -58,8 +58,8 @@
 | AI Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | Đã cập nhật |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | Cần bổ sung đủ các prompt nếu muốn khớp audit chi tiết |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | Đã paste commit log thật của nhánh `homework2`; nên cập nhật lại sau commit cuối |
-| Agent Skills | `agent-skills/` | Đã có skill source; video demo skill sẽ tự bổ sung sau tại `agent-skills/demo-videos/link-video.md` nếu cần |
+| Agent Skills | `agent-skills/` | Đã có skill source và link demo tại `agent-skills/demo-videos/link-video.md` |
 
 ## 6. Ghi chú review cuối
 
-Các feature đã khớp với yêu cầu chính của HW2: mỗi pool có một feature, mỗi feature có Domain Testing, Boundary Value Analysis, Bug Report và AI Gap Analysis. Bài hiện mạnh ở số lượng test case, kết quả thực thi và hệ thống ảnh minh chứng. Việc còn lại trước khi nộp là export PDF, cập nhật link video demo Agent Skill nếu rubric yêu cầu, và nếu giảng viên yêu cầu URL GitHub Issue thật thì gắn thêm link vào bug report.
+Các feature đã khớp với yêu cầu chính của HW2: mỗi pool có một feature, mỗi feature có Domain Testing, Boundary Value Analysis, Bug Report và AI Gap Analysis. Bài hiện mạnh ở số lượng test case, kết quả thực thi, hệ thống ảnh minh chứng và đã có link demo Agent Skill. Việc còn lại trước khi nộp là kiểm tra PDF sau khi export và nếu giảng viên yêu cầu URL GitHub Issue thật thì gắn thêm link vào bug report.
