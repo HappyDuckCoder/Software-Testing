@@ -1,0 +1,3 @@
+display_name: AI Gap Reviewer
+short_description: Reviews AI test output and writes HW02 AI gap analysis.
+default_prompt: Use this skill to compare AI-generated tests with my EShop execution results and write the AI Gap Analysis section.

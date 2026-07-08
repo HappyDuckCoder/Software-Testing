@@ -1,0 +1,3 @@
+display_name: Domain Testing Designer
+short_description: Builds equivalence classes and Domain Testing cases for EShop features.
+default_prompt: Use this skill to create Domain Testing partitions, representative values, constraints, and test cases for my selected EShop feature.

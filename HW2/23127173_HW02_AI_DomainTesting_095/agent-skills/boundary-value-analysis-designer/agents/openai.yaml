@@ -1,0 +1,3 @@
+display_name: BVA Designer
+short_description: Finds boundaries and creates Boundary Value Analysis cases for EShop features.
+default_prompt: Use this skill to identify boundaries and create BVA test cases for my selected EShop feature.
