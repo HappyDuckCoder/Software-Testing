@@ -29,15 +29,16 @@
 | Tool: Codex / ChatGPT. Thoi gian: 2026-07-08 +07:00. Prompt: "dua vao luong test case da viet hay sua lai feature-A/ai-gap-analysis bang tieng Viet; ban tu danh gia xem ban da sinh test case tot chua; bo sung ai audit" | Viet lai `feature-A/ai-gap-analysis/ai-gap-analysis.md` bang tieng Viet, dua tren 30 test da chay: 18 Domain Testing, 12 BVA, 10 Pass, 14 Fail, 6 Warning, 2 bug chinh. Bo sung tu danh gia chat luong test case, diem tot, diem chua tot, gap AI ban dau va huong cai thien. | INCOMPLETE | Phan phan tich da phan anh thuc te hon va khong to hong output AI. Van INCOMPLETE vi mot so cai thien de xuat nhu giam trung lap, co lap bien BVA va tao GitHub Issue that chua duoc thuc hien. | Sinh vien can review lai danh gia, quyet dinh co toi uu them test case hay khong, tao issue that va cap nhat report cuoi. |
 | Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt: "tôi vừa hoàn thành test các test ở featureB ... hãy sửa lại bug-report và feature-B-report ... sau đó tự review lại và viết ai-gap-analysis ... cập nhật AI audit" | Viết lại `feature-B-report.md`, `feature-B/bug-report/bug-report.md` và `feature-B/ai-gap-analysis/ai-gap-analysis.md` bằng tiếng Việt có dấu dựa trên kết quả đã chạy: 22 test, 18 Pass, 2 Fail, 2 Warning. Cập nhật bug Feature B từ trạng thái dự đoán sang trạng thái đã tái hiện/đối chiếu: lộ chi tiết đơn hàng qua `GET /api/orders/:id` và hiển thị nút hủy cho đơn `shipping`. | INCOMPLETE | Output đã dựa trên kết quả test và bằng chứng ảnh trong Feature B, nhưng vẫn chưa có link GitHub Issue thật cho các bug. Một vài bằng chứng như B-DT-14 còn dùng ảnh trước/sau gián tiếp thay vì log riêng cho thao tác. | Sinh viên cần tạo GitHub Issue thật nếu rubric yêu cầu, gắn link vào bug report, kiểm tra lại bằng chứng B-DT-14 nếu muốn chặt hơn, và đối chiếu final report trước khi nộp. |
 | Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt: "thay vì để là BUG-B-02, thì đổi thành WARNING-B-01 vì lỗi không phải do FR-11 mà do FR-10, bổ sung ai audit" | Cập nhật phân loại trong Feature B: đổi `BUG-B-02` thành `WARNING-B-01`, ghi rõ đây là warning liên feature FR-10 được phát hiện khi test màn hình FR-11. Cập nhật `bug-report.md`, `feature-B-report.md`, `ai-gap-analysis.md` và AI Audit. | INCOMPLETE | Phân loại đã chính xác hơn về trách nhiệm requirement: lỗi bảo mật `BUG-B-01` thuộc FR-11, còn thao tác hủy `shipping` là vấn đề state machine của FR-10. Vẫn INCOMPLETE vì cần sinh viên xác nhận lần cuối và gắn issue/evidence theo quy trình nộp bài. | Sinh viên cần kiểm tra lại wording cuối cùng, đảm bảo Feature D/FR-10 có bug tương ứng hoặc ghi nhận cùng warning này để trace giữa hai feature. |
+| Tool: Codex / ChatGPT. Thời gian: 2026-07-08 +07:00. Prompt: "tôi vừa test xong các test case ở feature-C boundary-value-analysis và domain-testing ... hãy sửa lại feature-C-report và bug-report ... tự review và viết lại ai-gap-analysis ... viết bằng tiếng việt có dấu, cố gắng viết gần gũi" | Viết lại `feature-C-report.md`, `feature-C/bug-report/bug-report.md` và `feature-C/ai-gap-analysis/ai-gap-analysis.md` theo kết quả đã chạy: 24 test, 18 Pass, 6 Fail. Gom lỗi thành 3 bug chính: thiếu phân quyền role admin, cho phép `canceled -> delivered`, và XSS qua `shipping_address` trên admin UI. | INCOMPLETE | Output đã dựa trên kết quả thực thi và bằng chứng ảnh của Feature C, nhưng vẫn cần sinh viên rà lần cuối tên ảnh minh chứng, gắn GitHub Issue thật nếu rubric yêu cầu, và liên kết BUG-C-02 với Feature D/FR-10. | Sinh viên cần kiểm tra lại các ảnh evidence, tạo issue thật nếu cần, và đảm bảo báo cáo chính/PDF dùng đúng số liệu 24 test, 18 Pass, 6 Fail. |
 
 ## 3. Tong ket do chinh xac AI
 
 | Chi so | So luong | Ti le |
 | --- | ---: | ---: |
-| Tong artifact AI sinh da audit | 12 | 100% |
+| Tong artifact AI sinh da audit | 13 | 100% |
 | VALID | 0 | 0% |
 | INVALID | 0 | 0% |
-| INCOMPLETE | 12 | 100% |
+| INCOMPLETE | 13 | 100% |
 
 ## 4. Ket luan - khi nao nen / khong nen dung AI?
 
@@ -45,7 +46,7 @@ Nen dung AI de lap roadmap, tao khung bao cao, chuan hoa bang test case, goi y p
 
 ## 5. Mandatory Disclosure draft
 
-"The roadmap, report structure, checklist, prompt log, Agent Skills, Feature A/B/C/D test designs, Vietnamese artifact revisions, Feature A and Feature B report/bug/gap revisions, Feature B warning reclassification, and AI Audit entries were generated with assistance from Codex / ChatGPT. I reviewed and will modify the feature selection, testing method, executed results, bug reports, AI gap analysis, Agent Skill demo, and final report. Actual test execution, screenshots, GitHub Issues, videos, and final judgments are verified by me. The detailed AI Audit Report is attached as Appendix A."
+"The roadmap, report structure, checklist, prompt log, Agent Skills, Feature A/B/C/D test designs, Vietnamese artifact revisions, Feature A, Feature B, and Feature C report/bug/gap revisions, Feature B warning reclassification, and AI Audit entries were generated with assistance from Codex / ChatGPT. I reviewed and will modify the feature selection, testing method, executed results, bug reports, AI gap analysis, Agent Skill demo, and final report. Actual test execution, screenshots, GitHub Issues, videos, and final judgments are verified by me. The detailed AI Audit Report is attached as Appendix A."
 
 ## 6. Chu ky
 

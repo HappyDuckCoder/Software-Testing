@@ -1,78 +1,77 @@
-﻿# Báo cáo Feature C - Pool C
+# Báo cáo Feature C - FR-18 Quản lý đơn hàng của admin
 
-## 1. Lựa chọn feature
+## 1. Thông tin feature
 
 | Mục | Giá trị |
 | --- | --- |
 | Pool | Pool C - Web Admin |
-| Feature đã chọn | Quản lý đơn hàng (admin) |
 | Feature ID | FR-18 |
-| Lý do chọn | Feature quản lý đơn hàng admin của EShop kết hợp kiểm soát truy cập admin, xem toàn bộ đơn, chuyển trạng thái và render an toàn địa chỉ giao hàng. |
-| Trạng thái | Đã thiết kế test case dựa trên mã nguồn EShop; chờ thực thi trên SUT |
+| Feature | Quản lý đơn hàng của admin |
+| Actor chính | Admin |
+| Hệ thống kiểm thử | EShop admin frontend và backend API |
+| Trạng thái | Đã chạy test và cập nhật kết quả thực tế |
 
-## 2. Phân tích feature từ repo EShop
+Feature C kiểm tra việc admin xem toàn bộ đơn hàng, cập nhật trạng thái đơn, xử lý các trạng thái kết thúc và hiển thị địa chỉ giao hàng an toàn. Đây là feature khá “đụng nhiều nơi”: vừa có phân quyền admin, vừa có state machine của FR-10, vừa có dữ liệu người dùng nhập hiển thị lại trên màn hình quản trị.
 
-| Mục | Ghi chú |
+## 2. Phạm vi kiểm thử
+
+| Thành phần | Vai trò trong kiểm thử |
 | --- | --- |
-| Actor/vai trò | Admin user. Tài khoản seed admin: `admin@eshop.com` / `Admin123!`. |
-| Tiền điều kiện | Frontend admin có token trong `adminToken`; backend API chạy tại `localhost:3000`; DB có đơn hàng. |
-| Luồng chính | Admin mở tab Orders; frontend gọi `GET /api/admin/orders`; UI liệt kê tất cả đơn với tên user, tổng tiền, địa chỉ giao hàng, trạng thái và nút chuyển trạng thái. |
-| Luồng thay thế/lỗi | Thiếu/token không hợp lệ; token user thường; địa chỉ giao hàng chứa HTML độc hại; chuyển trạng thái không hợp lệ; mã đơn không tồn tại. |
-| Biến đầu vào | Token xác thực, order id, trạng thái hiện tại, trạng thái đích, nội dung địa chỉ giao hàng, kích thước danh sách đơn. |
-| Kết quả đầu ra | Admin xem được toàn bộ đơn; chuyển trạng thái hợp lệ thì cập nhật đơn; chuyển trạng thái không hợp lệ trả 400. |
-| Luật nghiệp vụ | API admin yêu cầu token admin hợp lệ; admin chuyển trạng thái theo FR-10; địa chỉ giao hàng phải hiển thị an toàn, không render HTML. |
-| Bằng chứng mã nguồn | `Eshop/README.md` FR-18/FR-12/FR-10, `api_specification.md` 6.2, `backend/server.js`, `frontend-admin/src/App.jsx`. |
+| `Eshop/backend/server.js` | API `GET /api/admin/orders` và `PUT /api/admin/orders/:id/status` |
+| `Eshop/frontend-admin/src/App.jsx` | Bảng Orders, nút chuyển trạng thái, hiển thị địa chỉ |
+| `Eshop/README.md` | Đối chiếu FR-18 và state machine FR-10 |
+| `Eshop/api_specification.md` | Đối chiếu endpoint admin orders |
 
-## 3. Tóm tắt feature - FR-18 Quản lý đơn hàng (admin)
+Các miền đầu vào chính gồm token, role, mã đơn, trạng thái hiện tại, trạng thái đích, danh sách đơn hàng và nội dung địa chỉ giao hàng.
 
-### 3.1 Phạm vi
+## 3. Tóm tắt kết quả thực thi
 
-| Mục | Giá trị |
+| Nhóm test | Tổng số | Pass | Fail | Warning | Chưa chạy |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Domain Testing | 16 | 12 | 4 | 0 | 0 |
+| Boundary Value Analysis | 8 | 6 | 2 | 0 | 0 |
+| Tổng cộng | 24 | 18 | 6 | 0 | 0 |
+
+## 4. Kết quả đáng chú ý
+
+| Test ID | Verdict | Nhận xét |
+| --- | --- | --- |
+| C-DT-01 | Pass | Admin xem được danh sách tất cả đơn hàng, có `user_name` và thứ tự mới nhất trước. |
+| C-DT-03 | Pass | Thiếu token bị chặn đúng. |
+| C-DT-04 | Fail | Token user thường vẫn xem được danh sách đơn admin. Đây là lỗi phân quyền nghiêm trọng. |
+| C-DT-05 đến C-DT-09 | Pass | Các transition hợp lệ như `pending -> confirmed`, `confirmed -> shipping`, `shipping -> delivered` chạy đúng. |
+| C-DT-10 | Pass | Hệ thống chặn chuyển tắt `pending -> shipping`. |
+| C-DT-11 | Pass | Hệ thống chặn `delivered -> canceled`. |
+| C-DT-12 | Fail | Hệ thống lại cho phép `canceled -> delivered`, trái với trạng thái kết thúc của FR-10. |
+| C-DT-13 | Pass | Mã đơn không tồn tại trả lỗi đúng. |
+| C-DT-14 | Pass | Trạng thái đích không xác định bị từ chối. |
+| C-DT-15 | Fail | Địa chỉ giao hàng chứa HTML/script bị thực thi trên admin UI. |
+| C-DT-16 | Fail | Đơn đã hủy vẫn có nút “Đánh dấu Đã giao” và thực hiện được thao tác. |
+| C-BVA-05 | Pass | Biên bỏ bước `pending -> shipping` bị chặn đúng. |
+| C-BVA-06 | Fail | Biên sau trạng thái kết thúc `canceled -> delivered` bị xử lý sai. |
+| C-BVA-08 | Fail | Biên địa chỉ HTML nguy hiểm không được escape an toàn. |
+
+## 5. Bug được lập từ kết quả test
+
+| Bug ID | Test liên quan | Mức độ | Tóm tắt |
+| --- | --- | --- | --- |
+| BUG-C-01 | C-DT-04 | Critical | API admin chỉ kiểm tra token, không kiểm tra role admin. |
+| BUG-C-02 | C-DT-12, C-DT-16, C-BVA-06 | Major | Đơn `canceled` vẫn có thể chuyển thành `delivered`; UI cũng hiển thị nút chuyển trạng thái này. |
+| BUG-C-03 | C-DT-15, C-BVA-08 | Critical | Admin UI render `shipping_address` bằng HTML thô, gây XSS. |
+
+Chi tiết từng lỗi nằm trong `bug-report/bug-report.md`.
+
+## 6. Đánh giá mức đạt của Feature C
+
+Feature C làm tốt các luồng quản lý cơ bản: admin xem danh sách đơn, bảng hiển thị được dữ liệu, các transition hợp lệ chạy đúng, các transition sai phổ biến như `pending -> shipping` và `delivered -> canceled` được chặn. Nói cách khác, phần “đường thẳng” của feature khá ổn.
+
+Tuy nhiên feature chưa đạt yêu cầu an toàn và đầy đủ vì còn ba rủi ro lớn. Một là user thường có thể gọi API admin. Hai là state machine bị thủng ở nhánh `canceled -> delivered`. Ba là địa chỉ giao hàng của user được render như HTML trên màn hình admin, dẫn tới XSS. Đây đều là lỗi cần sửa trước khi coi FR-18 là đạt.
+
+## 7. Liên kết artifact
+
+| Artifact | Đường dẫn |
 | --- | --- |
-| Pool | Pool C |
-| Feature ID | FR-18 |
-| Actor | Admin |
-| Môi trường | EShop admin frontend + backend API |
-
-### 3.2 Phân tích luồng
-
-| Luồng | Các bước | Kết quả mong đợi | Bằng chứng |
-| --- | --- | --- | --- |
-| Liệt kê tất cả đơn hàng | Đăng nhập admin, mở tab Orders | Bảng hiển thị tất cả đơn, join thêm `users.name as user_name`, đơn mới nhất đứng trước | `backend/server.js`, `frontend-admin/src/App.jsx` |
-| Cập nhật trạng thái đơn hàng | Click action trạng thái hoặc gọi `PUT /api/admin/orders/:id/status` | Transition hợp lệ theo FR-10 sẽ cập nhật trạng thái | `server.js` |
-| Từ chối chuyển trạng thái không hợp lệ | Gửi trạng thái đích không hợp lệ cho trạng thái hiện tại | 400 với thông báo chuyển trạng thái không hợp lệ | `server.js` |
-| Bắt buộc quyền admin | Dùng token thiếu/không hợp lệ/token user thường | Endpoint admin phải từ chối user không phải admin | README FR-12; mã nguồn thiếu middleware kiểm tra role |
-| Hiển thị địa chỉ an toàn | Render địa chỉ giao hàng chứa HTML/script | UI phải hiển thị text an toàn | README FR-18; UI dùng `dangerouslySetInnerHTML` |
-
-### 3.3 Danh mục đầu vào / đầu ra
-
-| Biến | Kiểu | Nguồn | Quy tắc |
-| --- | --- | --- | --- |
-| Token admin | Header/trạng thái | README FR-12, admin app | Endpoint admin phải yêu cầu `role='admin'`. |
-| Mã đơn | Tham số đường dẫn | API route | ID tồn tại thì có thể cập nhật; ID không tồn tại trả 404. |
-| Trạng thái hiện tại | Tập giá trị | DB | Drives allowed trạng thái đíches. |
-| Trạng thái đích | Tập giá trị/body | API/UI | `pending`, `confirmed`, `shipping`, `delivered`, `canceled`; phải tuân theo FR-10. |
-| Đang giao address | Văn bản/HTML risk | DB/admin UI | Must be displayed safely, not rendered as HTML. |
-| Danh sách đơn | Mảng | Admin API | Hiển thị đơn của tất cả user kèm tên user. |
-
-## 4. Báo cáo liên kết
-
-* Domain Testing: `domain-testing/domain-testing.md`
-* Boundary Value Analysis: `boundary-value-analysis/boundary-value-analysis.md`
-* Bug Report: `bug-report/bug-report.md`
-* AI Gap Analysis: `ai-gap-analysis/ai-gap-analysis.md`
-
-## 5. Tóm tắt thực thi
-
-| Đã thiết kế | Đã chạy | Pass | Fail | Chưa chạy | Bug |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 24 | 0 | 0 | 0 | 24 | 3 |
-
-
-
-
-
-
-
-
-
+| Domain Testing | `domain-testing/domain-testing.md` |
+| Boundary Value Analysis | `boundary-value-analysis/boundary-value-analysis.md` |
+| Bug Report | `bug-report/bug-report.md` |
+| AI Gap Analysis | `ai-gap-analysis/ai-gap-analysis.md` |

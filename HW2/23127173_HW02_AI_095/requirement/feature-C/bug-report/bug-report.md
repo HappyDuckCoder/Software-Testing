@@ -1,80 +1,82 @@
-﻿# Bug Report - FR-18 Quản lý đơn hàng của admin
+# Bug Report - Feature C: FR-18 Quản lý đơn hàng của admin
 
-## 1. Tổng quan lỗi
+## 1. Tổng quan lỗi đã ghi nhận
 
-| Bug ID | Tóm tắt | Mức độ | Ưu tiên | Trạng thái | Test liên quan | Bằng chứng |
+| Bug ID | Tóm tắt | Mức độ | Ưu tiên | Trạng thái | Test phát hiện | Bằng chứng |
 | --- | --- | --- | --- | --- | --- | --- |
-| BUG-C-01 | API admin quản lý đơn hàng chỉ xác thực token, chưa kiểm tra `role='admin'` | Critical | Cao | Xác định từ mã nguồn, chờ thực thi xác nhận | C-DT-04 | `backend/server.js` admin routes |
-| BUG-C-02 | Backend cho phép chuyển trạng thái `canceled -> delivered` | Major | Cao | Xác định từ mã nguồn, chờ thực thi xác nhận | C-DT-12, C-BVA-06 | `backend/server.js` state transition branch |
-| BUG-C-03 | Bảng đơn hàng admin render `shipping_address` bằng HTML thô | Critical | Cao | Xác định từ mã nguồn, chờ thực thi xác nhận | C-DT-15, C-BVA-08 | `frontend-admin/src/App.jsx` dùng `dangerouslySetInnerHTML` |
+| BUG-C-01 | User thường có thể gọi API quản lý đơn hàng admin | Critical | Cao | Đã tái hiện | C-DT-04 | `domain-testing/C-DT-04.png` |
+| BUG-C-02 | Đơn đã hủy vẫn có thể chuyển thành đã giao | Major | Cao | Đã tái hiện | C-DT-12, C-DT-16, C-BVA-06 | `domain-testing/C-DT-12.png`, `boundary-value-analysis/C-BVA-06.png` |
+| BUG-C-03 | Admin UI thực thi HTML/script trong địa chỉ giao hàng | Critical | Cao | Đã tái hiện | C-DT-15, C-BVA-08 | `domain-testing/C-DT-15-1.png`, `domain-testing/C-DT-15-2.png`, `boundary-value-analysis/C-BVA-08-1.png`, `boundary-value-analysis/C-BVA-08-2.png` |
 
-GitHub Issue: chờ bổ sung link issue thật sau khi xác nhận bằng SUT.
+GitHub Issue: chưa có link issue thật trong tài liệu. Nếu rubric yêu cầu, cần tạo issue và gắn link vào từng bug.
 
-## 2. BUG-C-01 - User thường có thể gọi API quản lý đơn hàng admin
+## 2. BUG-C-01 - User thường truy cập được API admin orders
 
 ### Mô tả
 
-FR-18 là chức năng dành cho admin. Các API như `GET /api/admin/orders` và `PUT /api/admin/orders/:id/status` phải chỉ cho phép tài khoản có `role='admin'`. Tuy nhiên mã nguồn hiện chỉ gọi `authenticateToken`, nghĩa là chỉ cần token hợp lệ là có thể đi tiếp, kể cả token của user thường.
+FR-18 là chức năng dành cho admin. Vì vậy các API như `GET /api/admin/orders` và `PUT /api/admin/orders/:id/status` phải kiểm tra người gọi có quyền admin. Khi test C-DT-04, token của user thường vẫn xem được danh sách đơn hàng admin.
 
 ### Môi trường
 
 | Mục | Giá trị |
 | --- | --- |
 | Ứng dụng | EShop backend API |
-| Feature | FR-18 Quản lý đơn hàng admin |
-| Endpoint | `GET /api/admin/orders`, `PUT /api/admin/orders/:id/status` |
+| Feature | FR-18 - Quản lý đơn hàng admin |
+| Endpoint lỗi | `GET /api/admin/orders` |
 | Tài khoản test | `test@eshop.com` / `Test1234!` |
+| Test liên quan | C-DT-04 |
 
 ### Bước tái hiện
 
 1. Đăng nhập bằng user thường `test@eshop.com`.
 2. Lấy bearer token của user thường.
-3. Gửi `GET /api/admin/orders` với token này.
-4. Nếu có order id, tiếp tục thử `PUT /api/admin/orders/<id>/status`.
+3. Gửi request `GET /api/admin/orders` với token này.
+4. Quan sát response.
 
 ### Kết quả mong đợi
 
-API phải trả 403 hoặc thông báo không có quyền admin.
+API phải trả `403 Forbidden` hoặc thông báo không có quyền admin.
 
-### Kết quả thực tế dự kiến theo mã nguồn
+### Kết quả thực tế
 
-API có khả năng trả danh sách tất cả đơn hàng hoặc cho phép cập nhật trạng thái vì route chỉ xác thực token, không kiểm tra role.
+API trả danh sách đơn hàng admin cho user thường. Test C-DT-04 có verdict `Fail`.
 
 ### Tác động
 
-User thường có thể xem toàn bộ đơn hàng trong hệ thống hoặc thay đổi trạng thái đơn hàng. Đây là lỗi phân quyền nghiêm trọng.
+Đây là lỗi phân quyền nghiêm trọng. User thường có thể xem toàn bộ đơn hàng trong hệ thống, bao gồm thông tin khách hàng, tổng tiền, trạng thái và địa chỉ giao hàng. Nếu lỗi tương tự tồn tại ở API cập nhật trạng thái, user thường còn có thể can thiệp vào vận hành đơn hàng.
 
 ### Nguyên nhân mã nguồn
 
-Các route admin dùng `authenticateToken` nhưng không có middleware kiểm tra `req.user.role === "admin"`.
+Trong `Eshop/backend/server.js`, route admin orders chỉ dùng `authenticateToken`, chưa kiểm tra `req.user.role === "admin"`.
 
 ### Hướng sửa đề xuất
 
 1. Thêm middleware `authorizeAdmin`.
-2. Áp dụng middleware này cho toàn bộ route `/api/admin/*`.
-3. Trả 403 khi token không có `role='admin'`.
-4. Chạy lại C-DT-04 và các test admin liên quan.
+2. Áp dụng cho toàn bộ route `/api/admin/*`.
+3. Trả `403` khi token hợp lệ nhưng role không phải admin.
+4. Chạy lại C-DT-04 và các API admin liên quan.
 
-## 3. BUG-C-02 - Đơn đã hủy có thể bị chuyển thành đã giao
+## 3. BUG-C-02 - Đơn `canceled` vẫn chuyển được sang `delivered`
 
 ### Mô tả
 
-Theo FR-10, `canceled` là trạng thái kết thúc. Khi đơn đã hủy thì không được chuyển sang trạng thái khác. Tuy nhiên backend hiện đánh dấu chuyển trạng thái `canceled -> delivered` là hợp lệ.
+Theo FR-10, `canceled` là trạng thái kết thúc. Khi đơn đã hủy thì không được chuyển sang trạng thái khác. Nhưng khi test C-DT-12 và C-BVA-06, backend vẫn cho chuyển `canceled -> delivered`. Trên UI admin, C-DT-16 cũng cho thấy đơn đã hủy vẫn hiện nút “Đánh dấu Đã giao”.
 
 ### Môi trường
 
 | Mục | Giá trị |
 | --- | --- |
-| Ứng dụng | EShop backend API |
+| Ứng dụng | EShop backend API và admin frontend |
 | Feature | FR-18 kết hợp state machine FR-10 |
-| Endpoint | `PUT /api/admin/orders/:id/status` |
-| Trạng thái lỗi | `canceled -> delivered` |
+| Endpoint lỗi | `PUT /api/admin/orders/:id/status` |
+| UI liên quan | Tab Orders trong admin |
+| Test liên quan | C-DT-12, C-DT-16, C-BVA-06 |
 
-### Bước tái hiện
+### Bước tái hiện qua API
 
 1. Tạo hoặc chọn một đơn hàng.
 2. Chuyển đơn sang `canceled`.
-3. Gọi `PUT /api/admin/orders/<id>/status` với body:
+3. Gửi `PUT /api/admin/orders/<id>/status` với body:
 
 ```json
 {
@@ -82,33 +84,50 @@ Theo FR-10, `canceled` là trạng thái kết thúc. Khi đơn đã hủy thì 
 }
 ```
 
-4. Lấy lại danh sách đơn hoặc chi tiết đơn để kiểm tra trạng thái.
+4. Quan sát response và trạng thái đơn sau cập nhật.
+
+### Bước tái hiện qua UI
+
+1. Đăng nhập admin.
+2. Mở tab Orders.
+3. Tìm một đơn đang ở trạng thái `Đã hủy`.
+4. Quan sát cột thao tác.
 
 ### Kết quả mong đợi
 
-API phải trả 400 vì `canceled` là trạng thái kết thúc. Trạng thái đơn phải giữ nguyên là `canceled`.
+API phải trả `400 Invalid state transition`. UI không được hiển thị nút chuyển trạng thái cho đơn đã hủy.
 
-### Kết quả thực tế dự kiến theo mã nguồn
+### Kết quả thực tế
 
-Backend cho phép chuyển sang `delivered`.
+Backend cho phép chuyển `canceled -> delivered`. UI cũng hiển thị nút “Đánh dấu Đã giao” cho đơn `canceled`. C-DT-12, C-DT-16 và C-BVA-06 đều fail.
 
 ### Tác động
 
-Lịch sử trạng thái đơn hàng bị sai. Đơn đã hủy có thể bị tính như đơn đã giao, ảnh hưởng báo cáo doanh thu, vận hành và tính đúng đắn của state machine.
+Đơn đã hủy có thể bị tính thành đơn đã giao. Điều này làm sai dữ liệu vận hành, sai báo cáo trạng thái đơn và có thể ảnh hưởng tới thống kê doanh thu.
 
 ### Nguyên nhân mã nguồn
 
-Trong `backend/server.js` có nhánh:
+Trong `Eshop/backend/server.js` có nhánh cho phép transition sai:
 
 ```js
 if (currentStatus === "canceled" && status === "delivered")
   isValidTransition = true;
 ```
 
+Trong `Eshop/frontend-admin/src/App.jsx`, UI cũng hiển thị nút chuyển `canceled -> delivered`:
+
+```jsx
+{o.status === "canceled" && (
+  <button onClick={() => updateOrderStatus(o.id, "delivered")}>
+    Đánh dấu Đã giao
+  </button>
+)}
+```
+
 ### Hướng sửa đề xuất
 
-1. Xóa nhánh cho phép `canceled -> delivered`.
-2. Định nghĩa transition hợp lệ bằng một map rõ ràng:
+1. Xóa transition `canceled -> delivered`.
+2. Định nghĩa state machine bằng map rõ ràng, ví dụ:
 
 ```js
 const transitions = {
@@ -120,50 +139,73 @@ const transitions = {
 };
 ```
 
-3. Chạy lại C-DT-12 và C-BVA-06.
+3. UI chỉ render nút theo chính map transition hợp lệ.
+4. Chạy lại C-DT-12, C-DT-16 và C-BVA-06.
 
-## 4. BUG-C-03 - Địa chỉ giao hàng có nguy cơ HTML injection/XSS trên admin UI
+## 4. BUG-C-03 - XSS qua địa chỉ giao hàng trên admin UI
 
 ### Mô tả
 
-Bảng đơn hàng admin hiển thị `shipping_address` bằng `dangerouslySetInnerHTML`. Nếu địa chỉ giao hàng chứa HTML hoặc payload như `<img src=x onerror=alert(1)>`, trình duyệt có thể render HTML thay vì hiển thị text thuần.
+Địa chỉ giao hàng là dữ liệu do user nhập. Khi admin xem Orders, hệ thống phải hiển thị địa chỉ như văn bản thường. Tuy nhiên C-DT-15 và C-BVA-08 cho thấy payload HTML/script trong `shipping_address` được thực thi, ví dụ xuất hiện `alert(1)`.
 
 ### Môi trường
 
 | Mục | Giá trị |
 | --- | --- |
 | Ứng dụng | EShop admin frontend |
-| Feature | FR-18 Quản lý đơn hàng admin |
-| Thành phần lỗi | `Eshop/frontend-admin/src/App.jsx` |
+| Feature | FR-18 - Quản lý đơn hàng admin |
+| File liên quan | `Eshop/frontend-admin/src/App.jsx` |
 | Dữ liệu nguy hiểm | `shipping_address` |
+| Test liên quan | C-DT-15, C-BVA-08 |
 
 ### Bước tái hiện
 
-1. Tạo đơn hàng với địa chỉ giao hàng:
+1. Tạo đơn hàng có địa chỉ giao hàng chứa payload:
 
 ```html
-<img src=x onerror=alert(1)>
+<b>C-DT-15</b><img src=x onerror=alert(1)>
 ```
 
 2. Đăng nhập admin.
 3. Mở tab Orders.
-4. Quan sát cách địa chỉ được hiển thị.
+4. Quan sát ô địa chỉ giao hàng.
 
 ### Kết quả mong đợi
 
-Địa chỉ phải được hiển thị như văn bản thuần. HTML/script không được render hoặc thực thi.
+Địa chỉ phải hiển thị nguyên văn như text. HTML không được render, script không được chạy và không được xuất hiện alert.
 
-### Kết quả thực tế dự kiến theo mã nguồn
+### Kết quả thực tế
 
-Admin UI render `shipping_address` bằng `dangerouslySetInnerHTML`, tạo nguy cơ thực thi HTML/script.
+Script trong địa chỉ được thực thi. C-DT-15 và C-BVA-08 đều fail.
 
 ### Tác động
 
-Đây là lỗi bảo mật phía frontend. Payload độc hại có thể chạy trong phiên admin, dẫn tới đánh cắp token, thao tác trái phép hoặc làm sai dữ liệu quản trị.
+Đây là lỗi XSS trên màn hình admin. Nếu payload độc hại chạy trong phiên admin, kẻ tấn công có thể đánh cắp token, giả mạo thao tác quản trị hoặc làm sai dữ liệu hệ thống.
+
+### Nguyên nhân mã nguồn
+
+Trong `Eshop/frontend-admin/src/App.jsx`, `shipping_address` được render bằng HTML thô:
+
+```jsx
+<td
+  dangerouslySetInnerHTML={{
+    __html: o.shipping_address || "Chưa cập nhật",
+  }}
+/>
+```
 
 ### Hướng sửa đề xuất
 
 1. Không dùng `dangerouslySetInnerHTML` cho dữ liệu người dùng nhập.
-2. Render trực tiếp bằng JSX text: `{o.shipping_address || "Chưa cập nhật"}`.
-3. Nếu cần hỗ trợ định dạng, phải sanitize bằng thư viện đáng tin cậy trước khi render.
+2. Render bằng JSX text:
+
+```jsx
+<td>{o.shipping_address || "Chưa cập nhật"}</td>
+```
+
+3. Nếu thật sự cần hỗ trợ HTML có định dạng, phải sanitize bằng thư viện đáng tin cậy trước khi render.
 4. Chạy lại C-DT-15 và C-BVA-08.
+
+## 5. Ghi chú
+
+Các test pass như C-DT-01, C-DT-03, C-DT-10, C-DT-11, C-DT-13, C-DT-14 và C-BVA-05 cho thấy hệ thống không hỏng toàn bộ. Lỗi chủ yếu nằm ở các điểm dễ bị bỏ sót: phân quyền role, trạng thái kết thúc `canceled`, và dữ liệu người dùng nhập được render lại cho admin.
