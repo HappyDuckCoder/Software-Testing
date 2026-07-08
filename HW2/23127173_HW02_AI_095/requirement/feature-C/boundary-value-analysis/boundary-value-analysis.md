@@ -4,37 +4,41 @@
 
 | Biên ID | Biến | Biên dưới | Biên trên | Nguồn quy tắc | Độ tin cậy |
 | --- | --- | --- | --- | --- | --- |
-| C-BVA-B01 | Order count in admin table | 0 orders | Không có biên trên được mô tả | Admin table maps `orders` | Trung bình |
-| C-BVA-B02 | Số bước chuyển trạng thái | 0 after final state | 3 forward steps from pending to delivered | README FR-10 | Cao |
-| C-BVA-B03 | Shipping address length/rendering | 0 characters | Không có biên trên được mô tả | DB `TEXT`, UI render | Trung bình |
-| C-BVA-B04 | Order id existence | First existing id | Last existing id | DB/API path | Trung bình |
+| C-BVA-B01 | Số đơn trong bảng admin | 0 đơn | Không có biên trên được mô tả | Bảng admin map danh sách `orders` | Trung bình |
+| C-BVA-B02 | Số bước chuyển trạng thái | 0 sau trạng thái kết thúc | 3 bước tiến từ `pending` đến `delivered` | README FR-10 | Cao |
+| C-BVA-B03 | Độ dài/hiển thị địa chỉ giao hàng | 0 ký tự | Không có biên trên được mô tả | DB `TEXT`, UI render | Trung bình |
+| C-BVA-B04 | Sự tồn tại của mã đơn | ID tồn tại đầu tiên | ID tồn tại cuối cùng | DB/API path | Trung bình |
 
 ## 2. Giá trị biên
 
 | Biên ID | Dưới biên dưới | Tại biên dưới | Trên biên dưới | Danh nghĩa | Dưới biên trên | Tại biên trên | Trên biên trên |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| C-BVA-B01 | N/A | 0 | 1 | 2 | N/A | Không có biên trên | Many, e.g. 50 |
-| C-BVA-B02 | Attempt from final | 0 allowed moves from final | 1 valid move | `confirmed -> shipping` | 2 moves | 3-step chain | Skip step `pending -> shipping` |
-| C-BVA-B03 | N/A | empty address | 1 char | normal address | N/A | Không có biên trên | HTML payload/long address |
-| C-BVA-B04 | 0/non-existing | first existing id | second id | middle id | penultimate id | last existing id | 999999 |
+| C-BVA-B01 | N/A | 0 | 1 | 2 | N/A | Không có biên trên | Nhiều, ví dụ 50 |
+| C-BVA-B02 | Thử chuyển từ trạng thái kết thúc | 0 chuyển trạng thái được phép từ trạng thái kết thúc | 1 chuyển trạng thái hợp lệ | `confirmed -> shipping` | 2 moves | chuỗi 3 bước | Bỏ qua bước `pending -> shipping` |
+| C-BVA-B03 | N/A | địa chỉ rỗng | 1 ký tự | địa chỉ bình thường | N/A | Không có biên trên | HTML payload/địa chỉ dài |
+| C-BVA-B04 | 0/non-existing | first existing id | ID thứ hai | ID ở giữa | ID áp chót | ID tồn tại cuối cùng | 999999 |
 
 ## 3. Test case BVA
 
 | ID | Mục tiêu | Điều kiện/biên thỏa mãn | Biên | Đầu vào | Tiền điều kiện | Các bước | Kết quả mong đợi | Actual | Verdict | Bằng chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| C-BVA-01 | Admin table with zero orders | C-BVA-B01 lower | C-BVA-B01 lower | Token=admin token unless specified; order_id=0 orders; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Rỗng orders table | Open admin Orders tab | Table handles empty state without crash | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
-| C-BVA-02 | Admin table with one order | C-BVA-B01 above lower | C-BVA-B01 above lower | Token=admin token unless specified; order_id=1 order; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | One order exists | Open Orders tab | Exactly one row appears | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
-| C-BVA-03 | Admin table with many orders | C-BVA-B01 no upper bound | C-BVA-B01 no upper bound | Token=admin token unless specified; order_id=50 orders; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Many orders exist | Open Orders tab | All rows render, newest first | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
-| C-BVA-04 | Full valid transition chain | C-BVA-B02 upper chain | C-BVA-B02 upper chain | Token=admin token unless specified; order_id=`pending -> confirmed -> shipping -> delivered`; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Token admin; pending order | Apply transitions in order | Ends at delivered with each step accepted | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| C-BVA-05 | Reject skipped transition | C-BVA-B02 above step | C-BVA-B02 above step | Token=admin token unless specified; order_id=`pending -> shipping`; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Token admin; pending order | PUT target shipping | 400 invalid transition | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng API |
-| C-BVA-06 | Reject transition after final state | C-BVA-B02 lower final | C-BVA-B02 lower final | Token=admin token unless specified; order_id=`canceled -> delivered`; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Token admin; canceled order | PUT target delivered | 400 invalid transition | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng; source indicates bug |
-| C-BVA-07 | Rỗng shipping address display | C-BVA-B03 lower | C-BVA-B03 lower | Token=admin token unless specified; order_id=empty address; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Order exists | Open Orders tab | Shows safe fallback or blank text | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
-| C-BVA-08 | HTML address display safety | C-BVA-B03 above safe rendering | C-BVA-B03 above safe rendering | Token=admin token unless specified; order_id=`<b>X</b><img src=x onerror=alert(1)>`; current_status=test setup; target_status=test value; shipping_address=safe text unless specified; order_list=seeded orders | Order exists | Open Orders tab | Escaped text only; no HTML execution | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot; source indicates bug |
+| C-BVA-01 | Bảng admin với 0 đơn | C-BVA-B01 biên dưới | C-BVA-B01 biên dưới | Token=token admin, trừ khi test case ghi khác; order_id=0 đơn; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Bảng đơn rỗng | Mở tab Orders của admin | Bảng xử lý trạng thái rỗng không bị crash | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
+| C-BVA-02 | Bảng admin với 1 đơn | C-BVA-B01 above biên dưới | C-BVA-B01 above biên dưới | Token=token admin, trừ khi test case ghi khác; order_id=1 đơn; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Có một đơn | Mở tab Orders | Hiển thị đúng một dòng | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
+| C-BVA-03 | Bảng admin với nhiều đơn | C-BVA-B01 không có biên trên | C-BVA-B01 không có biên trên | Token=token admin, trừ khi test case ghi khác; order_id=50 đơn; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Có nhiều đơn | Mở tab Orders | Tất cả dòng hiển thị, đơn mới nhất đứng trước | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
+| C-BVA-04 | Chuỗi chuyển trạng thái hợp lệ đầy đủ | C-BVA-B02 chuỗi biên trên | C-BVA-B02 chuỗi biên trên | Token=token admin, trừ khi test case ghi khác; order_id=`pending -> confirmed -> shipping -> delivered`; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Token admin; đơn `pending` | Thực hiện chuyển trạng thái đúng thứ tự | Kết thúc ở `delivered` và từng bước được chấp nhận | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
+| C-BVA-05 | Từ chối chuyển trạng thái bỏ bước | C-BVA-B02 trên biên bước | C-BVA-B02 trên biên bước | Token=token admin, trừ khi test case ghi khác; order_id=`pending -> shipping`; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Token admin; đơn `pending` | Gọi PUT với trạng thái đích `shipping` | 400 do chuyển trạng thái không hợp lệ | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng API |
+| C-BVA-06 | Từ chối chuyển trạng thái sau trạng thái kết thúc | C-BVA-B02 biên dưới trạng thái kết thúc | C-BVA-B02 biên dưới trạng thái kết thúc | Token=token admin, trừ khi test case ghi khác; order_id=`canceled -> delivered`; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Token admin; đơn `canceled` | Gọi PUT với trạng thái đích `delivered` | 400 do chuyển trạng thái không hợp lệ | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng; mã nguồn cho thấy có khả năng là lỗi |
+| C-BVA-07 | Hiển thị địa chỉ giao hàng rỗng | C-BVA-B03 biên dưới | C-BVA-B03 biên dưới | Token=token admin, trừ khi test case ghi khác; order_id=địa chỉ rỗng; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Đơn tồn tại | Mở tab Orders | Hiển thị fallback an toàn hoặc để trống | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot |
+| C-BVA-08 | An toàn hiển thị địa chỉ dạng HTML | C-BVA-B03 trên biên hiển thị an toàn | C-BVA-B03 trên biên hiển thị an toàn | Token=token admin, trừ khi test case ghi khác; order_id=`<b>X</b><img src=x onerror=alert(1)>`; current_status=trạng thái được thiết lập cho test; target_status=giá trị đang kiểm thử; shipping_address=văn bản an toàn trừ khi test case ghi khác; order_list=danh sách đơn đã seed | Đơn tồn tại | Mở tab Orders | Chỉ hiển thị text đã escape; không thực thi HTML | Chưa chạy | Chưa chạy | Chờ bổ sung screenshot; mã nguồn cho thấy có khả năng là lỗi |
 
 ## 4. Ghi chú review
 
-* Agent skill used: `boundary-value-analysis-designer`.
-* FR-18 BVA focuses on count, transition-step boundaries, final-state boundaries, and rendering boundary inputs.
+* Agent skill đã dùng: `boundary-value-analysis-designer`.
+* BVA của FR-18 tập trung vào số lượng đơn, biên số bước chuyển trạng thái, biên trạng thái kết thúc và biên hiển thị dữ liệu.
+
+
+
+
 
 
 

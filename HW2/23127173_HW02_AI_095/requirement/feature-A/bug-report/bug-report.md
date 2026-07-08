@@ -1,94 +1,136 @@
 ﻿# Bug Report - FR-04 Quản lý hồ sơ cá nhân
 
-The following bugs are source-identified from the EShop repo and should be confirmed by executing the related test cases on the running SUT.
+## 1. Tổng quan lỗi
 
-| Bug ID | Tóm tắt | Severity | Priority | GitHub Issue | Bằng chứng | Status |
+| Bug ID | Tóm tắt | Mức độ | Ưu tiên | Trạng thái | Test liên quan | Bằng chứng |
 | --- | --- | --- | --- | --- | --- | --- |
-| BUG-A-01 | Frontend phone validation contradicts FR-04 README rule | Major | Cao | Chờ bổ sung | `Eshop/README.md` FR-04 vs `Eshop/frontend-web/src/pages/Profile.jsx` regex | Đã xác định từ source; chờ thực thi xác nhận |
-| BUG-A-02 | `PUT /api/users/me` allows user to change own `role` | Critical | Cao | Chờ bổ sung | `Eshop/README.md` FR-04 vs `Eshop/backend/server.js` role update branch | Đã xác định từ source; chờ thực thi xác nhận |
+| BUG-A-01 | Frontend kiểm tra số điện thoại trái với quy tắc FR-04 trong README | Major | Cao | Đã tái hiện khi chạy UI | A-DT-06, A-DT-08, A-DT-12, A-BVA-02, A-BVA-03, A-BVA-05, A-BVA-06 | Screenshot trong `domain-testing` và `boundary-value-analysis`; `Profile.jsx` dòng regex phone |
+| BUG-A-02 | API `PUT /api/users/me` cho phép user thường tự đổi `role` thành `admin` | Critical | Cao | Đã tái hiện khi gọi API | A-DT-17 | Screenshot/log API `A-DT-017.png`; `backend/server.js` route cập nhật hồ sơ |
 
-## BUG-A-01 - Frontend Phone Validation Contradicts FR-04
+GitHub Issue: chờ bổ sung link issue thật sau khi tạo trên repository nộp bài.
 
-### Tóm tắt
+## 2. BUG-A-01 - Frontend kiểm tra số điện thoại trái đặc tả FR-04
 
-The README says a valid profile phone number starts with `0` and has 10-11 digits, but the frontend profile form validates phone using `^[1-9][0-9]{8,9}$`.
+### Mô tả
+
+Theo FR-04 trong README, số điện thoại hợp lệ phải bắt đầu bằng `0` và dài 10-11 chữ số. Tuy nhiên form hồ sơ trên frontend đang dùng regex `^[1-9][0-9]{8,9}$`, nghĩa là:
+
+* Từ chối số bắt đầu bằng `0`, dù đó là số hợp lệ theo README.
+* Chấp nhận số bắt đầu bằng `1-9`, dù đó là số không hợp lệ theo README.
+* Chỉ cho phép 9-10 chữ số, trong khi README yêu cầu 10-11 chữ số.
 
 ### Môi trường
 
-* SUT: EShop web application
-* Feature: FR-04 Quản lý hồ sơ cá nhân
-* Component: `frontend-web/src/pages/Profile.jsx`
+| Mục | Giá trị |
+| --- | --- |
+| Ứng dụng | EShop web |
+| Feature | FR-04 Quản lý hồ sơ cá nhân |
+| Thành phần lỗi | `Eshop/frontend-web/src/pages/Profile.jsx` |
+| Tài khoản test | `test@eshop.com` / `Test1234!` |
 
-### Tiền điều kiện
+### Bước tái hiện
 
-1. User is logged in.
-2. Profile page is open.
-
-### Các bước tái hiện
-
-1. Enter phone `0912345678`.
-2. Submit the profile form.
-3. Then enter phone `912345678`.
-4. Submit the profile form again.
+1. Đăng nhập bằng tài khoản `test@eshop.com`.
+2. Mở trang `/profile`.
+3. Nhập `phone = 0912345678`.
+4. Bấm cập nhật hồ sơ.
+5. Tiếp tục nhập `phone = 912345678`.
+6. Bấm cập nhật hồ sơ.
 
 ### Kết quả mong đợi
 
-`0912345678` should be accepted because it starts with `0` and has 10 digits. `912345678` should be rejected because it does not start with `0` and has only 9 digits.
+* `0912345678` phải được chấp nhận vì bắt đầu bằng `0` và có 10 chữ số.
+* `912345678` phải bị từ chối vì không bắt đầu bằng `0` và chỉ có 9 chữ số.
+* Thông báo lỗi, nếu có, phải nói đúng quy tắc 10-11 chữ số bắt đầu bằng `0`.
 
 ### Kết quả thực tế
 
-Chờ thực thi. Đọc source indicates the opposite may happen because the frontend regex rejects leading `0` and accepts 9-10 digits starting from `1-9`.
+* Số `0912345678` bị frontend từ chối.
+* Số `912345678` được frontend chấp nhận/cập nhật thành công.
+* Một số thông báo lỗi ghi 9-10 chữ số, không khớp README 10-11 chữ số.
 
-### Bằng chứng
+### Tác động
 
-Chờ bổ sung screenshot/video. Bằng chứng source: `Profile.jsx` phone regex and README FR-04 phone rule.
+Người dùng nhập số điện thoại hợp lệ theo yêu cầu nghiệp vụ nhưng không cập nhật được hồ sơ. Ngược lại, hệ thống có thể lưu số điện thoại sai định dạng, làm giảm chất lượng dữ liệu giao hàng và liên hệ.
 
-## BUG-A-02 - Profile API Allows Role Escalation
+### Nguyên nhân mã nguồn
 
-### Tóm tắt
+Trong `Profile.jsx`, regex kiểm tra phone là:
 
-FR-04 says users cannot change their own `role`, but `PUT /api/users/me` reads `role` from the request body and includes it in the SQL update when provided.
+```js
+/^[1-9][0-9]{8,9}$/
+```
+
+Regex đúng theo README nên là một biến thể tương đương:
+
+```js
+/^0[0-9]{9,10}$/
+```
+
+### Hướng sửa đề xuất
+
+1. Đổi regex frontend thành `^0[0-9]{9,10}$`.
+2. Cập nhật thông báo lỗi thành “Số điện thoại phải bắt đầu bằng 0 và gồm 10-11 chữ số”.
+3. Bổ sung validation tương tự ở backend để request API trực tiếp không bỏ qua được quy tắc.
+4. Chạy lại các test A-DT-06, A-DT-08, A-DT-12 và A-BVA-02 đến A-BVA-06.
+
+## 3. BUG-A-02 - API hồ sơ cho phép user thường tự đổi `role`
+
+### Mô tả
+
+FR-04 chỉ cho phép người dùng cập nhật thông tin hồ sơ cơ bản như họ tên, số điện thoại và địa chỉ giao hàng. Người dùng không được tự đổi vai trò. Tuy nhiên endpoint `PUT /api/users/me` đang đọc `role` từ body request và cập nhật thẳng vào bảng `users` nếu client gửi trường này.
 
 ### Môi trường
 
-* SUT: EShop backend API
-* Feature: FR-04 Quản lý hồ sơ cá nhân
-* Endpoint: `PUT /api/users/me`
+| Mục | Giá trị |
+| --- | --- |
+| Ứng dụng | EShop backend API |
+| Feature | FR-04 Quản lý hồ sơ cá nhân |
+| Endpoint | `PUT /api/users/me` |
+| Tài khoản test | User thường `test@eshop.com` |
 
-### Tiền điều kiện
+### Bước tái hiện
 
-1. Normal user account exists, for example `test@eshop.com`.
-2. User has a valid bearer token.
-
-### Các bước tái hiện
-
-1. Login as a normal user and capture the token.
-2. Send `PUT /api/users/me` with body:
+1. Đăng nhập bằng `test@eshop.com` để lấy bearer token.
+2. Gửi request:
 
 ```json
 {
-  "name": "Test User",
+  "name": "Nguyen Van A",
   "phone": "0912345678",
   "shipping_address": "227 Nguyen Van Cu",
   "role": "admin"
 }
 ```
 
-3. Send `GET /api/users/me`.
+3. Gọi `GET /api/users/me` bằng cùng token.
+4. Kiểm tra trường `role` trong response.
 
 ### Kết quả mong đợi
 
-The request should reject `role`, ignore it, or keep the user role as `user`.
+API phải từ chối request, bỏ qua trường `role`, hoặc giữ `role` của user là `user`.
 
 ### Kết quả thực tế
 
-Chờ thực thi. Đọc source indicates the backend appends `role = ?` to the SQL update when `role` exists in the request body.
+Request cập nhật thành công và kết quả kiểm tra cho thấy user có thể bị đổi vai trò thành `admin`.
 
-### Bằng chứng
+### Tác động
 
-Chờ bổ sung API screenshot/log and GitHub Issue link. Bằng chứng source: `backend/server.js` profile update route.
+Đây là lỗi bảo mật nghiêm trọng. User thường có thể tự leo thang đặc quyền, sau đó truy cập các API hoặc màn hình chỉ dành cho admin.
 
+### Nguyên nhân mã nguồn
 
+Route `PUT /api/users/me` trong `backend/server.js` destructure cả `role`:
 
+```js
+const { name, shipping_address, phone, role } = req.body;
+```
 
+Sau đó nếu `role` tồn tại, query thêm `role = ?` vào câu UPDATE.
 
+### Hướng sửa đề xuất
+
+1. Loại bỏ `role` khỏi body được xử lý trong `PUT /api/users/me`.
+2. Chỉ cho phép cập nhật whitelist field: `name`, `shipping_address`, `phone`.
+3. Nếu request có field ngoài whitelist như `role`, backend nên bỏ qua hoặc trả 400.
+4. Bổ sung test bảo mật cho A-DT-17 và kiểm tra lại các API admin bằng token user thường.

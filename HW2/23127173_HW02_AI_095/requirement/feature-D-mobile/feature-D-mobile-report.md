@@ -5,10 +5,10 @@
 | Mục | Giá trị |
 | --- | --- |
 | Pool | Pool D - Mobile App |
-| Feature đã chọn | Trạng thái đơn hàng (Order state machine) |
+| Feature đã chọn | Trạng thái đơn hàng (Order máy trạng thái) |
 | Feature ID | FR-10 |
 | Lý do chọn | FR-10 là workflow đơn hàng dùng chung nhiều nền tảng, gồm hủy đơn phía user/mobile và chuyển trạng thái phía admin, với các cạnh trạng thái hợp lệ/không hợp lệ rõ ràng. |
-| Status | Đã thiết kế test case dựa trên source EShop; chờ thực thi trên SUT/mobile |
+| Trạng thái | Đã thiết kế test case dựa trên mã nguồn EShop; chờ thực thi trên SUT/mobile |
 
 ## 2. Phân tích feature từ repo EShop
 
@@ -22,7 +22,7 @@
 | Biến đầu vào | Trạng thái hiện tại, trạng thái đích, vai trò actor, token, mã đơn, quyền sở hữu. |
 | Kết quả đầu ra | Transition hợp lệ cập nhật `orders.status`; transition không hợp lệ trả lỗi và giữ nguyên trạng thái. |
 | Rủi ro riêng trên mobile | Nút/action hủy trên mobile phải tuân theo FR-10; hiển thị trạng thái/action trên màn hình nhỏ không được lộ action không hợp lệ. |
-| Bằng chứng source | `Eshop/README.md` FR-10 và FR-20 mobile, `Eshop/backend/server.js`, `Eshop/frontend-web/src/pages/Profile.jsx`, `Eshop/frontend-admin/src/App.jsx`. |
+| Bằng chứng mã nguồn | `Eshop/README.md` FR-10 và FR-20 mobile, `Eshop/backend/server.js`, `Eshop/frontend-web/src/pages/Profile.jsx`, `Eshop/frontend-admin/src/App.jsx`. |
 
 ## 3. Tóm tắt feature - FR-10 Trạng thái đơn hàng
 
@@ -42,17 +42,17 @@
 | Tạo đơn hàng | User checkout | Đơn mới có trạng thái `pending` | `server.js` checkout route |
 | Admin chuyển tiến trình | Admin cập nhật trạng thái pending -> confirmed -> shipping -> delivered | Chuỗi chuyển tiếp hợp lệ được chấp nhận | README FR-10; `server.js` |
 | User hủy đơn | User hủy đơn của chính mình khi pending/confirmed | Trạng thái trở thành `canceled` | README FR-10/FR-20 |
-| User hủy không hợp lệ | User hủy đơn ở trạng thái shipping/delivered/canceled | Phải bị reject | README FR-10; backend hiện chỉ reject delivered/canceled |
-| Bảo vệ trạng thái kết thúc | Thử bất kỳ transition nào từ delivered/canceled | Phải bị reject | README FR-10; backend đang cho phép canceled -> delivered |
+| User hủy không hợp lệ | User hủy đơn ở trạng thái shipping/delivered/canceled | Phải bị từ chối | README FR-10; backend hiện chỉ từ chối delivered/canceled |
+| Bảo vệ trạng thái kết thúc | Thử bất kỳ transition nào từ delivered/canceled | Phải bị từ chối | README FR-10; backend đang cho phép canceled -> delivered |
 
 ### 3.3 Danh mục đầu vào / đầu ra
 
 | Biến | Kiểu | Nguồn | Quy tắc |
 | --- | --- | --- | --- |
-| Trạng thái hiện tại | Enum | DB/API | Một trong các trạng thái `pending`, `confirmed`, `shipping`, `delivered`, `canceled`. |
-| Trạng thái đích | Enum | Admin API | Phải tuân theo graph transition hợp lệ. |
-| Vai trò actor | State | User/token admin | User chỉ được hủy đơn của chính mình ở `pending`/`confirmed`; admin điều khiển các transition admin. |
-| Quyền sở hữu đơn | State | User hủy đơn route | Query hủy đơn của user có `WHERE id=? AND user_id=?`. |
+| Trạng thái hiện tại | Tập giá trị | DB/API | Một trong các trạng thái `pending`, `confirmed`, `shipping`, `delivered`, `canceled`. |
+| Trạng thái đích | Tập giá trị | Admin API | Phải tuân theo graph transition hợp lệ. |
+| Vai trò actor | Trạng thái | User/token admin | User chỉ được hủy đơn của chính mình ở `pending`/`confirmed`; admin điều khiển các transition admin. |
+| Quyền sở hữu đơn | Trạng thái | User hủy đơn route | Query hủy đơn của user có `WHERE id=? AND user_id=?`. |
 | Token | Header | API | Action của user/admin yêu cầu token hợp lệ. |
 
 ## 4. Báo cáo liên kết
@@ -67,6 +67,10 @@
 | Đã thiết kế | Đã chạy | Pass | Fail | Chưa chạy | Bug |
 | ---: | ---: | ---: | ---: | ---: | ---: |
 | 24 | 0 | 0 | 0 | 24 | 2 |
+
+
+
+
 
 
 
