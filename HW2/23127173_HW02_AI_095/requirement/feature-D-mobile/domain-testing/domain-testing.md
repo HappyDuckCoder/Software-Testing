@@ -1,72 +1,93 @@
-﻿# Domain Testing - FR-10 Trạng thái đơn hàng
+# Domain Testing - Feature D Mobile: FR-10 Máy trạng thái đơn hàng
 
-## 1. Miền đầu vào
+## 1. Mục tiêu
 
-| Biến | Kiểu | Nguồn | Ràng buộc | Ghi chú |
-| --- | --- | --- | --- | --- |
-| Trạng thái hiện tại | Tập giá trị | README/DB | `pending`, `confirmed`, `shipping`, `delivered`, `canceled` | Máy trạng thái nodes |
-| Trạng thái đích | Tập giá trị | Admin API | Trạng thái đích hợp lệ phụ thuộc trạng thái hiện tại | Máy trạng thái edges |
-| User hủy đơn action | Lệnh thao tác | `/api/orders/:id/cancel` | User can cancel own `pending` or `confirmed` only | Mã nguồn currently permits `shipping` |
-| Admin transition action | Lệnh thao tác | `/api/admin/orders/:id/status` | Admin can advance/cancel according to FR-10 | Mã nguồn permits `canceled -> delivered` |
-| Quyền sở hữu | Trạng thái | User hủy đơn API | User chỉ được hủy đơn của chính mình | Query checks user_id |
-| Token | Header | API | Thiếu token bị từ chối | Có bằng chứng mã nguồn |
+Feature D kiểm tra rule trạng thái đơn hàng của EShop. Dù tên thư mục là `feature-D-mobile`, rule FR-10 không chỉ nằm ở mobile/user flow mà còn được backend admin dùng khi chuyển trạng thái. Vì vậy bộ test này kiểm tra cả hai hướng:
 
-## 2. Lớp tương đương
+- User hủy đơn của chính mình qua `PUT /api/orders/:id/cancel`.
+- Admin đổi trạng thái qua `PUT /api/admin/orders/:id/status`.
 
-| Class ID | Biến | Hợp lệ/Không hợp lệ | Phân vùng | Giá trị đại diện | Lý do |
-| --- | --- | --- | --- | --- | --- |
-| D-DT-EC-01 | Trạng thái | Hợp lệ | Trạng thái khởi tạo | `pending` | Checkout tạo đơn `pending` |
-| D-DT-EC-02 | Transition | Hợp lệ | Admin confirm | `pending -> confirmed` | Cạnh trạng thái |
-| D-DT-EC-03 | Transition | Hợp lệ | Admin start shipping | `confirmed -> shipping` | Cạnh trạng thái |
-| D-DT-EC-04 | Transition | Hợp lệ | Admin deliver | `shipping -> delivered` | Cạnh trạng thái |
-| D-DT-EC-05 | Transition | Hợp lệ | Cancel before processing | `pending -> canceled` | Cạnh trạng thái |
-| D-DT-EC-06 | Transition | Hợp lệ | Cancel after confirmed | `confirmed -> canceled` | Cạnh trạng thái |
-| D-DT-EC-07 | Transition | Không hợp lệ | Bỏ qua trạng thái | `pending -> shipping` | Cạnh không hợp lệ |
-| D-DT-EC-08 | Transition | Không hợp lệ | Mở lại đơn đã giao | `delivered -> confirmed` | Trạng thái kết thúc |
-| D-DT-EC-09 | Transition | Không hợp lệ | Mở lại đơn đã hủy | `canceled -> delivered` | Trạng thái kết thúc; mã nguồn bug |
-| D-DT-EC-10 | User hủy đơn | Không hợp lệ | Cancel shipping | user cancel `shipping` | README forbids |
-| D-DT-EC-11 | User hủy đơn | Không hợp lệ | Hủy đơn của user khác | mã đơn của user khác | Quyền sở hữu |
-| D-DT-EC-12 | Trạng thái đích | Không hợp lệ | Trạng thái lạ | `returned` | Tập giá trị validation |
+Cách hiểu đơn giản: đơn hàng đi theo luồng `pending -> confirmed -> shipping -> delivered`, và có thể bị hủy ở `pending` hoặc `confirmed`. Khi đã `delivered` hoặc `canceled` thì không được mở lại.
 
-## 3. Ràng buộc liên biến
+## 2. Miền đầu vào
 
-| Constraint ID | Biến / trạng thái | Quy tắc | Tác động kiểm thử |
-| --- | --- | --- | --- |
-| D-DT-C01 | Current + trạng thái đích | Only graph edges in FR-10 are valid | Cover all valid/invalid edges |
-| D-DT-C02 | Trạng thái kết thúc + target | `delivered` and `canceled` are terminal | Test transitions after final |
-| D-DT-C03 | Actor + status | User/mobile chỉ được hủy `pending` or `confirmed` | Kiểm thử user hủy ở từng trạng thái |
-| D-DT-C04 | User + order id | User chỉ được hủy đơn của chính mình | Kiểm thử mã đơn của user khác |
-| D-DT-C05 | UI action + backend rule | Mobile/web action visibility must match backend rule | Check action for `shipping` |
 
-## 4. Test case Domain Testing
-
-| ID | Mục tiêu | Điều kiện/class thỏa mãn | Đầu vào | Tiền điều kiện | Các bước | Kết quả mong đợi | Actual | Verdict | Bằng chứng |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| D-DT-01 | Checkout mới tạo đơn `pending` | D-DT-EC-01, D-DT-C01 | current_status=Không áp dụng trước checkout; target_status=`pending` sau checkout; actor=user; token=token người dùng hợp lệ; order_id=mã đơn mới; ownership=đơn của chính user | Token user hợp lệ | Gọi `POST /api/checkout`, sau đó lấy lại đơn | Đơn mới có trạng thái `pending` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng API |
-| D-DT-02 | Admin xác nhận đơn `pending` | D-DT-EC-02, D-DT-C01 | current_status=pending; target_status=confirmed; actor=admin; token=token admin hợp lệ; order_id=đơn tồn tại bất kỳ `pending`; ownership=admin có quyền toàn cục | đơn `pending`; token admin | Admin gọi PUT sang `confirmed` | Trạng thái trở thành `confirmed` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-03 | Admin ships đơn `confirmed` | D-DT-EC-03, D-DT-C01 | current_status=confirmed; target_status=shipping; actor=admin; token=token admin hợp lệ; order_id=đơn `confirmed`; ownership=admin có quyền toàn cục | đơn `confirmed`; token admin | Admin gọi PUT sang `shipping` | Trạng thái trở thành `shipping` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-04 | Admin delivers đơn `shipping` | D-DT-EC-04, D-DT-C01 | current_status=shipping; target_status=delivered; actor=admin; token=token admin hợp lệ; order_id=đơn `shipping`; ownership=admin có quyền toàn cục | đơn `shipping`; token admin | Admin gọi PUT sang `delivered` | Trạng thái trở thành `delivered` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-05 | User hủy đơn pending | D-DT-EC-05, D-DT-C03, D-DT-C04 | current_status=pending; target_status=canceled; actor=user; token=token hợp lệ của chủ đơn; order_id=own đơn `pending`; ownership=đơn của chính user | Own đơn `pending` | PUT `/api/orders/:id/cancel` | Trạng thái trở thành `canceled` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-06 | User hủy đơn confirmed | D-DT-EC-06, D-DT-C03, D-DT-C04 | current_status=confirmed; target_status=canceled; actor=user; token=token hợp lệ của chủ đơn; order_id=own đơn `confirmed`; ownership=đơn của chính user | Own đơn `confirmed` | Gọi API hủy đơn | Trạng thái trở thành `canceled` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-07 | User cannot cancel đơn `shipping` | D-DT-EC-10, D-DT-C03 | current_status=shipping; target_status=canceled; actor=user; token=token hợp lệ của chủ đơn; order_id=own đơn `shipping`; ownership=đơn của chính user | Own đơn `shipping` | Gọi API hủy đơn | Lỗi 400; trạng thái vẫn là `shipping` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng; mã nguồn cho thấy có khả năng là lỗi |
-| D-DT-08 | User cannot cancel đơn `delivered` | D-DT-C02, D-DT-C03 | current_status=delivered; target_status=canceled; actor=user; token=token hợp lệ của chủ đơn; order_id=own đơn `delivered`; ownership=đơn của chính user | Own đơn `delivered` | Gọi API hủy đơn | 400 `Cannot cancel this order.` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-09 | User cannot cancel đơn `canceled` | D-DT-C02, D-DT-C03 | current_status=canceled; target_status=canceled again; actor=user; token=token hợp lệ của chủ đơn; order_id=own đơn `canceled`; ownership=đơn của chính user | Own đơn `canceled` | Gọi API hủy đơn | 400 `Cannot cancel this order.` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-10 | User không được hủy đơn của user khác | D-DT-EC-11, D-DT-C04 | current_status=pending; target_status=canceled; actor=user; token=token hợp lệ của người không sở hữu đơn; order_id=mã đơn của user khác; ownership=other user order | Token user hợp lệ | Gọi API hủy đơn | 404 `Order not found` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-11 | Từ chối skipped admin transition | D-DT-EC-07, D-DT-C01 | current_status=pending; target_status=shipping; actor=admin; token=token admin hợp lệ; order_id=đơn `pending`; ownership=admin có quyền toàn cục | đơn `pending`; token admin | Gọi PUT với trạng thái đích `shipping` | 400 do chuyển trạng thái không hợp lệ | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-12 | Từ chối chuyển trạng thái khỏi `delivered` | D-DT-EC-08, D-DT-C02 | current_status=delivered; target_status=canceled; actor=admin; token=token admin hợp lệ; order_id=đơn `delivered`; ownership=admin có quyền toàn cục | Đơn `delivered`; token admin | Gọi PUT với trạng thái đích `canceled` | 400 do chuyển trạng thái không hợp lệ | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-DT-13 | Từ chối chuyển trạng thái khỏi `canceled` | D-DT-EC-09, D-DT-C02 | current_status=canceled; target_status=delivered; actor=admin; token=token admin hợp lệ; order_id=đơn `canceled`; ownership=admin có quyền toàn cục | Đơn `canceled`; token admin | Gọi PUT với trạng thái đích `delivered` | 400 do chuyển trạng thái không hợp lệ | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng; mã nguồn cho thấy có khả năng là lỗi |
-| D-DT-14 | Từ chối trạng thái không xác định | D-DT-EC-12, D-DT-C01 | current_status=pending; target_status=returned; actor=admin; token=token admin hợp lệ; order_id=đơn `pending`; ownership=admin có quyền toàn cục | đơn `pending`; token admin | Gọi PUT với trạng thái đích `returned` | 400 do chuyển trạng thái không hợp lệ | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-
-## 5. Ghi chú review
-
-* Agent skill đã dùng: `eshop-feature-inspector`, `domain-testing-designer`.
-* FR-10 is shared between admin backend and mobile/user cancel behavior. The mobile-specific requirement in README says cancel is only allowed for `pending` or `confirmed`.
+| Biến                | Giá trị cần quan tâm                                         | Ý nghĩa kiểm thử                                                       |
+| ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| Trạng thái hiện tại | `pending`, `confirmed`, `shipping`, `delivered`, `canceled`  | Đơn đang ở đâu trong máy trạng thái.                                   |
+| Trạng thái đích     | `confirmed`, `shipping`, `delivered`, `canceled`, `returned` | Trạng thái muốn chuyển tới. `returned` dùng để kiểm tra trạng thái lạ. |
+| Actor               | `user`, `admin`                                              | User chỉ được hủy đơn của chính mình; admin được xử lý đơn theo rule.  |
+| Token               | token user, token admin, thiếu token                         | Kiểm tra xác thực và đúng vai trò thao tác.                            |
+| Ownership           | đơn của chính user, đơn của user khác                        | User không được hủy đơn của người khác.                                |
+| Order ID            | ID tồn tại, ID không thuộc user hiện tại                     | Kiểm tra route hủy đơn có lọc theo `user_id`.                          |
 
 
 
 
+## 3. Lớp tương đương
+
+
+| Class ID   | Nhóm                    | Hợp lệ?      | Giá trị đại diện          | Ghi chú                                                            |
+| ---------- | ----------------------- | ------------ | ------------------------- | ------------------------------------------------------------------ |
+| D-DT-EC-01 | Trạng thái khởi tạo     | Hợp lệ       | Sau checkout là `pending` | Đơn mới luôn bắt đầu ở `pending`.                                  |
+| D-DT-EC-02 | Admin xác nhận đơn      | Hợp lệ       | `pending -> confirmed`    | Cạnh hợp lệ đầu tiên.                                              |
+| D-DT-EC-03 | Admin bắt đầu giao      | Hợp lệ       | `confirmed -> shipping`   | Cạnh hợp lệ giữa luồng.                                            |
+| D-DT-EC-04 | Admin hoàn tất giao     | Hợp lệ       | `shipping -> delivered`   | Cạnh hợp lệ cuối luồng.                                            |
+| D-DT-EC-05 | User hủy sớm            | Hợp lệ       | user hủy `pending`        | User được hủy trước khi xử lý.                                     |
+| D-DT-EC-06 | User hủy sau xác nhận   | Hợp lệ       | user hủy `confirmed`      | User vẫn được hủy khi chưa giao.                                   |
+| D-DT-EC-07 | Bỏ qua bước             | Không hợp lệ | `pending -> shipping`     | Không được nhảy thẳng sang giao hàng.                              |
+| D-DT-EC-08 | Mở lại đơn đã giao      | Không hợp lệ | `delivered -> canceled`   | `delivered` là trạng thái kết thúc.                                |
+| D-DT-EC-09 | Mở lại đơn đã hủy       | Không hợp lệ | `canceled -> delivered`   | `canceled` là trạng thái kết thúc. Source hiện có bug ở nhánh này. |
+| D-DT-EC-10 | User hủy đơn đang giao  | Không hợp lệ | user hủy `shipping`       | User chỉ được hủy `pending` hoặc `confirmed`.                      |
+| D-DT-EC-11 | User hủy đơn người khác | Không hợp lệ | order của user khác       | Route phải lọc theo chủ đơn.                                       |
+| D-DT-EC-12 | Trạng thái đích lạ      | Không hợp lệ | `returned`                | Không thuộc tập trạng thái của FR-10.                              |
 
 
 
 
+## 4. Ràng buộc liên biến
 
+
+| Constraint ID | Quy tắc                                            | Test cần có                                                             |
+| ------------- | -------------------------------------------------- | ----------------------------------------------------------------------- |
+| D-DT-C01      | Chỉ các cạnh trong máy trạng thái FR-10 mới hợp lệ | Test đủ cạnh hợp lệ và cạnh sai.                                        |
+| D-DT-C02      | `delivered` và `canceled` là trạng thái kết thúc   | Không được chuyển trạng thái sau hai trạng thái này.                    |
+| D-DT-C03      | User chỉ được hủy đơn ở `pending` hoặc `confirmed` | Test hủy ở `pending`, `confirmed`, `shipping`, `delivered`, `canceled`. |
+| D-DT-C04      | User chỉ được hủy đơn của chính mình               | Test order của user khác.                                               |
+| D-DT-C05      | UI/mobile/web phải thống nhất với backend          | Nếu backend cấm thì UI không nên hiện nút thao tác.                     |
+
+
+
+
+## 5. Test case Domain Testing
+
+
+| ID      | Mục tiêu dễ hiểu                                | Điều kiện/class                | Thiết lập dữ liệu                         | Cách test                                        | Kết quả mong đợi                              | Actual                                     | Verdict | Bằng chứng                                                                                                               |
+| ------- | ----------------------------------------------- | ------------------------------ | ----------------------------------------- | ------------------------------------------------ | --------------------------------------------- | ------------------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------ |
+| D-DT-01 | Đơn mới tạo phải ở `pending`                    | D-DT-EC-01, D-DT-C01           | User đăng nhập, tạo đơn mới bằng checkout | Gọi `POST /api/checkout`, sau đó xem lại đơn     | Đơn mới có trạng thái `pending`               | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-01.png`                                                                |
+| D-DT-02 | Admin xác nhận đơn                              | D-DT-EC-02, D-DT-C01           | Có đơn `pending`, token admin hợp lệ      | Admin chuyển `pending -> confirmed`              | Trạng thái thành `confirmed`                  | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-02-1.png`, `requirement\feature-D-mobile\domain-testing\D-DT-02-2.png` |
+| D-DT-03 | Admin bắt đầu giao hàng                         | D-DT-EC-03, D-DT-C01           | Có đơn `confirmed`, token admin hợp lệ    | Admin chuyển `confirmed -> shipping`             | Trạng thái thành `shipping`                   | Giống kết quả mong muốn                    | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-03.png`                                                                |
+| D-DT-04 | Admin đánh dấu đã giao                          | D-DT-EC-04, D-DT-C01           | Có đơn `shipping`, token admin hợp lệ     | Admin chuyển `shipping -> delivered`             | Trạng thái thành `delivered`                  | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-04.png`                                                                |
+| D-DT-05 | User hủy đơn đang `pending`                     | D-DT-EC-05, D-DT-C03, D-DT-C04 | User sở hữu một đơn `pending`             | Gọi `PUT /api/orders/:id/cancel`                 | Trạng thái thành `canceled`                   | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-05.png`                                                                |
+| D-DT-06 | User hủy đơn đang `confirmed`                   | D-DT-EC-06, D-DT-C03, D-DT-C04 | User sở hữu một đơn `confirmed`           | Gọi API hủy đơn                                  | Trạng thái thành `canceled`                   | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-06-1.png`, `requirement\feature-D-mobile\domain-testing\D-DT-06-2.png` |
+| D-DT-07 | User không được hủy đơn đang `shipping`         | D-DT-EC-10, D-DT-C03           | User sở hữu một đơn `shipping`            | Gọi API hủy đơn hoặc bấm nút hủy nếu UI còn hiện | Phải bị từ chối; đơn vẫn là `shipping`        | Vẫn hủy được đơn shipping                  | Fail    | `requirement\feature-D-mobile\domain-testing\D-DT-07.png`                                                                |
+| D-DT-08 | User không được hủy đơn đã `delivered`          | D-DT-C02, D-DT-C03             | User sở hữu một đơn `delivered`           | Gọi API hủy đơn                                  | Trả 400 `Cannot cancel this order.`           | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-08.png`                                                                |
+| D-DT-09 | User không được hủy lại đơn đã `canceled`       | D-DT-C02, D-DT-C03             | User sở hữu một đơn `canceled`            | Gọi API hủy đơn lần nữa                          | Trả 400 `Cannot cancel this order.`           | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-09.png`                                                                |
+| D-DT-10 | User không được hủy đơn của người khác          | D-DT-EC-11, D-DT-C04           | Token user A, order thuộc user B          | User A gọi API hủy order của user B              | Trả 404 `Order not found`                     | Giống như kết quả mong muốn                | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-10.png`                                                                |
+| D-DT-11 | Admin không được nhảy `pending -> shipping`     | D-DT-EC-07, D-DT-C01           | Có đơn `pending`, token admin hợp lệ      | Gọi PUT status `shipping`                        | Trả 400 do chuyển trạng thái không hợp lệ     | Giống kết quả mong đợi                     | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-11.png`                                                                |
+| D-DT-12 | Admin không được đổi trạng thái sau `delivered` | D-DT-EC-08, D-DT-C02           | Có đơn `delivered`, token admin hợp lệ    | Gọi PUT status `canceled`                        | Trả 400 do `delivered` là trạng thái kết thúc | Giống kết quả mong đợi                     | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-12.png`                                                                |
+| D-DT-13 | Admin không được đổi trạng thái sau `canceled`  | D-DT-EC-09, D-DT-C02           | Có đơn `canceled`, token admin hợp lệ     | Gọi PUT status `delivered`                       | Trả 400 do `canceled` là trạng thái kết thúc  | Backend chuyển sang `delivered` thành công | Fail    | `requirement\feature-D-mobile\domain-testing\D-DT-13.png`                                                                |
+| D-DT-14 | Admin không được dùng trạng thái lạ             | D-DT-EC-12, D-DT-C01           | Có đơn `pending`, token admin hợp lệ      | Gọi PUT status `returned`                        | Trả 400 do trạng thái không hợp lệ            | Giống kết quả mong đợi                     | Pass    | `requirement\feature-D-mobile\domain-testing\D-DT-14.png`                                                                |
+
+
+
+
+## 6. Review độ đủ
+
+Bộ Domain Testing hiện đã bao phủ đủ các cạnh chính của FR-10:
+
+- Cạnh hợp lệ: `pending -> confirmed`, `confirmed -> shipping`, `shipping -> delivered`, hủy ở `pending`, hủy ở `confirmed`.
+- Cạnh không hợp lệ: bỏ bước `pending -> shipping`, chuyển tiếp sau `delivered`, chuyển tiếp sau `canceled`, trạng thái lạ `returned`.
+- Rule user/mobile: chỉ hủy đơn của chính mình và chỉ hủy trước khi đơn bước vào `shipping`.
+
+Một số test đã dùng lại bằng chứng từ Feature C vì cùng kiểm tra rule FR-10 trên cùng endpoint admin. Điểm nên ưu tiên chạy tiếp là D-DT-07, vì source hiện cho thấy user vẫn có thể hủy đơn `shipping`.

@@ -8,7 +8,7 @@
 | Feature đã chọn | Trạng thái đơn hàng (Order máy trạng thái) |
 | Feature ID | FR-10 |
 | Lý do chọn | FR-10 là workflow đơn hàng dùng chung nhiều nền tảng, gồm hủy đơn phía user/mobile và chuyển trạng thái phía admin, với các cạnh trạng thái hợp lệ/không hợp lệ rõ ràng. |
-| Trạng thái | Đã thiết kế test case dựa trên mã nguồn EShop; chờ thực thi trên SUT/mobile |
+| Trạng thái | Đã chạy một phần; một số case dùng lại bằng chứng từ Feature C vì cùng kiểm tra rule FR-10 |
 
 ## 2. Phân tích feature từ repo EShop
 
@@ -66,7 +66,7 @@
 
 | Đã thiết kế | Đã chạy | Pass | Fail | Chưa chạy | Bug |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 24 | 0 | 0 | 0 | 24 | 2 |
+| 25 | 22 | 18 | 4 | 3 | 2 |
 
 
 

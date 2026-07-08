@@ -1,48 +1,72 @@
-﻿# Boundary Value Analysis - FR-10 Trạng thái đơn hàng
+# Boundary Value Analysis - Feature D Mobile: FR-10 Máy trạng thái đơn hàng
 
-## 1. Danh mục biên
+## 1. Cách hiểu BVA cho state machine
 
-| Biên ID | Biến | Biên dưới | Biên trên | Nguồn quy tắc | Độ tin cậy |
-| --- | --- | --- | --- | --- | --- |
-| D-BVA-B01 | Trạng thái index in normal path | `pending` index 0 | `delivered` index 3 | Đồ thị FR-10 trong README | Cao |
-| D-BVA-B02 | Khoảng trạng thái user được hủy | `pending` | `confirmed` | README FR-10/FR-20 | Cao |
-| D-BVA-B03 | Chuyển trạng thái đi ra từ trạng thái kết thúc | 0 chuyển trạng thái được phép | 0 chuyển trạng thái được phép | Quy tắc trạng thái kết thúc trong README | Cao |
-| D-BVA-B04 | Biên quyền sở hữu mã đơn | ID đơn tồn tại của chính user | ID đơn tồn tại của user khác | SQL của route hủy đơn | Cao |
+FR-10 không phải bài toán số học thuần túy, nên “biên” ở đây là biên của trạng thái:
 
-## 2. Giá trị biên
+- Biên đầu luồng: đơn mới bắt đầu ở `pending`.
+- Biên cuối luồng bình thường: `shipping -> delivered`.
+- Biên cuối quyền hủy của user: user chỉ hủy được tới `confirmed`; ngay sau đó là `shipping` thì không được hủy.
+- Biên trạng thái kết thúc: từ `delivered` hoặc `canceled` không được đi tiếp.
+- Biên quyền sở hữu: ID đơn của mình so với ID đơn của người khác.
 
-| Biên ID | Dưới biên dưới | Tại biên dưới | Trên biên dưới | Danh nghĩa | Dưới biên trên | Tại biên trên | Trên biên trên |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| D-BVA-B01 | N/A | `pending` | `confirmed` | `shipping` | `shipping` | `delivered` | thử chuyển sau `delivered` |
-| D-BVA-B02 | N/A | `pending` | `confirmed` | `confirmed` | `confirmed` | cuối cùng còn hủy được `confirmed` | đầu tiên không hủy được `shipping` |
-| D-BVA-B03 | Bất kỳ chuyển trạng thái nào từ trạng thái kết thúc | 0 chuyển trạng thái được phép | N/A | trạng thái kết thúc | N/A | 0 chuyển trạng thái được phép | `canceled -> delivered` |
-| D-BVA-B04 | ID không tồn tại | ID của chính user | ID của user khác | ID của chính user | N/A | ID của user khác | ID đã xóa |
+## 2. Danh mục biên
 
-## 3. Test case BVA
 
-| ID | Mục tiêu | Điều kiện/biên thỏa mãn | Biên | Đầu vào | Tiền điều kiện | Các bước | Kết quả mong đợi | Actual | Verdict | Bằng chứng |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| D-BVA-01 | Kiểm tra biên dưới state pending | D-BVA-B01 biên dưới | D-BVA-B01 biên dưới | current_status=trạng thái được thiết lập cho test; target_status=đơn mới sau checkout; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token user hợp lệ | Checkout rồi lấy lại đơn hàng | Trạng thái bắt đầu là `pending` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-02 | Kiểm tra first transition after biên dưới | D-BVA-B01 above biên dưới | D-BVA-B01 above biên dưới | current_status=trạng thái được thiết lập cho test; target_status=`pending -> confirmed`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token admin | PUT confirmed | Được chấp nhận | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-03 | Kiểm tra biên trên normal transition | D-BVA-B01 biên trên | D-BVA-B01 biên trên | current_status=trạng thái được thiết lập cho test; target_status=`shipping -> delivered`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token admin; đơn `shipping` | Gọi PUT sang `delivered` | Được chấp nhận; trạng thái kết thúc `delivered` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-04 | Từ chối chuyển trạng thái sau `delivered` | D-BVA-B01 above biên trên | D-BVA-B01 above biên trên | current_status=trạng thái được thiết lập cho test; target_status=`delivered -> canceled`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token admin; đơn `delivered` | Gọi PUT sang `canceled` | Bị từ chối | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-05 | User hủy đơn at biên dưới allowed state | D-BVA-B02 biên dưới | D-BVA-B02 biên dưới | current_status=trạng thái được thiết lập cho test; target_status=đơn `pending`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token của chủ đơn | Gọi API hủy đơn | Được chấp nhận | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-06 | User hủy đơn at biên trên allowed state | D-BVA-B02 biên trên | D-BVA-B02 biên trên | current_status=trạng thái được thiết lập cho test; target_status=đơn `confirmed`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token của chủ đơn | Gọi API hủy đơn | Được chấp nhận | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-07 | User hủy đơn ngay sau khoảng được phép | D-BVA-B02 above biên trên | D-BVA-B02 above biên trên | current_status=trạng thái được thiết lập cho test; target_status=đơn `shipping`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token của chủ đơn | Gọi API hủy đơn | Bị từ chối; trạng thái vẫn là `shipping` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng; mã nguồn cho thấy có khả năng là lỗi |
-| D-BVA-08 | Từ chối chuyển trạng thái đi ra từ `canceled` | D-BVA-B03 final | D-BVA-B03 final | current_status=trạng thái được thiết lập cho test; target_status=`canceled -> delivered`; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token admin; đơn `canceled` | Gọi PUT sang `delivered` | Bị từ chối | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng; mã nguồn cho thấy có khả năng là lỗi |
-| D-BVA-09 | Hủy ID đơn tồn tại của chính user | D-BVA-B04 biên dưới | D-BVA-B04 biên dưới | current_status=trạng thái được thiết lập cho test; target_status=ID đơn của chính user; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token của chủ đơn | Gọi API hủy đơn | Quyền sở hữu được chấp nhận nếu trạng thái cho phép hủy | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-| D-BVA-10 | Từ chối ID đơn tồn tại của user khác | D-BVA-B04 above biên dưới | D-BVA-B04 above biên dưới | current_status=trạng thái được thiết lập cho test; target_status=Đơn của user khác id; actor=user hoặc admin theo yêu cầu test; token=token đúng vai trò, trừ khi test case ghi khác; order_id=ID đơn tồn tại của chính user, trừ khi test case ghi khác; ownership=chính user hoặc user khác theo yêu cầu test | Token user | Gọi API hủy đơn | 404 `Order not found` | Chưa chạy | Chưa chạy | Chờ bổ sung bằng chứng |
-
-## 4. Ghi chú review
-
-* Agent skill đã dùng: `boundary-value-analysis-designer`.
-* Trạng thái-machine BVA is modeled as edges around allowed windows and terminal states rather than numeric-only ranges.
+| Biên ID   | Biến / vùng biên             | Giá trị tại biên                                            | Giá trị ngay ngoài biên     | Ý nghĩa                                                |
+| --------- | ---------------------------- | ----------------------------------------------------------- | --------------------------- | ------------------------------------------------------ |
+| D-BVA-B01 | Luồng trạng thái bình thường | `pending`, `confirmed`, `shipping`, `delivered`             | thử đi tiếp sau `delivered` | Kiểm tra đầu/cuối luồng giao hàng.                     |
+| D-BVA-B02 | Khoảng user được hủy         | `pending`, `confirmed`                                      | `shipping`                  | `shipping` là trạng thái đầu tiên user không được hủy. |
+| D-BVA-B03 | Trạng thái kết thúc          | `delivered`, `canceled`                                     | bất kỳ transition đi ra     | Hai trạng thái này phải đóng lại.                      |
+| D-BVA-B04 | Quyền sở hữu order ID        | order của chính user                                        | order của user khác         | User chỉ được thao tác trên đơn của mình.              |
+| D-BVA-B05 | Tập trạng thái hợp lệ        | `pending`, `confirmed`, `shipping`, `delivered`, `canceled` | `returned`                  | Trạng thái ngoài tập hợp phải bị từ chối.              |
 
 
 
 
+## 3. Giá trị biên cụ thể
+
+
+| Biên ID   | Case dưới/tại biên                                                                               | Case trên/ngoài biên                            |
+| --------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------- |
+| D-BVA-B01 | Đơn mới ở `pending`; chuyển đầu tiên `pending -> confirmed`; chuyển cuối `shipping -> delivered` | `delivered -> canceled` phải bị từ chối         |
+| D-BVA-B02 | User hủy `pending`; user hủy `confirmed`                                                         | User hủy `shipping` phải bị từ chối             |
+| D-BVA-B03 | `delivered` và `canceled` có 0 transition hợp lệ đi ra                                           | `canceled -> delivered` phải bị từ chối         |
+| D-BVA-B04 | User dùng ID đơn của chính mình                                                                  | User dùng ID đơn của người khác phải bị từ chối |
+| D-BVA-B05 | Trạng thái hợp lệ trong enum                                                                     | Trạng thái lạ `returned` phải bị từ chối        |
 
 
 
 
+## 4. Test case BVA
 
+
+| ID       | Mục tiêu dễ hiểu                           | Biên                                 | Thiết lập dữ liệu                          | Cách test                                     | Kết quả mong đợi                           | Actual                                     | Verdict   | Bằng chứng                                                                                                                                   |
+| -------- | ------------------------------------------ | ------------------------------------ | ------------------------------------------ | --------------------------------------------- | ------------------------------------------ | ------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| D-BVA-01 | Kiểm tra trạng thái đầu tiên của đơn mới   | D-BVA-B01 tại biên dưới              | User đăng nhập và tạo đơn mới              | Checkout rồi xem lại đơn                      | Trạng thái bắt đầu là `pending`            | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-01.png`                                                                          |
+| D-BVA-02 | Kiểm tra transition đầu tiên sau `pending` | D-BVA-B01 ngay sau biên dưới         | Có đơn `pending`, token admin              | PUT status `confirmed`                        | Được chấp nhận                             | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-02-1.png`, `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-02-2.png` |
+| D-BVA-03 | Kiểm tra transition cuối hợp lệ            | D-BVA-B01 tại biên trên              | Có đơn `shipping`, token admin             | PUT status `delivered`                        | Được chấp nhận, đơn kết thúc ở `delivered` | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-03.png`                                                                          |
+| D-BVA-04 | Không cho đi tiếp sau `delivered`          | D-BVA-B01 ngoài biên trên, D-BVA-B03 | Có đơn `delivered`, token admin            | PUT status `canceled`                         | Bị từ chối                                 | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-04.png`                                                                          |
+| D-BVA-05 | User hủy đơn ở biên dưới được phép         | D-BVA-B02 tại biên dưới              | User sở hữu đơn `pending`                  | Gọi API hủy đơn                               | Được chấp nhận, đơn thành `canceled`       | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-05.png`                                                                          |
+| D-BVA-06 | User hủy đơn ở biên trên được phép         | D-BVA-B02 tại biên trên              | User sở hữu đơn `confirmed`                | Gọi API hủy đơn                               | Được chấp nhận, đơn thành `canceled`       | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-06-1.png`, `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-06-2.png` |
+| D-BVA-07 | User hủy ngay sau khoảng được phép         | D-BVA-B02 ngay ngoài biên trên       | User sở hữu đơn `shipping`                 | Gọi API hủy đơn hoặc kiểm tra nút hủy trên UI | Bị từ chối; đơn vẫn là `shipping`          | Vẫn hủy được đơn `shipping`                | Fail      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-07.png`                                                                          |
+| D-BVA-08 | Không cho đi ra từ `canceled`              | D-BVA-B03 trạng thái kết thúc        | Có đơn `canceled`, token admin             | PUT status `delivered`                        | Bị từ chối                                 | Backend chuyển sang `delivered` thành công | Fail      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-08.png`                                                                          |
+| D-BVA-09 | User hủy ID đơn của chính mình             | D-BVA-B04 tại biên sở hữu            | User sở hữu đơn ở trạng thái được phép hủy | Gọi API hủy đơn bằng ID của chính user        | Được xử lý theo trạng thái hiện tại        | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-09.png`                                                                          |
+| D-BVA-10 | User hủy ID đơn của người khác             | D-BVA-B04 ngay ngoài biên sở hữu     | Token user A, order thuộc user B           | User A gọi API hủy order của user B           | Trả 404 `Order not found`                  | Giống như kết quả mong muốn                | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-10.png`                                                                          |
+| D-BVA-11 | Trạng thái đích ngoài tập hợp              | D-BVA-B05 ngoài tập hợp hợp lệ       | Có đơn `pending`, token admin              | PUT status `returned`                         | Bị từ chối với lỗi transition không hợp lệ | Giống kết quả mong đợi                     | Pass      | `requirement\feature-D-mobile\boundary-value-analysis\D-BVA-11.png`                                                                          |
+
+
+
+
+## 5. Review độ đủ
+
+Bộ BVA hiện tập trung vào các biên quan trọng nhất của máy trạng thái:
+
+- Đầu luồng: `pending`.
+- Cuối luồng hợp lệ: `delivered`.
+- Ngay sau quyền hủy của user: `shipping`.
+- Trạng thái kết thúc: `delivered` và `canceled`.
+- Biên quyền sở hữu: order của mình và order của người khác.
+- Biên enum: trạng thái hợp lệ và trạng thái lạ.
+
+Một số BVA đã dùng lại bằng chứng từ Domain Testing/Feature C vì cùng kiểm tra một rule FR-10 trên cùng endpoint. Sau khi tái sử dụng bằng chứng, BVA chỉ còn các case chưa có evidence trực tiếp nếu Domain Testing tương ứng cũng chưa đủ hoặc cần ảnh riêng rõ hơn.
