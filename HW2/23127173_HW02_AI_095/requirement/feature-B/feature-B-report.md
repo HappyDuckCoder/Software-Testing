@@ -1,69 +1,74 @@
-# Feature B Report - Pool B
+﻿# Báo cáo Feature B - Pool B
 
-## 1. Feature Selection
+## 1. Lựa chọn feature
 
-| Field | Value |
+| Mục | Giá trị |
 | --- | --- |
 | Pool | Pool B - Shopping Cart and Checkout |
-| Selected feature | Order history view (user) |
+| Feature đã chọn | Xem lịch sử đơn hàng (user) |
 | Feature ID | FR-11 |
-| Reason for selection | The EShop repo implements user order history through authenticated API and frontend rendering, with ownership, status labels, ordering, and action visibility to test. |
-| Status | Source-based test design completed; execution pending on EShop SUT |
+| Lý do chọn | Repo EShop hiện thực lịch sử đơn hàng bằng API có xác thực và phần render frontend, có các khía cạnh cần test: ownership, nhãn trạng thái, thứ tự sắp xếp và hiển thị action. |
+| Status | Đã thiết kế test case dựa trên source EShop; chờ thực thi trên SUT |
 
-## 2. Feature Understanding From EShop Repo
+## 2. Phân tích feature từ repo EShop
 
-| Item | Notes |
+| Mục | Ghi chú |
 | --- | --- |
-| Actor/role | Logged-in customer/user. |
-| Preconditions | User has a valid token; orders can be created via `POST /api/checkout`. |
-| Main flow | User opens `/profile`; `Profile.jsx` calls `GET /api/orders/my-orders`; UI displays id, date, total, status label/color, and cancel action when available. |
-| Alternative flows | Missing/invalid token; user with no orders; multiple orders; non-owned order access; status-specific labels/actions. |
-| Input variables | Authorization token, user id from JWT, order status, order count, order id, total amount, created date. |
-| Output/result | API returns only current user's orders ordered by `id DESC`; UI displays table or empty message. |
-| Business rules | User only sees own orders; display id/date/total/status; statuses are translated to Vietnamese and visually differentiated. |
-| Source evidence | `Eshop/README.md` FR-11, `Eshop/api_specification.md` 4.4, `Eshop/backend/server.js`, `Eshop/frontend-web/src/pages/Profile.jsx`. |
+| Actor/vai trò | Khách hàng/người dùng đã đăng nhập. |
+| Tiền điều kiện | User có token hợp lệ; có thể tạo đơn hàng bằng `POST /api/checkout`. |
+| Luồng chính | User mở `/profile`; `Profile.jsx` gọi `GET /api/orders/my-orders`; UI hiển thị mã đơn, ngày đặt, tổng tiền, nhãn/màu trạng thái và nút hủy khi có. |
+| Luồng thay thế/lỗi | Thiếu/token không hợp lệ; user chưa có đơn; nhiều đơn; truy cập đơn không thuộc user; nhãn/action theo từng trạng thái. |
+| Biến đầu vào | Token xác thực, user id from JWT, order status, order count, order id, total amount, created date. |
+| Kết quả đầu ra | API returns only current user's orders ordered by `id DESC`; UI displays table or empty message. |
+| Luật nghiệp vụ | User chỉ xem được đơn của chính mình; hiển thị mã/ngày/tổng tiền/trạng thái; trạng thái được dịch sang tiếng Việt và phân biệt bằng màu. |
+| Bằng chứng source | `Eshop/README.md` FR-11, `Eshop/api_specification.md` 4.4, `Eshop/backend/server.js`, `Eshop/frontend-web/src/pages/Profile.jsx`. |
 
-## 3. Feature Brief - FR-11 Order History View (User)
+## 3. Tóm tắt feature - FR-11 Xem lịch sử đơn hàng (user)
 
-### 3.1 Scope
+### 3.1 Phạm vi
 
-| Item | Value |
+| Mục | Giá trị |
 | --- | --- |
 | Pool | Pool B |
 | Feature ID | FR-11 |
-| Actor | Logged-in web user |
-| Environment | EShop web frontend + backend API |
+| Actor | Người dùng web đã đăng nhập |
+| Môi trường | EShop web frontend + backend API |
 
-### 3.2 Flow Analysis
+### 3.2 Phân tích luồng
 
-| Flow | Steps | Expected result | Evidence |
+| Luồng | Các bước | Kết quả mong đợi | Bằng chứng |
 | --- | --- | --- | --- |
-| List own orders | Login, call `/api/orders/my-orders` | Only orders where `orders.user_id = req.user.id`, ordered by newest id first | `backend/server.js` |
-| Empty order history | Login as user without orders, open profile | UI shows `Bạn chưa có đơn hàng nào.` | `Profile.jsx` |
-| Status display | Render order rows with status | Status translated and colored for `pending`, `confirmed`, `shipping`, `delivered`, `canceled` | `Profile.jsx` |
-| Unauthorized API | Call `/api/orders/my-orders` without/invalid token | Missing token 401, invalid token 403 | `authenticateToken` |
-| Detail privacy risk | Call `/api/orders/:id` | Source route has no auth/ownership check, so non-owned orders may leak | `backend/server.js` |
+| Liệt kê đơn của chính user | Login, call `/api/orders/my-orders` | Chỉ có đơn với `orders.user_id = req.user.id`, sắp xếp id mới nhất trước | `backend/server.js` |
+| Rỗng order history | Login as user without orders, open profile | UI hiển thị `Bạn chưa có đơn hàng nào.` | `Profile.jsx` |
+| Hiển thị trạng thái | Render các dòng đơn hàng kèm trạng thái | Trạng thái được dịch và tô màu cho `pending`, `confirmed`, `shipping`, `delivered`, `canceled` | `Profile.jsx` |
+| API chưa xác thực | Call `/api/orders/my-orders` without/invalid token | Thiếu token 401, invalid token 403 | `authenticateToken` |
+| Rủi ro lộ chi tiết đơn | Call `/api/orders/:id` | Route trong source không kiểm tra auth/ownership nên có thể lộ đơn của user khác | `backend/server.js` |
 
-### 3.3 Input / Output Inventory
+### 3.3 Danh mục đầu vào / đầu ra
 
-| Variable | Type | Source | Rule |
+| Biến | Kiểu | Nguồn | Quy tắc |
 | --- | --- | --- | --- |
-| Authorization token | Header/state | API/AuthContext | Required for `/api/orders/my-orders`. |
-| User id | JWT claim | `server.js` | Query filters by current user id. |
-| Order status | Enum text | DB/UI | `pending`, `confirmed`, `shipping`, `delivered`, `canceled`; labels/styles defined in UI. |
-| Order count | Number/state | DB/API/UI | Empty list shows message; non-empty list shows table. |
-| Order id | Number | DB/API/UI | Table displays `#id`; API sorts `ORDER BY id DESC`. |
+| Token xác thực | Header/trạng thái | API/AuthContext | Bắt buộc cho `/api/orders/my-orders`. |
+| User id | JWT claim | `server.js` | Query lọc theo user id hiện tại. |
+| Trạng thái đơn | Text enum | DB/UI | `pending`, `confirmed`, `shipping`, `delivered`, `canceled`; label/style được định nghĩa trong UI. |
+| Order count | Number/state | DB/API/UI | Rỗng list shows message; non-empty list shows table. |
+| Order id | Number | DB/API/UI | Bảng hiển thị `#id`; API sắp xếp `ORDER BY id DESC`. |
 | Total amount | Number | DB/API/UI | UI uses `Number(...).toLocaleString()` and currency suffix. |
 
-## 4. Linked Reports
+## 4. Báo cáo liên kết
 
 * Domain Testing: `domain-testing/domain-testing.md`
 * Boundary Value Analysis: `boundary-value-analysis/boundary-value-analysis.md`
 * Bug Report: `bug-report/bug-report.md`
 * AI Gap Analysis: `ai-gap-analysis/ai-gap-analysis.md`
 
-## 5. Execution Summary
+## 5. Tóm tắt thực thi
 
-| Designed | Executed | Passed | Failed | Not executed | Bugs |
+| Đã thiết kế | Đã chạy | Pass | Fail | Chưa chạy | Bug |
 | ---: | ---: | ---: | ---: | ---: | ---: |
 | 22 | 0 | 0 | 0 | 22 | 2 |
+
+
+
+
+
