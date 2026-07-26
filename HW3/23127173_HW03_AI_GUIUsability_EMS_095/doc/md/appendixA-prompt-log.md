@@ -15,5 +15,9 @@
 | AI-012 | 17:13 26/07/2026 (UTC+7) | Cursor | Chuẩn hóa cấu trúc sau khi có dữ liệu P1 | Nhãn UEQ-S `tổng/56` và tiêu chí C1–C4 rõ ràng hơn | Không sửa dữ liệu P1 do sinh viên nhập |
 | AI-013 | 17:14 26/07/2026 (UTC+7) | Cursor | Bỏ mã C1–C4 khỏi kết quả câu hỏi mở | Chỉ giữ ba mức Tích cực, Hỗn hợp, Tiêu cực | Không sửa dữ liệu P1 do sinh viên nhập |
 | AI-014 | 17:16 26/07/2026 (UTC+7) | Cursor | Bỏ cố định Event 10 khỏi Scenario B | Đồng bộ sự kiện bất kỳ và URL `/events/{event-id}` ở artefact đang dùng | Không sửa dữ liệu P1; audit cũ giữ nguyên |
+| AI-015 | 18:10 26/07/2026 (UTC+7) | Cursor | Thiết kế 15 test case compatibility cho Task 3 | 5 case kế hoạch cho từng S1, S2, S3 | Chưa chạy; cần dữ liệu và screenshot thật |
+| AI-016 | 18:11 26/07/2026 (UTC+7) | Cursor | Thêm tiêu chí Pass/Fail cho Task 3 | Tiêu chí riêng cho S1, S2, S3 và ngoại lệ trạng thái nghiệp vụ hợp lệ | Chỉ đánh giá sau khi chạy thật |
+| AI-017 | 18:22 26/07/2026 (UTC+7) | Cursor | Thêm cột lý do Fail cho các case compatibility | Có chỗ ghi lỗi quan sát cho mọi case Fail | Không suy đoán lỗi thay sinh viên |
+| AI-018 | 18:25 26/07/2026 (UTC+7) | Cursor | Bỏ cột Finding ID khỏi compatibility matrix | Giữ lý do Fail và screenshot trong từng case | Không thay đổi dữ liệu test đã nhập |
 
 > Prompt log này chỉ mục lục hóa các tương tác AI thật. Nội dung prompt/output đầy đủ phải nằm trong AI Audit Report.
