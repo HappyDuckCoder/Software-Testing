@@ -5,7 +5,7 @@
 | Nội dung | Thông tin |
 | --- | --- |
 | Kịch bản EMS | B — Người dùng đăng ký tham dự sự kiện |
-| Màn hình được kiểm thử | B1 Home / danh sách sự kiện tại `/dashboard`; B2 Chi tiết sự kiện kèm khu vực đăng ký tại `/events/10`; B4 My Registrations / ticket tại `/profile` sau khi đăng nhập |
+| Màn hình được kiểm thử | B1 Home / danh sách sự kiện tại `/dashboard`; B2 Chi tiết sự kiện kèm khu vực đăng ký tại `/events/{event-id}`; B4 My Registrations / ticket tại `/profile` sau khi đăng nhập |
 | Công cụ / thiết bị | [BrowserStack / LambdaTest / thiết bị thật — ĐIỀN SAU] |
 | Ngày kiểm thử | [ĐIỀN SAU] |
 | Người thực hiện | [ĐIỀN SAU] |
