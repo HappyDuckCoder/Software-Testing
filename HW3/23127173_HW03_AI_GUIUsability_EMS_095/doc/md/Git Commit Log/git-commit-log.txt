@@ -1,0 +1,14 @@
+Git Commit Log — HW03
+=====================
+
+Repository: [ĐIỀN SAU]
+Branch: [ĐIỀN SAU]
+Command: git log --oneline --decorate
+Last updated: [ĐIỀN SAU]
+
+Quy tắc:
+- Tạo commit riêng khi thiết kế checklist, thực thi từng màn hình, ghi finding,
+  chạy từng lượt compatibility và hoàn thiện báo cáo.
+- Dán output Git log thật bên dưới; không tạo commit hoặc hash giả.
+
+[CHƯA CÓ COMMIT HW03]
