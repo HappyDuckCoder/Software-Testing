@@ -4,8 +4,8 @@
 
 | Nội dung | Thông tin |
 | --- | --- |
-| Kịch bản EMS | [A / B / C / D — ĐIỀN SAU] |
-| Màn hình được kiểm thử | [S1, S2, S3 — ĐIỀN SAU] |
+| Kịch bản EMS | B — Người dùng đăng ký tham dự sự kiện |
+| Màn hình được kiểm thử | B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện; B3 Form đăng ký |
 | Công cụ / thiết bị | [BrowserStack / LambdaTest / thiết bị thật — ĐIỀN SAU] |
 | Ngày kiểm thử | [ĐIỀN SAU] |
 | Người thực hiện | [ĐIỀN SAU] |
@@ -18,7 +18,7 @@
 - Với **mỗi màn hình**, phải có ít nhất một lần chạy trên 3 OS, 5 browser và 3 loại thiết bị.
 - Các ô Fail phải có mô tả ngắn, mức độ nghiêm trọng, screenshot tham chiếu và dòng tương ứng trong `../findings-log.md`.
 
-## 3. Màn hình S1 — [ĐIỀN SAU]
+## 3. Màn hình S1 / B1 — Home / danh sách sự kiện
 
 | Cell ID | OS | Browser | Loại thiết bị | Pass / Fail | Ghi chú | Screenshot | Finding ID |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -31,7 +31,7 @@
 - [ ] 3/3 loại thiết bị.
 - [ ] Mọi ô có screenshot thật.
 
-## 4. Màn hình S2 — [ĐIỀN SAU]
+## 4. Màn hình S2 / B2 — Chi tiết sự kiện
 
 | Cell ID | OS | Browser | Loại thiết bị | Pass / Fail | Ghi chú | Screenshot | Finding ID |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -44,7 +44,7 @@
 - [ ] 3/3 loại thiết bị.
 - [ ] Mọi ô có screenshot thật.
 
-## 5. Màn hình S3 — [ĐIỀN SAU]
+## 5. Màn hình S3 / B3 — Form đăng ký
 
 | Cell ID | OS | Browser | Loại thiết bị | Pass / Fail | Ghi chú | Screenshot | Finding ID |
 | --- | --- | --- | --- | --- | --- | --- | --- |

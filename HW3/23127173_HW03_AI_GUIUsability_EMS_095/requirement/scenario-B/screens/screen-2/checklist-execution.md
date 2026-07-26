@@ -1,10 +1,10 @@
-# Thực thi GUI Checklist — Màn hình S1
+# Thực thi GUI Checklist — Màn hình S2 / B2
 
 | Nội dung | Giá trị |
 | --- | --- |
-| Tên màn hình | [ĐIỀN SAU] |
-| URL / path | [ĐIỀN SAU] |
-| Kịch bản | [A / B / C / D — ĐIỀN SAU] |
+| Tên màn hình | Chi tiết sự kiện |
+| URL / path | [ĐIỀN SAU KHI TRUY CẬP EMS] |
+| Kịch bản | B — Người dùng đăng ký tham dự sự kiện |
 | Ngày thực thi | [ĐIỀN SAU] |
 
 | Checklist ID | Kết quả | Notes khi Failed | Screenshot khi Failed |

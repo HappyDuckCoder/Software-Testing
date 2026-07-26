@@ -2,8 +2,8 @@
 
 ## 1. Kịch bản user testing
 
-- Mục tiêu người dùng: [TỰ THỰC HIỆN].
-- Ba màn hình: [S1, S2, S3 — phải khớp `scenario-report.md`].
+- Mục tiêu người dùng: Tìm một sự kiện phù hợp, xem chi tiết và hoàn tất đăng ký. Chi tiết task scenario cần được sinh viên xác nhận trước khi chạy user testing.
+- Ba màn hình: B1 Home / danh sách sự kiện, B2 Chi tiết sự kiện, B3 Form đăng ký.
 - Điều kiện hoàn thành: [TỰ THỰC HIỆN].
 - Lưu ý: mô tả mục tiêu, không hướng dẫn người tham gia từng cú nhấp.
 
