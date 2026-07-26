@@ -5,7 +5,7 @@
 | Nội dung | Thông tin |
 | --- | --- |
 | Kịch bản EMS | B — Người dùng đăng ký tham dự sự kiện |
-| Màn hình được kiểm thử | B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện; B3 Form đăng ký |
+| Màn hình được kiểm thử | B1 Home / danh sách sự kiện tại `/dashboard`; B2 Chi tiết sự kiện kèm khu vực đăng ký tại `/events/10`; B4 My Registrations / ticket tại `/profile` sau khi đăng nhập |
 | Công cụ / thiết bị | [BrowserStack / LambdaTest / thiết bị thật — ĐIỀN SAU] |
 | Ngày kiểm thử | [ĐIỀN SAU] |
 | Người thực hiện | [ĐIỀN SAU] |
@@ -31,7 +31,7 @@
 - [ ] 3/3 loại thiết bị.
 - [ ] Mọi ô có screenshot thật.
 
-## 4. Màn hình S2 / B2 — Chi tiết sự kiện
+## 4. Màn hình S2 / B2 — Chi tiết sự kiện kèm khu vực đăng ký
 
 | Cell ID | OS | Browser | Loại thiết bị | Pass / Fail | Ghi chú | Screenshot | Finding ID |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -44,7 +44,7 @@
 - [ ] 3/3 loại thiết bị.
 - [ ] Mọi ô có screenshot thật.
 
-## 5. Màn hình S3 / B3 — Form đăng ký
+## 5. Màn hình S3 / B4 — My Registrations / ticket
 
 | Cell ID | OS | Browser | Loại thiết bị | Pass / Fail | Ghi chú | Screenshot | Finding ID |
 | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -4,7 +4,7 @@
 
 - Sinh viên: [ĐIỀN SAU].
 - Kịch bản: B — Người dùng đăng ký tham dự sự kiện.
-- Ba màn hình: B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện; B3 Form đăng ký.
+- Ba màn hình: B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện kèm khu vực đăng ký; B4 My Registrations / ticket.
 - SUT: EMS.
 
 ## 2. Task 1 — GUI Checklist
