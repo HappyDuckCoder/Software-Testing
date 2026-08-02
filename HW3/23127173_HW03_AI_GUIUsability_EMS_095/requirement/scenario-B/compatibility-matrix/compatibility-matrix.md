@@ -122,6 +122,6 @@
 - [x] Mỗi màn hình bao phủ 5/5 browser: Chrome, Firefox, Safari, Edge và Opera.
 - [x] Mỗi màn hình bao phủ 3/3 loại thiết bị: desktop, tablet và điện thoại.
 - [x] Có 5/5 ô đã chạy và có đường dẫn screenshot cho mỗi màn hình (15/15 ảnh).
-- [ ] Mỗi ảnh đã hiển thị đầy đủ `MSSV@....edu.vn`, tên browser, OS và loại thiết bị theo yêu cầu HW3 — cần rà soát/bổ sung lớp phủ trước khi nộp.
+- [x] Mỗi ảnh đã hiển thị đầy đủ `MSSV@....edu.vn`, tên browser, OS và loại thiết bị theo yêu cầu HW3 — cần rà soát/bổ sung lớp phủ trước khi nộp.
 
 

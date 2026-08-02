@@ -140,9 +140,9 @@ Với mỗi cặp từ, người tham gia chọn một mức từ 1 đến 7; m�
 
 | Finding    | Bằng chứng     | Severity 0–4 | Khuyến nghị    | Screenshot |
 | ---------- | -------------- | ------------ | -------------- | ---------- |
-| Phản hồi khi sự kiện không thể đăng ký chưa đủ rõ | P1, P2, P3 và P4 đều đề nghị giải thích trạng thái mở đăng ký, đã đầy hoặc bị chặn; P2 không biết phải làm gì khi nút ticket/đăng ký không hoạt động. | 3 | Hiển thị trạng thái cụ thể cạnh nút đăng ký (chưa mở, hết chỗ, hết hạn, không đủ điều kiện), lý do và hành động tiếp theo phù hợp. | [CẦN ĐÍNH KÈM khi hoàn thiện Findings Log] |
-| Xác nhận đăng ký và trạng thái ticket chưa nổi bật | P1 và P2 không chắc thao tác có thành công; P5 cũng nhận xét trạng thái sự kiện đã đăng ký chưa được làm nổi bật. | 3 | Sau khi đăng ký thành công, hiển thị toast xác nhận có liên kết đến My Registrations; dùng badge/trạng thái nổi bật và nhất quán cho ticket/đăng ký. | [CẦN ĐÍNH KÈM khi hoàn thiện Findings Log] |
-| Màu sắc và hình ảnh làm giảm độ tập trung | P1 nhận xét giao diện “màu mè”; điểm UEQ-S P1 là 38/56 dù vẫn đánh giá các mục dễ phân biệt. | 1 | Giảm độ bão hòa của ảnh/banner và ưu tiên độ tương phản, khoảng trắng, thứ bậc thông tin cho danh sách sự kiện. | [CẦN ĐÍNH KÈM khi hoàn thiện Findings Log] |
+| Phản hồi khi sự kiện không thể đăng ký chưa đủ rõ | P1, P2, P3 và P4 đều đề nghị giải thích trạng thái mở đăng ký, đã đầy hoặc bị chặn; P2 không biết phải làm gì khi nút ticket/đăng ký không hoạt động. | 3 | Hiển thị trạng thái cụ thể cạnh nút đăng ký (chưa mở, hết chỗ, hết hạn, không đủ điều kiện), lý do và hành động tiếp theo phù hợp. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\usability-report\screenshots\finding1.png` |
+| Xác nhận đăng ký và trạng thái ticket chưa nổi bật | P1 và P2 không chắc thao tác có thành công; P5 cũng nhận xét trạng thái sự kiện đã đăng ký chưa được làm nổi bật. | 3 | Sau khi đăng ký thành công, hiển thị toast xác nhận có liên kết đến My Registrations; dùng badge/trạng thái nổi bật và nhất quán cho ticket/đăng ký. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\usability-report\screenshots\finding2.png` |
+| Màu sắc và hình ảnh làm giảm độ tập trung | P1 nhận xét giao diện “màu mè”; điểm UEQ-S P1 là 38/56 dù vẫn đánh giá các mục dễ phân biệt. | 1 | Giảm độ bão hòa của ảnh/banner và ưu tiên độ tương phản, khoảng trắng, thứ bậc thông tin cho danh sách sự kiện. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\usability-report\screenshots\finding3.png` |
 
 
 > Không điền người tham gia, điểm UEQ-S, kết quả phiên hoặc finding trước khi thực hiện user testing thật.
@@ -155,5 +155,6 @@ Với mỗi cặp từ, người tham gia chọn một mức từ 1 đến 7; m�
 - [x] Các tổng UEQ-S từng phiên khớp với 8 mục U1–U8; phần tổng hợp chỉ dùng P1–P5.
 - [ ] Pilot đang dùng cùng mã/liên hệ với P1 (`23127172`, `0822****79`); requirement yêu cầu một người pilot **bổ sung**. Cần xác minh hoặc thay bằng pilot khác trước khi nộp.
 - [x] P4 và P5 đã có câu trả lời mở đầy đủ; không có ghi chú quan sát bổ sung để lưu.
-- [ ] Finding và severity đã được tổng hợp; screenshot finding, `findings-log.md` và timestamp Google Form sẽ được bổ sung sau khi hoàn thành các task còn lại.
+- [x] Finding, severity và screenshot finding đã được tổng hợp.
+- [ ] `findings-log.md` và timestamp Google Form sẽ được bổ sung sau khi hoàn thành các task còn lại.
 
