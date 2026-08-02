@@ -19,5 +19,10 @@
 | AI-016 | 18:11 26/07/2026 (UTC+7) | Cursor | Thêm tiêu chí Pass/Fail cho Task 3 | Tiêu chí riêng cho S1, S2, S3 và ngoại lệ trạng thái nghiệp vụ hợp lệ | Chỉ đánh giá sau khi chạy thật |
 | AI-017 | 18:22 26/07/2026 (UTC+7) | Cursor | Thêm cột lý do Fail cho các case compatibility | Có chỗ ghi lỗi quan sát cho mọi case Fail | Không suy đoán lỗi thay sinh viên |
 | AI-018 | 18:25 26/07/2026 (UTC+7) | Cursor | Bỏ cột Finding ID khỏi compatibility matrix | Giữ lý do Fail và screenshot trong từng case | Không thay đổi dữ liệu test đã nhập |
+| AI-019 | 16:12 02/08/2026 (UTC+7) | Codex | Rà soát B1/B2/B4 và đổi base URL sang môi trường hiện hành | Checklist B1/B2/B4, Scenario Report, compatibility matrix và README | Giữ nguyên URL ngrok trong dữ liệu user testing lịch sử; cần chạy lại test thật |
+| AI-020 | 16:21 02/08/2026 (UTC+7) | Codex + BrowserStack Live | Chạy các cell compatibility còn thiếu và lưu screenshot | Khởi tạo Galaxy Tab A9+ / Android 14 / Firefox trên BrowserStack | Free Trial không hiển thị nội dung EMS ổn định; không sửa matrix hoặc tạo bằng chứng |
+| AI-022 | 16:42 02/08/2026 (UTC+7) | Codex | Rà soát ba ảnh Firefox/Android tablet và cập nhật matrix | S1-C02, S2-C02, S3-C02; tổng hợp coverage/tóm tắt | B1 Pass (Warning); B2/B4 Pass; còn các cell Opera chưa chạy |
+| AI-023 | 16:46 02/08/2026 (UTC+7) | Codex | Rà soát ba ảnh Opera/Windows và cập nhật matrix | S1-C05, S2-C05, S3-C05; hoàn tất coverage/tóm tắt | Cả ba cell Pass; không tạo screenshot hoặc suy diễn kết quả |
+| AI-024 | 16:49 02/08/2026 (UTC+7) | Codex | Đối chiếu Task 3 với requirement HW3, chuẩn hóa path evidence và coverage | 15 screenshot paths, metadata ma trận, checklist đối chiếu | Đạt coverage 3 OS/5 browser/3 device; cần xác minh lớp phủ MSSV/browser/OS/device |
 
 > Prompt log này chỉ mục lục hóa các tương tác AI thật. Nội dung prompt/output đầy đủ phải nằm trong AI Audit Report.

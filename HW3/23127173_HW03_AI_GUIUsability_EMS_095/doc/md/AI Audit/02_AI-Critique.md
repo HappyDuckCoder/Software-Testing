@@ -8,4 +8,10 @@ Nguyên tắc rút ra là AI phù hợp để tổ chức tài liệu, phát hi�
 
 Việc đọc lại Task 2 cũng nhấn mạnh một giới hạn khác: AI có thể giúp diễn giải requirement, nhưng quyết định bỏ một bước phải được đối chiếu trực tiếp với đề bài. Requirement bắt buộc pilot với một người bổ sung; dry run cá nhân không thay thế được bước này. Vì vậy, nhóm cần giữ pilot trong kế hoạch và chỉ dùng dữ liệu của năm phiên chính thức để tính kết quả cuối cùng.
 
+## Rà soát môi trường ngày 02/08/2026
+
+AI đã truy cập `https://prod-dev.ems-fitus.cloud/dashboard` và quan sát được trang yêu cầu đăng nhập; chưa có thao tác trên trạng thái người dùng. Điều này xác nhận base URL hiện hành có thể truy cập, nhưng không xác nhận được B1, B2 hoặc B4 sau đăng nhập. Vì vậy, AI chỉ đồng bộ URL thao tác trong template và giữ nguyên mọi Pass/Fail, screenshot cùng dữ liệu user testing lịch sử. Sinh viên vẫn phải chạy lại B1 `/dashboard`, B2 `/events/{event-id}` và B4 `/profile` trên base URL mới để tạo bằng chứng hợp lệ.
+
+Một giới hạn thực tế khi kiểm thử compatibility là BrowserStack Free Trial chỉ cấp thời lượng rất ngắn cho mỗi thiết bị và trong phiên Android tablet đã thử, luồng hiển thị thiết bị không tải được nội dung EMS ổn định. AI không thể tự cài đặt hay mở rộng hạ tầng BrowserStack để vượt giới hạn tài khoản; cũng không được thay thế thiết bị/browser thật bằng ảnh tạo sẵn hoặc kết quả suy diễn. Vì vậy, AI chỉ có thể chuẩn bị test case, điều khiển phiên cloud khi tài khoản cho phép và ghi nhận kết quả quan sát được. Các cell còn thiếu phải giữ `[CHƯA CHẠY]` cho đến khi có phiên cloud ổn định, LambdaTest, hoặc thiết bị thật để chụp bằng chứng hợp lệ.
+
 AI ban đầu để quá nhiều câu hỏi mở, làm biểu mẫu khó dùng trong một phiên test. Sau khi đối chiếu lại tiêu chí Task 2, biểu mẫu được rút còn UEQ-S gồm 8 mục chuẩn và 4 câu hỏi mở về tính rõ ràng, phục hồi khi lỗi, tốc độ và tin cậy. Cách này giảm gánh nặng trả lời còn 12 mục mỗi người, nhưng vẫn lưu được điểm và phản hồi riêng của từng phiên.

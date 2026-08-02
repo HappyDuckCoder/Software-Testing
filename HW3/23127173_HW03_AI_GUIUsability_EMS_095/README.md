@@ -7,6 +7,7 @@
 | Mã sinh viên | 23127173 |
 | Họ và tên | [ĐIỀN SAU] |
 | Kịch bản EMS | B — Người dùng đăng ký tham dự sự kiện |
+| Base URL EMS hiện hành | `https://prod-dev.ems-fitus.cloud` |
 | Ba màn hình kiểm thử | B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện kèm khu vực đăng ký; B4 My Registrations / ticket |
 | Công cụ compatibility | [BrowserStack / LambdaTest / thiết bị thật — ĐIỀN SAU] |
 | Trạng thái | Khung ban đầu; chưa thực hiện kiểm thử |
