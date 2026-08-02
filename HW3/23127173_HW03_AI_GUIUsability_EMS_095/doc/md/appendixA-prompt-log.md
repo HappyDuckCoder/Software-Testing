@@ -26,5 +26,6 @@
 | AI-024 | 16:49 02/08/2026 (UTC+7) | Codex | Đối chiếu Task 3 với requirement HW3, chuẩn hóa path evidence và coverage | 15 screenshot paths, metadata ma trận, checklist đối chiếu | Đạt coverage 3 OS/5 browser/3 device; cần xác minh lớp phủ MSSV/browser/OS/device |
 | AI-025 | 16:54 02/08/2026 (UTC+7) | Codex + xử lý ảnh cục bộ | Thêm lớp phủ định danh cho 15 screenshot compatibility | Dải chữ `23127173 - {browser} - {platform} - {device}` ở cuối mỗi ảnh | Không dùng AI tạo nội dung ảnh; cần đổi sang email MSSV nếu giảng viên yêu cầu đúng dạng email |
 | AI-026 | 18:13 02/08/2026 (UTC+7) | Codex | Tổng hợp và review Usability Report theo Task 2 | Chuẩn hóa Event hyperlinks, tính chỉ số P1–P5, checklist requirement | Không tạo dữ liệu user testing; nêu pilot trùng P1, thiếu ghi chú P4/P5 và finding/log còn placeholder |
+| AI-027 | 18:17 02/08/2026 (UTC+7) | Codex | Tổng hợp phần phân tích/khuyến nghị Task 2 | Ba finding từ phản hồi P1–P5 và cập nhật checklist review | Không tạo dữ liệu mới; screenshot finding, Findings Log và Google Form để sinh viên bổ sung sau |
 
 > Prompt log này chỉ mục lục hóa các tương tác AI thật. Nội dung prompt/output đầy đủ phải nằm trong AI Audit Report.
