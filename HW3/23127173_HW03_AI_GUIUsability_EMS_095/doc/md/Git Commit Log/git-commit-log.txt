@@ -26,6 +26,7 @@ Rà soát: 04/08/2026
 | 15 | `aa188d7` | 04/08 | Bổ sung liên kết video demo Agent Skill và làm mới các báo cáo/review liên quan. |
 | 16 | `f4b2980669eb5f2a01dce0c5178c92b2ea997d65` | 04/08/2026 02:44:35 | Chốt kết quả GUI, Findings Log, audit và báo cáo Markdown/PDF. |
 | 17 | `6046bb3a0499cd93efc507ded9e588309a947450` | 04/08/2026 02:45:23 | Cập nhật Git Commit Log đầy đủ bằng hash thật của commit HW03. |
+| 18 | `d737e936b6ac5d83ab9706db6aaff03343bf5a48` | 04/08/2026 02:53:14 | Đồng bộ mức tự đánh giá 95/100, audit và PDF báo cáo. |
 
 ## File liên quan theo nhóm công việc
 
@@ -136,9 +137,15 @@ Chốt 41 mục/màn hình cho B1/B2/B4, Findings Log và báo cáo; thêm PDF b
 Cập nhật `Git Commit Log/git-commit-log.txt` để ghi nhận commit chốt tài liệu và evidence HW03.
 </details>
 
+<details>
+<summary><code>d737e93</code> — 6 artefact</summary>
+
+Đồng bộ README, main report/PDF, AI Audit, prompt log và Git Commit Log theo phân bổ tự đánh giá 95/100 do sinh viên chốt.
+</details>
+
 ## Trạng thái Git hiện tại
 
-- Lịch sử ở trên được đối chiếu đến `6046bb3`, là commit cập nhật Git Commit Log sau khi chốt kết quả GUI, Findings Log, main report và PDF.
+- Lịch sử ở trên được đối chiếu đến `d737e93`, là commit đồng bộ mức tự đánh giá 95/100, audit và PDF báo cáo.
 - Hash, thời gian và mô tả được lấy trực tiếp từ `git log`; các thay đổi cập nhật log này sẽ thuộc commit kế tiếp.
 - Các commit Task 1B được gom theo đợt, không có commit riêng cho từng màn hình/lượt test. Không tạo hash hoặc lịch sử giả để bù khoảng trống này.
 
