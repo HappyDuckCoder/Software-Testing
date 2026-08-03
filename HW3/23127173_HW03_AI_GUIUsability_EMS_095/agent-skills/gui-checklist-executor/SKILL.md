@@ -12,7 +12,7 @@ Chuẩn bị và thực thi tự động toàn bộ checklist GUI dùng chung c�
 - Base URL EMS, scenario/màn hình cần kiểm tra và môi trường được phép test.
 - Tài khoản test hợp lệ hoặc xác nhận rằng màn hình công khai không cần đăng nhập.
 - `checklist/team-checklist.csv` và `checklist/gui-checklist.md` hiện hành.
-- Thư mục lưu artefact; mặc định dùng `evidence/automated-gui/` trong bài nộp.
+- Thư mục lưu artefact; mặc định dùng `requirement/scenario-B/screens/evidence/automated-gui/` trong bài nộp.
 
 Không tự sử dụng token, cookie, mật khẩu hay tài khoản cá nhân. Dừng và yêu cầu thông tin nếu thiếu quyền truy cập hoặc điều kiện dữ liệu cần để kiểm tra một mục.
 

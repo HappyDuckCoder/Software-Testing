@@ -78,6 +78,18 @@ Với mỗi cặp từ, người tham gia chọn một mức từ 1 đến 7; m�
 | P4              | 23127468          | 0703****92     | [https://prod-dev.ems-fitus.cloud/events/78](https://prod-dev.ems-fitus.cloud/events/78) | Hoàn thành   | 15:34     | 4           | 41/56                | Hỗn hợp              | -                                                                                                     |
 | P5              | 20127119          | 0926****33     | [https://prod-dev.ems-fitus.cloud/events/68](https://prod-dev.ems-fitus.cloud/events/68) | Hoàn thành   | 6:48      | 4           | 51/56                | Tích cực             | -                                                                                                     |
 
+### Liên kết bằng chứng phiên
+
+Các ảnh người tham gia được lưu cùng artefact Task 2 tại `evidence/participants/`; tên file dùng mã đã che/thể hiện trong bảng trên. Ảnh chỉ được dùng làm bằng chứng phiên do sinh viên cung cấp, không phải ảnh do AI tạo.
+
+| Phiên | Ảnh tham chiếu |
+| --- | --- |
+| P1 / Pilot | `evidence/participants/23127172.jpg` |
+| P2 | `evidence/participants/23127516.png` |
+| P3 | `evidence/participants/23127331.png` |
+| P4 | `evidence/participants/23127468.png` |
+| P5 | `evidence/participants/20127119.png` |
+
 
 
 
@@ -153,7 +165,7 @@ Với mỗi cặp từ, người tham gia chọn một mức từ 1 đến 7; m�
 - [x] Có 5 phiên chính thức P1–P5; liên hệ đã che bốn số giữa; có Pilot riêng được ghi ngoài số liệu tổng hợp.
 - [x] Mỗi phiên chính thức có kết quả task, thời gian, lỗi/do dự, UEQ-S và câu trả lời mở.
 - [x] Các tổng UEQ-S từng phiên khớp với 8 mục U1–U8; phần tổng hợp chỉ dùng P1–P5.
-- [ ] Pilot đang dùng cùng mã/liên hệ với P1 (`23127172`, `0822****79`); requirement yêu cầu một người pilot **bổ sung**. Cần xác minh hoặc thay bằng pilot khác trước khi nộp.
+- [-] Pilot dùng cùng mã/liên hệ với P1 (`23127172`, `0822****79`) theo quyết định sinh viên. Đây là ngoại lệ đã biết so với yêu cầu “một người pilot bổ sung”, không được diễn đạt là đã đạt yêu cầu này.
 - [x] P4 và P5 đã có câu trả lời mở đầy đủ; không có ghi chú quan sát bổ sung để lưu.
 - [x] Finding, severity và screenshot finding đã được tổng hợp.
 - [ ] `findings-log.md` và timestamp Google Form sẽ được bổ sung sau khi hoàn thành các task còn lại.

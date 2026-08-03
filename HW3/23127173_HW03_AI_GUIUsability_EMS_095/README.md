@@ -1,61 +1,50 @@
 # HW03 — GUI & Usability Testing on EMS
 
-## 1. Thông tin bài nộp
-
 | Nội dung | Giá trị |
 | --- | --- |
 | Mã sinh viên | 23127173 |
-| Họ và tên | [ĐIỀN SAU] |
-| Kịch bản EMS | B — Người dùng đăng ký tham dự sự kiện |
-| Base URL EMS hiện hành | `https://prod-dev.ems-fitus.cloud` |
-| Ba màn hình kiểm thử | B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện kèm khu vực đăng ký; B4 My Registrations / ticket |
-| Công cụ compatibility | [BrowserStack / LambdaTest / thiết bị thật — ĐIỀN SAU] |
-| Trạng thái | Khung ban đầu; chưa thực hiện kiểm thử |
+| Kịch bản | B — Người dùng đăng ký tham dự sự kiện |
+| SUT hiện hành | `https://prod-dev.ems-fitus.cloud` |
+| Ba màn hình | B1 Dashboard; B2 Event detail/registration; B4 Profile/My Registrations |
+| Trạng thái rà soát | Có artefact và bằng chứng, nhưng **chưa đủ điều kiện xem là hoàn tất toàn bộ**. |
 
-## 2. Nguyên tắc sử dụng khung
+## Artefact và tình trạng thực tế
 
-- Chỉ điền dữ liệu từ thao tác thật trên EMS.
-- Không tạo hoặc chỉnh sửa ảnh, kết quả Pass/Fail, bug, thông tin người tham gia hay dữ liệu user testing bằng AI.
-- Ba màn hình của Task 1B, Task 2 và Task 3 phải là cùng một tập màn hình.
-- Mọi screenshot compatibility phải hiển thị URL EMS, browser/OS/device và lớp phủ `MSSV@....edu.vn`.
-
-## 3. Bản đồ artefact
-
-| Artefact | Đường dẫn | Trạng thái |
-| --- | --- | --- |
-| Checklist nhóm > 40 mục | `checklist/gui-checklist.md` | [CHƯA THỰC HIỆN] |
-| Nguồn tham khảo và prompt nhóm | `checklist/reference-sources.md`, `checklist/ai-prompts.md` | [CHƯA THỰC HIỆN] |
-| Báo cáo kịch bản cá nhân | `requirement/scenario-B/scenario-report.md` | [CHƯA THỰC HIỆN] |
-| Thực thi checklist theo màn hình | `requirement/scenario-B/screens/` | [CHƯA THỰC HIỆN] |
-| Usability Report | `requirement/scenario-B/usability-report/` | [CHƯA THỰC HIỆN] |
-| Task 3 compatibility matrix | `requirement/scenario-B/compatibility-matrix/` | [CHƯA THỰC HIỆN] |
-| Findings Log | `requirement/scenario-B/findings-log.md` | [CHƯA THỰC HIỆN] |
-| Báo cáo chính | `doc/md/main-report.md` | [CHƯA THỰC HIỆN] |
-| AI Audit và AI Critique | `doc/md/AI Audit/` | [CHƯA THỰC HIỆN] |
-| Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | [CHƯA THỰC HIỆN] |
-| Agent Skills và video | `agent-skills/` | [CHƯA THỰC HIỆN] |
-
-## 4. Tóm tắt kiểm thử
-
-| Chỉ số | Giá trị thực tế |
+| Artefact | Tình trạng |
 | --- | --- |
-| Số mục checklist nhóm | [ĐIỀN SAU; phải > 40] |
-| Số màn hình đã chọn | [ĐIỀN SAU; phải ≥ 3] |
-| Checklist Pass / Fail | [ĐIỀN SAU] |
-| Số bug / usability finding | [ĐIỀN SAU] |
-| Người tham gia user testing | [ĐIỀN SAU; phải = 5] |
-| Ô compatibility đã chạy | [ĐIỀN SAU] |
-| Compatibility Pass / Fail | [ĐIỀN SAU] |
-| Liên kết video demo skill | [ĐIỀN SAU] |
+| Checklist dùng chung | 41 mục, đủ IA-01…IA-04; IA01-11 là mục nhóm bổ sung, chưa chạy trên 3 màn hình. |
+| Task 1B | Có log 40 mục/màn hình; các dòng `N/A` không khớp yêu cầu chỉ dùng Passed/Failed. |
+| Task 2 | Có Pilot và P1–P5, UEQ-S, câu trả lời mở và 3 finding; sinh viên xác nhận 5 người tham gia ngoài lớp. Pilot trùng P1 theo quyết định sinh viên. |
+| Task 3 | Có 15 cell và screenshot; sinh viên xác nhận URL, browser/OS/device và watermark đúng dạng email theo đề. |
+| Findings Log / Google Form | Chưa có finding đã gửi form hoặc timestamp, nên chưa hoàn tất. |
+| Agent skill | Có `gui-checklist-executor`; chưa có video demo. |
 
-## 5. Tự đánh giá
+## Chỉ số đã ghi nhận
 
-| Hạng mục | Điểm tối đa | Tự đánh giá | Bằng chứng |
-| --- | ---: | ---: | --- |
-| Task 1A — Checklist nhóm | 15 | [ĐIỀN SAU] | `checklist/` |
-| Task 1B — Thực thi checklist + bug report | 15 | [ĐIỀN SAU] | `requirement/scenario-B/screens/` |
-| Task 2 — User testing với 5 người thật | 25 | [ĐIỀN SAU] | `usability-report/` |
-| Task 3 — Compatibility matrix | 25 | [ĐIỀN SAU] | `compatibility-matrix/` |
-| Findings Log + Google Form | 10 | [ĐIỀN SAU] | `findings-log.md` |
-| Agent Skills | 10 | [ĐIỀN SAU] | `agent-skills/` |
-| **Tổng cộng** | **100** | **[ĐIỀN SAU]** | |
+| Chỉ số | Giá trị |
+| --- | --- |
+| Checklist dùng chung | 41 |
+| Task 1B hiện có | B1 15 PASS/25 N/A; B2 25 PASS/15 N/A; B4 17 PASS/23 N/A (mỗi màn hình chưa có IA01-11) |
+| User testing chính thức | 5 phiên; UEQ-S trung bình 38,6/56; 3 usability finding |
+| Compatibility | 15 cell: 13 Pass, 2 Fail |
+
+## Bước còn thiếu trước khi nộp
+
+1. Chạy và ghi kết quả thật cho IA01-11 trên B1, B2, B4; quyết định cách xử lý các tiêu chí không áp dụng theo rubric Passed/Failed.
+2. Thay Pilot bằng một người bổ sung thực sự (hoặc cung cấp bằng chứng pilot hiện có là người khác P1).
+3. Gửi các finding đã xác minh qua Google Form và ghi timestamp vào Findings Log.
+4. Ghi video demo cho skill.
+
+## Tự đánh giá bảo thủ theo bằng chứng hiện có
+
+| Hạng mục | Điểm tạm tính | Lý do |
+| --- | ---: | --- |
+| Task 1A | 13/15 | 41 mục, nguồn/prompt rõ; IA01-11 vừa bổ sung. |
+| Task 1B | 7/15 | Có log nhưng thiếu IA01-11 và trạng thái `N/A` không khớp rubric. |
+| Task 2 | 17/25 | Có 5 phiên, số liệu và xác nhận ngoài lớp; Pilot vẫn trùng P1. |
+| Task 3 | 20/25 | Có matrix 15 cell, ảnh tham chiếu và xác nhận metadata/watermark. |
+| Findings / Google Form | 0/10 | Chưa có bản ghi gửi form và timestamp. |
+| Agent skill | 5/10 | Có skill hoạt động; chưa có video demo. |
+| **Tổng** | **62/100** | Ước lượng bảo thủ, không thay thế điểm giảng viên. |
+
+Các artefact chi tiết: `checklist/`, `requirement/scenario-B/`, `doc/md/AI Audit/` và `agent-skills/`.

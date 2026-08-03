@@ -1,18 +1,23 @@
-# Rà soát tính nhất quán và bao phủ HW03
+# Rà soát tính nhất quán và bao phủ HW03 — 04/08/2026
 
-## Kiểm tra phạm vi
+## Đạt
 
-- [ ] Kịch bản và ba màn hình giống nhau ở Task 1B, Task 2, Task 3.
-- [ ] Không trùng phạm vi với thành viên khác trong nhóm.
-- [ ] Checklist dùng chung có hơn 40 mục và đủ IA-01…IA-04.
+- [x] Scenario B và tập B1/B2/B4 thống nhất giữa Scenario Report, Task 2 và Task 3.
+- [x] Checklist hiện có 41 mục, phủ IA-01…IA-04, có nguồn, prompt và ghi rõ một mục do nhóm bổ sung.
+- [x] Task 3 khai báo 15 cell, phủ 3 OS, 5 browser và 3 loại thiết bị trên từng màn hình.
+- [x] Không tìm thấy mật khẩu student, token, cookie hoặc secret trong thư mục bài nộp; liên hệ người tham gia hiển thị dạng che.
 
-## Kiểm tra bằng chứng
+## Chưa đạt / cần xác minh
 
-- [ ] Mỗi ô Task 3 có screenshot thật, URL EMS, browser/OS/device và lớp phủ MSSV.
-- [ ] Có 5 người tham gia thật và dữ liệu thô hợp lệ cho Task 2.
-- [ ] Mọi finding khớp Google Form và Findings Log.
+- [ ] Task 1B chưa bao phủ IA01-11; 3 log vẫn dùng `N/A`, trong khi requirement quy định Passed/Failed.
+- [-] Pilot dùng cùng P1 theo xác nhận của sinh viên; đây là ngoại lệ có chủ đích, nhưng vẫn không đáp ứng điều kiện “một người bổ sung” của requirement.
+- [ ] Findings Log và timestamp Google Form chưa có, dù Task 2 nêu 3 finding và Task 3 có 2 Fail.
+- [x] Sinh viên xác nhận từng screenshot compatibility có URL, browser/OS/device và watermark `MSSV@....edu.vn` (04/08/2026).
+- [x] Sinh viên xác nhận ảnh, số liệu, người tham gia và kết quả kiểm thử không bị làm giả; provenance ngoài các artefact này không thể được AI tự chứng minh.
+- [ ] Catalog/video skill chưa phản ánh video demo hoàn chỉnh.
 
-## Kiểm tra tài liệu
+## Quy tắc an toàn dữ liệu
 
-- [ ] README, main report, AI Audit, AI Critique và Git log có đường dẫn/số liệu nhất quán.
-- [ ] Không có dữ liệu hoặc bằng chứng do AI tạo thay cho thao tác thật.
+- Không lưu mật khẩu, cookie, token, dữ liệu phiên hoặc số liên hệ đầy đủ vào artefact/audit.
+- Không dùng AI tạo, làm mờ, cắt ghép hay sửa nội dung của bằng chứng kiểm thử. Bổ sung watermark chỉ khi được đề yêu cầu và phải giữ ảnh gốc có thể truy vết.
+- Chỉ cập nhật Pass/Fail, finding, Google Form hoặc dữ liệu pilot từ quan sát và thao tác thật của sinh viên.

@@ -6,6 +6,7 @@
 | Don Norman — The Design of Everyday Things / Design Principles | IA-01 đến IA-03 | https://www.nngroup.com/articles/don-norman-principles/ | Signifier, mapping, feedback và constraint cho thao tác/điều hướng. |
 | Shneiderman — Eight Golden Rules | IA-01, IA-03, IA-04 | https://xd-i.com/en/user-interface-design-en/ui-ux-design-course-en/ben-shneiderman-the-eight-golden-rules-of-interface-design/ | Nhất quán, phản hồi, kiểm soát và hỗ trợ người dùng. |
 | WCAG 2.2 | IA-01 đến IA-04 | https://www.w3.org/TR/WCAG22/ | Tương phản, màu sắc, bàn phím, focus và trình bày trực quan. |
+| WCAG 2.2 — Reflow | IA-01 | https://www.w3.org/WAI/WCAG22/Understanding/reflow.html | Cơ sở cho IA01-11 do nhóm bổ sung: khả dụng khi phóng to 200%, không mất nội dung/chức năng. |
 | WAI-ARIA Authoring Practices — Dialog (Modal) | IA-03, IA-04 | https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/ | Quản lý focus cho dialog/modal. |
 | Material Design — Snackbar | IA-04 | https://m3.material.io/components/snackbar/guidelines | Thông báo ngắn và hành động đi kèm. |
 | NN/g — Empty States và Skeleton Screens | IA-01, IA-04 | https://www.nngroup.com/articles/empty-state-interface-design/; https://www.nngroup.com/articles/skeleton-screens/ | Trạng thái không có dữ liệu và đang tải. |

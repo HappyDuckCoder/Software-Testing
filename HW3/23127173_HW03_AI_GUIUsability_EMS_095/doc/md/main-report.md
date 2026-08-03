@@ -1,48 +1,31 @@
 # Báo cáo chính — HW03 GUI & Usability Testing on EMS
 
-## 1. Thông tin chung
+## Phạm vi
 
-- Sinh viên: [ĐIỀN SAU].
-- Kịch bản: B — Người dùng đăng ký tham dự sự kiện.
-- Ba màn hình: B1 Home / danh sách sự kiện; B2 Chi tiết sự kiện kèm khu vực đăng ký; B4 My Registrations / ticket.
-- SUT: EMS.
+- MSSV: 23127173; Scenario B — người dùng đăng ký tham dự sự kiện.
+- Màn hình dùng xuyên suốt: B1 Dashboard, B2 Event detail/registration, B4 Profile/My Registrations.
+- SUT: `https://prod-dev.ems-fitus.cloud`.
 
-## 2. Task 1 — GUI Checklist
+## Kết quả hiện có
 
-- Checklist nhóm: `../../checklist/gui-checklist.md`.
-- Nguồn tham khảo: `../../checklist/reference-sources.md`.
-- Prompt nhóm: `../../checklist/ai-prompts.md`.
-- Kết quả thực thi theo màn hình: `../../requirement/scenario-B/screens/`.
+| Hạng mục | Kết quả đã lưu | Điểm chưa hoàn tất |
+| --- | --- | --- |
+| Task 1A | 41 checklist IA-01…IA-04, có nguồn, prompt và giải thích IA01-11 do nhóm bổ sung. | IA01-11 chưa được chạy. |
+| Task 1B | Ba log có 40 mục/màn hình: B1 15 PASS/25 N/A; B2 25 PASS/15 N/A; B4 17 PASS/23 N/A. | Cần thêm IA01-11 và xử lý `N/A` theo yêu cầu Passed/Failed của đề. |
+| Task 2 | 5 phiên chính thức, UEQ-S trung bình 38,6/56, 3 usability finding; sinh viên xác nhận người tham gia ngoài lớp. | Pilot trùng P1; chưa có bản ghi Google Form. |
+| Task 3 | 15 cell; 13 Pass, 2 Fail; phủ 3 OS, 5 browser, 3 loại thiết bị theo matrix; sinh viên xác nhận metadata/watermark. | Không có điểm thiếu đã xác minh; vẫn giữ ảnh gốc có thể truy vết. |
 
-## 3. Task 2 — Usability Report
+## Liên kết artefact
 
-Chi tiết chỉ được bổ sung sau khi thực hiện pilot và 5 phiên user testing thật:
+- Checklist, nguồn và prompt: `../../checklist/`.
+- Thực thi GUI: `../../requirement/scenario-B/screens/`.
+- Usability Report: `../../requirement/scenario-B/usability-report/usability-report.md`.
+- Compatibility matrix: `../../requirement/scenario-B/compatibility-matrix/compatibility-matrix.md`.
+- Findings Log: `../../requirement/scenario-B/findings-log.md`.
+- AI Audit, Critique và privacy checklist: `AI Audit/`.
 
-`../../requirement/scenario-B/usability-report/usability-report.md`
+## Kết luận
 
-## 4. Task 3 — Đa trình duyệt / Đa nền tảng
+Bài có cấu trúc và dữ liệu nền tảng để chấm, nhưng chưa nên khẳng định hoàn tất: các điểm thiếu nêu trong bảng phải được xử lý bằng thao tác và bằng chứng thật trước khi nộp.
 
-Chi tiết ma trận và screenshot tham chiếu:
-
-`../../requirement/scenario-B/compatibility-matrix/compatibility-matrix.md`
-
-Tóm tắt sau khi thực hiện:
-
-| Chỉ số | Giá trị |
-| --- | --- |
-| Số màn hình | [ĐIỀN SAU] |
-| Số ô compatibility | [ĐIỀN SAU] |
-| Pass | [ĐIỀN SAU] |
-| Fail | [ĐIỀN SAU] |
-
-## 5. Bug & Usability Findings
-
-`../../requirement/scenario-B/findings-log.md`
-
-## 6. AI Audit, AI Critique và Git log
-
-- AI Audit: `AI Audit/01_AI-Audit-Report.md`.
-- AI Critique: `AI Audit/02_AI-Critique.md`.
-- Disclosure: `AI Audit/03_Mandatory-Disclosure.md`.
-- Privacy checklist: `AI Audit/04_AI-Privacy-Checklist.md`.
-- Git Commit Log: `Git Commit Log/git-commit-log.txt`.
+Tự đánh giá bảo thủ theo artefact hiện có: **62/100** (Task 1A 13/15; Task 1B 7/15; Task 2 17/25; Task 3 20/25; Findings/Form 0/10; Agent skill 5/10). Đây không phải điểm chính thức.

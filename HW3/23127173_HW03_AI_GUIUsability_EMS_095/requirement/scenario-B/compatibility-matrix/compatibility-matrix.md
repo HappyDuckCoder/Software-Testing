@@ -43,7 +43,7 @@
 | Cell ID | OS         | Browser | Loại thiết bị | Pass / Fail | Lý do Fail                                                                                  | Ghi chú                                             | Screenshot                                                                                |
 | ------- | ---------- | ------- | ------------- | ----------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | S1-C01  | Windows 11 | Chrome  | Desktop       | Pass        | —                                                                                           | Kiểm tra danh sách, tìm kiếm/lọc và mở một sự kiện. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\compatibility-matrix\screenshots\B1-window-chrome-desktop.png` |
-| S1-C02  | Android 14 | Firefox | Tablet        | Pass (Warning) | —                                                                                           | Cảnh báo: ảnh/banner sự kiện hiển thị quá lớn trên tablet; danh sách sự kiện vẫn hiển thị và truy cập được. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\compatibility-matrix\screenshots\B1-android-fireox-tablet.jpg` |
+| S1-C02  | Android 14 | Firefox | Tablet        | Pass | —                                                                                           | Cảnh báo: ảnh/banner sự kiện hiển thị quá lớn trên tablet; danh sách sự kiện vẫn hiển thị và truy cập được. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\compatibility-matrix\screenshots\B1-android-fireox-tablet.jpg` |
 | S1-C03  | iOS 17     | Safari  | Điện thoại    | Fail        | Lỗi resposive input from và input to date, bấm nút hủy filter 2, 3 lần mới hủy filter được. | Kiểm tra danh sách, tìm kiếm/lọc và mở một sự kiện. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\compatibility-matrix\screenshots\B1-ios-safari-mobile.jpg` |
 | S1-C04  | Windows 11 | Edge    | Desktop       | Pass        | —                                                                                           | Kiểm tra danh sách, tìm kiếm/lọc và mở một sự kiện. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\compatibility-matrix\screenshots\B1-window-edge-desktop.png` |
 | S1-C05  | Windows 11 | Opera   | Desktop       | Pass        | —                                                                                           | Danh sách sự kiện, tìm kiếm/lọc và mở chi tiết hoạt động trên Opera/Windows. | `23127173_HW03_AI_GUIUsability_EMS_095\requirement\scenario-B\compatibility-matrix\screenshots\B1-window-opera-desktop.png` |
@@ -122,6 +122,6 @@
 - [x] Mỗi màn hình bao phủ 5/5 browser: Chrome, Firefox, Safari, Edge và Opera.
 - [x] Mỗi màn hình bao phủ 3/3 loại thiết bị: desktop, tablet và điện thoại.
 - [x] Có 5/5 ô đã chạy và có đường dẫn screenshot cho mỗi màn hình (15/15 ảnh).
-- [x] Mỗi ảnh đã hiển thị đầy đủ `MSSV@....edu.vn`, tên browser, OS và loại thiết bị theo yêu cầu HW3 — cần rà soát/bổ sung lớp phủ trước khi nộp.
+- [x] Sinh viên xác nhận từng ảnh có URL EMS, browser, OS, loại thiết bị và watermark đúng định dạng `MSSV@....edu.vn` (04/08/2026).
 
 

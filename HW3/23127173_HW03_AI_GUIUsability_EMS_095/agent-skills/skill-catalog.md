@@ -2,8 +2,6 @@
 
 | Skill | Mục đích | Trạng thái | Video demo |
 | --- | --- | --- | --- |
-| GUI Checklist Executor | Hỗ trợ chuẩn bị template thực thi checklist theo màn hình | [CHƯA XÂY DỰNG] | [ĐIỀN SAU] |
-| Heuristic Usability Reviewer | Hỗ trợ sắp xếp quan sát theo heuristic, không tự tạo finding | [CHƯA XÂY DỰNG] | [ĐIỀN SAU] |
-| Compatibility Matrix Planner | Hỗ trợ lập kế hoạch coverage OS/browser/device | [CHƯA XÂY DỰNG] | [ĐIỀN SAU] |
+| GUI Checklist Executor | Hướng dẫn thực thi checklist GUI EMS qua Chrome đang mở, giữ phiên đăng nhập và chỉ ghi kết quả từ quan sát thật. | [ĐÃ XÂY DỰNG] — `gui-checklist-executor/SKILL.md` | [CHƯA CÓ VIDEO] |
 
-> Skill chỉ hỗ trợ tổ chức công việc. Kết quả kiểm thử, screenshot và finding phải đến từ thao tác thật của sinh viên.
+> Không liệt kê skill chưa tồn tại. Skill không được đọc cookie, token, mật khẩu hoặc password manager; kết quả test, screenshot và finding phải đến từ thao tác thật.
