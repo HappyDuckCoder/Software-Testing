@@ -1,0 +1,4 @@
+interface:
+  display_name: "GUI Checklist Executor"
+  short_description: "Tự động hóa checklist GUI EMS bằng Playwright"
+  default_prompt: "Dùng $gui-checklist-executor để chuẩn bị hoặc thực thi tự động toàn bộ checklist GUI EMS."

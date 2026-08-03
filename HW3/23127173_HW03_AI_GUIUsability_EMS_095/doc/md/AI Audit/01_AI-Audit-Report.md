@@ -2,7 +2,7 @@
 
 ## Khai báo
 
-AI chỉ hỗ trợ tạo cấu trúc thư mục và template Markdown ban đầu cho HW03. AI không chạy EMS, không thực hiện user testing, không tạo screenshot, không ghi nhận Pass/Fail và không tạo finding.
+AI hỗ trợ tạo cấu trúc/template Markdown, đề xuất checklist ban đầu và rà soát tài liệu HW03. AI không thực hiện user testing, không tạo screenshot EMS, không tự ghi nhận Pass/Fail và không tạo finding từ dữ liệu không có thật.
 
 | ID | Ngày giờ | Công cụ AI | Prompt / yêu cầu | Output AI | Verdict | Rà soát / chỉnh sửa của sinh viên |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -33,6 +33,8 @@ AI chỉ hỗ trợ tạo cấu trúc thư mục và template Markdown ban đầ
 | AI-026 | 18:13 02/08/2026 (UTC+7) | Codex | Tổng hợp và rà soát Usability Report theo Task 2 HW3 sau khi sinh viên nhập dữ liệu phiên. | Sửa các hyperlink Event để khớp URL hiển thị; tính 100% hoàn thành, 09:49 trung bình, 5,8 lỗi/do dự, UEQ-S 38,6/56; thêm checklist đối chiếu requirement. | VALID | AI không tạo dữ liệu người tham gia, câu trả lời, finding hoặc screenshot. Sinh viên cần xử lý các mục chưa đạt được đánh dấu trong phần đối chiếu. |
 | AI-027 | 18:17 02/08/2026 (UTC+7) | Codex | Tổng hợp phần phân tích/khuyến nghị Usability Report theo quyết định của sinh viên về Pilot và ghi chú P4/P5. | Rút ra 3 finding từ phản hồi thực P1–P5: phản hồi trạng thái đăng ký, xác nhận/ticket và tải nhận thức màu sắc; giữ screenshot finding và Findings Log ở trạng thái cần bổ sung sau. | VALID | AI không tạo dữ liệu mới; severity/khuyến nghị là phân tích từ phản hồi hiện có. Pilot trùng P1 được giữ theo quyết định sinh viên nhưng vẫn là rủi ro so với cụm “người bổ sung” trong requirement. |
 | AI-028 | 18:22 02/08/2026 (UTC+7) | Codex | Liên kết ba ảnh evidence do sinh viên bổ sung vào ba finding trong Usability Report. | Thay placeholder screenshot bằng path chuẩn từ gốc `23127173_HW03_AI_GUIUsability_EMS_095` cho `finding1.png`, `finding2.png`, `finding3.png`; cập nhật checklist review. | VALID | AI chỉ kiểm tra ảnh có sẵn và cập nhật tham chiếu; không tạo hoặc chỉnh sửa screenshot. Findings Log và Google Form vẫn để sinh viên hoàn thành sau. |
+| AI-029 | 03/08/2026 (UTC+7, không ghi nhận giờ) | Claude Sonnet 4.6 (thinking) | Sinh 10 mục IA-03 (Navigation) từ các file tổng kết requirement để dùng GUI testing EMS đã deploy. | Đề xuất 10 mục IA-03 ban đầu. | VALID AFTER REVISION | Vân nhận thấy các mục ban đầu quá cụ thể cho Pool 3 và C1–C3. Nhóm đã tổng quát hóa tên/tiêu chí để dùng cho mọi scenario, bao phủ menu/sidebar, tab, breadcrumb, kéo-thả, quay lại, deep link, dialog và bàn phím; chưa ghi Pass/Fail vì chưa phải kết quả test thật. |
+| AI-030 | 04/08/2026 (UTC+7) | Codex + skill `playwright` từ `openai/skills` | Tham khảo và cài một skill GUI testing trên mạng; chỉ sinh skill tự động hóa 40 checklist, chưa test EMS. | Cài `playwright` vào `C:/Users/Duck/.codex/skills/playwright`; cập nhật `agent-skills/gui-checklist-executor` với quy trình tự động hóa, bao phủ 40 ID, trạng thái Pass/Fail/N/A/Blocked, artefact và guardrails. | VALID | Không mở EMS, không tạo test case chạy được, screenshot, Pass/Fail hay finding. Sinh viên phải cung cấp môi trường/tài khoản test và cho phép chạy trước khi thực thi. |
 
 ## Quy tắc cập nhật
 
