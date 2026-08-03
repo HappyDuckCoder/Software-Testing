@@ -24,6 +24,7 @@ Rà soát: 04/08/2026
 | 13 | `f589bd520d8ae00de5ca713011439120edcfe766` | 04/08 01:27:08 | Cập nhật kết quả GUI B1/B2/B4 và bổ sung evidence user testing. |
 | 14 | `181646f4c605b3792d9d4b34dff58b2913f2c86c` | 04/08 01:51:31 | Rà soát consistency/security, cấu trúc lại evidence, thêm tổng kết Task 1B và cập nhật AI/Git log. |
 | 15 | `aa188d7` | 04/08 | Bổ sung liên kết video demo Agent Skill và làm mới các báo cáo/review liên quan. |
+| 16 | `f4b2980669eb5f2a01dce0c5178c92b2ea997d65` | 04/08/2026 02:44:35 | Chốt kết quả GUI, Findings Log, audit và báo cáo Markdown/PDF. |
 
 ## File liên quan theo nhóm công việc
 
@@ -34,7 +35,7 @@ Rà soát: 04/08/2026
 | Task 2 | 4, 5, 9–11, 13 | `usability-report.md`, `usability-report/screenshots/`, `usability-report/evidence/participants/` |
 | Task 3 | 6–8, 11 | `compatibility-matrix.md`, `compatibility-matrix/screenshots/` |
 | Skill / checklist | 1, 12, 13, 15 | `agent-skills/gui-checklist-executor/`, `checklist/` |
-| Audit / prompt log | 1–15 | `doc/md/AI Audit/`, `doc/md/appendixA-prompt-log.md` |
+| Audit / prompt log | 1–16 | `doc/md/AI Audit/`, `doc/md/appendixA-prompt-log.md` |
 
 ## Danh sách thay đổi chi tiết theo commit
 
@@ -122,10 +123,16 @@ Cập nhật README, checklist, skill, audit, Git log, main report, roadmap và 
 Thêm URL video demo cho Agent Skill và đồng bộ các tài liệu review/báo cáo có liên quan.
 </details>
 
+<details>
+<summary><code>f4b2980</code> — 19 artefact</summary>
+
+Chốt 41 mục/màn hình cho B1/B2/B4, Findings Log và báo cáo; thêm PDF báo cáo cùng ba ảnh reflow 320 px có truy vết.
+</details>
+
 ## Trạng thái Git hiện tại
 
-- Lịch sử ở trên được đối chiếu đến `aa188d7`, là commit mới nhất trước đợt cập nhật kết quả GUI, Findings Log, main report và PDF.
-- Các thay đổi đang chờ commit được ghi nhận bằng commit kế tiếp; không tạo hash hoặc lịch sử giả để lấp khoảng trống này.
+- Lịch sử ở trên được đối chiếu đến `f4b2980`, là commit chốt kết quả GUI, Findings Log, main report và PDF.
+- Hash, thời gian và mô tả được lấy trực tiếp từ `git log`; các thay đổi cập nhật log này sẽ thuộc commit kế tiếp.
 - Các commit Task 1B được gom theo đợt, không có commit riêng cho từng màn hình/lượt test. Không tạo hash hoặc lịch sử giả để bù khoảng trống này.
 
 ## Artefact log liên quan
