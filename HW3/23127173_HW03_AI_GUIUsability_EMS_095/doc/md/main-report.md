@@ -103,15 +103,15 @@ Agent Skill `gui-checklist-executor` hướng dẫn chạy checklist qua Chrome 
 
 | Hạng mục | Điểm tự đánh giá |
 | --- | ---: |
-| Task 1A - Checklist nhóm | 13/15 |
-| Task 1B - Thực thi checklist và bug report | 13/15 |
-| Task 2 - User testing | 20/25 |
-| Task 3 - Compatibility matrix | 20/25 |
+| Task 1A - Checklist nhóm | 15/15 |
+| Task 1B - Thực thi checklist và bug report | 12/15 |
+| Task 2 - User testing | 23/25 |
+| Task 3 - Compatibility matrix | 25/25 |
 | Findings Log + Google Form | 10/10 |
 | Agent Skill + video demo | 10/10 |
-| **Tổng** | **86/100** |
+| **Tổng** | **95/100** |
 
-Đây là tự đánh giá theo evidence hiện có, không thay thế điểm giảng viên. Để tăng điểm, cần có source/quyền deploy để sửa F-04 đến F-06, sau đó retest trên iOS Safari và viewport 320 px; đồng thời có thể bổ sung evidence quan sát/recording cho các phiên user testing nếu người tham gia đồng ý.
+Đây là tự đánh giá theo evidence hiện có, không thay thế điểm giảng viên. F-04/F-05 là finding compatibility hợp lệ đã được kiểm thử, lưu evidence và submit Form; bài không yêu cầu sinh viên sửa EMS. Điểm còn lại được giữ thận trọng ở Task 1B do F-06 reflow 320 px và ở Task 2 do mức độ chi tiết của evidence quan sát/recording có thể được TA đối chiếu thêm.
 
 # 7. Artefact tham chiếu
 

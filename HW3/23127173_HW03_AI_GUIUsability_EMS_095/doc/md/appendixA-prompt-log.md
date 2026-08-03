@@ -37,5 +37,6 @@
 | AI-051 | 04/08/2026 (UTC+7) | Codex | Đồng bộ Findings Log sau khi sinh viên submit 6 finding | Findings Log, checklist, README, main report, roadmap và audit | Đã gửi theo xác nhận; để trống timestamp thật chờ đối chiếu |
 | AI-052 | 04/08/2026 (UTC+7) | Codex | Ghi timestamp Form theo thời điểm sinh viên cung cấp và đánh giá khả năng fix | Findings Log, checklist, README, main report, roadmap và audit | 6 finding có timestamp; không thể sửa EMS deploy không có source/quyền deploy |
 | AI-053 | 04/08/2026 (UTC+7) | Codex + Pandoc/XeLaTeX | Viết lại main report và xuất PDF | `doc/md/main-report.md`, `doc/pdf/main-report.pdf`, AI Audit | PDF bốn trang đã render QA; bảng không bị tách gây khó đọc |
+| AI-054 | 04/08/2026 (UTC+7) | Codex | Điều chỉnh tự đánh giá HW03 theo evidence sinh viên xác nhận | README, main report, AI Audit | Chốt phân bổ 15/15, 12/15, 23/25, 25/25, 10/10, 10/10 = 95/100; không tạo evidence mới |
 
 > Prompt log này chỉ mục lục hóa các tương tác AI thật. Nội dung prompt/output đầy đủ phải nằm trong AI Audit Report.

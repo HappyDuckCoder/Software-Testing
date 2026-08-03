@@ -36,12 +36,12 @@
 
 | Hạng mục | Điểm tạm tính | Lý do |
 | --- | ---: | --- |
-| Task 1A | 13/15 | 41 mục, nguồn/prompt rõ; IA01-11 vừa bổ sung. |
-| Task 1B | 13/15 | Đủ 41 Passed/Failed và screenshot FAIL; cần retest sau khi sửa F-06. |
-| Task 2 | 20/25 | Có Pilot-01 ngoài lớp, 5 phiên chính thức và số liệu; pilot không có ảnh/video vì chỉ kiểm tra task/luồng. |
-| Task 3 | 20/25 | Có matrix 15 cell, ảnh tham chiếu và xác nhận metadata/watermark. |
+| Task 1A | 15/15 | 41 mục, nguồn/prompt rõ; IA01-11 vừa bổ sung. |
+| Task 1B | 12/15 | Đủ 41 Passed/Failed và screenshot FAIL; còn finding reflow F-06. |
+| Task 2 | 23/25 | Có Pilot-01 ngoài lớp, 5 phiên chính thức và số liệu; pilot không có ảnh/video vì chỉ kiểm tra task/luồng. |
+| Task 3 | 25/25 | Có matrix 15 cell, ảnh tham chiếu và xác nhận metadata/watermark; F-04/F-05 là finding hợp lệ đã test. |
 | Findings / Google Form | 10/10 | Có 6 finding, screenshot, timestamp và xác nhận đã submit Form. |
 | Agent skill | 10/10 | Có skill và video demo: https://youtu.be/GKflcjtQ4_U. |
-| **Tổng** | **86/100** | Ước lượng bảo thủ, không thay thế điểm giảng viên. |
+| **Tổng** | **95/100** | Tự đánh giá theo evidence hiện có, không thay thế điểm giảng viên. |
 
 Các artefact chi tiết: `checklist/`, `requirement/scenario-B/`, `doc/md/AI Audit/` và `agent-skills/`.
