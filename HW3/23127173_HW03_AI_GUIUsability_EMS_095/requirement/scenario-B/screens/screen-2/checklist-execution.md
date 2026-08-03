@@ -1,12 +1,53 @@
-# Thực thi GUI Checklist — Màn hình S2 / B2
+# Thực thi GUI Checklist — Màn hình S2 / B2 — Chi tiết sự kiện
 
 | Nội dung | Giá trị |
 | --- | --- |
-| Tên màn hình | Chi tiết sự kiện |
-| URL / path | `https://prod-dev.ems-fitus.cloud/events/{event-id}` — thay `{event-id}` bằng ID sự kiện được chọn trước khi chạy. |
 | Kịch bản | B — Người dùng đăng ký tham dự sự kiện |
-| Ngày thực thi | [ĐIỀN SAU] |
+| URL / path | $url |
+| Ngày thực thi | 2026-08-04 |
+| Môi trường | Google Chrome đã đăng nhập; Browser control; desktop và viewport 320×720 |
 
-| Checklist ID | Kết quả | Notes khi Failed | Screenshot khi Failed |
+> `N/A` chỉ áp dụng cho widget/trạng thái không xuất hiện trên đúng màn hình trong lượt chạy.
+
+| Checklist ID | Kết quả | Notes khi Failed / N/A | Screenshot khi Failed |
 | --- | --- | --- | --- |
-| [ĐIỀN SAU] | [CHƯA CHẠY] | | |
+| IA01-01 | [PASS] | Thông tin event, registration roles và footer phân vùng rõ. |  |
+| IA01-02 | [PASS] | Tên event, thời gian, slot và hướng dẫn đều hiển thị bằng text. |  |
+| IA01-03 | [PASS] | Nhãn trạng thái và thông tin role có text đi kèm, không chỉ dựa vào màu. |  |
+| IA01-04 | [PASS] | Checkbox role và nút Register có dạng điều khiển rõ. |  |
+| IA01-05 | [PASS] | Chrome mobile 500×643: scrollWidth 485 px ≤ viewport 500 px; không có cuộn ngang ngoài ý muốn. | |
+| IA01-06 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA01-07 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA01-08 | [PASS] | Tên event, date/slot và hành động Register có phân cấp rõ. |  |
+| IA01-09 | [PASS] | Nội dung hiển thị bằng thuật ngữ người dùng có thể hiểu. |  |
+| IA01-10 | [PASS] | Header/footer và controls cùng loại nhất quán với B1. |  |
+| IA02-01 | [PASS] | Checkbox có nhãn Select soldier và role soldier rõ ràng. |  |
+| IA02-02 | [PASS] | Nhãn/hướng dẫn form nhất quán tiếng Anh trong màn hình. |  |
+| IA02-03 | [PASS] | Nêu rõ cần tick role trước khi submit, không chỉ dùng màu. |  |
+| IA02-04 | [PASS] | Register as Student disabled trước khi chọn role. |  |
+| IA02-05 | [PASS] | Thông điệp điều kiện xuất hiện ngay dưới vùng chọn role. |  |
+| IA02-06 | [PASS] | Thông điệp hướng dẫn cách sửa: tick a role before submitting. |  |
+| IA02-07 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA02-08 | [PASS] | Chọn role kích hoạt Register; bỏ chọn trả nút về disabled, không submit đăng ký. |  |
+| IA02-09 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA02-10 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA03-01 | [PASS] | Header navigation hiển thị nhất quán. |  |
+| IA03-02 | [PASS] | Các liên kết header có nhãn/đích rõ. |  |
+| IA03-03 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA03-04 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA03-05 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA03-06 | [PASS] | Back to events quay lại /dashboard đúng màn hình trước. |  |
+| IA03-07 | [PASS] | Browser Back từ Calendar được kiểm tra trả về Dashboard, không lỗi trắng/redirect. |  |
+| IA03-08 | [PASS] | Mở trực tiếp /events/125 trong Chrome đã xác thực hiển thị chi tiết event. |  |
+| IA03-09 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA03-10 | [PASS] | Tab từ role chuyển focus tới phần tử điều hướng tiếp theo. |  |
+| IA04-01 | [PASS] | Chọn/bỏ chọn role phản hồi bằng trạng thái enabled/disabled của Register. |  |
+| IA04-02 | [PASS] | Thông điệp điều kiện dùng văn bản hướng dẫn, không có mã kỹ thuật. |  |
+| IA04-03 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA04-04 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA04-05 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA04-06 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA04-07 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA04-08 | [N/A] | B2 event 125 không có widget/trạng thái này trong lượt chạy. |  |
+| IA04-09 | [PASS] | Trạng thái disabled của Register phân biệt rõ. |  |
+| IA04-10 | [PASS] | Ngăn submit khi chưa chọn role. |  |
