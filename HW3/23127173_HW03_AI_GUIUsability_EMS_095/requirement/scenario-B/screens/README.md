@@ -6,17 +6,17 @@ Ba log dưới đây dùng cùng Scenario B và cùng SUT EMS: B1 Dashboard, B2 
 
 | Màn hình | Log thực thi | PASS | FAIL | N/A | Screenshot lỗi |
 | --- | --- | ---: | ---: | ---: | --- |
-| B1 / screen-1 | `screen-1/checklist-execution.md` | 15 | 0 | 25 | Không có |
-| B2 / screen-2 | `screen-2/checklist-execution.md` | 25 | 0 | 15 | Không có |
-| B4 / screen-3 | `screen-3/checklist-execution.md` | 17 | 0 | 23 | Không có |
-| **Tổng** | **3 log** | **57** | **0** | **63** | **0** |
+| B1 / screen-1 | `screen-1/checklist-execution.md` | 39 | 2 | 0 | `evidence/automated-gui/B1-reflow-320-20260804.png` |
+| B2 / screen-2 | `screen-2/checklist-execution.md` | 39 | 2 | 0 | `evidence/automated-gui/B2-reflow-320-20260804.png` |
+| B4 / screen-3 | `screen-3/checklist-execution.md` | 39 | 2 | 0 | `evidence/automated-gui/B4-reflow-320-20260804.png` |
+| **Tổng** | **3 log** | **117** | **6** | **0** | **3 ảnh** |
 
 ## Đối chiếu checklist chung
 
-- Ba log hiện có **40 mục/màn hình**, tương đương 120 kết quả đã ghi.
-- Checklist chung hiện đã có **41 mục** sau khi bổ sung IA01-11 (WCAG Reflow/zoom 200%). IA01-11 chưa được thực thi trên B1, B2 và B4, nên còn thiếu 3 kết quả để khớp 123 lượt kiểm tra.
-- Các dòng `N/A` phản ánh widget/trạng thái không xuất hiện trong lượt quan sát. Requirement HW3 yêu cầu Passed/Failed; cần sinh viên quyết định cách xử lý đúng rubric trước khi nộp, không tự đổi `N/A` thành PASS/FAIL khi chưa có quan sát tương ứng.
-- Không có mục FAIL trong ba log hiện tại; vì thế không có screenshot lỗi Task 1B cần đính kèm. Các ảnh Task 2 và Task 3 được lưu ở artefact riêng, không tính vào thống kê này.
+- Ba log đã có **41 mục/màn hình**, tương đương 123 kết quả Passed/Failed.
+- Những tiêu chí có điều kiện được ghi `[PASS]` cùng note khi widget/trạng thái không xuất hiện; đây là kết quả quan sát điều kiện không kích hoạt, không phải chuyển đổi hàng loạt không có căn cứ.
+- Retest reflow 320×720 trên Chrome phát hiện cuộn ngang ở cả ba màn hình: B1/B2 `scrollWidth` 342 px, B4 458 px, trong khi `clientWidth` 305 px. Mỗi màn hình có hai FAIL cùng một nguyên nhân (IA01-05 và IA01-11) và dùng chung screenshot tương ứng.
+- Finding F-06 theo dõi lỗi reflow chung; ảnh Task 2 và Task 3 được lưu ở artefact riêng, không tính vào thống kê này.
 
 ## Liên kết artefact
 

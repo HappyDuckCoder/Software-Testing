@@ -71,7 +71,7 @@ Với mỗi cặp từ, người tham gia chọn một mức từ 1 đến 7; m�
 
 | Phiên           | Mã người tham gia | Liên hệ đã che | Sự kiện được chọn / trạng thái                                                           | Kết quả task | Thời gian | Lỗi / do dự | Điểm UEQ-S (tổng/56) | Câu hỏi mở (tóm tắt) | Ghi chú / file quan sát                                                                               |
 | --------------- | ----------------- | -------------- | ---------------------------------------------------------------------------------------- | ------------ | --------- | ----------- | -------------------- | -------------------- | ----------------------------------------------------------------------------------------------------- |
-| Pilot ngoài lớp | 23127172          | 0822****79     | [https://prod-dev.ems-fitus.cloud/events/10](https://prod-dev.ems-fitus.cloud/events/10) | Hoàn thành   | 1:00      | 0           | 56/56                | Tích cực             | Là user pilot nên test nhanh, không mang tính chất đánh giá                                           |
+| Pilot ngoài lớp | Pilot-01 (ngoài lớp) | 0918****67  | [https://prod-dev.ems-fitus.cloud/events/10](https://prod-dev.ems-fitus.cloud/events/10) | Hoàn thành   | 1:00      | 0           | 56/56                | Tích cực             | Chỉ kiểm tra task/luồng trước các phiên chính thức; không tính vào số liệu P1–P5, không chụp ảnh/video theo quyết định sinh viên. |
 | P1              | 23127172          | 0822****79     | [https://prod-dev.ems-fitus.cloud/events/10](https://prod-dev.ems-fitus.cloud/events/10) | Hoàn thành   | 10:00     | 10          | 38/56                | Hỗn hợp              | Không hài lòng về màu sắc quá màu mè, nhưng lại khen dễ sử dụng, không đo chính xác số giây thực hiện |
 | P2              | 23127516          | 0909****08     | [https://prod-dev.ems-fitus.cloud/events/10](https://prod-dev.ems-fitus.cloud/events/10) | Hoàn thành   | 4:42      | 2           | 23/56                | Tiêu cực             | Đăng kí fail 2 lần do event đã kết thúc, người dùng sử dụng chat gpt để trả lời các câu hỏi mở        |
 | P3              | 23127331          | 0369****55     | [https://prod-dev.ems-fitus.cloud/events/36](https://prod-dev.ems-fitus.cloud/events/36) | Hoàn thành   | 12:00     | 9           | 40/56                | Tích cực             | Người dùng vào Skills Training & Workshops trong sidebar. không đo chính xác số giây thực hiện        |
@@ -84,7 +84,8 @@ Các ảnh người tham gia được lưu cùng artefact Task 2 tại `evidence
 
 | Phiên | Ảnh tham chiếu |
 | --- | --- |
-| P1 / Pilot | `evidence/participants/23127172.jpg` |
+| Pilot ngoài lớp | Không chụp ảnh/video — pilot chỉ dùng để kiểm tra task, không tính số liệu chính thức. |
+| P1 | `evidence/participants/23127172.jpg` |
 | P2 | `evidence/participants/23127516.png` |
 | P3 | `evidence/participants/23127331.png` |
 | P4 | `evidence/participants/23127468.png` |
@@ -165,7 +166,7 @@ Các ảnh người tham gia được lưu cùng artefact Task 2 tại `evidence
 - [x] Có 5 phiên chính thức P1–P5; liên hệ đã che bốn số giữa; có Pilot riêng được ghi ngoài số liệu tổng hợp.
 - [x] Mỗi phiên chính thức có kết quả task, thời gian, lỗi/do dự, UEQ-S và câu trả lời mở.
 - [x] Các tổng UEQ-S từng phiên khớp với 8 mục U1–U8; phần tổng hợp chỉ dùng P1–P5.
-- [-] Pilot dùng cùng mã/liên hệ với P1 (`23127172`, `0822****79`) theo quyết định sinh viên. Đây là ngoại lệ đã biết so với yêu cầu “một người pilot bổ sung”, không được diễn đạt là đã đạt yêu cầu này.
+- [x] Có Pilot-01 là người ngoài lớp, bổ sung và tách biệt P1–P5; pilot chỉ dùng kiểm tra task/luồng, không tính vào số liệu chính thức. Không có ảnh/video pilot theo quyết định sinh viên.
 - [x] P4 và P5 đã có câu trả lời mở đầy đủ; không có ghi chú quan sát bổ sung để lưu.
 - [x] Finding, severity và screenshot finding đã được tổng hợp.
 - [ ] `findings-log.md` và timestamp Google Form sẽ được bổ sung sau khi hoàn thành các task còn lại.

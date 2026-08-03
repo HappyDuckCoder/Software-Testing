@@ -9,9 +9,9 @@
 
 ## Chưa đạt / cần xác minh
 
-- [ ] Task 1B chưa bao phủ IA01-11; 3 log vẫn dùng `N/A`, trong khi requirement quy định Passed/Failed.
-- [-] Pilot dùng cùng P1 theo xác nhận của sinh viên; đây là ngoại lệ có chủ đích, nhưng vẫn không đáp ứng điều kiện “một người bổ sung” của requirement.
-- [ ] Findings Log và timestamp Google Form chưa có, dù Task 2 nêu 3 finding và Task 3 có 2 Fail.
+- [x] Task 1B có 41 kết quả Passed/Failed trên mỗi màn hình (117 PASS, 6 FAIL); F-06 theo dõi lỗi reflow 320 px có screenshot tham chiếu.
+- [x] Pilot-01 là người ngoài lớp, bổ sung và tách biệt P1–P5; số liên hệ đã che. Không có ảnh/video pilot vì chỉ kiểm tra task/luồng.
+- [ ] Findings Log đã có F-01…F-06, nhưng chưa có timestamp Google Form.
 - [x] Sinh viên xác nhận từng screenshot compatibility có URL, browser/OS/device và watermark `MSSV@....edu.vn` (04/08/2026).
 - [x] Sinh viên xác nhận ảnh, số liệu, người tham gia và kết quả kiểm thử không bị làm giả; provenance ngoài các artefact này không thể được AI tự chứng minh.
 - [ ] Catalog/video skill chưa phản ánh video demo hoàn chỉnh.

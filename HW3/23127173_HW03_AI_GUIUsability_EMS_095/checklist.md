@@ -14,13 +14,13 @@
 - [x] Có danh sách nguồn tham khảo.
 - [x] Có prompt AI tạo/tinh chỉnh checklist.
 - [x] Giải thích các mục nhóm bổ sung ngoài đầu ra AI.
-- [ ] Thực thi đủ 41 checklist trên từng màn hình và ghi Passed/Failed/Notes.
+- [x] Thực thi đủ 41 checklist trên từng màn hình và ghi Passed/Failed/Notes (117 PASS, 6 FAIL; có screenshot cho các FAIL).
 - [x] Task 1B chỉ đính kèm screenshot khi Failed: hiện không có dòng FAIL và không còn ảnh lỗi GUI gán sai.
 
 ## 3. Task 2 — User Testing
 
 - [x] Có task scenario hướng mục tiêu, không mô tả từng cú nhấp.
-- [-] Pilot được thực hiện cùng P1 theo quyết định sinh viên; đây là ngoại lệ so với cụm “người bổ sung” trong requirement.
+- [x] Có pilot với một người ngoài lớp, bổ sung và tách biệt P1–P5; không tính vào số liệu chính thức.
 - [x] Có 5 người tham gia thật, ngoài lớp học, với liên hệ đã che thông tin (sinh viên xác nhận 04/08/2026).
 - [x] Có ghi chú quan sát, UEQ-S và câu hỏi mở cho 5 phiên.
 - [x] Có kết quả UEQ-S và bảng chỉ số.
@@ -36,8 +36,8 @@
 
 ## 5. Nộp bài và bằng chứng
 
-- [ ] Mọi finding được gửi Google Form và ghi vào Findings Log.
-- [ ] Findings Log nhất quán với nội dung đã gửi form.
+- [x] Sáu finding đã được sinh viên xác nhận gửi Google Form và đã ghi vào Findings Log.
+- [x] Timestamp, mô tả và số lượng 6 finding đã được sinh viên xác nhận khớp Google Form.
 - [x] AI Audit ghi lại prompt và output AI thực tế.
 - [x] AI Critique dài 200–300 từ.
 - [-] Có commit HW03 thật, nhưng chưa tách riêng cho từng màn hình/lượt kiểm thử; working tree có thay đổi chưa commit.

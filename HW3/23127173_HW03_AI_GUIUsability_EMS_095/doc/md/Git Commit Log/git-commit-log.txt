@@ -23,6 +23,7 @@ Rà soát: 04/08/2026
 | 12 | `2b2479653a04482fb5c283d40dc61ef7f2d77d04` | 04/08 00:42:41 | Thêm GUI Checklist Executor, CSV checklist và audit liên quan. |
 | 13 | `f589bd520d8ae00de5ca713011439120edcfe766` | 04/08 01:27:08 | Cập nhật kết quả GUI B1/B2/B4 và bổ sung evidence user testing. |
 | 14 | `181646f4c605b3792d9d4b34dff58b2913f2c86c` | 04/08 01:51:31 | Rà soát consistency/security, cấu trúc lại evidence, thêm tổng kết Task 1B và cập nhật AI/Git log. |
+| 15 | `aa188d7` | 04/08 | Bổ sung liên kết video demo Agent Skill và làm mới các báo cáo/review liên quan. |
 
 ## File liên quan theo nhóm công việc
 
@@ -32,8 +33,8 @@ Rà soát: 04/08/2026
 | Task 1B | 3, 7, 13 | `requirement/scenario-B/screens/screen-{1,2,3}/checklist-execution.md` |
 | Task 2 | 4, 5, 9–11, 13 | `usability-report.md`, `usability-report/screenshots/`, `usability-report/evidence/participants/` |
 | Task 3 | 6–8, 11 | `compatibility-matrix.md`, `compatibility-matrix/screenshots/` |
-| Skill / checklist | 1, 12, 13 | `agent-skills/gui-checklist-executor/`, `checklist/` |
-| Audit / prompt log | 1–13 | `doc/md/AI Audit/`, `doc/md/appendixA-prompt-log.md` |
+| Skill / checklist | 1, 12, 13, 15 | `agent-skills/gui-checklist-executor/`, `checklist/` |
+| Audit / prompt log | 1–15 | `doc/md/AI Audit/`, `doc/md/appendixA-prompt-log.md` |
 
 ## Danh sách thay đổi chi tiết theo commit
 
@@ -115,10 +116,16 @@ Cập nhật skill/audit/ba screen log, thêm 2 ảnh user-testing và xóa `gui
 Cập nhật README, checklist, skill, audit, Git log, main report, roadmap và matrix; bỏ thư mục `evidence/` gốc, thêm tổng kết `screens/README.md`, và chuyển 5 ảnh participant vào `usability-report/evidence/participants/`.
 </details>
 
+<details>
+<summary><code>aa188d7</code> — 6 artefact</summary>
+
+Thêm URL video demo cho Agent Skill và đồng bộ các tài liệu review/báo cáo có liên quan.
+</details>
+
 ## Trạng thái Git hiện tại
 
-- `homework3` đi trước `origin/homework3` 2 commit tại thời điểm rà soát.
-- Có thay đổi working tree chưa commit sau `f589bd5`; chúng không thuộc lịch sử commit ở trên cho tới khi sinh viên tạo commit mới.
+- Lịch sử ở trên được đối chiếu đến `aa188d7`, là commit mới nhất trước đợt cập nhật kết quả GUI, Findings Log, main report và PDF.
+- Các thay đổi đang chờ commit được ghi nhận bằng commit kế tiếp; không tạo hash hoặc lịch sử giả để lấp khoảng trống này.
 - Các commit Task 1B được gom theo đợt, không có commit riêng cho từng màn hình/lượt test. Không tạo hash hoặc lịch sử giả để bù khoảng trống này.
 
 ## Artefact log liên quan
