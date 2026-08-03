@@ -1,0 +1,157 @@
+# Git Commit Log đầy đủ — HW03
+
+Repository: `TestingProject/Lab`
+Branch tại thời điểm rà soát: `homework3`
+Phạm vi lệnh: `git log --reverse --name-status -- HW3/23127173_HW03_AI_GUIUsability_EMS_095`
+Rà soát: 04/08/2026
+
+## Lịch sử commit theo thứ tự thời gian
+
+| # | Commit đầy đủ | Thời gian (UTC+7) | Nội dung |
+| ---: | --- | --- | --- |
+| 1 | `b8ad42275afb0e23a51618c63cbb75c8fc289d09` | 26/07 15:17:48 | Khởi tạo cấu trúc HW03, checklist, artefact Task 1–3, audit và Agent Skills. |
+| 2 | `e086473cd7b62fb85319ab8456fc6873d236cba6` | 26/07 15:26:21 | Chuyển template sang Scenario B; đổi tên các artefact scenario và cập nhật báo cáo/prompt log. |
+| 3 | `390d8898908893e79ec23051c7223eb9fbe85fe8` | 26/07 15:50:51 | Chuyển phạm vi B3 sang B4, đồng bộ B1/B2/B4 trong audit, report và log thực thi. |
+| 4 | `8579fbe33eead28e8a9c2f31b93b40a26dd44b83` | 26/07 17:21:34 | Chuẩn hóa Task 2, pilot, URL sự kiện và chỉ số thu thập dữ liệu. |
+| 5 | `4f9e230616adaf001b28769d82c381c47c97789d` | 26/07 18:07:34 | Thêm dữ liệu participant và phản hồi vào Usability Report. |
+| 6 | `8e1f97725bafdbaf46a733a5e9aaca73bde488d9` | 26/07 18:42:31 | Bổ sung case/criteria Task 3 và evidence compatibility ban đầu. |
+| 7 | `e6b87ab0665916fa91de1dece37d4c4b0417dc5d` | 02/08 16:52:17 | Hoàn thiện các cell compatibility, chuyển ảnh vào matrix và cập nhật ba log screen. |
+| 8 | `6103e67528295248a20a016b07af34b7e8cd6e2e` | 02/08 16:57:38 | Thêm lớp phủ cho 15 ảnh compatibility. |
+| 9 | `dbf77dd37c8611ad139144cdf266e88a7a308bff` | 02/08 18:14:36 | Tổng hợp kết quả usability test. |
+| 10 | `1a9559bf563fdc73a60afe08bc0f21f3ee91af5b` | 02/08 18:18:40 | Phân tích usability findings. |
+| 11 | `96c6af2fd725237f06acd693f0e928d980161a32` | 02/08 18:24:57 | Thêm screenshot finding và cập nhật Usability Report/matrix. |
+| 12 | `2b2479653a04482fb5c283d40dc61ef7f2d77d04` | 04/08 00:42:41 | Thêm GUI Checklist Executor, CSV checklist và audit liên quan. |
+| 13 | `f589bd520d8ae00de5ca713011439120edcfe766` | 04/08 01:27:08 | Cập nhật kết quả GUI B1/B2/B4 và bổ sung evidence user testing. |
+| 14 | `181646f4c605b3792d9d4b34dff58b2913f2c86c` | 04/08 01:51:31 | Rà soát consistency/security, cấu trúc lại evidence, thêm tổng kết Task 1B và cập nhật AI/Git log. |
+| 15 | `aa188d7` | 04/08 | Bổ sung liên kết video demo Agent Skill và làm mới các báo cáo/review liên quan. |
+| 16 | `f4b2980669eb5f2a01dce0c5178c92b2ea997d65` | 04/08/2026 02:44:35 | Chốt kết quả GUI, Findings Log, audit và báo cáo Markdown/PDF. |
+| 17 | `6046bb3a0499cd93efc507ded9e588309a947450` | 04/08/2026 02:45:23 | Cập nhật Git Commit Log đầy đủ bằng hash thật của commit HW03. |
+| 18 | `d737e936b6ac5d83ab9706db6aaff03343bf5a48` | 04/08/2026 02:53:14 | Đồng bộ mức tự đánh giá 95/100, audit và PDF báo cáo. |
+
+## File liên quan theo nhóm công việc
+
+| Nhóm | Commit liên quan | Artefact chính |
+| --- | --- | --- |
+| Khởi tạo / Scenario B | 1–4 | `README.md`, `roadmap.md`, `scenario-report.md`, `main-report.md`, `AI Audit/` |
+| Task 1B | 3, 7, 13 | `requirement/scenario-B/screens/screen-{1,2,3}/checklist-execution.md` |
+| Task 2 | 4, 5, 9–11, 13 | `usability-report.md`, `usability-report/screenshots/`, `usability-report/evidence/participants/` |
+| Task 3 | 6–8, 11 | `compatibility-matrix.md`, `compatibility-matrix/screenshots/` |
+| Skill / checklist | 1, 12, 13, 15 | `agent-skills/gui-checklist-executor/`, `checklist/` |
+| Audit / prompt log | 1–16 | `doc/md/AI Audit/`, `doc/md/appendixA-prompt-log.md` |
+
+## Danh sách thay đổi chi tiết theo commit
+
+<details>
+<summary><code>b8ad422</code> — 29 file mới</summary>
+
+Tạo README, roadmap, checklist, bốn file AI Audit, Git log, prompt log, main report, ba skill template, `evidence/README.md` và toàn bộ template `scenario-[A-B-C-D]` cho Task 1–3.
+</details>
+
+<details>
+<summary><code>e086473</code> — 15 artefact</summary>
+
+Sửa README/audit/prompt log/main report; đổi tên toàn bộ `scenario-[A-B-C-D]` sang `scenario-B`, tạo `scenario-report.md` và `screen-1/checklist-execution.md`.
+</details>
+
+<details>
+<summary><code>390d889</code> — 12 artefact</summary>
+
+Cập nhật README, ba file audit/disclosure, prompt log, main report, matrix, scenario report, ba checklist execution và Usability Report để dùng B1/B2/B4.
+</details>
+
+<details>
+<summary><code>8579fbe</code> — 7 artefact</summary>
+
+Cập nhật audit, critique, prompt log, matrix, scenario report, screen-2 execution và Usability Report cho pilot/chỉ số Task 2.
+</details>
+
+<details>
+<summary><code>4f9e230</code> — 1 artefact</summary>
+
+Cập nhật `requirement/scenario-B/usability-report/usability-report.md`.
+</details>
+
+<details>
+<summary><code>8e1f977</code> — 15 artefact</summary>
+
+Cập nhật audit/prompt log/matrix; thêm 9 ảnh compatibility và 3 ảnh user-testing ban đầu tại `evidence/`.
+</details>
+
+<details>
+<summary><code>e6b87ab</code> — 24 artefact</summary>
+
+Thêm Firefox/Opera screenshots, chuyển 9 ảnh compatibility từ `evidence/` vào `compatibility-matrix/screenshots/`, cập nhật README/checklist/audit/prompt log/matrix/scenario report và ba screen log.
+</details>
+
+<details>
+<summary><code>6103e67</code> — 17 artefact</summary>
+
+Cập nhật audit/prompt log và toàn bộ 15 ảnh trong `compatibility-matrix/screenshots/` để có lớp phủ.
+</details>
+
+<details>
+<summary><code>dbf77dd</code> và <code>1a9559b</code> — mỗi commit 3 artefact</summary>
+
+Cập nhật audit, prompt log và Usability Report để tổng hợp kết quả, sau đó phân tích finding.
+</details>
+
+<details>
+<summary><code>96c6af2</code> — 7 artefact</summary>
+
+Cập nhật audit/prompt log/matrix; thêm `finding1.png`, `finding2.png`, `finding3.png`; cập nhật Usability Report.
+</details>
+
+<details>
+<summary><code>2b24796</code> — 9 artefact</summary>
+
+Cập nhật skill, thêm `agents/openai.yaml`, tạo `team-checklist.csv`, cập nhật checklist/prompt/source và AI Audit/Critique/Disclosure.
+</details>
+
+<details>
+<summary><code>f589bd5</code> — 9 artefact</summary>
+
+Cập nhật skill/audit/ba screen log, thêm 2 ảnh user-testing và xóa `gui-checklist-ia02.xlsx`.
+</details>
+
+<details>
+<summary><code>181646f</code> — 31 artefact</summary>
+
+Cập nhật README, checklist, skill, audit, Git log, main report, roadmap và matrix; bỏ thư mục `evidence/` gốc, thêm tổng kết `screens/README.md`, và chuyển 5 ảnh participant vào `usability-report/evidence/participants/`.
+</details>
+
+<details>
+<summary><code>aa188d7</code> — 6 artefact</summary>
+
+Thêm URL video demo cho Agent Skill và đồng bộ các tài liệu review/báo cáo có liên quan.
+</details>
+
+<details>
+<summary><code>f4b2980</code> — 19 artefact</summary>
+
+Chốt 41 mục/màn hình cho B1/B2/B4, Findings Log và báo cáo; thêm PDF báo cáo cùng ba ảnh reflow 320 px có truy vết.
+</details>
+
+<details>
+<summary><code>6046bb3</code> — 1 artefact</summary>
+
+Cập nhật `Git Commit Log/git-commit-log.txt` để ghi nhận commit chốt tài liệu và evidence HW03.
+</details>
+
+<details>
+<summary><code>d737e93</code> — 6 artefact</summary>
+
+Đồng bộ README, main report/PDF, AI Audit, prompt log và Git Commit Log theo phân bổ tự đánh giá 95/100 do sinh viên chốt.
+</details>
+
+## Trạng thái Git hiện tại
+
+- Lịch sử ở trên được đối chiếu đến `d737e93`, là commit đồng bộ mức tự đánh giá 95/100, audit và PDF báo cáo.
+- Hash, thời gian và mô tả được lấy trực tiếp từ `git log`; các thay đổi cập nhật log này sẽ thuộc commit kế tiếp.
+- Các commit Task 1B được gom theo đợt, không có commit riêng cho từng màn hình/lượt test. Không tạo hash hoặc lịch sử giả để bù khoảng trống này.
+
+## Artefact log liên quan
+
+- Nhật ký sử dụng AI: `../AI Audit/01_AI-Audit-Report.md`.
+- Chỉ mục prompt AI: `../appendixA-prompt-log.md`.
+- Tổng kết GUI Task 1B: `../../requirement/scenario-B/screens/README.md`.
+- Lịch sử chính xác có thể tái tạo bằng lệnh ở đầu file trên repository hiện hành.
