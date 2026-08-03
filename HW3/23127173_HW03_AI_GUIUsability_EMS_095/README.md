@@ -17,7 +17,7 @@
 | Task 2 | Có Pilot và P1–P5, UEQ-S, câu trả lời mở và 3 finding; sinh viên xác nhận 5 người tham gia ngoài lớp. Pilot trùng P1 theo quyết định sinh viên. |
 | Task 3 | Có 15 cell và screenshot; sinh viên xác nhận URL, browser/OS/device và watermark đúng dạng email theo đề. |
 | Findings Log / Google Form | Chưa có finding đã gửi form hoặc timestamp, nên chưa hoàn tất. |
-| Agent skill | Có `gui-checklist-executor`; chưa có video demo. |
+| Agent skill | Có `gui-checklist-executor` và video demo. |
 
 ## Chỉ số đã ghi nhận
 
@@ -33,7 +33,6 @@
 1. Chạy và ghi kết quả thật cho IA01-11 trên B1, B2, B4; quyết định cách xử lý các tiêu chí không áp dụng theo rubric Passed/Failed.
 2. Thay Pilot bằng một người bổ sung thực sự (hoặc cung cấp bằng chứng pilot hiện có là người khác P1).
 3. Gửi các finding đã xác minh qua Google Form và ghi timestamp vào Findings Log.
-4. Ghi video demo cho skill.
 
 ## Tự đánh giá bảo thủ theo bằng chứng hiện có
 
@@ -44,7 +43,7 @@
 | Task 2 | 17/25 | Có 5 phiên, số liệu và xác nhận ngoài lớp; Pilot vẫn trùng P1. |
 | Task 3 | 20/25 | Có matrix 15 cell, ảnh tham chiếu và xác nhận metadata/watermark. |
 | Findings / Google Form | 0/10 | Chưa có bản ghi gửi form và timestamp. |
-| Agent skill | 5/10 | Có skill hoạt động; chưa có video demo. |
-| **Tổng** | **62/100** | Ước lượng bảo thủ, không thay thế điểm giảng viên. |
+| Agent skill | 10/10 | Có skill và video demo: https://youtu.be/GKflcjtQ4_U. |
+| **Tổng** | **67/100** | Ước lượng bảo thủ, không thay thế điểm giảng viên. |
 
 Các artefact chi tiết: `checklist/`, `requirement/scenario-B/`, `doc/md/AI Audit/` và `agent-skills/`.

@@ -22,6 +22,7 @@ Rà soát: 04/08/2026
 | 11 | `96c6af2fd725237f06acd693f0e928d980161a32` | 02/08 18:24:57 | Thêm screenshot finding và cập nhật Usability Report/matrix. |
 | 12 | `2b2479653a04482fb5c283d40dc61ef7f2d77d04` | 04/08 00:42:41 | Thêm GUI Checklist Executor, CSV checklist và audit liên quan. |
 | 13 | `f589bd520d8ae00de5ca713011439120edcfe766` | 04/08 01:27:08 | Cập nhật kết quả GUI B1/B2/B4 và bổ sung evidence user testing. |
+| 14 | `181646f4c605b3792d9d4b34dff58b2913f2c86c` | 04/08 01:51:31 | Rà soát consistency/security, cấu trúc lại evidence, thêm tổng kết Task 1B và cập nhật AI/Git log. |
 
 ## File liên quan theo nhóm công việc
 
@@ -106,6 +107,12 @@ Cập nhật skill, thêm `agents/openai.yaml`, tạo `team-checklist.csv`, cậ
 <summary><code>f589bd5</code> — 9 artefact</summary>
 
 Cập nhật skill/audit/ba screen log, thêm 2 ảnh user-testing và xóa `gui-checklist-ia02.xlsx`.
+</details>
+
+<details>
+<summary><code>181646f</code> — 31 artefact</summary>
+
+Cập nhật README, checklist, skill, audit, Git log, main report, roadmap và matrix; bỏ thư mục `evidence/` gốc, thêm tổng kết `screens/README.md`, và chuyển 5 ảnh participant vào `usability-report/evidence/participants/`.
 </details>
 
 ## Trạng thái Git hiện tại

@@ -8,5 +8,5 @@
 | P0 | Xử lý pilot: dùng người bổ sung khác P1 hoặc chứng minh pilot hiện có là một người khác. | Chưa làm | Bảng phiên, liên hệ che và quan sát thật được sửa bởi sinh viên. |
 | P1 | Rà thủ công 15 screenshot compatibility theo metadata/watermark yêu cầu. | Đã xác nhận bởi sinh viên 04/08 | URL EMS, browser, OS, device, watermark `MSSV@....edu.vn` đọc được trên từng ảnh. |
 | P1 | Sửa các lỗi S1-C03 và S3-C03 (nếu còn tái hiện) sau khi đã báo finding. | Chưa làm | Retest và cập nhật matrix/log. |
-| P2 | Quay video demo `gui-checklist-executor`. | Chưa làm | URL video trong `agent-skills/demo-videos/link-video.md`. |
+| P2 | Quay video demo `gui-checklist-executor`. | Đã bổ sung | https://youtu.be/GKflcjtQ4_U |
 | P2 | Cập nhật README, báo cáo chính, audit và Git log sau mỗi bước. | Đã cập nhật lần rà soát 04/08 | Không còn placeholder hoặc số liệu mâu thuẫn. |

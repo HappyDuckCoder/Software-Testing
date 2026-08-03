@@ -23,9 +23,10 @@
 - Compatibility matrix: `../../requirement/scenario-B/compatibility-matrix/compatibility-matrix.md`.
 - Findings Log: `../../requirement/scenario-B/findings-log.md`.
 - AI Audit, Critique và privacy checklist: `AI Audit/`.
+- Video demo skill: https://youtu.be/GKflcjtQ4_U.
 
 ## Kết luận
 
 Bài có cấu trúc và dữ liệu nền tảng để chấm, nhưng chưa nên khẳng định hoàn tất: các điểm thiếu nêu trong bảng phải được xử lý bằng thao tác và bằng chứng thật trước khi nộp.
 
-Tự đánh giá bảo thủ theo artefact hiện có: **62/100** (Task 1A 13/15; Task 1B 7/15; Task 2 17/25; Task 3 20/25; Findings/Form 0/10; Agent skill 5/10). Đây không phải điểm chính thức.
+Tự đánh giá bảo thủ theo artefact hiện có: **67/100** (Task 1A 13/15; Task 1B 7/15; Task 2 17/25; Task 3 20/25; Findings/Form 0/10; Agent skill 10/10). Đây không phải điểm chính thức. Chưa đạt 95/100 vì Task 1B, Pilot và Findings/Google Form vẫn thiếu bằng chứng theo requirement.

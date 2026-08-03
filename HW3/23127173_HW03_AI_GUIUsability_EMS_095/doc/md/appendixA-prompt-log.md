@@ -30,5 +30,6 @@
 | AI-028 | 18:22 02/08/2026 (UTC+7) | Codex | Liên kết ba ảnh evidence vào findings Task 2 | Path chuẩn cho finding1.png, finding2.png, finding3.png và checklist review | Không tạo/chỉnh sửa screenshot; Findings Log và Google Form để sinh viên bổ sung sau |
 | AI-029–AI-040 | 03–04/08/2026 (UTC+7) | Claude Sonnet/Codex | Tổng quát hóa IA-03, tạo skill, chạy/retest Task 1B qua Chrome và rà soát toàn bài | `checklist/`, `agent-skills/`, log B1/B2/B4, README, roadmap, báo cáo và audit | Xem chi tiết từng ID trong `AI Audit/01_AI-Audit-Report.md`; còn IA01-11, Pilot, Findings Log/Form, ảnh Task 3 và video skill cần hoàn tất bằng bằng chứng thật |
 | AI-041–AI-044 | 04/08/2026 (UTC+7) | Codex | Rà soát theo xác nhận sinh viên, cấu trúc evidence, thống kê Task 1B và Git log đầy đủ | `screens/README.md`, `usability-report/evidence/`, `Git Commit Log/git-commit-log.txt` và AI Audit | Không tạo dữ liệu test; Git log lấy từ lịch sử repository thật |
+| AI-045 | 04/08/2026 (UTC+7) | Codex | Rà soát main report, ghi video demo và chấm lại | README, main report, skill catalog, roadmap, checklist và AI Audit | Điểm tự đánh giá 67/100; chưa đủ 95/100 do các thiếu sót rubric còn tồn tại |
 
 > Prompt log này chỉ mục lục hóa các tương tác AI thật. Nội dung prompt/output đầy đủ phải nằm trong AI Audit Report.

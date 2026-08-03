@@ -41,5 +41,5 @@
 - [x] AI Audit ghi lại prompt và output AI thực tế.
 - [x] AI Critique dài 200–300 từ.
 - [-] Có commit HW03 thật, nhưng chưa tách riêng cho từng màn hình/lượt kiểm thử; working tree có thay đổi chưa commit.
-- [ ] Agent Skill đã có nhưng chưa có liên kết video demo.
+- [x] Agent Skill có liên kết video demo: https://youtu.be/GKflcjtQ4_U.
 - [ ] Không có ảnh, số liệu, người tham gia hoặc kết quả kiểm thử bị làm giả.
