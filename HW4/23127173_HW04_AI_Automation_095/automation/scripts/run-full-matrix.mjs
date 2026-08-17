@@ -124,7 +124,7 @@ for (const feature of features) {
       copyDir(htmlSrc, destReport);
       const stripped = stripReportAttachments(destReport);
       if (stripped.webm || stripped.png) {
-        console.log(`  stripped attachments: ${stripped.webm} webm, ${stripped.png} png`);
+        console.log(`  evidence/${runId}: stripped ${stripped.webm} webm, ${stripped.png} png`);
       }
     }
 

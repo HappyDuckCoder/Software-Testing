@@ -7,7 +7,7 @@
 | Cursor (Composer) | Dịch & đọc requirement | Dịch `requirement.pdf` → `requirement.md` (Lab/HW4). | Đối chiếu bản dịch với PDF gốc. |
 | Cursor (Composer) | Khởi tạo khung HW04 | Cấu trúc thư mục, roadmap, checklist, template báo cáo, khung Playwright, map feature HW2, Agent Skill skeleton. | Review cấu trúc, điền nội dung báo cáo và evidence thật. |
 | Cursor (Composer) | Task 1 — data & automation | 76 TC spec-oracle; **9 browser runs**; evidence copy; `execution-summary.json`. | Review fail; video; PDF; GitHub. |
-| Cursor (Composer) | AI Audit & prompt log | Ghi AI-001…AI-017, appendix, disclosure. | Xác nhận prompt/kết quả. |
+| Cursor (Composer) | AI Audit & prompt log | Ghi AI-001…AI-019, appendix, disclosure. | Xác nhận prompt/kết quả. |
 
 ## Tuyên bố giới hạn
 

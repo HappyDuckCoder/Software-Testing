@@ -22,7 +22,9 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-014 | ~18:00 17/08/2026 (UTC+7) | Cursor (Composer) | «trong HW2 featureA test tay sai nhiều — tại sao automation pass hết» → «so với spec không so code, sinh lại test coverage như HW2, sửa code, chạy lại full e2e headed» | Mở rộng `feature-a-profile.json` **30 TC** (A-DT-01…18 + A-BVA-01…12); thêm `helpers/profileSpec.ts`; viết lại spec **oracle README/spec**; chạy headed: **22 pass / 8 fail** (~1.3 phút); cập nhật `ai-gap-analysis.md`. | VALID — PARTIAL | 8 fail khớp BUG-A-01/A-02 HW2. |
 | AI-015 | 18:10 17/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật AI-audit — sau đó chạy feature B, C — cập nhật AI-audit tiếp» | Cập nhật audit AI-014; sửa `feature-b-order-history.spec.ts`, `feature-c-admin-orders.spec.ts`, `helpers/orderLocators.ts`, `api.ts`; chạy headed Feature B **10 pass / 2 skip**; Feature C **11 pass / 1 fail** (C-AUTO-08 = bug HW2 C-DT-12). | VALID — PARTIAL | 2 skip B do user đã có đơn (empty state); 1 fail C là bug canceled→delivered. **Superseded** bởi AI-016 (full HW2 coverage). |
 | AI-016 | ~18:25 17/08/2026 (UTC+7) | Cursor (Composer) | «featureB và featureC sinh lại test case cover spec HW2, cập nhật audit» | B: 22 TC, C: 24 TC spec-oracle; chạy headed B 13P/5F/4S, C 18P/6F; gap analysis B/C. | VALID — PARTIAL | Fail khớp bug HW2. |
-| AI-017 | ~18:35 17/08/2026 (UTC+7) | Cursor (Composer) | «có chạy full với cấu trúc lại bài nộp cho chuyên nghiệp, cập nhật audit» | Script `run-full-matrix.mjs`; **9 browser runs** (76 TC × 3 browser); copy 9 HTML → `evidence/html-reports/`; `execution-summary.json`; `checklist/execution-matrix.md`; cập nhật README, main-report, checklist, evidence README. Kết quả: **158P/53F/12S/5T** (~19 phút). | VALID | Exit code ≠0 do fail spec-oracle (bug SUT). Còn video, PDF, GitHub. |
+| AI-017 | ~18:35 17/08/2026 (UTC+7) | Cursor (Composer) | «có chạy full với cấu trúc lại bài nộp cho chuyên nghiệp, cập nhật audit» | Script `run-full-matrix.mjs`; **9 browser runs**; evidence + execution-summary; checklist/execution-matrix. **158P/53F/12S/5T**. | VALID | Còn video, PDF, GitHub. |
+| AI-018 | ~19:05 17/08/2026 (UTC+7) | Cursor (Composer) | «xem lại ignore» → staged 359 file gồm 227 `.webm` | Sửa `Lab/.gitignore` + submission `.gitignore`; strip webm khỏi git; sửa dialog XSS C-AUTO-15; giải thích `reports/html` = run cuối. | VALID | Unstage media; không commit video. |
+| AI-019 | ~19:12 17/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật audit — dọn file/thư mục dư — move thay vì xóa» | **Move** (không xóa) → `_archive/2026-08-17-cleanup/`: `reports/runs`, `reports/html`, `test-results`, `summary.json`, 276 webm/png; cập nhật README, pack-submission, reports/README; `_archive/` gitignore. | VALID | Bản nộp gọn: `evidence/html-reports/` + JSON summaries. |
 
 ## Quy tắc cập nhật
 
@@ -43,7 +45,7 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Mã bài tập | HW04-AI |
 | Có dùng AI | [x] Có  [ ] Không |
 
-## Tóm tắt execution thật (tính đến AI-017)
+## Tóm tắt execution thật (tính đến AI-019)
 
 | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- |
@@ -51,5 +53,6 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Feature B — 3 browsers (22 TC) | 13–14P / 4–5F / 4S | BUG-B-01/02; skip empty |
 | Feature C — 3 browsers (24 TC) | 15–18P / 4–6F / 0–5T | BUG-C-01/02/03 |
 | **Tổng 9 runs** | **158P / 53F / 12S / 5T** | `evidence/execution-summary.json` |
-| HTML reports | 9 folders | `evidence/html-reports/feature-*-{browser}/` |
+| HTML reports (nộp) | 9 folders | `evidence/html-reports/` (index.html + data/*.md) |
+| Archive (local) | `_archive/2026-08-17-cleanup/` | runs/html/test-results/media — **không zip** |
 | Video / PDF / GitHub | Chưa hoàn tất | Còn bước nộp |

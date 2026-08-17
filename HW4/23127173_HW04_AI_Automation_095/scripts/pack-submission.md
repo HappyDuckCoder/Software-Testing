@@ -30,9 +30,10 @@ $exclude = @(
 | `automation/node_modules/` | Cài lại bằng `npm install` |
 | `automation/.env` | Chứa password — chỉ giữ `.env.example` |
 | `automation/test-results/` | Screenshot/video fail tạm, rất nặng |
-| `automation/reports/html/` | Bản copy đã có trong `evidence/html-reports/` |
-| `evidence/html-reports/**/*.webm` | Video đính kèm Playwright (~227 file, ~15MB) — **không commit git** |
-| `evidence/html-reports/**/*.png` | Screenshot fail trong report — optional, đã ignore cho git |
+| `automation/reports/html/` | Run cuối — **move** → `_archive/` |
+| `automation/reports/runs/` | Trùng evidence — **move** → `_archive/` |
+| `automation/test-results/` | Fail tạm — **move** → `_archive/` |
+| `_archive/` | Toàn bộ folder — **không zip** Moodle |
 
 ## Phải có trong zip
 

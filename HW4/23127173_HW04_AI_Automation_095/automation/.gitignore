@@ -20,7 +20,7 @@ node_modules/
 # Reports tạm trong automation/ — bản nộp dùng evidence/html-reports/
 /reports/html/
 /reports/summary.json
-/reports/feature-*/
+/reports/runs/
 
 # Logs & OS
 *.log

@@ -14,6 +14,8 @@ automation/blob-report/
 automation/playwright/.cache/
 automation/reports/html/
 automation/reports/summary.json
+automation/reports/runs/**/*.webm
+automation/reports/runs/**/*.png
 
 # === GIỮ LẠI cho chấm bài ===
 # evidence/html-reports/**/index.html   ← 9 HTML reports
@@ -34,6 +36,9 @@ Thumbs.db
 
 # Zip output (tạo local, không đưa vào repo)
 23127173_HW04_AI_Automation_095.zip
+
+# Archive local — artefact dư đã move (optional, không bắt buộc nộp)
+_archive/
 
 # Video local lớn — link YouTube ghi trong agent-skills/demo-videos/
 evidence/demo-video/*.mp4

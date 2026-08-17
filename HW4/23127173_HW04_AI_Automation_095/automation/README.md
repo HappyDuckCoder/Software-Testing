@@ -56,8 +56,9 @@ npm run test:ui
 
 Sau mỗi lần chạy: `reports/html/index.html` (metadata `Run by: 23127173`).
 
-`npm run test:full-matrix` tự copy vào `../evidence/html-reports/` và ghi `../evidence/execution-summary.json`.
-Per-browser JSON: `reports/feature-{a,b,c}/summary-{browser}.json`.
+`npm run test:full-matrix` copy vào `../evidence/html-reports/` (strip webm/png → `_archive/` nếu dọn).
+
+> **`reports/html/`** và **`test-results/`** là tạm — Playwright ghi đè. Bản chính thức: `../evidence/html-reports/`. Artefact dư: `../_archive/`.
 
 ## Assertion patterns (≥ 3)
 

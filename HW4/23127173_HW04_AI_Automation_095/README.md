@@ -70,8 +70,10 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 │   └── scripts/run-full-matrix.mjs
 ├── evidence/
 │   ├── execution-summary.json
-│   ├── html-reports/            ← 9 HTML reports
+│   ├── html-reports/            ← 9 HTML reports (bản nộp)
 │   └── demo-video/              ← [CHƯA QUAY]
+├── _archive/                    ← artefact dư (move, không zip)
+│   └── 2026-08-17-cleanup/
 ├── requirement/feature-{A,B,C}/
 │   ├── feature-*-report.md
 │   ├── ai-gap-analysis/
@@ -89,7 +91,7 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | Playwright project | `automation/` | ✅ 76 TC + 9 runs |
 | HTML reports đa trình duyệt | `evidence/html-reports/` | ✅ 9 folders |
 | AI Gap Analysis | `requirement/feature-*/ai-gap-analysis/` | ✅ |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-017 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-019 |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
 | Video demo YouTube | `agent-skills/demo-videos/link-video.md` | `[CHƯA QUAY]` |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | Placeholder |
