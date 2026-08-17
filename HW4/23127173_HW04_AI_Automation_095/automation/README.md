@@ -68,3 +68,14 @@ Per-browser JSON: `reports/feature-{a,b,c}/summary-{browser}.json`.
 ## Data-driven
 
 Test data: `data/feature-*.json` — **không** hardcode trong spec.
+
+## Git ignore
+
+| File | Ignore gì | Giữ gì |
+| --- | --- | --- |
+| `automation/.gitignore` | `node_modules`, `.env`, `test-results`, reports tạm | source, data, tests, `.env.example` |
+| `../.gitignore` (root nộp) | thêm loại zip, video local lớn | `evidence/html-reports/`, `execution-summary.json` |
+
+**Không commit / không zip:** `.env`, `node_modules/`, `test-results/`.  
+**Bắt buộc nộp:** `../evidence/html-reports/` (9 reports).  
+Hướng dẫn zip: `../scripts/pack-submission.md`.

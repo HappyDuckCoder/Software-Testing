@@ -1,7 +1,7 @@
 # AI & Privacy Checklist — HW04
 
 - [ ] Không lưu mật khẩu, token JWT, cookie session vào script, JSON data, audit hoặc screenshot công khai.
-- [ ] File `.env` chỉ dùng local; không commit `.env` lên GitHub (chỉ commit `.env.example`).
+- [x] File `.env` chỉ dùng local; không commit `.env` lên GitHub (chỉ commit `.env.example`). `.gitignore` root + `automation/.gitignore` đã cấu hình.
 - [ ] Tài khoản test EShop (`test@eshop.com`, `admin@eshop.com`) không ghi plaintext password trong báo cáo nộp bài nếu không bắt buộc.
 - [ ] Video demo không lộ secret; terminal `whoami`/`hostname` được phép theo đề bài.
 - [ ] Mọi output AI (script, gap analysis) đã được sinh viên review trước khi chạy và nộp.

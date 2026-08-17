@@ -1,6 +1,29 @@
+# Playwright project — GitHub repo `automation/`
+# Canonical HTML reports: ../evidence/html-reports/ (submission folder)
+
+# Dependencies
 node_modules/
+
+# Secrets — chỉ commit .env.example
+.env
+.env.*
+!.env.example
+
+# Playwright output tạm (regenerate mỗi lần chạy)
 /test-results/
 /playwright-report/
-/reports/
-.env
+/blob-report/
+/playwright/.cache/
+/trace.zip
+*.trace.zip
+
+# Reports tạm trong automation/ — bản nộp dùng evidence/html-reports/
+/reports/html/
+/reports/summary.json
+/reports/feature-*/
+
+# Logs & OS
 *.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

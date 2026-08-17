@@ -31,6 +31,28 @@ function copyDir(src, dest) {
   }
 }
 
+/** Bỏ video/screenshot đính kèm — HTML report vẫn xem pass/fail; giảm ~15MB+ cho git/zip */
+function stripReportAttachments(dir) {
+  if (!fs.existsSync(dir)) return { webm: 0, png: 0 };
+  let webm = 0;
+  let png = 0;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const sub = stripReportAttachments(full);
+      webm += sub.webm;
+      png += sub.png;
+    } else if (entry.name.endsWith('.webm')) {
+      fs.unlinkSync(full);
+      webm += 1;
+    } else if (entry.name.endsWith('.png')) {
+      fs.unlinkSync(full);
+      png += 1;
+    }
+  }
+  return { webm, png };
+}
+
 function parseSummary(summaryPath) {
   if (!fs.existsSync(summaryPath)) return null;
   const raw = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
@@ -100,6 +122,10 @@ for (const feature of features) {
     if (fs.existsSync(htmlSrc)) {
       fs.rmSync(destReport, { recursive: true, force: true });
       copyDir(htmlSrc, destReport);
+      const stripped = stripReportAttachments(destReport);
+      if (stripped.webm || stripped.png) {
+        console.log(`  stripped attachments: ${stripped.webm} webm, ${stripped.png} png`);
+      }
     }
 
     fs.copyFileSync(summaryPath, path.join(featureReportDir, `summary-${browser}.json`));
