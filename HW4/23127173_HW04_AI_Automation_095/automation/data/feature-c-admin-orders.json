@@ -1,0 +1,18 @@
+{
+  "featureId": "FR-18",
+  "featureName": "Quản lý đơn hàng admin",
+  "tests": [
+    { "id": "C-AUTO-01", "hw2Ref": "C-DT-01", "type": "positive", "description": "Admin sees orders table", "assertionPattern": "count", "expected": { "minRows": "1" } },
+    { "id": "C-AUTO-02", "hw2Ref": "C-DT-02", "type": "positive", "description": "Column user_name present", "assertionPattern": "visibility", "expected": { "header": "user|khách|customer" } },
+    { "id": "C-AUTO-03", "hw2Ref": "C-DT-03", "type": "negative", "description": "No token blocks admin", "assertionPattern": "url", "expected": { "urlContains": "/login" } },
+    { "id": "C-AUTO-04", "hw2Ref": "C-DT-04", "type": "negative", "description": "Regular user cannot access admin", "assertionPattern": "url", "skip": true, "skipReason": "Chạy trên ADMIN_BASE_URL với session user", "expected": { "blocked": "true" } },
+    { "id": "C-AUTO-05", "hw2Ref": "C-DT-06", "type": "positive", "description": "pending to confirmed", "assertionPattern": "text", "skip": true, "skipReason": "Cần chọn order pending cụ thể", "expected": { "status": "confirmed" } },
+    { "id": "C-AUTO-06", "hw2Ref": "C-DT-07", "type": "positive", "description": "confirmed to shipping", "assertionPattern": "text", "skip": true, "skipReason": "Cần order confirmed seed", "expected": { "status": "shipping" } },
+    { "id": "C-AUTO-07", "hw2Ref": "C-DT-08", "type": "negative", "description": "Invalid transition rejected", "assertionPattern": "text", "skip": true, "skipReason": "Cần order ở trạng thái kết thúc", "expected": { "errorVisible": "true" } },
+    { "id": "C-AUTO-08", "hw2Ref": "C-DT-10", "type": "edge", "description": "canceled cannot go delivered", "assertionPattern": "state", "skip": true, "skipReason": "State machine — automate sau seed", "expected": { "blocked": "true" } },
+    { "id": "C-AUTO-09", "hw2Ref": "C-BVA-01", "type": "boundary", "description": "Orders page loads with header", "assertionPattern": "visibility", "expected": { "title": "order|đơn hàng" } },
+    { "id": "C-AUTO-10", "hw2Ref": "C-BVA-02", "type": "boundary", "description": "Status filter or badge visible", "assertionPattern": "count", "expected": { "statusBadgeMin": "1" } },
+    { "id": "C-AUTO-11", "hw2Ref": "C-DT-12", "type": "positive", "description": "Shipping address cell visible", "assertionPattern": "visibility", "expected": { "addressCell": "true" } },
+    { "id": "C-AUTO-12", "hw2Ref": "C-DT-14", "type": "positive", "description": "Table sorted newest first", "assertionPattern": "text", "skip": true, "skipReason": "Cần so sánh 2 order id — bổ sung assertion", "expected": { "sorted": "desc" } }
+  ]
+}

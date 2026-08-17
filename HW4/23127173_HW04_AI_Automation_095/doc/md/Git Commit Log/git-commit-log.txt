@@ -1,0 +1,25 @@
+# Git Commit Log — HW04 (placeholder)
+
+> Cập nhật sau khi push repository GitHub công khai và có ≥ 8 commit thay đổi file `.spec.ts`.
+
+```text
+# Ví dụ format (thay bằng log thật):
+# abc1234 HW04 automation init playwright config and feature-A scaffold
+# def5678 HW04 feature-A add profile data-driven tests 1-6
+# ...
+# Chỉ commit .spec.ts / test script mới tính vào 8 commit tối thiểu.
+```
+
+Lệnh gợi ý:
+
+```bash
+git log --oneline --decorate -- Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests/
+# hoặc trong repo GitHub riêng:
+git log --oneline -- tests/
+```
+
+| # | SHA | Date | Message | Files (test only) |
+| --- | --- | --- | --- | --- |
+| 1 | `[CHƯA CÓ]` | | | |
+| … | | | | |
+| 8 | `[CHƯA CÓ]` | | | |

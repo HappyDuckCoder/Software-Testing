@@ -1,0 +1,18 @@
+{
+  "featureId": "FR-11",
+  "featureName": "Lịch sử đơn hàng user",
+  "tests": [
+    { "id": "B-AUTO-01", "hw2Ref": "B-DT-01", "type": "positive", "description": "Empty order history message", "assertionPattern": "text", "expected": { "emptyText": "chưa có|no order|empty" } },
+    { "id": "B-AUTO-02", "hw2Ref": "B-DT-02", "type": "positive", "description": "Single order visible", "assertionPattern": "count", "expected": { "minRows": "1" } },
+    { "id": "B-AUTO-03", "hw2Ref": "B-DT-03", "type": "positive", "description": "Multiple orders listed", "assertionPattern": "count", "expected": { "minRows": "2" } },
+    { "id": "B-AUTO-04", "hw2Ref": "B-DT-05", "type": "negative", "description": "Guest redirect login", "assertionPattern": "url", "expected": { "urlContains": "/login" } },
+    { "id": "B-AUTO-05", "hw2Ref": "B-DT-07", "type": "positive", "description": "Pending status label", "assertionPattern": "text", "expected": { "status": "pending|chờ" } },
+    { "id": "B-AUTO-06", "hw2Ref": "B-DT-08", "type": "positive", "description": "Delivered status label", "assertionPattern": "text", "expected": { "status": "delivered|đã giao" } },
+    { "id": "B-AUTO-07", "hw2Ref": "B-DT-09", "type": "positive", "description": "Cancel button for pending", "assertionPattern": "visibility", "expected": { "cancelVisible": "true" } },
+    { "id": "B-AUTO-08", "hw2Ref": "B-DT-10", "type": "negative", "description": "No cancel for delivered", "assertionPattern": "count", "expected": { "cancelCount": "0" } },
+    { "id": "B-AUTO-09", "hw2Ref": "B-BVA-01", "type": "boundary", "description": "Empty list copy", "assertionPattern": "text", "expected": { "emptyText": "chưa có|no order" } },
+    { "id": "B-AUTO-10", "hw2Ref": "B-BVA-03", "type": "boundary", "description": "Currency format on total", "assertionPattern": "text", "expected": { "currencyPattern": "₫|VND|đ" } },
+    { "id": "B-AUTO-11", "hw2Ref": "B-DT-13", "type": "negative", "description": "Only own orders shown", "assertionPattern": "count", "expected": { "foreignOrderCount": "0" } },
+    { "id": "B-AUTO-12", "hw2Ref": "B-DT-14", "type": "edge", "description": "Cancel pending order flow", "assertionPattern": "state", "skip": true, "skipReason": "Cần seed order pending — bật sau khi có data", "expected": { "statusAfter": "canceled|đã hủy" } }
+  ]
+}

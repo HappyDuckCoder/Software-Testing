@@ -1,0 +1,20 @@
+{
+  "name": "eshop-hw04-automation-23127173",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HW04 Playwright automation for EShop — MSSV 23127173",
+  "scripts": {
+    "test": "playwright test",
+    "test:feature-a": "playwright test tests/feature-a-profile.spec.ts",
+    "test:feature-b": "playwright test tests/feature-b-order-history.spec.ts",
+    "test:feature-c": "playwright test tests/feature-c-admin-orders.spec.ts",
+    "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit",
+    "report": "playwright show-report reports/html"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.0.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.0"
+  }
+}
