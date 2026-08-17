@@ -19,4 +19,5 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-17 17:42 | Cursor (Composer) | «cập nhật AI-audit các prompt tôi làm việc với bạn nãy giờ» | AI Audit AI-002…AI-013, prompt log, disclosure |
 | 2026-08-17 ~18:00 | Cursor (Composer) | «HW2 featureA test tay sai nhiều — tại sao automation pass» → «so spec không so code, coverage như HW2, chạy lại e2e headed» | Feature A 30 TC spec-oracle; **22/30 pass** headed |
 | 2026-08-17 18:10 | Cursor (Composer) | «cập nhật AI-audit — chạy feature B, C — cập nhật AI-audit tiếp» | B: 10P/2 skip; C: 11P/1F; AI-015 |
-| 2026-08-17 ~18:25 | Cursor (Composer) | «featureB và featureC sinh lại test case cover spec HW2, cập nhật audit» | B: 22 TC spec-oracle 13P/5F/4 skip; C: 24 TC 18P/6F; AI-016 |
+| 2026-08-17 ~18:25 | Cursor (Composer) | «featureB và featureC sinh lại test case cover spec HW2» | B: 22 TC; C: 24 TC; AI-016 |
+| 2026-08-17 ~18:35 | Cursor (Composer) | «chạy full, cấu trúc lại bài nộp chuyên nghiệp, cập nhật audit» | 9 browser runs; evidence/; AI-017 |

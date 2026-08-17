@@ -29,31 +29,35 @@ npm run dev -- --host 127.0.0.1 --port 5174
 ## Chạy test
 
 ```bash
-# Headless (CI / nhanh)
+# Full matrix: 9 browser runs + copy evidence (khuyến nghị trước nộp)
+npm run test:full-matrix
+
+# Headless từng feature
 npm run test:feature-a
-
-# Nhìn Chromium chạy trực tiếp
-npm run test:feature-a:headed
-npm run test:headed
-
-# Playwright UI (chọn test, xem từng bước)
-npm run test:ui
-```
-
-```bash
 npm run test:feature-b
 npm run test:feature-c
 npm run test:all-browsers
+
+# Headed Chromium (demo)
+npm run test:feature-a:headed
+npm run test:headed
+npm run test:ui
 ```
+
+## Test coverage (spec oracle HW2)
+
+| Feature | File data | TC |
+| --- | --- | ---: |
+| FR-04 Profile | `data/feature-a-profile.json` | 30 |
+| FR-11 Order history | `data/feature-b-order-history.json` | 22 |
+| FR-18 Admin orders | `data/feature-c-admin-orders.json` | 24 |
 
 ## HTML report
 
-Sau mỗi lần chạy, mở `reports/html/index.html`. Kiểm tra metadata:
+Sau mỗi lần chạy: `reports/html/index.html` (metadata `Run by: 23127173`).
 
-- `Run by: 23127173`
-- `Run at: <ISO timestamp>`
-
-Copy report vào `../evidence/html-reports/feature-{a,b,c}-{browser}/`.
+`npm run test:full-matrix` tự copy vào `../evidence/html-reports/` và ghi `../evidence/execution-summary.json`.
+Per-browser JSON: `reports/feature-{a,b,c}/summary-{browser}.json`.
 
 ## Assertion patterns (≥ 3)
 

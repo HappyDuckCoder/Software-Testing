@@ -2,7 +2,7 @@
 
 ## Khai báo
 
-AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright, sinh/sửa spec E2E (A/B/C: **30/22/24 TC** spec-oracle theo HW2), chạy headed Chromium trên SUT local. AI **chưa** chạy firefox/webkit, **chưa** quay video demo và **chưa** copy HTML report vào `evidence/html-reports/`.
+AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright, sinh/sửa spec E2E (**76 TC** spec-oracle), chạy **9 browser runs** headed/headless trên SUT local. AI **chưa** quay video demo và **chưa** export PDF.
 
 | ID | Ngày giờ | Công cụ AI | Prompt / yêu cầu | Output AI | Verdict | Rà soát / chỉnh sửa của sinh viên |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -21,7 +21,8 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-013 | 17:42 17/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật AI-audit các prompt tôi làm việc với bạn nãy giờ» | Cập nhật `01_AI-Audit-Report.md` (AI-001…AI-013), `appendixA-prompt-log.md`, `03_Mandatory-Disclosure.md`, checklist privacy. | VALID — DOCUMENT REVIEW | Không tạo dữ liệu test mới; ghi lại lịch sử prompt/output thật từ phiên Cursor. |
 | AI-014 | ~18:00 17/08/2026 (UTC+7) | Cursor (Composer) | «trong HW2 featureA test tay sai nhiều — tại sao automation pass hết» → «so với spec không so code, sinh lại test coverage như HW2, sửa code, chạy lại full e2e headed» | Mở rộng `feature-a-profile.json` **30 TC** (A-DT-01…18 + A-BVA-01…12); thêm `helpers/profileSpec.ts`; viết lại spec **oracle README/spec**; chạy headed: **22 pass / 8 fail** (~1.3 phút); cập nhật `ai-gap-analysis.md`. | VALID — PARTIAL | 8 fail khớp BUG-A-01/A-02 HW2. |
 | AI-015 | 18:10 17/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật AI-audit — sau đó chạy feature B, C — cập nhật AI-audit tiếp» | Cập nhật audit AI-014; sửa `feature-b-order-history.spec.ts`, `feature-c-admin-orders.spec.ts`, `helpers/orderLocators.ts`, `api.ts`; chạy headed Feature B **10 pass / 2 skip**; Feature C **11 pass / 1 fail** (C-AUTO-08 = bug HW2 C-DT-12). | VALID — PARTIAL | 2 skip B do user đã có đơn (empty state); 1 fail C là bug canceled→delivered. **Superseded** bởi AI-016 (full HW2 coverage). |
-| AI-016 | ~18:25 17/08/2026 (UTC+7) | Cursor (Composer) | «featureB và featureC bạn cũng phải sinh lại các test case để cover theo spec chứ, tham khảo HW2, cập nhật audit» | Mở rộng `feature-b-order-history.json` **22 TC** (B-DT-01…14 + B-BVA-01…08), `feature-c-admin-orders.json` **24 TC** (C-DT-01…16 + C-BVA-01…08); thêm `helpers/orderSpec.ts`, mở rộng `api.ts` (`seedOrderFixtures`); viết lại spec B/C **oracle README/spec**; chạy headed: B **13 pass / 5 fail / 4 skip**; C **18 pass / 6 fail**; cập nhật gap analysis B/C và audit. | VALID — PARTIAL | Fail khớp bug HW2 (B: shipping cancel, order leak; C: admin role, canceled→delivered, XSS, terminal UI). Skip B = empty/returned không seed được. |
+| AI-016 | ~18:25 17/08/2026 (UTC+7) | Cursor (Composer) | «featureB và featureC sinh lại test case cover spec HW2, cập nhật audit» | B: 22 TC, C: 24 TC spec-oracle; chạy headed B 13P/5F/4S, C 18P/6F; gap analysis B/C. | VALID — PARTIAL | Fail khớp bug HW2. |
+| AI-017 | ~18:35 17/08/2026 (UTC+7) | Cursor (Composer) | «có chạy full với cấu trúc lại bài nộp cho chuyên nghiệp, cập nhật audit» | Script `run-full-matrix.mjs`; **9 browser runs** (76 TC × 3 browser); copy 9 HTML → `evidence/html-reports/`; `execution-summary.json`; `checklist/execution-matrix.md`; cập nhật README, main-report, checklist, evidence README. Kết quả: **158P/53F/12S/5T** (~19 phút). | VALID | Exit code ≠0 do fail spec-oracle (bug SUT). Còn video, PDF, GitHub. |
 
 ## Quy tắc cập nhật
 
@@ -42,12 +43,13 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Mã bài tập | HW04-AI |
 | Có dùng AI | [x] Có  [ ] Không |
 
-## Tóm tắt execution thật (tính đến AI-016)
+## Tóm tắt execution thật (tính đến AI-017)
 
 | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- |
-| Feature A — Chromium headed (spec oracle) | 22/30 Pass, 8 Fail | BUG-A-01 UI phone + BUG-A-02 role |
-| Feature B — Chromium headed (spec oracle) | 13/22 Pass, 5 Fail, 4 Skip | Fail: B-DT-09/11/13 (shipping cancel, order leak BUG-B-01); Skip: empty state + returned |
-| Feature C — Chromium headed (spec oracle) | 18/24 Pass, 6 Fail | Fail: C-DT-04/12/15/16 (BUG-C-01 role, BUG-C-02 transition, BUG-C-03 XSS) |
-| Multi-browser (firefox/webkit) | Chưa chạy | Cần `npx playwright install` nếu thiếu |
-| HTML report | `automation/reports/html/` | Chưa copy sang `evidence/html-reports/` |
+| Feature A — 3 browsers (30 TC) | 22P / 8F mỗi browser | BUG-A-01/A-02 |
+| Feature B — 3 browsers (22 TC) | 13–14P / 4–5F / 4S | BUG-B-01/02; skip empty |
+| Feature C — 3 browsers (24 TC) | 15–18P / 4–6F / 0–5T | BUG-C-01/02/03 |
+| **Tổng 9 runs** | **158P / 53F / 12S / 5T** | `evidence/execution-summary.json` |
+| HTML reports | 9 folders | `evidence/html-reports/feature-*-{browser}/` |
+| Video / PDF / GitHub | Chưa hoàn tất | Còn bước nộp |

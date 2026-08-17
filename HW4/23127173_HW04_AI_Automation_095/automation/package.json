@@ -14,6 +14,7 @@
     "test:feature-c": "playwright test tests/feature-c-admin-orders.spec.ts",
     "test:feature-c:headed": "playwright test tests/feature-c-admin-orders.spec.ts --project=chromium --headed",
     "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit",
+    "test:full-matrix": "node scripts/run-full-matrix.mjs",
     "report": "playwright show-report reports/html"
   },
   "devDependencies": {

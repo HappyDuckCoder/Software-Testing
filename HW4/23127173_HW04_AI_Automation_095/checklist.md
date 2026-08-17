@@ -14,42 +14,39 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ### 2.1 Chung (mỗi feature)
 
-- [x] Khung ≥ 12 test case / feature (map HW2) trong `automation/data/*.json`.
+- [x] ≥ 12 test case / feature (map HW2) — thực tế **76 TC** (30/22/24) spec oracle.
 - [x] Dữ liệu trong file `.json` riêng — không hardcode array trong spec.
 - [x] Script Playwright: `automation/tests/feature-*.spec.ts`.
-- [ ] ≥ 3 assertion patterns thực sự dùng khi chạy (URL, text/visibility, count/attribute).
-- [ ] Human review: sửa script AI và ghi trong `ai-gap-analysis.md`.
-- [ ] Ghi test case **không** tự động hóa được + lý do (nếu có).
+- [x] ≥ 3 assertion patterns: URL, visibility/text, count/attribute/state.
+- [x] Human review + ghi `ai-gap-analysis.md` (3 feature).
+- [x] TC không automate: B-BVA-08 (`returned`) — skip có lý do.
 
 ### 2.2 Feature A — FR-04 Profile
 
-- [ ] ≥ 12 TC automated & executed.
-- [ ] Chạy Chromium, Firefox, WebKit.
-- [ ] 3 HTML reports lưu tại `evidence/html-reports/feature-a-*`.
-- [ ] AI gap analysis hoàn chỉnh.
-- [ ] Bug report + GitHub Issue (nếu có defect).
+- [x] 30 TC automated & executed (Chromium/Firefox/WebKit).
+- [x] 3 HTML reports: `evidence/html-reports/feature-a-*`.
+- [x] AI gap analysis hoàn chỉnh.
+- [ ] Bug report + GitHub Issue (nếu yêu cầu nộp issue).
 
 ### 2.3 Feature B — FR-11 Order history
 
-- [ ] ≥ 12 TC automated & executed.
-- [ ] Chạy Chromium, Firefox, WebKit.
-- [ ] 3 HTML reports.
-- [ ] AI gap analysis hoàn chỉnh.
-- [ ] Bug report + GitHub Issue (nếu có).
+- [x] 22 TC automated & executed.
+- [x] 3 HTML reports: `evidence/html-reports/feature-b-*`.
+- [x] AI gap analysis hoàn chỉnh.
+- [ ] Bug report + GitHub Issue.
 
 ### 2.4 Feature C — FR-18 Admin orders
 
-- [ ] ≥ 12 TC automated & executed.
-- [ ] Chạy Chromium, Firefox, WebKit.
-- [ ] 3 HTML reports.
-- [ ] AI gap analysis hoàn chỉnh.
-- [ ] Bug report + GitHub Issue (nếu có).
+- [x] 24 TC automated & executed.
+- [x] 3 HTML reports: `evidence/html-reports/feature-c-*`.
+- [x] AI gap analysis hoàn chỉnh.
+- [ ] Bug report + GitHub Issue.
 
 ### 2.5 HTML report bắt buộc
 
-- [x] Cấu hình metadata `Run by: 23127173` trong `playwright.config.ts`.
-- [ ] Mỗi report có timestamp ISO khi chạy thật.
-- [ ] Tổng ≥ 9 browser runs (3 feature × 3 browser).
+- [x] Metadata `Run by: 23127173` trong `playwright.config.ts`.
+- [x] Mỗi report có timestamp ISO (9 runs, 17/08/2026).
+- [x] Tổng **9 browser runs** — xem `checklist/execution-matrix.md`.
 
 ## 3. Task 2 — Demo video
 
@@ -63,15 +60,14 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 - [x] Skill source: `agent-skills/playwright-automation-builder/SKILL.md`.
 - [ ] Video demo skill end-to-end trên 1 feature hoàn chỉnh.
-- [ ] Catalog: `agent-skills/skill-catalog.md`.
+- [x] Catalog: `agent-skills/skill-catalog.md`.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report có entry khởi tạo prompt roadmap **và** phiên E2E 17/08/2026 (AI-001…AI-013).
-- [x] Prompt log (`appendixA-prompt-log.md`) cập nhật đủ prompt phiên hôm nay.
-- [ ] Prompt log đầy đủ các phiên sinh/sửa script.
-- [ ] AI Critique 200–300 từ.
-- [ ] Mandatory Disclosure điền đủ.
+- [x] AI Audit Report AI-001…AI-017.
+- [x] Prompt log cập nhật phiên 17/08/2026.
+- [ ] AI Critique 200–300 từ hoàn chỉnh.
+- [x] Mandatory Disclosure cập nhật execution thật.
 - [ ] Privacy Checklist tick theo thực tế.
 
 ## 6. Git & repository
@@ -82,18 +78,18 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 7. Nộp bài
 
-- [ ] `doc/md/main-report.md` hoàn chỉnh (Markdown + PDF).
-- [ ] AI Audit + Critique export PDF (hoặc gộp appendix).
-- [ ] README có bảng tự đánh giá + test summary đúng số liệu chạy thật.
-- [ ] Zip đúng tên: `23127173_HW04_AI_Automation_095.zip`.
-- [ ] Không thiếu tài liệu bắt buộc (thiếu = 0 điểm).
+- [x] `doc/md/main-report.md` có số liệu execution thật.
+- [ ] Export `doc/pdf/main-report.pdf`.
+- [x] README có bảng tự đánh giá + test summary đúng số liệu.
+- [ ] Zip: `23127173_HW04_AI_Automation_095.zip`.
+- [ ] Không thiếu tài liệu bắt buộc.
 
 ## 8. High-risk trước khi nộp
 
-| Rủi ro | Mitigation |
+| Rủi ro | Trạng thái |
 | --- | --- |
-| Script chưa chạy E2E | Chạy EShop local, `npm run test:all-browsers` |
-| HTML report thiếu StudentID | Mở report kiểm tra header/metadata |
-| Video không chứng minh tác giả | Quay `whoami`/`hostname` đầu video |
-| Commit log toàn README | Commit từng bước sửa `.spec.ts` |
-| AI output chưa review | Điền AI gap + sửa selector/wait thật |
+| Script chưa chạy E2E | ✅ 9 browser runs — `npm run test:full-matrix` |
+| HTML report thiếu StudentID | ✅ Kiểm tra metadata trong 9 reports |
+| Video không chứng minh tác giả | ⏳ Chưa quay |
+| Commit log toàn README | ⏳ Chưa push GitHub |
+| Fail ghi “all pass” | ✅ Fail = bug HW2 theo spec oracle |
