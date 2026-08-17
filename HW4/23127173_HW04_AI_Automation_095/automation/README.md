@@ -10,12 +10,37 @@ npm install
 npx playwright install
 ```
 
-Chạy EShop (backend + frontend-web + frontend-admin) trước khi test.
+Chạy EShop trước khi test (port **5180** cho web — tránh xung đột app khác trên 5173):
+
+```bash
+# Terminal 1 — backend
+cd Eshop/backend
+node server.js
+
+# Terminal 2 — frontend web (port 5180)
+cd Eshop/frontend-web
+npm run dev -- --host 127.0.0.1 --port 5180
+
+# Terminal 3 — admin
+cd Eshop/frontend-admin
+npm run dev -- --host 127.0.0.1 --port 5174
+```
 
 ## Chạy test
 
 ```bash
+# Headless (CI / nhanh)
 npm run test:feature-a
+
+# Nhìn Chromium chạy trực tiếp
+npm run test:feature-a:headed
+npm run test:headed
+
+# Playwright UI (chọn test, xem từng bước)
+npm run test:ui
+```
+
+```bash
 npm run test:feature-b
 npm run test:feature-c
 npm run test:all-browsers

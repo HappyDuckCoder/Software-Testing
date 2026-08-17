@@ -1,16 +1,16 @@
 import fs from 'fs';
 import path from 'path';
+import type { ProfileExpected, ProfileInput, ProfileTestRow } from './profileSpec';
 
-export type TestRow = {
-  id: string;
-  hw2Ref: string;
-  type: 'positive' | 'negative' | 'edge' | 'boundary';
-  description: string;
-  assertionPattern: 'url' | 'visibility' | 'text' | 'attribute' | 'count' | 'state';
+export type TestRow = ProfileTestRow & {
+  type?: 'positive' | 'negative' | 'edge' | 'boundary';
+  assertionPattern?: 'url' | 'visibility' | 'text' | 'attribute' | 'count' | 'state';
+  group?: 'empty' | 'with-orders';
+  action?: string;
   skip?: boolean;
   skipReason?: string;
-  input?: Record<string, string>;
-  expected?: Record<string, string>;
+  input?: ProfileInput & Record<string, string>;
+  expected?: ProfileExpected & { httpStatus?: number };
 };
 
 export function loadTestData(filename: string): TestRow[] {

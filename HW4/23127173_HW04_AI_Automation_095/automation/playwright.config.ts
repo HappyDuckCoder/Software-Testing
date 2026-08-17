@@ -6,6 +6,7 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const studentId = process.env.STUDENT_ID ?? '23127173';
 const runAt = new Date().toISOString();
+const headed = process.env.HEADED === '1' || process.env.HEADED === 'true';
 
 export default defineConfig({
   testDir: './tests',
@@ -25,10 +26,12 @@ export default defineConfig({
     ['json', { outputFile: 'reports/summary.json' }],
   ],
   use: {
-    baseURL: process.env.BASE_URL ?? 'http://localhost:5173',
+    baseURL: process.env.BASE_URL ?? 'http://localhost:5180',
+    headless: !headed,
+    launchOptions: headed ? { slowMo: 250 } : undefined,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'off',
+    video: headed ? 'on' : 'off',
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },

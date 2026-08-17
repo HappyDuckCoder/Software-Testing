@@ -1,21 +1,36 @@
 # AI Gap Analysis — Feature A (FR-04)
 
-## 1. AI đã đề xuất gì
+## 1. Oracle đã đổi (17/08/2026)
 
-_[Điền sau phiên AI sinh script — ví dụ: Page Object generic, selector `input[name=phone]`, wait cố định 3000ms]_
+Automation **30 test case** map 1:1 HW2 (18 Domain + 12 BVA). Oracle = **README/spec FR-04**, không theo regex UI hiện tại.
 
-## 2. AI bỏ sót / sai
+| Lần chạy | Oracle | Kết quả Chromium headed |
+| --- | --- | --- |
+| Trước | Hành vi code (`Profile.jsx`) | 12/12 Pass |
+| Sau | Spec FR-04 | **22/30 Pass, 8 Fail** (~1.3 phút) |
 
-| # | Vấn đề | Vì sao AI bỏ sót | Cách sinh viên sửa |
-| --- | --- | --- | --- |
-| 1 | Regex phone frontend mâu thuẫn README | AI không đọc kỹ `Profile.jsx` | Đối chiếu HW2 bug A |
-| 2 | Email field không gửi trong body | AI giả định form đầy đủ | Test readonly + không đổi email |
-| 3 | `[THÊM]` | | |
+## 2. 8 Fail = bug đã biết HW2 (BUG-A-01, BUG-A-02)
 
-## 3. Prompt liên quan
+| Auto ID | HW2 ref | Nguyên nhân |
+| --- | --- | --- |
+| A-AUTO-06, 20, 23 | A-DT-06, A-BVA-02, A-BVA-05 | Spec chấp nhận `091…` / `098…` — UI từ chối (regex sai) |
+| A-AUTO-12, 21 | A-DT-12, A-BVA-03 | Spec chấp nhận 11 số — UI từ chối |
+| A-AUTO-08, 24 | A-DT-08, A-BVA-06 | Spec từ chối số không bắt đầu 0 — UI **chấp nhận** |
+| A-AUTO-17 | A-DT-17 | Spec: role giữ `user` — API cho leo quyền admin |
 
-Xem `doc/md/appendixA-prompt-log.md` và AI Audit AI-001+.
+## 3. Vì sao Pass nhiều hơn HW2 tay (22 vs 10)
 
-## 4. Verdict
+- **API path** (A-DT-05, BVA name/address qua API): backend không validate phone như UI → Pass theo spec.
+- **Warning HW2** (A-DT-09–11): spec = reject — UI có alert lỗi → automation **Pass** dù message sai wording.
+- **Case trùng** (A-DT-09 ≈ A-BVA-01): cùng kết quả.
 
-Gap analysis hoàn chỉnh khi có ≥ 2 gap có bằng chứng (diff script hoặc prompt output).
+## 4. Prompt / artefact
+
+- Data: `automation/data/feature-a-profile.json` (30 rows, field `action` + `expected.outcome`)
+- Helpers: `automation/helpers/profileSpec.ts`
+- Spec: `automation/tests/feature-a-profile.spec.ts`
+- Report: `automation/reports/html/index.html`
+
+## 5. Verdict
+
+Gap analysis **đạt**: automation spec-oracle tái hiện được bug HW2; fail có bằng chứng screenshot/video trong `test-results/`.

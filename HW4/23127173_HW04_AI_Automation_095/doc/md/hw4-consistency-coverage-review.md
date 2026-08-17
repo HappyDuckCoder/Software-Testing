@@ -16,7 +16,7 @@ Reviewer: Khung tự rà soát (sinh viên cập nhật sau khi chạy test)
 | AI gap / human review | Khung | Cần điền sau sửa script |
 | Video ≥ 5 phút | Chưa | |
 | Git ≥ 8 commit .spec.ts | Chưa | |
-| AI Audit + Critique | Khung | AI-001 có; Critique chưa viết |
+| AI Audit + Critique | AI-001…AI-013 + prompt log | Critique chưa viết (200–300 từ) |
 
 ## 2. Nhất quán HW2 ↔ HW4
 

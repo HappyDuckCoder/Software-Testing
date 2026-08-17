@@ -67,7 +67,8 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report có entry khởi tạo prompt roadmap.
+- [x] AI Audit Report có entry khởi tạo prompt roadmap **và** phiên E2E 17/08/2026 (AI-001…AI-013).
+- [x] Prompt log (`appendixA-prompt-log.md`) cập nhật đủ prompt phiên hôm nay.
 - [ ] Prompt log đầy đủ các phiên sinh/sửa script.
 - [ ] AI Critique 200–300 từ.
 - [ ] Mandatory Disclosure điền đủ.

@@ -61,11 +61,11 @@
 | HTML reports đa trình duyệt | `evidence/html-reports/` hoặc `automation/reports/` | Chưa có |
 | AI Gap Analysis (3 feature) | `requirement/feature-*/ai-gap-analysis/` | Khung |
 | Bug report | `requirement/feature-*/bug-report/` | Khung |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | Đã có entry khởi tạo |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-013 (17/08/2026) |
 | AI Critique 200–300 từ | `doc/md/AI Audit/02_AI-Critique.md` | Khung |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | Khung |
 | AI Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | Khung |
-| Prompt log | `doc/md/appendixA-prompt-log.md` | Entry khởi tạo |
+| Prompt log | `doc/md/appendixA-prompt-log.md` | 13 prompt phiên 17/08/2026 |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | Placeholder |
 | Agent Skill + video | `agent-skills/` | Skill khung + link video placeholder |
 | Roadmap / Checklist | `roadmap.md`, `checklist.md` | Đã tạo |
