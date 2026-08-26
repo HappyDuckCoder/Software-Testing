@@ -88,13 +88,14 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 
 | Artifact | Đường dẫn | Trạng thái |
 | --- | --- | --- |
-| Main report Markdown | `doc/md/main-report.md` | ✅ Đã điền kết quả |
-| Main report PDF | `doc/pdf/main-report.pdf` | Chưa export |
+| Main report Markdown | `doc/md/main-report.md` | ✅ §1–9 (26/08/2026) |
+| Main report PDF | `doc/pdf/main-report.pdf` | ✅ Export 26/08/2026 |
+| AI Audit PDF | `doc/pdf/AI-Audit-Appendix.pdf` | ✅ Export 26/08/2026 |
 | Playwright project | `automation/` | ✅ 76 TC + 9 runs |
 | HTML reports đa trình duyệt | `evidence/html-reports/` | ✅ 9 folders |
 | AI Gap Analysis | `requirement/feature-*/ai-gap-analysis/` | ✅ |
 | Bug reports (Markdown) | `requirement/feature-*/bug-report/` | ✅ (Issue: chưa tạo) |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-024 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-026 |
 | AI Critique | `doc/md/AI Audit/02_AI-Critique.md` | ✅ 200–300 từ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (trừ video) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |

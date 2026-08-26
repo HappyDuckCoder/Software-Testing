@@ -67,7 +67,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report AI-001…AI-024.
+- [x] AI Audit Report AI-001…AI-026.
 - [x] Prompt log cập nhật phiên 17/08/2026 và 26/08/2026.
 - [x] AI Critique 200–300 từ hoàn chỉnh (`doc/md/AI Audit/02_AI-Critique.md`).
 - [x] Mandatory Disclosure cập nhật execution thật (26/08/2026).
@@ -81,8 +81,9 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 7. Nộp bài
 
-- [x] `doc/md/main-report.md` có số liệu execution thật.
-- [ ] Export `doc/pdf/main-report.pdf`.
+- [x] `doc/md/main-report.md` có số liệu execution + bug summary + human review (26/08/2026).
+- [x] Export `doc/pdf/main-report.pdf`.
+- [x] Export `doc/pdf/AI-Audit-Appendix.pdf`.
 - [x] README có bảng tự đánh giá + test summary đúng số liệu.
 - [ ] Zip: `23127173_HW04_AI_Automation_095.zip`.
 - [ ] Không thiếu tài liệu bắt buộc.

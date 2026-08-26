@@ -11,6 +11,7 @@
 | Cursor (Composer) | Rà soát nộp bài (26/08/2026) | Tóm tắt deliverables; hoàn thiện AI Critique; sửa docs stale. | Quyết định reorg; export PDF; nộp zip. |
 | Cursor (Composer) | Relocate archive evidence (26/08/2026) | Move minh chứng `_archive` → `requirement/feature-*/automation/`; screenshot bug. | Xác nhận path trong báo cáo nộp. |
 | Cursor (Composer) | Dọn media trùng (26/08/2026) | Xóa `html-reports/*/data/` trong feature automation pools (334 file); giữ index.html + summary JSON. | Attachment đầy đủ: `evidence/html-reports/*/data/`. |
+| Cursor (Composer) | Bổ sung main report (26/08/2026) | Viết lại `main-report.md` §1–9: phương pháp, bug summary, evidence, tự đánh giá; AI-025. | Export PDF; điền URL GitHub/video sau. |
 
 ## Tuyên bố giới hạn
 

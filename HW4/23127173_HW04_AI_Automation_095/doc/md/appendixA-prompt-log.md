@@ -28,3 +28,5 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~20:17 | Cursor (Composer) | «cập nhật AI audit» | AI Critique, Privacy Checklist, AI-020…022; AI-022 |
 | 2026-08-26 ~20:25 | Cursor (Composer) | «đưa minh chứng _archive vào requirement/feature-*/automation — cập nhật AI audit» | Move HTML+media+test-results; AI-023 |
 | 2026-08-26 ~20:29 | Cursor (Composer) | «xóa thư mục data trong automation các pool — cập nhật ai-audit» | Xóa 9× html-reports/data; AI-024 |
+| 2026-08-26 ~20:40 | Cursor (Composer) | «bổ sung main report, cập nhật ai audit» | Viết lại main-report.md §1–9; AI-025 |
+| 2026-08-26 ~20:43 | Cursor (Composer) | «dùng markdown pdf export» | Pandoc PDF main + AI Audit; AI-026 |

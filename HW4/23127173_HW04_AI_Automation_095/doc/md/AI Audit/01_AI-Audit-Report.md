@@ -30,6 +30,8 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-022 | ~20:17 26/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật AI audit» | Hoàn thiện `02_AI-Critique.md` (200–300 từ); cập nhật `03_Mandatory-Disclosure.md`, `04_AI-Privacy-Checklist.md`, `appendixA-prompt-log.md`; thêm AI-020…AI-022; đồng bộ `checklist.md` mục AI compliance. | VALID — DOCUMENT REVIEW | Không sinh số liệu test mới; critique dựa trên gap analysis và execution 17/08/2026. |
 | AI-023 | ~20:25 26/08/2026 (UTC+7) | Cursor (Composer) | «đưa minh chứng `_archive` vào `requirement/feature-*/automation` — cập nhật AI audit» | **Move** 9 HTML report folders (+ media .webm/.png) → `requirement/feature-{A,B,C}/automation/html-reports/`; 24 WebKit test-results → `feature-C/automation/test-results/`; copy `summary-*.json`; copy fail PNG → `bug-report/screenshots/`; xóa duplicate `html-report-media/`; cập nhật README feature automation + `_archive/README.md`. | VALID | Bản nộp nhẹ vẫn dùng `evidence/html-reports/`; minh chứng đầy đủ per-feature trong `requirement/`. |
 | AI-024 | ~20:29 26/08/2026 (UTC+7) | Cursor (Composer) | «trong các thư mục automation trong các pool, xóa thư mục data — cập nhật ai-audit» | **Xóa** 9 thư mục `html-reports/*/data/` (334 file .webm/.png/.md) trong `requirement/feature-{A,B,C}/automation/`; giữ `index.html` + `summary/` + screenshot đã copy; cập nhật README automation + audit. | VALID | Giảm dung lượng; attachment đầy đủ vẫn ở `evidence/html-reports/*/data/` và `feature-C/test-results/`. |
+| AI-025 | ~20:40 26/08/2026 (UTC+7) | Cursor (Composer) | «bổ sung main report, cập nhật ai audit» | Viết lại `doc/md/main-report.md`: phương pháp AI-first, ma trận 9 runs, bug summary, cấu trúc evidence, human review, tự đánh giá thực tế vs mục tiêu; đồng bộ AI Audit tóm tắt AI-025. | VALID — DOCUMENT REVIEW | Placeholder GitHub/video giữ nguyên cho SV điền sau; không thay số liệu execution. |
+| AI-026 | ~20:43 26/08/2026 (UTC+7) | Cursor (Composer) | «dùng markdown pdf export» | Pandoc + XeLaTeX: `doc/pdf/main-report.pdf`, `doc/pdf/AI-Audit-Appendix.pdf`; cập nhật `doc/pdf/README.md`, checklist, README. | VALID | PDF sinh từ Markdown hiện có; emoji có thể thiếu glyph Times New Roman. |
 
 ## Quy tắc cập nhật
 
@@ -50,7 +52,7 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Mã bài tập | HW04-AI |
 | Có dùng AI | [x] Có  [ ] Không |
 
-## Tóm tắt execution thật (tính đến AI-024)
+## Tóm tắt execution thật (tính đến AI-026)
 
 | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- |
@@ -63,4 +65,7 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Per-feature evidence | `requirement/feature-*/automation/` | index.html + summary; media ở `evidence/` + bug screenshots |
 | AI Critique | ✅ Hoàn thiện | `02_AI-Critique.md` — phiên 26/08/2026 |
 | Privacy Checklist | ✅ Đã tick thực tế | `04_AI-Privacy-Checklist.md` |
-| Video / PDF / GitHub Issues / Zip | Chưa hoàn tất | Ngoài phạm vi phiên 26/08/2026 |
+| Main report Markdown | ✅ Hoàn thiện 26/08/2026 | `doc/md/main-report.md` — §1–9 |
+| Main report PDF | ✅ Export 26/08/2026 | `doc/pdf/main-report.pdf` |
+| AI Audit PDF | ✅ Export 26/08/2026 | `doc/pdf/AI-Audit-Appendix.pdf` |
+| Video / GitHub Issues / Zip | ⏳ Chưa hoàn tất | SV tự quay/push/nộp |
