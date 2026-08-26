@@ -6,38 +6,35 @@
 | --- | --- |
 | Pool | Pool B |
 | Feature ID | FR-11 |
-| Nguồn HW02 | `Lab/HW2/.../requirement/feature-B/` |
-| Trạng thái | Khung script |
+| Nguồn HW2 | `Lab/HW2/23127173_HW02_AI_DomainTesting_095/requirement/feature-B/` |
+| Trạng thái | ✅ 22 TC — 9/9 browser runs (17/08/2026) |
 
 ## 2. Phạm vi automation
 
 - User đăng nhập → `/profile` → section lịch sử đơn hàng
-- API: `GET /api/orders/my-orders`, cancel khi pending/confirmed
+- API: `GET /api/orders/my-orders`, `GET /api/orders/:id`, cancel khi pending/confirmed
+- Oracle: README/spec FR-11 + FR-10
 
-## 3. Map ≥ 12 test case
+## 3. Coverage
 
-| Auto ID | HW2 ref | Loại | Mô tả | Pattern |
-| --- | --- | --- | --- | --- |
-| B-AUTO-01 | B-DT-01 | positive | User chưa có đơn — empty state | text |
-| B-AUTO-02 | B-DT-02 | positive | Một đơn hiển thị | count |
-| B-AUTO-03 | B-DT-03 | positive | Nhiều đơn, thứ tự mới nhất | count + text |
-| B-AUTO-04 | B-DT-05 | negative | Không token → login | URL |
-| B-AUTO-05 | B-DT-07 | positive | Status pending label/màu | text/CSS |
-| B-AUTO-06 | B-DT-08 | positive | Status delivered | text |
-| B-AUTO-07 | B-DT-09 | positive | Nút hủy khi pending | visibility |
-| B-AUTO-08 | B-DT-10 | negative | Không hủy khi delivered | disabled/absent |
-| B-AUTO-09 | B-BVA-01 | boundary | Danh sách rỗng message | text |
-| B-AUTO-10 | B-BVA-03 | boundary | Nhiều đơn format tiền | text |
-| B-AUTO-11 | B-DT-13 | negative | Không thấy đơn user khác | count |
-| B-AUTO-12 | B-DT-14 | edge | Hủy đơn pending thành công | text/state |
+| Chỉ số | Giá trị |
+| --- | --- |
+| Test case | **22** (14 Domain + 8 BVA) |
+| Data | `automation/data/feature-b-order-history.json` |
+| Spec | `automation/tests/feature-b-order-history.spec.ts` |
 
-## 4. Artifact
+## 4. Kết quả thực thi
 
-- Data: `automation/data/feature-b-order-history.json`
-- Spec: `automation/tests/feature-b-order-history.spec.ts`
+| Browser | Pass | Fail | Skip | Report |
+| --- | ---: | ---: | ---: | --- |
+| Chromium | 14 | 4 | 4 | `evidence/html-reports/feature-b-chromium/index.html` |
+| Firefox | 14 | 4 | 4 | `evidence/html-reports/feature-b-firefox/index.html` |
+| WebKit | 13 | 5 | 4 | `evidence/html-reports/feature-b-webkit/index.html` |
 
-## 5. Kết quả
+**Fail:** BUG-B-01 (order detail leak), BUG-B-02 (nút hủy trên shipping/canceled).  
+**Skip:** empty-state / single-order boundary / status `returned` không seed được — xem gap analysis.
 
-| Browser | Pass | Fail |
-| --- | ---: | ---: |
-| Chromium / Firefox / WebKit | `[CHƯA CHẠY]` | |
+## 5. AI review
+
+- Gap analysis: `ai-gap-analysis/ai-gap-analysis.md`
+- Bug report: `bug-report/bug-report.md`

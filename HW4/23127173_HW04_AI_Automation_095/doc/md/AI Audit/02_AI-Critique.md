@@ -1,11 +1,7 @@
 # AI Critique — HW04
 
-_[Khung 200–300 từ — viết sau khi hoàn thành automation thật]_
+Trong HW04, AI (Cursor Composer) giúp tôi dựng khung Playwright data-driven, map **76 test case** từ HW2 sang ba file JSON, sinh helper `auth`/`api`/`profileLocators`, cấu hình multi-browser, và chạy ma trận **9 browser runs**. Tuy nhiên, bản đầu AI giả định selector “chuẩn” (`getByLabel`, ARIA) trong khi EShop dùng `<label>` không gắn `htmlFor`, khiến Feature A headed **fail 9/12** test. AI cũng viết oracle theo **hành vi code** thay vì README/spec FR-04, nên lần đầu **12/12 pass** dù kiểm thử tay HW2 chỉ **10/30** — che giấu BUG-A-01 (regex phone UI) và BUG-A-02 (leo quyền role qua API). Chỉ sau khi tôi yêu cầu “so spec không so code”, automation mới cho **22 pass / 8 fail** khớp bug đã biết.
 
-Trong HW04, AI giúp tôi [điền: ví dụ dựng khung Playwright, map 12 test case từ HW2, đề xuất Page Object]. Tuy nhiên AI [điền lỗi: selector giả định, wait cố định, bỏ sót admin auth, v.v.].
+AI bỏ sót vì prompt ban đầu thiếu URL/port SUT thật (5173 bị chiếm), không có bước inspect JSX nguồn (`Profile.jsx`, `Login.jsx`), và model không tự chạy browser nên không phát hiện dialog XSS admin hay timeout WebKit trên chuyển trạng thái đơn. AI còn đề xuất `waitForTimeout` cố định, skip case `returned` (B-BVA-08) mà không thử seed qua API, và tạo cấu trúc thư mục dư (`_archive/`, placeholder `requirement/feature-*/automation/`) gây rối khi nộp bài.
 
-Vì sao AI bỏ sót: [prompt chưa gắn URL SUT thật / model không đọc được DOM động / thiếu bước inspect mã nguồn EShop].
-
-Bài học cộng tác với AI: [AI là trợ lý theo từng bước kỹ thuật; mọi script phải chạy trên SUT và sửa sau human review; HTML report và video phải là bằng chứng thật].
-
-_Độ dài mục tiêu: 200–300 từ. Xóa dòng hướng dẫn này trước khi nộp._
+Bài học cộng tác với AI: AI phù hợp cho skeleton, lặp data-driven và tài liệu audit, nhưng **locator, oracle và assertion** phải do sinh viên xác minh trên SUT đang chạy. Human review — gap analysis, sửa `profileLocators.ts`, chuyển oracle spec, strip media khỏi git — mới biến script thành bằng chứng kiểm thử có giá trị. HTML report và execution summary **không được AI bịa**; chúng phải đến từ `npm run test:full-matrix` thật với metadata `Run by: 23127173`.

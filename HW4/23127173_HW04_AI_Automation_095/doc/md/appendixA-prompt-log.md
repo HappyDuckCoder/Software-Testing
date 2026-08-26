@@ -23,3 +23,8 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-17 ~18:35 | Cursor (Composer) | «chạy full, cấu trúc lại bài nộp, cập nhật audit» | 9 browser runs; AI-017 |
 | 2026-08-17 ~19:05 | Cursor (Composer) | «xem lại ignore» | gitignore webm; AI-018 |
 | 2026-08-17 ~19:12 | Cursor (Composer) | «cập nhật audit, dọn dư, move thay vì xóa» | `_archive/` cleanup; AI-019 |
+| 2026-08-26 ~20:10 | Cursor (Composer) | «đọc qua Lab\HW4\23127173_HW04_AI_Automation_095 và Lab\HW4\requirement\requirement.pdf để hiểu mình cần làm gì» | Tóm tắt đề + trạng thái bài; AI-020 |
+| 2026-08-26 ~20:15 | Cursor (Composer) | «trừ video và github issue, zip thì bổ sung mục còn thiếu — sắp xếp lại thư mục cho chuyên nghiệp theo HW4» | Rà soát cấu trúc; đề xuất reorg; AI-021 |
+| 2026-08-26 ~20:17 | Cursor (Composer) | «cập nhật AI audit» | AI Critique, Privacy Checklist, AI-020…022; AI-022 |
+| 2026-08-26 ~20:25 | Cursor (Composer) | «đưa minh chứng _archive vào requirement/feature-*/automation — cập nhật AI audit» | Move HTML+media+test-results; AI-023 |
+| 2026-08-26 ~20:29 | Cursor (Composer) | «xóa thư mục data trong automation các pool — cập nhật ai-audit» | Xóa 9× html-reports/data; AI-024 |

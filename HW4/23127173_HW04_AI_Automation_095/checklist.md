@@ -1,6 +1,6 @@
 # Checklist hoàn thiện HW04 — mục tiêu 95/100
 
-Review date: 2026-08-17  
+Review date: 2026-08-26  
 Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 1. Phạm vi & feature selection
@@ -26,21 +26,24 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 - [x] 30 TC automated & executed (Chromium/Firefox/WebKit).
 - [x] 3 HTML reports: `evidence/html-reports/feature-a-*`.
 - [x] AI gap analysis hoàn chỉnh.
-- [ ] Bug report + GitHub Issue (nếu yêu cầu nộp issue).
+- [x] Bug report Markdown.
+- [ ] GitHub Issue (ngoài phạm vi hiện tại).
 
 ### 2.3 Feature B — FR-11 Order history
 
 - [x] 22 TC automated & executed.
 - [x] 3 HTML reports: `evidence/html-reports/feature-b-*`.
 - [x] AI gap analysis hoàn chỉnh.
-- [ ] Bug report + GitHub Issue.
+- [x] Bug report Markdown.
+- [ ] GitHub Issue (ngoài phạm vi hiện tại).
 
 ### 2.4 Feature C — FR-18 Admin orders
 
 - [x] 24 TC automated & executed.
 - [x] 3 HTML reports: `evidence/html-reports/feature-c-*`.
 - [x] AI gap analysis hoàn chỉnh.
-- [ ] Bug report + GitHub Issue.
+- [x] Bug report Markdown.
+- [ ] GitHub Issue (ngoài phạm vi hiện tại).
 
 ### 2.5 HTML report bắt buộc
 
@@ -64,11 +67,11 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report AI-001…AI-017.
-- [x] Prompt log cập nhật phiên 17/08/2026.
-- [ ] AI Critique 200–300 từ hoàn chỉnh.
-- [x] Mandatory Disclosure cập nhật execution thật.
-- [ ] Privacy Checklist tick theo thực tế.
+- [x] AI Audit Report AI-001…AI-024.
+- [x] Prompt log cập nhật phiên 17/08/2026 và 26/08/2026.
+- [x] AI Critique 200–300 từ hoàn chỉnh (`doc/md/AI Audit/02_AI-Critique.md`).
+- [x] Mandatory Disclosure cập nhật execution thật (26/08/2026).
+- [x] Privacy Checklist tick theo thực tế (trừ mục video — chưa quay).
 
 ## 6. Git & repository
 

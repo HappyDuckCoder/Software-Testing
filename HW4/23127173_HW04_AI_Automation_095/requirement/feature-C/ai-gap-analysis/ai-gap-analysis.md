@@ -23,8 +23,9 @@ Automation **24 test case** map 1:1 HW2 (16 Domain + 8 BVA). Oracle = **README/s
 - Data: `automation/data/feature-c-admin-orders.json` (24 rows)
 - Helpers: `automation/helpers/orderSpec.ts`, `orderLocators.ts`, `api.ts`
 - Spec: `automation/tests/feature-c-admin-orders.spec.ts`
-- Report: `automation/reports/html/index.html`
+- Report (đầy đủ): `requirement/feature-C/automation/html-reports/`
+- Test-results WebKit: `requirement/feature-C/automation/test-results/`
 
 ## 4. Verdict
 
-Gap analysis **đạt**: automation spec-oracle tái hiện đủ bug HW2 (role admin API, state machine, XSS, terminal actions); fail có bằng chứng screenshot/video.
+Gap analysis **đạt**: automation spec-oracle tái hiện đủ bug HW2; fail có bằng chứng trong `evidence/html-reports/feature-c-*/data/*.md` và `automation/test-results/`.

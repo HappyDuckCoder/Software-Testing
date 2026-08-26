@@ -1,10 +1,19 @@
-# Automation — Feature C (FR-18)
+# Automation evidence — Feature C (FR-18)
 
-Source of truth: **`../../automation/`**
+Playwright source: **`../../../automation/`**
+
+| Thư mục | Nội dung |
+| --- | --- |
+| `html-reports/feature-c-{chromium,firefox,webkit}/index.html` | HTML report — **không** kèm `data/` media |
+| `summary/summary-*.json` | Pass/Fail/Skip per browser |
+| `summary/summary-last-run.json` | Snapshot run cuối matrix |
+| `test-results/` | 24 artifact WebKit (video fail/timeout) |
 
 | Artifact | Path |
 | --- | --- |
-| Data (24 TC) | `automation/data/feature-c-admin-orders.json` |
+| Test data (24 TC) | `automation/data/feature-c-admin-orders.json` |
 | Spec | `automation/tests/feature-c-admin-orders.spec.ts` |
-| HTML reports | `evidence/html-reports/feature-c-{chromium,firefox,webkit}/` |
-| Summary JSON | `automation/reports/feature-c/summary-*.json` |
+| Screenshot fail | `../bug-report/screenshots/` |
+| Report nhẹ | `evidence/html-reports/feature-c-*/` |
+
+Mở report: `html-reports/feature-c-chromium/index.html`

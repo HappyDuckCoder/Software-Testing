@@ -1,6 +1,6 @@
 # HTML Reports — Playwright (9 browser runs)
 
-Mỗi folder chứa bản sao `automation/reports/html/` sau một lần chạy riêng.
+Mỗi folder là bản nộp chính thức sau `npm run test:full-matrix` (17/08/2026). Nguồn sinh: Playwright HTML reporter; copy script `automation/scripts/run-full-matrix.mjs`.
 
 | Folder | Feature | Browser | Mở report |
 | --- | --- | --- | --- |

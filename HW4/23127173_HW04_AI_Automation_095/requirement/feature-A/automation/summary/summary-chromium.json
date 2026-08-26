@@ -1,0 +1,1679 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-a-profile.spec.ts",
+      "--project=chromium"
+    ],
+    "configFile": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\playwright.config.ts",
+    "rootDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127173",
+      "Run at": "2026-08-17T11:36:01.975Z",
+      "Course": "CS423 HW04 Automation",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:36:01.975Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:36:01.975Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:36:01.975Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/summary.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-a-profile.spec.ts",
+      "file": "feature-a-profile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature A — FR-04 Profile (spec oracle) @hw04-feature-a",
+          "file": "feature-a-profile.spec.ts",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A-AUTO-01 [A-DT-01] Xem hồ sơ sau đăng nhập",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2399,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:02.549Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--5b1c9--01-Xem-hồ-sơ-sau-đăng-nhập-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-0b21c2d62a2fda416df9",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-02 [A-DT-02] GET /api/users/me với token hợp lệ",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 402,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:05.295Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--77398-i-users-me-với-token-hợp-lệ-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-a9c31bca7ec290110aed",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-03 [A-DT-03] GET /api/users/me thiếu token → 401",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 320,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:05.720Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--154c6--users-me-thiếu-token-→-401-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-fa65bb83b2eaeea8f0dc",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-04 [A-DT-04] GET /api/users/me token sai → 403",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:06.057Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--9fbeb-pi-users-me-token-sai-→-403-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-1139f08d5f131a42c5dd",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-05 [A-DT-05] PUT hồ sơ hợp lệ qua API (phone spec 0912345678)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 438,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:06.408Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--93dfd--API-phone-spec-0912345678--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-9359512556def84f04c9",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-06 [A-DT-06] UI cập nhật phone 0912345678 (spec: 10 số, bắt đầu 0)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3442,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 22,
+                          "line": 113
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 22,
+                            "line": 113
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:06.863Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--74866-45678-spec-10-số-bắt-đầu-0--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--74866-45678-spec-10-số-bắt-đầu-0--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--74866-45678-spec-10-số-bắt-đầu-0--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 22,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-c151da31bb695ff17b09",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-07 [A-DT-07] UI tên rỗng bị HTML5 required chặn",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7966,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:11.274Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--9e98a-rỗng-bị-HTML5-required-chặn-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-f7c82326c224656fef8f",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-08 [A-DT-08] UI từ chối phone không bắt đầu bằng 0 (912345678)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3437,
+                      "error": {
+                        "message": "Error: Spec expects reject but got success alert: Cập nhật thành công!\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: Spec expects reject but got success alert: Cập nhật thành công!\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:119:80)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 80,
+                          "line": 119
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:119\n\n  117 |   if (outcome === 'reject') {\n  118 |     const isSuccess = /thành công|Cập nhật thành công/i.test(message!);\n> 119 |     expect(isSuccess, `Spec expects reject but got success alert: ${message}`).toBe(false);\n      |                                                                                ^\n  120 |   }\n  121 | }\n  122 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 80,
+                            "line": 119
+                          },
+                          "message": "Error: Spec expects reject but got success alert: Cập nhật thành công!\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:119\n\n  117 |   if (outcome === 'reject') {\n  118 |     const isSuccess = /thành công|Cập nhật thành công/i.test(message!);\n> 119 |     expect(isSuccess, `Spec expects reject but got success alert: ${message}`).toBe(false);\n      |                                                                                ^\n  120 |   }\n  121 | }\n  122 |\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:119:80)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:19.830Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--385ae-g-bắt-đầu-bằng-0-912345678--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--385ae-g-bắt-đầu-bằng-0-912345678--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--385ae-g-bắt-đầu-bằng-0-912345678--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 80,
+                        "line": 119
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-e642314262f2fdd5f082",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-09 [A-DT-09] Từ chối phone 9 chữ số (091234567) theo spec 10-11",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3426,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:24.073Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--adab9-ố-091234567-theo-spec-10-11-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-cb78c6534d6db872ed2d",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-10 [A-DT-10] Từ chối phone 12 chữ số (091234567890)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3418,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:27.817Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--24612-one-12-chữ-số-091234567890--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-21033141020bae18d682",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-11 [A-DT-11] Từ chối phone chứa chữ (09AB345678)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3347,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:31.260Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--a49f7--phone-chứa-chữ-09AB345678--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-a3ba49de329c3d43fab3",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-12 [A-DT-12] Chấp nhận phone 11 số bắt đầu 0 (09123456789)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3428,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 22,
+                          "line": 113
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 22,
+                            "line": 113
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:34.626Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--b65fa-1-số-bắt-đầu-0-09123456789--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--b65fa-1-số-bắt-đầu-0-09123456789--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--b65fa-1-số-bắt-đầu-0-09123456789--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 22,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-de41d3783fbce95480e6",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-13 [A-DT-13] Cập nhật địa chỉ giao hàng qua API",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 578,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:38.918Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--2437e-t-địa-chỉ-giao-hàng-qua-API-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-5547c68657ef5e668714",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-14 [A-DT-14] Địa chỉ giao hàng rỗng vẫn được chấp nhận (spec)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 422,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:39.834Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--e0c99-ng-vẫn-được-chấp-nhận-spec--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-8b292f79b80ec05d0276",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-15 [A-DT-15] Email disabled trên UI, không sửa được",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2295,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:40.281Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--0684d-bled-trên-UI-không-sửa-được-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-827b06d15a299c3e681b",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-16 [A-DT-16] API bỏ qua email ngoài dự kiến trong body",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 374,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:42.600Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--68192-il-ngoài-dự-kiến-trong-body-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-5be8bc547115f88dd94f",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-17 [A-DT-17] API không cho user tự đổi role thành admin (spec)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 378,
+                      "error": {
+                        "message": "Error: Spec FR-04: user must not escalate role via PUT /api/users/me\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"user\"\u001b[39m\nReceived: \u001b[31m\"admin\"\u001b[39m",
+                        "stack": "Error: Spec FR-04: user must not escalate role via PUT /api/users/me\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"user\"\u001b[39m\nReceived: \u001b[31m\"admin\"\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:125:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts",
+                          "column": 13,
+                          "line": 125
+                        },
+                        "snippet": "  123 |             after.role,\n  124 |             'Spec FR-04: user must not escalate role via PUT /api/users/me',\n> 125 |           ).toBe(expected.role ?? 'user');\n      |             ^\n  126 |           if (res.ok()) {\n  127 |             expect(after.role).not.toBe('admin');\n  128 |           }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts",
+                            "column": 13,
+                            "line": 125
+                          },
+                          "message": "Error: Spec FR-04: user must not escalate role via PUT /api/users/me\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"user\"\u001b[39m\nReceived: \u001b[31m\"admin\"\u001b[39m\n\n  123 |             after.role,\n  124 |             'Spec FR-04: user must not escalate role via PUT /api/users/me',\n> 125 |           ).toBe(expected.role ?? 'user');\n      |             ^\n  126 |           if (res.ok()) {\n  127 |             expect(after.role).not.toBe('admin');\n  128 |           }\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:125:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:42.994Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--8a071--đổi-role-thành-admin-spec--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--8a071--đổi-role-thành-admin-spec--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--8a071--đổi-role-thành-admin-spec--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts",
+                        "column": 13,
+                        "line": 125
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-578f956abccc6aa27474",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-18 [A-DT-18] Cập nhật test user không ảnh hưởng admin",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 597,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:44.280Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--1df51--user-không-ảnh-hưởng-admin-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-1357f500103848755a43",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-19 [A-BVA-01] BVA: từ chối phone 9 chữ số (091234567)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3446,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:45.190Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--29761-i-phone-9-chữ-số-091234567--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-1bb11de9c707d14f9d06",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-20 [A-BVA-02] BVA: chấp nhận phone biên dưới 10 số (0912345678)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3487,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 22,
+                          "line": 113
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 22,
+                            "line": 113
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:48.659Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--8d599-biên-dưới-10-số-0912345678--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--8d599-biên-dưới-10-số-0912345678--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--8d599-biên-dưới-10-số-0912345678--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 22,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-48c1458075880d5569f8",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-21 [A-BVA-03] BVA: chấp nhận phone biên trên 11 số (09123456789)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3590,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 22,
+                          "line": 113
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 22,
+                            "line": 113
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:53.000Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--e396e-iên-trên-11-số-09123456789--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--e396e-iên-trên-11-số-09123456789--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--e396e-iên-trên-11-số-09123456789--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 22,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-132ace6f96e957aa97aa",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-22 [A-BVA-04] BVA: từ chối phone 12 chữ số (091234567890)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3518,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:36:57.752Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--43ea0-one-12-chữ-số-091234567890--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-7e845186f28df6bdf4f3",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-23 [A-BVA-05] BVA: chấp nhận phone bắt đầu 0 (0987654321)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3403,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 22,
+                          "line": 113
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 22,
+                            "line": 113
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/thành công|Cập nhật thành công/i\u001b[39m\nReceived string:  \u001b[31m\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:113\n\n  111 |   expect(message, 'Expected browser dialog from profile form').not.toBeNull();\n  112 |   if (outcome === 'success') {\n> 113 |     expect(message!).toMatch(/thành công|Cập nhật thành công/i);\n      |                      ^\n  114 |     expect(message!).not.toMatch(/không hợp lệ/i);\n  115 |     return;\n  116 |   }\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:113:22)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:01.552Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--ee91a-phone-bắt-đầu-0-0987654321--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--ee91a-phone-bắt-đầu-0-0987654321--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--ee91a-phone-bắt-đầu-0-0987654321--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 22,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-374e4ef6734e7c2267ad",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-24 [A-BVA-06] BVA: từ chối phone bắt đầu 1 (1987654321)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3673,
+                      "error": {
+                        "message": "Error: Spec expects reject but got success alert: Cập nhật thành công!\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: Spec expects reject but got success alert: Cập nhật thành công!\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:119:80)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                          "column": 80,
+                          "line": 119
+                        },
+                        "snippet": "   at ..\\helpers\\profileSpec.ts:119\n\n  117 |   if (outcome === 'reject') {\n  118 |     const isSuccess = /thành công|Cập nhật thành công/i.test(message!);\n> 119 |     expect(isSuccess, `Spec expects reject but got success alert: ${message}`).toBe(false);\n      |                                                                                ^\n  120 |   }\n  121 | }\n  122 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                            "column": 80,
+                            "line": 119
+                          },
+                          "message": "Error: Spec expects reject but got success alert: Cập nhật thành công!\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n   at ..\\helpers\\profileSpec.ts:119\n\n  117 |   if (outcome === 'reject') {\n  118 |     const isSuccess = /thành công|Cập nhật thành công/i.test(message!);\n> 119 |     expect(isSuccess, `Spec expects reject but got success alert: ${message}`).toBe(false);\n      |                                                                                ^\n  120 |   }\n  121 | }\n  122 |\n    at assertUiOutcome (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts:119:80)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-a-profile.spec.ts:64:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:05.829Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--063d4-phone-bắt-đầu-1-1987654321--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--063d4-phone-bắt-đầu-1-1987654321--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--063d4-phone-bắt-đầu-1-1987654321--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\profileSpec.ts",
+                        "column": 80,
+                        "line": 119
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-1497e3d6476e843eb04f",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-25 [A-BVA-07] BVA: tên rỗng bị HTML5 chặn",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7903,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:10.843Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--f4f21--BVA-tên-rỗng-bị-HTML5-chặn-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-2be5bf37077e13cefba2",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-26 [A-BVA-08] BVA: chấp nhận tên 1 ký tự (A)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 419,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:19.104Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--d460e-VA-chấp-nhận-tên-1-ký-tự-A--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-dc125194fff64e15a1a7",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-27 [A-BVA-09] BVA: chấp nhận tên 2 ký tự (An)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 330,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:19.542Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--43bfd-A-chấp-nhận-tên-2-ký-tự-An--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-56b0d08740556318bf88",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-28 [A-BVA-10] BVA: địa chỉ rỗng qua API",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 390,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:19.892Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--7dece-10-BVA-địa-chỉ-rỗng-qua-API-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-4450896490aea6e1c79a",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-29 [A-BVA-11] BVA: địa chỉ 1 ký tự (A)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 408,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:20.298Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--93a3c-A-11-BVA-địa-chỉ-1-ký-tự-A--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-291d4966382737a44bc5",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "A-AUTO-30 [A-BVA-12] BVA: địa chỉ dài 500 ký tự",
+              "ok": true,
+              "tags": [
+                "hw04-feature-a"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 399,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:37:20.724Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-a-profile-Feature--9a250-2-BVA-địa-chỉ-dài-500-ký-tự-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d321ed82efb5032999-e70a7ba315844111a982",
+              "file": "feature-a-profile.spec.ts",
+              "line": 22,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-17T11:36:01.980Z",
+    "duration": 79434.114,
+    "expected": 22,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

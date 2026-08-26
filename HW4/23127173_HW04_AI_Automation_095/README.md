@@ -72,12 +72,14 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 │   ├── execution-summary.json
 │   ├── html-reports/            ← 9 HTML reports (bản nộp)
 │   └── demo-video/              ← [CHƯA QUAY]
-├── _archive/                    ← artefact dư (move, không zip)
-│   └── 2026-08-17-cleanup/
 ├── requirement/feature-{A,B,C}/
 │   ├── feature-*-report.md
 │   ├── ai-gap-analysis/
-│   └── bug-report/
+│   ├── bug-report/              ← screenshots fail
+│   └── automation/              ← minh chứng đầy đủ (HTML+media+summary)
+│       ├── html-reports/
+│       └── summary/
+├── _archive/                    ← còn html-last (không zip)
 ├── doc/md/                      ← main report + AI Audit
 └── agent-skills/
 ```
@@ -91,7 +93,10 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | Playwright project | `automation/` | ✅ 76 TC + 9 runs |
 | HTML reports đa trình duyệt | `evidence/html-reports/` | ✅ 9 folders |
 | AI Gap Analysis | `requirement/feature-*/ai-gap-analysis/` | ✅ |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-019 |
+| Bug reports (Markdown) | `requirement/feature-*/bug-report/` | ✅ (Issue: chưa tạo) |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-024 |
+| AI Critique | `doc/md/AI Audit/02_AI-Critique.md` | ✅ 200–300 từ |
+| Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (trừ video) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
 | Video demo YouTube | `agent-skills/demo-videos/link-video.md` | `[CHƯA QUAY]` |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | Placeholder |

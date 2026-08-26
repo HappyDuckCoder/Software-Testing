@@ -102,8 +102,10 @@ Video skill: `agent-skills/demo-videos/link-video.md`
 
 # 6. AI Audit & Critique
 
-- AI Audit: `doc/md/AI Audit/01_AI-Audit-Report.md` (AI-001…AI-017)
-- AI Critique: `doc/md/AI Audit/02_AI-Critique.md`
+- AI Audit: `doc/md/AI Audit/01_AI-Audit-Report.md` (AI-001…AI-022)
+- AI Critique: `doc/md/AI Audit/02_AI-Critique.md` (hoàn thiện 26/08/2026)
+- Mandatory Disclosure: `doc/md/AI Audit/03_Mandatory-Disclosure.md`
+- Privacy Checklist: `doc/md/AI Audit/04_AI-Privacy-Checklist.md`
 - Prompt log: `doc/md/appendixA-prompt-log.md`
 
 # 7. Tự đánh giá (mục tiêu 95/100)

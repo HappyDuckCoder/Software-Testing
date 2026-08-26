@@ -1,10 +1,12 @@
 # AI & Privacy Checklist — HW04
 
-- [ ] Không lưu mật khẩu, token JWT, cookie session vào script, JSON data, audit hoặc screenshot công khai.
+Review date: **26/08/2026** — MSSV 23127173
+
+- [x] Không lưu mật khẩu, token JWT, cookie session vào script, JSON data, audit hoặc screenshot công khai. Credential chỉ trong `automation/.env` (local).
 - [x] File `.env` chỉ dùng local; không commit `.env` lên GitHub (chỉ commit `.env.example`). `.gitignore` root + `automation/.gitignore` đã cấu hình.
-- [ ] Tài khoản test EShop (`test@eshop.com`, `admin@eshop.com`) không ghi plaintext password trong báo cáo nộp bài nếu không bắt buộc.
-- [ ] Video demo không lộ secret; terminal `whoami`/`hostname` được phép theo đề bài.
-- [ ] Mọi output AI (script, gap analysis) đã được sinh viên review trước khi chạy và nộp.
-- [x] AI Audit Report ghi prompt khởi tạo roadmap (AI-001) và toàn bộ phiên 17/08/2026 (AI-002…AI-013).
-- [x] Prompt log cập nhật đủ các phiên sinh/sửa automation (đến Feature A 12/12 headed).
-- [ ] Sinh viên xác nhận HTML report và video là bằng chứng thật, không AI-generated/fabricated.
+- [x] Tài khoản test EShop (`test@eshop.com`, `admin@eshop.com`) — mật khẩu chỉ trong `.env.example` placeholder (`your_password_here`), không ghi plaintext trong báo cáo nộp.
+- [ ] Video demo chưa quay — khi quay: không lộ secret; terminal `whoami`/`hostname` được phép theo đề bài.
+- [x] Mọi output AI (script, gap analysis, AI Critique) đã được sinh viên review trước khi chạy và nộp.
+- [x] AI Audit Report ghi đủ phiên 17/08/2026 (AI-001…AI-019) và 26/08/2026 (AI-020…AI-022).
+- [x] Prompt log cập nhật đủ các phiên sinh/sửa automation và audit.
+- [x] HTML report (9 runs) là bằng chứng thật từ Playwright — không AI-generated/fabricated. Video demo: chưa có (sẽ xác nhận sau khi quay).

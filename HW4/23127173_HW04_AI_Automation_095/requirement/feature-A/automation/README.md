@@ -1,12 +1,19 @@
-# Automation — Feature A (FR-04)
+# Automation evidence — Feature A (FR-04)
 
-Source of truth: **`../../automation/`** (Playwright project — push lên GitHub).
+Playwright source: **`../../../automation/`** (push GitHub từ thư mục đó).
+
+Minh chứng execution (17/08/2026):
+
+| Thư mục | Nội dung |
+| --- | --- |
+| `html-reports/feature-a-{chromium,firefox,webkit}/index.html` | HTML report (metadata `Run by: 23127173`) — **không** kèm `data/` media |
+| `summary/summary-*.json` | Pass/Fail/Skip per browser |
 
 | Artifact | Path |
 | --- | --- |
-| Data (30 TC) | `automation/data/feature-a-profile.json` |
+| Test data (30 TC) | `automation/data/feature-a-profile.json` |
 | Spec | `automation/tests/feature-a-profile.spec.ts` |
-| HTML reports | `evidence/html-reports/feature-a-{chromium,firefox,webkit}/` |
-| Summary JSON | `automation/reports/feature-a/summary-*.json` |
+| Screenshot fail | `../bug-report/screenshots/` |
+| Report + attachment nhẹ | `evidence/html-reports/feature-a-*/` |
 
-Thư mục `requirement/feature-A/automation/` chỉ là pointer — không duplicate code.
+Mở report: `html-reports/feature-a-chromium/index.html`

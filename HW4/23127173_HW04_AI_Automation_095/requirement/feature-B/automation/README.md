@@ -1,10 +1,17 @@
-# Automation — Feature B (FR-11)
+# Automation evidence — Feature B (FR-11)
 
-Source of truth: **`../../automation/`**
+Playwright source: **`../../../automation/`**
+
+| Thư mục | Nội dung |
+| --- | --- |
+| `html-reports/feature-b-{chromium,firefox,webkit}/index.html` | HTML report — **không** kèm `data/` media |
+| `summary/summary-*.json` | Pass/Fail/Skip per browser |
 
 | Artifact | Path |
 | --- | --- |
-| Data (22 TC) | `automation/data/feature-b-order-history.json` |
+| Test data (22 TC) | `automation/data/feature-b-order-history.json` |
 | Spec | `automation/tests/feature-b-order-history.spec.ts` |
-| HTML reports | `evidence/html-reports/feature-b-{chromium,firefox,webkit}/` |
-| Summary JSON | `automation/reports/feature-b/summary-*.json` |
+| Screenshot fail | `../bug-report/screenshots/` |
+| Report nhẹ | `evidence/html-reports/feature-b-*/` |
+
+Mở report: `html-reports/feature-b-chromium/index.html`

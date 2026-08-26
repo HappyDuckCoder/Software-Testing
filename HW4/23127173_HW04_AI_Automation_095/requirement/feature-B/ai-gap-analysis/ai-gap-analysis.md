@@ -30,8 +30,8 @@ Automation **22 test case** map 1:1 HW2 (14 Domain + 8 BVA). Oracle = **README/s
 - Data: `automation/data/feature-b-order-history.json` (22 rows)
 - Helpers: `automation/helpers/orderSpec.ts`, `orderLocators.ts`, `api.ts` (`seedOrderFixtures`)
 - Spec: `automation/tests/feature-b-order-history.spec.ts`
-- Report: `automation/reports/html/index.html`
+- Report (đầy đủ): `requirement/feature-B/automation/html-reports/`
 
 ## 5. Verdict
 
-Gap analysis **đạt**: automation spec-oracle tái hiện bug HW2 (shipping cancel, order detail leak); fail có screenshot/video trong `test-results/`.
+Gap analysis **đạt**: automation spec-oracle tái hiện bug HW2; fail có bằng chứng trong `evidence/html-reports/feature-b-*/data/*.md`.

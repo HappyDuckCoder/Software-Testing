@@ -29,8 +29,9 @@ Automation **30 test case** map 1:1 HW2 (18 Domain + 12 BVA). Oracle = **README/
 - Data: `automation/data/feature-a-profile.json` (30 rows, field `action` + `expected.outcome`)
 - Helpers: `automation/helpers/profileSpec.ts`
 - Spec: `automation/tests/feature-a-profile.spec.ts`
-- Report: `automation/reports/html/index.html`
+- Report (đầy đủ media): `requirement/feature-A/automation/html-reports/feature-a-chromium/index.html`
+- Report (nộp nhẹ): `evidence/html-reports/feature-a-chromium/index.html`
 
 ## 5. Verdict
 
-Gap analysis **đạt**: automation spec-oracle tái hiện được bug HW2; fail có bằng chứng screenshot/video trong `test-results/`.
+Gap analysis **đạt**: automation spec-oracle tái hiện được bug HW2; fail có bằng chứng trong `evidence/html-reports/feature-a-*/data/*.md` và `bug-report/screenshots/`.

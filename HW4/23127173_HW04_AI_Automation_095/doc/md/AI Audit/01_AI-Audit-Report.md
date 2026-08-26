@@ -25,6 +25,11 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-017 | ~18:35 17/08/2026 (UTC+7) | Cursor (Composer) | «có chạy full với cấu trúc lại bài nộp cho chuyên nghiệp, cập nhật audit» | Script `run-full-matrix.mjs`; **9 browser runs**; evidence + execution-summary; checklist/execution-matrix. **158P/53F/12S/5T**. | VALID | Còn video, PDF, GitHub. |
 | AI-018 | ~19:05 17/08/2026 (UTC+7) | Cursor (Composer) | «xem lại ignore» → staged 359 file gồm 227 `.webm` | Sửa `Lab/.gitignore` + submission `.gitignore`; strip webm khỏi git; sửa dialog XSS C-AUTO-15; giải thích `reports/html` = run cuối. | VALID | Unstage media; không commit video. |
 | AI-019 | ~19:12 17/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật audit — dọn file/thư mục dư — move thay vì xóa» | **Move** (không xóa) → `_archive/2026-08-17-cleanup/`: `reports/runs`, `reports/html`, `test-results`, `summary.json`, 276 webm/png; cập nhật README, pack-submission, reports/README; `_archive/` gitignore. | VALID | Bản nộp gọn: `evidence/html-reports/` + JSON summaries. |
+| AI-020 | ~20:10 26/08/2026 (UTC+7) | Cursor (Composer) | «đọc qua Lab\HW4\23127173_HW04_AI_Automation_095 và Lab\HW4\requirement\requirement.pdf để hiểu mình cần làm gì» | Tóm tắt đề HW04, trạng thái bài làm (76 TC, 9 runs ✅; thiếu video/PDF/GitHub/AI Critique); map feature FR-04/11/18; checklist còn thiếu. Không tìm thấy `requirement.pdf` — dùng `Lab/HW4/requirement/requirement.md`. | VALID — DOCUMENT REVIEW | Sinh viên xác nhận đối chiếu với PDF gốc trên Moodle nếu khác bản `.md`. |
+| AI-021 | ~20:15 26/08/2026 (UTC+7) | Cursor (Composer) | «trừ video và github issue, zip thì hãy bổ sung các mục còn thiếu — cách chia thư mục quá rối — sắp xếp lại cho chuyên nghiệp theo requirement HW4» | Rà soát cấu trúc: `_archive/` (artefact dư, không zip), `requirement/feature-*/automation/` (README placeholder trùng `automation/`), `roadmap.md` (scaffold). Đề xuất gom deliverables theo đề: `doc/`, `evidence/`, `automation/`, `features/` hoặc giữ `requirement/feature-*` cho gap/bug. | INCOMPLETE | Reorg chưa merge — sinh viên quyết định trước khi đổi path tham chiếu trong báo cáo. |
+| AI-022 | ~20:17 26/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật AI audit» | Hoàn thiện `02_AI-Critique.md` (200–300 từ); cập nhật `03_Mandatory-Disclosure.md`, `04_AI-Privacy-Checklist.md`, `appendixA-prompt-log.md`; thêm AI-020…AI-022; đồng bộ `checklist.md` mục AI compliance. | VALID — DOCUMENT REVIEW | Không sinh số liệu test mới; critique dựa trên gap analysis và execution 17/08/2026. |
+| AI-023 | ~20:25 26/08/2026 (UTC+7) | Cursor (Composer) | «đưa minh chứng `_archive` vào `requirement/feature-*/automation` — cập nhật AI audit» | **Move** 9 HTML report folders (+ media .webm/.png) → `requirement/feature-{A,B,C}/automation/html-reports/`; 24 WebKit test-results → `feature-C/automation/test-results/`; copy `summary-*.json`; copy fail PNG → `bug-report/screenshots/`; xóa duplicate `html-report-media/`; cập nhật README feature automation + `_archive/README.md`. | VALID | Bản nộp nhẹ vẫn dùng `evidence/html-reports/`; minh chứng đầy đủ per-feature trong `requirement/`. |
+| AI-024 | ~20:29 26/08/2026 (UTC+7) | Cursor (Composer) | «trong các thư mục automation trong các pool, xóa thư mục data — cập nhật ai-audit» | **Xóa** 9 thư mục `html-reports/*/data/` (334 file .webm/.png/.md) trong `requirement/feature-{A,B,C}/automation/`; giữ `index.html` + `summary/` + screenshot đã copy; cập nhật README automation + audit. | VALID | Giảm dung lượng; attachment đầy đủ vẫn ở `evidence/html-reports/*/data/` và `feature-C/test-results/`. |
 
 ## Quy tắc cập nhật
 
@@ -45,7 +50,7 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Mã bài tập | HW04-AI |
 | Có dùng AI | [x] Có  [ ] Không |
 
-## Tóm tắt execution thật (tính đến AI-019)
+## Tóm tắt execution thật (tính đến AI-024)
 
 | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- |
@@ -54,5 +59,8 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Feature C — 3 browsers (24 TC) | 15–18P / 4–6F / 0–5T | BUG-C-01/02/03 |
 | **Tổng 9 runs** | **158P / 53F / 12S / 5T** | `evidence/execution-summary.json` |
 | HTML reports (nộp) | 9 folders | `evidence/html-reports/` (index.html + data/*.md) |
-| Archive (local) | `_archive/2026-08-17-cleanup/` | runs/html/test-results/media — **không zip** |
-| Video / PDF / GitHub | Chưa hoàn tất | Còn bước nộp |
+| Archive (local) | `_archive/2026-08-17-cleanup/` | Chỉ còn html-last + summary-last — media đã move |
+| Per-feature evidence | `requirement/feature-*/automation/` | index.html + summary; media ở `evidence/` + bug screenshots |
+| AI Critique | ✅ Hoàn thiện | `02_AI-Critique.md` — phiên 26/08/2026 |
+| Privacy Checklist | ✅ Đã tick thực tế | `04_AI-Privacy-Checklist.md` |
+| Video / PDF / GitHub Issues / Zip | Chưa hoàn tất | Ngoài phạm vi phiên 26/08/2026 |

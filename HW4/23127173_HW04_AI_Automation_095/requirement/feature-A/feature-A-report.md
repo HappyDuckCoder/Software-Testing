@@ -7,8 +7,8 @@
 | Pool | Pool A |
 | Feature ID | FR-04 |
 | Mô tả | Quản lý hồ sơ cá nhân |
-| Nguồn HW02 | `Lab/HW2/23127173_HW02_AI_DomainTesting_095/requirement/feature-A/` |
-| Trạng thái automation | Khung script — chưa chạy đủ 3 browser |
+| Nguồn HW2 | `Lab/HW2/23127173_HW02_AI_DomainTesting_095/requirement/feature-A/` |
+| Trạng thái automation | ✅ 30 TC — 9/9 browser runs (17/08/2026) |
 
 ## 2. Phạm vi automation
 
@@ -18,39 +18,27 @@
 | API | `PUT /api/users/me`, `GET /api/users/me` |
 | Luồng | Login → `/profile` → sửa name/phone/address → lưu |
 
-## 3. Map ≥ 12 test case HW02 → automation
+## 3. Coverage HW2 → automation
 
-| Auto ID | HW2 ref | Loại | Mô tả ngắn | Assertion pattern |
-| --- | --- | --- | --- | --- |
-| A-AUTO-01 | A-DT-01 | positive | User hợp lệ mở profile | URL + visibility |
-| A-AUTO-02 | A-DT-02 | positive | Cập nhật name hợp lệ | text |
-| A-AUTO-03 | A-BVA-01 | boundary | Phone 10 chữ số hợp lệ | text |
-| A-AUTO-04 | A-BVA-02 | boundary | Phone 11 chữ số hợp lệ | text |
-| A-AUTO-05 | A-BVA-03 | negative | Phone không bắt đầu 0 | text / validation |
-| A-AUTO-06 | A-BVA-04 | negative | Phone quá ngắn | attribute / message |
-| A-AUTO-07 | A-DT-08 | negative | Name rỗng (UI required) | attribute |
-| A-AUTO-08 | A-DT-03 | positive | Email readonly trên UI | attribute |
-| A-AUTO-09 | A-DT-12 | negative | Không login → redirect login | URL |
-| A-AUTO-10 | A-DT-15 | edge | Address rỗng | text |
-| A-AUTO-11 | A-DT-18 | positive | Message thành công sau save | visibility |
-| A-AUTO-12 | A-DT-20 | negative | API role injection (nếu automate được qua UI+API helper) | count/state |
-
-## 4. Data & script
-
-| Artifact | Path |
+| Chỉ số | Giá trị |
 | --- | --- |
-| Test data | `automation/data/feature-a-profile.json` |
+| Test case thiết kế | **30** (18 Domain + 12 BVA) |
+| Oracle | README/spec FR-04 — không pass theo code buggy |
+| Data | `automation/data/feature-a-profile.json` |
 | Spec | `automation/tests/feature-a-profile.spec.ts` |
-| HTML reports | `evidence/html-reports/feature-a-{chromium,firefox,webkit}/` |
 
-## 5. Kết quả thực thi
+## 4. Kết quả thực thi (9 browser runs)
 
-| Browser | Pass | Fail | Report path |
-| --- | ---: | ---: | --- |
-| Chromium | `[CHƯA CHẠY]` | | |
-| Firefox | `[CHƯA CHẠY]` | | |
-| WebKit | `[CHƯA CHẠY]` | | |
+| Browser | Pass | Fail | Skip | Report |
+| --- | ---: | ---: | ---: | --- |
+| Chromium | 22 | 8 | 0 | `evidence/html-reports/feature-a-chromium/index.html` |
+| Firefox | 22 | 8 | 0 | `evidence/html-reports/feature-a-firefox/index.html` |
+| WebKit | 22 | 8 | 0 | `evidence/html-reports/feature-a-webkit/index.html` |
 
-## 6. AI review notes
+**8 Fail ổn định** — BUG-A-01 (regex phone UI), BUG-A-02 (role escalation API). Chi tiết: `checklist/execution-matrix.md`, `bug-report/bug-report.md`.
 
-Xem `ai-gap-analysis/ai-gap-analysis.md` và `bug-report/bug-report.md`.
+## 5. AI review
+
+- Gap analysis: `ai-gap-analysis/ai-gap-analysis.md`
+- Bug report: `bug-report/bug-report.md`
+- Human review: sửa `profileLocators.ts`, chuyển oracle từ code → spec (AI-014)
