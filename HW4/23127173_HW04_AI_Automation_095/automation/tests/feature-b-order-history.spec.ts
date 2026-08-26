@@ -1,3 +1,7 @@
+/**
+ * HW04 Feature B — FR-11 Order history (spec oracle, 22 TC).
+ * Data-driven from `automation/data/feature-b-order-history.json` (HW2 B-DT / B-BVA).
+ */
 import { test, expect } from '@playwright/test';
 import { loadTestData } from '../helpers/loadTestData';
 import { loginAsUser, openProfile } from '../helpers/auth';
@@ -12,6 +16,8 @@ import { profileOrderRows } from '../helpers/orderLocators';
 import { fetchMyOrders, fetchOrderDetail } from '../helpers/orderSpec';
 
 const cases = loadTestData('feature-b-order-history.json');
+/** Vietnamese status labels shown on profile order list (FR-11 UI oracle). */
+const ORDER_STATUS_LABELS = ['Chờ xác nhận', 'Đã xác nhận', 'Đang giao', 'Đã giao', 'Đã hủy'] as const;
 let fx: OrderFixtures;
 
 function orderIdByStatus(status: string): number {
@@ -40,7 +46,7 @@ test.describe('Feature B — FR-11 Order history (spec oracle) @hw04-feature-b',
       switch (row.action) {
         case 'ui_empty_message': {
           const orders = await apiGetMyOrders(userToken);
-          test.skip(orders.length > 0, 'Spec empty: user đã có đơn — cần DB/user sạch');
+          test.skip(orders.length > 0, 'B-DT empty state: user đã có đơn — cần DB/user không có order');
           await loginAsUser(page);
           await openProfile(page);
           await expect(page.getByText('Bạn chưa có đơn hàng nào.')).toBeVisible();
@@ -169,7 +175,7 @@ test.describe('Feature B — FR-11 Order history (spec oracle) @hw04-feature-b',
         case 'ui_all_status_labels': {
           await loginAsUser(page);
           await openProfile(page);
-          for (const label of ['Chờ xác nhận', 'Đã xác nhận', 'Đang giao', 'Đã giao', 'Đã hủy']) {
+          for (const label of ORDER_STATUS_LABELS) {
             await expect(page.getByText(label).first()).toBeVisible();
           }
           const shipRow = profileOrderRows(page).filter({ hasText: `#${fx.shippingId}` });
