@@ -18,8 +18,9 @@ import { fetchAdminOrders, putAdminOrderStatus } from '../helpers/orderSpec';
 
 const adminBase = process.env.ADMIN_BASE_URL ?? 'http://localhost:5174';
 const cases = loadTestData('feature-c-admin-orders.json');
-const XSS_ADDRESS = '<b>X</b><img src=x onerror=alert(1)>';
-let fx: OrderFixtures;
+/** Valid admin status chain per FR-18 spec (pending → … → delivered). */
+const DELIVERY_CHAIN = ['confirmed', 'shipping', 'delivered'] as const;
+const XSS_ADDRESS = '<b>X</b><img src=x onerror=alert(1)>';let fx: OrderFixtures;
 
 async function freshPendingId(): Promise<number> {
   const userToken = await apiLogin(process.env.USER_EMAIL!, process.env.USER_PASSWORD!);
@@ -53,8 +54,7 @@ test.describe('Feature C — FR-18 Admin orders (spec oracle) @hw04-feature-c', 
 
   for (const row of cases) {
     test(`${row.id} [${row.hw2Ref}] ${row.description}`, async ({ page, request }) => {
-      test.skip(!!row.skip, row.skipReason ?? 'skipped');
-
+      test.skip(!!row.skip, row.skipReason ?? 'skipped per feature-c-admin-orders.json');
       const adminToken = await apiLogin(process.env.ADMIN_EMAIL!, process.env.ADMIN_PASSWORD!);
       const userToken = await apiLogin(process.env.USER_EMAIL!, process.env.USER_PASSWORD!);
 
@@ -140,8 +140,7 @@ test.describe('Feature C — FR-18 Admin orders (spec oracle) @hw04-feature-c', 
         }
         case 'api_full_chain': {
           const orderId = await freshPendingId();
-          for (const step of ['confirmed', 'shipping', 'delivered'] as const) {
-            const res = await putAdminOrderStatus(request, adminToken, orderId, step);
+          for (const step of DELIVERY_CHAIN) {            const res = await putAdminOrderStatus(request, adminToken, orderId, step);
             expect(res.ok()).toBeTruthy();
           }
           const order = await apiGetOrder(orderId);
