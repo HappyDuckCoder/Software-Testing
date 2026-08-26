@@ -15,12 +15,12 @@ Reviewer: Sinh viên 23127173 (rà soát sau 9 browser runs)
 | HTML `Run by: 23127173` | ✅ | `playwright.config.ts` + 9 reports |
 | AI gap / human review | ✅ | 3 feature + locator/oracle fixes |
 | AI Critique 200–300 từ | ✅ | `doc/md/AI Audit/02_AI-Critique.md` |
-| AI Audit AI-001…AI-036 | ✅ | |
-| Liên kết GitHub / video | ✅ / ⏳ | `agent-skills/demo-videos/link-video.md` |
+| AI Audit AI-001…AI-037 | ✅ | |
+| Liên kết GitHub / video | ✅ / ✅ link được cung cấp | [Task 2](https://youtu.be/sAWzvEyJ_d0), [Agent Skill](https://youtu.be/W2U25h0cyJM) |
 | Bug report Markdown | ✅ | Issues [#8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) + 7 screenshot |
 | GitHub automation repo | ✅ | [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log file | ✅ | `doc/md/Git Commit Log/git-commit-log.txt` |
-| Video ≥ 5 phút | ⏳ | Outline: `agent-skills/demo-videos/video-outline.md` |
+| Video ≥ 5 phút | ⚠️ Link được cung cấp | Sinh viên tự xác nhận thời lượng/nội dung theo `video-outline.md` |
 | Git ≥ 8 commit .spec.ts | ✅ **9/8** | [commits/tests](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests) |
 | PDF export | ✅ | main-report + AI-Audit-Appendix |
 
@@ -43,16 +43,15 @@ Reviewer: Sinh viên 23127173 (rà soát sau 9 browser runs)
 
 ## 4. Mục còn thiếu trước nộp (P0)
 
-1. Quay video demo YouTube ≥ 5 phút.
-2. Push `automation/` GitHub (≥ 8 commit `.spec.ts`) + git-commit-log.
-3. Tái export PDF sau khi chốt tài liệu (nếu nộp bản PDF mới nhất).
-4. Tạo zip `23127173_HW04_AI_Automation_095.zip`.
+1. Tự kiểm tra hai video theo yêu cầu Task 2 và Agent Skill.
+2. Tái export PDF sau khi chốt tài liệu (nếu nộp bản PDF mới nhất).
+3. Tạo zip `23127173_HW04_AI_Automation_095.zip`.
 
 ## 5. Tự đánh giá
 
 | Hạng mục | Điểm mục tiêu |
 | --- | ---: |
 | Task 1 A/B/C | 72 |
-| Task 2 Video | 14 (chưa quay) |
+| Task 2 Video | 14 (link đã cung cấp) |
 | Agent Skill | 9 |
 | **Tổng** | **95** |

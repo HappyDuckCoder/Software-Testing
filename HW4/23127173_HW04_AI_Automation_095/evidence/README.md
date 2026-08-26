@@ -27,7 +27,7 @@ evidence/
 │   ├── feature-c-chromium/
 │   ├── feature-c-firefox/
 │   └── feature-c-webkit/
-└── demo-video/                ← [CHƯA QUAY] video ≥ 5 phút
+└── demo-video/                ← link Task 2: https://youtu.be/sAWzvEyJ_d0
 ```
 
 ## Kết quả theo feature (Chromium — baseline)

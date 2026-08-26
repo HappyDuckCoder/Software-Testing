@@ -53,25 +53,26 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 3. Task 2 — Demo video
 
-- [ ] YouTube unlisted, ≥ 5 phút, thuyết minh tiếng Việt.
-- [ ] Trình diễn 1 script E2E + multi-browser + HTML report.
-- [ ] Nói ≥ 1 chỉnh sửa sau AI review.
-- [ ] Face-cam hoặc terminal `whoami` + `hostname`.
-- [ ] Link ghi trong [`agent-skills/demo-videos/link-video.md`](agent-skills/demo-videos/link-video.md) và README (GitHub links ✅; YouTube pending).
+- [x] Link Task 2: [YouTube](https://youtu.be/sAWzvEyJ_d0).
+- [ ] Sinh viên tự xác nhận video unlisted, ≥ 5 phút và thuyết minh tiếng Việt.
+- [ ] Sinh viên tự xác nhận video trình diễn 1 script E2E + multi-browser + HTML report.
+- [ ] Sinh viên tự xác nhận video nói ≥ 1 chỉnh sửa sau AI review.
+- [ ] Sinh viên tự xác nhận face-cam hoặc terminal `whoami` + `hostname`.
+- [x] Link ghi trong [`agent-skills/demo-videos/link-video.md`](agent-skills/demo-videos/link-video.md) và README.
 
 ## 4. Agent Skill
 
 - [x] Skill source: `agent-skills/playwright-automation-builder/SKILL.md`.
-- [ ] Video demo skill end-to-end trên 1 feature hoàn chỉnh.
+- [x] Link Agent Skill demo: [YouTube](https://youtu.be/W2U25h0cyJM) (sinh viên tự xác nhận nội dung end-to-end).
 - [x] Catalog: `agent-skills/skill-catalog.md`.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report AI-001…AI-036.
+- [x] AI Audit Report AI-001…AI-037.
 - [x] Prompt log cập nhật phiên 17/08/2026 và 26/08/2026.
 - [x] AI Critique 200–300 từ hoàn chỉnh (`doc/md/AI Audit/02_AI-Critique.md`).
 - [x] Mandatory Disclosure cập nhật execution thật (26/08/2026).
-- [x] Privacy Checklist tick theo thực tế (trừ mục video — chưa quay).
+- [x] Privacy Checklist cập nhật link video; nội dung video cần sinh viên tự rà soát trước nộp.
 
 ## 6. Git & repository
 
@@ -95,6 +96,6 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 | --- | --- |
 | Script chưa chạy E2E | ✅ 9 browser runs — `npm run test:full-matrix` |
 | HTML report thiếu StudentID | ✅ Kiểm tra metadata trong 9 reports |
-| Video không chứng minh tác giả | ⏳ Chưa quay |
+| Video không chứng minh tác giả | ⚠️ Link đã có; cần sinh viên tự xác nhận `whoami`/`hostname` hoặc face-cam |
 | Commit log toàn README | ✅ 8/8 commit `.spec.ts` trên GitHub |
 | Fail ghi “all pass” | ✅ Fail = bug HW2 theo spec oracle |

@@ -165,7 +165,7 @@ Screenshot automation và ảnh GitHub issue: `requirement/feature-*/bug-report/
 
 | Mục | Giá trị |
 | --- | --- |
-| Link YouTube (unlisted) | `[CHƯA QUAY]` — outline: [`video-outline.md`](../../agent-skills/demo-videos/video-outline.md) |
+| Link YouTube (unlisted) | [Task 2 video](https://youtu.be/sAWzvEyJ_d0) — outline: [`video-outline.md`](../../agent-skills/demo-videos/video-outline.md) |
 | Thời lượng | ≥ 5 phút, tiếng Việt |
 | Nội dung bắt buộc | E2E headed/headless; ≥ 2 browser; mở HTML report (`Run by: 23127173`); nói ≥ 1 fix sau AI review |
 | Xác thực tác giả | Face-cam hoặc terminal `whoami` + `hostname` |
@@ -176,7 +176,7 @@ Screenshot automation và ảnh GitHub issue: `requirement/feature-*/bug-report/
 | --- | --- |
 | Skill | `agent-skills/playwright-automation-builder/SKILL.md` |
 | Catalog | `agent-skills/skill-catalog.md` |
-| Video minh họa skill | `[CHƯA QUAY]` — cùng hoặc riêng link YouTube |
+| Video minh họa skill | [Agent Skill demo](https://youtu.be/W2U25h0cyJM) |
 
 Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 browser → gap analysis → evidence.
 
@@ -184,10 +184,10 @@ Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 b
 
 | Tài liệu | Path | Trạng thái |
 | --- | --- | --- |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-036 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-037 |
 | AI Critique (200–300 từ) | `doc/md/AI Audit/02_AI-Critique.md` | ✅ |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | ✅ |
-| Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (video pending) |
+| Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (link video đã cung cấp; sinh viên tự rà soát nội dung) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
 
 Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026, AI-035).
@@ -211,10 +211,10 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026, AI-035).
 | 1 | Task 1 — Feature A | 25 | 24 | 30 TC, gap, bug report |
 | 1 | Task 1 — Feature B | 25 | 24 | 22 TC, skip có lý do |
 | 1 | Task 1 — Feature C | 25 | 24 | 24 TC, 6 fail bug HW2 |
-| 2 | Task 2 — Video | 15 | 14 | Chưa quay — mục tiêu sau nộp |
-| 3 | Agent Skills | 10 | 9 | Skill ✅; video skill pending |
+| 2 | Task 2 — Video | 15 | 14 | [Link video](https://youtu.be/sAWzvEyJ_d0) đã cung cấp |
+| 3 | Agent Skills | 10 | 9 | Skill ✅; [demo video](https://youtu.be/W2U25h0cyJM) đã cung cấp |
 | | **Tổng (mục tiêu)** | **100** | **95** | |
-| | **Tổng (hiện tại)** | **100** | **~82** | Còn video demo |
+| | **Tổng (hiện tại)** | **100** | **~82*** | Đã có link video; cần tự rà soát nội dung và đóng gói zip |
 
 # 9. Phụ lục — đường dẫn nhanh
 

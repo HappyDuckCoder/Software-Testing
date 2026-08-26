@@ -52,9 +52,9 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | 1 | Task 1 — Feature A (FR-04) | 25 | 24 | 30 TC, 3 HTML reports, gap analysis |
 | 1 | Task 1 — Feature B (FR-11) | 25 | 24 | 22 TC, 3 HTML reports, gap analysis |
 | 1 | Task 1 — Feature C (FR-18) | 25 | 24 | 24 TC, 3 HTML reports, gap analysis |
-| 2 | Task 2 — Video demo ≥ 5 phút | 15 | 14 | `[CHƯA QUAY]` — `evidence/demo-video/` |
+| 2 | Task 2 — Video demo ≥ 5 phút | 15 | 14 | [YouTube](https://youtu.be/sAWzvEyJ_d0) — nội dung cần sinh viên tự đối chiếu checklist |
 | 3 | Agent Skills | 10 | 9 | `agent-skills/playwright-automation-builder/` |
-| | **Tổng** | **100** | **95** | Còn video demo |
+| | **Tổng** | **100** | **95** | Đã có link video; còn đóng gói zip |
 
 ## 5. Cấu trúc bài nộp
 
@@ -74,7 +74,7 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 ├── evidence/
 │   ├── execution-summary.json
 │   ├── html-reports/            ← 9 HTML reports (bản nộp)
-│   └── demo-video/              ← [CHƯA QUAY]
+│   └── demo-video/              ← link tại agent-skills/demo-videos/link-video.md
 ├── requirement/feature-{A,B,C}/
 │   ├── feature-*-report.md
 │   ├── ai-gap-analysis/
@@ -98,13 +98,13 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | HTML reports đa trình duyệt | `evidence/html-reports/` | ✅ 9 folders |
 | AI Gap Analysis | `requirement/feature-*/ai-gap-analysis/` | ✅ |
 | Bug reports (Markdown) | `requirement/feature-*/bug-report/` | ✅ (GitHub issues #8–#14 + 7 screenshot) |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-036 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-037 |
 | AI Critique | `doc/md/AI Audit/02_AI-Critique.md` | ✅ 200–300 từ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (trừ video) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
-| Video demo YouTube | `agent-skills/demo-videos/link-video.md` | Outline ✅ [`video-outline.md`](agent-skills/demo-videos/video-outline.md) — link pending |
+| Video demo YouTube | `agent-skills/demo-videos/link-video.md` | ✅ [Task 2](https://youtu.be/sAWzvEyJ_d0) + [Agent Skill](https://youtu.be/W2U25h0cyJM) |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | ✅ 9/8 commit `.spec.ts` — [GitHub](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests) |
-| Liên kết tổng hợp | `agent-skills/demo-videos/link-video.md` | ✅ GitHub + Issues; video pending |
+| Liên kết tổng hợp | `agent-skills/demo-videos/link-video.md` | ✅ GitHub, Issues và 2 video YouTube |
 
 ## 7. Lệnh nhanh
 
@@ -120,6 +120,6 @@ npm run report                    # mở HTML report mới nhất
 
 ## 8. Bước còn thiếu trước khi nộp zip
 
-1. Quay video theo [`agent-skills/demo-videos/video-outline.md`](agent-skills/demo-videos/video-outline.md) → ghi link vào `link-video.md`.
+1. Tự kiểm tra hai video theo [`video-outline.md`](agent-skills/demo-videos/video-outline.md) và checklist trước nộp.
 2. ~~Push automation + commit log lên GitHub~~ ✅ — xem [link-video.md](agent-skills/demo-videos/link-video.md).
 3. Đóng gói `23127173_HW04_AI_Automation_095.zip` (xem `scripts/pack-submission.md`).

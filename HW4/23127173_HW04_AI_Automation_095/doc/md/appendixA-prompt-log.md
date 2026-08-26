@@ -32,6 +32,11 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~20:43 | Cursor (Composer) | «dùng markdown pdf export» | Pandoc PDF main + AI Audit; AI-026 |
 | 2026-08-26 ~20:55 | Codex (GPT-5) | «github issue và chụp hình minh chứng lại và bỏ vào thư mục cần thiết; cập nhật AI-audit» | 7 GitHub Issues #8–#14; 7 screenshot; AI-027 |
 | 2026-08-26 ~21:00 | Codex (GPT-5) | «cập nhật md doc, main report và các tài liệu liên quan; cập nhật ai audit» | Đồng bộ README, checklist, main report, disclosure, consistency review; AI-028 |
+| 2026-08-26 23:18 | Codex (GPT-5) | «bạn chạy e2e pool A, lưu kết quả vào Lab\\HW4\\support-file; chạy 1 2 case để tôi xem bạn hoạt động tốt không trước khi quay» → «cổng 3000 có thể đang bị chiếm á, bạn hãy đóng rồi chạy lại» | Restart backend cổng 3000; A-AUTO-01/02 Chromium **2/2 pass**; artefact smoke trong `Lab/HW4/support-file/`; AI-029 |
+| 2026-08-26 23:42 | Codex (GPT-5) | «Bạn hãy chạy e2e pool A (30 case) cho tôi và lưu kết quả vào Lab\\HW4\\support-file, tôi muốn thấy màn hinh playwright luôn» | Pool A headed Chromium: **22P/8F/0S/0T**; report + artefact trong `Lab/HW4/support-file/pool-a-headed-30cases-2026-08-26/`; AI-030 |
+| 2026-08-27 00:09 | Codex (GPT-5) | «Hãy chạy e2e Chromium cho Pool A và lưu kết quả vào Lab\\HW4\\support-file, chạy headed để thấy UI» | Pool A headed Chromium: **22P/8F/0S/0T**; report + artefact trong `Lab/HW4/support-file/pool-a-headed-30cases-2026-08-27/`; AI-031 |
+| 2026-08-27 00:23 | Codex (GPT-5) | «chạy e2e headed Firefox cho pool A và lưu vào Lab\\HW4\\support-file» | Pool A headed Firefox: **20P/8F/0S/2T**; 8 defect + 2 Firefox teardown timeout; report trong `Lab/HW4/support-file/pool-a-firefox-headed-30cases-2026-08-27/`; AI-032 |
+| 2026-08-27 00:27 | Codex (GPT-5) | «làm tương tự cho WebKit» | Pool A headed WebKit: **22P/8F/0S/0T**; report trong `Lab/HW4/support-file/pool-a-webkit-headed-30cases-2026-08-27/`; AI-033 |
 | 2026-08-26 ~21:40 | Cursor (Composer) | «link automation repo — cập nhật commit log» | git-commit-log.txt; AI-029 |
 | 2026-08-26 ~21:42 | Cursor (Composer) | «6 commit .spec.ts là sao» | Giải thích rubric §12; AI-030 |
 | 2026-08-26 ~21:45 | Cursor (Composer) | «từ cập nhật ai audit trước» | Đồng bộ audit AI-031; sửa main-report §6 + consistency review; re-export AI Audit PDF |
@@ -39,3 +44,4 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~22:00 | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push spec commits + audit lên lab main; AI-033 |
 | 2026-08-26 ~22:10 | Cursor (Composer) | «bạn cập nhật link đi» | Đồng bộ GitHub links; push `7700c09`; AI-034 |
 | 2026-08-26 ~22:21 | Cursor (Composer) | «cho tôi outline video để quay, cập nhật audit» | `video-outline.md` 6–7 phút; AI-036 |
+| 2026-08-27 00:37 | Codex (GPT-5) | «video task 1: https://youtu.be/sAWzvEyJ_d0; video demo agent: https://youtu.be/W2U25h0cyJM; bạn hãy cập nhật lại các document» | Đồng bộ hai link video Task 2/Agent Skill vào tài liệu; AI-037 |

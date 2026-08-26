@@ -4,10 +4,10 @@
 
 | Video | Link | Mô tả |
 | --- | --- | --- |
-| Task 2 — Automation E2E + multi-browser + HTML report | `[CHƯA QUAY — YouTube unlisted]` | ≥ 5 phút, tiếng Việt, nói ≥ 1 fix sau AI review, `whoami`/`hostname` hoặc face-cam |
-| Agent Skill — playwright-automation-builder | `[CHƯA QUAY — cùng hoặc riêng link]` | End-to-end skill trên 1 feature hoàn chỉnh |
+| Task 2 — Automation E2E + multi-browser + HTML report | [YouTube: sAWzvEyJ_d0](https://youtu.be/sAWzvEyJ_d0) | Link do sinh viên cung cấp; tự kiểm tra ≥ 5 phút, tiếng Việt, nói ≥ 1 fix sau AI review, `whoami`/`hostname` hoặc face-cam |
+| Agent Skill — playwright-automation-builder | [YouTube: W2U25h0cyJM](https://youtu.be/W2U25h0cyJM) | Link do sinh viên cung cấp; tự kiểm tra demo end-to-end trên một feature hoàn chỉnh |
 
-> Sau khi quay: thay `[CHƯA QUAY]` bằng link YouTube unlisted và cập nhật README + `doc/md/main-report.md` §4–5.
+> Hai link YouTube đã được sinh viên cung cấp ngày 27/08/2026 và đã đồng bộ vào README cùng `doc/md/main-report.md` §4–5.
 
 ## Liên kết GitHub (public)
 
@@ -30,7 +30,7 @@
 
 ## Checklist quay Task 2
 
-- [ ] Terminal `whoami` và `hostname` (hoặc face-cam).
-- [ ] Chạy 1 feature trên ≥ 2 browser.
-- [ ] Mở HTML report, zoom metadata `Run by: 23127173`.
-- [ ] Giải thích 1 chỉnh sửa selector/wait/assertion sau AI.
+- [x] Link Task 2 đã cung cấp: [YouTube](https://youtu.be/sAWzvEyJ_d0).
+- [ ] Tự kiểm tra terminal `whoami` và `hostname` (hoặc face-cam) xuất hiện trong video.
+- [ ] Tự kiểm tra video có chạy 1 feature trên ≥ 2 browser và mở HTML report `Run by: 23127173`.
+- [ ] Tự kiểm tra video giải thích một chỉnh sửa selector/wait/assertion sau AI.
