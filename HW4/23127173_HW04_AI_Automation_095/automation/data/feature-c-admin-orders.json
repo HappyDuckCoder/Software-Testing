@@ -1,0 +1,31 @@
+{
+  "featureId": "FR-18",
+  "featureName": "Quản lý đơn hàng admin",
+  "oracle": "README/spec FR-18 + FR-10 state machine (HW2 baseline)",
+  "tests": [
+    { "id": "C-AUTO-01", "hw2Ref": "C-DT-01", "type": "positive", "action": "api_admin_orders_list", "description": "Admin GET all orders + user_name + sort DESC", "assertionPattern": "count" },
+    { "id": "C-AUTO-02", "hw2Ref": "C-DT-02", "type": "positive", "action": "ui_admin_table", "description": "UI bảng đơn hàng đủ cột", "assertionPattern": "visibility" },
+    { "id": "C-AUTO-03", "hw2Ref": "C-DT-03", "type": "negative", "action": "api_admin_orders_no_auth", "description": "GET admin/orders thiếu token → 401", "expected": { "httpStatus": 401 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-04", "hw2Ref": "C-DT-04", "type": "negative", "action": "api_admin_orders_user_token", "description": "Spec: user token không được GET admin/orders", "expected": { "httpStatus": 403 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-05", "hw2Ref": "C-DT-05", "type": "positive", "action": "api_transition", "input": { "from": "pending", "to": "confirmed" }, "description": "pending → confirmed", "assertionPattern": "text" },
+    { "id": "C-AUTO-06", "hw2Ref": "C-DT-06", "type": "positive", "action": "api_transition", "input": { "from": "pending", "to": "canceled" }, "description": "pending → canceled", "assertionPattern": "text" },
+    { "id": "C-AUTO-07", "hw2Ref": "C-DT-07", "type": "positive", "action": "api_transition", "input": { "from": "confirmed", "to": "shipping" }, "description": "confirmed → shipping", "assertionPattern": "text" },
+    { "id": "C-AUTO-08", "hw2Ref": "C-DT-08", "type": "positive", "action": "api_transition", "input": { "from": "confirmed", "to": "canceled" }, "description": "confirmed → canceled", "assertionPattern": "text" },
+    { "id": "C-AUTO-09", "hw2Ref": "C-DT-09", "type": "positive", "action": "api_transition", "input": { "from": "shipping", "to": "delivered" }, "description": "shipping → delivered", "assertionPattern": "text" },
+    { "id": "C-AUTO-10", "hw2Ref": "C-DT-10", "type": "negative", "action": "api_invalid_transition", "input": { "from": "pending", "to": "shipping" }, "description": "Spec: pending → shipping bị 400", "expected": { "httpStatus": 400 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-11", "hw2Ref": "C-DT-11", "type": "negative", "action": "api_invalid_transition", "input": { "from": "delivered", "to": "canceled" }, "description": "Spec: delivered → canceled bị 400", "expected": { "httpStatus": 400 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-12", "hw2Ref": "C-DT-12", "type": "negative", "action": "api_invalid_transition", "input": { "from": "canceled", "to": "delivered" }, "description": "Spec: canceled → delivered bị 400", "expected": { "httpStatus": 400 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-13", "hw2Ref": "C-DT-13", "type": "negative", "action": "api_admin_status_404", "input": { "orderId": "999999", "to": "confirmed" }, "description": "Order không tồn tại → 404", "expected": { "httpStatus": 404 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-14", "hw2Ref": "C-DT-14", "type": "negative", "action": "api_invalid_status_value", "input": { "to": "returned" }, "description": "Trạng thái đích returned → 400", "expected": { "httpStatus": 400 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-15", "hw2Ref": "C-DT-15", "type": "negative", "action": "ui_xss_address", "description": "Spec: địa chỉ HTML không thực thi script", "assertionPattern": "state" },
+    { "id": "C-AUTO-16", "hw2Ref": "C-DT-16", "type": "negative", "action": "ui_terminal_no_actions", "description": "Spec: delivered/canceled không có nút chuyển trạng thái", "assertionPattern": "count" },
+    { "id": "C-AUTO-17", "hw2Ref": "C-BVA-01", "type": "boundary", "action": "ui_admin_table", "description": "BVA: bảng admin không crash khi nhiều đơn", "assertionPattern": "visibility" },
+    { "id": "C-AUTO-18", "hw2Ref": "C-BVA-02", "type": "boundary", "action": "ui_admin_min_rows", "description": "BVA: ít nhất một dòng đơn", "assertionPattern": "count" },
+    { "id": "C-AUTO-19", "hw2Ref": "C-BVA-03", "type": "boundary", "action": "ui_admin_sort_desc", "description": "BVA: nhiều đơn sort id DESC", "assertionPattern": "text" },
+    { "id": "C-AUTO-20", "hw2Ref": "C-BVA-04", "type": "positive", "action": "api_full_chain", "description": "BVA: pending→confirmed→shipping→delivered", "assertionPattern": "text" },
+    { "id": "C-AUTO-21", "hw2Ref": "C-BVA-05", "type": "negative", "action": "api_invalid_transition", "input": { "from": "pending", "to": "shipping" }, "description": "BVA: skip step pending→shipping", "expected": { "httpStatus": 400 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-22", "hw2Ref": "C-BVA-06", "type": "negative", "action": "api_invalid_transition", "input": { "from": "canceled", "to": "delivered" }, "description": "BVA: canceled→delivered bị 400", "expected": { "httpStatus": 400 }, "assertionPattern": "state" },
+    { "id": "C-AUTO-23", "hw2Ref": "C-BVA-07", "type": "boundary", "action": "ui_empty_address_fallback", "description": "BVA: địa chỉ rỗng hiển thị fallback", "assertionPattern": "text" },
+    { "id": "C-AUTO-24", "hw2Ref": "C-BVA-08", "type": "negative", "action": "ui_xss_address", "description": "BVA: địa chỉ HTML escape an toàn", "assertionPattern": "state" }
+  ]
+}

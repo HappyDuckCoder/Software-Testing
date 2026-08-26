@@ -1,0 +1,1359 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-c-admin-orders.spec.ts",
+      "--project=webkit"
+    ],
+    "configFile": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\playwright.config.ts",
+    "rootDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127173",
+      "Run at": "2026-08-17T11:53:41.421Z",
+      "Course": "CS423 HW04 Automation",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:53:41.421Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:53:41.421Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:53:41.421Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/summary.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-c-admin-orders.spec.ts",
+      "file": "feature-c-admin-orders.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature C — FR-18 Admin orders (spec oracle) @hw04-feature-c",
+          "file": "feature-c-admin-orders.spec.ts",
+          "line": 45,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C-AUTO-01 [C-DT-01] Admin GET all orders + user_name + sort DESC",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 718,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:42.087Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-40d17--orders-user-name-sort-DESC-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-db61940a8a74cff3cc1b",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-02 [C-DT-02] UI bảng đơn hàng đủ cột",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4467,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:43.267Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-be89f--02-UI-bảng-đơn-hàng-đủ-cột-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-c76915ab1836f79f03c1",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-03 [C-DT-03] GET admin/orders thiếu token → 401",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 694,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:47.754Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-a41b8-in-orders-thiếu-token-→-401-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-449c45f11c1f2c3316e9",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-04 [C-DT-04] Spec: user token không được GET admin/orders",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 635,
+                      "error": {
+                        "message": "Error: Spec: user token must not access GET /api/admin/orders (BUG-C-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: Spec: user token must not access GET /api/admin/orders (BUG-C-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:97:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 97
+                        },
+                        "snippet": "   95 |             res.status(),\n   96 |             'Spec: user token must not access GET /api/admin/orders (BUG-C-01)',\n>  97 |           ).toBe(row.expected?.httpStatus ?? 403);\n      |             ^\n   98 |           break;\n   99 |         }\n  100 |         case 'api_transition': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 97
+                          },
+                          "message": "Error: Spec: user token must not access GET /api/admin/orders (BUG-C-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n   95 |             res.status(),\n   96 |             'Spec: user token must not access GET /api/admin/orders (BUG-C-01)',\n>  97 |           ).toBe(row.expected?.httpStatus ?? 403);\n      |             ^\n   98 |           break;\n   99 |         }\n  100 |         case 'api_transition': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:97:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:48.466Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-6b85b-không-được-GET-admin-orders-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-6b85b-không-được-GET-admin-orders-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-6b85b-không-được-GET-admin-orders-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 97
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-336e76059fb889304b76",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-05 [C-DT-05] pending → confirmed",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 626,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:49.728Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-d6c71-C-DT-05-pending-→-confirmed-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-1188a12bf881fef81065",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-06 [C-DT-06] pending → canceled",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:50.674Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-336ec--C-DT-06-pending-→-canceled-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-6d487897dc48718a35c8",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-07 [C-DT-07] confirmed → shipping",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 518,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:51.230Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-85c31--DT-07-confirmed-→-shipping-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-7d5d2e0151fdb45dafe8",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-08 [C-DT-08] confirmed → canceled",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 645,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:51.766Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fc69b--DT-08-confirmed-→-canceled-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-4181047df3f8d4d9a79c",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-09 [C-DT-09] shipping → delivered",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 616,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:52.431Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-132ef--DT-09-shipping-→-delivered-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-d1e47856f41a70c368a8",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-10 [C-DT-10] Spec: pending → shipping bị 400",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 676,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:53.066Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-7cb8a-c-pending-→-shipping-bị-400-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-e558a9ec7c09f460746e",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-11 [C-DT-11] Spec: delivered → canceled bị 400",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 627,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:53.761Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-7f859-delivered-→-canceled-bị-400-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-5a47792535872158f3fe",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-12 [C-DT-12] Spec: canceled → delivered bị 400",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 655,
+                      "error": {
+                        "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 118
+                        },
+                        "snippet": "  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 118
+                          },
+                          "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:54.407Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-db756-canceled-→-delivered-bị-400-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-db756-canceled-→-delivered-bị-400-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-db756-canceled-→-delivered-bị-400-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 118
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-03b301d460a1ce144421",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-13 [C-DT-13] Order không tồn tại → 404",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 605,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:55.711Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-a3a15-3-Order-không-tồn-tại-→-404-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-1de7f9ed0ef7ddac0bb5",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-14 [C-DT-14] Trạng thái đích returned → 400",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 584,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:56.674Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-a3616-ng-thái-đích-returned-→-400-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-8b14713de2d552e13508",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-15 [C-DT-15] Spec: địa chỉ HTML không thực thi script",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6579,
+                      "error": {
+                        "message": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:158:86",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 86,
+                          "line": 158
+                        },
+                        "snippet": "  156 |           await expect(rowEl).toBeVisible({ timeout: 10_000 });\n  157 |           await page.waitForTimeout(1500);\n> 158 |           expect(dialogSeen, 'Spec: XSS address must not execute script (BUG-C-03)').toBe(false);\n      |                                                                                      ^\n  159 |           break;\n  160 |         }\n  161 |         case 'ui_empty_address_fallback': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 86,
+                            "line": 158
+                          },
+                          "message": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  156 |           await expect(rowEl).toBeVisible({ timeout: 10_000 });\n  157 |           await page.waitForTimeout(1500);\n> 158 |           expect(dialogSeen, 'Spec: XSS address must not execute script (BUG-C-03)').toBe(false);\n      |                                                                                      ^\n  159 |           break;\n  160 |         }\n  161 |         case 'ui_empty_address_fallback': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:158:86"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:57.275Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-41887--HTML-không-thực-thi-script-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-41887--HTML-không-thực-thi-script-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-41887--HTML-không-thực-thi-script-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 86,
+                        "line": 158
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-08ec0107020ad146eb61",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-16 [C-DT-16] Spec: delivered/canceled không có nút chuyển trạng thái",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4557,
+                      "error": {
+                        "message": "Error: Spec: canceled must not show deliver action (BUG-C-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: Spec: canceled must not show deliver action (BUG-C-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:178:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 178
+                        },
+                        "snippet": "  176 |             await canceledRow.getByRole('button', { name: 'Đánh dấu Đã giao' }).count(),\n  177 |             'Spec: canceled must not show deliver action (BUG-C-02)',\n> 178 |           ).toBe(0);\n      |             ^\n  179 |           break;\n  180 |         }\n  181 |         case 'ui_admin_login_required': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 178
+                          },
+                          "message": "Error: Spec: canceled must not show deliver action (BUG-C-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n  176 |             await canceledRow.getByRole('button', { name: 'Đánh dấu Đã giao' }).count(),\n  177 |             'Spec: canceled must not show deliver action (BUG-C-02)',\n> 178 |           ).toBe(0);\n      |             ^\n  179 |           break;\n  180 |         }\n  181 |         case 'ui_admin_login_required': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:178:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:04.563Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fa8b4-ng-có-nút-chuyển-trạng-thái-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fa8b4-ng-có-nút-chuyển-trạng-thái-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fa8b4-ng-có-nút-chuyển-trạng-thái-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 178
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-4af20988c5f23fa284fc",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-17 [C-BVA-01] BVA: bảng admin không crash khi nhiều đơn",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4186,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:10.162Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-013d5-n-không-crash-khi-nhiều-đơn-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-042ece6a883223f336be",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-18 [C-BVA-02] BVA: ít nhất một dòng đơn",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3524,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:14.728Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-06644-02-BVA-ít-nhất-một-dòng-đơn-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-894c23328b190d2e4279",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-19 [C-BVA-03] BVA: nhiều đơn sort id DESC",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15449,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:18.272Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-8027f--BVA-nhiều-đơn-sort-id-DESC-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-0fb9e56450fddae078d5",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-20 [C-BVA-04] BVA: pending→confirmed→shipping→delivered",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 823,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:33.744Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-e020c-onfirmed→shipping→delivered-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-08c74002fb7238b5f4a5",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-21 [C-BVA-05] BVA: skip step pending→shipping",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 646,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:34.589Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-5c7a1--skip-step-pending→shipping-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-35c7037127774833a018",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-22 [C-BVA-06] BVA: canceled→delivered bị 400",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 780,
+                      "error": {
+                        "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 118
+                        },
+                        "snippet": "  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 118
+                          },
+                          "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:35.253Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-84e68-A-canceled→delivered-bị-400-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-84e68-A-canceled→delivered-bị-400-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-84e68-A-canceled→delivered-bị-400-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 118
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-e000a910f41e07665ebb",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-23 [C-BVA-07] BVA: địa chỉ rỗng hiển thị fallback",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3929,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:36.629Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-5de63--chỉ-rỗng-hiển-thị-fallback-webkit\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-410f0ee9d38d640b37a2",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-24 [C-BVA-08] BVA: địa chỉ HTML escape an toàn",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5319,
+                      "error": {
+                        "message": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:158:86",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 86,
+                          "line": 158
+                        },
+                        "snippet": "  156 |           await expect(rowEl).toBeVisible({ timeout: 10_000 });\n  157 |           await page.waitForTimeout(1500);\n> 158 |           expect(dialogSeen, 'Spec: XSS address must not execute script (BUG-C-03)').toBe(false);\n      |                                                                                      ^\n  159 |           break;\n  160 |         }\n  161 |         case 'ui_empty_address_fallback': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 86,
+                            "line": 158
+                          },
+                          "message": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  156 |           await expect(rowEl).toBeVisible({ timeout: 10_000 });\n  157 |           await page.waitForTimeout(1500);\n> 158 |           expect(dialogSeen, 'Spec: XSS address must not execute script (BUG-C-03)').toBe(false);\n      |                                                                                      ^\n  159 |           break;\n  160 |         }\n  161 |         case 'ui_empty_address_fallback': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:158:86"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:54:40.953Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-338f6-địa-chỉ-HTML-escape-an-toàn-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-338f6-địa-chỉ-HTML-escape-an-toàn-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-338f6-địa-chỉ-HTML-escape-an-toàn-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 86,
+                        "line": 158
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-954ee32226c2de510ed0",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-17T11:53:41.426Z",
+    "duration": 64933.10399999999,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

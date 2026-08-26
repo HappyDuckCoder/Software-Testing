@@ -1,0 +1,50 @@
+# HW04 submission root — 23127173_HW04_AI_Automation_095
+# Dùng khi git init tại thư mục nộp hoặc tạo zip
+
+# === BẮT BUỘC LOẠI (không commit / không zip) ===
+**/.env
+**/.env.local
+!**/.env.example
+**/node_modules/
+
+# Playwright ephemeral
+automation/test-results/
+automation/playwright-report/
+automation/blob-report/
+automation/playwright/.cache/
+automation/reports/html/
+automation/reports/summary.json
+automation/reports/runs/**/*.webm
+automation/reports/runs/**/*.png
+
+# === GIỮ LẠI cho chấm bài ===
+# evidence/html-reports/**/index.html   ← 9 HTML reports
+# evidence/html-reports/**/data/*.md    ← log text (không video)
+# evidence/execution-summary.json
+# automation/data/, tests/, helpers/
+
+# Playwright đính kèm trong HTML report — quá nặng cho git (~227 webm)
+evidence/html-reports/**/*.webm
+evidence/html-reports/**/*.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Zip output (tạo local, không đưa vào repo)
+23127173_HW04_AI_Automation_095.zip
+
+# Archive local — artefact dư đã move (optional, không bắt buộc nộp)
+_archive/
+
+# Video local lớn — link YouTube ghi trong agent-skills/demo-videos/
+evidence/demo-video/*.mp4
+evidence/demo-video/*.webm
+evidence/demo-video/*.mkv
+!evidence/demo-video/.gitkeep
+
+# PDF build tạm (giữ doc/pdf/main-report.pdf sau khi export)
+doc/pdf/*.tmp

@@ -1,0 +1,1287 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-b-order-history.spec.ts",
+      "--project=firefox"
+    ],
+    "configFile": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\playwright.config.ts",
+    "rootDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127173",
+      "Run at": "2026-08-17T11:41:50.454Z",
+      "Course": "CS423 HW04 Automation",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:41:50.454Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:41:50.454Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:41:50.454Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/summary.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-b-order-history.spec.ts",
+      "file": "feature-b-order-history.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature B — FR-11 Order history (spec oracle) @hw04-feature-b",
+          "file": "feature-b-order-history.spec.ts",
+          "line": 28,
+          "column": 6,
+          "specs": [
+            {
+              "title": "B-AUTO-01 [B-DT-01] Empty order history message",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 43,
+                        "column": 16
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 2618,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:51.003Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 43,
+                            "column": 16
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-6b548-Empty-order-history-message-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-8514d736a72a4f05507d",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-02 [B-DT-02] Hiển thị ít nhất một đơn trên UI",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4040,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:54.473Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-920e2-thị-ít-nhất-một-đơn-trên-UI-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-b004b861af5c2bd2a829",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-03 [B-DT-03] API/UI sort id DESC",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 735,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:58.534Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-c314a-B-DT-03-API-UI-sort-id-DESC-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-0fa5ce75de8459bb70eb",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-04 [B-DT-04] my-orders chỉ trả đơn của user hiện tại",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 950,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:59.287Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-8b79d-ỉ-trả-đơn-của-user-hiện-tại-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-d92fccccbb786614da4d",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-05 [B-DT-05] GET my-orders thiếu token → 401",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 720,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:00.252Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-e45ec-my-orders-thiếu-token-→-401-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-7a59b9be2db553abcd63",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-06 [B-DT-06] GET my-orders token sai → 403",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 676,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:00.989Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-824b7-T-my-orders-token-sai-→-403-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-1880e476c429de80b208",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-07 [B-DT-07] Nhãn pending + nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3612,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:01.682Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-eae8a--DT-07-Nhãn-pending-nút-hủy-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-38f9756d835c4b63a05c",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-08 [B-DT-08] Nhãn confirmed + nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3634,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:05.310Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-603f3-T-08-Nhãn-confirmed-nút-hủy-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-9d3e3fedb1f93131e05b",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-09 [B-DT-09] Spec FR-10: shipping không có nút hủy",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4043,
+                      "error": {
+                        "message": "Error: Spec FR-10: shipping không được hủy\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: Spec FR-10: shipping không được hủy\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:112:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 13,
+                          "line": 112
+                        },
+                        "snippet": "  110 |             await shipRow.getByRole('button', { name: 'Hủy đơn' }).count(),\n  111 |             'Spec FR-10: shipping không được hủy',\n> 112 |           ).toBe(0);\n      |             ^\n  113 |           break;\n  114 |         }\n  115 |         case 'ui_status_no_cancel': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 13,
+                            "line": 112
+                          },
+                          "message": "Error: Spec FR-10: shipping không được hủy\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n  110 |             await shipRow.getByRole('button', { name: 'Hủy đơn' }).count(),\n  111 |             'Spec FR-10: shipping không được hủy',\n> 112 |           ).toBe(0);\n      |             ^\n  113 |           break;\n  114 |         }\n  115 |         case 'ui_status_no_cancel': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:112:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:08.960Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-7df19-0-shipping-không-có-nút-hủy-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-7df19-0-shipping-không-có-nút-hủy-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-7df19-0-shipping-không-có-nút-hủy-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 13,
+                        "line": 112
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-7d5ea620a7be74e25b1f",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-10 [B-DT-10] Delivered không có nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5564,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:14.113Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-8b1f3--Delivered-không-có-nút-hủy-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-e82f561280b9d4917b17",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-11 [B-DT-11] Canceled không có nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3926,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:20.473Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-f511f-1-Canceled-không-có-nút-hủy-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-c6935789296c2164b047",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-12 [B-DT-12] Định dạng tổng tiền có ₫",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6700,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:24.415Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-98f88-12-Định-dạng-tổng-tiền-có-₫-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-ef04853a7352088ef904",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-13 [B-DT-13] Spec: không xem chi tiết đơn user khác",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 694,
+                      "error": {
+                        "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m",
+                        "stack": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 17,
+                          "line": 141
+                        },
+                        "snippet": "  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 17,
+                            "line": 141
+                          },
+                          "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n\n  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:31.133Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddef7--xem-chi-tiết-đơn-user-khác-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddef7--xem-chi-tiết-đơn-user-khác-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddef7--xem-chi-tiết-đơn-user-khác-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 17,
+                        "line": 141
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-aedd92b9be86e3b3d630",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-14 [B-DT-14] Hủy pending → canceled trên UI",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 34820,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:42:32.890Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-1a668--pending-→-canceled-trên-UI-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-3001d73c109299300eff",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-15 [B-BVA-01] BVA: empty boundary copy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 43,
+                        "column": 16
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 738,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:08.558Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 43,
+                            "column": 16
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-3101b--01-BVA-empty-boundary-copy-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-b56e9f09c7bcddcbce93",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-16 [B-BVA-02] BVA: một đơn hiển thị một dòng (khi API=1)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "BVA: cần đúng 1 đơn trên API — skip khi DB có nhiều đơn",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 156,
+                        "column": 16
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 688,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:09.318Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "BVA: cần đúng 1 đơn trên API — skip khi DB có nhiều đơn",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 156,
+                            "column": 16
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-441cc-iển-thị-một-dòng-khi-API-1--firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-a3f2b6c71f5583e8df1f",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-17 [B-BVA-03] BVA: nhiều đơn hiển thị + sort",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3256,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:10.028Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddf76-BVA-nhiều-đơn-hiển-thị-sort-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-45a2d4f1292c1450cfae",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-18 [B-BVA-04] BVA: order id không tồn tại → 404",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 634,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:13.302Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-df52d-rder-id-không-tồn-tại-→-404-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-1b83cb355a8424719775",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-19 [B-BVA-05] BVA: chi tiết đơn admin từ token user",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 646,
+                      "error": {
+                        "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m",
+                        "stack": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 17,
+                          "line": 141
+                        },
+                        "snippet": "  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 17,
+                            "line": 141
+                          },
+                          "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n\n  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:13.957Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-0c282-iết-đơn-admin-từ-token-user-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-0c282-iết-đơn-admin-từ-token-user-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-0c282-iết-đơn-admin-từ-token-user-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 17,
+                        "line": 141
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-167a2ff46c605de76324",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-20 [B-BVA-06] BVA: total_amount=0 hiển thị an toàn",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5773,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:15.672Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-3697f-l-amount-0-hiển-thị-an-toàn-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-2c2302512b61e1808adc",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-21 [B-BVA-07] BVA: đủ 5 trạng thái; shipping không hủy (spec)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4238,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:176:82",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 82,
+                          "line": 176
+                        },
+                        "snippet": "  174 |           }\n  175 |           const shipRow = profileOrderRows(page).filter({ hasText: `#${fx.shippingId}` });\n> 176 |           expect(await shipRow.getByRole('button', { name: 'Hủy đơn' }).count()).toBe(0);\n      |                                                                                  ^\n  177 |           break;\n  178 |         }\n  179 |         default:"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 82,
+                            "line": 176
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n  174 |           }\n  175 |           const shipRow = profileOrderRows(page).filter({ hasText: `#${fx.shippingId}` });\n> 176 |           expect(await shipRow.getByRole('button', { name: 'Hủy đơn' }).count()).toBe(0);\n      |                                                                                  ^\n  177 |           break;\n  178 |         }\n  179 |         default:\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:176:82"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:22.291Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-29e6e-ái-shipping-không-hủy-spec--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-29e6e-ái-shipping-không-hủy-spec--firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-29e6e-ái-shipping-không-hủy-spec--firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 82,
+                        "line": 176
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-43eccc4916f50fd4bce4",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-22 [B-BVA-08] BVA: status lạ không crash UI",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Không thể seed status returned qua API công khai",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 35,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 2264,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:43:27.542Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Không thể seed status returned qua API công khai",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 35,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-d4086-VA-status-lạ-không-crash-UI-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-89dfbfde7613fc0cb833",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-17T11:41:50.458Z",
+    "duration": 100772.92599999999,
+    "expected": 14,
+    "skipped": 4,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

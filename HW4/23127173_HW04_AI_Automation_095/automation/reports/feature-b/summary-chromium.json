@@ -1,0 +1,1287 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-b-order-history.spec.ts",
+      "--project=chromium"
+    ],
+    "configFile": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\playwright.config.ts",
+    "rootDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127173",
+      "Run at": "2026-08-17T11:41:11.356Z",
+      "Course": "CS423 HW04 Automation",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:41:11.356Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:41:11.356Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:41:11.356Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/summary.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-b-order-history.spec.ts",
+      "file": "feature-b-order-history.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature B — FR-11 Order history (spec oracle) @hw04-feature-b",
+          "file": "feature-b-order-history.spec.ts",
+          "line": 28,
+          "column": 6,
+          "specs": [
+            {
+              "title": "B-AUTO-01 [B-DT-01] Empty order history message",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 43,
+                        "column": 16
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 612,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:11.885Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 43,
+                            "column": 16
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-6b548-Empty-order-history-message-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-12a7100abb96121c858e",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-02 [B-DT-02] Hiển thị ít nhất một đơn trên UI",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2252,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:13.051Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-920e2-thị-ít-nhất-một-đơn-trên-UI-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-5dccf8d4e79e9f94c631",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-03 [B-DT-03] API/UI sort id DESC",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 400,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:15.321Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-c314a-B-DT-03-API-UI-sort-id-DESC-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-909e180b2ede7a0610f6",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-04 [B-DT-04] my-orders chỉ trả đơn của user hiện tại",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:15.738Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-8b79d-ỉ-trả-đơn-của-user-hiện-tại-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-7a8e908637a5185d5d6e",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-05 [B-DT-05] GET my-orders thiếu token → 401",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 362,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:16.321Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-e45ec-my-orders-thiếu-token-→-401-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-346375d4cc0eb6c2dd6d",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-06 [B-DT-06] GET my-orders token sai → 403",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 302,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:16.703Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-824b7-T-my-orders-token-sai-→-403-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-40f22a1033227ef0d35a",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-07 [B-DT-07] Nhãn pending + nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:17.023Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-eae8a--DT-07-Nhãn-pending-nút-hủy-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-9e0cf37f2ab25a92f8b5",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-08 [B-DT-08] Nhãn confirmed + nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2232,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:19.257Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-603f3-T-08-Nhãn-confirmed-nút-hủy-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-b85e3db2a2c3ed68ed84",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-09 [B-DT-09] Spec FR-10: shipping không có nút hủy",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2293,
+                      "error": {
+                        "message": "Error: Spec FR-10: shipping không được hủy\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: Spec FR-10: shipping không được hủy\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:112:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 13,
+                          "line": 112
+                        },
+                        "snippet": "  110 |             await shipRow.getByRole('button', { name: 'Hủy đơn' }).count(),\n  111 |             'Spec FR-10: shipping không được hủy',\n> 112 |           ).toBe(0);\n      |             ^\n  113 |           break;\n  114 |         }\n  115 |         case 'ui_status_no_cancel': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 13,
+                            "line": 112
+                          },
+                          "message": "Error: Spec FR-10: shipping không được hủy\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n  110 |             await shipRow.getByRole('button', { name: 'Hủy đơn' }).count(),\n  111 |             'Spec FR-10: shipping không được hủy',\n> 112 |           ).toBe(0);\n      |             ^\n  113 |           break;\n  114 |         }\n  115 |         case 'ui_status_no_cancel': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:112:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:21.506Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-7df19-0-shipping-không-có-nút-hủy-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-7df19-0-shipping-không-có-nút-hủy-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-7df19-0-shipping-không-có-nút-hủy-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 13,
+                        "line": 112
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-c6ba2e69b2a9b32a26ff",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-10 [B-DT-10] Delivered không có nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2329,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:24.631Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-8b1f3--Delivered-không-có-nút-hủy-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-a5336eb5d6d113248292",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-11 [B-DT-11] Canceled không có nút hủy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2207,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:27.443Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-f511f-1-Canceled-không-có-nút-hủy-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-9846bb937a7f1b1e2bf7",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-12 [B-DT-12] Định dạng tổng tiền có ₫",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2219,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:29.670Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-98f88-12-Định-dạng-tổng-tiền-có-₫-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-e9e4dcc248912d31e851",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-13 [B-DT-13] Spec: không xem chi tiết đơn user khác",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 355,
+                      "error": {
+                        "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m",
+                        "stack": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 17,
+                          "line": 141
+                        },
+                        "snippet": "  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 17,
+                            "line": 141
+                          },
+                          "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n\n  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:31.909Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddef7--xem-chi-tiết-đơn-user-khác-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddef7--xem-chi-tiết-đơn-user-khác-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddef7--xem-chi-tiết-đơn-user-khác-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 17,
+                        "line": 141
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-2c7898ced77791f115f1",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-14 [B-DT-14] Hủy pending → canceled trên UI",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2690,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:33.147Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-1a668--pending-→-canceled-trên-UI-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-a399fe92eb7f54167065",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-15 [B-BVA-01] BVA: empty boundary copy",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 43,
+                        "column": 16
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:36.397Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Spec empty: user đã có đơn — cần DB/user sạch",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 43,
+                            "column": 16
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-3101b--01-BVA-empty-boundary-copy-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-ba8e6b2ccf61a8fcaf4d",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-16 [B-BVA-02] BVA: một đơn hiển thị một dòng (khi API=1)",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "BVA: cần đúng 1 đơn trên API — skip khi DB có nhiều đơn",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 156,
+                        "column": 16
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 318,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:36.751Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "BVA: cần đúng 1 đơn trên API — skip khi DB có nhiều đơn",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 156,
+                            "column": 16
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-441cc-iển-thị-một-dòng-khi-API-1--chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-7094742ea464c3f1a797",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-17 [B-BVA-03] BVA: nhiều đơn hiển thị + sort",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2221,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:37.085Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-ddf76-BVA-nhiều-đơn-hiển-thị-sort-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-ef39a4db35b117c20f04",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-18 [B-BVA-04] BVA: order id không tồn tại → 404",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 326,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:39.325Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-df52d-rder-id-không-tồn-tại-→-404-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-b699bb9bc91cf3148470",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-19 [B-BVA-05] BVA: chi tiết đơn admin từ token user",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 388,
+                      "error": {
+                        "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m",
+                        "stack": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 17,
+                          "line": 141
+                        },
+                        "snippet": "  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 17,
+                            "line": 141
+                          },
+                          "message": "Error: Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m200\u001b[39m\n\n  139 |             res.status(),\n  140 |             'Spec: GET /api/orders/:id must deny cross-user access (BUG-B-01)',\n> 141 |           ).not.toBe(200);\n      |                 ^\n  142 |           break;\n  143 |         }\n  144 |         case 'ui_cancel_pending': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:141:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:39.668Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-0c282-iết-đơn-admin-từ-token-user-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-0c282-iết-đơn-admin-từ-token-user-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-0c282-iết-đơn-admin-từ-token-user-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 17,
+                        "line": 141
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-51e3c3f842be5489b995",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-20 [B-BVA-06] BVA: total_amount=0 hiển thị an toàn",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2338,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:41.038Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-3697f-l-amount-0-hiển-thị-an-toàn-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-c9e3d89d93b45c6cb598",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-21 [B-BVA-07] BVA: đủ 5 trạng thái; shipping không hủy (spec)",
+              "ok": false,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2329,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:176:82",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                          "column": 82,
+                          "line": 176
+                        },
+                        "snippet": "  174 |           }\n  175 |           const shipRow = profileOrderRows(page).filter({ hasText: `#${fx.shippingId}` });\n> 176 |           expect(await shipRow.getByRole('button', { name: 'Hủy đơn' }).count()).toBe(0);\n      |                                                                                  ^\n  177 |           break;\n  178 |         }\n  179 |         default:"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "column": 82,
+                            "line": 176
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n  174 |           }\n  175 |           const shipRow = profileOrderRows(page).filter({ hasText: `#${fx.shippingId}` });\n> 176 |           expect(await shipRow.getByRole('button', { name: 'Hủy đơn' }).count()).toBe(0);\n      |                                                                                  ^\n  177 |           break;\n  178 |         }\n  179 |         default:\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts:176:82"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:43.944Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-29e6e-ái-shipping-không-hủy-spec--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-29e6e-ái-shipping-không-hủy-spec--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-29e6e-ái-shipping-không-hủy-spec--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "column": 82,
+                        "line": 176
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-1e48b249b8e30d76b93d",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            },
+            {
+              "title": "B-AUTO-22 [B-BVA-08] BVA: status lạ không crash UI",
+              "ok": true,
+              "tags": [
+                "hw04-feature-b"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Không thể seed status returned qua API công khai",
+                      "location": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                        "line": 35,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:41:47.139Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Không thể seed status returned qua API công khai",
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-b-order-history.spec.ts",
+                            "line": 35,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-b-order-history-Fe-d4086-VA-status-lạ-không-crash-UI-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c55cad286ba9f516f12a-f5c93ba1277a3523fe26",
+              "file": "feature-b-order-history.spec.ts",
+              "line": 34,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-17T11:41:11.360Z",
+    "duration": 37162.401,
+    "expected": 14,
+    "skipped": 4,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

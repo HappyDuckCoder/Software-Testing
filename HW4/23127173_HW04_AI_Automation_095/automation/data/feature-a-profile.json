@@ -1,0 +1,297 @@
+{
+  "featureId": "FR-04",
+  "featureName": "Quản lý hồ sơ cá nhân",
+  "oracle": "README/spec FR-04 (HW2 manual baseline)",
+  "tests": [
+    {
+      "id": "A-AUTO-01",
+      "hw2Ref": "A-DT-01",
+      "type": "positive",
+      "description": "Xem hồ sơ sau đăng nhập",
+      "action": "ui_view_profile",
+      "assertionPattern": "url"
+    },
+    {
+      "id": "A-AUTO-02",
+      "hw2Ref": "A-DT-02",
+      "type": "positive",
+      "description": "GET /api/users/me với token hợp lệ",
+      "action": "api_get_me",
+      "assertionPattern": "count"
+    },
+    {
+      "id": "A-AUTO-03",
+      "hw2Ref": "A-DT-03",
+      "type": "negative",
+      "description": "GET /api/users/me thiếu token → 401",
+      "action": "api_get_me_no_auth",
+      "expected": { "httpStatus": 401 },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-04",
+      "hw2Ref": "A-DT-04",
+      "type": "negative",
+      "description": "GET /api/users/me token sai → 403",
+      "action": "api_get_me_bad_token",
+      "expected": { "httpStatus": 403 },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-05",
+      "hw2Ref": "A-DT-05",
+      "type": "positive",
+      "description": "PUT hồ sơ hợp lệ qua API (phone spec 0912345678)",
+      "action": "api_put_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-06",
+      "hw2Ref": "A-DT-06",
+      "type": "positive",
+      "description": "UI cập nhật phone 0912345678 (spec: 10 số, bắt đầu 0)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-07",
+      "hw2Ref": "A-DT-07",
+      "type": "negative",
+      "description": "UI tên rỗng bị HTML5 required chặn",
+      "action": "ui_empty_name",
+      "expected": { "outcome": "blocked" },
+      "assertionPattern": "attribute"
+    },
+    {
+      "id": "A-AUTO-08",
+      "hw2Ref": "A-DT-08",
+      "type": "negative",
+      "description": "UI từ chối phone không bắt đầu bằng 0 (912345678)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-09",
+      "hw2Ref": "A-DT-09",
+      "type": "negative",
+      "description": "Từ chối phone 9 chữ số (091234567) theo spec 10-11",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "091234567", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-10",
+      "hw2Ref": "A-DT-10",
+      "type": "negative",
+      "description": "Từ chối phone 12 chữ số (091234567890)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "091234567890", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-11",
+      "hw2Ref": "A-DT-11",
+      "type": "negative",
+      "description": "Từ chối phone chứa chữ (09AB345678)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "09AB345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-12",
+      "hw2Ref": "A-DT-12",
+      "type": "positive",
+      "description": "Chấp nhận phone 11 số bắt đầu 0 (09123456789)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "09123456789", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-13",
+      "hw2Ref": "A-DT-13",
+      "type": "positive",
+      "description": "Cập nhật địa chỉ giao hàng qua API",
+      "action": "api_put_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu, District 5" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-14",
+      "hw2Ref": "A-DT-14",
+      "type": "edge",
+      "description": "Địa chỉ giao hàng rỗng vẫn được chấp nhận (spec)",
+      "action": "api_put_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-15",
+      "hw2Ref": "A-DT-15",
+      "type": "positive",
+      "description": "Email disabled trên UI, không sửa được",
+      "action": "ui_email_disabled",
+      "assertionPattern": "attribute"
+    },
+    {
+      "id": "A-AUTO-16",
+      "hw2Ref": "A-DT-16",
+      "type": "positive",
+      "description": "API bỏ qua email ngoài dự kiến trong body",
+      "action": "api_put_ignore_email",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu", "email": "attacker@eshop.com" },
+      "expected": { "outcome": "success", "emailUnchanged": true },
+      "assertionPattern": "attribute"
+    },
+    {
+      "id": "A-AUTO-17",
+      "hw2Ref": "A-DT-17",
+      "type": "negative",
+      "description": "API không cho user tự đổi role thành admin (spec)",
+      "action": "api_put_role_blocked",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu", "role": "admin" },
+      "expected": { "outcome": "role_unchanged", "role": "user" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-18",
+      "hw2Ref": "A-DT-18",
+      "type": "positive",
+      "description": "Cập nhật test user không ảnh hưởng admin",
+      "action": "api_user_isolation",
+      "input": { "name": "HW04 Isolation Test", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "adminUnchanged": true },
+      "assertionPattern": "count"
+    },
+    {
+      "id": "A-AUTO-19",
+      "hw2Ref": "A-BVA-01",
+      "type": "boundary",
+      "description": "BVA: từ chối phone 9 chữ số (091234567)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "091234567", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-20",
+      "hw2Ref": "A-BVA-02",
+      "type": "boundary",
+      "description": "BVA: chấp nhận phone biên dưới 10 số (0912345678)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-21",
+      "hw2Ref": "A-BVA-03",
+      "type": "boundary",
+      "description": "BVA: chấp nhận phone biên trên 11 số (09123456789)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "09123456789", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-22",
+      "hw2Ref": "A-BVA-04",
+      "type": "boundary",
+      "description": "BVA: từ chối phone 12 chữ số (091234567890)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "091234567890", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-23",
+      "hw2Ref": "A-BVA-05",
+      "type": "boundary",
+      "description": "BVA: chấp nhận phone bắt đầu 0 (0987654321)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0987654321", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-24",
+      "hw2Ref": "A-BVA-06",
+      "type": "boundary",
+      "description": "BVA: từ chối phone bắt đầu 1 (1987654321)",
+      "action": "ui_update_profile",
+      "input": { "name": "Nguyen Van A", "phone": "1987654321", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "reject" },
+      "assertionPattern": "state"
+    },
+    {
+      "id": "A-AUTO-25",
+      "hw2Ref": "A-BVA-07",
+      "type": "boundary",
+      "description": "BVA: tên rỗng bị HTML5 chặn",
+      "action": "ui_empty_name",
+      "expected": { "outcome": "blocked" },
+      "assertionPattern": "attribute"
+    },
+    {
+      "id": "A-AUTO-26",
+      "hw2Ref": "A-BVA-08",
+      "type": "boundary",
+      "description": "BVA: chấp nhận tên 1 ký tự (A)",
+      "action": "api_put_profile",
+      "input": { "name": "A", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-27",
+      "hw2Ref": "A-BVA-09",
+      "type": "boundary",
+      "description": "BVA: chấp nhận tên 2 ký tự (An)",
+      "action": "api_put_profile",
+      "input": { "name": "An", "phone": "0912345678", "shipping_address": "227 Nguyen Van Cu" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-28",
+      "hw2Ref": "A-BVA-10",
+      "type": "boundary",
+      "description": "BVA: địa chỉ rỗng qua API",
+      "action": "api_put_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-29",
+      "hw2Ref": "A-BVA-11",
+      "type": "boundary",
+      "description": "BVA: địa chỉ 1 ký tự (A)",
+      "action": "api_put_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "A" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    },
+    {
+      "id": "A-AUTO-30",
+      "hw2Ref": "A-BVA-12",
+      "type": "boundary",
+      "description": "BVA: địa chỉ dài 500 ký tự",
+      "action": "api_put_profile",
+      "input": { "name": "Nguyen Van A", "phone": "0912345678", "shipping_address": "__LONG_500__" },
+      "expected": { "outcome": "success", "verifyPersist": true },
+      "assertionPattern": "text"
+    }
+  ]
+}

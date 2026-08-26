@@ -1,0 +1,4 @@
+interface:
+  display_name: Playwright Automation Builder
+  short_description: HW04 EShop data-driven Playwright workflow
+  default_prompt: Use playwright-automation-builder skill to convert HW2 test cases into JSON-driven Playwright specs with multi-browser HTML reports.

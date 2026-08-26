@@ -1,0 +1,1422 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-c-admin-orders.spec.ts",
+      "--project=firefox"
+    ],
+    "configFile": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\playwright.config.ts",
+    "rootDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127173",
+      "Run at": "2026-08-17T11:45:11.583Z",
+      "Course": "CS423 HW04 Automation",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:45:11.583Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:45:11.583Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127173",
+          "Run at": "2026-08-17T11:45:11.583Z",
+          "Course": "CS423 HW04 Automation",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/code/Project/TestingProject/Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/summary.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-c-admin-orders.spec.ts",
+      "file": "feature-c-admin-orders.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature C — FR-18 Admin orders (spec oracle) @hw04-feature-c",
+          "file": "feature-c-admin-orders.spec.ts",
+          "line": 45,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C-AUTO-01 [C-DT-01] Admin GET all orders + user_name + sort DESC",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2478,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:12.159Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-40d17--orders-user-name-sort-DESC-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-f8ae7545fbea7a43398d",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-02 [C-DT-02] UI bảng đơn hàng đủ cột",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6000,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:15.474Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-be89f--02-UI-bảng-đơn-hàng-đủ-cột-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-66dfa355766c34ae0389",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-03 [C-DT-03] GET admin/orders thiếu token → 401",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 707,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:21.497Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-a41b8-in-orders-thiếu-token-→-401-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-be03393a7002f4f6a258",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-04 [C-DT-04] Spec: user token không được GET admin/orders",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 650,
+                      "error": {
+                        "message": "Error: Spec: user token must not access GET /api/admin/orders (BUG-C-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: Spec: user token must not access GET /api/admin/orders (BUG-C-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:97:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 97
+                        },
+                        "snippet": "   95 |             res.status(),\n   96 |             'Spec: user token must not access GET /api/admin/orders (BUG-C-01)',\n>  97 |           ).toBe(row.expected?.httpStatus ?? 403);\n      |             ^\n   98 |           break;\n   99 |         }\n  100 |         case 'api_transition': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 97
+                          },
+                          "message": "Error: Spec: user token must not access GET /api/admin/orders (BUG-C-01)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n   95 |             res.status(),\n   96 |             'Spec: user token must not access GET /api/admin/orders (BUG-C-01)',\n>  97 |           ).toBe(row.expected?.httpStatus ?? 403);\n      |             ^\n   98 |           break;\n   99 |         }\n  100 |         case 'api_transition': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:97:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:22.222Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-6b85b-không-được-GET-admin-orders-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-6b85b-không-được-GET-admin-orders-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-6b85b-không-được-GET-admin-orders-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 97
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-3777bd49fd4efb052322",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-05 [C-DT-05] pending → confirmed",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2615,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:23.915Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-d6c71-C-DT-05-pending-→-confirmed-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-baa63c31e7cf5c5fe16d",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-06 [C-DT-06] pending → canceled",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 798,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:27.364Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-336ec--C-DT-06-pending-→-canceled-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-bb59776afde79d2fe4f8",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-07 [C-DT-07] confirmed → shipping",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1071,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:28.183Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-85c31--DT-07-confirmed-→-shipping-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-c3e45a50bee3aaeef6b6",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-08 [C-DT-08] confirmed → canceled",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1470,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:29.281Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fc69b--DT-08-confirmed-→-canceled-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-b79ebe548517dc6d78c1",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-09 [C-DT-09] shipping → delivered",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 715,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:30.777Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-132ef--DT-09-shipping-→-delivered-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-635a4bae3ecc621b94f6",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-10 [C-DT-10] Spec: pending → shipping bị 400",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 643,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:31.507Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-7cb8a-c-pending-→-shipping-bị-400-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-777a3e704119e4cc5450",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-11 [C-DT-11] Spec: delivered → canceled bị 400",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 591,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:32.182Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-7f859-delivered-→-canceled-bị-400-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-366fd44e4b2410cfddad",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-12 [C-DT-12] Spec: canceled → delivered bị 400",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 60425,
+                      "error": {
+                        "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 118
+                        },
+                        "snippet": "  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 118
+                          },
+                          "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13"
+                        },
+                        {
+                          "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 60000ms.\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n<launching> C:\\Users\\Duck\\AppData\\Local\\Temp\\cursor-sandbox-cache\\27dd2d89f07517829d407c5a803d0a88\\playwright\\firefox-1538\\firefox\\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\\Users\\Duck\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-IA625f -juggler-pipe -silent\n<launched> pid=9712\n[pid=9712][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement\n[pid=9712][out] \n[pid=9712][out] Juggler listening to the pipe\n[pid=9712][out] console.error: \"Warning: unrecognized command line flag\" \"-foreground\"\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][out] console.error: \"Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/\" (new SyntaxError(\"XMLHttpRequest.open: '/' is not a valid URL.\", (void 0), 126))\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][out] console.error: services.settings: \n[pid=9712][out]   Message: EmptyDatabaseError: \"main/nimbus-desktop-experiments\" has not been synced yet\n[pid=9712][out]   Stack:\n[pid=9712][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5\n[pid=9712][out] list@resource://services-settings/Database.sys.mjs:96:13\n[pid=9712][out] \n[pid=9712][out] console.warn: services.settings: #fetchAttachment: Forcing fallbackToDump to false due to Utils.LOAD_DUMPS being false\n[pid=9712][out] console.error: (new NotFoundError(\"Could not find fa0fc42c-d91d-fca7-34eb-806ff46062dc in cache or dump\", \"resource://services-settings/Attachments.sys.mjs\", 48))\n[pid=9712][out] console.warn: \"Unable to find the attachment for\" \"fa0fc42c-d91d-fca7-34eb-806ff46062dc\"\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=9712] <gracefully close start>\n[pid=9712] <kill>\n[pid=9712] <will force kill>\n[pid=9712] taskkill stdout: SUCCESS: The process with PID 8672 (child process of PID 1384) has been terminated.\r\nSUCCESS: The process with PID 35196 (child process of PID 1384) has been terminated.\r\nSUCCESS: The process with PID 33032 (child process of PID 1384) has been terminated.\r\nSUCCESS: The process with PID 32948 (child process of PID 1384) has been terminated.\r\nSUCCESS: The process with PID 22700 (child process of PID 1384) has been terminated.\r\nSUCCESS: The process with PID 22500 (child process of PID 1384) has been terminated.\r\nSUCCESS: The process with PID 1384 (child process of PID 9712) has been terminated.\r\nSUCCESS: The process with PID 9712 (child process of PID 32084) has been terminated.\r\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:45:32.794Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-db756-canceled-→-delivered-bị-400-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-db756-canceled-→-delivered-bị-400-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 118
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-2796e80dd7539274a452",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-13 [C-DT-13] Order không tồn tại → 404",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2606,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:47:09.384Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-a3a15-3-Order-không-tồn-tại-→-404-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-fedaaa807dc0cf02793f",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-14 [C-DT-14] Trạng thái đích returned → 400",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 779,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:47:12.830Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-a3616-ng-thái-đích-returned-→-400-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-11077a4e970b4d623837",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-15 [C-DT-15] Spec: địa chỉ HTML không thực thi script",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60192,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts",
+                            "column": 53,
+                            "line": 43
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Đơn hàng', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <li class=\"cursor-pointer hover:text-blue-300 \">Đơn hàng</li>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n   at ..\\helpers\\auth.ts:43\n\n  41 |     await loginAsAdmin(page);\n  42 |   }\n> 43 |   await page.getByText('Đơn hàng', { exact: true }).click();\n     |                                                     ^\n  44 |   await page.getByRole('heading', { name: 'Quản lý Đơn hàng' }).waitFor({ state: 'visible' });\n  45 | }\n  46 |\n    at openAdminOrders (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts:43:53)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:154:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:47:13.629Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-41887--HTML-không-thực-thi-script-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-41887--HTML-không-thực-thi-script-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-41887--HTML-không-thực-thi-script-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-9b59913cf0b6081ac6a4",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-16 [C-DT-16] Spec: delivered/canceled không có nút chuyển trạng thái",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60226,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts",
+                            "column": 53,
+                            "line": 43
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Đơn hàng', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <li class=\"cursor-pointer hover:text-blue-300 \">Đơn hàng</li>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n   at ..\\helpers\\auth.ts:43\n\n  41 |     await loginAsAdmin(page);\n  42 |   }\n> 43 |   await page.getByText('Đơn hàng', { exact: true }).click();\n     |                                                     ^\n  44 |   await page.getByRole('heading', { name: 'Quản lý Đơn hàng' }).waitFor({ state: 'visible' });\n  45 | }\n  46 |\n    at openAdminOrders (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts:43:53)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:169:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:48:14.819Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fa8b4-ng-có-nút-chuyển-trạng-thái-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fa8b4-ng-có-nút-chuyển-trạng-thái-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-fa8b4-ng-có-nút-chuyển-trạng-thái-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-eb1989804172e7b3a8c1",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-17 [C-BVA-01] BVA: bảng admin không crash khi nhiều đơn",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60450,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts",
+                            "column": 53,
+                            "line": 43
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Đơn hàng', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <li class=\"cursor-pointer hover:text-blue-300 \">Đơn hàng</li>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n   at ..\\helpers\\auth.ts:43\n\n  41 |     await loginAsAdmin(page);\n  42 |   }\n> 43 |   await page.getByText('Đơn hàng', { exact: true }).click();\n     |                                                     ^\n  44 |   await page.getByRole('heading', { name: 'Quản lý Đơn hàng' }).waitFor({ state: 'visible' });\n  45 | }\n  46 |\n    at openAdminOrders (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts:43:53)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:68:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:49:16.897Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-013d5-n-không-crash-khi-nhiều-đơn-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-013d5-n-không-crash-khi-nhiều-đơn-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-013d5-n-không-crash-khi-nhiều-đơn-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-26b67cf32c220b039d36",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-18 [C-BVA-02] BVA: ít nhất một dòng đơn",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60260,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts",
+                            "column": 53,
+                            "line": 43
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Đơn hàng', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <li class=\"cursor-pointer hover:text-blue-300 \">Đơn hàng</li>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n   at ..\\helpers\\auth.ts:43\n\n  41 |     await loginAsAdmin(page);\n  42 |   }\n> 43 |   await page.getByText('Đơn hàng', { exact: true }).click();\n     |                                                     ^\n  44 |   await page.getByRole('heading', { name: 'Quản lý Đơn hàng' }).waitFor({ state: 'visible' });\n  45 | }\n  46 |\n    at openAdminOrders (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts:43:53)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:76:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:50:19.100Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-06644-02-BVA-ít-nhất-một-dòng-đơn-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-06644-02-BVA-ít-nhất-một-dòng-đơn-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-06644-02-BVA-ít-nhất-một-dòng-đơn-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-dbcb535a5edfdf6714a4",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-19 [C-BVA-03] BVA: nhiều đơn sort id DESC",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 55289,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:51:21.079Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-8027f--BVA-nhiều-đơn-sort-id-DESC-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-9a762de1627268f62e8f",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-20 [C-BVA-04] BVA: pending→confirmed→shipping→delivered",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 726,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:52:17.237Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-e020c-onfirmed→shipping→delivered-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-13c8dcdf68f276a0a2e5",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-21 [C-BVA-05] BVA: skip step pending→shipping",
+              "ok": true,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 627,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:52:17.980Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-5c7a1--skip-step-pending→shipping-firefox\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-5ee27937ca04ad673fb2",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-22 [C-BVA-06] BVA: canceled→delivered bị 400",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 598,
+                      "error": {
+                        "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 13,
+                          "line": 118
+                        },
+                        "snippet": "  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 13,
+                            "line": 118
+                          },
+                          "message": "Error: Spec: invalid transition canceled→delivered must return 400\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  116 |             res.status(),\n  117 |             `Spec: invalid transition ${from}→${to} must return 400`,\n> 118 |           ).toBe(row.expected?.httpStatus ?? 400);\n      |             ^\n  119 |           break;\n  120 |         }\n  121 |         case 'api_admin_status_404': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:118:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:52:18.623Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-84e68-A-canceled→delivered-bị-400-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-84e68-A-canceled→delivered-bị-400-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-84e68-A-canceled→delivered-bị-400-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 13,
+                        "line": 118
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-6a0f4c2ffd4374a2744e",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-23 [C-BVA-07] BVA: địa chỉ rỗng hiển thị fallback",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60739,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts",
+                            "column": 53,
+                            "line": 28
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Login' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"w-full bg-blue-600 text-white p-2 rounded\">Login</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n\n   at ..\\helpers\\auth.ts:28\n\n  26 |   await page.getByPlaceholder('Email').fill(email);\n  27 |   await page.getByPlaceholder('Password').fill(password);\n> 28 |   await page.getByRole('button', { name: 'Login' }).click();\n     |                                                     ^\n  29 |   await page.getByText('EShop Admin').waitFor({ state: 'visible', timeout: 15_000 });\n  30 | }\n  31 |\n    at loginAsAdmin (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts:28:53)\n    at openAdminOrders (D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\helpers\\auth.ts:41:5)\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:163:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:52:20.333Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-5de63--chỉ-rỗng-hiển-thị-fallback-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-5de63--chỉ-rỗng-hiển-thị-fallback-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-5de63--chỉ-rỗng-hiển-thị-fallback-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-49f9eb5475cf7d85c6b6",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            },
+            {
+              "title": "C-AUTO-24 [C-BVA-08] BVA: địa chỉ HTML escape an toàn",
+              "ok": false,
+              "tags": [
+                "hw04-feature-c"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13316,
+                      "error": {
+                        "message": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:158:86",
+                        "location": {
+                          "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                          "column": 86,
+                          "line": 158
+                        },
+                        "snippet": "  156 |           await expect(rowEl).toBeVisible({ timeout: 10_000 });\n  157 |           await page.waitForTimeout(1500);\n> 158 |           expect(dialogSeen, 'Spec: XSS address must not execute script (BUG-C-03)').toBe(false);\n      |                                                                                      ^\n  159 |           break;\n  160 |         }\n  161 |         case 'ui_empty_address_fallback': {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                            "column": 86,
+                            "line": 158
+                          },
+                          "message": "Error: Spec: XSS address must not execute script (BUG-C-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  156 |           await expect(rowEl).toBeVisible({ timeout: 10_000 });\n  157 |           await page.waitForTimeout(1500);\n> 158 |           expect(dialogSeen, 'Spec: XSS address must not execute script (BUG-C-03)').toBe(false);\n      |                                                                                      ^\n  159 |           break;\n  160 |         }\n  161 |         case 'ui_empty_address_fallback': {\n    at D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts:158:86"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-17T11:53:23.507Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-338f6-địa-chỉ-HTML-escape-an-toàn-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-338f6-địa-chỉ-HTML-escape-an-toàn-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\test-results\\feature-c-admin-orders-Fea-338f6-địa-chỉ-HTML-escape-an-toàn-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\code\\Project\\TestingProject\\Lab\\HW4\\23127173_HW04_AI_Automation_095\\automation\\tests\\feature-c-admin-orders.spec.ts",
+                        "column": 86,
+                        "line": 158
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9cabb6f45f50904e155c-b406bad5b699734268c3",
+              "file": "feature-c-admin-orders.spec.ts",
+              "line": 51,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-17T11:45:11.586Z",
+    "duration": 507025.728,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}
