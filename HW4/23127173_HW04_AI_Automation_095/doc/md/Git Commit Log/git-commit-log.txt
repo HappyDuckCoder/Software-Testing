@@ -3,11 +3,30 @@
 Repository: https://github.com/HappyDuckCoder/Software-Testing  
 Automation path: `HW4/23127173_HW04_AI_Automation_095/automation/`  
 Tree link: https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation  
+Commits (tests): https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests  
 Exported: 2026-08-26 (sau AI-033 — đã push main)
 
-## Oneline log (automation/)
+## Oneline log — chỉ `automation/tests/*.spec.ts` (§12)
 
 ```text
+f247b35 style(hw04): fix formatting in feature-c admin orders spec
+731c685 test(hw04): clarify auth assertion messages in feature-a spec
+c101ab8 refactor(hw04): extract delivery chain constant in feature-c spec
+d0c9c99 docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec
+896503c docs(hw04): add HW2 mapping header to feature-b order history spec
+78dc11f refactor(hw04): centralize default user email in feature-a spec
+6c83afe docs(hw04): add HW2 mapping header to feature-a profile spec
+e822f8d feat(hw04): enhance automation scripts and update documentation
+758cd2f feat(hw04): add initial project structure and documentation for HW04 AI Automation
+```
+
+> **Đề §12:** ✅ **9/8** commit thay đổi `.spec.ts` trên GitHub main (26/08/2026).
+
+## Oneline log (automation/ — tất cả commit)
+
+```text
+c095eac docs(hw04): sync AI audit AI-033, commit log 8/8, and PDF exports
+f247b35 style(hw04): fix formatting in feature-c admin orders spec
 731c685 test(hw04): clarify auth assertion messages in feature-a spec
 c101ab8 refactor(hw04): extract delivery chain constant in feature-c spec
 d0c9c99 docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec
@@ -21,44 +40,22 @@ e822f8d feat(hw04): enhance automation scripts and update documentation
 758cd2f feat(hw04): add initial project structure and documentation for HW04 AI Automation
 ```
 
-## Oneline log — chỉ `automation/tests/*.spec.ts` (§12)
-
-```text
-731c685 test(hw04): clarify auth assertion messages in feature-a spec
-c101ab8 refactor(hw04): extract delivery chain constant in feature-c spec
-d0c9c99 docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec
-896503c docs(hw04): add HW2 mapping header to feature-b order history spec
-78dc11f refactor(hw04): centralize default user email in feature-a spec
-6c83afe docs(hw04): add HW2 mapping header to feature-a profile spec
-e822f8d feat(hw04): enhance automation scripts and update documentation
-758cd2f feat(hw04): add initial project structure and documentation for HW04 AI Automation
-```
-
-> **Đề §12:** ✅ **8/8** commit thay đổi `.spec.ts`.  
-> **Push:** ✅ `origin/main` — `HappyDuckCoder/Software-Testing` (26/08/2026).
-
-## Chi tiết 6 commit spec mới (26/08/2026)
+## Chi tiết 7 commit spec mới (26/08/2026)
 
 | # | SHA | Message | File `.spec.ts` |
 | ---: | --- | --- | --- |
-| 3 | 6c83afe | docs(hw04): add HW2 mapping header to feature-a profile spec | feature-a-profile.spec.ts |
-| 4 | 78dc11f | refactor(hw04): centralize default user email in feature-a spec | feature-a-profile.spec.ts |
-| 5 | 896503c | docs(hw04): add HW2 mapping header to feature-b order history spec | feature-b-order-history.spec.ts (+ ORDER_STATUS_LABELS) |
-| 6 | d0c9c99 | docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec | feature-c-admin-orders.spec.ts |
-| 7 | c101ab8 | refactor(hw04): extract delivery chain constant in feature-c spec | feature-c-admin-orders.spec.ts |
-| 8 | 731c685 | test(hw04): clarify auth assertion messages in feature-a spec | feature-a-profile.spec.ts |
+| 3 | 6c83afe | docs: HW2 header feature-a | feature-a-profile.spec.ts |
+| 4 | 78dc11f | refactor: DEFAULT_USER_EMAIL | feature-a-profile.spec.ts |
+| 5 | 896503c | docs: header + ORDER_STATUS_LABELS | feature-b-order-history.spec.ts |
+| 6 | d0c9c99 | docs: header + bug oracle | feature-c-admin-orders.spec.ts |
+| 7 | c101ab8 | refactor: DELIVERY_CHAIN | feature-c-admin-orders.spec.ts |
+| 8 | 731c685 | test: auth assertion messages | feature-a-profile.spec.ts |
+| 9 | f247b35 | style: fix formatting | feature-c-admin-orders.spec.ts |
 
-## Chi tiết commit ban đầu (17/08/2026)
+## Lệnh tái xuất log
 
-| # | SHA | Message | Ghi chú |
-| ---: | --- | --- | --- |
-| 1 | 758cd2f | feat(hw04): add initial project structure… | Khởi tạo 3 spec + data + helpers |
-| 2 | e822f8d | feat(hw04): enhance automation scripts… | Cập nhật 3 spec, 76 TC spec-oracle |
-
-## Lệnh push & tái xuất log
-
-```powershell
-cd d:\code\Project\Software-Testing
-git push origin main
+```bash
+git clone https://github.com/HappyDuckCoder/Software-Testing.git
+cd Software-Testing
 git log --oneline -- HW4/23127173_HW04_AI_Automation_095/automation/tests/
 ```

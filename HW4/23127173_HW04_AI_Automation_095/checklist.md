@@ -78,7 +78,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 - [x] GitHub issue tracker công khai: `HappyDuckCoder/Software-Testing` (#8–#14).
 - [x] Repository automation public: link trong README + main report.
 - [x] `doc/md/Git Commit Log/git-commit-log.txt` cập nhật commit thật (5 commit automation).
-- [x] ≥ 8 commit **chỉ** `.spec.ts` — **8/8** trên GitHub main.
+- [x] ≥ 8 commit **chỉ** `.spec.ts` — **9/8** trên GitHub main.
 
 ## 7. Nộp bài
 

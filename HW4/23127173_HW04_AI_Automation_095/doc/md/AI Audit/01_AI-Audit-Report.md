@@ -38,7 +38,7 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-030 | ~21:42 26/08/2026 (UTC+7) | Cursor (Composer) | «6 commit .spec.ts là sao» | Giải thích rubric §12: cần ≥8 commit GitHub **chỉ** thay đổi `.spec.ts`; hiện 2/8; gợi ý tách 6 commit spec riêng (không sửa code trong phiên). | VALID — DOCUMENT REVIEW | Không tạo commit giả; SV tự quyết định có tách thêm trên GitHub. |
 | AI-031 | ~21:45 26/08/2026 (UTC+7) | Cursor (Composer) | «từ cập nhật ai audit trước» | Đồng bộ toàn bộ AI Audit phiên 26/08 (AI-020…AI-030): Mandatory Disclosure, prompt log, checklist, `hw4-consistency-coverage-review.md`; sửa `main-report.md` §6 (AI-001…AI-031); re-export `AI-Audit-Appendix.pdf`. | VALID — DOCUMENT REVIEW | PDF audit + main-report §6 đồng bộ; video/zip vẫn do SV. |
 | AI-032 | ~21:50 26/08/2026 (UTC+7) | Cursor (Composer) | «ok bổ sung vậy đi, cập nhật audit» | **6 commit `.spec.ts` mới** trên clone `Software-Testing` (6c83afe…731c685): header HW2 map, `DEFAULT_USER_EMAIL`, `ORDER_STATUS_LABELS`, `DELIVERY_CHAIN`, assertion messages; đồng bộ 3 spec local; cập nhật `git-commit-log.txt` → **8/8 §12**. | VALID — CODE + DOCUMENT | Mỗi commit chỉ stage 1 file `.spec.ts`; không đổi logic test/oracle. |
-| AI-033 | ~22:00 26/08/2026 (UTC+7) | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push **6 commit spec** + commit format feature-c + commit đồng bộ audit/PDF lên `HappyDuckCoder/Software-Testing` **main**; cập nhật git-commit-log (đã push). | VALID — EXTERNAL ACTION | SV xác nhận trên GitHub commits page path `HW4/.../automation/tests/`. |
+| AI-033 | ~22:00 26/08/2026 (UTC+7) | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push **8 commit** lên `HappyDuckCoder/Software-Testing` **main** (6c83afe…c095eac): 6 commit spec §12 + `f247b35` format feature-c + `c095eac` sync audit/PDF; **9 commit `.spec.ts`** trên GitHub. | VALID — EXTERNAL ACTION | Link: [commits/tests](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests). |
 
 ## Quy tắc cập nhật
 
@@ -78,5 +78,5 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | GitHub Issues | ✅ #8–#14 + 7 screenshot |
 | Repository automation | ✅ [GitHub tree](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log | ✅ `git-commit-log.txt` — 5 commit automation |
-| Commit `.spec.ts` (§12) | ✅ **8/8** trên GitHub main |
+| Commit `.spec.ts` (§12) | ✅ **9/8** trên GitHub main |
 | Video / Zip | ⏳ Chưa hoàn tất | SV tự quay, đóng gói và nộp |

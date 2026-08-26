@@ -196,7 +196,7 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
 | GitHub issue tracker | ✅ [Issues #8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) |
 | Repository automation | ✅ [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
-| Commit `.spec.ts` (§12) | ✅ **8/8** trên GitHub main |
+| Commit `.spec.ts` (§12) | ✅ **9/8** trên GitHub main |
 | Main report PDF | `doc/pdf/main-report.pdf` — ✅ export 26/08/2026 |
 | AI Audit PDF | `doc/pdf/AI-Audit-Appendix.pdf` — ✅ export 26/08/2026 |
 | Zip nộp | `23127173_HW04_AI_Automation_095.zip` — chưa tạo |

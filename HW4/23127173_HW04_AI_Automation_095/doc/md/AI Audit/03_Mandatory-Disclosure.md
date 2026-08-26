@@ -29,6 +29,6 @@ AI không được dùng để làm giả:
 | GitHub Issues #8–#14 | ✅ |
 | Repo automation public | ✅ [link](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log file | ✅ |
-| Commit `.spec.ts` ≥8 (§12) | ✅ 8/8 trên GitHub main |
+| Commit `.spec.ts` ≥8 (§12) | ✅ 9/8 trên GitHub main |
 | Video demo | ⏳ |
 | Zip nộp | ⏳ |
