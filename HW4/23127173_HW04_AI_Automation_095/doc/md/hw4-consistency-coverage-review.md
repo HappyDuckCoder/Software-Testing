@@ -15,12 +15,12 @@ Reviewer: Sinh viên 23127173 (rà soát sau 9 browser runs)
 | HTML `Run by: 23127173` | ✅ | `playwright.config.ts` + 9 reports |
 | AI gap / human review | ✅ | 3 feature + locator/oracle fixes |
 | AI Critique 200–300 từ | ✅ | `doc/md/AI Audit/02_AI-Critique.md` |
-| AI Audit AI-001…AI-035 | ✅ | |
+| AI Audit AI-001…AI-036 | ✅ | |
 | Liên kết GitHub / video | ✅ / ⏳ | `agent-skills/demo-videos/link-video.md` |
 | Bug report Markdown | ✅ | Issues [#8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) + 7 screenshot |
 | GitHub automation repo | ✅ | [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log file | ✅ | `doc/md/Git Commit Log/git-commit-log.txt` |
-| Video ≥ 5 phút | ⏳ | Chưa quay |
+| Video ≥ 5 phút | ⏳ | Outline: `agent-skills/demo-videos/video-outline.md` |
 | Git ≥ 8 commit .spec.ts | ✅ **9/8** | [commits/tests](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests) |
 | PDF export | ✅ | main-report + AI-Audit-Appendix |
 
