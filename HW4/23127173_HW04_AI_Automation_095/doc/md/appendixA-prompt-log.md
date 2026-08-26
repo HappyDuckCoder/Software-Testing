@@ -30,3 +30,5 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~20:29 | Cursor (Composer) | «xóa thư mục data trong automation các pool — cập nhật ai-audit» | Xóa 9× html-reports/data; AI-024 |
 | 2026-08-26 ~20:40 | Cursor (Composer) | «bổ sung main report, cập nhật ai audit» | Viết lại main-report.md §1–9; AI-025 |
 | 2026-08-26 ~20:43 | Cursor (Composer) | «dùng markdown pdf export» | Pandoc PDF main + AI Audit; AI-026 |
+| 2026-08-26 ~20:55 | Codex (GPT-5) | «github issue và chụp hình minh chứng lại và bỏ vào thư mục cần thiết; cập nhật AI-audit» | 7 GitHub Issues #8–#14; 7 screenshot; AI-027 |
+| 2026-08-26 ~21:00 | Codex (GPT-5) | «cập nhật md doc, main report và các tài liệu liên quan; cập nhật ai audit» | Đồng bộ README, checklist, main report, disclosure, consistency review; AI-028 |

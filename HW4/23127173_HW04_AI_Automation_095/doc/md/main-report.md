@@ -42,7 +42,8 @@ Pool D (mobile) **không** dùng theo đề HW04.
 | SUT | EShop — <https://github.com/ttbhanh/eshop-sut> |
 | Web / Admin / API | `:5180` / `:5174` / `:3000` |
 | Playwright project | `automation/` |
-| Repository GitHub (automation) | `[ĐIỀN URL REPO SAU KHI PUSH — public]` |
+| GitHub issue tracker | <https://github.com/HappyDuckCoder/Software-Testing/issues> (issues #8–#14) |
+| Repository GitHub (automation) | Chưa xác nhận đã push source `automation/` và lịch sử commit theo yêu cầu |
 | Nguồn HW2 | `Lab/HW2/23127173_HW02_AI_DomainTesting_095/` |
 
 # 2. Phương pháp (AI-first)
@@ -140,15 +141,15 @@ Metadata HTML: `"Run by": "23127173"` trong `playwright.config.ts` → hiển th
 
 | Bug ID | Feature | Severity | Mô tả ngắn | GitHub Issue |
 | --- | --- | --- | --- | --- |
-| BUG-A-01 | FR-04 | Major | Phone regex UI ≠ spec | `[CHƯA TẠO]` |
-| BUG-A-02 | FR-04 | Critical | API cho user đổi role | `[CHƯA TẠO]` |
-| BUG-B-01 | FR-11 | Critical | GET `/api/orders/:id` lộ đơn user khác | `[CHƯA TẠO]` |
-| BUG-B-02 | FR-11 | Major | Nút hủy trên shipping/canceled | `[CHƯA TẠO]` |
-| BUG-C-01 | FR-18 | Critical | User token truy cập admin API | `[CHƯA TẠO]` |
-| BUG-C-02 | FR-18 | Major | State machine canceled→delivered | `[CHƯA TẠO]` |
-| BUG-C-03 | FR-18 | Critical | XSS địa chỉ admin UI | `[CHƯA TẠO]` |
+| BUG-A-01 | FR-04 | Major | Phone regex UI ≠ spec | [#8](https://github.com/HappyDuckCoder/Software-Testing/issues/8) |
+| BUG-A-02 | FR-04 | Critical | API cho user đổi role | [#9](https://github.com/HappyDuckCoder/Software-Testing/issues/9) |
+| BUG-B-01 | FR-11 | Critical | GET `/api/orders/:id` lộ đơn user khác | [#10](https://github.com/HappyDuckCoder/Software-Testing/issues/10) |
+| BUG-B-02 | FR-11 | Major | Nút hủy trên shipping/canceled | [#11](https://github.com/HappyDuckCoder/Software-Testing/issues/11) |
+| BUG-C-01 | FR-18 | Critical | User token truy cập admin API | [#12](https://github.com/HappyDuckCoder/Software-Testing/issues/12) |
+| BUG-C-02 | FR-18 | Major | State machine canceled→delivered | [#13](https://github.com/HappyDuckCoder/Software-Testing/issues/13) |
+| BUG-C-03 | FR-18 | Critical | XSS địa chỉ admin UI | [#14](https://github.com/HappyDuckCoder/Software-Testing/issues/14) |
 
-Screenshot automation: `requirement/feature-*/bug-report/screenshots/`. Chi tiết steps/impact: tham chiếu bug report HW2 cùng ID.
+Screenshot automation và ảnh GitHub issue: `requirement/feature-*/bug-report/screenshots/`. Chi tiết steps/impact: tham chiếu bug report HW2 cùng ID.
 
 ## 3.7 Test không tự động hóa / skip
 
@@ -180,7 +181,7 @@ Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 b
 
 | Tài liệu | Path | Trạng thái |
 | --- | --- | --- |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-025 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-028 |
 | AI Critique (200–300 từ) | `doc/md/AI Audit/02_AI-Critique.md` | ✅ |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | ✅ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (video pending) |
@@ -192,7 +193,8 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
 
 | Mục | Trạng thái |
 | --- | --- |
-| GitHub public repo | `[CHƯA PUSH]` |
+| GitHub issue tracker | ✅ [Issues #8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) |
+| GitHub source repo / commit history | `[CHƯA XÁC NHẬN]` source `automation/` + ≥ 8 commit `.spec.ts` |
 | ≥ 8 commit `.spec.ts` | `[CHƯA CÓ]` |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` — placeholder |
 | Main report PDF | `doc/pdf/main-report.pdf` — ✅ export 26/08/2026 |
@@ -209,7 +211,7 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
 | 2 | Task 2 — Video | 15 | 14 | Chưa quay — mục tiêu sau nộp |
 | 3 | Agent Skills | 10 | 9 | Skill ✅; video skill pending |
 | | **Tổng (mục tiêu)** | **100** | **95** | |
-| | **Tổng (hiện tại)** | **100** | **~78** | Thiếu video, GitHub, PDF, Issues |
+| | **Tổng (hiện tại)** | **100** | **~82** | Còn video và bằng chứng push/commit source automation |
 
 # 9. Phụ lục — đường dẫn nhanh
 

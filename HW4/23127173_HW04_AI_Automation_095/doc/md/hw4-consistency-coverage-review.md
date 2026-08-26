@@ -15,8 +15,8 @@ Reviewer: Sinh viên 23127173 (rà soát sau 9 browser runs)
 | HTML `Run by: 23127173` | ✅ | `playwright.config.ts` + 9 reports |
 | AI gap / human review | ✅ | 3 feature + locator/oracle fixes |
 | AI Critique 200–300 từ | ✅ | `doc/md/AI Audit/02_AI-Critique.md` |
-| AI Audit AI-001…AI-022 | ✅ | |
-| Bug report Markdown | ✅ | 3 feature — GitHub Issue ngoài phạm vi hiện tại |
+| AI Audit AI-001…AI-028 | ✅ | Bao gồm tạo issue và đồng bộ tài liệu |
+| Bug report Markdown | ✅ | 3 feature; GitHub Issues [#8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) + 7 screenshot |
 | Video ≥ 5 phút | ⏳ | Chưa quay |
 | Git ≥ 8 commit .spec.ts | ⏳ | Chưa push GitHub |
 | PDF export | ⏳ | `doc/pdf/main-report.pdf` |
@@ -42,7 +42,7 @@ Reviewer: Sinh viên 23127173 (rà soát sau 9 browser runs)
 
 1. Quay video demo YouTube ≥ 5 phút.
 2. Push `automation/` GitHub (≥ 8 commit `.spec.ts`) + git-commit-log.
-3. Export `doc/pdf/main-report.pdf` (+ AI Audit PDF tùy chọn).
+3. Tái export PDF sau khi chốt tài liệu (nếu nộp bản PDF mới nhất).
 4. Tạo zip `23127173_HW04_AI_Automation_095.zip`.
 
 ## 5. Tự đánh giá

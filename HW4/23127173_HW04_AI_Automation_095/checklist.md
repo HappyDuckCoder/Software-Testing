@@ -27,7 +27,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 - [x] 3 HTML reports: `evidence/html-reports/feature-a-*`.
 - [x] AI gap analysis hoàn chỉnh.
 - [x] Bug report Markdown.
-- [ ] GitHub Issue (ngoài phạm vi hiện tại).
+- [x] GitHub Issues #8–#9 + screenshot xác nhận trong `bug-report/screenshots/`.
 
 ### 2.3 Feature B — FR-11 Order history
 
@@ -35,7 +35,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 - [x] 3 HTML reports: `evidence/html-reports/feature-b-*`.
 - [x] AI gap analysis hoàn chỉnh.
 - [x] Bug report Markdown.
-- [ ] GitHub Issue (ngoài phạm vi hiện tại).
+- [x] GitHub Issues #10–#11 + screenshot xác nhận trong `bug-report/screenshots/`.
 
 ### 2.4 Feature C — FR-18 Admin orders
 
@@ -43,7 +43,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 - [x] 3 HTML reports: `evidence/html-reports/feature-c-*`.
 - [x] AI gap analysis hoàn chỉnh.
 - [x] Bug report Markdown.
-- [ ] GitHub Issue (ngoài phạm vi hiện tại).
+- [x] GitHub Issues #12–#14 + screenshot xác nhận trong `bug-report/screenshots/`.
 
 ### 2.5 HTML report bắt buộc
 
@@ -67,7 +67,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report AI-001…AI-026.
+- [x] AI Audit Report AI-001…AI-028.
 - [x] Prompt log cập nhật phiên 17/08/2026 và 26/08/2026.
 - [x] AI Critique 200–300 từ hoàn chỉnh (`doc/md/AI Audit/02_AI-Critique.md`).
 - [x] Mandatory Disclosure cập nhật execution thật (26/08/2026).
@@ -75,7 +75,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 6. Git & repository
 
-- [ ] Repository GitHub công khai (link trong README + main report).
+- [x] GitHub issue tracker công khai: `HappyDuckCoder/Software-Testing` (#8–#14, link trong README + main report).
 - [ ] ≥ 8 commit chỉ thay đổi file `.spec.ts` / test script.
 - [ ] `doc/md/Git Commit Log/git-commit-log.txt` cập nhật commit thật.
 
@@ -95,5 +95,5 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 | Script chưa chạy E2E | ✅ 9 browser runs — `npm run test:full-matrix` |
 | HTML report thiếu StudentID | ✅ Kiểm tra metadata trong 9 reports |
 | Video không chứng minh tác giả | ⏳ Chưa quay |
-| Commit log toàn README | ⏳ Chưa push GitHub |
+| Commit log toàn README | ⏳ Chưa xác nhận push source `automation/` / commit log thật |
 | Fail ghi “all pass” | ✅ Fail = bug HW2 theo spec oracle |
