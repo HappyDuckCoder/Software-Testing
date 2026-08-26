@@ -1,3 +1,7 @@
+/**
+ * HW04 Feature A — FR-04 Profile (spec oracle, 30 TC).
+ * Data-driven from `automation/data/feature-a-profile.json` (HW2 A-DT / A-BVA).
+ */
 import { test, expect } from '@playwright/test';
 import { loadTestData } from '../helpers/loadTestData';
 import { loginAsUser, openProfile } from '../helpers/auth';
