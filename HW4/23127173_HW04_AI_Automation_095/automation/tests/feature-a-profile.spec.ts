@@ -86,13 +86,13 @@ test.describe('Feature A — FR-04 Profile (spec oracle) @hw04-feature-a', () =>
 
         case 'api_get_me_no_auth': {
           const res = await fetchMe(request);
-          expect(res.status()).toBe(expected.httpStatus ?? 401);
+          expect(res.status(), 'Spec FR-04: GET /api/users/me requires auth').toBe(expected.httpStatus ?? 401);
           break;
         }
 
         case 'api_get_me_bad_token': {
           const res = await fetchMe(request, 'invalid.token.value');
-          expect(res.status()).toBe(expected.httpStatus ?? 403);
+          expect(res.status(), 'Spec FR-04: invalid JWT must be rejected').toBe(expected.httpStatus ?? 403);
           break;
         }
 
