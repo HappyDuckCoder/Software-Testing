@@ -1,7 +1,7 @@
 ---
 title: "Báo cáo HW04 - Automation Testing on EShop"
 author: "Trần Hải Đức — MSSV 23127173"
-date: "26/08/2026"
+date: "27/08/2026"
 lang: vi-VN
 geometry: margin=2.2cm
 fontsize: 11pt
@@ -200,21 +200,24 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026, AI-035).
 | Repository automation | ✅ [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
 | Commit `.spec.ts` (§12) | ✅ **9/8** trên GitHub main |
-| Main report PDF | `doc/pdf/main-report.pdf` — ✅ export 26/08/2026 |
+| Main report PDF | `doc/pdf/main-report.pdf` — ✅ export 27/08/2026 |
 | AI Audit PDF | `doc/pdf/AI-Audit-Appendix.pdf` — ✅ export 26/08/2026 |
 | Zip nộp | `23127173_HW04_AI_Automation_095.zip` — chưa tạo |
 
 # 8. Tự đánh giá
 
-| STT | Tiêu chí | Max | Tự đánh giá | Ghi chú |
+Review date: **27/08/2026** — mục tiêu **095/100**.
+
+| STT | Tiêu chí | Max | Tự đánh giá | Bằng chứng |
 | ---: | --- | ---: | ---: | --- |
-| 1 | Task 1 — Feature A | 25 | 24 | 30 TC, gap, bug report |
-| 1 | Task 1 — Feature B | 25 | 24 | 22 TC, skip có lý do |
-| 1 | Task 1 — Feature C | 25 | 24 | 24 TC, 6 fail bug HW2 |
-| 2 | Task 2 — Video | 15 | 14 | [Link video](https://youtu.be/sAWzvEyJ_d0) đã cung cấp |
-| 3 | Agent Skills | 10 | 9 | Skill ✅; [demo video](https://youtu.be/W2U25h0cyJM) đã cung cấp |
-| | **Tổng (mục tiêu)** | **100** | **95** | |
-| | **Tổng (hiện tại)** | **100** | **~82*** | Đã có link video; cần tự rà soát nội dung và đóng gói zip |
+| 1 | Task 1 — Feature A (FR-04) | 25 | 24 | 30 TC, 3 HTML reports, gap analysis, Issues [#8–#9](https://github.com/HappyDuckCoder/Software-Testing/issues/8) |
+| 1 | Task 1 — Feature B (FR-11) | 25 | 24 | 22 TC, 3 HTML reports, skip có lý do, Issues [#10–#11](https://github.com/HappyDuckCoder/Software-Testing/issues/10) |
+| 1 | Task 1 — Feature C (FR-18) | 25 | 24 | 24 TC, 3 HTML reports, 53 fail/timeout khớp bug HW2, Issues [#12–#14](https://github.com/HappyDuckCoder/Software-Testing/issues/12) |
+| 2 | Task 2 — Video demo ≥ 5 phút | 15 | 14 | [Task 2 YouTube](https://youtu.be/sAWzvEyJ_d0) — sinh viên tự đối chiếu checklist (`video-outline.md`) |
+| 3 | Agent Skills | 10 | 9 | [`playwright-automation-builder`](../../agent-skills/playwright-automation-builder/SKILL.md); [demo video](https://youtu.be/W2U25h0cyJM) |
+| | **Tổng** | **100** | **95** | Artifact đầy đủ; còn đóng gói zip trước nộp Moodle |
+
+**Trừ điểm tự đánh giá (conservative):** mỗi hạng mục −1 so với max vì chưa có xác nhận chấm của GV; Task 2/Skill phụ thuộc nội dung video thực tế.
 
 # 9. Phụ lục — đường dẫn nhanh
 

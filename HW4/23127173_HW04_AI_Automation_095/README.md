@@ -53,8 +53,8 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | 1 | Task 1 — Feature B (FR-11) | 25 | 24 | 22 TC, 3 HTML reports, gap analysis |
 | 1 | Task 1 — Feature C (FR-18) | 25 | 24 | 24 TC, 3 HTML reports, gap analysis |
 | 2 | Task 2 — Video demo ≥ 5 phút | 15 | 14 | [YouTube](https://youtu.be/sAWzvEyJ_d0) — nội dung cần sinh viên tự đối chiếu checklist |
-| 3 | Agent Skills | 10 | 9 | `agent-skills/playwright-automation-builder/` |
-| | **Tổng** | **100** | **95** | Đã có link video; còn đóng gói zip |
+| 3 | Agent Skills | 10 | 9 | `agent-skills/playwright-automation-builder/` + [demo video](https://youtu.be/W2U25h0cyJM) |
+| | **Tổng** | **100** | **95** | Artifact đầy đủ; còn đóng gói zip |
 
 ## 5. Cấu trúc bài nộp
 
