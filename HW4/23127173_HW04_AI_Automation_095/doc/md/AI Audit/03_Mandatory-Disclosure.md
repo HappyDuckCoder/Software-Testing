@@ -7,7 +7,7 @@
 | Cursor (Composer) | Dịch & đọc requirement | Dịch `requirement.pdf` → `requirement.md` (Lab/HW4). | Đối chiếu bản dịch với PDF gốc trên Moodle. |
 | Cursor (Composer) | Khởi tạo khung HW04 | Cấu trúc thư mục, roadmap, checklist, template báo cáo, khung Playwright, map feature HW2, Agent Skill skeleton. | Review cấu trúc, điền nội dung báo cáo và evidence thật. |
 | Cursor (Composer) | Task 1 — data & automation | 76 TC spec-oracle; **9 browser runs**; evidence; sửa locator/oracle sau review. | Review fail; chạy SUT; xác nhận bug khớp HW2. |
-| Cursor (Composer) / Codex (GPT-5) | AI Audit & tài liệu (26/08) | AI-001…AI-035: Critique, gap/bug docs, PDF, issue sync, 9 commit spec §12, push main, link hub. | Quay video; nộp zip. |
+| Cursor (Composer) / Codex (GPT-5) | AI Audit & tài liệu (26/08) | AI-001…AI-036: Critique, gap/bug docs, PDF, issue sync, 9 commit spec §12, link hub, video outline. | Quay video theo outline; nộp zip. |
 | Codex (GPT-5) + GitHub UI | GitHub Issues (26/08) | 7 issue public #8–#14; 7 PNG xác nhận; cập nhật bug report. | Xác nhận trước khi tạo issue; kiểm tra URL/screenshot. |
 
 ## Tuyên bố giới hạn
@@ -19,7 +19,7 @@ AI không được dùng để làm giả:
 - Pass/Fail, screenshot bug, hoặc số liệu test nếu chưa chạy SUT.
 - Git commit history (log export từ repo thật, không bịa SHA).
 
-**Trạng thái (26/08/2026, sau AI-035):**
+**Trạng thái (26/08/2026, sau AI-036):**
 
 | Hạng mục | Trạng thái |
 | --- | --- |
@@ -32,5 +32,5 @@ AI không được dùng để làm giả:
 | Liên kết tổng hợp | ✅ `agent-skills/demo-videos/link-video.md` |
 | Git commit log file | ✅ |
 | Commit `.spec.ts` ≥8 (§12) | ✅ 9/8 trên GitHub main |
-| Video demo | ⏳ |
+| Video demo | ⏳ | Outline: `agent-skills/demo-videos/video-outline.md` |
 | Zip nộp | ⏳ |

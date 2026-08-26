@@ -98,11 +98,11 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | HTML reports đa trình duyệt | `evidence/html-reports/` | ✅ 9 folders |
 | AI Gap Analysis | `requirement/feature-*/ai-gap-analysis/` | ✅ |
 | Bug reports (Markdown) | `requirement/feature-*/bug-report/` | ✅ (GitHub issues #8–#14 + 7 screenshot) |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-035 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-036 |
 | AI Critique | `doc/md/AI Audit/02_AI-Critique.md` | ✅ 200–300 từ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (trừ video) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
-| Video demo YouTube | `agent-skills/demo-videos/link-video.md` | `[CHƯA QUAY]` |
+| Video demo YouTube | `agent-skills/demo-videos/link-video.md` | Outline ✅ [`video-outline.md`](agent-skills/demo-videos/video-outline.md) — link pending |
 | Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | ✅ 9/8 commit `.spec.ts` — [GitHub](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests) |
 | Liên kết tổng hợp | `agent-skills/demo-videos/link-video.md` | ✅ GitHub + Issues; video pending |
 
@@ -120,6 +120,6 @@ npm run report                    # mở HTML report mới nhất
 
 ## 8. Bước còn thiếu trước khi nộp zip
 
-1. Quay video demo ≥ 5 phút → ghi link vào `agent-skills/demo-videos/link-video.md`.
+1. Quay video theo [`agent-skills/demo-videos/video-outline.md`](agent-skills/demo-videos/video-outline.md) → ghi link vào `link-video.md`.
 2. ~~Push automation + commit log lên GitHub~~ ✅ — xem [link-video.md](agent-skills/demo-videos/link-video.md).
 3. Đóng gói `23127173_HW04_AI_Automation_095.zip` (xem `scripts/pack-submission.md`).

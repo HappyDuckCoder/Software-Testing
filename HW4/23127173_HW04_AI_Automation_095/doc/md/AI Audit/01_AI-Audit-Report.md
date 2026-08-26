@@ -41,6 +41,7 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-033 | ~22:00 26/08/2026 (UTC+7) | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push **8 commit** lên `HappyDuckCoder/Software-Testing` **main** (6c83afe…c095eac): 6 commit spec §12 + `f247b35` format feature-c + `c095eac` sync audit/PDF; **9 commit `.spec.ts`** trên GitHub. | VALID — EXTERNAL ACTION | Link: [commits/tests](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests). |
 | AI-034 | ~22:10 26/08/2026 (UTC+7) | Cursor (Composer) | «bạn cập nhật link đi» | Đồng bộ liên kết GitHub (#8–#14, repo lab, automation, commit tests) vào `link-video.md`, README, main-report, skill-catalog, checklist; sửa mục stale commit log; push lab main (`7700c09`). | VALID — DOCUMENT REVIEW | Video YouTube vẫn `[CHƯA QUAY]` — SV điền sau khi quay. |
 | AI-035 | ~22:13 26/08/2026 (UTC+7) | Cursor (Composer) | «cập nhật ai audit» | Đồng bộ toàn bộ audit sau AI-032–034: Mandatory Disclosure, Privacy Checklist, prompt log (AI-032/033), consistency review; sửa bảng tóm tắt stale; re-export `AI-Audit-Appendix.pdf`. | VALID — DOCUMENT REVIEW | Trạng thái nộp: còn video + zip. |
+| AI-036 | ~22:21 26/08/2026 (UTC+7) | Cursor (Composer) | «cho tôi outline video để quay, cập nhật audit» | Soạn `agent-skills/demo-videos/video-outline.md`: kịch bản 6–7 phút (whoami, Feature A E2E, multi-browser, HTML report, fix `profileLocators`, Agent Skill workflow); link từ `link-video.md`; cập nhật audit AI-036. | VALID — DOCUMENT REVIEW | SV quay theo outline; điền link YouTube sau khi upload. |
 
 ## Quy tắc cập nhật
 
@@ -61,7 +62,7 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Mã bài tập | HW04-AI |
 | Có dùng AI | [x] Có  [ ] Không |
 
-## Tóm tắt execution thật (tính đến AI-035)
+## Tóm tắt execution thật (tính đến AI-036)
 
 | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- |
@@ -82,4 +83,4 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Repository automation | ✅ | [GitHub tree](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 | Git commit log | ✅ | `git-commit-log.txt` — [9 commit `.spec.ts`](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests) |
 | Commit `.spec.ts` (§12) | ✅ **9/8** | GitHub main — push AI-033 |
-| Video / Zip | ⏳ Chưa hoàn tất | SV tự quay, đóng gói và nộp |
+| Video / Zip | ⏳ Chưa hoàn tất | Outline quay: `agent-skills/demo-videos/video-outline.md` |

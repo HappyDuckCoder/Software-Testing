@@ -165,7 +165,7 @@ Screenshot automation và ảnh GitHub issue: `requirement/feature-*/bug-report/
 
 | Mục | Giá trị |
 | --- | --- |
-| Link YouTube (unlisted) | `[CHƯA QUAY]` — ghi tại [`agent-skills/demo-videos/link-video.md`](../../agent-skills/demo-videos/link-video.md) |
+| Link YouTube (unlisted) | `[CHƯA QUAY]` — outline: [`video-outline.md`](../../agent-skills/demo-videos/video-outline.md) |
 | Thời lượng | ≥ 5 phút, tiếng Việt |
 | Nội dung bắt buộc | E2E headed/headless; ≥ 2 browser; mở HTML report (`Run by: 23127173`); nói ≥ 1 fix sau AI review |
 | Xác thực tác giả | Face-cam hoặc terminal `whoami` + `hostname` |
@@ -184,7 +184,7 @@ Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 b
 
 | Tài liệu | Path | Trạng thái |
 | --- | --- | --- |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-035 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-036 |
 | AI Critique (200–300 từ) | `doc/md/AI Audit/02_AI-Critique.md` | ✅ |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | ✅ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (video pending) |

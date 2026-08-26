@@ -38,4 +38,4 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~21:50 | Cursor (Composer) | «ok bổ sung vậy đi, cập nhật audit» | 6 commit `.spec.ts` mới; git-commit-log 8/8; AI-032 |
 | 2026-08-26 ~22:00 | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push spec commits + audit lên lab main; AI-033 |
 | 2026-08-26 ~22:10 | Cursor (Composer) | «bạn cập nhật link đi» | Đồng bộ GitHub links; push `7700c09`; AI-034 |
-| 2026-08-26 ~22:13 | Cursor (Composer) | «cập nhật ai audit» | Đồng bộ audit AI-035; re-export AI Audit PDF |
+| 2026-08-26 ~22:21 | Cursor (Composer) | «cho tôi outline video để quay, cập nhật audit» | `video-outline.md` 6–7 phút; AI-036 |

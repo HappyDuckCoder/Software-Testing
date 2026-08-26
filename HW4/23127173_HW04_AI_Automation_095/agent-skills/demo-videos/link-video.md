@@ -26,6 +26,8 @@
 | Issue BUG-C-03 | https://github.com/HappyDuckCoder/Software-Testing/issues/14 |
 | SUT EShop | https://github.com/ttbhanh/eshop-sut |
 
+> Outline chi tiết: [`video-outline.md`](video-outline.md) (~6–7 phút, Feature A + Skill).
+
 ## Checklist quay Task 2
 
 - [ ] Terminal `whoami` và `hostname` (hoặc face-cam).
