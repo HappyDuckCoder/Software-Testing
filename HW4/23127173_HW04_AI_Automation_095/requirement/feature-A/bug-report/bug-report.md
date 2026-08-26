@@ -1,6 +1,6 @@
 # Bug Report — Feature A (FR-04)
 
-> Defect phát hiện bởi automation HW04 (oracle = spec FR-04). GitHub Issue: `[CHƯA TẠO]`.
+> Defect phát hiện bởi automation HW04 (oracle = spec FR-04). GitHub Issues: [#8 — BUG-A-01](https://github.com/HappyDuckCoder/Software-Testing/issues/8), [#9 — BUG-A-02](https://github.com/HappyDuckCoder/Software-Testing/issues/9).
 
 ## 1. Tổng quan
 
@@ -27,4 +27,4 @@ Chi tiết mô tả, steps, root cause: `Lab/HW2/23127173_HW02_AI_DomainTesting_
 
 Ảnh HW2 manual: `Lab/HW2/.../feature-A/bug-report/screenshots/` (`BUG-A-01-*.png`, `BUG-A-02-*.png`).  
 Fail automation: `requirement/feature-A/automation/html-reports/feature-a-chromium/index.html`.  
-Screenshot: `bug-report/screenshots/automation-fail-chromium-*.png`.
+Screenshot: `bug-report/screenshots/automation-fail-chromium-*.png`; GitHub issue evidence: `bug-report/screenshots/automation-issue-BUG-A-01.png`, `automation-issue-BUG-A-02.png`.

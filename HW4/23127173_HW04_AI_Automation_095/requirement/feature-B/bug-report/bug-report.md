@@ -1,6 +1,6 @@
 # Bug Report — Feature B (FR-11)
 
-> Defect phát hiện bởi automation HW04 (oracle = spec FR-11/FR-10). GitHub Issue: `[CHƯA TẠO]`.
+> Defect phát hiện bởi automation HW04 (oracle = spec FR-11/FR-10). GitHub Issues: [#10 — BUG-B-01](https://github.com/HappyDuckCoder/Software-Testing/issues/10), [#11 — BUG-B-02](https://github.com/HappyDuckCoder/Software-Testing/issues/11).
 
 ## 1. Tổng quan
 
@@ -27,4 +27,4 @@ Chi tiết: `Lab/HW2/23127173_HW02_AI_DomainTesting_095/requirement/feature-B/bu
 
 Ảnh HW2: `Lab/HW2/.../feature-B/bug-report/screenshots/` (`BUG-B-01-*.png`, `WARNING-B-01-*.png`).  
 Automation fail: `requirement/feature-B/automation/html-reports/feature-b-chromium/index.html`.  
-Screenshot: `bug-report/screenshots/automation-fail-chromium-*.png`.
+Screenshot: `bug-report/screenshots/automation-fail-chromium-*.png`; GitHub issue evidence: `bug-report/screenshots/automation-issue-BUG-B-01.png`, `automation-issue-BUG-B-02.png`.

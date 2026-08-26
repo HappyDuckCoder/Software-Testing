@@ -32,6 +32,7 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-024 | ~20:29 26/08/2026 (UTC+7) | Cursor (Composer) | «trong các thư mục automation trong các pool, xóa thư mục data — cập nhật ai-audit» | **Xóa** 9 thư mục `html-reports/*/data/` (334 file .webm/.png/.md) trong `requirement/feature-{A,B,C}/automation/`; giữ `index.html` + `summary/` + screenshot đã copy; cập nhật README automation + audit. | VALID | Giảm dung lượng; attachment đầy đủ vẫn ở `evidence/html-reports/*/data/` và `feature-C/test-results/`. |
 | AI-025 | ~20:40 26/08/2026 (UTC+7) | Cursor (Composer) | «bổ sung main report, cập nhật ai audit» | Viết lại `doc/md/main-report.md`: phương pháp AI-first, ma trận 9 runs, bug summary, cấu trúc evidence, human review, tự đánh giá thực tế vs mục tiêu; đồng bộ AI Audit tóm tắt AI-025. | VALID — DOCUMENT REVIEW | Placeholder GitHub/video giữ nguyên cho SV điền sau; không thay số liệu execution. |
 | AI-026 | ~20:43 26/08/2026 (UTC+7) | Cursor (Composer) | «dùng markdown pdf export» | Pandoc + XeLaTeX: `doc/pdf/main-report.pdf`, `doc/pdf/AI-Audit-Appendix.pdf`; cập nhật `doc/pdf/README.md`, checklist, README. | VALID | PDF sinh từ Markdown hiện có; emoji có thể thiếu glyph Times New Roman. |
+| AI-027 | ~20:55 26/08/2026 (UTC+7) | Codex (GPT-5) + GitHub UI | «github issue và chụp hình minh chứng lại và bỏ vào thư mục cần thiết; cập nhật AI-audit» | Tạo 7 public GitHub Issues: [#8](https://github.com/HappyDuckCoder/Software-Testing/issues/8) BUG-A-01, [#9](https://github.com/HappyDuckCoder/Software-Testing/issues/9) BUG-A-02, [#10](https://github.com/HappyDuckCoder/Software-Testing/issues/10) BUG-B-01, [#11](https://github.com/HappyDuckCoder/Software-Testing/issues/11) BUG-B-02, [#12](https://github.com/HappyDuckCoder/Software-Testing/issues/12) BUG-C-01, [#13](https://github.com/HappyDuckCoder/Software-Testing/issues/13) BUG-C-02, [#14](https://github.com/HappyDuckCoder/Software-Testing/issues/14) BUG-C-03; lưu 7 PNG xác nhận trang issue vào `requirement/feature-*/bug-report/screenshots/`; cập nhật 3 bug report với URL và tên ảnh. | VALID — EXTERNAL ACTION | Sinh viên đã xác nhận ngay trước khi tạo public issue; AI đối chiếu danh sách issue, số #8–#14 và ảnh chụp thật trước khi cập nhật tài liệu. |
 
 ## Quy tắc cập nhật
 
@@ -68,4 +69,5 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Main report Markdown | ✅ Hoàn thiện 26/08/2026 | `doc/md/main-report.md` — §1–9 |
 | Main report PDF | ✅ Export 26/08/2026 | `doc/pdf/main-report.pdf` |
 | AI Audit PDF | ✅ Export 26/08/2026 | `doc/pdf/AI-Audit-Appendix.pdf` |
-| Video / GitHub Issues / Zip | ⏳ Chưa hoàn tất | SV tự quay/push/nộp |
+| GitHub Issues | ✅ Tạo 26/08/2026 | #8–#14; ảnh xác nhận ở `requirement/feature-*/bug-report/screenshots/` |
+| Video / Zip | ⏳ Chưa hoàn tất | SV tự quay, đóng gói và nộp |
