@@ -20,6 +20,7 @@ import {
 } from '../helpers/profileSpec';
 
 const cases = loadTestData('feature-a-profile.json');
+const DEFAULT_USER_EMAIL = process.env.USER_EMAIL ?? 'test@eshop.com';
 
 test.describe('Feature A — FR-04 Profile (spec oracle) @hw04-feature-a', () => {
   for (const row of cases) {
@@ -44,7 +45,7 @@ test.describe('Feature A — FR-04 Profile (spec oracle) @hw04-feature-a', () =>
           await openProfile(page);
           const email = profileLocators(page).emailInput;
           await expect(email).toBeDisabled();
-          await expect(email).toHaveValue(process.env.USER_EMAIL ?? 'test@eshop.com');
+          await expect(email).toHaveValue(DEFAULT_USER_EMAIL);
           break;
         }
 
@@ -78,7 +79,7 @@ test.describe('Feature A — FR-04 Profile (spec oracle) @hw04-feature-a', () =>
           const res = await fetchMe(request, token);
           expect(res.ok()).toBeTruthy();
           const user = await res.json();
-          expect(user.email).toBe(process.env.USER_EMAIL ?? 'test@eshop.com');
+          expect(user.email).toBe(DEFAULT_USER_EMAIL);
           expect(user).toHaveProperty('id');
           break;
         }
