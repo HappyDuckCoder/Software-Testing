@@ -39,6 +39,7 @@ AI hỗ trợ dịch requirement, tạo cấu trúc thư mục, khung Playwright
 | AI-031 | ~21:45 26/08/2026 (UTC+7) | Cursor (Composer) | «từ cập nhật ai audit trước» | Đồng bộ toàn bộ AI Audit phiên 26/08 (AI-020…AI-030): Mandatory Disclosure, prompt log, checklist, `hw4-consistency-coverage-review.md`; sửa `main-report.md` §6 (AI-001…AI-031); re-export `AI-Audit-Appendix.pdf`. | VALID — DOCUMENT REVIEW | PDF audit + main-report §6 đồng bộ; video/zip vẫn do SV. |
 | AI-032 | ~21:50 26/08/2026 (UTC+7) | Cursor (Composer) | «ok bổ sung vậy đi, cập nhật audit» | **6 commit `.spec.ts` mới** trên clone `Software-Testing` (6c83afe…731c685): header HW2 map, `DEFAULT_USER_EMAIL`, `ORDER_STATUS_LABELS`, `DELIVERY_CHAIN`, assertion messages; đồng bộ 3 spec local; cập nhật `git-commit-log.txt` → **8/8 §12**. | VALID — CODE + DOCUMENT | Mỗi commit chỉ stage 1 file `.spec.ts`; không đổi logic test/oracle. |
 | AI-033 | ~22:00 26/08/2026 (UTC+7) | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push **8 commit** lên `HappyDuckCoder/Software-Testing` **main** (6c83afe…c095eac): 6 commit spec §12 + `f247b35` format feature-c + `c095eac` sync audit/PDF; **9 commit `.spec.ts`** trên GitHub. | VALID — EXTERNAL ACTION | Link: [commits/tests](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests). |
+| AI-034 | ~22:10 26/08/2026 (UTC+7) | Cursor (Composer) | «bạn cập nhật link đi» | Đồng bộ liên kết GitHub (#8–#14, repo lab, automation, commit tests) vào `link-video.md`, README, main-report, skill-catalog, checklist; sửa mục stale commit log; push lab main. | VALID — DOCUMENT REVIEW | Video YouTube vẫn `[CHƯA QUAY]` — SV điền sau khi quay. |
 
 ## Quy tắc cập nhật
 
@@ -59,7 +60,7 @@ Mỗi lần dùng AI sau này phải thêm một dòng: ngày giờ, prompt đ�
 | Mã bài tập | HW04-AI |
 | Có dùng AI | [x] Có  [ ] Không |
 
-## Tóm tắt execution thật (tính đến AI-033)
+## Tóm tắt execution thật (tính đến AI-034)
 
 | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- |

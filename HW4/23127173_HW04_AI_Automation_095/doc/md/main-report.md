@@ -42,8 +42,11 @@ Pool D (mobile) **không** dùng theo đề HW04.
 | SUT | EShop — <https://github.com/ttbhanh/eshop-sut> |
 | Web / Admin / API | `:5180` / `:5174` / `:3000` |
 | Playwright project | `automation/` |
+| Repository lab (GitHub) | <https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095> |
 | GitHub issue tracker | <https://github.com/HappyDuckCoder/Software-Testing/issues> (issues #8–#14) |
 | Repository automation (public) | <https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation> |
+| Commit log `.spec.ts` | <https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests> |
+| Liên kết tổng hợp | `agent-skills/demo-videos/link-video.md` |
 | Nguồn HW2 | `Lab/HW2/23127173_HW02_AI_DomainTesting_095/` |
 
 # 2. Phương pháp (AI-first)
@@ -162,7 +165,7 @@ Screenshot automation và ảnh GitHub issue: `requirement/feature-*/bug-report/
 
 | Mục | Giá trị |
 | --- | --- |
-| Link YouTube (unlisted) | `[CHƯA QUAY]` → ghi tại `agent-skills/demo-videos/link-video.md` |
+| Link YouTube (unlisted) | `[CHƯA QUAY]` — ghi tại [`agent-skills/demo-videos/link-video.md`](../../agent-skills/demo-videos/link-video.md) |
 | Thời lượng | ≥ 5 phút, tiếng Việt |
 | Nội dung bắt buộc | E2E headed/headless; ≥ 2 browser; mở HTML report (`Run by: 23127173`); nói ≥ 1 fix sau AI review |
 | Xác thực tác giả | Face-cam hoặc terminal `whoami` + `hostname` |
@@ -181,7 +184,7 @@ Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 b
 
 | Tài liệu | Path | Trạng thái |
 | --- | --- | --- |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-033 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-034 |
 | AI Critique (200–300 từ) | `doc/md/AI Audit/02_AI-Critique.md` | ✅ |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | ✅ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (video pending) |
@@ -211,7 +214,7 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
 | 2 | Task 2 — Video | 15 | 14 | Chưa quay — mục tiêu sau nộp |
 | 3 | Agent Skills | 10 | 9 | Skill ✅; video skill pending |
 | | **Tổng (mục tiêu)** | **100** | **95** | |
-| | **Tổng (hiện tại)** | **100** | **~82** | Còn video và bằng chứng push/commit source automation |
+| | **Tổng (hiện tại)** | **100** | **~82** | Còn video demo |
 
 # 9. Phụ lục — đường dẫn nhanh
 
@@ -220,6 +223,7 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
 | Checklist nộp | `checklist.md` |
 | Ma trận execution | `checklist/execution-matrix.md` |
 | Consistency review | `doc/md/hw4-consistency-coverage-review.md` |
+| Liên kết GitHub + video | `agent-skills/demo-videos/link-video.md` |
 | HTML reports | `evidence/html-reports/` |
 | Execution JSON | `evidence/execution-summary.json` |
 | Lệnh full matrix | `cd automation && npm run test:full-matrix` |

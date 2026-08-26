@@ -35,4 +35,4 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~21:40 | Cursor (Composer) | «link automation repo — cập nhật commit log» | git-commit-log.txt; AI-029 |
 | 2026-08-26 ~21:42 | Cursor (Composer) | «6 commit .spec.ts là sao» | Giải thích rubric §12; AI-030 |
 | 2026-08-26 ~21:45 | Cursor (Composer) | «từ cập nhật ai audit trước» | Đồng bộ audit AI-031; sửa main-report §6 + consistency review; re-export AI Audit PDF |
-| 2026-08-26 ~22:00 | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push 6 commit spec + sync audit lên Software-Testing main; AI-033 |
+| 2026-08-26 ~22:10 | Cursor (Composer) | «bạn cập nhật link đi» | Đồng bộ GitHub links vào link-video.md, README, main-report; AI-034 |

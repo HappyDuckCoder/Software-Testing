@@ -2,7 +2,7 @@
 
 | Skill | Purpose | Demo |
 | --- | --- | --- |
-| `playwright-automation-builder` | Data-driven Playwright workflow từ feature brief HW2: chọn TC, JSON data, spec, 3 browser, AI gap | `demo-videos/link-video.md` |
+| `playwright-automation-builder` | Data-driven Playwright workflow từ feature brief HW2: chọn TC, JSON data, spec, 3 browser, AI gap | [link-video.md](demo-videos/link-video.md) · [GitHub automation](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
 
 ## Recommended demo flow
 

@@ -57,7 +57,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 - [ ] Trình diễn 1 script E2E + multi-browser + HTML report.
 - [ ] Nói ≥ 1 chỉnh sửa sau AI review.
 - [ ] Face-cam hoặc terminal `whoami` + `hostname`.
-- [ ] Link ghi trong `agent-skills/demo-videos/link-video.md` và README.
+- [ ] Link ghi trong [`agent-skills/demo-videos/link-video.md`](agent-skills/demo-videos/link-video.md) và README (GitHub links ✅; YouTube pending).
 
 ## 4. Agent Skill
 
@@ -67,7 +67,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report AI-001…AI-033.
+- [x] AI Audit Report AI-001…AI-034.
 - [x] Prompt log cập nhật phiên 17/08/2026 và 26/08/2026.
 - [x] AI Critique 200–300 từ hoàn chỉnh (`doc/md/AI Audit/02_AI-Critique.md`).
 - [x] Mandatory Disclosure cập nhật execution thật (26/08/2026).
@@ -76,7 +76,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 ## 6. Git & repository
 
 - [x] GitHub issue tracker công khai: `HappyDuckCoder/Software-Testing` (#8–#14).
-- [x] Repository automation public: link trong README + main report.
+- [x] Repository automation public: [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) + [commit log tests](https://github.com/HappyDuckCoder/Software-Testing/commits/main/HW4/23127173_HW04_AI_Automation_095/automation/tests).
 - [x] `doc/md/Git Commit Log/git-commit-log.txt` cập nhật commit thật (5 commit automation).
 - [x] ≥ 8 commit **chỉ** `.spec.ts` — **9/8** trên GitHub main.
 
