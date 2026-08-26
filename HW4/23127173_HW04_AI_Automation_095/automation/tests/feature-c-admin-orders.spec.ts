@@ -1,5 +1,9 @@
-import { test, expect } from '@playwright/test';
-import { loadTestData } from '../helpers/loadTestData';
+/**
+ * HW04 Feature C — FR-18 Admin orders (spec oracle, 24 TC).
+ * Data-driven from `automation/data/feature-c-admin-orders.json` (HW2 C-DT / C-BVA).
+ * Known bugs: BUG-C-01 (user token), BUG-C-02 (canceled→delivered), BUG-C-03 (XSS).
+ */
+import { test, expect } from '@playwright/test';import { loadTestData } from '../helpers/loadTestData';
 import { loginAsAdmin, openAdminOrders } from '../helpers/auth';
 import {
   apiLogin,
