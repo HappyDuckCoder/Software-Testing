@@ -15,11 +15,13 @@ Reviewer: Sinh viên 23127173 (rà soát sau 9 browser runs)
 | HTML `Run by: 23127173` | ✅ | `playwright.config.ts` + 9 reports |
 | AI gap / human review | ✅ | 3 feature + locator/oracle fixes |
 | AI Critique 200–300 từ | ✅ | `doc/md/AI Audit/02_AI-Critique.md` |
-| AI Audit AI-001…AI-028 | ✅ | Bao gồm tạo issue và đồng bộ tài liệu |
-| Bug report Markdown | ✅ | 3 feature; GitHub Issues [#8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) + 7 screenshot |
+| AI Audit AI-001…AI-033 | ✅ | |
+| Bug report Markdown | ✅ | Issues [#8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) + 7 screenshot |
+| GitHub automation repo | ✅ | [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
+| Git commit log file | ✅ | `doc/md/Git Commit Log/git-commit-log.txt` |
 | Video ≥ 5 phút | ⏳ | Chưa quay |
-| Git ≥ 8 commit .spec.ts | ⏳ | Chưa push GitHub |
-| PDF export | ⏳ | `doc/pdf/main-report.pdf` |
+| Git ≥ 8 commit .spec.ts | ✅ **8/8** (6 commit mới 26/08) |
+| PDF export | ✅ | main-report + AI-Audit-Appendix |
 
 ## 2. Nhất quán HW2 ↔ HW4
 

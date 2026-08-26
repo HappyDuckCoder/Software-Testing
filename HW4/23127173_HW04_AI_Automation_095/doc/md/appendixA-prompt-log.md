@@ -32,3 +32,7 @@ Ghi **nguyên văn** prompt (hoặc paraphrase tối thiểu nếu prompt hệ t
 | 2026-08-26 ~20:43 | Cursor (Composer) | «dùng markdown pdf export» | Pandoc PDF main + AI Audit; AI-026 |
 | 2026-08-26 ~20:55 | Codex (GPT-5) | «github issue và chụp hình minh chứng lại và bỏ vào thư mục cần thiết; cập nhật AI-audit» | 7 GitHub Issues #8–#14; 7 screenshot; AI-027 |
 | 2026-08-26 ~21:00 | Codex (GPT-5) | «cập nhật md doc, main report và các tài liệu liên quan; cập nhật ai audit» | Đồng bộ README, checklist, main report, disclosure, consistency review; AI-028 |
+| 2026-08-26 ~21:40 | Cursor (Composer) | «link automation repo — cập nhật commit log» | git-commit-log.txt; AI-029 |
+| 2026-08-26 ~21:42 | Cursor (Composer) | «6 commit .spec.ts là sao» | Giải thích rubric §12; AI-030 |
+| 2026-08-26 ~21:45 | Cursor (Composer) | «từ cập nhật ai audit trước» | Đồng bộ audit AI-031; sửa main-report §6 + consistency review; re-export AI Audit PDF |
+| 2026-08-26 ~22:00 | Cursor (Composer) | «bạn phải commit tại repo lab tại branch main luôn, cập nhật audit» | Push 6 commit spec + sync audit lên Software-Testing main; AI-033 |

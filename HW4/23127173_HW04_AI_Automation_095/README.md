@@ -11,6 +11,7 @@
 | Mức tự đánh giá mục tiêu | 095 |
 | Tên file nộp | `23127173_HW04_AI_Automation_095.zip` |
 | GitHub issue tracker | <https://github.com/HappyDuckCoder/Software-Testing/issues> — 7 issues HW04 (#8–#14) |
+| Repository automation (public) | <https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation> |
 
 ## 2. Feature đã chọn (khớp HW02)
 
@@ -51,7 +52,7 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | 1 | Task 1 — Feature C (FR-18) | 25 | 24 | 24 TC, 3 HTML reports, gap analysis |
 | 2 | Task 2 — Video demo ≥ 5 phút | 15 | 14 | `[CHƯA QUAY]` — `evidence/demo-video/` |
 | 3 | Agent Skills | 10 | 9 | `agent-skills/playwright-automation-builder/` |
-| | **Tổng** | **100** | **95** | Còn video + bằng chứng push/commit source automation |
+| | **Tổng** | **100** | **95** | Còn video + thêm commit `.spec.ts` nếu cần đủ 8 |
 
 ## 5. Cấu trúc bài nộp
 
@@ -95,12 +96,12 @@ Fail khớp bug HW2 (BUG-A-01/02, BUG-B-01/02, BUG-C-01/02/03) — xem `checklis
 | HTML reports đa trình duyệt | `evidence/html-reports/` | ✅ 9 folders |
 | AI Gap Analysis | `requirement/feature-*/ai-gap-analysis/` | ✅ |
 | Bug reports (Markdown) | `requirement/feature-*/bug-report/` | ✅ (GitHub issues #8–#14 + 7 screenshot) |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-028 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-033 |
 | AI Critique | `doc/md/AI Audit/02_AI-Critique.md` | ✅ 200–300 từ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (trừ video) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
 | Video demo YouTube | `agent-skills/demo-videos/link-video.md` | `[CHƯA QUAY]` |
-| Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | Placeholder |
+| Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` | ✅ 5 commits automation (2 có `.spec.ts`) |
 
 ## 7. Lệnh nhanh
 
@@ -117,6 +118,8 @@ npm run report                    # mở HTML report mới nhất
 ## 8. Bước còn thiếu trước khi nộp zip
 
 1. Quay video demo ≥ 5 phút (tiếng Việt, `whoami`/`hostname` hoặc face-cam).
-2. Push `automation/` lên GitHub công khai (≥ 8 commit script).
-3. Push source `automation/` và lưu commit log thật (≥ 8 commit script nếu đề yêu cầu).
-4. Đóng gói zip nộp sau khi quay video.
+2. ~~Push `automation/` lên GitHub công khai~~ ✅ — link trên.
+3. ~~Lưu commit log thật~~ ✅ — `doc/md/Git Commit Log/git-commit-log.txt` (**8/8** commit `.spec.ts` §12 trên GitHub main).
+4. (Tuỳ chọn) Tách thêm ≥ 6 commit chỉ sửa `.spec.ts` để đạt rubric §12.
+5. Quay video demo ≥ 5 phút.
+6. Đóng gói zip nộp sau khi quay video.

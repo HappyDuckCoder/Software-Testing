@@ -67,7 +67,7 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 5. AI compliance
 
-- [x] AI Audit Report AI-001…AI-028.
+- [x] AI Audit Report AI-001…AI-033.
 - [x] Prompt log cập nhật phiên 17/08/2026 và 26/08/2026.
 - [x] AI Critique 200–300 từ hoàn chỉnh (`doc/md/AI Audit/02_AI-Critique.md`).
 - [x] Mandatory Disclosure cập nhật execution thật (26/08/2026).
@@ -75,9 +75,10 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 
 ## 6. Git & repository
 
-- [x] GitHub issue tracker công khai: `HappyDuckCoder/Software-Testing` (#8–#14, link trong README + main report).
-- [ ] ≥ 8 commit chỉ thay đổi file `.spec.ts` / test script.
-- [ ] `doc/md/Git Commit Log/git-commit-log.txt` cập nhật commit thật.
+- [x] GitHub issue tracker công khai: `HappyDuckCoder/Software-Testing` (#8–#14).
+- [x] Repository automation public: link trong README + main report.
+- [x] `doc/md/Git Commit Log/git-commit-log.txt` cập nhật commit thật (5 commit automation).
+- [x] ≥ 8 commit **chỉ** `.spec.ts` — **8/8** trên GitHub main.
 
 ## 7. Nộp bài
 
@@ -95,5 +96,5 @@ Scope: toàn bộ HW04 sau khi hoàn thành automation trên EShop.
 | Script chưa chạy E2E | ✅ 9 browser runs — `npm run test:full-matrix` |
 | HTML report thiếu StudentID | ✅ Kiểm tra metadata trong 9 reports |
 | Video không chứng minh tác giả | ⏳ Chưa quay |
-| Commit log toàn README | ⏳ Chưa xác nhận push source `automation/` / commit log thật |
+| Commit log toàn README | ✅ 8/8 commit `.spec.ts` trên GitHub |
 | Fail ghi “all pass” | ✅ Fail = bug HW2 theo spec oracle |

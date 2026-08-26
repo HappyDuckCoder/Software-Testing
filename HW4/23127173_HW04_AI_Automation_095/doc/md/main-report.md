@@ -43,7 +43,7 @@ Pool D (mobile) **không** dùng theo đề HW04.
 | Web / Admin / API | `:5180` / `:5174` / `:3000` |
 | Playwright project | `automation/` |
 | GitHub issue tracker | <https://github.com/HappyDuckCoder/Software-Testing/issues> (issues #8–#14) |
-| Repository GitHub (automation) | Chưa xác nhận đã push source `automation/` và lịch sử commit theo yêu cầu |
+| Repository automation (public) | <https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation> |
 | Nguồn HW2 | `Lab/HW2/23127173_HW02_AI_DomainTesting_095/` |
 
 # 2. Phương pháp (AI-first)
@@ -181,7 +181,7 @@ Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 b
 
 | Tài liệu | Path | Trạng thái |
 | --- | --- | --- |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-028 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-033 |
 | AI Critique (200–300 từ) | `doc/md/AI Audit/02_AI-Critique.md` | ✅ |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | ✅ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (video pending) |
@@ -194,9 +194,9 @@ Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
 | Mục | Trạng thái |
 | --- | --- |
 | GitHub issue tracker | ✅ [Issues #8–#14](https://github.com/HappyDuckCoder/Software-Testing/issues) |
-| GitHub source repo / commit history | `[CHƯA XÁC NHẬN]` source `automation/` + ≥ 8 commit `.spec.ts` |
-| ≥ 8 commit `.spec.ts` | `[CHƯA CÓ]` |
-| Git commit log | `doc/md/Git Commit Log/git-commit-log.txt` — placeholder |
+| Repository automation | ✅ [automation/](https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation) |
+| Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
+| Commit `.spec.ts` (§12) | ✅ **8/8** trên GitHub main |
 | Main report PDF | `doc/pdf/main-report.pdf` — ✅ export 26/08/2026 |
 | AI Audit PDF | `doc/pdf/AI-Audit-Appendix.pdf` — ✅ export 26/08/2026 |
 | Zip nộp | `23127173_HW04_AI_Automation_095.zip` — chưa tạo |

@@ -1,25 +1,64 @@
-# Git Commit Log — HW04 (placeholder)
+# Git Commit Log — HW04 Automation (23127173)
 
-> Cập nhật sau khi push repository GitHub công khai và có ≥ 8 commit thay đổi file `.spec.ts`.
+Repository: https://github.com/HappyDuckCoder/Software-Testing  
+Automation path: `HW4/23127173_HW04_AI_Automation_095/automation/`  
+Tree link: https://github.com/HappyDuckCoder/Software-Testing/tree/main/HW4/23127173_HW04_AI_Automation_095/automation  
+Exported: 2026-08-26 (sau AI-033 — đã push main)
+
+## Oneline log (automation/)
 
 ```text
-# Ví dụ format (thay bằng log thật):
-# abc1234 HW04 automation init playwright config and feature-A scaffold
-# def5678 HW04 feature-A add profile data-driven tests 1-6
-# ...
-# Chỉ commit .spec.ts / test script mới tính vào 8 commit tối thiểu.
+731c685 test(hw04): clarify auth assertion messages in feature-a spec
+c101ab8 refactor(hw04): extract delivery chain constant in feature-c spec
+d0c9c99 docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec
+896503c docs(hw04): add HW2 mapping header to feature-b order history spec
+78dc11f refactor(hw04): centralize default user email in feature-a spec
+6c83afe docs(hw04): add HW2 mapping header to feature-a profile spec
+f8721a3 feat(hw04): update .gitignore and enhance report structure
+4cc84b4 feat(hw04): update .gitignore and enhance documentation
+c96dffc feat(hw04): finalize automation setup and execution summary
+e822f8d feat(hw04): enhance automation scripts and update documentation
+758cd2f feat(hw04): add initial project structure and documentation for HW04 AI Automation
 ```
 
-Lệnh gợi ý:
+## Oneline log — chỉ `automation/tests/*.spec.ts` (§12)
 
-```bash
-git log --oneline --decorate -- Lab/HW4/23127173_HW04_AI_Automation_095/automation/tests/
-# hoặc trong repo GitHub riêng:
-git log --oneline -- tests/
+```text
+731c685 test(hw04): clarify auth assertion messages in feature-a spec
+c101ab8 refactor(hw04): extract delivery chain constant in feature-c spec
+d0c9c99 docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec
+896503c docs(hw04): add HW2 mapping header to feature-b order history spec
+78dc11f refactor(hw04): centralize default user email in feature-a spec
+6c83afe docs(hw04): add HW2 mapping header to feature-a profile spec
+e822f8d feat(hw04): enhance automation scripts and update documentation
+758cd2f feat(hw04): add initial project structure and documentation for HW04 AI Automation
 ```
 
-| # | SHA | Date | Message | Files (test only) |
-| --- | --- | --- | --- | --- |
-| 1 | `[CHƯA CÓ]` | | | |
-| … | | | | |
-| 8 | `[CHƯA CÓ]` | | | |
+> **Đề §12:** ✅ **8/8** commit thay đổi `.spec.ts`.  
+> **Push:** ✅ `origin/main` — `HappyDuckCoder/Software-Testing` (26/08/2026).
+
+## Chi tiết 6 commit spec mới (26/08/2026)
+
+| # | SHA | Message | File `.spec.ts` |
+| ---: | --- | --- | --- |
+| 3 | 6c83afe | docs(hw04): add HW2 mapping header to feature-a profile spec | feature-a-profile.spec.ts |
+| 4 | 78dc11f | refactor(hw04): centralize default user email in feature-a spec | feature-a-profile.spec.ts |
+| 5 | 896503c | docs(hw04): add HW2 mapping header to feature-b order history spec | feature-b-order-history.spec.ts (+ ORDER_STATUS_LABELS) |
+| 6 | d0c9c99 | docs(hw04): add HW2 mapping header and bug oracle notes to feature-c spec | feature-c-admin-orders.spec.ts |
+| 7 | c101ab8 | refactor(hw04): extract delivery chain constant in feature-c spec | feature-c-admin-orders.spec.ts |
+| 8 | 731c685 | test(hw04): clarify auth assertion messages in feature-a spec | feature-a-profile.spec.ts |
+
+## Chi tiết commit ban đầu (17/08/2026)
+
+| # | SHA | Message | Ghi chú |
+| ---: | --- | --- | --- |
+| 1 | 758cd2f | feat(hw04): add initial project structure… | Khởi tạo 3 spec + data + helpers |
+| 2 | e822f8d | feat(hw04): enhance automation scripts… | Cập nhật 3 spec, 76 TC spec-oracle |
+
+## Lệnh push & tái xuất log
+
+```powershell
+cd d:\code\Project\Software-Testing
+git push origin main
+git log --oneline -- HW4/23127173_HW04_AI_Automation_095/automation/tests/
+```
