@@ -184,13 +184,13 @@ Quy trình skill: chọn TC HW2 → sinh JSON → spec Playwright → chạy 3 b
 
 | Tài liệu | Path | Trạng thái |
 | --- | --- | --- |
-| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-034 |
+| AI Audit Report | `doc/md/AI Audit/01_AI-Audit-Report.md` | AI-001…AI-035 |
 | AI Critique (200–300 từ) | `doc/md/AI Audit/02_AI-Critique.md` | ✅ |
 | Mandatory Disclosure | `doc/md/AI Audit/03_Mandatory-Disclosure.md` | ✅ |
 | Privacy Checklist | `doc/md/AI Audit/04_AI-Privacy-Checklist.md` | ✅ (video pending) |
 | Prompt log | `doc/md/appendixA-prompt-log.md` | ✅ |
 
-Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026).
+Export PDF audit: `doc/pdf/AI-Audit-Appendix.pdf` (✅ 26/08/2026, AI-035).
 
 # 7. Git & nộp bài
 
