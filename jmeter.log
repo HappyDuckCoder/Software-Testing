@@ -1,0 +1,36 @@
+2026-08-31 22:53:22,772 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-08-31 22:53:22,789 INFO o.a.j.JMeter: Loading user properties from: D:\tools\apache-jmeter-5.6.3\bin\user.properties
+2026-08-31 22:53:22,790 INFO o.a.j.JMeter: Loading system properties from: D:\tools\apache-jmeter-5.6.3\bin\system.properties
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: Version 5.6.3
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: java.version=26.0.1
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: os.name=Windows 11
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: os.arch=amd64
+2026-08-31 22:53:22,796 INFO o.a.j.JMeter: os.version=10.0
+2026-08-31 22:53:22,797 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-08-31 22:53:22,797 INFO o.a.j.JMeter: java.awt.headless=null
+2026-08-31 22:53:22,797 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-08-31 22:53:22,797 INFO o.a.j.JMeter: Available Processors =16
+2026-08-31 22:53:22,808 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-08-31 22:53:22,809 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-08-31 22:53:22,809 INFO o.a.j.JMeter: JMeterHome=D:\tools\apache-jmeter-5.6.3
+2026-08-31 22:53:22,809 INFO o.a.j.JMeter: user.dir  =D:\code\Project\TestingProject\Lab
+2026-08-31 22:53:22,809 INFO o.a.j.JMeter: PWD       =D:\code\Project\TestingProject\Lab
+2026-08-31 22:53:22,810 INFO o.a.j.JMeter: IP: 192.168.1.7 Name: LAPTOP-VS1QDJ8A FullName: LAPTOP-VS1QDJ8A
+2026-08-31 22:53:22,819 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2026-08-31 22:53:22,953 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2026-08-31 22:53:24,431 INFO o.a.j.JMeterGuiLauncher: Loading file: D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\test-plans\23127173_Endurance_20260831.jmx
+2026-08-31 22:53:24,434 INFO o.a.j.s.FileServer: Default base='D:\code\Project\TestingProject\Lab'
+2026-08-31 22:53:24,435 INFO o.a.j.s.FileServer: Set new base='D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\test-plans'
+2026-08-31 22:53:24,726 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-08-31 22:53:24,743 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-08-31 22:53:24,746 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-08-31 22:53:24,748 INFO o.a.j.s.SaveService: Loading file: D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\test-plans\23127173_Endurance_20260831.jmx
+2026-08-31 22:53:24,783 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-31 22:53:24,783 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-31 22:53:24,783 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-31 22:53:24,783 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-31 22:53:24,783 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-08-31 22:53:24,783 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-08-31 22:53:24,804 INFO o.a.j.s.FileServer: Set new base='D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\test-plans'
