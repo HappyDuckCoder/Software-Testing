@@ -15,7 +15,15 @@
 
 ## Workflow được kiểm thử
 
-Một workflow đầu cuối duy nhất sẽ bao phủ ba nhóm endpoint: đăng nhập (**auth-heavy**) -> liệt kê/tìm kiếm hoặc xem sản phẩm (**read-heavy**) -> thêm giỏ hàng và thanh toán/tạo đơn (**transactional**). Phần endpoint chính xác chỉ được điền sau khi kiểm tra API thực tế của SUT.
+Workflow đầu cuối được chọn là: **đăng nhập -> xem lịch sử đơn hàng của chính người dùng -> hủy một đơn đang ở trạng thái `pending` hoặc `confirmed`**.
+
+| Loại tải | API được chọn | Liên hệ HW2 | Lý do chọn |
+| --- | --- | --- | --- |
+| Auth-heavy | `POST /api/login` | Tiền điều kiện xác thực đã dùng khi kiểm thử FR-11/FR-10. | Cấp JWT cho hai request sau và có hành vi account lockout cần quan sát ở Stress/Spike. |
+| Read-heavy | `GET /api/orders/my-orders` | FR-11 - Xem lịch sử đơn hàng. | Đọc danh sách đơn của đúng người dùng, sắp xếp theo ID giảm dần. |
+| Transactional | `PUT /api/orders/:id/cancel` | FR-10 - Máy trạng thái đơn hàng; FR-11 có thao tác hủy. | Cập nhật trạng thái đơn; dùng `orderId` lấy từ response lịch sử đơn. |
+
+Ba API trên không trùng với lựa chọn đã công bố của Vân: `POST /register`, `/api/products/:id`, và `POST /api/checkout`.
 
 ## Cấu trúc bài nộp
 
@@ -48,9 +56,9 @@ Chỉ đưa vào bài nộp các log, ảnh, report và video được tạo t�
 
 | Kịch bản | Nhóm endpoint | Kết quả | Ngưỡng/RPS | Vị trí bằng chứng |
 | --- | --- | --- | --- | --- |
-| Load | Auth + Read + Transactional | Chưa chạy | Chưa xác định | `performance/` |
-| Stress | Auth + Read + Transactional | Chưa chạy | Chưa xác định | `performance/` |
-| Spike | Auth + Read + Transactional | Chưa chạy | Chưa xác định | `performance/` |
+| Load | Login + My orders + Cancel order | Chưa chạy | Chưa xác định | `performance/` |
+| Stress | Login + My orders + Cancel order | Chưa chạy | Chưa xác định | `performance/` |
+| Spike | Login + My orders + Cancel order | Chưa chạy | Chưa xác định | `performance/` |
 | Endurance | Workflow duy trì | Chưa chạy | Chưa xác định | `evidence/endurance/` |
 
 Xem [roadmap.md](roadmap.md) và [checklist.md](checklist.md) để thực hiện tiếp.

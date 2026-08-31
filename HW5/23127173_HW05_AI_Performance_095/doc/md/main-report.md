@@ -6,6 +6,16 @@
 
 ## 2. Workflow và endpoint mapping
 
+Workflow được chọn, tái sử dụng phạm vi HW2: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`.
+
+| Bước | Nhóm endpoint | API | Liên hệ HW2 | Dữ liệu/đầu ra dùng cho bước sau |
+| --- | --- | --- | --- | --- |
+| 1 | Auth-heavy | `POST /api/login` | Tiền điều kiện xác thực cho FR-11/FR-10. | CSV credentials -> JWT. |
+| 2 | Read-heavy | `GET /api/orders/my-orders` | FR-11 - lịch sử đơn hàng. | JWT -> danh sách đơn; trích `orderId` đủ điều kiện. |
+| 3 | Transactional | `PUT /api/orders/:id/cancel` | FR-10 state machine và thao tác hủy của FR-11. | JWT + `orderId` -> cập nhật trạng thái `canceled`. |
+
+Không trùng lựa chọn của Vân: `POST /register`, `/api/products/:id`, `POST /api/checkout`.
+
 ## 3. Thiết kế test plan có hỗ trợ AI và human review
 
 ## 4. Kết quả Load test

@@ -2,13 +2,13 @@
 
 ## Mục tiêu
 
-Hoàn thành ba kịch bản Load, Stress và Spike trên **cùng một workflow đầu cuối** của EShop; workflow phải bao phủ endpoint xác thực, đọc và giao dịch. Mọi tham số, log, ảnh giám sát và kết quả chỉ được điền sau khi chạy thực tế.
+Hoàn thành ba kịch bản Load, Stress và Spike trên **cùng một workflow đầu cuối** của EShop: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`. Workflow tái sử dụng FR-11 và FR-10 của HW2, đồng thời bao phủ endpoint xác thực, đọc và giao dịch. Mọi tham số, log, ảnh giám sát và kết quả chỉ được điền sau khi chạy thực tế.
 
 ## Lộ trình 10 giờ
 
 | Bước | Công việc | Sản phẩm bàn giao |
 | --- | --- | --- |
-| 1 | Khởi động SUT; kiểm tra endpoint/port, tài khoản test và reset lockout. | Endpoint map, ảnh phần cứng và monitor cơ sở. |
+| 1 | Khởi động SUT; xác minh 3 endpoint đã chọn, port, tài khoản test, đơn `pending`/`confirmed` và reset lockout. | Endpoint map, ảnh phần cứng và monitor cơ sở. |
 | 2 | Dùng AI theo prompt từng bước để phác thảo workflow, dữ liệu CSV, think-time, ramp-up và assertion. | Prompt log, bản nháp kế hoạch, nhận xét human review. |
 | 3 | Hoàn thiện workflow data-driven và ba test plan. | `performance/test-plans/{StudentID}_{Load,Stress,Spike}_{YYYYMMDD}` và CSV. |
 | 4 | Chạy Load; lưu `.jtl`, HTML report, ảnh tool + resource monitor. | Bằng chứng Load. |

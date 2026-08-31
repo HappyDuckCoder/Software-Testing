@@ -2,9 +2,9 @@
 
 ## 1. Chuẩn bị
 
-- [ ] Xác định endpoint thật của SUT cho auth-heavy, read-heavy và transactional.
+- [x] Chọn endpoint của SUT cho auth-heavy, read-heavy và transactional: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`.
 - [ ] Xác nhận workflow không trùng với thành viên khác (nếu có phân công nhóm).
-- [ ] Ghi port, phiên bản SUT, hostname và cấu hình phần cứng.
+- [ ] Xác minh port, phiên bản SUT, hostname và cấu hình phần cứng khi chạy.
 - [ ] Chuẩn bị dữ liệu CSV không chứa mật khẩu/token thật.
 - [ ] Chuẩn bị cách reset khóa tài khoản sau 3 lần đăng nhập thất bại.
 

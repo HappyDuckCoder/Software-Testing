@@ -14,6 +14,7 @@
 | --- | --- | --- | --- | --- | --- |
 | AI-001 | 31/08/2026 | Codex (GPT-5) | “dựa vào Lab\\HW5\\requirement\\requirement.pdf hãy dịch lại vào Lab\\HW5\\requirement\\requirement.md” | Dịch toàn bộ yêu cầu HW05 từ PDF sang Markdown tiếng Việt. | **VALID - document drafting.** Sinh viên phải đối chiếu bản dịch với PDF gốc; đây không phải bằng chứng thực thi. |
 | AI-002 | 31/08/2026 | Codex (GPT-5) | “tạo thư mục nộp bài giống hw4; sau đó tạo file roadmap và checklist cho hw5; tạo các file và thư mục nộp bài cần thiết trước, sau đó chờ tôi; cập nhật ai audit; commit” | Khởi tạo khung bài nộp HW05, roadmap, checklist và các template tài liệu/audit. | **INCOMPLETE - setup only.** Sinh viên phải chọn endpoint, chạy test thật, thu thập evidence, review AI và hoàn thiện toàn bộ chỗ đánh dấu chưa chạy. |
+| AI-003 | 31/08/2026 | Codex (GPT-5) | “chọn tôi 3 api phù hợp có liên quan đến hw2... không được trùng với [Vân: `/register`, `/api/products/:id`, `POST /api/checkout`]” | Kiểm tra API EShop và tài liệu HW2; chọn workflow `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`; cập nhật tài liệu. | **VALID - scope selection, pending execution.** Sinh viên phải xác minh endpoint/port, tài khoản và dữ liệu đơn khi SUT chạy; không được suy diễn hiệu năng từ lựa chọn API. |
 
 ## Quy tắc cập nhật
 
