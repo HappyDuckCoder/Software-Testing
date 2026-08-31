@@ -10,8 +10,8 @@
 | SUT | EShop - <https://github.com/ttbhanh/eshop-sut> |
 | Mục tiêu tự đánh giá | 095/100 (tạm thời, cập nhật sau khi hoàn tất) |
 | Tên file nộp | `23127173_HW05_AI_Performance_095.zip` |
-| Công cụ dự kiến | JMeter (hoặc k6 nếu được sử dụng) |
-| Trạng thái | Khung bài nộp đã tạo; chưa có dữ liệu thực thi |
+| Công cụ thực tế | Apache JMeter 5.6.3, Task Manager, DXDIAG |
+| Trạng thái | Đã có JMX, raw JTL, HTML reports, ảnh resource/hardware và endurance memory sampling; còn video, PDF và ZIP |
 
 ## Workflow được kiểm thử
 
@@ -34,7 +34,6 @@ Ba API trên không trùng với lựa chọn đã công bố của Vân: `POST 
 |- README.md
 |- roadmap.md
 |- checklist.md
-|- checklist/
 |- doc/md/                         # báo cáo chính, AI Audit, commit log
 |- doc/pdf/                        # bản PDF xuất sau cùng
 |- performance/
@@ -58,13 +57,15 @@ Chỉ đưa vào bài nộp các log, ảnh, report và video được tạo t�
 
 Ba skill tái sử dụng được đặt trong `agent-skills/`: `performance-testing-and-log-analysis`, `jmeter-e2e-plan-builder` và `transactional-test-data-manager`. Xem `agent-skills/skill-catalog.md`.
 
-## Tóm tắt kiểm thử (điền sau khi chạy)
+## Tóm tắt kiểm thử
 
 | Kịch bản | Nhóm endpoint | Kết quả | Ngưỡng/RPS | Vị trí bằng chứng |
 | --- | --- | --- | --- | --- |
-| Load | Login + My orders + Cancel order | Chưa chạy | Chưa xác định | `performance/` |
-| Stress | Login + My orders + Cancel order | Chưa chạy | Chưa xác định | `performance/` |
-| Spike | Login + My orders + Cancel order | Chưa chạy | Chưa xác định | `performance/` |
-| Endurance | Workflow duy trì | Chưa chạy | Chưa xác định | `evidence/endurance/` |
+| Load | Login + My orders + Cancel order | 10 workflow, 0 lỗi | p95 4,659 ms; 0.445 workflow/s | `performance/raw-jtl/`, `performance/html-reports/` |
+| Stress | Login + My orders + Cancel order | 30 workflow, 0 lỗi | p95 3,022 ms; 0.938 workflow/s | `performance/raw-jtl/`, `performance/html-reports/` |
+| Spike | Login + My orders + Cancel order | 50 workflow, 0 lỗi | p95 1,682 ms; 20.400 workflow/s | `performance/raw-jtl/`, `performance/html-reports/` |
+| Endurance | Workflow duy trì | 1,200 workflow / 601.15 s, 0 lỗi | 1.980 workflow/s; backend peak 79.14 MB | `evidence/endurance/` |
+
+Xem [main report](doc/md/main-report.md) để biết p95 parent có gồm think-time, phạm vi kết luận và evidence đầy đủ. Không suy diễn các RPS trên thành capacity production.
 
 Xem [roadmap.md](roadmap.md) và [checklist.md](checklist.md) để thực hiện tiếp.

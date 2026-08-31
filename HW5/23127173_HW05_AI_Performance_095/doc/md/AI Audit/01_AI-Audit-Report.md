@@ -29,6 +29,10 @@
 
 | AI-013 | 31/08/2026 22:54 UTC+7 | Codex (GPT-5) | “cap 4 ảnh terminal cmd và 4 ảnh gui jmeter.” | Chụp riêng bốn CMD xác minh JMeter CLI/JTL và bốn cửa sổ GUI JMeter cho Load, Stress, Spike, Endurance. Ảnh GUI khởi động quá sớm ban đầu bị loại và chụp lại khi cửa sổ JMeter đã tải xong. | **VALID - interface evidence.** Đây là ảnh CLI/GUI bổ sung; không được dùng thay raw JTL, HTML hoặc ảnh tool + resource monitor trong cùng khung. |
 
+| AI-014 | 31/08/2026 22:56 UTC+7 | Codex (GPT-5) | “Review lại folder nộp … xem dư mục nào không sử dụng thì xóa đi; cập nhật audit.” | Kiểm tra cấu trúc đệ quy và file count trong submission; xóa duy nhất thư mục rỗng `checklist/`, giữ `checklist.md` và tất cả artefact/placeholder cần cho requirement. | **VALID - housekeeping.** Chỉ xóa target đã xác minh rỗng; không xóa JTL, HTML, evidence, skills, script hay thư mục PDF/video/issue còn cần để hoàn thiện nộp bài. |
+
+| AI-015 | 31/08/2026 23:01 UTC+7 | Codex (GPT-5) | “Review lại báo cáo, hoàn thiện báo cáo hơn, cập nhật audit, commit.” | Rà soát main report, README, checklist và disclosure/priv­acy với requirement/evidence; bổ sung quy trình tái lập, tiêu chí validity, baseline cross-check, giới hạn diễn giải và đồng bộ trạng thái artefact. | **VALID - documentation review.** Không thay số liệu raw; giữ rõ p95 E2E có think-time, peak memory là quan sát workload và video/PDF/ZIP vẫn chưa hoàn thành. |
+
 ## Quy tắc cập nhật
 
 Mỗi lần sử dụng AI tiếp theo, thêm một dòng ghi đủ: ngày giờ, công cụ, prompt, đầu ra, verdict (VALID/INVALID/INCOMPLETE), lý do và phần sinh viên đã kiểm chứng hoặc sửa. Không ghi nhận dữ liệu thực thi chưa xảy ra.

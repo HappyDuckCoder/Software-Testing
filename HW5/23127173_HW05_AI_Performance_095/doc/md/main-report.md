@@ -41,6 +41,10 @@ AI được dùng theo từng bước để chọn workflow, dựng JMX, seed da
 
 Sampler có assertion HTTP 200 và JSON extractor JWT/orderId. Credentials đều hợp lệ nên lockout không phát sinh; reset/seed trước run khôi phục đơn có thể hủy. Hai listener do AI sinh đầu tiên không tương thích JMeter 5.6.3 (`grpThreads`/`groupThreads`); đã bỏ save-service tùy biến và xác nhận JMX sau sửa. Vì vậy JMX AI sinh lần đầu không được xem là artefact đủ dùng.
 
+### Quy trình tái lập và tiêu chí kết luận
+
+Mỗi Load/Stress/Spike run được bắt đầu bằng `node scripts/reset-seed-hw5.mjs`, sinh 50 account và 600 đơn test. Endurance dùng `HW5_ACCOUNT_COUNT=1500` và `HW5_ORDERS_PER_ACCOUNT=1` để tránh một order bị hủy nhiều lần. JMeter được chạy non-GUI với `-Jhw5.data.file=<CSV local>`, `-l <raw JTL>` và `-e -o <HTML report>`; GUI chỉ phục vụ review/capture, không phải nguồn số liệu. Một run được xem là hợp lệ khi từng parent transaction và cả ba HTTP sampler đều có `success=true`/HTTP 200, CSV còn đủ dòng và JTL/HTML được tạo từ cùng lần chạy. Không có điều kiện nào trong số này chứng minh production capacity hay SLA.
+
 ## 4. Evidence và quy ước số liệu
 
 Raw logs và HTML reports là nguồn chính. “Workflow” chỉ đếm parent transaction `E2E login - orders - cancel`; mỗi workflow có ba HTTP sampler nên JTL có bốn sample/workflow. p95 là nearest-rank tính từ parent rows raw JTL, có thể khác nhẹ percentile nội suy của HTML report.
@@ -53,6 +57,8 @@ Raw logs và HTML reports là nguồn chính. “Workflow” chỉ đếm parent
 | Endurance | [`Endurance.jtl`](../../performance/raw-jtl/23127173_Endurance_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Endurance_20260831/index.html) | 1,200 / 4,800 |
 
 Ảnh JMeter + Task Manager của từng scenario được lưu riêng: [Load](../../evidence/resource-monitor/load-jmeter-task-manager-20260831.png), [Stress](../../evidence/resource-monitor/stress-jmeter-task-manager-20260831.png), [Spike](../../evidence/resource-monitor/spike-jmeter-task-manager-20260831.png) và [Endurance](../../evidence/resource-monitor/endurance-jmeter-task-manager-20260831.png). Bốn ảnh CMD và bốn ảnh GUI JMeter được lưu tại [evidence/jmeter-ui](../../evidence/jmeter-ui/). Ba JTL rerun tương ứng được giữ tại `performance/raw-jtl/*_evidence-rerun.jtl` để đối chiếu ảnh; chúng là evidence bổ sung, không thay thế raw log gốc trong bảng.
+
+Kiểm tra chéo: baseline comparator đọc JTL endurance rerun được 1,200 workflow, p95 4,826 ms, error rate 0% và mức tăng p95 3.58% so với baseline Load 4,659 ms; vẫn dưới gate 20%. So sánh này chỉ kiểm tra regression của artefact local, không dùng để xếp hạng Load/Stress/Spike vì các profile có ramp-up và think-time khác nhau.
 
 ## 5. Kết quả Load, Stress và Spike
 
@@ -90,4 +96,4 @@ Gói [Continuous Performance Testing](../../continuous-performance-testing/READM
 
 Đã có bốn JMX, CSV local, reset/seed, bốn raw JTL, bốn HTML report, một ảnh Endurance + Task Manager, ba Agent Skill và pipeline proposal. Không thấy HTTP error hay functional regression trong workflow đã chạy, nên không bịa GitHub Issue. Latency parent cao được giải thích bởi think-time, không được báo sai thành bug.
 
-**Còn thiếu trước khi nộp:** video tiếng Việt unlisted >=6 phút; video demo Agent Skill; cập nhật README/checklist còn placeholder; xuất PDF, kiểm tra link và đóng ZIP. AI Critique 297 từ đã có tại [02_AI-Critique.md](AI%20Audit/02_AI-Critique.md). AI usage nằm trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md); báo cáo không thay thế raw artefact.
+**Còn thiếu trước khi nộp:** video tiếng Việt unlisted >=6 phút; video demo Agent Skill; xuất PDF, kiểm tra link và đóng ZIP. AI Critique 297 từ đã có tại [02_AI-Critique.md](AI%20Audit/02_AI-Critique.md). AI usage nằm trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md); báo cáo không thay thế raw artefact.
