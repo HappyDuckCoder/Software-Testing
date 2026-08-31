@@ -1,55 +1,91 @@
-# HW05-AI Performance Testing Report
+# HW05-AI - Performance Testing Report
 
-> Trạng thái: template. Chỉ điền kết quả, ảnh, số liệu và liên kết sau khi thực thi thực tế.
+> Ngày thực thi: 31/08/2026 (UTC+7) · SUT cục bộ: `http://localhost:3000` · Công cụ: Apache JMeter 5.6.3. Kết luận chỉ áp dụng cho điều kiện và artefact được liên kết bên dưới.
 
-## 1. Thông tin chung và SUT
+## 1. Mục tiêu, SUT và môi trường
+
+Mục tiêu là kiểm thử workflow REST E2E của EShop qua Load, Stress, Spike và endurance khoảng 10 phút; sau đó phân tích raw JTL và đề xuất continuous performance testing. Backend EShop dùng SQLite cục bộ. Trước mỗi run ngắn, dữ liệu được reset/seed bằng [`reset-seed-hw5.mjs`](../../scripts/reset-seed-hw5.mjs).
+
+| Thành phần | Giá trị đã xác minh |
+| --- | --- |
+| Máy chạy | ASUS TUF Gaming A15 FA506NFR_FA506NFR |
+| CPU | AMD Ryzen 7 7435HS, 8 cores / 16 logical processors, 3.10 GHz nominal |
+| RAM | 15.82 GiB |
+| Hệ điều hành | Windows 11 Home Single Language 64-bit, 10.0.26200 |
+| SUT / generator | EShop backend local; JMeter 5.6.3; Node.js backend |
+
+Thông số máy được đọc từ Windows khi review. Chưa có ảnh dxdiag/screenfetch trong evidence, nên bảng này không thay thế hardware screenshot bắt buộc.
 
 ## 2. Workflow và endpoint mapping
 
-Workflow được chọn, tái sử dụng phạm vi HW2: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`.
+Workflow tái sử dụng phạm vi HW2: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`. Lựa chọn không trùng workflow Vân đã công bố: `POST /register`, `/api/products/:id` và `POST /api/checkout`.
 
-| Bước | Nhóm endpoint | API | Liên hệ HW2 | Dữ liệu/đầu ra dùng cho bước sau |
+| Bước | Nhóm endpoint | API | Dữ liệu vào/ra | Liên hệ FR |
 | --- | --- | --- | --- | --- |
-| 1 | Auth-heavy | `POST /api/login` | Tiền điều kiện xác thực cho FR-11/FR-10. | CSV credentials -> JWT. |
-| 2 | Read-heavy | `GET /api/orders/my-orders` | FR-11 - lịch sử đơn hàng. | JWT -> danh sách đơn; trích `orderId` đủ điều kiện. |
-| 3 | Transactional | `PUT /api/orders/:id/cancel` | FR-10 state machine và thao tác hủy của FR-11. | JWT + `orderId` -> cập nhật trạng thái `canceled`. |
+| 1 | Auth-heavy | `POST /api/login` | CSV `email,password` -> JWT | FR-02 |
+| 2 | Read-heavy | `GET /api/orders/my-orders` | JWT -> danh sách đơn -> `orderId` | FR-11 |
+| 3 | Transactional | `PUT /api/orders/:id/cancel` | JWT + `orderId` -> `canceled` | FR-10, FR-11 |
 
-Không trùng lựa chọn của Vân: `POST /register`, `/api/products/:id`, `POST /api/checkout`.
+Mỗi virtual user dùng account riêng. Script seed tạo đơn `pending`/`confirmed` để extractor lấy `orderId`, không hard-code ID; sau run, đơn bị hủy không tái sử dụng. CSV local không có tài khoản thật và bị git-ignore.
 
-### Chức năng và dữ liệu trao đổi
+## 3. Thiết kế bằng AI và human review
 
-- `POST /api/login` nhận email/mật khẩu test và trả JWT. JWT là điều kiện bắt buộc để gọi các API đơn hàng; số lần login sai có thể kích hoạt account lockout, do đó cần tách và kiểm soát dữ liệu lỗi khi chạy Stress/Spike.
-- `GET /api/orders/my-orders` dùng JWT để đọc danh sách đơn của user hiện tại theo ID giảm dần. Plan phải trích một `orderId` có trạng thái phù hợp từ response thay vì hard-code ID.
-- `PUT /api/orders/:id/cancel` dùng JWT và `orderId` để cập nhật một đơn thuộc user sang `canceled`. Mỗi virtual user cần có đơn dữ liệu riêng ở trạng thái `pending`/`confirmed` để tránh xung đột và bảo đảm lần chạy lặp lại được.
+AI được dùng theo từng bước để chọn workflow, dựng JMX, seed data và phân tích JTL; lịch sử có trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md). Bốn plan sinh từ [`generate-jmeter-plans.mjs`](../../scripts/generate-jmeter-plans.mjs), sau đó được kiểm tra XML và sửa lỗi listener trước khi chạy. Ba plan bắt buộc dùng ba listener khác nhau: View Results Tree, Summary Report và Aggregate Report.
 
-## 3. Thiết kế test plan có hỗ trợ AI và human review
+| Kịch bản | Plan | Threads / ramp-up / loops | Think-time | Mục đích / review |
+| --- | --- | --- | --- | --- |
+| Load | [`Load`](../../performance/test-plans/23127173_Load_20260831.jmx) | 10 / 20 s / 1 | 1.5 s | Tải nhẹ, tránh burst lúc bắt đầu. |
+| Stress | [`Stress`](../../performance/test-plans/23127173_Stress_20260831.jmx) | 30 / 30 s / 1 | 1.0 s | Tải cao hơn, không được gọi là điểm gãy. |
+| Spike | [`Spike`](../../performance/test-plans/23127173_Spike_20260831.jmx) | 50 / 1 s / 1 | 0.5 s | Burst có chủ đích, khác endurance. |
+| Endurance | [`Endurance`](../../performance/test-plans/23127173_Endurance_20260831.jmx) | 10 / 30 s / 120 | 1.6 s | Soak 601.15 s; 1,500 account/đơn độc lập. |
 
-## 4. Kết quả Load test
+Sampler có assertion HTTP 200 và JSON extractor JWT/orderId. Credentials đều hợp lệ nên lockout không phát sinh; reset/seed trước run khôi phục đơn có thể hủy. Hai listener do AI sinh đầu tiên không tương thích JMeter 5.6.3 (`grpThreads`/`groupThreads`); đã bỏ save-service tùy biến và xác nhận JMX sau sửa. Vì vậy JMX AI sinh lần đầu không được xem là artefact đủ dùng.
 
-10 workflow, 40 sample, 0 lỗi; workflow p95 **4659 ms**, trung bình **4536.80 ms**, 0.557 workflow/s.
+## 4. Evidence và quy ước số liệu
 
-## 5. Kết quả Stress test
+Raw logs và HTML reports là nguồn chính. “Workflow” chỉ đếm parent transaction `E2E login - orders - cancel`; mỗi workflow có ba HTTP sampler nên JTL có bốn sample/workflow. p95 là nearest-rank tính từ parent rows raw JTL, có thể khác nhẹ percentile nội suy của HTML report.
 
-30 workflow, 120 sample, 0 lỗi; workflow p95 **3022 ms**, trung bình **3021.87 ms**, 1.036 workflow/s.
+| Kịch bản | Raw JTL | HTML report | Parent workflow / toàn bộ sample |
+| --- | --- | --- | ---: |
+| Load | [`Load.jtl`](../../performance/raw-jtl/23127173_Load_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Load_20260831/index.html) | 10 / 40 |
+| Stress | [`Stress.jtl`](../../performance/raw-jtl/23127173_Stress_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Stress_20260831/index.html) | 30 / 120 |
+| Spike | [`Spike.jtl`](../../performance/raw-jtl/23127173_Spike_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Spike_20260831/index.html) | 50 / 200 |
+| Endurance | [`Endurance.jtl`](../../performance/raw-jtl/23127173_Endurance_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Endurance_20260831/index.html) | 1,200 / 4,800 |
 
-## 6. Kết quả Spike test
+## 5. Kết quả Load, Stress và Spike
 
-50 workflow, 200 sample, 0 lỗi; workflow p95 **1682 ms**, trung bình **1548.66 ms**, 53.706 workflow/s.
+| Kịch bản | Workflow | Lỗi parent | Mean workflow | p95 workflow | Max workflow | JMeter transaction throughput |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Load | 10 | 0 (0%) | 4,536.80 ms | 4,659 ms | 4,659 ms | 0.445 workflow/s |
+| Stress | 30 | 0 (0%) | 3,021.87 ms | 3,022 ms | 3,123 ms | 0.938 workflow/s |
+| Spike | 50 | 0 (0%) | 1,548.66 ms | 1,682 ms | 1,714 ms | 20.400 workflow/s |
 
-## 7. Endurance threshold
+Không có HTTP error trong ba run. Workflow latency **không phải** backend latency thuần: Constant Timer được scope cho sampler trong transaction, nên parent chứa khoảng ba lần think-time. Ví dụ Load: endpoint mean là login 5.8 ms, my-orders 3.0 ms, cancel 12.3 ms, nhưng parent mean 4,536.8 ms. Không được dùng p95 parent để kết luận backend chậm 1.5–4.8 giây. Spike throughput cao hơn do ramp 1 s, burst ngắn và think-time nhỏ; không chứng minh sustainable capacity.
 
-Endurance thực chạy **601.15 giây**: 1.200 workflow, 4.800 sample, 0 lỗi; workflow p95 **4840 ms**, trung bình **4824.38 ms**, 1.996 workflow/s. Đây là ngưỡng đã quan sát ở 10 virtual users/think-time 1.6 s, không phải năng lực tối đa của phần cứng; cần chạy thêm mức tải tăng dần nếu muốn xác định maximum stable RPS.
+## 6. Endurance và ngưỡng quan sát
 
-## 8. AI analysis và misinterpretation hunt
+Endurance hoàn tất trong **601.15 s**: 10 threads × 120 loops = 1,200 parent workflow, 4,800 sample, 0 lỗi. Parent mean **4,824.38 ms**, p95 **4,840 ms**, max **4,939 ms**; JMeter báo **1.980 workflow/s**. Endpoint mean vẫn thấp: login 2.42 ms, my-orders 2.48 ms, cancel 16.69 ms; chênh lệch là think-time.
 
-Phân tích từ raw JTL: không được đọc 4.800 sample endurance thành 4.800 workflow; đúng là 1.200 transaction controller workflow, mỗi workflow gồm 3 API và 1 parent transaction. Sai lầm khác là so sánh RPS Spike với Endurance như cùng điều kiện: Spike không có sustained think-time, còn Endurance có 1.6 s timer sau mỗi sampler. Vì vậy Spike 53.706 workflow/s không chứng minh hệ thống bền vững ở mức đó.
+Trong đúng cấu hình này, mức bền quan sát được là **1.980 parent workflow/s không lỗi trong 601.15 s**. Đây không phải maximum stable RPS: chưa có dải tải tăng dần để tìm điểm gãy, và không có time-series memory. Ảnh [JMeter + Task Manager](../../evidence/resource-monitor/endurance-jmeter-task-manager-20260831.png) cho snapshot 11% CPU, 84% RAM và Java process 272.7 MB/165.9 MB, nhưng không đủ để quy cho backend hoặc gọi là memory ceiling.
 
-## 9. Đề xuất Continuous Performance Testing
+## 7. AI analysis và misinterpretation hunt
+
+| Diễn giải cần bác bỏ | Giá trị đúng | Human review |
+| --- | --- | --- |
+| “4,800 sample endurance = 4,800 workflow.” | 1,200 parent transaction + 3,600 HTTP child sample. | Đếm parent label khi báo workflow/RPS. |
+| “p95 4,840 ms là backend latency.” | Endpoint mean endurance: 2.42 / 2.48 / 16.69 ms. | Parent timing gồm think-time. |
+| “Spike 20.400 workflow/s là sustainable capacity.” | Spike: 50 users, ramp 1 s, think 0.5 s; endurance: 10 users, think 1.6 s. | Không ngoại suy capacity từ workload khác điều kiện. |
+
+Index là **khả thi để thử nghiệm** nhưng chưa có query plan nên không triển khai; SQLite WAL là **khả thi để benchmark A/B** nhưng không được gán là nguyên nhân khi chưa có contention; connection pool **không có căn cứ trong SUT SQLite hiện tại**. Raw log, scope timer và workload phải được kiểm tra trước khi nhận tối ưu hóa AI.
+
+## 8. Continuous Performance Testing proposal
 
 ![Workflow continuous performance testing](../../continuous-performance-testing/workflow.png)
 
-Đã chuẩn bị workflow GitHub Actions ở `continuous-performance-testing/github-actions-performance.yml` dưới dạng **đề xuất chưa kích hoạt**. Khi tích hợp vào repository Eshop, pipeline chạy Load smoke có kiểm soát sau các thay đổi liên quan backend/database: checkout, khởi động SUT, reset/seed dữ liệu tách biệt, chạy JMeter non-GUI, so sánh JTL với baseline và upload JTL/HTML report để review.
+Gói [Continuous Performance Testing](../../continuous-performance-testing/README.md) đề xuất GitHub Actions theo dõi thay đổi backend/database, khởi động SUT, health check, reset/seed, chạy JMeter smoke non-GUI, so sánh JTL với baseline và upload JTL/HTML. Gate fail khi error rate >1% hoặc p95 tăng >20%. Path filter tiết kiệm CI cost nhưng có thể bỏ sót thay đổi gián tiếp; threshold quá chặt gây false alarm. Đây chưa phải CI đang bật: cần rebaseline trên runner tương đương và đưa YAML vào `.github/workflows/` của EShop.
 
-Performance gate đề xuất chỉ fail khi error rate vượt 1% hoặc p95 tăng quá 20% so với baseline đã duyệt. Đây là ngưỡng cảnh báo regression có thể hành động, không phải SLA sản phẩm. Gói đề xuất đã có baseline và `compare-performance-baseline.mjs`; team vẫn cần phê duyệt/rebaseline chúng trên runner tương đương và đặt workflow vào `.github/workflows/` của repository Eshop trước khi bật CI thật, để tránh tạo CI xanh/đỏ sai lệch.
+## 9. Kết luận và trạng thái nộp bài
 
-## 10. Kết luận
+Đã có bốn JMX, CSV local, reset/seed, bốn raw JTL, bốn HTML report, một ảnh Endurance + Task Manager, ba Agent Skill và pipeline proposal. Không thấy HTTP error hay functional regression trong workflow đã chạy, nên không bịa GitHub Issue. Latency parent cao được giải thích bởi think-time, không được báo sai thành bug.
+
+**Còn thiếu trước khi nộp:** ảnh tool + resource monitor riêng cho Load/Stress/Spike; ảnh dxdiag/screenfetch; đo memory theo thời gian để có memory ceiling; video tiếng Việt unlisted >=6 phút; video demo Agent Skill; cập nhật README/checklist còn placeholder; xuất PDF, kiểm tra link và đóng ZIP. AI Critique 297 từ đã có tại [02_AI-Critique.md](AI%20Audit/02_AI-Critique.md). AI usage nằm trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md); báo cáo không thay thế raw artefact.

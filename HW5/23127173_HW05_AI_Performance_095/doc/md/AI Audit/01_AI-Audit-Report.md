@@ -23,6 +23,8 @@
 | AI-009 | 31/08/2026 | Codex (GPT-5) | “ok tải jmeter và chạy, tự chụp minh chứng giúp tôi” | Tải JMeter 5.6.3, chạy Load/Stress/Spike sau mỗi reset-seed; chạy Endurance 601.15 s với 1.500 account/đơn; tạo 4 JTL, 4 HTML report và ảnh JMeter + Task Manager. Sửa JMX listener sau hai lỗi tương thích thật. | **VALID - execution.** Metrics được tính từ raw JTL; không suy diễn maximum stable RPS ngoài mức 10-user endurance đã chạy. |
 | AI-010 | 31/08/2026 | Codex (GPT-5) + ImageGen | Tạo pipeline Continuous Performance Testing và workflow ảnh minh họa thay Mermaid. | Soạn GitHub Actions proposal với path filter, health check, seed, JMeter smoke, baseline gate, comparator và artifact upload; tạo ảnh pipeline. | **VALID - proposal/documentation.** Chưa bật CI thật; baseline/comparator phải được team phê duyệt và đặt workflow vào repository Eshop trước khi kích hoạt. |
 
+| AI-011 | 31/08/2026 22:26 UTC+7 | Codex (GPT-5) | “Review và hoàn thiện lại main-report; tự xem lại requirement; cập nhật audit.” | Đối chiếu requirement PDF với JMX, raw JTL, HTML report và ảnh evidence; viết lại main report với scope, phương pháp, bảng kết quả, misinterpretation hunt, proposal và hạng mục còn thiếu. | **VALID - reviewed documentation.** Đã sửa diễn giải sai tiềm ẩn: parent E2E timing có think-time, nên không gọi p95 parent là backend latency; các thiếu sót evidence/video vẫn được giữ công khai, không bịa bổ sung. |
+
 ## Quy tắc cập nhật
 
 Mỗi lần sử dụng AI tiếp theo, thêm một dòng ghi đủ: ngày giờ, công cụ, prompt, đầu ra, verdict (VALID/INVALID/INCOMPLETE), lý do và phần sinh viên đã kiểm chứng hoặc sửa. Không ghi nhận dữ liệu thực thi chưa xảy ra.
