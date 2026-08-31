@@ -26,13 +26,23 @@ Không trùng lựa chọn của Vân: `POST /register`, `/api/products/:id`, `P
 
 ## 4. Kết quả Load test
 
+10 workflow, 40 sample, 0 lỗi; workflow p95 **4659 ms**, trung bình **4536.80 ms**, 0.557 workflow/s.
+
 ## 5. Kết quả Stress test
+
+30 workflow, 120 sample, 0 lỗi; workflow p95 **3022 ms**, trung bình **3021.87 ms**, 1.036 workflow/s.
 
 ## 6. Kết quả Spike test
 
+50 workflow, 200 sample, 0 lỗi; workflow p95 **1682 ms**, trung bình **1548.66 ms**, 53.706 workflow/s.
+
 ## 7. Endurance threshold
 
+Endurance thực chạy **601.15 giây**: 1.200 workflow, 4.800 sample, 0 lỗi; workflow p95 **4840 ms**, trung bình **4824.38 ms**, 1.996 workflow/s. Đây là ngưỡng đã quan sát ở 10 virtual users/think-time 1.6 s, không phải năng lực tối đa của phần cứng; cần chạy thêm mức tải tăng dần nếu muốn xác định maximum stable RPS.
+
 ## 8. AI analysis và misinterpretation hunt
+
+Phân tích từ raw JTL: không được đọc 4.800 sample endurance thành 4.800 workflow; đúng là 1.200 transaction controller workflow, mỗi workflow gồm 3 API và 1 parent transaction. Sai lầm khác là so sánh RPS Spike với Endurance như cùng điều kiện: Spike không có sustained think-time, còn Endurance có 1.6 s timer sau mỗi sampler. Vì vậy Spike 53.706 workflow/s không chứng minh hệ thống bền vững ở mức đó.
 
 ## 9. Đề xuất Continuous Performance Testing
 

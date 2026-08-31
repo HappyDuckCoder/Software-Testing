@@ -10,7 +10,7 @@ const scenarios = [
   { name: "Load", threads: 10, ramp: 20, loops: 1, thinkTime: 1500, listener: "ViewResultsFullVisualizer", listenerName: "View Results Tree" },
   { name: "Stress", threads: 30, ramp: 30, loops: 1, thinkTime: 1000, listener: "SummaryReport", listenerName: "Summary Report" },
   { name: "Spike", threads: 50, ramp: 1, loops: 1, thinkTime: 500, listener: "StatVisualizer", listenerName: "Aggregate Report" },
-  { name: "Endurance", threads: 10, ramp: 30, loops: 120, thinkTime: 5000, listener: "SummaryReport", listenerName: "Summary Report (endurance)" },
+  { name: "Endurance", threads: 10, ramp: 30, loops: 120, thinkTime: 1600, listener: "SummaryReport", listenerName: "Summary Report (endurance)" },
 ];
 
 function planXml(scenario) {
@@ -40,7 +40,7 @@ function planXml(scenario) {
           <hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Bearer JWT" enabled="true"><collectionProp name="HeaderManager.headers"><elementProp name="Authorization" elementType="Header"><stringProp name="Header.name">Authorization</stringProp><stringProp name="Header.value">Bearer \${jwt}</stringProp></elementProp></collectionProp></HeaderManager><hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Cancel is HTTP 200" enabled="true"><collectionProp name="Asserion.test_strings"><stringProp name="1">200</stringProp></collectionProp><stringProp name="Assertion.test_field">Assertion.response_code</stringProp><intProp name="Assertion.test_type">8</intProp></ResponseAssertion><hashTree/></hashTree>
         </hashTree>
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Think time" enabled="true"><stringProp name="ConstantTimer.delay">${scenario.thinkTime}</stringProp></ConstantTimer><hashTree/>
-        <ResultCollector guiclass="${scenario.listener}" testclass="ResultCollector" testname="${scenario.listenerName}" enabled="true"><boolProp name="ResultCollector.error_logging">false</boolProp><objProp><name>saveConfig</name><value class="SampleSaveConfiguration"><time>true</time><latency>true</latency><timestamp>true</timestamp><success>true</success><label>true</label><code>true</code><message>true</message><threadName>true</threadName><dataType>true</dataType><bytes>true</bytes><sentBytes>true</sentBytes><grpThreads>true</grpThreads><allThreads>true</allThreads><URL>true</URL><fileName>false</fileName><hostname>true</hostname><idleTime>true</idleTime><connectTime>true</connectTime></value></objProp><stringProp name="filename"></stringProp></ResultCollector><hashTree/>
+        <ResultCollector guiclass="${scenario.listener}" testclass="ResultCollector" testname="${scenario.listenerName}" enabled="true"><boolProp name="ResultCollector.error_logging">false</boolProp><stringProp name="filename"></stringProp></ResultCollector><hashTree/>
       </hashTree>
     </hashTree>
   </hashTree>
