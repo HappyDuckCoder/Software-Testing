@@ -54,6 +54,10 @@ Ba API trên không trùng với lựa chọn đã công bố của Vân: `POST 
 
 Chỉ đưa vào bài nộp các log, ảnh, report và video được tạo từ lần chạy thật; không thay thế bằng nội dung do AI tạo.
 
+## Agent Skills
+
+Ba skill tái sử dụng được đặt trong `agent-skills/`: `performance-testing-and-log-analysis`, `jmeter-e2e-plan-builder` và `transactional-test-data-manager`. Xem `agent-skills/skill-catalog.md`.
+
 ## Tóm tắt kiểm thử (điền sau khi chạy)
 
 | Kịch bản | Nhóm endpoint | Kết quả | Ngưỡng/RPS | Vị trí bằng chứng |
