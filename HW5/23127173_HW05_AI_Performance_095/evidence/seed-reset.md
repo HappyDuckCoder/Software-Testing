@@ -11,6 +11,8 @@ Chuẩn bị dữ liệu độc lập cho workflow `login -> my-orders -> cancel
 3. Script thêm 50 user test mang tiền tố `hw5.perf.` và 12 đơn `pending`/`confirmed` cho mỗi user, sau đó sinh `performance/data/hw5-users.local.csv` (bị git-ignore).
 4. Xác minh login, `my-orders`, và cancel trên một tài khoản test trước khi dùng JMeter.
 
+Với Endurance plan, chạy lại seed với `HW5_ACCOUNT_COUNT=1500` và `HW5_ORDERS_PER_ACCOUNT=1` để có 1.500 CSV rows/đơn độc lập cho 10 threads x 120 loops. Chỉ áp dụng cấu hình lớn này ngay trước endurance run.
+
 ## Execution record
 
 Ngày 31/08/2026 (UTC+7):

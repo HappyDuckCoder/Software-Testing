@@ -10,8 +10,8 @@ const csvPath = path.resolve(scriptDirectory, "../performance/data/hw5-users.loc
 const require = createRequire(import.meta.url);
 const sqlite3 = require(path.join(backendDirectory, "node_modules/sqlite3")).verbose();
 
-const accountCount = 50;
-const ordersPerAccount = 12;
+const accountCount = Number.parseInt(process.env.HW5_ACCOUNT_COUNT ?? "50", 10);
+const ordersPerAccount = Number.parseInt(process.env.HW5_ORDERS_PER_ACCOUNT ?? "12", 10);
 const userEmailPrefix = "hw5.perf.";
 const userEmailSuffix = "@eshop.local";
 
@@ -25,6 +25,9 @@ function run(database, statement, parameters = []) {
 }
 
 async function seed() {
+  if (!Number.isInteger(accountCount) || accountCount < 1 || !Number.isInteger(ordersPerAccount) || ordersPerAccount < 1) {
+    throw new Error("HW5_ACCOUNT_COUNT and HW5_ORDERS_PER_ACCOUNT must be positive integers.");
+  }
   const database = new sqlite3.Database(databasePath);
 
   try {
