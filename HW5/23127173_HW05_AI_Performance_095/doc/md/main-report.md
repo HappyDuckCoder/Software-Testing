@@ -46,4 +46,10 @@ Phân tích từ raw JTL: không được đọc 4.800 sample endurance thành 4
 
 ## 9. Đề xuất Continuous Performance Testing
 
+![Workflow continuous performance testing](../../continuous-performance-testing/workflow.png)
+
+Đã chuẩn bị workflow GitHub Actions ở `continuous-performance-testing/github-actions-performance.yml` dưới dạng **đề xuất chưa kích hoạt**. Khi tích hợp vào repository Eshop, pipeline chạy Load smoke có kiểm soát sau các thay đổi liên quan backend/database: checkout, khởi động SUT, reset/seed dữ liệu tách biệt, chạy JMeter non-GUI, so sánh JTL với baseline và upload JTL/HTML report để review.
+
+Performance gate đề xuất chỉ fail khi error rate vượt 1% hoặc p95 tăng quá 20% so với baseline đã duyệt. Đây là ngưỡng cảnh báo regression có thể hành động, không phải SLA sản phẩm. Gói đề xuất đã có baseline và `compare-performance-baseline.mjs`; team vẫn cần phê duyệt/rebaseline chúng trên runner tương đương và đặt workflow vào `.github/workflows/` của repository Eshop trước khi bật CI thật, để tránh tạo CI xanh/đỏ sai lệch.
+
 ## 10. Kết luận
