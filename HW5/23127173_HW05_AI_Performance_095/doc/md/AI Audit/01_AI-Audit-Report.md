@@ -33,6 +33,8 @@
 
 | AI-015 | 31/08/2026 23:01 UTC+7 | Codex (GPT-5) | “Review lại báo cáo, hoàn thiện báo cáo hơn, cập nhật audit, commit.” | Rà soát main report, README, checklist và disclosure/priv­acy với requirement/evidence; bổ sung quy trình tái lập, tiêu chí validity, baseline cross-check, giới hạn diễn giải và đồng bộ trạng thái artefact. | **VALID - documentation review.** Không thay số liệu raw; giữ rõ p95 E2E có think-time, peak memory là quan sát workload và video/PDF/ZIP vẫn chưa hoàn thành. |
 
+| AI-016 | 31/08/2026 23:05 UTC+7 | Codex (GPT-5) | “Cho kịch bản quay HW5 chính, chỉ rõ các lệnh, cd vào thư mục nào; thêm file md kịch bản video; cập nhật audit, commit.” | Tạo kịch bản video 8-9 phút có timeline, câu thoại, lệnh mở backend/seed/Task Manager/JMeter GUI và lệnh rerun có kiểm soát. | **VALID - documentation.** Script chỉ hướng dẫn quay/thi hành; không thay thế evidence thật. Người quay phải reset trước run mutable và đưa link Unlisted vào `link-video.md`. |
+
 ## Quy tắc cập nhật
 
 Mỗi lần sử dụng AI tiếp theo, thêm một dòng ghi đủ: ngày giờ, công cụ, prompt, đầu ra, verdict (VALID/INVALID/INCOMPLETE), lý do và phần sinh viên đã kiểm chứng hoặc sửa. Không ghi nhận dữ liệu thực thi chưa xảy ra.
