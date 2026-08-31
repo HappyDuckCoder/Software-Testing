@@ -27,6 +27,8 @@
 
 | AI-012 | 31/08/2026 22:47 UTC+7 | Codex (GPT-5) | “Bổ sung ảnh JMeter + Task Manager riêng cho Load, Stress và Spike; ảnh dxdiag; đo memory theo thời gian.” | Reset/seed rồi rerun 3 scenario để chụp ảnh cùng khung; chụp DXDIAG; rerun endurance 601 giây và lấy 61 mẫu RAM backend/hệ thống mỗi 10 giây. | **VALID - execution evidence.** Ảnh và raw rerun JTL được lưu; peak 79.14 MB chỉ là trần working set backend quan sát trong workload, không được diễn giải thành giới hạn phần cứng tổng quát. |
 
+| AI-013 | 31/08/2026 22:54 UTC+7 | Codex (GPT-5) | “cap 4 ảnh terminal cmd và 4 ảnh gui jmeter.” | Chụp riêng bốn CMD xác minh JMeter CLI/JTL và bốn cửa sổ GUI JMeter cho Load, Stress, Spike, Endurance. Ảnh GUI khởi động quá sớm ban đầu bị loại và chụp lại khi cửa sổ JMeter đã tải xong. | **VALID - interface evidence.** Đây là ảnh CLI/GUI bổ sung; không được dùng thay raw JTL, HTML hoặc ảnh tool + resource monitor trong cùng khung. |
+
 ## Quy tắc cập nhật
 
 Mỗi lần sử dụng AI tiếp theo, thêm một dòng ghi đủ: ngày giờ, công cụ, prompt, đầu ra, verdict (VALID/INVALID/INCOMPLETE), lý do và phần sinh viên đã kiểm chứng hoặc sửa. Không ghi nhận dữ liệu thực thi chưa xảy ra.
