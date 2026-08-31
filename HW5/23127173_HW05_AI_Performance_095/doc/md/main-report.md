@@ -14,7 +14,7 @@ Mục tiêu là kiểm thử workflow REST E2E của EShop qua Load, Stress, Spi
 | Hệ điều hành | Windows 11 Home Single Language 64-bit, 10.0.26200 |
 | SUT / generator | EShop backend local; JMeter 5.6.3; Node.js backend |
 
-Thông số máy được đọc từ Windows khi review. Chưa có ảnh dxdiag/screenfetch trong evidence, nên bảng này không thay thế hardware screenshot bắt buộc.
+Ảnh DXDIAG xác nhận cấu hình và thời điểm máy chạy có tại [dxdiag-hardware-20260831.png](../../evidence/hardware/dxdiag-hardware-20260831.png).
 
 ## 2. Workflow và endpoint mapping
 
@@ -52,6 +52,8 @@ Raw logs và HTML reports là nguồn chính. “Workflow” chỉ đếm parent
 | Spike | [`Spike.jtl`](../../performance/raw-jtl/23127173_Spike_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Spike_20260831/index.html) | 50 / 200 |
 | Endurance | [`Endurance.jtl`](../../performance/raw-jtl/23127173_Endurance_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Endurance_20260831/index.html) | 1,200 / 4,800 |
 
+Ảnh JMeter + Task Manager của từng scenario được lưu riêng: [Load](../../evidence/resource-monitor/load-jmeter-task-manager-20260831.png), [Stress](../../evidence/resource-monitor/stress-jmeter-task-manager-20260831.png), [Spike](../../evidence/resource-monitor/spike-jmeter-task-manager-20260831.png) và [Endurance](../../evidence/resource-monitor/endurance-jmeter-task-manager-20260831.png). Ba JTL rerun tương ứng được giữ tại `performance/raw-jtl/*_evidence-rerun.jtl` để đối chiếu ảnh; chúng là evidence bổ sung, không thay thế raw log gốc trong bảng.
+
 ## 5. Kết quả Load, Stress và Spike
 
 | Kịch bản | Workflow | Lỗi parent | Mean workflow | p95 workflow | Max workflow | JMeter transaction throughput |
@@ -66,7 +68,7 @@ Không có HTTP error trong ba run. Workflow latency **không phải** backend l
 
 Endurance hoàn tất trong **601.15 s**: 10 threads × 120 loops = 1,200 parent workflow, 4,800 sample, 0 lỗi. Parent mean **4,824.38 ms**, p95 **4,840 ms**, max **4,939 ms**; JMeter báo **1.980 workflow/s**. Endpoint mean vẫn thấp: login 2.42 ms, my-orders 2.48 ms, cancel 16.69 ms; chênh lệch là think-time.
 
-Trong đúng cấu hình này, mức bền quan sát được là **1.980 parent workflow/s không lỗi trong 601.15 s**. Đây không phải maximum stable RPS: chưa có dải tải tăng dần để tìm điểm gãy, và không có time-series memory. Ảnh [JMeter + Task Manager](../../evidence/resource-monitor/endurance-jmeter-task-manager-20260831.png) cho snapshot 11% CPU, 84% RAM và Java process 272.7 MB/165.9 MB, nhưng không đủ để quy cho backend hoặc gọi là memory ceiling.
+Trong đúng cấu hình này, mức bền quan sát được là **1.980 parent workflow/s không lỗi trong 601.15 s**. Đây không phải maximum stable RPS vì chưa có dải tải tăng dần để tìm điểm gãy. Một endurance rerun cùng cấu hình lấy **61 mẫu/10 giây trong 620 giây**: backend Node.js working set min **76.75 MB**, trung bình **78.32 MB**, peak **79.14 MB**; RAM hệ thống sử dụng min **78.94%**, trung bình **82.01%**, peak **83.29%**. CSV và cách tính ở [endurance-memory-samples-20260831.csv](../../evidence/endurance/endurance-memory-samples-20260831.csv) và [memory-observation.md](../../evidence/endurance/memory-observation.md). Vì vậy 79.14 MB là **trần backend quan sát được trong workload này**, không phải giới hạn vật lý hay memory ceiling tổng quát của máy.
 
 ## 7. AI analysis và misinterpretation hunt
 
@@ -88,4 +90,4 @@ Gói [Continuous Performance Testing](../../continuous-performance-testing/READM
 
 Đã có bốn JMX, CSV local, reset/seed, bốn raw JTL, bốn HTML report, một ảnh Endurance + Task Manager, ba Agent Skill và pipeline proposal. Không thấy HTTP error hay functional regression trong workflow đã chạy, nên không bịa GitHub Issue. Latency parent cao được giải thích bởi think-time, không được báo sai thành bug.
 
-**Còn thiếu trước khi nộp:** ảnh tool + resource monitor riêng cho Load/Stress/Spike; ảnh dxdiag/screenfetch; đo memory theo thời gian để có memory ceiling; video tiếng Việt unlisted >=6 phút; video demo Agent Skill; cập nhật README/checklist còn placeholder; xuất PDF, kiểm tra link và đóng ZIP. AI Critique 297 từ đã có tại [02_AI-Critique.md](AI%20Audit/02_AI-Critique.md). AI usage nằm trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md); báo cáo không thay thế raw artefact.
+**Còn thiếu trước khi nộp:** video tiếng Việt unlisted >=6 phút; video demo Agent Skill; cập nhật README/checklist còn placeholder; xuất PDF, kiểm tra link và đóng ZIP. AI Critique 297 từ đã có tại [02_AI-Critique.md](AI%20Audit/02_AI-Critique.md). AI usage nằm trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md); báo cáo không thay thế raw artefact.

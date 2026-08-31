@@ -1,3 +1,3 @@
 # Hardware evidence
 
-Lưu ảnh dxdiag/screenfetch và bảng thông số phần cứng. Hostname phải khớp với các deployment bài trước.
+`dxdiag-hardware-20260831.png` ghi thông tin hệ thống, CPU và RAM của máy chạy. Bảng thông số đã được chép vào `doc/md/main-report.md`.

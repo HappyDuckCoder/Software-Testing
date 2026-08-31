@@ -25,6 +25,8 @@
 
 | AI-011 | 31/08/2026 22:26 UTC+7 | Codex (GPT-5) | “Review và hoàn thiện lại main-report; tự xem lại requirement; cập nhật audit.” | Đối chiếu requirement PDF với JMX, raw JTL, HTML report và ảnh evidence; viết lại main report với scope, phương pháp, bảng kết quả, misinterpretation hunt, proposal và hạng mục còn thiếu. | **VALID - reviewed documentation.** Đã sửa diễn giải sai tiềm ẩn: parent E2E timing có think-time, nên không gọi p95 parent là backend latency; các thiếu sót evidence/video vẫn được giữ công khai, không bịa bổ sung. |
 
+| AI-012 | 31/08/2026 22:47 UTC+7 | Codex (GPT-5) | “Bổ sung ảnh JMeter + Task Manager riêng cho Load, Stress và Spike; ảnh dxdiag; đo memory theo thời gian.” | Reset/seed rồi rerun 3 scenario để chụp ảnh cùng khung; chụp DXDIAG; rerun endurance 601 giây và lấy 61 mẫu RAM backend/hệ thống mỗi 10 giây. | **VALID - execution evidence.** Ảnh và raw rerun JTL được lưu; peak 79.14 MB chỉ là trần working set backend quan sát trong workload, không được diễn giải thành giới hạn phần cứng tổng quát. |
+
 ## Quy tắc cập nhật
 
 Mỗi lần sử dụng AI tiếp theo, thêm một dòng ghi đủ: ngày giờ, công cụ, prompt, đầu ra, verdict (VALID/INVALID/INCOMPLETE), lý do và phần sinh viên đã kiểm chứng hoặc sửa. Không ghi nhận dữ liệu thực thi chưa xảy ra.
