@@ -16,6 +16,12 @@ Workflow được chọn, tái sử dụng phạm vi HW2: `POST /api/login` -> `
 
 Không trùng lựa chọn của Vân: `POST /register`, `/api/products/:id`, `POST /api/checkout`.
 
+### Chức năng và dữ liệu trao đổi
+
+- `POST /api/login` nhận email/mật khẩu test và trả JWT. JWT là điều kiện bắt buộc để gọi các API đơn hàng; số lần login sai có thể kích hoạt account lockout, do đó cần tách và kiểm soát dữ liệu lỗi khi chạy Stress/Spike.
+- `GET /api/orders/my-orders` dùng JWT để đọc danh sách đơn của user hiện tại theo ID giảm dần. Plan phải trích một `orderId` có trạng thái phù hợp từ response thay vì hard-code ID.
+- `PUT /api/orders/:id/cancel` dùng JWT và `orderId` để cập nhật một đơn thuộc user sang `canceled`. Mỗi virtual user cần có đơn dữ liệu riêng ở trạng thái `pending`/`confirmed` để tránh xung đột và bảo đảm lần chạy lặp lại được.
+
 ## 3. Thiết kế test plan có hỗ trợ AI và human review
 
 ## 4. Kết quả Load test

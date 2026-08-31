@@ -25,6 +25,8 @@ Workflow đầu cuối được chọn là: **đăng nhập -> xem lịch sử �
 
 Ba API trên không trùng với lựa chọn đã công bố của Vân: `POST /register`, `/api/products/:id`, và `POST /api/checkout`.
 
+`POST /api/login` trả JWT; `GET /api/orders/my-orders` dùng JWT để đọc các đơn của user và lấy `orderId`; `PUT /api/orders/:id/cancel` dùng JWT + `orderId` để đổi trạng thái đơn thành `canceled`.
+
 ## Cấu trúc bài nộp
 
 ```text
