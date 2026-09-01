@@ -1,0 +1,12 @@
+{
+  "name": "hw6-api-testing",
+  "private": true,
+  "scripts": {
+    "test:smoke": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/smoke/report.html",
+    "test:compliance": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/compliance/report.html"
+  },
+  "devDependencies": {
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}
