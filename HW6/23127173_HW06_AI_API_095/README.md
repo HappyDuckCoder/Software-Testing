@@ -28,7 +28,7 @@ Ba endpoint trên không trùng bộ của Vân: `POST /register`, `GET /api/pro
 |- ci-cd/                   # workflow và báo cáo CI/CD
 |- doc/md/                  # main report, audit, critique, commit log
 |- doc/pdf/                 # PDF xuất cuối cùng
-|- evidence/                # ảnh header, CI/CD, issue, video thật
+|- evidence/                # ảnh header, Postman, Newman, CI/CD, issue thật
 |- issues/                  # bug report Markdown
 |- test-cases/              # workbook Excel và test summary
 |- agent-skills/            # design/pseudocode của test generator

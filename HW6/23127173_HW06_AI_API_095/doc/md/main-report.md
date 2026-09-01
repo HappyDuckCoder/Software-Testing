@@ -48,4 +48,4 @@ Xem [thiết kế và pseudocode](../../agent-skills/eshop-api-test-generator/RE
 
 ## 9. Kết luận và giới hạn
 
-Core suite chứng minh collection, header injection, Postman Runner, Newman local và một GitHub Actions baseline pipeline chạy thành công; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, GitHub Issues/screenshot, remote CI failing run, PDF export và video/demo. Các mục này giữ trạng thái pending thay vì bị bịa.
+Core suite chứng minh collection, header injection, Postman Runner, Newman local và một GitHub Actions baseline pipeline chạy thành công; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, GitHub Issues/screenshot, remote CI failing run và PDF export. Video demo chỉ là mục khuyến khích nên không được ghi như deliverable bắt buộc.

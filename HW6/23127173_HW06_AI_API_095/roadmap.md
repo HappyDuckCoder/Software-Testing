@@ -26,4 +26,4 @@
 
 Đã hoàn thành phần nền tảng/execution: bước 1 (scope), bước 6 (collection và header injection), bước 7 (Newman local), và phần baseline của bước 9 (GitHub Actions pass). Các bằng chứng tương ứng nằm trong `evidence/postman-ui/`, `evidence/newman-ui/`, và `evidence/ci-cd/`.
 
-Chưa hoàn thành: generation/audit đủ số lượng cho từng API (bước 2-5), GitHub Issues đã được user verify (bước 8), remote CI failing run có phân loại (bước 9), Excel, diagram tự vẽ, PDF và video/ZIP (bước 10).
+Chưa hoàn thành: generation/audit đủ số lượng cho từng API (bước 2-5), GitHub Issues đã được user verify (bước 8), remote CI failing run có phân loại (bước 9), Excel, diagram tự vẽ, PDF và ZIP (bước 10). Video demo là mục khuyến khích nên không nằm trong tiêu chí hoàn thành.
