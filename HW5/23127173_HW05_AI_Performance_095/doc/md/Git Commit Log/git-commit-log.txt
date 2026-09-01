@@ -1,0 +1,3 @@
+# Git Commit Log - HW05
+
+Chưa xuất log. Sau mỗi bước có ý nghĩa (test plan Load/Stress/Spike, AI analysis, continuous-testing proposal), bổ sung commit; trước khi nộp, xuất lịch sử commit thực tế vào tệp này.

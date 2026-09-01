@@ -1,0 +1,8 @@
+{
+  "workflowLabel": "E2E login - orders - cancel",
+  "p95Ms": 4659,
+  "errorRatePercent": 0,
+  "maxP95IncreasePercent": 20,
+  "maxErrorRatePercent": 1,
+  "source": "23127173_Load_20260831.jtl, reviewed HW5 run on 2026-08-31"
+}
