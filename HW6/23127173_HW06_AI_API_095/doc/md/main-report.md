@@ -30,7 +30,9 @@ Mỗi API có pipeline: AI generation -> human audit -> student extension -> Pos
 
 Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_collection.json`. Tính năng đã dùng: collection folders, collection-level pre-request script, environment variables, setup chain qua environment variables, CLI execution và HTML reporter. Raw/HTML output: `api-testing/newman/raw-output/` và `api-testing/newman/html-reports/`.
 
-Chưa có ảnh Postman Console GUI: Postman Desktop không có trong môi trường này. Newman CLI output là bằng chứng thực thi thật nhưng không thay thế ảnh Console bắt buộc của đề; mục này còn cần chạy Postman Desktop và chụp ảnh thật.
+Ảnh Newman chạy thật: `evidence/newman-ui/newman-baseline-terminal-20260901.png`.
+
+Chưa có ảnh Postman Console GUI: Postman Desktop được phát hiện/cài đặt nhưng không khởi động trong môi trường hiện tại. Newman CLI output và ảnh terminal là bằng chứng thực thi thật nhưng không thay thế ảnh Console bắt buộc của đề; mục này còn cần chạy Postman Desktop và chụp ảnh thật.
 
 ## 6. CI/CD
 
