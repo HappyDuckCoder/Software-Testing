@@ -1,0 +1,3 @@
+# Git commit log - HW06
+
+Append `git log --oneline -- <submission-path>` before packaging. Create separate commits for generation, audit, extension and execution of each selected API as required.
