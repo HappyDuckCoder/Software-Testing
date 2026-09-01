@@ -1,5 +1,7 @@
-# AI Critique (200-300 từ)
+# AI Critique (242 từ)
 
-_Chưa viết. Hoàn thành sau khi đã có output AI và kết quả thực thi thực tế; đếm lại để bảo đảm 200-300 từ._
+AI hữu ích nhất ở HW06 là tạo cấu trúc làm việc: dịch requirement, tách ba API theo pool, gợi ý ma trận domain/state/security và sinh collection Newman có chuỗi setup. Tuy nhiên, đầu ra ban đầu có thiên lệch “hoàn thành nhanh”: collection core chỉ có số case nhỏ hơn ngưỡng >=35 AI-generated/audited và >=5 student-added cho mỗi API. Nếu chỉ nhìn số assertion pass, AI có thể khiến người làm nhầm baseline regression là độ bao phủ requirement. Vì vậy các con số 20 requests/21 assertions và Postman 21 passed chỉ được báo cáo như execution baseline, không được dùng để khẳng định đã đạt coverage của đề.
 
-Nội dung cần trả lời: AI sai/thiếu/thiên lệch gì; vì sao bỏ sót; sinh viên đã sửa thế nào; nguyên tắc cộng tác với AI rút ra. Không nộp đoạn placeholder này.
+AI cũng suy luận ba hành vi có khả năng là defect từ requirement và SUT: role mass assignment, hủy đơn shipping, và user token gọi admin status. Các suy luận này được chuyển thành compliance oracle, chạy lại trên dữ liệu cô lập và ghi local bug report. Tuy vậy chúng chưa được biến thành GitHub Issue, vì flow yêu cầu sinh viên xác minh và cho phép trước. Đây là điểm cần thiết để tránh AI tự tạo báo cáo lỗi sai hoặc tác động hệ thống bên ngoài.
+
+Sai sót rõ nhất của agent xảy ra ở evidence handling: sau khi sinh viên nói đã lưu ảnh, agent lặp lại giới hạn ảnh chat thay vì kiểm tra thư mục đích ngay. Sinh viên phải nhắc lại; sau đó năm ảnh Postman và năm ảnh CI mới được phát hiện, đổi tên và kiểm chứng. Bài học là luôn kiểm tra filesystem hẹp trước khi kết luận artifact không tồn tại; không thay ảnh người dùng bằng ảnh dựng; phân biệt ảnh cấu hình, evidence thực thi và trạng thái pending. Sinh viên vẫn cần hoàn thành workbook, test-case audit đầy đủ, fail CI có chủ đích, diagram, PDF/video trước khi tự đánh giá bài hoàn chỉnh.

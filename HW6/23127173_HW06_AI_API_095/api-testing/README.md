@@ -6,4 +6,4 @@
 - `newman/raw-output/`: actual CLI output.
 - `newman/html-reports/`: actual HTML reports.
 
-Before executing, set a collection-level pre-request script that sends `X-Student-Id: 23127173` on every request and record a real console screenshot in `../evidence/header/`.
+The committed collection has a collection-level pre-request script that sends `X-Student-Id: 23127173` on every request. Local Newman output and remote CI evidence record this header; see `../evidence/newman-ui/` and `../evidence/ci-cd/`.

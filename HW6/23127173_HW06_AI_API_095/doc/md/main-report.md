@@ -36,7 +36,7 @@ Postman Desktop đã được sinh viên chạy và cung cấp năm ảnh kết 
 
 ## 6. CI/CD
 
-Xem [CI/CD report](../../ci-cd/ci-cd-report.md). Báo cáo hai run có link/screenshot thật, không dùng ảnh mô phỏng.
+Xem [CI/CD report](../../ci-cd/ci-cd-report.md). Có một remote baseline run succeeded với link và năm ảnh thật; chưa có remote failing run.
 
 ## 7. Bug report
 
@@ -48,4 +48,4 @@ Xem [thiết kế và pseudocode](../../agent-skills/eshop-api-test-generator/RE
 
 ## 9. Kết luận và giới hạn
 
-Core suite chứng minh collection, header, Postman Runner và Newman pipeline chạy trên localhost; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, GitHub Issues/screenshot, remote CI runs, PDF export và video/demo. Các mục này giữ trạng thái pending thay vì bị bịa.
+Core suite chứng minh collection, header injection, Postman Runner, Newman local và một GitHub Actions baseline pipeline chạy thành công; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, GitHub Issues/screenshot, remote CI failing run, PDF export và video/demo. Các mục này giữ trạng thái pending thay vì bị bịa.

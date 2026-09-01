@@ -8,7 +8,7 @@
 | SUT | EShop (`http://localhost:3000`) |
 | Tên ZIP | `23127173_HW06_AI_API_095.zip` |
 | Điểm tự đánh giá | 095/100 (tạm thời) |
-| Trạng thái | Khởi tạo cấu trúc; chưa tạo test result hay execution evidence |
+| Trạng thái | Có Postman Runner, Newman local và GitHub Actions baseline evidence; các deliverable còn thiếu được liệt kê tại `checklist.md`. |
 
 ## API dự kiến
 
@@ -18,7 +18,7 @@
 | B | FR-10 - `PUT /api/orders/:id/cancel` | Hủy một đơn thuộc người dùng hiện tại và chuyển trạng thái sang `canceled` nếu thỏa điều kiện. | Kiểm thử transition/cancellation của đơn hàng. |
 | C | FR-18 - `PUT /api/admin/orders/:id/status` | Admin cập nhật trạng thái của một đơn, ví dụ `pending` sang `confirmed`. | Có role authorization, IDOR và state transition phía admin. |
 
-Ba endpoint trên không trùng bộ của Vân: `POST /register`, `GET /api/products/:id`, `POST /api/checkout`. Xác nhận lại với nhóm trước khi bắt đầu sinh/thiết kế test case.
+Ba endpoint trên không trùng bộ của Vân: `POST /register`, `GET /api/products/:id`, `POST /api/checkout`. Phạm vi này đã được dùng để thực thi suite HW06; cần xác nhận lại với nhóm nếu danh sách phân công thay đổi.
 
 ## Cấu trúc
 

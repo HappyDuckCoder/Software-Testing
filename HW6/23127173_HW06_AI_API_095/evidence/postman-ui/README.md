@@ -16,4 +16,4 @@ All five original files supplied by the student are now stored in this directory
 
 If a sent-result headers capture contains a live `Authorization: Bearer ...` JWT, redact only the token value. Keep the endpoint, `200 OK`, `X-Student-Id`, and relevant timing/status visible.
 
-The earlier successful run (21 passed, 2.989 s, average 10 ms) remains consistent, but this newer capture is preferred because it visibly uses the named environment that resolves setup variables. Screens showing an unsent request, request-body editor, or test-script editor are useful design review material but are not execution evidence and are intentionally not retained here.
+The earlier successful run (21 passed, 2.989 s, average 10 ms) remains consistent, but the newer run is preferred because it visibly uses the named environment that resolves setup variables. Screens 4 and 5 are deliberately retained as configuration traceability and are not interpreted as sent-result evidence.

@@ -21,3 +21,9 @@
 - Cập nhật AI Audit ngay sau mỗi tương tác: tool, thời gian, prompt, output, verdict và phần đã kiểm tra/sửa.
 - Chỉ lưu số liệu, report và ảnh từ lần chạy thật; không tạo dữ liệu thực thi giả.
 - So khớp schema/HTTP status với `Eshop/api_specification.md` và hành vi SUT trước khi kết luận bug.
+
+## Trạng thái sau khi review (01/09/2026)
+
+Đã hoàn thành phần nền tảng/execution: bước 1 (scope), bước 6 (collection và header injection), bước 7 (Newman local), và phần baseline của bước 9 (GitHub Actions pass). Các bằng chứng tương ứng nằm trong `evidence/postman-ui/`, `evidence/newman-ui/`, và `evidence/ci-cd/`.
+
+Chưa hoàn thành: generation/audit đủ số lượng cho từng API (bước 2-5), GitHub Issues đã được user verify (bước 8), remote CI failing run có phân loại (bước 9), Excel, diagram tự vẽ, PDF và video/ZIP (bước 10).
