@@ -10,7 +10,7 @@ The student supplied and reviewed these five genuine Postman Desktop captures on
 | 4 | C-001 request body | Traceability for `PUT /api/admin/orders/{{adminOrderId}}/status` using `{ "status": "confirmed" }`. It is configuration evidence, not a sent-result capture. | `postman-c001-request-body-20260901.png` |
 | 5 | C-001 request headers | Traceability for the same request with `Authorization: Bearer {{adminToken}}`. It is configuration evidence, not a sent-result capture. | `postman-c001-request-headers-20260901.png` |
 
-The active-desktop capture facility saved files 2 and 5. Chat-rendered images 1, 3 and 4 are not addressable as local files by this workspace; their original files must be exported/copied here before packaging the submission. Do not recreate, edit, or claim synthetic screenshots as execution evidence.
+All five original files supplied by the student are now stored in this directory under the filenames above. They are direct Postman Desktop captures, not recreated images.
 
 ## Redaction requirement
 

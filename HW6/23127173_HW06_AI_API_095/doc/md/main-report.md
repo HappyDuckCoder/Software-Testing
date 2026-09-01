@@ -32,7 +32,7 @@ Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_col
 
 Ảnh Newman chạy thật: `evidence/newman-ui/newman-baseline-terminal-20260901.png`.
 
-Postman Desktop đã được sinh viên chạy và cung cấp ảnh kết quả thật ngày 01/09/2026: một iteration chạy bằng `New Environment`, **21 passed**, **0 failed**, **0 errors**, thời lượng **1.604 s**, trung bình **9 ms**. Trong cùng ảnh, `SETUP-04 Create shipping order` trả `200`, `Checkout successful`, `orderId: 34`, xác nhận setup chain đã resolve biến. Ảnh headers cho thấy request `POST http://127.0.0.1:3000/api/checkout` trả `200 OK` và có `X-Student-Id: 23127173`. Danh mục ảnh cần chép vào gói nộp được ghi tại `evidence/postman-ui/README.md`. Token Bearer trong ảnh headers phải được che trước khi lưu/commit.
+Postman Desktop đã được sinh viên chạy và cung cấp năm ảnh kết quả thật ngày 01/09/2026. Run mới nhất chạy bằng `New Environment`, một iteration, **21 passed**, **0 failed**, **0 errors**, thời lượng **1.669 s**, trung bình **9 ms**. Bộ ảnh cho thấy cấu hình Runner, tổng quan kết quả, chi tiết case dương/âm, request body C-001 và headers C-001. Danh mục/tính chất từng ảnh được ghi tại `evidence/postman-ui/README.md`; ảnh cấu hình không được diễn giải như response thực thi.
 
 ## 6. CI/CD
 
