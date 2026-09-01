@@ -14,11 +14,11 @@
 
 | Pool | Feature/API dự kiến | Lý do |
 | --- | --- | --- |
-| A | FR-02 - `POST /api/login` | Có domain partitions, xác thực và account lockout. |
+| A | FR-04 - `PUT /api/users/me` | Dùng lại nền tảng HW2; có domain partitions cho tên, địa chỉ, số điện thoại và kiểm soát JWT/ownership. |
 | B | FR-10 - `PUT /api/orders/:id/cancel` | Kiểm thử transition/cancellation của đơn hàng. |
 | C | FR-18 - `PUT /api/admin/orders/:id/status` | Có role authorization, IDOR và state transition phía admin. |
 
-> Xác nhận ba API không trùng thành viên khác trước khi bắt đầu sinh/thiết kế test case.
+Ba endpoint trên không trùng bộ của Vân: `POST /register`, `GET /api/products/:id`, `POST /api/checkout`. Xác nhận lại với nhóm trước khi bắt đầu sinh/thiết kế test case.
 
 ## Cấu trúc
 
