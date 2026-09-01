@@ -1,0 +1,40 @@
+name: HW6 EShop API tests
+
+on:
+  push:
+    branches: [homework6]
+    paths: ['HW6/**']
+  workflow_dispatch:
+
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Checkout EShop SUT
+        uses: actions/checkout@v4
+        with:
+          repository: ttbhanh/eshop-sut
+          path: eshop-sut
+      - name: Install SUT and Newman dependencies
+        run: |
+          npm ci --prefix eshop-sut/backend
+          npm ci --prefix HW6/23127173_HW06_AI_API_095/api-testing
+      - name: Start SUT and wait for health check
+        run: |
+          node eshop-sut/backend/server.js > eshop.log 2>&1 &
+          for i in {1..20}; do curl -fsS http://127.0.0.1:3000/api/products && break; sleep 1; done
+      - name: Run baseline Newman suite
+        working-directory: HW6/23127173_HW06_AI_API_095/api-testing
+        run: |
+          node scripts/generate-collection.mjs
+          npx newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json --env-var baseUrl=http://127.0.0.1:3000 --env-var mode=baseline -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/ci-baseline/report.html | tee newman/raw-output/ci-baseline.txt
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hw6-newman-baseline
+          path: HW6/23127173_HW06_AI_API_095/api-testing/newman
