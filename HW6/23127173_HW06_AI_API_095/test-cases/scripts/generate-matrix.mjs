@@ -40,6 +40,26 @@ const cases = [
   ...make('B', 'PUT /api/orders/:id/cancel', cancel),
   ...make('C', 'PUT /api/admin/orders/:id/status', admin),
 ];
+const mapCase = (c) => {
+  const t = c.title.toLowerCase();
+  if (c.api === 'A') {
+    const auth = t.includes('missing jwt') ? 'No Authorization header' : t.includes('malformed') || t.includes('expired') ? 'Bearer invalid/expired JWT' : 'Bearer {{userToken}}';
+    const expected = t.includes('missing jwt') ? '401' : t.includes('malformed') || t.includes('expired') ? '403' : t.includes('role mass') || t.includes('isadmin') ? '400 requirement oracle (SUT observed 200)' : '200 observed baseline';
+    return { pre: 'Login user unless auth-negative case.', request: `PUT /api/users/me; ${auth}; mutate field named by case.`, expected };
+  }
+  if (c.api === 'B') {
+    const auth = t.includes('missing jwt') ? 'No Authorization header' : t.includes('malformed') || t.includes('expired') ? 'Bearer invalid/expired JWT' : 'Bearer {{userToken}}';
+    const state = t.includes('shipping') ? 'Fresh order transitioned pending→confirmed→shipping.' : t.includes('delivered') ? 'Fresh delivered order.' : t.includes('canceled') || t.includes('twice') ? 'Fresh order already canceled.' : t.includes('nonexistent') || t.includes('negative') || t.includes('decimal') || t.includes('alphabetic') || t.includes('sql') || t.includes('xss') ? 'Use invalid/nonexistent order id.' : 'Fresh user-owned pending/confirmed order.';
+    const expected = t.includes('missing jwt') ? '401' : t.includes('malformed') || t.includes('expired') ? '403' : t.includes('shipping') ? '400 requirement oracle (SUT observed 200)' : t.includes('delivered') || t.includes('canceled') || t.includes('twice') ? '400' : t.includes('nonexistent') || t.includes('negative') || t.includes('decimal') || t.includes('alphabetic') || t.includes('sql') || t.includes('xss') ? '404' : '200';
+    return { pre: state, request: `PUT /api/orders/{id}/cancel; ${auth}.`, expected };
+  }
+  const auth = t.includes('missing jwt') ? 'No Authorization header' : t.includes('malformed') || t.includes('expired') ? 'Bearer invalid/expired JWT' : t.includes('user token') || t.includes('non-admin') ? 'Bearer {{userToken}}' : 'Bearer {{adminToken}}';
+  const invalidId = t.includes('zero') || t.includes('negative') || t.includes('decimal') || t.includes('alphabetic') || t.includes('sql') || t.includes('nonexistent') || t.includes('missing path');
+  const invalidState = t.includes('rejected') || t.includes('invalid') || t.includes('missing') || t.includes('null') || t.includes('empty') || t.includes('numeric') || t.includes('mixed') || t.includes('whitespace') || t.includes('xss') || t.includes('unknown');
+  const expected = t.includes('missing jwt') ? '401' : t.includes('malformed') || t.includes('expired') ? '403' : t.includes('user token') || t.includes('non-admin') ? '403 requirement oracle (SUT observed 200)' : invalidId ? '404' : invalidState ? '400' : '200';
+  return { pre: invalidId ? 'Use invalid/nonexistent order id.' : 'Create fresh order and move it to the source state named by case.', request: `PUT /api/admin/orders/{id}/status; ${auth}; body {status: target}.`, expected };
+};
+const mapped = cases.map(c => ({ ...c, ...mapCase(c) }));
 const md = [
   '# HW06 Test-case matrix and human audit', '',
   'Each API has 40 cases: 35 AI-generated and 5 student-added. `Student Verify` is deliberately blank for the student to confirm each case before final execution/export.', '',
@@ -55,3 +75,5 @@ const csv = ['ID,API,Endpoint,Test case,Source,Audit verdict,Audit rationale/cor
 await mkdir(out, { recursive: true });
 await writeFile(new URL('test-case-matrix.md', out), md);
 await writeFile(new URL('test-case-source.csv', out), csv);
+const mapMd = ['# Executable mapping for HW06 test cases', '', 'Rows marked “requirement oracle” are deliberately expected to fail in compliance mode until the SUT defect is fixed. Rows with ambiguous validations remain `INCOMPLETE` in the audit and require student verification before assertion finalization.', '', '| ID | Fixture/precondition | Request mapping | Expected status/oracle | Student Verify |', '| --- | --- | --- | --- | --- |', ...mapped.map(c => `| ${c.id} | ${c.pre} | ${c.request} | ${c.expected} | ${c.verify} |`)].join('\n');
+await writeFile(new URL('execution-mapping.md', out), mapMd);
