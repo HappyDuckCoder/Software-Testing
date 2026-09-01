@@ -3,4 +3,5 @@ api-testing/newman/raw-output/*.log
 api-testing/newman/html-reports/*
 !api-testing/newman/html-reports/README.md
 api-testing/postman/environments/*.local.json
+api-testing/node_modules/
 *.zip
