@@ -32,7 +32,7 @@ Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_col
 
 Ảnh Newman chạy thật: `evidence/newman-ui/newman-baseline-terminal-20260901.png`.
 
-Chưa có ảnh Postman Console GUI: Postman Desktop được phát hiện/cài đặt nhưng không khởi động trong môi trường hiện tại. Newman CLI output và ảnh terminal là bằng chứng thực thi thật nhưng không thay thế ảnh Console bắt buộc của đề; mục này còn cần chạy Postman Desktop và chụp ảnh thật.
+Postman Desktop đã được sinh viên chạy và cung cấp ảnh kết quả thật ngày 01/09/2026: một iteration, **21 passed**, **0 failed**, **0 errors**, thời lượng **2.989 s**, trung bình **10 ms**. Ảnh headers cho thấy request `POST http://127.0.0.1:3000/api/checkout` trả `200 OK` và có `X-Student-Id: 23127173`; ảnh response cho thấy `Checkout successful` cùng `orderId`. Danh mục ảnh cần chép vào gói nộp được ghi tại `evidence/postman-ui/README.md`. Token Bearer trong ảnh headers phải được che trước khi lưu/commit.
 
 ## 6. CI/CD
 
@@ -48,4 +48,4 @@ Xem [thiết kế và pseudocode](../../agent-skills/eshop-api-test-generator/RE
 
 ## 9. Kết luận và giới hạn
 
-Core suite chứng minh collection, header và Newman pipeline chạy trên localhost; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, Postman Desktop Console screenshot, GitHub Issues/screenshot, remote CI runs, PDF export và video/demo. Các mục này giữ trạng thái pending thay vì bị bịa.
+Core suite chứng minh collection, header, Postman Runner và Newman pipeline chạy trên localhost; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, GitHub Issues/screenshot, remote CI runs, PDF export và video/demo. Các mục này giữ trạng thái pending thay vì bị bịa.
