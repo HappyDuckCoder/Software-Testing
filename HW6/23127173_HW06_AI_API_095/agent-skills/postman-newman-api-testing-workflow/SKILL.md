@@ -29,7 +29,8 @@ Produce linked, reviewable artifacts:
 3. At least **five student-originated** cases absent from the AI draft, with an explanation of the gap.
 4. A Postman collection, safe environment/data files, and request/assertion implementation.
 5. A real Postman run and a real Newman CLI/HTML report; record command, hostname, timestamp and run identifier.
-6. A bug report/GitHub Issue only for reproducible defects, and CI/CD evidence only for actual remote runs.
+6. A local bug-report update for reproducible defects; create a GitHub Issue only **after the user verifies and authorizes it**.
+7. CI/CD evidence only for actual remote runs; if CI fails, diagnose/fix, commit and push a new revision before marking the pipeline healthy.
 
 Use [references/test-case-contract.md](references/test-case-contract.md) for the case schema and coverage matrix. Use [references/postman-newman-and-ci.md](references/postman-newman-and-ci.md) while building or running the collection.
 
@@ -105,13 +106,13 @@ Run the reviewed collection in Postman first. Then execute the same committed co
 
 Treat a run as invalid when its target URL, collection revision, student-ID header, required setup/data, or report cannot be identified. Do not edit JUnit/JSON/HTML/Newman output after execution.
 
-If a test fails, first classify it as test defect, environment/data/setup problem, specification ambiguity, or probable SUT defect. Re-run a reproducible probable SUT defect with isolated data before creating a GitHub Issue. Preserve actual request/response while redacting secrets.
+If a test fails, first classify it as test defect, environment/data/setup problem, specification ambiguity, or probable SUT defect. Re-run a reproducible probable SUT defect with isolated data, update the local bug report, and **wait for user verification** before creating a GitHub Issue. Preserve actual request/response while redacting secrets.
 
 ## Phase 6 - CI/CD and reporting
 
 Add CI only after a local Newman run succeeds. The pipeline must checkout the intended revision, provision/start the SUT, perform a health check, run Newman with the same collection/environment/data strategy, fail on assertion failure and upload reports/artifacts.
 
-The required passing and failing CI examples must be real runs with commit hashes, workflow URLs and screenshots. The failing example must identify the intentional or observed failing test and must not be mislabeled as a product defect merely to satisfy the requirement.
+The required passing and failing CI examples must be real runs with commit hashes, workflow URLs and screenshots. The failing example must identify the intentional or observed failing test and must not be mislabeled as a product defect merely to satisfy the requirement. A failed CI run enters a fix-then-push loop: determine whether the failure is test, environment, workflow or SUT configuration; fix only authorized repository material; re-run locally where possible; commit/push; then record the next CI result.
 
 Update the main report, Excel summary, AI Audit and text commit log after every material phase. Make separate commits for generation, audit, extension and execution of each API when practicable.
 
@@ -119,6 +120,7 @@ Update the main report, Excel summary, AI Audit and text commit log after every 
 
 - The generator design diagram submitted for HW06 is self-drawn by the student. The asset in this skill is only a user-provided workflow reference.
 - Never invent report metrics, screenshots, a Newman hostname, CI workflow URL, Issue number, test result or bug.
+- Treat GitHub Issue creation and repository push as external changes: after a reproducible defect is written locally, pause for user verification/authorization before creating the Issue; do not infer consent from a local bug report.
 - Do not run destructive database resets, delete shared resources or publish/push without current authorization.
 - If AI output conflicts with the specification or actual SUT, retain the discrepancy in the audit and use the verified oracle; do not silently rewrite history.
 

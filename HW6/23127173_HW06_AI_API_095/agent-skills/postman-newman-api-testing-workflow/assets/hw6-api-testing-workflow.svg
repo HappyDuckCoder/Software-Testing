@@ -1,24 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1420" height="500" viewBox="0 0 1420 500">
-  <style>
-    .box{fill:#fff;stroke:#111;stroke-width:2}.group{fill:none;stroke:#111;stroke-width:2;stroke-dasharray:9 5}.line{fill:none;stroke:#111;stroke-width:2;marker-end:url(#arrow)}.t{font-family:Arial,sans-serif;font-size:18px;fill:#111;text-anchor:middle;dominant-baseline:middle}
-  </style>
-  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#111"/></marker></defs>
-  <rect class="box" x="20" y="215" width="145" height="58"/><text class="t" x="92" y="244">Phân tích API</text>
-  <path class="line" d="M165 244H200"/>
-  <rect class="group" x="200" y="75" width="210" height="300"/>
-  <rect class="box" x="230" y="105" width="150" height="58"/><text class="t" x="305" y="134">Đọc requirement</text>
-  <rect class="box" x="230" y="205" width="150" height="70"/><text class="t" x="305" y="230">Tham khảo các</text><text class="t" x="305" y="253">test của HW2</text>
-  <rect class="box" x="230" y="315" width="150" height="58"/><text class="t" x="305" y="344">Đọc specification</text>
-  <path class="line" d="M410 244H445"/>
-  <rect class="box" x="445" y="215" width="150" height="58"/><text class="t" x="520" y="244">Tạo test case</text>
-  <path class="line" d="M595 244C625 220 625 125 650 125"/><path class="line" d="M595 244C625 270 625 340 650 340"/>
-  <rect class="box" x="650" y="95" width="155" height="58"/><text class="t" x="727" y="119">Test bằng</text><text class="t" x="727" y="140">Postman</text>
-  <path class="line" d="M805 124H835"/><rect class="box" x="835" y="95" width="155" height="58"/><text class="t" x="912" y="124">Tự chụp minh</text><text class="t" x="912" y="145">chứng</text>
-  <path class="line" d="M990 124C1015 150 1015 215 1035 215"/>
-  <rect class="box" x="650" y="310" width="155" height="58"/><text class="t" x="727" y="339">Test bằng Newman</text>
-  <path class="line" d="M805 339H835"/><rect class="box" x="835" y="310" width="155" height="58"/><text class="t" x="912" y="330">CI GitHub</text><text class="t" x="912" y="351">workflow</text>
-  <path class="line" d="M912 368V405"/><rect class="box" x="835" y="405" width="155" height="58"/><text class="t" x="912" y="429">Tự chụp minh</text><text class="t" x="912" y="450">chứng</text>
-  <path class="line" d="M912 405C1015 405 1015 275 1035 275"/>
-  <rect class="box" x="1035" y="215" width="175" height="70"/><text class="t" x="1122" y="237">Cập nhật báo cáo</text><text class="t" x="1122" y="260">và AI Audit</text>
-  <path class="line" d="M1210 250H1240"/><rect class="box" x="1240" y="215" width="150" height="70"/><text class="t" x="1315" y="237">Commit/Push</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720">
+  <style>.b{fill:#fff;stroke:#111;stroke-width:2}.g{fill:none;stroke:#111;stroke-width:2;stroke-dasharray:9 5}.a{fill:none;stroke:#111;stroke-width:2;marker-end:url(#m)}.t{font:16px Arial,sans-serif;text-anchor:middle;dominant-baseline:middle}</style>
+  <defs><marker id="m" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z"/></marker></defs>
+  <rect class="b" x="20" y="300" width="150" height="58"/><text class="t" x="95" y="329">Phân tích API</text><path class="a" d="M170 329h50"/>
+  <rect class="g" x="220" y="150" width="220" height="300"/><rect class="b" x="250" y="180" width="160" height="58"/><text class="t" x="330" y="209">Đọc requirement</text><rect class="b" x="250" y="275" width="160" height="70"/><text class="t" x="330" y="300">Tham khảo các</text><text class="t" x="330" y="321">test của HW2</text><rect class="b" x="250" y="380" width="160" height="58"/><text class="t" x="330" y="405">Đọc specification</text><path class="a" d="M440 329h50"/>
+  <rect class="b" x="490" y="300" width="160" height="58"/><text class="t" x="570" y="329">Tạo test case</text><path class="a" d="M650 329c30-30 25-115 55-115"/><path class="a" d="M650 329c30 30 25 115 55 115"/>
+  <rect class="b" x="705" y="185" width="150" height="58"/><text class="t" x="780" y="209">Test bằng Postman</text><path class="a" d="M855 214h30"/><rect class="b" x="885" y="185" width="170" height="58"/><text class="t" x="970" y="209">Tự chụp minh chứng</text><path class="a" d="M970 185c20-40 15-85 60-85"/>
+  <rect class="b" x="1030" y="55" width="170" height="58"/><text class="t" x="1115" y="80">Cập nhật bug report</text><text class="t" x="1115" y="99">nếu có lỗi</text><path class="a" d="M1200 84h35"/><rect class="b" x="1235" y="55" width="140" height="58"/><text class="t" x="1305" y="84">Chờ user verify</text><path class="a" d="M1375 84h35"/><rect class="b" x="1410" y="55" width="20" height="58"/><text class="t" x="1420" y="75">Issue</text>
+  <rect class="b" x="705" y="415" width="150" height="58"/><text class="t" x="780" y="439">Test bằng Newman</text><path class="a" d="M855 444h30"/><rect class="b" x="885" y="415" width="170" height="58"/><text class="t" x="970" y="439">CI GitHub workflow</text><path class="a" d="M970 473v50"/><rect class="b" x="885" y="523" width="170" height="58"/><text class="t" x="970" y="547">Tự chụp minh chứng</text><path class="a" d="M970 581c20 35 25 50 60 50"/>
+  <rect class="b" x="1030" y="620" width="170" height="58"/><text class="t" x="1115" y="644">Cập nhật bug report</text><text class="t" x="1115" y="663">nếu có lỗi</text><path class="a" d="M1200 649h35"/><rect class="b" x="1235" y="620" width="140" height="58"/><text class="t" x="1305" y="649">Chờ user verify</text><path class="a" d="M1375 649h35"/>
+  <rect class="b" x="1080" y="300" width="180" height="70"/><text class="t" x="1170" y="323">Cập nhật báo cáo</text><text class="t" x="1170" y="344">và AI Audit</text><path class="a" d="M1055 214c20 30 30 65 25 100"/><path class="a" d="M1055 444c20-20 25-45 25-74"/><path class="a" d="M1260 335h70"/><rect class="b" x="1330" y="300" width="100" height="70"/><text class="t" x="1380" y="323">Commit/Push</text><path class="a" d="M1380 370v65"/><rect class="b" x="1300" y="435" width="130" height="58"/><text class="t" x="1365" y="459">Fix nếu fail CI</text><text class="t" x="1365" y="478">và push lại</text>
 </svg>
