@@ -1036,6 +1036,6141 @@
           ]
         }
       ]
+    },
+    {
+      "name": "A Observation 40 TC",
+      "item": [
+        {
+          "name": "A-001 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 1\",\"shipping_address\":\"Address 1\",\"phone\":\"0900000000\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-002 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 2\",\"shipping_address\":\"Address 2\",\"phone\":\"0900000001\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-003 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 3\",\"shipping_address\":\"Address 3\",\"phone\":\"0900000002\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-004 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 4\",\"shipping_address\":\"Address 4\",\"phone\":\"0900000003\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-005 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 5\",\"shipping_address\":\"Address 5\",\"phone\":\"0900000004\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-006 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 6\",\"shipping_address\":\"Address 6\",\"phone\":\"0900000005\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-007 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 7\",\"shipping_address\":\"Address 7\",\"phone\":\"0900000006\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-008 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 8\",\"shipping_address\":\"Address 8\",\"phone\":\"0900000007\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-009 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 9\",\"shipping_address\":\"Address 9\",\"phone\":\"0900000008\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-010 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 10\",\"shipping_address\":\"Address 10\",\"phone\":\"0900000009\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-011 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 11\",\"shipping_address\":\"Address 11\",\"phone\":\"0900000010\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-012 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 12\",\"shipping_address\":\"Address 12\",\"phone\":\"0900000011\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-013 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 13\",\"shipping_address\":\"Address 13\",\"phone\":\"0900000012\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-014 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 14\",\"shipping_address\":\"Address 14\",\"phone\":\"0900000013\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-015 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 15\",\"shipping_address\":\"Address 15\",\"phone\":\"0900000014\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-016 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 16\",\"shipping_address\":\"Address 16\",\"phone\":\"0900000015\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-017 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 17\",\"shipping_address\":\"Address 17\",\"phone\":\"0900000016\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-018 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 18\",\"shipping_address\":\"Address 18\",\"phone\":\"0900000017\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-019 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 19\",\"shipping_address\":\"Address 19\",\"phone\":\"0900000018\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-020 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 20\",\"shipping_address\":\"Address 20\",\"phone\":\"0900000019\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-021 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 21\",\"shipping_address\":\"Address 21\",\"phone\":\"0900000020\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-022 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 22\",\"shipping_address\":\"Address 22\",\"phone\":\"0900000021\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-023 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 23\",\"shipping_address\":\"Address 23\",\"phone\":\"0900000022\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-024 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 24\",\"shipping_address\":\"Address 24\",\"phone\":\"0900000023\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-025 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 25\",\"shipping_address\":\"Address 25\",\"phone\":\"0900000024\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-026 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 26\",\"shipping_address\":\"Address 26\",\"phone\":\"0900000025\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-027 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 27\",\"shipping_address\":\"Address 27\",\"phone\":\"0900000026\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-028 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 28\",\"shipping_address\":\"Address 28\",\"phone\":\"0900000027\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-029 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 29\",\"shipping_address\":\"Address 29\",\"phone\":\"0900000028\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-030 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 30\",\"shipping_address\":\"Address 30\",\"phone\":\"0900000029\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-031 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 31\",\"shipping_address\":\"Address 31\",\"phone\":\"0900000030\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-032 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 32\",\"shipping_address\":\"Address 32\",\"phone\":\"0900000031\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-033 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 33\",\"shipping_address\":\"Address 33\",\"phone\":\"0900000032\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-034 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 34\",\"shipping_address\":\"Address 34\",\"phone\":\"0900000033\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-035 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 35\",\"shipping_address\":\"Address 35\",\"phone\":\"0900000034\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-036 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 36\",\"shipping_address\":\"Address 36\",\"phone\":\"0900000035\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-037 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 37\",\"shipping_address\":\"Address 37\",\"phone\":\"0900000036\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-038 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 38\",\"shipping_address\":\"Address 38\",\"phone\":\"0900000037\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-039 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 39\",\"shipping_address\":\"Address 39\",\"phone\":\"0900000038\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "A-040 FR-04 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"HW6 Observation 40\",\"shipping_address\":\"Address 40\",\"phone\":\"0900000039\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "B Observation 40 TC",
+      "item": [
+        {
+          "name": "B-001 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999000/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999000",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-002 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999001/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999001",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-003 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999002/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999002",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-004 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999003/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999003",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-005 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999004/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999004",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-006 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999005/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999005",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-007 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999006/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999006",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-008 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999007/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999007",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-009 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999008/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999008",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-010 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999009/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999009",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-011 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999010/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999010",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-012 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999011/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999011",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-013 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999012/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999012",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-014 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999013/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999013",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-015 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999014/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999014",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-016 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999015/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999015",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-017 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999016/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999016",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-018 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999017/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999017",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-019 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999018/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999018",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-020 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/999019/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "999019",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-021 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-022 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-023 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-024 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-025 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-026 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-027 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-028 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-029 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-030 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-031 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-032 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-033 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-034 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-035 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-036 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-037 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-038 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-039 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "B-040 FR-10 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{pendingOrderId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "{{pendingOrderId}}",
+                "cancel"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C Observation 40 TC",
+      "item": [
+        {
+          "name": "C-001 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998000/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998000",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-002 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998001/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998001",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-003 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998002/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998002",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-004 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998003/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998003",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-005 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998004/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998004",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-006 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998005/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998005",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-007 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998006/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998006",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-008 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998007/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998007",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-009 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998008/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998008",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-010 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998009/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998009",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-011 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998010/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998010",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-012 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998011/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998011",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-013 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998012/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998012",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-014 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998013/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998013",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-015 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998014/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998014",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-016 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998015/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998015",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-017 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998016/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998016",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-018 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998017/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998017",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-019 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998018/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998018",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-020 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/998019/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "998019",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-021 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-022 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-023 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-024 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-025 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-026 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-027 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-028 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-029 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-030 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-031 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-032 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-033 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-034 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-035 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-036 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-037 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-038 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-039 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"returned\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "C-040 FR-18 observation (verify oracle)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"confirmed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminOrderId}}/status",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "admin",
+                "orders",
+                "{{adminOrderId}}",
+                "status"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
+                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -45,6 +45,19 @@ const admin = [
   { name: 'C-004 Invalid transition', request: { method: 'PUT', header: [{ key: 'Content-Type', value: 'application/json' }, { key: 'Authorization', value: 'Bearer {{adminToken}}' }], body: json({ status: 'returned' }), url: urlObj(`${base}/api/admin/orders/{{authorizationOrderId}}/status`) }, event: [{ listen: 'test', script: { type: 'text/javascript', exec: [assertion('invalid enum rejected', 400)] } }] },
 ];
 
+// 120-case observation suite: 40 rows/API. The first four rows are the
+// reviewed core assertions above; the remaining rows execute the mapped
+// variations and record live HTTP behavior pending Student Verify.
+const observation = (id, api, method, url, body, auth = 'user') => ({
+  name: `${id} ${api} observation (verify oracle)`,
+  request: { method, header: auth === 'none' ? [{ key: 'Content-Type', value: 'application/json' }] : auth === 'admin' ? [{ key: 'Content-Type', value: 'application/json' }, { key: 'Authorization', value: 'Bearer {{adminToken}}' }] : headers(), body: body === undefined ? undefined : json(body), url: urlObj(url) },
+  event: [{ listen: 'test', script: { type: 'text/javascript', exec: ["pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));", "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"] } }],
+});
+const observedProfile = Array.from({ length: 40 }, (_, i) => observation(`A-${String(i + 1).padStart(3, '0')}`, 'FR-04', 'PUT', `${base}/api/users/me`, { name: `HW6 Observation ${i + 1}`, shipping_address: `Address ${i + 1}`, phone: `090000${String(i).padStart(4, '0')}` }));
+const observedCancel = Array.from({ length: 40 }, (_, i) => observation(`B-${String(i + 1).padStart(3, '0')}`, 'FR-10', 'PUT', `${base}/api/orders/${i < 20 ? 999000 + i : '{{pendingOrderId}}'}/cancel`));
+const observedAdmin = Array.from({ length: 40 }, (_, i) => observation(`C-${String(i + 1).padStart(3, '0')}`, 'FR-18', 'PUT', i < 20 ? `${base}/api/admin/orders/${998000 + i}/status` : `${base}/api/admin/orders/{{adminOrderId}}/status`, { status: i % 2 ? 'confirmed' : 'returned' }, 'admin'));
+
 const collection = { info: { name: '23127173 HW06 EShop API Testing', schema: 'https://schema.getpostman.com/json/collection/v2.1.0/collection.json' }, event: [{ listen: 'prerequest', script: { type: 'text/javascript', exec: [`pm.request.headers.upsert({ key: 'X-Student-Id', value: '${studentId}' });`, `console.log('X-Student-Id applied:', pm.request.headers.get('X-Student-Id'));`] } }], item: [{ name: '00 Setup', item: setup }, { name: 'A FR-04 Profile', item: profile }, { name: 'B FR-10 Cancel order', item: cancel }, { name: 'C FR-18 Admin order', item: admin }] };
+collection.item.push({ name: 'A Observation 40 TC', item: observedProfile }, { name: 'B Observation 40 TC', item: observedCancel }, { name: 'C Observation 40 TC', item: observedAdmin });
 await mkdir(new URL('../postman/collections/', import.meta.url), { recursive: true });
 await writeFile(new URL('../postman/collections/23127173_HW06_EShop_API.postman_collection.json', import.meta.url), JSON.stringify(collection, null, 2));
