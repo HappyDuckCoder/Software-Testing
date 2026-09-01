@@ -12,11 +12,11 @@
 
 ## API dự kiến
 
-| Pool | Feature/API dự kiến | Lý do |
-| --- | --- | --- |
-| A | FR-04 - `PUT /api/users/me` | Dùng lại nền tảng HW2; có domain partitions cho tên, địa chỉ, số điện thoại và kiểm soát JWT/ownership. |
-| B | FR-10 - `PUT /api/orders/:id/cancel` | Kiểm thử transition/cancellation của đơn hàng. |
-| C | FR-18 - `PUT /api/admin/orders/:id/status` | Có role authorization, IDOR và state transition phía admin. |
+| Pool | Feature/API dự kiến | Ý nghĩa API | Lý do |
+| --- | --- | --- | --- |
+| A | FR-04 - `PUT /api/users/me` | Cập nhật thông tin hồ sơ của chính người dùng đã đăng nhập. | Dùng lại nền tảng HW2; có domain partitions cho tên, địa chỉ, số điện thoại và kiểm soát JWT/ownership. |
+| B | FR-10 - `PUT /api/orders/:id/cancel` | Hủy một đơn thuộc người dùng hiện tại và chuyển trạng thái sang `canceled` nếu thỏa điều kiện. | Kiểm thử transition/cancellation của đơn hàng. |
+| C | FR-18 - `PUT /api/admin/orders/:id/status` | Admin cập nhật trạng thái của một đơn, ví dụ `pending` sang `confirmed`. | Có role authorization, IDOR và state transition phía admin. |
 
 Ba endpoint trên không trùng bộ của Vân: `POST /register`, `GET /api/products/:id`, `POST /api/checkout`. Xác nhận lại với nhóm trước khi bắt đầu sinh/thiết kế test case.
 
