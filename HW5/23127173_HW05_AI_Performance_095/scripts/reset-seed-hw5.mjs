@@ -4,7 +4,9 @@ import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
-const backendDirectory = path.resolve(scriptDirectory, "../../../../Eshop/backend");
+const backendDirectory = process.env.HW5_BACKEND_DIR
+  ? path.resolve(process.cwd(), process.env.HW5_BACKEND_DIR)
+  : path.resolve(scriptDirectory, "../../../../Eshop/backend");
 const databasePath = path.join(backendDirectory, "database.sqlite");
 const csvPath = path.resolve(scriptDirectory, "../performance/data/hw5-users.local.csv");
 const require = createRequire(import.meta.url);

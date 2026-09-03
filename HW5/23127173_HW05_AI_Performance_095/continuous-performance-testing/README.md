@@ -4,16 +4,21 @@
 
 ## Mục tiêu
 
-Theo dõi mỗi commit/PR thay đổi backend hoặc cơ sở dữ liệu của EShop, quyết định có chạy smoke hiệu năng hay không, và gắn cờ hồi quy p95.
+Theo dõi mỗi commit trên nhánh `homework5-v2`, chạy **Load + Stress + Spike** (plan JMeter thật, không smoke), và gắn cờ hồi quy p95 trên Load.
 
-## Luồng đề xuất
+## Luồng triển khai (`.github/workflows/github-actions-performance.yml`)
 
-1. **Kích hoạt có chọn lọc** — chỉ chạy khi PR đụng `backend/` hoặc `database/`.
-2. **Khởi động SUT** — build, health check cổng 3000.
-3. **Reset/seed** — script `reset-seed-hw5.mjs` tạo dữ liệu đồng nhất.
-4. **Smoke JMeter** — chạy non-GUI, lưu JTL/HTML.
-5. **So baseline** — script `compare-performance-baseline.mjs` đọc p95 và tỷ lệ lỗi.
-6. **Upload artefact** — JTL/HTML lên CI để tra cứu.
+1. Checkout repo `Software-Testing` + clone `ttbhanh/eshop-sut` vào `eshop-sut/` (SUT **không** nằm trong repo Lab).
+2. `npm ci` backend, cài JMeter 5.6.3, khởi động SUT cổng 3000.
+3. **Load** — seed → JMeter → JTL/HTML `23127173_Load_20260831`.
+4. **So baseline** — gate fail nếu p95 Load tăng >20% hoặc lỗi >1%.
+5. **Stress** — seed lại → `23127173_Stress_20260831`.
+6. **Spike** — seed lại (50 account) → `23127173_Spike_20260831`.
+7. Upload artefact JTL/HTML.
+
+**Endurance (~601 s)** không chạy trên CI — chỉ local.
+
+Biến môi trường CI: `HW5_BACKEND_DIR=eshop-sut/backend` cho `reset-seed-hw5.mjs`.
 
 ## Ngưỡng cảnh báo (gate)
 
@@ -34,4 +39,4 @@ Baseline mẫu: `baseline.json` (từ lần chạy Load local).
 
 ## Trạng thái
 
-Đây là **đề xuất Nhiệm vụ 3**, chưa bật CI thật. Trước khi triển khai cần: duyệt baseline trên runner tương đương, đặt `github-actions-performance.yml` vào `.github/workflows/` của repo EShop.
+Workflow đã đặt tại `Lab/.github/workflows/github-actions-performance.yml`. Push nhánh `homework5-v2` (path `HW5/**`) hoặc **Run workflow** thủ công trên GitHub Actions.
