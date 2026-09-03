@@ -2,6 +2,7 @@
 
 Nguồn: `git log --oneline -- HW6/23127173_HW06_AI_API_095` · cập nhật 03/09/2026.
 
+110f6e6 Document HW6 GitHub bug evidence.
 656baf6 Gan link CI run #7 fail va #8 pass; dong bo doc/audit AI-042.
 99e0255 Cap nhat git commit log sau commit b4820d4 (CI evidence AI-041).
 b4820d4 Thay 6 anh CI pass+fail (run #7/#8); xoa ci-06..10; dong bo doc/audit AI-041.
