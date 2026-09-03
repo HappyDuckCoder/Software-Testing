@@ -49,7 +49,7 @@ Chi tiết 120 TC: `test-cases/test-case-matrix.md` và `test-cases/execution-ma
 - **Full 120 TC (Newman):** 128 request (8 setup + 120 observation A/B/C), 128 assertion, 0 fail, 11.9s — raw `api-testing/newman/raw-output/full-120-20260903.txt`, HTML `api-testing/newman/html-reports/full-120/report.html`, lệnh `npm run test:full120`.
 - Baseline local: 20 request, 21 assertion, 0 fail.
 - Compliance local: 3 assertion fail → 3 bug trong `issues/bug-report.md`.
-- Ảnh Postman: `evidence/postman-ui/` (5 ảnh gốc).
+- Ảnh Postman: `evidence/postman-ui/` (5 ảnh **03/09/2026**, full 120 TC run).
 - Ảnh Newman: `evidence/newman-ui/newman-full-120-terminal-20260903.png`, `evidence/newman-ui/newman-full-120-report-20260903.png`.
 
 ## 6. CI/CD

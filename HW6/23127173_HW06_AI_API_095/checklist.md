@@ -20,7 +20,7 @@
 ## Toàn bài
 
 - [x] Header `X-Student-Id: 23127173` trên mọi request.
-- [x] Postman Desktop: 5 ảnh evidence.
+- [x] Postman Desktop: 5 ảnh evidence (cập nhật 03/09/2026, full 120 TC).
 - [x] CI remote baseline pass; chưa có remote fail có chủ đích.
 - [ ] Excel test summary sau khi chạy đủ assertion.
 - [ ] Sơ đồ generator tự vẽ.

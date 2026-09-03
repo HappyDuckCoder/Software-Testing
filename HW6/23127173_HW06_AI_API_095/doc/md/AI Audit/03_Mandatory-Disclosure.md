@@ -62,6 +62,7 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | EShop backend sẵn sàng retest (`127.0.0.1:3000`) | ✅ (03/09) |
 | Core Newman + CI pass | ✅ |
 | Full 120 TC Newman (setup + observation) | ✅ (03/09) |
+| Postman runner evidence (5 ảnh, full 120) | ✅ (03/09) |
 | Assertion map 120 ID trong Postman | ⏳ |
 | Excel + GitHub Issue + CI fail + PDF/ZIP | ⏳ |
 

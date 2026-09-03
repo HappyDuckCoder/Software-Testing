@@ -8,6 +8,8 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-017 | 03/09 | Rà tiến độ, Audit/Mandatory FIT | Cursor (Composer 2.5) |
 | AI-018 | 03/09 | Ma trận tiếng Việt, oracle spec, 15 TC SV | Cursor (Composer 2.5) |
 | AI-019 | 03/09 | Sinh lại TC + collection; khởi động EShop cho retest | Cursor (Composer 2.5) |
+| AI-020 | 03/09 | Newman full 120 TC + minh chứng mới | Cursor (Composer 2.5) |
+| AI-021 | 03/09 | Postman evidence 5 ảnh + audit + commit | Cursor (Composer 2.5) |
 
 ## Prompt AI-018 (03/09/2026)
 
