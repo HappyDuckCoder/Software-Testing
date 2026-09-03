@@ -1,71 +1,85 @@
-# HW05-AI Performance Testing - Submission README
-
-## Thông tin bài nộp
+# HW05-AI — Kiểm thử hiệu năng EShop
 
 | Mục | Giá trị |
 | --- | --- |
 | Họ tên | Trần Hải Đức |
 | MSSV | 23127173 |
-| Bài tập | HW05-AI - Performance Testing on EShop |
-| SUT | EShop - <https://github.com/ttbhanh/eshop-sut> |
-| Mục tiêu tự đánh giá | 095/100 (tạm thời, cập nhật sau khi hoàn tất) |
-| Tên file nộp | `23127173_HW05_AI_Performance_095.zip` |
-| Công cụ thực tế | Apache JMeter 5.6.3, Task Manager, DXDIAG |
-| Trạng thái | Đã có JMX, raw JTL, HTML reports, ảnh resource/hardware và endurance memory sampling; còn video, PDF và ZIP |
+| SUT | EShop — `http://localhost:3000` |
+| Kho mã nguồn SUT | https://github.com/ttbhanh/eshop-sut |
+| Repository bài nộp | https://github.com/HappyDuckCoder/Software-Testing/tree/homework5-v2/HW5/23127173_HW05_AI_Performance_095 |
+| ZIP nộp | `23127173_HW05_AI_Performance_090.zip` |
+| Tự đánh giá | **090 / 100** |
+
+## Bảng tự đánh giá (đề §15)
+
+| Hạng mục | Nội dung | Điểm tối đa | Tự chấm |
+| --- | --- | ---: | ---: |
+| Load test | Workflow E2E, JTL/HTML, ảnh monitor | 30 | 27 |
+| Stress test | Tương tự Load, tải cao hơn | 20 | 18 |
+| Spike test | Burst 50 user, ramp 1 s | 20 | 18 |
+| Phân tích AI + truy tìm diễn giải sai | Có trích số từ JTL thô | 10 | 9 |
+| Kiểm thử hiệu năng liên tục | Pipeline + flowchart + trade-off | 10 | 9 |
+| Agent Skills | 3 skill; thiếu video demo | 10 | 4 |
+| **Tổng** | | **100** | **85→90** |
+
+Tự chấm **090** sau khi có PDF; trừ điểm chủ yếu vì chưa quay video. Tên ZIP `_090` khớp mức tự chấm.
+
+## Trạng thái nhanh
+
+| Đã xong | Chưa xong |
+| --- | --- |
+| 4 JMX, 4 JTL, 4 HTML report | Video chính ≥ 6 phút (YouTube unlisted) |
+| Ảnh JMeter + Task Manager, DXDIAG, CLI/GUI | Video demo Agent Skill |
+| Endurance 601 s + 61 mẫu RAM | ZIP Moodle (SV tự đóng) |
+| AI Audit, Mandatory, Critique, PDF | |
+
+Chi tiết: `checklist.md`, `doc/md/main-report.md`.
 
 ## Workflow được kiểm thử
 
-Workflow đầu cuối được chọn là: **đăng nhập -> xem lịch sử đơn hàng của chính người dùng -> hủy một đơn đang ở trạng thái `pending` hoặc `confirmed`**.
+**Đăng nhập → xem lịch sử đơn hàng → hủy đơn** (`pending`/`confirmed`).
 
-| Loại tải | API được chọn | Liên hệ HW2 | Lý do chọn |
+| Nhóm tải | API | FR | Vai trò |
 | --- | --- | --- | --- |
-| Auth-heavy | `POST /api/login` | Tiền điều kiện xác thực đã dùng khi kiểm thử FR-11/FR-10. | Cấp JWT cho hai request sau và có hành vi account lockout cần quan sát ở Stress/Spike. |
-| Read-heavy | `GET /api/orders/my-orders` | FR-11 - Xem lịch sử đơn hàng. | Đọc danh sách đơn của đúng người dùng, sắp xếp theo ID giảm dần. |
-| Transactional | `PUT /api/orders/:id/cancel` | FR-10 - Máy trạng thái đơn hàng; FR-11 có thao tác hủy. | Cập nhật trạng thái đơn; dùng `orderId` lấy từ response lịch sử đơn. |
+| Xác thực | `POST /api/login` | FR-02 | Cấp JWT; có cơ chế khóa tài khoản |
+| Đọc | `GET /api/orders/my-orders` | FR-11 | Lấy `orderId` từ danh sách đơn |
+| Giao dịch | `PUT /api/orders/:id/cancel` | FR-10, FR-11 | Đổi trạng thái đơn |
 
-Ba API trên không trùng với lựa chọn đã công bố của Vân: `POST /register`, `/api/products/:id`, và `POST /api/checkout`.
+Không trùng Vân: `/register`, `/api/products/:id`, `POST /api/checkout`.
 
-`POST /api/login` trả JWT; `GET /api/orders/my-orders` dùng JWT để đọc các đơn của user và lấy `orderId`; `PUT /api/orders/:id/cancel` dùng JWT + `orderId` để đổi trạng thái đơn thành `canceled`.
+## Tóm tắt kết quả
 
-## Cấu trúc bài nộp
+| Kịch bản | Workflow | Lỗi | p95 | Throughput |
+| --- | ---: | ---: | ---: | ---: |
+| Load | 10 | 0 | 4.659 ms | 0,445 workflow/s |
+| Stress | 30 | 0 | 3.022 ms | 0,938 workflow/s |
+| Spike | 50 | 0 | 1.682 ms | 20,400 workflow/s |
+| Endurance | 1.200 / 601,15 s | 0 | 4.840 ms | 1,980 workflow/s |
+
+Peak bộ nhớ backend quan sát: **79,14 MB**. p95 workflow **gồm think-time** — xem báo cáo chính trước khi kết luận.
+
+## Tài liệu chính
+
+| File | Mô tả |
+| --- | --- |
+| `doc/md/main-report.md` | Báo cáo chính (+ PDF `doc/pdf/main-report.pdf`) |
+| `doc/md/AI Audit/` | AI Audit, Mandatory Disclosure, Privacy Checklist |
+| `doc/md/AI Audit/02_AI-Critique.md` | Phê bình AI (200–300 từ) |
+| `performance/test-plans/` | 3 JMX bắt buộc + Endurance |
+| `continuous-performance-testing/` | Đề xuất CI hiệu năng |
+
+Evidence thật (JTL, HTML, ảnh) không được thay bằng nội dung AI sinh.
+
+## Cấu trúc thư mục
 
 ```text
 23127173_HW05_AI_Performance_095/
-|- README.md
-|- roadmap.md
-|- checklist.md
-|- doc/md/                         # báo cáo chính, AI Audit, commit log
-|- doc/pdf/                        # bản PDF xuất sau cùng
-|- performance/
-|  |- test-plans/                  # 3 file .jmx/.js Load, Stress, Spike
-|  |- data/                        # CSV credentials/product/order
-|  |- raw-jtl/                     # 3 log .jtl nguyên gốc
-|  `- html-reports/                # 3 thư mục báo cáo HTML
-|- evidence/
-|  |- resource-monitor/            # tool + backend monitor cùng khung hình
-|  |- hardware/                    # dxdiag/screenfetch và bảng thông số
-|  |- endurance/                   # bằng chứng soak test 10-15 phút
-|  `- demo-video/                  # liên kết YouTube không công khai
-|- issues/                         # ghi nhận GitHub Issues và ảnh
-|- agent-skills/                   # Agent Skill + hướng dẫn demo
-`- scripts/                        # hướng dẫn đóng gói
+├── doc/md/              # báo cáo, AI audit
+├── doc/pdf/             # main-report.pdf, AI-Audit-Report.pdf, AI-Critique.pdf
+├── performance/         # JMX, JTL, HTML
+├── evidence/            # ảnh monitor, hardware, endurance
+├── continuous-performance-testing/
+├── agent-skills/
+├── checklist.md
+└── roadmap.md
 ```
-
-Chỉ đưa vào bài nộp các log, ảnh, report và video được tạo từ lần chạy thật; không thay thế bằng nội dung do AI tạo.
-
-## Agent Skills
-
-Ba skill tái sử dụng được đặt trong `agent-skills/`: `performance-testing-and-log-analysis`, `jmeter-e2e-plan-builder` và `transactional-test-data-manager`. Xem `agent-skills/skill-catalog.md`.
-
-## Tóm tắt kiểm thử
-
-| Kịch bản | Nhóm endpoint | Kết quả | Ngưỡng/RPS | Vị trí bằng chứng |
-| --- | --- | --- | --- | --- |
-| Load | Login + My orders + Cancel order | 10 workflow, 0 lỗi | p95 4,659 ms; 0.445 workflow/s | `performance/raw-jtl/`, `performance/html-reports/` |
-| Stress | Login + My orders + Cancel order | 30 workflow, 0 lỗi | p95 3,022 ms; 0.938 workflow/s | `performance/raw-jtl/`, `performance/html-reports/` |
-| Spike | Login + My orders + Cancel order | 50 workflow, 0 lỗi | p95 1,682 ms; 20.400 workflow/s | `performance/raw-jtl/`, `performance/html-reports/` |
-| Endurance | Workflow duy trì | 1,200 workflow / 601.15 s, 0 lỗi | 1.980 workflow/s; backend peak 79.14 MB | `evidence/endurance/` |
-
-Xem [main report](doc/md/main-report.md) để biết p95 parent có gồm think-time, phạm vi kết luận và evidence đầy đủ. Không suy diễn các RPS trên thành capacity production.
-
-Xem [roadmap.md](roadmap.md) và [checklist.md](checklist.md) để thực hiện tiếp.

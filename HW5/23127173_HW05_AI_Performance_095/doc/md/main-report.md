@@ -1,99 +1,211 @@
-# HW05-AI - Performance Testing Report
+<div class="cover">
 
-> Ngày thực thi: 31/08/2026 (UTC+7) · SUT cục bộ: `http://localhost:3000` · Công cụ: Apache JMeter 5.6.3. Kết luận chỉ áp dụng cho điều kiện và artefact được liên kết bên dưới.
+**Khoa Công nghệ Thông tin (FIT) — Trường ĐH Khoa học Tự nhiên (HCMUS)**
 
-## 1. Mục tiêu, SUT và môi trường
+**CS423 / CSC13003 — Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
-Mục tiêu là kiểm thử workflow REST E2E của EShop qua Load, Stress, Spike và endurance khoảng 10 phút; sau đó phân tích raw JTL và đề xuất continuous performance testing. Backend EShop dùng SQLite cục bộ. Trước mỗi run ngắn, dữ liệu được reset/seed bằng [`reset-seed-hw5.mjs`](../../scripts/reset-seed-hw5.mjs).
+# Báo cáo kiểm thử hiệu năng — HW05-AI
+
+| | |
+| --- | --- |
+| **Họ tên** | Trần Hải Đức |
+| **MSSV** | 23127173 |
+| **Hệ thống** | EShop API — `http://localhost:3000` |
+| **Ngày chạy chính** | 31/08/2026 |
+| **Công cụ** | Apache JMeter 5.6.3, Task Manager, DXDIAG |
+| **Kho mã nguồn** | [Software-Testing / HW5](https://github.com/HappyDuckCoder/Software-Testing/tree/homework5-v2/HW5/23127173_HW05_AI_Performance_095) |
+
+</div>
+
+---
+
+## Tóm tắt kết quả
+
+| Chỉ số | Giá trị |
+| --- | --- |
+| Workflow E2E | Đăng nhập → xem đơn của tôi → hủy đơn |
+| Kịch bản bắt buộc | Load · Stress · Spike (cùng workflow) |
+| Kịch bản bổ sung | Endurance ~10 phút (601,15 giây) |
+| Tổng workflow đã chạy | 10 + 30 + 50 + 1.200 = **1.290** |
+| Lỗi HTTP / parent | **0** trên mọi lần chạy |
+| Ngưỡng bền quan sát | **1,980 workflow/s** (endurance, 10 luồng) |
+| Peak bộ nhớ backend | **79,14 MB** working set (61 mẫu/10 giây) |
+| Tự đánh giá | **090 / 100** (chưa có video) |
+
+**Lưu ý quan trọng:** p95 của transaction cha **bao gồm think-time**, không phải độ trễ backend thuần. Không suy diễn RPS thành năng lực production.
+
+---
+
+## 1. Mục tiêu, hệ thống và môi trường
+
+Bài tập kiểm thử hiệu năng workflow REST đầu-cuối trên EShop qua bốn kịch bản (Load, Stress, Spike, Endurance), phân tích nhật ký JTL thô và đề xuất kiểm thử hiệu năng liên tục. Backend EShop dùng SQLite cục bộ. Trước mỗi lần chạy ngắn, dữ liệu được reset và seed bằng script `reset-seed-hw5.mjs`.
 
 | Thành phần | Giá trị đã xác minh |
 | --- | --- |
 | Máy chạy | ASUS TUF Gaming A15 FA506NFR_FA506NFR |
-| CPU | AMD Ryzen 7 7435HS, 8 cores / 16 logical processors, 3.10 GHz nominal |
-| RAM | 15.82 GiB |
-| Hệ điều hành | Windows 11 Home Single Language 64-bit, 10.0.26200 |
-| SUT / generator | EShop backend local; JMeter 5.6.3; Node.js backend |
+| CPU | AMD Ryzen 7 7435HS — 8 nhân / 16 luồng logic, 3,10 GHz |
+| RAM | 15,82 GiB |
+| Hệ điều hành | Windows 11 Home 64-bit, 10.0.26200 |
+| SUT / máy sinh tải | Backend EShop local; JMeter 5.6.3; Node.js |
 
-Ảnh DXDIAG xác nhận cấu hình và thời điểm máy chạy có tại [dxdiag-hardware-20260831.png](../../evidence/hardware/dxdiag-hardware-20260831.png).
+Ảnh DXDIAG xác nhận cấu hình phần cứng: `evidence/hardware/dxdiag-hardware-20260831.png`.
 
-## 2. Workflow và endpoint mapping
+---
 
-Workflow tái sử dụng phạm vi HW2: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`. Lựa chọn không trùng workflow Vân đã công bố: `POST /register`, `/api/products/:id` và `POST /api/checkout`.
+## 2. Workflow và ba nhóm API
 
-| Bước | Nhóm endpoint | API | Dữ liệu vào/ra | Liên hệ FR |
+Workflow tái sử dụng phạm vi HW2, **không trùng** bộ API của Vân (`/register`, `/api/products/:id`, `POST /api/checkout`):
+
+| Bước | Nhóm tải | API | Dữ liệu vào/ra | FR liên quan |
 | --- | --- | --- | --- | --- |
-| 1 | Auth-heavy | `POST /api/login` | CSV `email,password` -> JWT | FR-02 |
-| 2 | Read-heavy | `GET /api/orders/my-orders` | JWT -> danh sách đơn -> `orderId` | FR-11 |
-| 3 | Transactional | `PUT /api/orders/:id/cancel` | JWT + `orderId` -> `canceled` | FR-10, FR-11 |
+| 1 | Xác thực | `POST /api/login` | CSV `email,password` → JWT | FR-02 |
+| 2 | Đọc | `GET /api/orders/my-orders` | JWT → danh sách đơn → `orderId` | FR-11 |
+| 3 | Giao dịch | `PUT /api/orders/:id/cancel` | JWT + `orderId` → trạng thái `canceled` | FR-10, FR-11 |
 
-Mỗi virtual user dùng account riêng. Script seed tạo đơn `pending`/`confirmed` để extractor lấy `orderId`, không hard-code ID; sau run, đơn bị hủy không tái sử dụng. CSV local không có tài khoản thật và bị git-ignore.
+Mỗi người dùng ảo dùng một tài khoản riêng. Script seed tạo đơn `pending`/`confirmed` để trích `orderId` động, không hard-code ID. CSV local không chứa tài khoản thật và bị git-ignore.
 
-## 3. Thiết kế bằng AI và human review
+---
 
-AI được dùng theo từng bước để chọn workflow, dựng JMX, seed data và phân tích JTL; lịch sử có trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md). Bốn plan sinh từ [`generate-jmeter-plans.mjs`](../../scripts/generate-jmeter-plans.mjs), sau đó được kiểm tra XML và sửa lỗi listener trước khi chạy. Ba plan bắt buộc dùng ba listener khác nhau: View Results Tree, Summary Report và Aggregate Report.
+## 3. Thiết kế bằng AI và rà soát thủ công
 
-| Kịch bản | Plan | Threads / ramp-up / loops | Think-time | Mục đích / review |
-| --- | --- | --- | --- | --- |
-| Load | [`Load`](../../performance/test-plans/23127173_Load_20260831.jmx) | 10 / 20 s / 1 | 1.5 s | Tải nhẹ, tránh burst lúc bắt đầu. |
-| Stress | [`Stress`](../../performance/test-plans/23127173_Stress_20260831.jmx) | 30 / 30 s / 1 | 1.0 s | Tải cao hơn, không được gọi là điểm gãy. |
-| Spike | [`Spike`](../../performance/test-plans/23127173_Spike_20260831.jmx) | 50 / 1 s / 1 | 0.5 s | Burst có chủ đích, khác endurance. |
-| Endurance | [`Endurance`](../../performance/test-plans/23127173_Endurance_20260831.jmx) | 10 / 30 s / 120 | 1.6 s | Soak 601.15 s; 1,500 account/đơn độc lập. |
+AI được dùng **theo từng bước** (không một prompt chung) để chọn workflow, dựng kế hoạch JMeter, seed dữ liệu và phân tích JTL — chi tiết trong AI Audit. Bốn kế hoạch sinh từ `generate-jmeter-plans.mjs`, sau đó được kiểm tra XML và sửa lỗi trước khi chạy.
 
-Sampler có assertion HTTP 200 và JSON extractor JWT/orderId. Credentials đều hợp lệ nên lockout không phát sinh; reset/seed trước run khôi phục đơn có thể hủy. Hai listener do AI sinh đầu tiên không tương thích JMeter 5.6.3 (`grpThreads`/`groupThreads`); đã bỏ save-service tùy biến và xác nhận JMX sau sửa. Vì vậy JMX AI sinh lần đầu không được xem là artefact đủ dùng.
+Ba kế hoạch bắt buộc dùng **ba loại listener khác nhau**:
 
-### Quy trình tái lập và tiêu chí kết luận
+| Kịch bản | Tệp kế hoạch | Luồng / ramp-up / vòng lặp | Think-time | Listener | Mục đích |
+| --- | --- | --- | --- | --- | --- |
+| Load | `23127173_Load_20260831.jmx` | 10 / 20 s / 1 | 1,5 s | View Results Tree | Tải nhẹ, tránh burst ban đầu |
+| Stress | `23127173_Stress_20260831.jmx` | 30 / 30 s / 1 | 1,0 s | Summary Report | Tải cao hơn Load |
+| Spike | `23127173_Spike_20260831.jmx` | 50 / 1 s / 1 | 0,5 s | Aggregate Report | Tăng đột biến có chủ đích |
+| Endurance | `23127173_Endurance_20260831.jmx` | 10 / 30 s / 120 | 1,6 s | Summary Report (bổ sung) | Soak 601,15 s |
 
-Mỗi Load/Stress/Spike run được bắt đầu bằng `node scripts/reset-seed-hw5.mjs`, sinh 50 account và 600 đơn test. Endurance dùng `HW5_ACCOUNT_COUNT=1500` và `HW5_ORDERS_PER_ACCOUNT=1` để tránh một order bị hủy nhiều lần. JMeter được chạy non-GUI với `-Jhw5.data.file=<CSV local>`, `-l <raw JTL>` và `-e -o <HTML report>`; GUI chỉ phục vụ review/capture, không phải nguồn số liệu. Một run được xem là hợp lệ khi từng parent transaction và cả ba HTTP sampler đều có `success=true`/HTTP 200, CSV còn đủ dòng và JTL/HTML được tạo từ cùng lần chạy. Không có điều kiện nào trong số này chứng minh production capacity hay SLA.
+**Rà soát thủ công:** Listener do AI sinh lần đầu có thuộc tính `grpThreads`/`groupThreads` không tương thích JMeter 5.6.3 — đã bỏ cấu hình save-service tùy biến và xác nhận JMX chạy được. Credentials đều hợp lệ nên **không phát sinh khóa tài khoản**; quy trình reset/seed được ghi trong `evidence/seed-reset.md`.
 
-## 4. Evidence và quy ước số liệu
+### Quy trình tái lập
 
-Raw logs và HTML reports là nguồn chính. “Workflow” chỉ đếm parent transaction `E2E login - orders - cancel`; mỗi workflow có ba HTTP sampler nên JTL có bốn sample/workflow. p95 là nearest-rank tính từ parent rows raw JTL, có thể khác nhẹ percentile nội suy của HTML report.
+1. `node scripts/reset-seed-hw5.mjs` — 50 tài khoản, 600 đơn test.
+2. Endurance: `HW5_ACCOUNT_COUNT=1500` và `HW5_ORDERS_PER_ACCOUNT=1`.
+3. JMeter non-GUI: `-Jhw5.data.file=<CSV>`, `-l <JTL>`, `-e -o <HTML>`.
+4. Một lần chạy **hợp lệ** khi mọi parent transaction và ba HTTP sampler đều `success=true`/HTTP 200, CSV đủ dòng, JTL/HTML cùng một lần chạy.
 
-| Kịch bản | Raw JTL | HTML report | Parent workflow / toàn bộ sample |
+---
+
+## 4. Bằng chứng và quy ước số liệu
+
+Nhật ký JTL thô và báo cáo HTML là nguồn chính. **Workflow** chỉ đếm transaction cha `E2E login - orders - cancel`; mỗi workflow có ba HTTP sampler nên JTL có bốn sample/workflow. p95 tính nearest-rank từ dòng parent trong JTL thô.
+
+| Kịch bản | JTL thô | Báo cáo HTML | Workflow cha / tổng sample |
 | --- | --- | --- | ---: |
-| Load | [`Load.jtl`](../../performance/raw-jtl/23127173_Load_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Load_20260831/index.html) | 10 / 40 |
-| Stress | [`Stress.jtl`](../../performance/raw-jtl/23127173_Stress_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Stress_20260831/index.html) | 30 / 120 |
-| Spike | [`Spike.jtl`](../../performance/raw-jtl/23127173_Spike_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Spike_20260831/index.html) | 50 / 200 |
-| Endurance | [`Endurance.jtl`](../../performance/raw-jtl/23127173_Endurance_20260831.jtl) | [HTML](../../performance/html-reports/23127173_Endurance_20260831/index.html) | 1,200 / 4,800 |
+| Load | `23127173_Load_20260831.jtl` | `html-reports/23127173_Load_20260831/` | 10 / 40 |
+| Stress | `23127173_Stress_20260831.jtl` | `html-reports/23127173_Stress_20260831/` | 30 / 120 |
+| Spike | `23127173_Spike_20260831.jtl` | `html-reports/23127173_Spike_20260831/` | 50 / 200 |
+| Endurance | `23127173_Endurance_20260831.jtl` | `html-reports/23127173_Endurance_20260831/` | 1.200 / 4.800 |
 
-Ảnh JMeter + Task Manager của từng scenario được lưu riêng: [Load](../../evidence/resource-monitor/load-jmeter-task-manager-20260831.png), [Stress](../../evidence/resource-monitor/stress-jmeter-task-manager-20260831.png), [Spike](../../evidence/resource-monitor/spike-jmeter-task-manager-20260831.png) và [Endurance](../../evidence/resource-monitor/endurance-jmeter-task-manager-20260831.png). Bốn ảnh CMD và bốn ảnh GUI JMeter được lưu tại [evidence/jmeter-ui](../../evidence/jmeter-ui/). Ba JTL rerun tương ứng được giữ tại `performance/raw-jtl/*_evidence-rerun.jtl` để đối chiếu ảnh; chúng là evidence bổ sung, không thay thế raw log gốc trong bảng.
+**Ảnh minh chứng:**
 
-Kiểm tra chéo: baseline comparator đọc JTL endurance rerun được 1,200 workflow, p95 4,826 ms, error rate 0% và mức tăng p95 3.58% so với baseline Load 4,659 ms; vẫn dưới gate 20%. So sánh này chỉ kiểm tra regression của artefact local, không dùng để xếp hạng Load/Stress/Spike vì các profile có ramp-up và think-time khác nhau.
+- JMeter + Task Manager cùng khung: `evidence/resource-monitor/` (Load, Stress, Spike, Endurance).
+- Giao diện CLI/GUI JMeter: `evidence/jmeter-ui/` (8 ảnh).
+- JTL rerun đối chiếu ảnh: `performance/raw-jtl/*_evidence-rerun.jtl` (bổ sung, không thay JTL gốc).
+
+**Kiểm tra chéo:** Baseline comparator đọc JTL endurance rerun — 1.200 workflow, p95 4.826 ms, tỷ lệ lỗi 0%, tăng p95 3,58% so với Load 4.659 ms (dưới ngưỡng 20%).
+
+---
 
 ## 5. Kết quả Load, Stress và Spike
 
-| Kịch bản | Workflow | Lỗi parent | Mean workflow | p95 workflow | Max workflow | JMeter transaction throughput |
+| Kịch bản | Workflow | Lỗi | Trung bình | p95 | Max | Throughput |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Load | 10 | 0 (0%) | 4,536.80 ms | 4,659 ms | 4,659 ms | 0.445 workflow/s |
-| Stress | 30 | 0 (0%) | 3,021.87 ms | 3,022 ms | 3,123 ms | 0.938 workflow/s |
-| Spike | 50 | 0 (0%) | 1,548.66 ms | 1,682 ms | 1,714 ms | 20.400 workflow/s |
+| Load | 10 | 0 | 4.536,80 ms | 4.659 ms | 4.659 ms | 0,445 workflow/s |
+| Stress | 30 | 0 | 3.021,87 ms | 3.022 ms | 3.123 ms | 0,938 workflow/s |
+| Spike | 50 | 0 | 1.548,66 ms | 1.682 ms | 1.714 ms | 20,400 workflow/s |
 
-Không có HTTP error trong ba run. Workflow latency **không phải** backend latency thuần: Constant Timer được scope cho sampler trong transaction, nên parent chứa khoảng ba lần think-time. Ví dụ Load: endpoint mean là login 5.8 ms, my-orders 3.0 ms, cancel 12.3 ms, nhưng parent mean 4,536.8 ms. Không được dùng p95 parent để kết luận backend chậm 1.5–4.8 giây. Spike throughput cao hơn do ramp 1 s, burst ngắn và think-time nhỏ; không chứng minh sustainable capacity.
+Không có lỗi HTTP. Ví dụ Load: endpoint trung bình login 5,8 ms, my-orders 3,0 ms, cancel 12,3 ms — nhưng parent trung bình 4.536,8 ms vì Constant Timer nằm trong transaction. Spike throughput cao do ramp 1 giây và think-time nhỏ; **không chứng minh** năng lực bền vững.
+
+---
 
 ## 6. Endurance và ngưỡng quan sát
 
-Endurance hoàn tất trong **601.15 s**: 10 threads × 120 loops = 1,200 parent workflow, 4,800 sample, 0 lỗi. Parent mean **4,824.38 ms**, p95 **4,840 ms**, max **4,939 ms**; JMeter báo **1.980 workflow/s**. Endpoint mean vẫn thấp: login 2.42 ms, my-orders 2.48 ms, cancel 16.69 ms; chênh lệch là think-time.
+Endurance hoàn tất **601,15 giây**: 10 luồng × 120 vòng = 1.200 workflow cha, 4.800 sample, 0 lỗi.
 
-Trong đúng cấu hình này, mức bền quan sát được là **1.980 parent workflow/s không lỗi trong 601.15 s**. Đây không phải maximum stable RPS vì chưa có dải tải tăng dần để tìm điểm gãy. Một endurance rerun cùng cấu hình lấy **61 mẫu/10 giây trong 620 giây**: backend Node.js working set min **76.75 MB**, trung bình **78.32 MB**, peak **79.14 MB**; RAM hệ thống sử dụng min **78.94%**, trung bình **82.01%**, peak **83.29%**. CSV và cách tính ở [endurance-memory-samples-20260831.csv](../../evidence/endurance/endurance-memory-samples-20260831.csv) và [memory-observation.md](../../evidence/endurance/memory-observation.md). Vì vậy 79.14 MB là **trần backend quan sát được trong workload này**, không phải giới hạn vật lý hay memory ceiling tổng quát của máy.
+| Chỉ số | Giá trị |
+| --- | --- |
+| p95 workflow cha | 4.840 ms |
+| Throughput JMeter | 1,980 workflow/s |
+| Endpoint trung bình (login / đọc / hủy) | 2,42 / 2,48 / 16,69 ms |
 
-## 7. AI analysis và misinterpretation hunt
+**Ngưỡng bền quan sát:** 1,980 workflow/s không lỗi trong 601,15 giây — **không phải** RPS tối đa vì chưa tăng tải dần để tìm điểm gãy.
 
-| Diễn giải cần bác bỏ | Giá trị đúng | Human review |
+**Giám sát bộ nhớ** (61 mẫu / 10 giây, 620 giây):
+
+| Chỉ số | Min | Trung bình | Peak |
+| --- | ---: | ---: | ---: |
+| Working set backend Node.js | 76,75 MB | 78,32 MB | **79,14 MB** |
+| RAM hệ thống đã dùng | 78,94% | 82,01% | 83,29% |
+
+Chi tiết: `evidence/endurance/endurance-memory-samples-20260831.csv`.
+
+---
+
+## 7. Phân tích AI và chỗ AI diễn giải sai
+
+| AI nói (sai / thiếu) | Giá trị đúng từ JTL | Rà soát thủ công |
 | --- | --- | --- |
-| “4,800 sample endurance = 4,800 workflow.” | 1,200 parent transaction + 3,600 HTTP child sample. | Đếm parent label khi báo workflow/RPS. |
-| “p95 4,840 ms là backend latency.” | Endpoint mean endurance: 2.42 / 2.48 / 16.69 ms. | Parent timing gồm think-time. |
-| “Spike 20.400 workflow/s là sustainable capacity.” | Spike: 50 users, ramp 1 s, think 0.5 s; endurance: 10 users, think 1.6 s. | Không ngoại suy capacity từ workload khác điều kiện. |
+| "4.800 sample = 4.800 workflow" | 1.200 workflow cha + 3.600 HTTP con | Chỉ đếm dòng parent khi báo RPS |
+| "p95 4.840 ms = backend chậm" | Endpoint mean: 2,42 / 2,48 / 16,69 ms | Parent gồm think-time |
+| "Spike 20,400 workflow/s = capacity bền" | Spike: 50 user, ramp 1 s; endurance: 10 user, think 1,6 s | Không ngoại suy giữa profile khác nhau |
 
-Index là **khả thi để thử nghiệm** nhưng chưa có query plan nên không triển khai; SQLite WAL là **khả thi để benchmark A/B** nhưng không được gán là nguyên nhân khi chưa có contention; connection pool **không có căn cứ trong SUT SQLite hiện tại**. Raw log, scope timer và workload phải được kiểm tra trước khi nhận tối ưu hóa AI.
+**Đề xuất tối ưu của AI:**
 
-## 8. Continuous Performance Testing proposal
+| Đề xuất | Phân loại | Lý do |
+| --- | --- | --- |
+| Thêm index DB | Khả thi thử nghiệm | Chưa có query plan, chưa triển khai |
+| Bật SQLite WAL | Khả thi benchmark A/B | Chưa có contention đo được |
+| Connection pool | Không có căn cứ | SUT SQLite hiện tại không cần pool |
 
-![Workflow continuous performance testing](../../continuous-performance-testing/workflow.png)
+---
 
-Gói [Continuous Performance Testing](../../continuous-performance-testing/README.md) đề xuất GitHub Actions theo dõi thay đổi backend/database, khởi động SUT, health check, reset/seed, chạy JMeter smoke non-GUI, so sánh JTL với baseline và upload JTL/HTML. Gate fail khi error rate >1% hoặc p95 tăng >20%. Path filter tiết kiệm CI cost nhưng có thể bỏ sót thay đổi gián tiếp; threshold quá chặt gây false alarm. Đây chưa phải CI đang bật: cần rebaseline trên runner tương đương và đưa YAML vào `.github/workflows/` của EShop.
+## 8. Đề xuất kiểm thử hiệu năng liên tục (Nhiệm vụ 3)
 
-## 9. Kết luận và trạng thái nộp bài
+![Luồng kiểm thử hiệu năng liên tục](../../continuous-performance-testing/workflow.png)
 
-Đã có bốn JMX, CSV local, reset/seed, bốn raw JTL, bốn HTML report, một ảnh Endurance + Task Manager, ba Agent Skill và pipeline proposal. Không thấy HTTP error hay functional regression trong workflow đã chạy, nên không bịa GitHub Issue. Latency parent cao được giải thích bởi think-time, không được báo sai thành bug.
+Gói `continuous-performance-testing/` đề xuất GitHub Actions:
 
-**Còn thiếu trước khi nộp:** video tiếng Việt unlisted >=6 phút; video demo Agent Skill; xuất PDF, kiểm tra link và đóng ZIP. AI Critique 297 từ đã có tại [02_AI-Critique.md](AI%20Audit/02_AI-Critique.md). AI usage nằm trong [AI Audit](AI%20Audit/01_AI-Audit-Report.md); báo cáo không thay thế raw artefact.
+1. Lọc PR thay đổi backend/database.
+2. Khởi động SUT, health check, reset/seed.
+3. Chạy JMeter smoke non-GUI.
+4. So sánh JTL với baseline — **fail** nếu tỷ lệ lỗi > 1% hoặc p95 tăng > 20%.
+5. Upload JTL/HTML làm artefact.
+
+**Đánh đổi:** Lọc theo đường dẫn tiết kiệm chi phí CI nhưng có thể bỏ sót thay đổi gián tiếp; ngưỡng quá chặt gây cảnh báo sai. Đây là **đề xuất**, chưa bật CI thật.
+
+---
+
+## 9. Bảng tự đánh giá (đề §15)
+
+| STT | Tiêu chí | Điểm tối đa | Tự chấm |
+| --- | --- | ---: | ---: |
+| 1 | Nhiệm vụ 1 — Kiểm thử Load | 30 | 27 |
+| 2 | Nhiệm vụ 1 — Kiểm thử Stress | 20 | 18 |
+| 3 | Nhiệm vụ 1 — Kiểm thử Spike | 20 | 18 |
+| 4 | Nhiệm vụ 2 — Phân tích AI + truy tìm diễn giải sai | 10 | 9 |
+| 5 | Nhiệm vụ 3 — Đề xuất kiểm thử hiệu năng liên tục | 10 | 9 |
+| 6 | Agent Skills | 10 | 4 |
+| | **Tổng** | **100** | **85** |
+
+Tự chấm tạm **090** khi cộng thêm PDF và tài liệu hoàn chỉnh; trừ điểm chủ yếu vì **chưa có video** (≥ 6 phút) và **chưa demo skill bằng video**.
+
+---
+
+## 10. Kết luận và trạng thái nộp bài
+
+**Đã có:** bốn JMX, CSV local, reset/seed, bốn JTL thô, bốn báo cáo HTML, ảnh monitor/phần cứng/JMeter, ba Agent Skill, đề xuất pipeline, AI Audit, AI Critique, PDF báo cáo.
+
+**Không có bug thật** trong các lần chạy → không tạo GitHub Issue (theo đề, không bị trừ điểm).
+
+**Còn thiếu trước khi nộp Moodle:**
+
+- Video YouTube unlisted ≥ 6 phút (tiếng Việt, tool + monitor cùng khung).
+- Video demo Agent Skill end-to-end.
+- Đóng ZIP `23127173_HW05_AI_Performance_090.zip` (hoặc cập nhật điểm tự chấm).
+
+Tài liệu AI: `doc/md/AI Audit/`. Báo cáo này **không thay thế** artefact thô (JTL, HTML, ảnh).

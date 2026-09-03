@@ -1,22 +1,25 @@
-# Checklist HW05-AI Performance Testing
+# Checklist HW05-AI — Kiểm thử hiệu năng
 
 ## Đã hoàn thành
 
-- [x] Chọn workflow không trùng Vân: `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`.
-- [x] Xác minh SUT local, port 3000, hardware và DXDIAG.
-- [x] Tạo dữ liệu CSV test, reset/seed độc lập và kiểm tra JWT/orderId.
-- [x] Tạo/rà soát Load, Stress, Spike theo đúng tên; CSV, assertion, JWT/orderId extraction và ba listener khác nhau.
-- [x] Lưu raw JTL và HTML reports cho ba scenario; lưu thêm JTL rerun truy vết ảnh.
-- [x] Chụp JMeter + Task Manager cho Load, Stress, Spike, Endurance; chụp CLI/GUI từng scenario.
-- [x] Chạy endurance 601.15 s và memory sampling 61 mẫu; báo cáo RPS/peak working set trong phạm vi workload.
-- [x] Hoàn thành AI analysis, misinterpretation hunt, feasibility review và AI Critique 297 từ.
-- [x] Hoàn thành continuous performance testing proposal, flowchart, baseline comparator và trade-off.
-- [x] Cập nhật main report, AI Audit, disclosure, privacy checklist và Agent Skills.
-- [x] README có workflow, kết quả, evidence và giới hạn kết luận.
+- [x] Chọn workflow không trùng Vân: `POST /api/login` → `GET /api/orders/my-orders` → `PUT /api/orders/:id/cancel`.
+- [x] Xác minh SUT local, cổng 3000, phần cứng và DXDIAG.
+- [x] CSV test, reset/seed độc lập, kiểm tra JWT và orderId.
+- [x] Load, Stress, Spike đúng tên; CSV, assertion, trích JWT/orderId; ba listener khác nhau.
+- [x] JTL thô và HTML report cho ba kịch bản; JTL rerun đối chiếu ảnh.
+- [x] Ảnh JMeter + Task Manager (Load, Stress, Spike, Endurance); ảnh CLI/GUI JMeter.
+- [x] Endurance 601,15 giây; 61 mẫu RAM; báo cáo RPS và peak working set.
+- [x] Phân tích AI, truy tìm diễn giải sai, đánh giá đề xuất tối ưu; AI Critique ≤300 từ.
+- [x] Đề xuất kiểm thử hiệu năng liên tục, flowchart, baseline comparator, trade-off.
+- [x] Báo cáo chính, AI Audit, Mandatory Disclosure, Privacy Checklist, Agent Skills.
+- [x] README: workflow, kết quả, link GitHub, bảng tự đánh giá §15.
+- [x] PDF: `doc/pdf/main-report.pdf`, `AI-Audit-Report.pdf`, `AI-Critique.pdf`.
+- [x] Git commit log: `doc/md/Git Commit Log/git-commit-log.txt`.
 
-## Còn phải làm trước khi nộp
+## Còn phải làm trước khi nộp Moodle
 
-- [ ] Quay video YouTube unlisted tiếng Việt >= 6 phút, cho thấy tool + resource monitor và narration.
-- [ ] Quay video demo end-to-end một Agent Skill trên endpoint group.
-- [ ] Xuất PDF từ bản Markdown cuối cùng, kiểm tra ảnh/liên kết và đóng ZIP `23127173_HW05_AI_Performance_095.zip`.
-- [ ] Tạo GitHub Issue chỉ khi phát hiện bug/performance issue thật; hiện chưa có defect để báo.
+- [ ] Video YouTube unlisted ≥ 6 phút (tiếng Việt, tool + monitor cùng khung).
+- [ ] Video demo Agent Skill end-to-end trên một nhóm endpoint.
+- [ ] Cập nhật `evidence/demo-video/link-video.md` với link thật.
+- [ ] Đóng ZIP `23127173_HW05_AI_Performance_090.zip`.
+- [ ] GitHub Issue — chỉ khi có bug thật; hiện không có defect.
