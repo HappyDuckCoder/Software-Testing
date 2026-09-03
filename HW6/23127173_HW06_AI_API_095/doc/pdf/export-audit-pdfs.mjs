@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
@@ -7,23 +8,42 @@ const hwRoot = path.resolve(__dirname, '../..');
 const require = createRequire(path.join(hwRoot, 'api-testing/package.json'));
 const mdToPdf = require('md-to-pdf').default ?? require('md-to-pdf');
 
-for (const [source, destination] of [
-  ['01_AI-Audit-Report.md', 'AI-Audit-Report.pdf'],
-  ['02_AI-Critique.md', 'AI-Critique.pdf'],
-]) {
-  const { filename } = await mdToPdf(
-    { path: path.join(hwRoot, 'doc/md/AI Audit', source) },
-    {
-      launch_options: process.env.PUPPETEER_EXECUTABLE_PATH
-        ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH }
-        : undefined,
-      pdf_options: {
-        format: 'A4',
-        printBackground: true,
-        margin: { top: '18mm', right: '18mm', bottom: '18mm', left: '18mm' },
-      },
-      dest: path.join(hwRoot, 'doc/pdf', destination),
-    }
-  );
-  console.log(`Wrote ${filename}`);
-}
+const launchOptions = process.env.PUPPETEER_EXECUTABLE_PATH
+  ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH }
+  : undefined;
+
+const auditCss = fs.readFileSync(path.join(__dirname, 'audit-report.css'), 'utf8');
+const critiqueCss = fs.readFileSync(path.join(__dirname, 'ai-critique.css'), 'utf8');
+
+const { filename: auditFile } = await mdToPdf(
+  { path: path.join(hwRoot, 'doc/md/AI Audit/01_AI-Audit-Report.md') },
+  {
+    css: auditCss,
+    body_class: ['audit-report'],
+    launch_options: launchOptions,
+    pdf_options: {
+      format: 'A4',
+      landscape: true,
+      printBackground: true,
+      margin: { top: '16mm', right: '14mm', bottom: '18mm', left: '14mm' },
+    },
+    dest: path.join(__dirname, 'AI-Audit-Report.pdf'),
+  }
+);
+console.log(`Wrote ${auditFile}`);
+
+const { filename: critiqueFile } = await mdToPdf(
+  { path: path.join(hwRoot, 'doc/md/AI Audit/02_AI-Critique.md') },
+  {
+    css: critiqueCss,
+    body_class: ['ai-critique'],
+    launch_options: launchOptions,
+    pdf_options: {
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '22mm', right: '22mm', bottom: '24mm', left: '22mm' },
+    },
+    dest: path.join(__dirname, 'AI-Critique.pdf'),
+  }
+);
+console.log(`Wrote ${critiqueFile}`);

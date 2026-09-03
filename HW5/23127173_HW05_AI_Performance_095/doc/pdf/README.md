@@ -27,6 +27,7 @@ node export-audit-pdfs.mjs
 
 ## Lưu ý
 
-- CSS `main-report.css` tạo cover FIT, bảng có header màu, font Segoe UI/Times New Roman.
+- CSS `audit-report.css` — khổ ngang, bảng compact cho nhật ký audit.
+- CSS `ai-critique.css` — khổ dọc, cover FIT, đoạn văn căn đều.
 - Kiểm tra ảnh workflow và bảng hiển thị đúng trước khi nộp.
 - Không xuất PDF từ nội dung AI bịa; chỉ từ markdown đã rà soát.

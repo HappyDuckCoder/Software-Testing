@@ -1,10 +1,16 @@
-**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
+<div class="cover">
 
-**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
+**Khoa Công nghệ Thông tin (FIT) — Trường ĐH Khoa học Tự nhiên (HCMUS)**
 
-# AI Audit Report — HW06-AI API Testing
+**CS423 / CSC13003 — Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
-*Phụ lục bắt buộc. Mỗi artifact AI sinh được gắn verdict `VALID` / `INVALID` / `INCOMPLETE`. Bằng chứng thực thi (Newman, Postman, CI) chỉ được ghi khi đã chạy thật.*
+# Báo cáo kiểm toán AI — HW06-AI
+
+<p class="subtitle">Phụ lục bắt buộc · MSSV 23127173 · Trần Hải Đức · Cập nhật 03/09/2026</p>
+
+</div>
+
+*Mỗi artifact AI sinh được gắn verdict `VALID` / `INVALID` / `INCOMPLETE`. Bằng chứng thực thi chỉ được ghi khi đã chạy thật.*
 
 ## 1. Thông tin sinh viên
 
@@ -90,14 +96,16 @@
 
 | **AI-043** · 03/09/2026 · Codex (GPT-5). Prompt: đọc requirement/hiện trạng; tạo 6 issue mới từ `issues/bug-report.md`; capture evidence; cập nhật docs/audit và commit. | Đối chiếu đề §6/§14 với 120 TC và Newman 182/12; kiểm tra 11 issue cũ để tránh tái sử dụng; sau xác nhận cuối của SV, tạo issue public [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23), lưu 6 ảnh trang issue, thêm URL/evidence vào report và checklist. | VALID | Nội dung issue dùng oracle spec và kết quả run đã có; trang GitHub và screenshot được tạo/capture thật, không bịa request, response hoặc bằng chứng runtime. Việc đăng public là external action nên chỉ thực hiện sau xác nhận cuối của SV. | SV kiểm tra lại issue trước khi nộp và tự đóng ZIP Moodle. |
 
+| **AI-044** · 03/09/2026 · Cursor (Composer). Prompt: «PDF Audit/Critique xấu — sửa lại cho đẹp». | Thêm `audit-report.css` (A4 ngang, bảng 7pt, cover FIT) và `ai-critique.css` (cover + văn bản căn đều); cập nhật `export-audit-pdfs.mjs`; cover HTML trong markdown; xuất lại `AI-Audit-Report.pdf` và `AI-Critique.pdf` (HW5 + HW6). | VALID | Chỉ định dạng PDF; không đổi verdict hay số liệu audit. | SV mở PDF kiểm tra bảng audit không bị cắt chữ. |
+
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 43 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 36 | 84% |
+| Tổng artifact AI sinh đã audit | 44 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 37 | 84% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 17% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 16% |
 
 Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper). AI-022…AI-043: oracle spec, CI evidence, GitHub Issues và doc sync.
 
