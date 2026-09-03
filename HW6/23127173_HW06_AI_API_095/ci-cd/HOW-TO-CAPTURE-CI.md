@@ -24,11 +24,11 @@ Sau khi push, job **`pass-smoke`** tự chạy (chỉ folder `00 Setup` — kỳ
 | 5 | **Run Newman oracle fail** | Log `X-Student-Id applied: 23127173` |
 | 6 | **Summary cuối** | Bảng `182` requests / **`12` failed assertions** |
 
-Lưu vào `evidence/ci-cd/` (ví dụ thay `ci-06`…`ci-10` hoặc thêm `ci-11-oracle-fail-summary-20260903.png`).
+Lưu vào `evidence/ci-cd/` với prefix **`ci-fail-*`** (không ghi đè `ci-06`…`ci-10` — đã là pass).
 
-## 4. CI pass (nếu cần chụp lại)
+## 4. CI pass
 
-Run workflow → chọn **`pass-smoke`** → job ✅ (62 setup request, 0 fail).
+Đã có: `ci-06`…`ci-10`. Chụp lại (nếu cần): Run workflow → **`pass-smoke`** → job ✅.
 
 ## 5. Test local trước khi push
 

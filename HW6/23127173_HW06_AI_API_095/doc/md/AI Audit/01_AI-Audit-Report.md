@@ -80,18 +80,20 @@
 
 | **AI-038** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «bổ sung các thứ liên quan đến báo cáo; cập nhật audit; commit» | Bổ sung `main-report.md`: link GitHub public, bảng Postman features (§6), Agent Skill/generator, CI links, tự đánh giá; cập nhật `README.md` bảng self-assessment §14 + số API/TC/bug; tái xuất `main-report.pdf`. | VALID | Đáp ứng đề §6 (Postman features), §14 (README self-assessment, link repo). Không bịa Issue/CI fail. | SV: GitHub Issue, CI fail remote, điền Lớp/GV nếu cần. |
 
-| **AI-039** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «dùng 5 ảnh minh chứng này» (GitHub Actions) | SV cung cấp 5 screenshot CI run commit `f21965e`; lưu `ci-06`…`ci-10` trong `evidence/ci-cd/`; cập nhật `ci-cd-report.md`, main-report §8, README/checklist; ghi remote **fail** 102 req / 17 assert fail. | VALID | Evidence CI thật từ Actions; đủ pass (01/09) + fail (03/09) theo đề §6. Số liệu CI ≠ local 182/12 — ghi rõ, không bịa. | GitHub Issue; đồng bộ workflow CI với `npm run test` nếu cần. |
+| **AI-039** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «dùng 5 ảnh minh chứng này» (GitHub Actions) | SV cung cấp 5 screenshot CI; lưu `ci-06`…`ci-10`. | VALID | Evidence CI thật; sau đó SV xác nhận lại là pass, fail chờ chụp `oracle-fail`. | AI-040 sửa phân loại. |
+
+| **AI-040** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «bỏ ci-01..05 sai; giữ ci-06..10 pass; fail chờ cap» | Xóa `ci-01`…`ci-05` (baseline cũ); giữ `ci-06`…`ci-10` làm pass; cập nhật README/ci-cd-report/main-report/checklist; fail ⏳ `oracle-fail`. | VALID | Không giữ evidence sai; trạng thái CI khớp ý SV. | SV chụp fail sau workflow `65bcaf1`. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 39 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 32 | 82% |
+| Tổng artifact AI sinh đã audit | 40 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 33 | 83% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
 | INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 18% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper — đã thay Desktop AI-032/033). AI-022…AI-039: oracle spec, báo cáo, CI evidence, doc sync.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper). AI-022…AI-040: oracle spec, CI evidence, doc sync.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 

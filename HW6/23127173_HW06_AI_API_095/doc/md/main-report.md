@@ -30,7 +30,7 @@
 | Assertion | **182** — **12 FAIL** (6 nhóm bug spec) |
 | Excel summary | **108 PASS / 12 FAIL** |
 | Postman Desktop | 6 ảnh gốc + Console `X-Student-Id` |
-| Tự đánh giá | **097 / 100** (trừ Issue GitHub) |
+| Tự đánh giá | **096 / 100** (trừ Issue + CI fail chưa chụp) |
 
 Oracle thiết kế theo **đặc tả**, không suy từ code backend. Vi phạm spec → assertion **FAIL** trên Newman/Postman.
 
@@ -132,11 +132,11 @@ Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCo
 
 | Run | Kết quả job | Newman | Evidence |
 | --- | --- | --- | --- |
-| Remote **pass** (01/09) | ✅ Succeeded | 20 req, 0 fail | [run 33500850638](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33500850638) · `ci-01`…`ci-05` |
-| Remote **fail** (03/09) | ❌ Failed | 102 req, **17 assert fail** | commit `f21965e` · `ci-06`…`ci-10` |
-| Local full oracle (03/09) | — | 182 req, **12 fail** | `ci-cd/ci-cd-report.md`, Newman raw |
+| Remote **pass** (03/09) | ✅ | `evidence/ci-cd/ci-06`…`ci-10` |
+| Remote **fail** (`oracle-fail`) | ⏳ Chờ chụp | `ci-cd/HOW-TO-CAPTURE-CI.md` |
+| Local full oracle (03/09) | — | 182 req, **12 fail** · Newman raw |
 
-Đủ hai run remote pass + fail theo đề §6. Ảnh CI 03/09: `evidence/ci-cd/ci-06-workflow-run-20260903.png` … `ci-10-newman-summary-20260903.png`.
+Chưa đủ fail remote — SV chạy workflow **`oracle-fail`** rồi bổ sung ảnh `ci-fail-*`.
 
 ---
 
@@ -157,7 +157,7 @@ Chi tiết: `issues/bug-report.md`. GitHub Issues: **chưa tạo** (SV tự mở
 
 ## 10. Kết luận
 
-Đã hoàn thành pipeline generate → audit → extend → execute cho 3 API, assert oracle trên Newman (**182 req / 12 fail**). CI remote có pass (01/09) và fail (03/09). Còn lại: GitHub Issues + screenshot, ZIP Moodle.
+Đã hoàn thành pipeline 3 API và assert oracle local (**182/12**). CI remote **pass** có ảnh (`ci-06`…`ci-10`); **fail** chờ chụp job `oracle-fail`. Còn: GitHub Issues, ZIP Moodle.
 
 ---
 

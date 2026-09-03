@@ -60,8 +60,8 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | PDF (main + audit + critique) | ✅ `doc/pdf/` |
 | Flowchart workflow (tự vẽ) | ✅ `doc/pdf/hw6-api-testing-workflow.png` |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
-| CI remote baseline pass | ✅ |
-| CI remote fail (03/09, 17 assert fail) | ✅ `evidence/ci-cd/ci-06`…`ci-10` |
+| CI remote pass (03/09) | ✅ `ci-06`…`ci-10` |
+| CI remote fail | ⏳ Chờ chụp `oracle-fail` |
 | GitHub Issues | ⏳ |
 | CI remote fail (03/09) | ✅ |
 | ZIP nộp Moodle | SV tự đóng (không bắt buộc tiêu chí) |

@@ -28,8 +28,8 @@
 - [x] AI Critique 200–300 từ đã có (`02_AI-Critique.md` + PDF).
 - [x] Mandatory Disclosure đã điền theo mẫu FIT.
 - [x] 120 TC + oracle spec + Pass/Fail từng ID (Excel 108/12).
-- [x] CI remote pass + fail — `evidence/ci-cd/ci-01`…`ci-10`.
-- [ ] GitHub Issue thật + screenshot đính kèm.
+- [x] CI remote pass — `ci-06`…`ci-10`.
+- [ ] CI remote fail + GitHub Issue thật + screenshot.
 - [x] Excel test summary: `23127173_HW06_test-summary-20260903.xlsx`.
 - [x] Main report + AI Audit + Critique PDF (`doc/pdf/`).
 - [x] Git commit log từ lịch sử repo thật.
