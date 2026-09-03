@@ -147,7 +147,7 @@ Minh chứng CI: 6 ảnh trong `evidence/ci-cd/` · chi tiết `ci-cd/ci-cd-repo
 | HW6-BUG-01 | SEC-06 — client gán `role`/`isAdmin` vẫn 200 | A-031, A-032 | [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18) |
 | HW6-BUG-02 | FR-10 — hủy đơn `shipping` vẫn 200 | B-004, B-028 | [#19](https://github.com/HappyDuckCoder/Software-Testing/issues/19) |
 | HW6-BUG-03 | SEC-03 — token user gọi admin API vẫn 200 | C-023, C-024 | [#20](https://github.com/HappyDuckCoder/Software-Testing/issues/20) |
-| HW6-BUG-04 | FR-04 — không validate SĐT | A-021, A-022, A-023 | [#21](https://github.com/HappyDuckCoder/Software-Testing/issues/21) |
+| HW6-BUG-04 | FR-04 — không validate SĐT | A-021, A-022, A-023, A-025 | [#21](https://github.com/HappyDuckCoder/Software-Testing/issues/21) |
 | HW6-BUG-05 | Thiếu `Content-Type` vẫn 200 | A-034 | [#22](https://github.com/HappyDuckCoder/Software-Testing/issues/22) |
 | HW6-BUG-06 | GET thay PUT trả 404 thay vì 405 | B-028, C-032 | [#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23) |
 
