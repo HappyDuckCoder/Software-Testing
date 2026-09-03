@@ -19,6 +19,6 @@ Xuất từ nhánh `homework5-v2`, thư mục `HW5/23127173_HW05_AI_Performance_
 | `1741958` | 31/08/2026 | Tinh chỉnh tài liệu hiệu năng |
 | `30b8b6d` | 31/08/2026 | JTL log ban đầu |
 | `66966ea` | 31/08/2026 | Kịch bản quay video HW5 |
-| *(phiên Cursor 03/09)* | 03/09/2026 | Viết lại doc tiếng Việt, Mandatory, PDF, checklist, commit log |
+| `f3aea8a` | 03/09/2026 | Viết lại doc tiếng Việt, Mandatory Cursor, xuất PDF, checklist |
 
 Quy tắc: mỗi bước có ý nghĩa (JMX từng kịch bản, evidence, phân tích AI, đề xuất CI) có commit riêng trước khi nộp.
