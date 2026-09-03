@@ -1,6 +1,6 @@
 # Nhật ký Git commit — HW05
 
-Xuất từ nhánh `homework5-v2`, thư mục `HW5/23127173_HW05_AI_Performance_088`.
+Xuất từ nhánh `main`, thư mục `HW5/23127173_HW05_AI_Performance_088`.
 
 | Commit | Ngày (ước) | Mô tả |
 | --- | --- | --- |
@@ -22,5 +22,6 @@ Xuất từ nhánh `homework5-v2`, thư mục `HW5/23127173_HW05_AI_Performance_
 | `f3aea8a` | 03/09/2026 | Viết lại doc tiếng Việt, Mandatory Cursor, xuất PDF, checklist |
 | `e044a93` | 03/09/2026 | CI HW5: Load + Stress + Spike trên GitHub Actions (workflow sửa path eshop-sut) |
 | `7b66a56` | 03/09/2026 | Script `extract-parent-jtl.ps1`, bốn file `*_parents-only.jtl`, cập nhật doc/video/audit/PDF |
+| `dbeba41` | 03/09/2026 | Chốt bài nộp HW5 ở mức tự chấm 88 điểm: đổi tên thư mục `_088`, cập nhật report, checklist, audit và evidence video |
 
 Quy tắc: mỗi bước có ý nghĩa (JMX từng kịch bản, evidence, phân tích AI, đề xuất CI) có commit riêng trước khi nộp.
