@@ -9,6 +9,14 @@ Hai job — **cùng full 120 TC** (182 request), không smoke:
 | **`full-pass`** | observation (no 5xx) | ✅ Xanh | 182 req, **0 fail** |
 | **`full-fail`** | oracle đặc tả | ❌ Đỏ | 182 req, **~12 fail** |
 
+## Vì sao trước đó thấy job “Skipped”?
+
+Workflow cũ có **2 job** (`full-pass` + `full-fail`) nhưng mỗi lần chỉ chạy **1** → job còn lại luôn hiện ⏭ Skipped (bình thường, không phải lỗi).
+
+Workflow mới chỉ còn **1 job** `newman` — tên job = `full-pass` hoặc `full-fail` tùy lựa chọn, **không còn job skip**.
+
+**Lưu ý:** Push chỉ trigger khi đổi file trong `HW6/**` hoặc workflow file. Sau khi sửa workflow, **push lên GitHub** rồi mới Run workflow.
+
 ## 1. Push lên `homework6`
 
 Job **`full-pass`** tự chạy sau push → chụp ảnh pass nếu cần.
