@@ -30,6 +30,15 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-039 | 03/09 | 5 ảnh CI GitHub Actions | Cursor (Composer 2.5) |
 | AI-040 | 03/09 | Xóa ci-01..05; giữ ci-06..10 pass | Cursor (Composer 2.5) |
 | AI-041 | 03/09 | 6 ảnh CI pass+fail; thay ci-06..10 | Cursor (Composer 2.5) |
+| AI-042 | 03/09 | Gắn link CI run #7/#8; push main | Cursor (Composer 2.5) |
+
+## Prompt AI-042 (03/09/2026)
+
+```text
+link pass https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307
+link fail https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556
+cập nhật doc, cập nhật audit, commit, push main
+```
 
 ## Prompt AI-041 (03/09/2026)
 

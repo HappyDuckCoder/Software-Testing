@@ -128,12 +128,12 @@ Luồng: đọc đặc tả → planner (domain/state/security/schema) → sinh 
 
 ## 8. CI/CD
 
-Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCoder/Software-Testing/blob/homework6/.github/workflows/hw6-api-tests.yml).
+Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCoder/Software-Testing/blob/main/.github/workflows/hw6-api-tests.yml).
 
-| Run | Kết quả job | Newman | Evidence |
+| Run | Kết quả job | Newman | Link / Evidence |
 | --- | --- | --- | --- |
-| Remote **pass** (#8 · 03/09) | ✅ Succeeded | observation · **0 fail** | `ci-pass-01`…`ci-pass-03` |
-| Remote **fail** (#7 · 03/09) | ❌ Failed (kỳ vọng) | oracle · **~12 fail** | `ci-fail-01`…`ci-fail-03` |
+| Remote **pass** [#8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · 03/09 | ✅ Success · 40s | observation · **0 fail** | [Actions run](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · `ci-pass-01`…`ci-pass-03` |
+| Remote **fail** [#7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · 03/09 | ❌ Failed · 51s (kỳ vọng) | oracle · **~12 fail** | [Actions run](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · `ci-fail-01`…`ci-fail-03` |
 | Local full oracle (03/09) | — | 182 req, **12 fail** · Newman raw | `evidence/newman-ui/` |
 
 Minh chứng CI: 6 ảnh trong `evidence/ci-cd/` · chi tiết `ci-cd/ci-cd-report.md`.

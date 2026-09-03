@@ -19,7 +19,7 @@
 | Agent Skill — test generator | Skill + flowchart + pseudocode | 10 | 9 |
 | **Tổng** | | **100** | **97** |
 
-**Số liệu tổng hợp:** 3 API · 120 test case (105 AI + 15 SV) · 6 nhóm bug (12 assertion fail local) · Newman 182 request · CI remote pass (#8) + fail (#7).
+**Số liệu tổng hợp:** 3 API · 120 test case (105 AI + 15 SV) · 6 nhóm bug (12 assertion fail local) · Newman 182 request · CI [pass #8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) + [fail #7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556).
 
 Trừ điểm tạm thời: GitHub Issue chưa tạo (§6).
 

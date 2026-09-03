@@ -34,9 +34,9 @@ Job **`full-pass`** tự chạy sau push → chụp ảnh pass nếu cần.
 
 **Fail** (`full-fail`): overview (Failed), checkout, install, health, Newman log + summary **12 failed assertions**.
 
-Lưu pass: prefix **`ci-pass-*`** trong `evidence/ci-cd/` (đã có: `ci-pass-01`…`ci-pass-03`, run #8).
+Lưu pass: prefix **`ci-pass-*`** (đã có: run [#8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307)).
 
-Lưu fail: prefix **`ci-fail-*`** (đã có: `ci-fail-01`…`ci-fail-03`, run #7).
+Lưu fail: prefix **`ci-fail-*`** (đã có: run [#7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556)).
 
 ## 4. Test local
 

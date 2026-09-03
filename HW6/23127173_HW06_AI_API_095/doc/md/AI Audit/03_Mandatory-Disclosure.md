@@ -60,8 +60,8 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | PDF (main + audit + critique) | ✅ `doc/pdf/` |
 | Flowchart workflow (tự vẽ) | ✅ `doc/pdf/hw6-api-testing-workflow.png` |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
-| CI remote pass (03/09) | ✅ `ci-pass-01`…`ci-pass-03` (run #8) |
-| CI remote fail (03/09) | ✅ `ci-fail-01`…`ci-fail-03` (run #7) |
+| CI remote pass (03/09) | ✅ [run #8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · `ci-pass-01`…`03` |
+| CI remote fail (03/09) | ✅ [run #7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · `ci-fail-01`…`03` |
 | GitHub Issues | ⏳ |
 | ZIP nộp Moodle | SV tự đóng (không bắt buộc tiêu chí) |
 

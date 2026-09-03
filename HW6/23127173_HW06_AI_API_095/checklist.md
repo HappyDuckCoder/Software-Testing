@@ -24,8 +24,8 @@
 ## Toàn bài
 
 - [x] Header `X-Student-Id: 23127173` trên mọi request.
-- [x] CI remote **pass** — `evidence/ci-cd/ci-pass-01`…`ci-pass-03` (run #8).
-- [x] CI remote **fail** — `evidence/ci-cd/ci-fail-01`…`ci-fail-03` (run #7).
+- [x] CI remote **pass** — [run #8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · `ci-pass-01`…`ci-pass-03`.
+- [x] CI remote **fail** — [run #7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · `ci-fail-01`…`ci-fail-03`.
 - [x] Excel test summary sau khi chạy đủ assertion.
 - [x] Sơ đồ workflow (`doc/pdf/hw6-api-testing-workflow.png`).
 - [x] AI Audit + Mandatory Disclosure cập nhật (03/09/2026).

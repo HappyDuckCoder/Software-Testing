@@ -2,7 +2,9 @@
 
 Ảnh do sinh viên chụp từ GitHub Actions · workflow **HW6 EShop API tests** · [Actions](https://github.com/HappyDuckCoder/Software-Testing/actions/workflows/hw6-api-tests.yml).
 
-## Remote fail — run #7 · 03/09/2026 ✅
+## Remote fail — run [#7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · 03/09/2026 ✅
+
+**Link:** https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556 · job `full-fail` · **Failed** · 51s · artifact `hw6-newman-full-fail`
 
 | # | File | Nội dung |
 | --- | --- | --- |
@@ -12,7 +14,9 @@
 
 Kỳ vọng: job **Failed**, Newman oracle (~12 assert fail), `X-Student-Id: 23127173` trong log.
 
-## Remote pass — run #8 · 03/09/2026 ✅
+## Remote pass — run [#8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · 03/09/2026 ✅
+
+**Link:** https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307 · job `full-pass` · **Success** · 40s · artifact `hw6-newman-full-pass`
 
 | # | File | Nội dung |
 | --- | --- | --- |

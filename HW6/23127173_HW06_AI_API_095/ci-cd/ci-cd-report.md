@@ -6,12 +6,12 @@ Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6
 
 ## Evidence remote (03/09/2026)
 
-| Run | GitHub Actions | Trạng thái job | Evidence |
-| --- | --- | --- | --- |
-| **Fail** | [#7](https://github.com/HappyDuckCoder/Software-Testing/actions) · `full-fail` | ❌ Failed (kỳ vọng) | `ci-fail-01`…`ci-fail-03` |
-| **Pass** | [#8](https://github.com/HappyDuckCoder/Software-Testing/actions) · `full-pass` | ✅ Succeeded | `ci-pass-01`…`ci-pass-03` |
+| Run | GitHub Actions | Trạng thái job | Newman | Evidence |
+| --- | --- | --- | --- | --- |
+| **Fail #7** | [run 33739445556](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · `full-fail` | ❌ Failed (kỳ vọng) · 51s | oracle · ~12 fail | `ci-fail-01`…`ci-fail-03` |
+| **Pass #8** | [run 33739588307](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · `full-pass` | ✅ Success · 40s | observation · 0 fail | `ci-pass-01`…`ci-pass-03` |
 
-Tất cả ảnh trong `evidence/ci-cd/`. Artifact: `hw6-newman-full-fail.zip` (run fail).
+Ảnh: `evidence/ci-cd/`. Artifacts: `hw6-newman-full-fail` (run #7), `hw6-newman-full-pass` (run #8).
 
 ## Local (chuẩn nộp bài)
 
@@ -22,4 +22,4 @@ Tất cả ảnh trong `evidence/ci-cd/`. Artifact: `hw6-newman-full-fail.zip` (
 ## Ghi chú
 
 - Workflow trên nhánh `main` (Run workflow); push `homework6` auto chạy `full-pass`.
-- Ảnh `ci-01`…`ci-10` đã xóa — thay bằng bộ pass/fail mới (run #7 / #8).
+- Commit workflow trên `main`: `8a6b0cc`.

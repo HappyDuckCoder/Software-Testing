@@ -84,18 +84,20 @@
 
 | **AI-040** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «bỏ ci-01..05 sai; giữ ci-06..10 pass; fail chờ cap» | Xóa `ci-01`…`ci-05` (baseline cũ); giữ `ci-06`…`ci-10` làm pass; cập nhật README/ci-cd-report/main-report/checklist; fail ⏳ `oracle-fail`. | VALID | Không giữ evidence sai; trạng thái CI khớp ý SV. | AI-041 thay bộ ảnh pass/fail mới. |
 
-| **AI-041** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «6 ảnh minh chứng mới pass + fail; thay CI cũ; cập nhật doc + audit» | SV cung cấp 6 screenshot GitHub Actions (run #7 `full-fail`, #8 `full-pass`); xóa `ci-06`…`ci-10`; lưu `ci-fail-01`…`03`, `ci-pass-01`…`03`; đồng bộ `evidence/ci-cd/README`, `ci-cd-report`, `main-report` §8/§10, `checklist`, `README`, `roadmap`, Mandatory/Disclosure/Privacy; tái xuất `main-report.pdf`. | VALID | Evidence CI thật từ workflow `full-pass`/`full-fail`; pass và fail đều có minh chứng. | GitHub Issues; ZIP nộp. |
+| **AI-041** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «6 ảnh minh chứng mới pass + fail; thay CI cũ; cập nhật doc + audit» | SV cung cấp 6 screenshot GitHub Actions (run #7 `full-fail`, #8 `full-pass`); xóa `ci-06`…`ci-10`; lưu `ci-fail-01`…`03`, `ci-pass-01`…`03`; đồng bộ `evidence/ci-cd/README`, `ci-cd-report`, `main-report` §8/§10, `checklist`, `README`, `roadmap`, Mandatory/Disclosure/Privacy; tái xuất `main-report.pdf`. | VALID | Evidence CI thật từ workflow `full-pass`/`full-fail`; pass và fail đều có minh chứng. | AI-042 gắn link run. |
+
+| **AI-042** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «link pass/fail CI; cập nhật doc/audit; push main» | SV cung cấp URL run [#7 fail](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) và [#8 pass](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307); gắn link vào `ci-cd-report`, `main-report` §8, `checklist`, Mandatory/Privacy; merge/push `main`. | VALID | Link trỏ đúng run thật trên GitHub Actions (Failed 51s / Success 40s). | GitHub Issues; ZIP nộp. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 41 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 34 | 83% |
+| Tổng artifact AI sinh đã audit | 42 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 35 | 83% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
 | INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 17% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper). AI-022…AI-041: oracle spec, CI evidence, doc sync.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper). AI-022…AI-042: oracle spec, CI evidence, doc sync.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 
