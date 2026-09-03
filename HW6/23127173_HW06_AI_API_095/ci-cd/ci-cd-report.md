@@ -17,7 +17,16 @@ Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6
 | --- | --- | --- |
 | **Full 120 TC oracle** | 182 req, 182 assert, **12 fail** | `api-testing/newman/raw-output/full-120-20260903.txt`, `html-reports/report.html`, `evidence/newman-ui/` |
 
-Run local **182/12** là bộ oracle đặc tả đầy đủ. Run CI 03/09 fail có chủ đích (assertion vi phạm spec trên runner Ubuntu); số liệu 102/17 do workflow CI chưa đồng bộ hoàn toàn với `npm run test` local — ghi rõ trong audit, không dùng thay kết quả local.
+Run local **182/12** là bộ oracle đặc tả đầy đủ.
+
+### Chạy CI fail mới (sau khi cập nhật workflow)
+
+1. Push nhánh `homework6`
+2. Actions → **HW6 EShop API tests** → **Run workflow** → chọn **`oracle-fail`**
+3. Job `oracle-fail` sẽ **Failed** — kỳ vọng **182 req / 12 assert fail** (giống local)
+4. Chụp ảnh theo `ci-cd/HOW-TO-CAPTURE-CI.md`
+
+Run CI cũ (03/09, job `baseline`, 102/17) vẫn giữ tại `ci-06`…`ci-10` cho đến khi thay bằng ảnh `oracle-fail` mới.
 
 ## Ghi chú kỹ thuật
 

@@ -8,6 +8,8 @@
     "test": "node scripts/run-newman.mjs",
     "test:core": "npm run test",
     "test:full120": "npm run test",
+    "test:ci-pass": "node scripts/run-newman-ci-pass.mjs",
+    "test:ci-fail": "node scripts/run-newman-ci-fail.mjs",
     "evidence:postman": "node scripts/generate-postman-evidence.mjs",
     "generate:excel": "node ../test-cases/scripts/generate-excel-summary.mjs",
     "export:report-pdf": "node ../doc/pdf/export-main-report.mjs"
