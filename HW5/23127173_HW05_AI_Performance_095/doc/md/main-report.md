@@ -105,8 +105,6 @@ Nhật ký JTL thô và báo cáo HTML là nguồn chính. **Workflow** chỉ đ
 
 - JMeter + Task Manager cùng khung: `evidence/resource-monitor/` (Load, Stress, Spike, Endurance).
 - Giao diện CLI/GUI JMeter: `evidence/jmeter-ui/` (8 ảnh).
-- JTL rerun đối chiếu ảnh: `performance/raw-jtl/*_evidence-rerun.jtl` (bổ sung, không thay JTL gốc).
-
 **Kiểm tra chéo:** Baseline comparator đọc JTL endurance rerun — 1.200 workflow, p95 4.826 ms, tỷ lệ lỗi 0%, tăng p95 3,58% so với Load 4.659 ms (dưới ngưỡng 20%).
 
 ---

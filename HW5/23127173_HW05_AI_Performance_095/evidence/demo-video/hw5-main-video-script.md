@@ -1,85 +1,431 @@
-# Kịch bản quay video HW5 chính (8-9 phút)
+# Kịch bản quay video HW5 chính
 
-Video phải ở chế độ **YouTube Unlisted**, tổng thời lượng ít nhất 6 phút và thuyết minh tiếng Việt. Dùng hai cửa sổ: một cửa sổ chạy backend/CMD và một cửa sổ JMeter; tại các đoạn Load/Stress/Spike, đặt JMeter và Task Manager cùng khung hình.
+**Yêu cầu đề:** YouTube **Unlisted**, ≥ **6 phút**, thuyết minh **tiếng Việt**, JMeter + Task Manager **cùng khung hình** khi demo kịch bản.
 
-## 0. Chuẩn bị trước khi bấm record
+**Cách dùng:** Quay **theo thứ tự Mục 0 → Mục 12**. Mỗi mục có **Màn hình / Lệnh / Nói** — đến mục nào làm và nói đúng mục đó.
 
-Mở PowerShell thứ nhất và chạy backend:
+**Lưu ý:** Không zoom password/JWT. CSV chỉ có account test `hw5.perf.*`.
+
+**Quy ước tên artefact:** `23127173_{Load|Stress|Spike|Endurance}_{YYYYMMDD}` — ví dụ `23127173_Load_20260831.jtl`, `html-reports/23127173_Load_20260831/`. Không dùng tên kiểu `video-*` hay `*-rerun`.
+
+### Biểu đồ ở đâu?
+
+| Nơi xem | Có chart? | Ghi chú |
+| --- | --- | --- |
+| JMeter GUI — View Results Tree (Load) | Không | Cây request từng dòng |
+| JMeter GUI — Summary Report (Stress) | Không | Bảng số |
+| JMeter GUI — Aggregate Report (Spike) | Không | Bảng tổng hợp |
+| **HTML Dashboard** (`html-reports/.../index.html`) | **Có** | Over Time, Throughput, pie chart |
+
+Đề yêu cầu **3 listener khác nhau** trong plan — đó là bảng/báo cáo, không phải biểu đồ. **Biểu đồ nằm trong HTML report** (sinh bằng `-e -o` khi chạy CLI).
+
+---
+
+## Mục 0 — Chuẩn bị (trước khi bấm Record)
+
+**Thời gian:** ~3 phút, không quay.
+
+**Màn hình:** Hai cửa sổ PowerShell + Task Manager.
+
+### Cửa sổ PowerShell 1 — Backend (giữ mở suốt buổi quay)
 
 ```powershell
 Set-Location D:\code\Project\TestingProject\Eshop\backend
 node server.js
 ```
 
-Giữ cửa sổ này mở. Mở PowerShell thứ hai để seed/test:
+Đợi log server lắng nghe cổng **3000**.
+
+### Cửa sổ PowerShell 2 — Biến dùng chung
+
+```powershell
+Invoke-RestMethod http://localhost:3000/api/products | Out-Null
+
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+
+Start-Process taskmgr.exe
+```
+
+**Checklist trước Record**
+
+- [ ] Backend chạy, không lỗi đỏ
+- [ ] Task Manager mở, tab **Processes**
+- [ ] Zoom màn hình 125–150%
+- [ ] OBS/Recorder sẵn sàng
+
+**Lỗi thường gặp**
+
+| Lỗi | Cách xử lý |
+| --- | --- |
+| `The expression after '&'...` | Chưa gán `$jmeter` — copy **cả khối lệnh** có gán biến |
+| `Results file ... is not empty` | JTL cũ còn — dùng `Remove-Item` (xem khối live bên dưới) |
+| `Start-Process ... cannot find` | HTML chưa sinh — JMeter fail ở bước trước hoặc thiếu `-e -o` |
+| `WARN StatusConsoleListener` / `sun.misc.Unsafe` | Cảnh báo JMeter/Java — **bỏ qua** |
+
+> Biến `$jmeter`, `$submission`, `$csv` **chỉ sống trong tab PowerShell hiện tại**. Tab mới → dán lại khối biến ở trên.
+
+---
+
+## Mục 1 — Giới thiệu
+
+**Thời gian:** 0:00 – 0:35
+
+**Màn hình:**
+
+```
+Lab\HW5\23127173_HW05_AI_Performance_095\doc\md\main-report.md
+```
+
+**Lệnh:** Không cần.
+
+**Nói:**
+
+> Em là Trần Hải Đức, MSSV 23127173. Đây là bài HW05-AI — Kiểm thử hiệu năng REST API của EShop, công cụ chính là Apache JMeter 5.6.3 trên backend local cổng 3000.
+
+---
+
+## Mục 2 — Workflow và phạm vi endpoint
+
+**Thời gian:** 0:35 – 1:20
+
+**Màn hình:** Trong `main-report.md` → mục **Workflow được kiểm thử**. Highlight: Login → My Orders → Cancel.
+
+**Lệnh:** Không cần.
+
+**Nói:**
+
+> Ba kịch bản Load, Stress và Spike dùng **cùng một workflow** đầu-cuối: đăng nhập, xem lịch sử đơn, hủy đơn. Workflow bao phủ auth-heavy, read-heavy và transactional — **3 test plan**, không phải 9 test riêng từng API.
+
+---
+
+## Mục 3 — Reset và seed dữ liệu
+
+**Thời gian:** 1:20 – 2:05
+
+**Màn hình:** PowerShell 2 chạy seed → mở `reset-seed-hw5.mjs` (không zoom password).
+
+**Lệnh:**
 
 ```powershell
 Set-Location D:\code\Project\TestingProject
 node .\Lab\HW5\23127173_HW05_AI_Performance_095\scripts\reset-seed-hw5.mjs
 ```
 
-Mở Task Manager khi cần evidence:
+Chờ JSON: `"accounts": 50`, `"eligibleOrders": 600`.
 
-```powershell
-Start-Process taskmgr.exe
-```
+**Nói:**
 
-Đặt biến dùng chung cho các lệnh JMeter bên dưới:
+> Trước mỗi lần chạy em reset và seed lại database. Mỗi virtual user có tài khoản và đơn riêng. Login trích JWT, orders trích orderId động, cancel dùng hai giá trị đó.
+
+---
+
+## Mục 4 — JMeter Load: cấu trúc plan
+
+**Thời gian:** 2:05 – 2:55
+
+**Màn hình:** JMeter GUI — plan Load.
+
+**Lệnh:**
 
 ```powershell
 Set-Location D:\code\Project\TestingProject\Lab
 $jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
 $submission = 'HW5\23127173_HW05_AI_Performance_095'
-$csv = (Resolve-Path "$submission\performance\data\hw5-users.local.csv").Path
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+& $jmeter -J"hw5.data.file=$csv" -t "$submission\performance\test-plans\23127173_Load_20260831.jmx"
 ```
 
-Không đọc hoặc chiếu JWT/password thật. CSV hiện tại chỉ có account `hw5.perf.*` do script seed tạo.
+Trong JMeter, mở lần lượt:
 
-## Timeline và lời thoại
+1. **CSV Data Set Config**
+2. **Extract JWT** — `$.token`
+3. **Extract eligible order ID**
+4. **Response Assertion** — HTTP 200
 
-| Thời gian | Màn hình/lệnh | Lời thoại gợi ý |
-| ---: | --- | --- |
-| 0:00-0:35 | Mở `$submission\doc\md\main-report.md`. | “Em là Trần Hải Đức, MSSV 23127173. Đây là HW05-AI Performance Testing cho EShop REST API, dùng Apache JMeter 5.6.3.” |
-| 0:35-1:20 | Mở phần Workflow trong report. | “Một workflow chung cho ba kịch bản là login, xem lịch sử đơn và hủy đơn; nó bao phủ auth-heavy, read-heavy, transactional và không trùng lựa chọn đã công bố của Vân.” |
-| 1:20-2:05 | Quay PowerShell chạy seed và mở `reset-seed-hw5.mjs`. | “Em reset/seed trước run. Mỗi virtual user có account/đơn riêng. Login trích JWT, orders trích orderId, cancel dùng hai giá trị đó.” |
-| 2:05-2:55 | Mở JMeter GUI Load bằng lệnh bên dưới; mở CSV Data Set, JSON Extractors và assertions. | “Plan là data-driven, có assertion HTTP 200 và không hard-code order.” |
-| 2:55-3:35 | Mở Load Thread Group, View Results Tree và Task Manager cùng khung. | “Load dùng 10 users, ramp-up 20 giây, think-time 1.5 giây, listener View Results Tree.” |
-| 3:35-4:15 | Mở Stress Thread Group, Summary Report và Task Manager cùng khung. | “Stress dùng 30 users, ramp-up 30 giây, think-time 1 giây, listener Summary Report.” |
-| 4:15-4:55 | Mở Spike Thread Group, Aggregate Report và Task Manager cùng khung. | “Spike dùng 50 users, ramp-up 1 giây, think-time 0.5 giây, listener Aggregate Report.” |
-| 4:55-5:45 | Mở `performance/raw-jtl/` và `performance/html-reports/`, hoặc bảng kết quả trong report. | “Load có 10, Stress 30, Spike 50 workflow; cả ba không có lỗi HTTP. Raw JTL và HTML report được giữ nguyên.” |
-| 5:45-6:45 | Mở `evidence/endurance/memory-observation.md`, ảnh Task Manager và HTML Endurance. | “Endurance chạy 601.15 giây với 1,200 workflow, 0 lỗi, 1.980 workflow/s. Có 61 mẫu RAM; backend peak 79.14 MB trong workload này.” |
-| 6:45-7:35 | Mở mục AI analysis trong report. | “4,800 sample không phải 4,800 workflow. p95 E2E khoảng 4.8 giây có think-time JMeter; endpoint backend riêng chỉ vài đến vài chục ms. Vì vậy không gọi p95 đó là backend latency.” |
-| 7:35-8:20 | Mở `continuous-performance-testing/workflow.png` và YAML. | “Pipeline đề xuất chạy khi backend/database đổi, seed, JMeter smoke, so sánh p95/error rate và upload artefact. Gate là error rate trên 1% hoặc p95 tăng trên 20%; trade-off là CI cost và false alarm.” |
-| 8:20-8:45 | Mở AI Audit và conclusion. | “AI Audit ghi tool, prompt, output và phần em đã review. Các việc còn lại là video, PDF và ZIP.” |
+**Nói:**
 
-## Lệnh mở GUI theo scenario
+> Plan Load data-driven từ CSV, có extractor JWT và orderId, assertion HTTP 200. Listener của Load là View Results Tree — theo đề, đây là báo cáo dạng cây, không phải biểu đồ.
 
-Chạy từng lệnh trong PowerShell sau khi đã tạo `$jmeter` và `$submission`:
+---
 
-```powershell
-& $jmeter -t "$submission\performance\test-plans\23127173_Load_20260831.jmx"
-& $jmeter -t "$submission\performance\test-plans\23127173_Stress_20260831.jmx"
-& $jmeter -t "$submission\performance\test-plans\23127173_Spike_20260831.jmx"
-& $jmeter -t "$submission\performance\test-plans\23127173_Endurance_20260831.jmx"
+## Mục 5 — JMeter Load: tham số + Task Manager
+
+**Thời gian:** 2:55 – 3:35
+
+**Màn hình:** **JMeter + Task Manager cùng khung** (bắt buộc).
+
+Trong JMeter (Load):
+
+1. **Thread Group** — 10 threads, ramp-up 20 s
+2. **Constant Timer** — 1500 ms
+3. **View Results Tree**
+
+Hoặc mở ảnh evidence:
+
+```
+evidence\resource-monitor\load-jmeter-task-manager-20260831.png
 ```
 
-Mỗi lệnh mở một cửa sổ JMeter. Mở xong scenario nào thì đóng cửa sổ đó trước khi mở scenario tiếp theo để màn hình gọn.
-
-## Lệnh chạy lại Load/Stress/Spike nếu cần demo live
-
-Chỉ chạy khi muốn có một run live mới. Luôn seed lại trước mỗi run vì cancel làm thay đổi state đơn hàng.
+**Lệnh chạy live (tùy chọn):**
 
 ```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+$stamp = '20260831'   # đổi thành (Get-Date -Format 'yyyyMMdd') nếu chạy ngày khác
+$jtl = "$submission\performance\raw-jtl\23127173_Load_$stamp.jtl"
+$html = "$submission\performance\html-reports\23127173_Load_$stamp"
+
 Set-Location D:\code\Project\TestingProject
 node .\Lab\HW5\23127173_HW05_AI_Performance_095\scripts\reset-seed-hw5.mjs
+
 Set-Location D:\code\Project\TestingProject\Lab
-& $jmeter -n -t "$submission\performance\test-plans\23127173_Load_20260831.jmx" -Jhw5.data.file=$csv -l "$submission\performance\raw-jtl\video-load-rerun.jtl"
+Remove-Item $jtl -Force -ErrorAction SilentlyContinue
+Remove-Item $html -Recurse -Force -ErrorAction SilentlyContinue
+
+& $jmeter -n -J"hw5.data.file=$csv" `
+  -t "$submission\performance\test-plans\23127173_Load_$stamp.jmx" `
+  -l $jtl `
+  -e -o $html
 ```
 
-Thay `Load` bằng `Stress` hoặc `Spike` cho scenario tương ứng. Không cần chạy lại endurance trong lúc quay; mở JTL/HTML và evidence endurance có sẵn để tiết kiệm hơn 10 phút.
+**Nói:**
 
-## Kết thúc sau khi upload
+> Load: 10 user, ramp-up 20 giây, think-time 1,5 giây. Em đặt JMeter và Task Manager cùng khung để thấy tiến trình Node.js backend.
 
-1. Đặt video là **Unlisted**.
-2. Chép link vào `link-video.md` tại thư mục này.
-3. Không tuyên bố RPS/peak memory là production capacity; dùng đúng cụm “quan sát được trong workload/cấu hình này”.
+**Sau mục này:** Đóng JMeter Load.
+
+---
+
+## Mục 6 — JMeter Stress
+
+**Thời gian:** 3:35 – 4:15
+
+**Màn hình:** JMeter + Task Manager cùng khung.
+
+**Lệnh mở GUI:**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+& $jmeter -J"hw5.data.file=$csv" -t "$submission\performance\test-plans\23127173_Stress_20260831.jmx"
+```
+
+Chỉ: Thread Group 30/30 s → Timer 1000 ms → **Summary Report** (bảng, không chart).
+
+Ảnh evidence: `evidence\resource-monitor\stress-jmeter-task-manager-20260831.png`
+
+**Lệnh chạy live (tùy chọn):**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+$stamp = '20260831'
+$jtl = "$submission\performance\raw-jtl\23127173_Stress_$stamp.jtl"
+$html = "$submission\performance\html-reports\23127173_Stress_$stamp"
+
+Set-Location D:\code\Project\TestingProject
+node .\Lab\HW5\23127173_HW05_AI_Performance_095\scripts\reset-seed-hw5.mjs
+
+Set-Location D:\code\Project\TestingProject\Lab
+Remove-Item $jtl -Force -ErrorAction SilentlyContinue
+Remove-Item $html -Recurse -Force -ErrorAction SilentlyContinue
+
+& $jmeter -n -J"hw5.data.file=$csv" `
+  -t "$submission\performance\test-plans\23127173_Stress_$stamp.jmx" `
+  -l $jtl `
+  -e -o $html
+```
+
+**Nói:**
+
+> Stress: 30 user, ramp-up 30 giây. Listener Summary Report — khác Load theo yêu cầu đề.
+
+**Sau mục này:** Đóng JMeter Stress.
+
+---
+
+## Mục 7 — JMeter Spike
+
+**Thời gian:** 4:15 – 4:55
+
+**Màn hình:** JMeter + Task Manager cùng khung.
+
+**Lệnh mở GUI:**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+& $jmeter -J"hw5.data.file=$csv" -t "$submission\performance\test-plans\23127173_Spike_20260831.jmx"
+```
+
+Chỉ: 50 threads, ramp-up 1 s → Timer 500 ms → **Aggregate Report**.
+
+Ảnh evidence: `evidence\resource-monitor\spike-jmeter-task-manager-20260831.png`
+
+**Lệnh chạy live (tùy chọn):**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+$stamp = '20260831'
+$jtl = "$submission\performance\raw-jtl\23127173_Spike_$stamp.jtl"
+$html = "$submission\performance\html-reports\23127173_Spike_$stamp"
+
+Set-Location D:\code\Project\TestingProject
+node .\Lab\HW5\23127173_HW05_AI_Performance_095\scripts\reset-seed-hw5.mjs
+
+Set-Location D:\code\Project\TestingProject\Lab
+Remove-Item $jtl -Force -ErrorAction SilentlyContinue
+Remove-Item $html -Recurse -Force -ErrorAction SilentlyContinue
+
+& $jmeter -n -J"hw5.data.file=$csv" `
+  -t "$submission\performance\test-plans\23127173_Spike_$stamp.jmx" `
+  -l $jtl `
+  -e -o $html
+```
+
+**Nói:**
+
+> Spike: 50 user, ramp-up 1 giây, burst tải. Listener Aggregate Report. Ba kịch bản đều 0 lỗi HTTP trong các lần chạy đã lưu.
+
+**Sau mục này:** Đóng JMeter Spike.
+
+---
+
+## Mục 8 — JTL, HTML report và biểu đồ
+
+**Thời gian:** 4:55 – 5:45
+
+**Màn hình:** Mở trên **Chrome/Edge** (không mở bằng VS Code):
+
+```
+performance\html-reports\23127173_Load_20260831\index.html
+performance\html-reports\23127173_Stress_20260831\index.html
+performance\html-reports\23127173_Spike_20260831\index.html
+```
+
+**Lệnh mở nhanh Load dashboard:**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+Start-Process (Resolve-Path "$submission\performance\html-reports\23127173_Load_20260831\index.html").Path
+```
+
+Trong dashboard, click menu trái:
+
+1. **Dashboard** — pie Requests Summary, bảng Statistics
+2. **Over Time** — Response Times Over Time, Threads Over Time
+3. **Throughput** — Hits Per Second
+
+(Có thể mở thêm JTL thô trong VS Code: `performance\raw-jtl\23127173_Load_20260831.jtl`)
+
+**Nói:**
+
+> Listener trong JMeter GUI là bảng theo yêu cầu đề. Biểu đồ nằm trong HTML Dashboard sinh từ JTL bằng cờ `-e -o`. Đây là artefact gốc ngày 31/08: Load 10 workflow, Stress 30, Spike 50 — đều 0 lỗi.
+
+---
+
+## Mục 9 — Endurance và giám sát RAM
+
+**Thời gian:** 5:45 – 6:45
+
+**Màn hình:**
+
+```
+evidence\endurance\memory-observation.md
+evidence\resource-monitor\endurance-jmeter-task-manager-20260831.png
+performance\html-reports\23127173_Endurance_20260831\index.html
+evidence\hardware\dxdiag-hardware-20260831.png
+```
+
+**Lệnh mở plan Endurance (chỉ xem cấu hình — không chạy live):**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab
+$jmeter = 'D:\tools\apache-jmeter-5.6.3\bin\jmeter.bat'
+$submission = 'HW5\23127173_HW05_AI_Performance_095'
+$csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\performance\data\hw5-users.local.csv'
+& $jmeter -J"hw5.data.file=$csv" -t "$submission\performance\test-plans\23127173_Endurance_20260831.jmx"
+```
+
+**Nói:**
+
+> Endurance ~601 giây, 1.200 workflow, peak RAM backend 79,14 MB trong workload này. Đây là cấu hình máy từ DXDIAG — không gọi đó là giới hạn production.
+
+**Sau mục này:** Đóng JMeter Endurance.
+
+---
+
+## Mục 10 — Phân tích AI
+
+**Thời gian:** 6:45 – 7:35
+
+**Màn hình:** `main-report.md` → §7 Phân tích AI.
+
+**Lệnh:** Không cần.
+
+**Nói:**
+
+> AI dễ nhầm 4.800 sample là 4.800 workflow; thực tế 1.200 workflow × 3 sampler + dòng cha. p95 E2E ~4,8 giây gồm think-time JMeter; endpoint riêng chỉ vài chục ms.
+
+---
+
+## Mục 11 — Pipeline CI
+
+**Thời gian:** 7:35 – 8:20
+
+**Màn hình:**
+
+```
+continuous-performance-testing\workflow.png
+continuous-performance-testing\github-actions-performance.yml
+```
+
+**Lệnh:** Không cần.
+
+**Nói:**
+
+> Pipeline đề xuất: chạy khi backend/database đổi, seed, smoke JMeter, so baseline p95 và error rate. Gate fail nếu lỗi >1% hoặc p95 tăng >20%.
+
+---
+
+## Mục 12 — AI Audit và kết luận
+
+**Thời gian:** 8:20 – 8:45
+
+**Màn hình:**
+
+```
+doc\md\AI Audit\01_AI-Audit-Report.md
+doc\pdf\AI-Audit-Report.pdf
+```
+
+**Lệnh:** Không cần.
+
+**Nói:**
+
+> Toàn bộ tương tác AI được ghi trong AI Audit. Em đã rà soát output, có PDF và artefact thô trên GitHub; nộp ZIP và link video này lên Moodle. Cảm ơn thầy cô.
+
+---
+
+## Sau khi quay xong
+
+1. Upload YouTube → **Unlisted**
+2. Dán link vào `evidence/demo-video/link-video.md`
+3. Khi nói RPS/RAM: dùng **“quan sát được trong workload/cấu hình này”**
+
+**Tổng thời lượng:** ~8 phút 45 giây
