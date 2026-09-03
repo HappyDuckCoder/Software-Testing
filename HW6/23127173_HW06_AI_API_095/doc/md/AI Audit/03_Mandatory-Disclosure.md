@@ -61,7 +61,9 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | Flowchart workflow (tự vẽ) | ✅ `doc/pdf/hw6-api-testing-workflow.png` |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
 | CI remote baseline pass | ✅ |
-| GitHub Issue + CI fail remote | ⏳ |
+| CI remote fail (03/09, 17 assert fail) | ✅ `evidence/ci-cd/ci-06`…`ci-10` |
+| GitHub Issues | ⏳ |
+| CI remote fail (03/09) | ✅ |
 | ZIP nộp Moodle | SV tự đóng (không bắt buộc tiêu chí) |
 
 ## 8. Mandatory Disclosure (dán nguyên văn)

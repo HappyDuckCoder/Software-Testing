@@ -30,7 +30,7 @@
 | Assertion | **182** — **12 FAIL** (6 nhóm bug spec) |
 | Excel summary | **108 PASS / 12 FAIL** |
 | Postman Desktop | 6 ảnh gốc + Console `X-Student-Id` |
-| Tự đánh giá | **095 / 100** (trừ Issue + CI fail remote) |
+| Tự đánh giá | **097 / 100** (trừ Issue GitHub) |
 
 Oracle thiết kế theo **đặc tả**, không suy từ code backend. Vi phạm spec → assertion **FAIL** trên Newman/Postman.
 
@@ -130,12 +130,13 @@ Luồng: đọc đặc tả → planner (domain/state/security/schema) → sinh 
 
 Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCoder/Software-Testing/blob/homework6/.github/workflows/hw6-api-tests.yml).
 
-| Run | Kết quả | Link / evidence |
-| --- | --- | --- |
-| Remote baseline pass (01/09) | 20 req, 0 fail | [Actions run 33500850638](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33500850638) · `evidence/ci-cd/` |
-| Local full oracle (03/09) | 182 req, **12 fail** | `ci-cd/ci-cd-report.md` |
+| Run | Kết quả job | Newman | Evidence |
+| --- | --- | --- | --- |
+| Remote **pass** (01/09) | ✅ Succeeded | 20 req, 0 fail | [run 33500850638](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33500850638) · `ci-01`…`ci-05` |
+| Remote **fail** (03/09) | ❌ Failed | 102 req, **17 assert fail** | commit `f21965e` · `ci-06`…`ci-10` |
+| Local full oracle (03/09) | — | 182 req, **12 fail** | `ci-cd/ci-cd-report.md`, Newman raw |
 
-Chưa có remote **fail** run có chủ đích (đề §6).
+Đủ hai run remote pass + fail theo đề §6. Ảnh CI 03/09: `evidence/ci-cd/ci-06-workflow-run-20260903.png` … `ci-10-newman-summary-20260903.png`.
 
 ---
 
@@ -156,7 +157,7 @@ Chi tiết: `issues/bug-report.md`. GitHub Issues: **chưa tạo** (SV tự mở
 
 ## 10. Kết luận
 
-Đã hoàn thành pipeline generate → audit → extend → execute cho 3 API, assert oracle trên Newman (**182 req / 12 fail**). Báo cáo PDF, Excel summary, flowchart và AI Audit (Markdown) đã có. Còn lại ngoài phạm vi báo cáo: GitHub Issues + screenshot, remote CI fail, ZIP Moodle.
+Đã hoàn thành pipeline generate → audit → extend → execute cho 3 API, assert oracle trên Newman (**182 req / 12 fail**). CI remote có pass (01/09) và fail (03/09). Còn lại: GitHub Issues + screenshot, ZIP Moodle.
 
 ---
 

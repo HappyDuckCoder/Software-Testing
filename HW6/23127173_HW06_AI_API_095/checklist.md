@@ -24,7 +24,7 @@
 ## Toàn bài
 
 - [x] Header `X-Student-Id: 23127173` trên mọi request.
-- [x] CI remote baseline pass; chưa có remote fail có chủ đích.
+- [x] CI remote pass (01/09) + **fail** (03/09) — `evidence/ci-cd/ci-06`…`ci-10`.
 - [x] Excel test summary sau khi chạy đủ assertion.
 - [x] Sơ đồ workflow (`doc/pdf/hw6-api-testing-workflow.png`).
 - [x] AI Audit + Mandatory Disclosure cập nhật (03/09/2026).

@@ -27,6 +27,13 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-036 | 03/09 | Review toàn bộ doc + đồng bộ AI Audit | Cursor (Composer 2.5) |
 | AI-037 | 03/09 | Main report PDF styled + git commit log + commit | Cursor (Composer 2.5) |
 | AI-038 | 03/09 | Bổ sung báo cáo §6/§14 + README self-assessment | Cursor (Composer 2.5) |
+| AI-039 | 03/09 | 5 ảnh CI GitHub Actions (pass+fail evidence) | Cursor (Composer 2.5) |
+
+## Prompt AI-039 (03/09/2026)
+
+```text
+dùng 5 ảnh minh chứng này
+```
 
 ## Prompt AI-038 (03/09/2026)
 

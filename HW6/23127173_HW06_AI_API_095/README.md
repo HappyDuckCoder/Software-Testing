@@ -7,7 +7,7 @@
 | SUT | EShop — `http://127.0.0.1:3000` |
 | Repository | https://github.com/HappyDuckCoder/Software-Testing/tree/homework6/HW6/23127173_HW06_AI_API_095 |
 | ZIP nộp | `23127173_HW06_AI_API_095.zip` |
-| Tự đánh giá | **095 / 100** |
+| Tự đánh giá | **097 / 100** |
 
 ## Bảng tự đánh giá (đề §14)
 
@@ -17,18 +17,18 @@
 | API 2 — Hủy đơn | 40 TC, oracle FR-10, 2 bug | 30 | 28 |
 | API 3 — Admin status | 40 TC, oracle FR-18/SEC, 2 bug | 30 | 28 |
 | Agent Skill — test generator | Skill + flowchart + pseudocode | 10 | 9 |
-| **Tổng** | | **100** | **93–95** |
+| **Tổng** | | **100** | **97** |
 
-**Số liệu tổng hợp:** 3 API · 120 test case (105 AI + 15 SV) · 6 nhóm bug (12 assertion fail) · Newman 182 request.
+**Số liệu tổng hợp:** 3 API · 120 test case (105 AI + 15 SV) · 6 nhóm bug (12 assertion fail local) · Newman 182 request · CI remote pass + fail.
 
-Trừ điểm tạm thời: chưa có GitHub Issue + remote CI fail (§6).
+Trừ điểm tạm thời: chưa có GitHub Issue (§6).
 
 ## Trạng thái nhanh
 
 | Đã xong | Chưa xong |
 | --- | --- |
 | 120 TC oracle spec, Newman 12 fail, Postman 6 ảnh | GitHub Issues + screenshot |
-| Excel summary, main report PDF, flowchart | Remote CI fail có chủ đích |
+| Excel summary, main report PDF, CI pass+fail | ZIP Moodle (SV tự đóng) |
 | AI Audit / Mandatory / Critique (Markdown) | ZIP Moodle (SV tự đóng) |
 
 Chi tiết: `checklist.md`, `doc/md/main-report.md`.
