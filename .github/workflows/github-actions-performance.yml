@@ -1,0 +1,42 @@
+name: Proposed performance regression gate
+
+on:
+  pull_request:
+    paths:
+      - 'Eshop/backend/**'
+      - 'Eshop/**/database*'
+  workflow_dispatch:
+
+jobs:
+  performance-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install and start SUT
+        run: |
+          cd Eshop/backend
+          npm ci
+          node server.js > ../../backend.log 2>&1 &
+      - name: Wait for SUT health
+        run: curl --fail --retry 15 --retry-connrefused --retry-delay 1 http://localhost:3000/api/products
+      - name: Install JMeter
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes jmeter
+      - name: Reset/seed deterministic test data
+        run: node Lab/HW5/23127173_HW05_AI_Performance_095/scripts/reset-seed-hw5.mjs
+      - name: Run JMeter smoke plan
+        run: jmeter -n -t Lab/HW5/23127173_HW05_AI_Performance_095/performance/test-plans/23127173_Load_20260831.jmx -Jhw5.data.file=Lab/HW5/23127173_HW05_AI_Performance_095/performance/data/hw5-users.local.csv -l result.jtl -e -o html-report
+      - name: Compare p95 and error rate with approved baseline
+        run: node Lab/HW5/23127173_HW05_AI_Performance_095/continuous-performance-testing/compare-performance-baseline.mjs result.jtl Lab/HW5/23127173_HW05_AI_Performance_095/continuous-performance-testing/baseline.json
+      - name: Upload evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-evidence
+          path: |
+            result.jtl
+            html-report/
