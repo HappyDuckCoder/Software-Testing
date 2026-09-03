@@ -12,7 +12,7 @@
 ```bash
 npm run generate:all   # sinh ma trận + collection
 npm run test           # Newman full 120 + setup (182 assertion)
-npm run evidence:postman  # JSON + PNG Postman (../evidence/postman-ui/)
+npm run evidence:postman  # dự phòng: render HTML (không dùng nộp — dùng ảnh Desktop trong evidence/postman-ui/)
 ```
 
 **Final run (03/09/2026):** 182 request, 182 assertion, **12 fail** (oracle đặc tả). Script `scripts/run-newman.mjs` ghi UTF-8 + `--disable-unicode` (tránh lỗi font Windows).

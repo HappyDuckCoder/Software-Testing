@@ -20,6 +20,15 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-029 | 03/09 | Dọn artifact trùng; giữ bản final 03/09 | Cursor (Composer 2.5) |
 | AI-030 | 03/09 | Giải thích lỗi font terminal Newman | Cursor (Composer 2.5) |
 | AI-031 | 03/09 | Fix UTF-8 raw output + cập nhật audit đủ prompt | Cursor (Composer 2.5) |
+| AI-032 | 03/09 | Thay 5 ảnh Postman Desktop gốc; rà soát evidence thiếu | Cursor (Composer 2.5) |
+| AI-033 | 03/09 | Postman Console `X-Student-Id` — ảnh Desktop gốc | Cursor (Composer 2.5) |
+| AI-034 | 03/09 | Review doc + commit Postman evidence Desktop | Cursor (Composer 2.5) |
+
+## Prompt AI-034 (03/09/2026)
+
+```text
+cập nhật audit, cập nhật doc, review doc, commit
+```
 
 ## Prompt AI-018 (03/09/2026)
 

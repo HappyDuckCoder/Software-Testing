@@ -12,9 +12,9 @@
 
 | Đã xong | Chưa xong |
 | --- | --- |
-| 120 TC (35 AI + 5 SV × 3 API), oracle theo **đặc tả** | Assertion Postman cho từng ID |
-| Postman + Newman + CI baseline | GitHub Issues, CI fail, Excel, PDF/ZIP |
-| 3 bug compliance (SEC-06, FR-10, SEC-03) | Diagram generator tự vẽ |
+| 120 TC (35 AI + 5 SV × 3 API), oracle theo **đặc tả**, assert 120 ID | Excel, GitHub Issues, CI fail, PDF/ZIP |
+| Postman 6 ảnh Desktop + Newman + CI baseline | Diagram generator tự vẽ |
+| 6 nhóm bug spec (12 assertion fail) | |
 
 Chi tiết: `checklist.md`, `test-cases/test-case-matrix.md`.
 

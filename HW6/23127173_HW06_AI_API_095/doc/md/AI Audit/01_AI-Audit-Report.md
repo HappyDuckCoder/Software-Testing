@@ -66,16 +66,22 @@
 | **AI-030** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «lỗi gì đây» (ảnh terminal Newman) | Phân tích: (1) chữ `â"œ` = lỗi encoding Windows khi redirect CLI UTF-8; (2) **12 failed** = bug spec mong đợi, không phải crash Newman. | VALID | Phân biệt lỗi hiển thị vs kết quả test. | Fix encoding raw output (AI-031). |
 | **AI-031** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «fix lại chỗ đó; tất cả prompt phải cập nhật audit» | Thêm `scripts/run-newman.mjs` (UTF-8 + `--disable-unicode` + ghi `full-120-20260903.txt/json`); cập nhật `npm run test`; tái chạy Newman **182/182/12 fail**; bổ sung audit AI-025…AI-031 + prompt log. | VALID | Raw CLI đọc được tiếng Việt và bảng ASCII trên Windows; audit đủ mọi prompt phiên 03/09 chiều. | Commit; cập nhật PNG Newman nếu cần khớp raw mới. |
 
+| **AI-032** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «dùng 5 ảnh Postman Desktop thay HTML capture; còn thiếu ảnh nào» | SV cung cấp 5 PNG gốc (Runner config/results, chi tiết FAIL, SETUP-07 headers, A-038 response); thay file render HTML; cập nhật README/bug-report/checklist/header. | VALID | Evidence Postman Desktop thật; 170 pass / 12 fail khớp Newman. | Bổ sung Postman Console `X-Student-Id` (AI-033). |
+
+| **AI-033** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «ảnh Postman Console X-Student-Id — ok chưa» | SV chụp Console: `X-Student-Id applied: 23127173` + SETUP-01 login 200; lưu `postman-console-student-id-20260903.png`; cập nhật header/checklist/disclosure. | VALID | Đáp ứng đề §11 — Console pre-request thật, không bịa. | Postman evidence đủ 6 ảnh Desktop. |
+
+| **AI-034** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «cập nhật audit, cập nhật doc, review doc, commit» | Rà soát đồng bộ main-report, README, roadmap, checklist, bug-report, mandatory disclosure; thay PNG HTML bằng 6 PNG Desktop gốc; commit nhánh `homework6`. | VALID | Tài liệu khớp 182 req / 12 fail / 6 ảnh Postman; audit AI-001…034. | Excel; GitHub Issue; PDF/ZIP. |
+
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 31 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 24 | 77% |
+| Tổng artifact AI sinh đã audit | 34 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 27 | 79% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 23% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 21% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ — đã thay AI-023), AI-009/AI-012/AI-021 (Postman PNG helper). AI-022…AI-031: oracle spec, review, cleanup, encoding fix.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper — đã thay Desktop AI-032/033). AI-022…AI-034: oracle spec, cleanup, encoding, Postman Desktop đủ §11.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 

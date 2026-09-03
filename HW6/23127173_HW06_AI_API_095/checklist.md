@@ -15,7 +15,7 @@
 - [x] Review TC lần 2: `test-cases/test-case-review.md`.
 - [x] Gắn assertion oracle đặc tả cho 120 TC (ID trùng ma trận).
 - [x] Newman full run: **182 req, 182 assertion, 12 fail** — `npm run test`.
-- [x] Postman evidence 5 ảnh (cùng run, spec oracle).
+- [x] Postman evidence **6 ảnh Desktop gốc** (03/09: Runner 170/12 fail + Console `X-Student-Id`).
 - [ ] Tạo GitHub Issue + screenshot cho 6 nhóm bug.
 
 ## Toàn bài

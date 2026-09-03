@@ -41,7 +41,7 @@ Chi tiết: `test-cases/test-case-matrix.md`, `test-cases/execution-mapping.md`.
 - **Full run:** 182 request (62 setup + 120 TC), **182 assertion, 12 fail**.
 - Lệnh: `npm run test` trong `api-testing/`.
 - Minh chứng Newman: `evidence/newman-ui/` (03/09/2026).
-- Minh chứng Postman: `evidence/postman-ui/` — 5 ảnh, **170 pass / 12 fail** (cùng run spec oracle).
+- Minh chứng Postman: `evidence/postman-ui/` — **6 ảnh Desktop gốc** (Runner 170/12 fail + Console `X-Student-Id`).
 
 ## 6. CI/CD
 

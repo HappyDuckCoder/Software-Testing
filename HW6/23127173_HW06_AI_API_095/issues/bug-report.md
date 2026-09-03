@@ -25,17 +25,16 @@ Oracle theo `Eshop/api_specification.md` + `Eshop/README.md` (FR-04, FR-10, FR-1
 
 ## Bằng chứng Postman (03/09/2026)
 
-Cùng collection Postman (`23127173_HW06_EShop_API.postman_collection.json`), cùng environment, cùng lần chạy Newman → JSON → render runner UI.
+Ảnh **Postman Desktop gốc** (SV chụp), cùng collection `23127173_HW06_EShop_API.postman_collection.json`.
 
-| # | Ảnh | Nội dung liên quan bug |
+| # | Ảnh | Nội dung |
 | --- | --- | --- |
-| 1 | `evidence/postman-ui/postman-runner-config-20260903.png` | Cấu hình runner: Setup 62 + A/C/B 120 TC |
-| 2 | `evidence/postman-ui/postman-run-results-20260903.png` | **170 passed / 12 failed** (spec oracle) |
-| 3 | `evidence/postman-ui/postman-run-details-negative-cases-20260903.png` | Chi tiết các request **FAIL**: A-021…A-034, B-004, B-028, C-023, C-024, C-032 |
-| 4 | `evidence/postman-ui/postman-c001-request-body-20260903.png` | Traceability request C-001 (body) |
-| 5 | `evidence/postman-ui/postman-c001-request-headers-20260903.png` | Traceability C-001 (headers + `X-Student-Id`) |
-
-Sinh lại: `cd api-testing && npm run evidence:postman`
+| 1 | `evidence/postman-ui/postman-runner-config-20260903.png` | Cấu hình Runner (Run order SETUP + settings) |
+| 2 | `evidence/postman-ui/postman-run-results-20260903.png` | **170 passed / 12 failed**, 182 test, 13s |
+| 3 | `evidence/postman-ui/postman-run-details-negative-cases-20260903.png` | Chi tiết FAIL: A-021…A-032 (và cuộn thêm B/C nếu cần) |
+| 4 | `evidence/postman-ui/postman-setup07-request-headers-20260903.png` | SETUP-07 checkout — Headers |
+| 5 | `evidence/postman-ui/postman-a038-response-20260903.png` | A-038 PASS — response body |
+| 6 | `evidence/postman-ui/postman-console-student-id-20260903.png` | Console — `X-Student-Id applied: 23127173` (đề §11) |
 
 ## Traceability
 

@@ -63,13 +63,14 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | EShop backend sẵn sàng retest (`127.0.0.1:3000`) | ✅ (03/09) |
 | Core Newman + CI pass | ✅ |
 | Full 120 TC Newman (setup + observation) | ✅ (03/09) |
-| Postman runner evidence (5 ảnh, full 120) | ✅ (03/09) |
-| Assertion oracle đặc tả (core + mapped) | ✅ (03/09, 3–5 fail) |
+| Postman runner + Console evidence (6 ảnh Desktop gốc) | ✅ (03/09) — AI-032/033 |
+| Postman Console `X-Student-Id` | ✅ (03/09) — AI-033 |
+| Assertion oracle đặc tả full 120 TC | ✅ (03/09, **12 fail**) |
 | Excel + GitHub Issue + CI fail + PDF/ZIP | ⏳ |
 
 ## 8. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman/CI gốc và xác nhận ba lỗi compliance; Excel, GitHub Issues, remote CI fail, diagram, PDF và ZIP do tôi hoàn tất — chưa xong nên không tuyên bố nộp đủ. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc và xác nhận sáu nhóm bug spec (12 assertion fail); Excel, GitHub Issues, remote CI fail, diagram, PDF và ZIP do tôi hoàn tất — chưa xong nên không tuyên bố nộp đủ. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
 
 ## 9. Cam đoan
 

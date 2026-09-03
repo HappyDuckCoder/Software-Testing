@@ -22,8 +22,8 @@
 - Chỉ lưu số liệu, report và ảnh từ lần chạy thật; không tạo dữ liệu thực thi giả.
 - So khớp schema/HTTP status với `Eshop/api_specification.md` và hành vi SUT trước khi kết luận bug.
 
-## Trạng thái sau khi review (01/09/2026)
+## Trạng thái sau khi review (03/09/2026)
 
-Đã hoàn thành phần nền tảng/execution: bước 1 (scope), bước 6 (collection và header injection), bước 7 (Newman local), và phần baseline của bước 9 (GitHub Actions pass). Các bằng chứng tương ứng nằm trong `evidence/postman-ui/`, `evidence/newman-ui/`, và `evidence/ci-cd/`.
+Đã hoàn thành: bước 1 (scope), bước 6 (collection + `X-Student-Id` + Console evidence), bước 7 (Newman full 182 req / 12 fail oracle spec), Postman Desktop 6 ảnh, CI baseline pass (bước 9 một phần). Evidence: `evidence/postman-ui/`, `evidence/newman-ui/`, `evidence/ci-cd/`.
 
-Chưa hoàn thành: gắn assertion Postman cho 120 ID, GitHub Issues, remote CI fail, Excel, diagram tự vẽ, PDF và ZIP. Ma trận 120 TC + oracle spec đã xong (03/09).
+Chưa hoàn thành: GitHub Issues, remote CI fail, Excel, diagram tự vẽ, PDF và ZIP.
