@@ -2,6 +2,8 @@
 
 Nguồn: `git log --oneline -- HW6/23127173_HW06_AI_API_095` · cập nhật 03/09/2026.
 
+8aeb237 Sua bang bug report Â§9 (4 cot); them bang tu cham diem Â§10; refresh PDF.
+f83a7fe Cap nhat git commit log sau commit d0fd5ef.
 d0fd5ef Dong bo HW6-BUG-04 them A-025; refresh PDF va github-issues README.
 a07ceda Update HW6 commit log
 110f6e6 Document HW6 GitHub bug evidence
