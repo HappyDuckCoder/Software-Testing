@@ -1,0 +1,1723 @@
+newman
+
+23127173 HW06 EShop API Testing
+
+Folder 00 Setup
+Sub-folder SETUP-01 Login user
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/login [200 OK, 655B, 29ms]
+  Pass  SETUP-01 Login user
+
+Sub-folder SETUP-02 Login admin
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/login [200 OK, 640B, 4ms]
+  Pass  SETUP-02 Login admin
+
+Sub-folder SETUP-03 Register user2 (IDOR)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/register [200 OK, 316B, 12ms]
+  Pass  register user2
+
+Sub-folder SETUP-04 Login user2
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/login [200 OK, 644B, 3ms]
+  Pass  SETUP-04 Login user2
+
+Sub-folder SETUP-05 user2OrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 15ms]
+  Pass  SETUP-05 user2OrderId
+
+Sub-folder SETUP-06 Re-login user
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/login [200 OK, 655B, 5ms]
+  Pass  SETUP-06 Re-login user
+
+Sub-folder SETUP-07 pendingOrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 11ms]
+  Pass  SETUP-07 pendingOrderId
+
+Sub-folder SETUP-08 b007PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 14ms]
+  Pass  SETUP-08 b007PendingId
+
+Sub-folder SETUP-09 b008PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 11ms]
+  Pass  SETUP-09 b008PendingId
+
+Sub-folder SETUP-10 b018PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 18ms]
+  Pass  SETUP-10 b018PendingId
+
+Sub-folder SETUP-11 b020PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 14ms]
+  Pass  SETUP-11 b020PendingId
+
+Sub-folder SETUP-12 b021PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 11ms]
+  Pass  SETUP-12 b021PendingId
+
+Sub-folder SETUP-13 b022PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 14ms]
+  Pass  SETUP-13 b022PendingId
+
+Sub-folder SETUP-14 b024PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 13ms]
+  Pass  SETUP-14 b024PendingId
+
+Sub-folder SETUP-15 b025PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 15ms]
+  Pass  SETUP-15 b025PendingId
+
+Sub-folder SETUP-16 b026PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 13ms]
+  Pass  SETUP-16 b026PendingId
+
+Sub-folder SETUP-17 b027PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 12ms]
+  Pass  SETUP-17 b027PendingId
+
+Sub-folder SETUP-18 b028PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 11ms]
+  Pass  SETUP-18 b028PendingId
+
+Sub-folder SETUP-19 b029PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 12ms]
+  Pass  SETUP-19 b029PendingId
+
+Sub-folder SETUP-20 b030PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 313B, 16ms]
+  Pass  SETUP-20 b030PendingId
+
+Sub-folder SETUP-21 b031PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 11ms]
+  Pass  SETUP-21 b031PendingId
+
+Sub-folder SETUP-22 b032PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 11ms]
+  Pass  SETUP-22 b032PendingId
+
+Sub-folder SETUP-23 b033PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 11ms]
+  Pass  SETUP-23 b033PendingId
+
+Sub-folder SETUP-24 b036PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 12ms]
+  Pass  SETUP-24 b036PendingId
+
+Sub-folder SETUP-25 b038PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 10ms]
+  Pass  SETUP-25 b038PendingId
+
+Sub-folder SETUP-26 b039PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 12ms]
+  Pass  SETUP-26 b039PendingId
+
+Sub-folder SETUP-27 b040PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 12ms]
+  Pass  SETUP-27 b040PendingId
+
+Sub-folder SETUP-28 c001PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 15ms]
+  Pass  SETUP-28 c001PendingId
+
+Sub-folder SETUP-29 c004PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 15ms]
+  Pass  SETUP-29 c004PendingId
+
+Sub-folder SETUP-30 c033PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 17ms]
+  Pass  SETUP-30 c033PendingId
+
+Sub-folder SETUP-31 c034PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 13ms]
+  Pass  SETUP-31 c034PendingId
+
+Sub-folder SETUP-32 c035PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 11ms]
+  Pass  SETUP-32 c035PendingId
+
+Sub-folder SETUP-33 c037PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 17ms]
+  Pass  SETUP-33 c037PendingId
+
+Sub-folder SETUP-34 c040PendingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 9ms]
+  Pass  SETUP-34 c040PendingId
+
+Sub-folder SETUP-35 authorizationOrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 12ms]
+  Pass  SETUP-35 authorizationOrderId
+
+Sub-folder SETUP-36 adminBodyTestId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 12ms]
+  Pass  SETUP-36 adminBodyTestId
+
+Sub-folder SETUP-37 doubleCancelOrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 13ms]
+  Pass  SETUP-37 doubleCancelOrderId
+
+Sub-folder SETUP-38 doubleCancelOrderId pre-cancel
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/116/cancel [200 OK, 308B, 14ms]
+  Pass  SETUP-38 doubleCancelOrderId pre-cancel
+
+Sub-folder SETUP-39 confirmedCancelId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 13ms]
+  Pass  SETUP-39 confirmedCancelId
+
+Sub-folder SETUP-40 confirmedCancelId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/117/status [200 OK, 301B, 12ms]
+  Pass  SETUP-40 confirmedCancelId→confirmed
+
+Sub-folder SETUP-41 b019ConfirmedId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 13ms]
+  Pass  SETUP-41 b019ConfirmedId
+
+Sub-folder SETUP-42 b019ConfirmedId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/118/status [200 OK, 301B, 13ms]
+  Pass  SETUP-42 b019ConfirmedId→confirmed
+
+Sub-folder SETUP-43 b034ConfirmedId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 11ms]
+  Pass  SETUP-43 b034ConfirmedId
+
+Sub-folder SETUP-44 b034ConfirmedId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/119/status [200 OK, 301B, 12ms]
+  Pass  SETUP-44 b034ConfirmedId→confirmed
+
+Sub-folder SETUP-45 shippingOrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 9ms]
+  Pass  SETUP-45 shippingOrderId
+
+Sub-folder SETUP-46 shippingOrderId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/120/status [200 OK, 301B, 11ms]
+  Pass  SETUP-46 shippingOrderId→confirmed
+
+Sub-folder SETUP-47 shippingOrderId→shipping
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/120/status [200 OK, 301B, 12ms]
+  Pass  SETUP-47 shippingOrderId→shipping
+
+Sub-folder SETUP-48 c002ConfirmedId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 13ms]
+  Pass  SETUP-48 c002ConfirmedId
+
+Sub-folder SETUP-49 c002ConfirmedId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/121/status [200 OK, 301B, 12ms]
+  Pass  SETUP-49 c002ConfirmedId→confirmed
+
+Sub-folder SETUP-50 c003ShippingId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 13ms]
+  Pass  SETUP-50 c003ShippingId
+
+Sub-folder SETUP-51 c003ShippingId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/122/status [200 OK, 301B, 20ms]
+  Pass  SETUP-51 c003ShippingId→confirmed
+
+Sub-folder SETUP-52 c003ShippingId→shipping
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/122/status [200 OK, 301B, 13ms]
+  Pass  SETUP-52 c003ShippingId→shipping
+
+Sub-folder SETUP-53 c005ConfirmedId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 11ms]
+  Pass  SETUP-53 c005ConfirmedId
+
+Sub-folder SETUP-54 c005ConfirmedId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/123/status [200 OK, 301B, 10ms]
+  Pass  SETUP-54 c005ConfirmedId→confirmed
+
+Sub-folder SETUP-55 c036ConfirmedId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 9ms]
+  Pass  SETUP-55 c036ConfirmedId
+
+Sub-folder SETUP-56 c036ConfirmedId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/124/status [200 OK, 301B, 18ms]
+  Pass  SETUP-56 c036ConfirmedId→confirmed
+
+Sub-folder SETUP-57 deliveredOrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 15ms]
+  Pass  SETUP-57 deliveredOrderId
+
+Sub-folder SETUP-58 deliveredOrderId→confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/125/status [200 OK, 301B, 17ms]
+  Pass  SETUP-58 deliveredOrderId→confirmed
+
+Sub-folder SETUP-59 deliveredOrderId→shipping
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/125/status [200 OK, 301B, 14ms]
+  Pass  SETUP-59 deliveredOrderId→shipping
+
+Sub-folder SETUP-60 deliveredOrderId→delivered
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/125/status [200 OK, 301B, 16ms]
+  Pass  SETUP-60 deliveredOrderId→delivered
+
+Sub-folder SETUP-61 canceledOrderId
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  POST http://127.0.0.1:3000/api/checkout [200 OK, 314B, 12ms]
+  Pass  SETUP-61 canceledOrderId
+
+Sub-folder SETUP-62 canceledOrderId pre-cancel
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/126/cancel [200 OK, 308B, 12ms]
+  Pass  SETUP-62 canceledOrderId pre-cancel
+
+Folder A FR-04 Profile (40 TC)
+Sub-folder A-001 Cập nhật profile hợp lệ đầy đủ
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  Pass  A-001 spec oracle
+  -
+  | 'A-001', 200
+  -
+
+Sub-folder A-002 Tên đúng độ dài tối thiểu
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  Pass  A-002 spec oracle
+  -
+  | 'A-002', 200
+  -
+
+Sub-folder A-003 Tên đúng độ dài tối đa
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  Pass  A-003 spec oracle
+  -
+  | 'A-003', 200
+  -
+
+Sub-folder A-004 Tên tiếng Việt có dấu
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 8ms]
+  Pass  A-004 spec oracle
+  -
+  | 'A-004', 200
+  -
+
+Sub-folder A-005 Tên có khoảng trắng đầu/cuối
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 12ms]
+  Pass  A-005 spec oracle
+  -
+  | 'A-005', 200
+  -
+
+Sub-folder A-006 Thiếu trường name
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 12ms]
+  Pass  A-006 spec oracle
+  -
+  | 'A-006', 200
+  -
+
+Sub-folder A-007 Trường name = null
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  Pass  A-007 spec oracle
+  -
+  | 'A-007', 200
+  -
+
+Sub-folder A-008 Trường name là số
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 16ms]
+  Pass  A-008 spec oracle
+  -
+  | 'A-008', 200
+  -
+
+Sub-folder A-009 Tên chứa payload SQL injection
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-009 spec oracle
+  -
+  | 'A-009', 200
+  -
+
+Sub-folder A-010 Tên chứa payload XSS
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 12ms]
+  Pass  A-010 spec oracle
+  -
+  | 'A-010', 200
+  -
+
+Sub-folder A-011 Địa chỉ đúng định dạng Việt Nam
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  Pass  A-011 spec oracle
+  -
+  | 'A-011', 200
+  -
+
+Sub-folder A-012 Địa chỉ chuỗi rỗng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 8ms]
+  Pass  A-012 spec oracle
+  -
+  | 'A-012', 200
+  -
+
+Sub-folder A-013 Thiếu trường shipping_address
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 10ms]
+  Pass  A-013 spec oracle
+  -
+  | 'A-013', 200
+  -
+
+Sub-folder A-014 Trường shipping_address = null
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  Pass  A-014 spec oracle
+  -
+  | 'A-014', 200
+  -
+
+Sub-folder A-015 Địa chỉ quá dài
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  Pass  A-015 spec oracle
+  -
+  | 'A-015', 200
+  -
+
+Sub-folder A-016 Địa chỉ chứa payload SQL injection
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 16ms]
+  Pass  A-016 spec oracle
+  -
+  | 'A-016', 200
+  -
+
+Sub-folder A-017 Địa chỉ chứa payload XSS
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-017 spec oracle
+  -
+  | 'A-017', 200
+  -
+
+Sub-folder A-018 SĐT hợp lệ 10 chữ số
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-018 spec oracle
+  -
+  | 'A-018', 200
+  -
+
+Sub-folder A-019 SĐT hợp lệ 11 chữ số
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-019 spec oracle
+  -
+  | 'A-019', 200
+  -
+
+Sub-folder A-020 SĐT bắt đầu bằng số 0
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-020 spec oracle
+  -
+  | 'A-020', 200
+  -
+
+Sub-folder A-021 SĐT quá ngắn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 12ms]
+  1. A-021 spec oracle
+  -
+  | 'A-021', 200
+  -
+
+Sub-folder A-022 SĐT quá dài
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 9ms]
+  2. A-022 spec oracle
+  -
+  | 'A-022', 200
+  -
+
+Sub-folder A-023 SĐT chứa chữ cái
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  3. A-023 spec oracle
+  -
+  | 'A-023', 200
+  -
+
+Sub-folder A-024 SĐT chứa ký tự đặc biệt
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 46ms]
+  Pass  A-024 spec oracle
+  -
+  | 'A-024', 200
+  -
+
+Sub-folder A-025 SĐT chỉ có khoảng trắng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 10ms]
+  4. A-025 spec oracle
+  -
+  | 'A-025', 200
+  -
+
+Sub-folder A-026 Trường phone = null
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 10ms]
+  Pass  A-026 spec oracle
+  -
+  | 'A-026', 200
+  -
+
+Sub-folder A-027 Thiếu JWT
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [401 Unauthorized, 301B, 2ms]
+  Pass  A-027 spec oracle
+  -
+  | 'A-027', 401
+  -
+
+Sub-folder A-028 JWT sai định dạng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [403 Forbidden, 295B, 2ms]
+  Pass  A-028 spec oracle
+  -
+  | 'A-028', 403
+  -
+
+Sub-folder A-029 JWT hết hạn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [403 Forbidden, 295B, 2ms]
+  Pass  A-029 spec oracle
+  -
+  | 'A-029', 403
+  -
+
+Sub-folder A-030 Token user khác không sửa được hồ sơ người khác
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 9ms]
+  Pass  A-030 spec oracle
+  -
+  | 'A-030', 200
+  -
+
+Sub-folder A-031 Gán trường role từ client (SEC-06)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  5. A-031 spec oracle
+  -
+  | 'A-031', 200
+  -
+
+Sub-folder A-032 Gán trường isAdmin từ client
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 2ms]
+  6. A-032 spec oracle
+  -
+  | 'A-032', 200
+  -
+
+Sub-folder A-033 Gửi thêm trường lạ không có trong đặc tả
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  Pass  A-033 spec oracle
+  -
+  | 'A-033', 200
+  -
+
+Sub-folder A-034 Thiếu header Content-Type
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  7. A-034 spec oracle
+  -
+  | 'A-034', 200
+  -
+
+Sub-folder A-035 Kiểm tra schema/message phản hồi thành công
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  Pass  A-035 spec oracle
+  -
+  | 'A-035', 200
+  -
+
+Sub-folder A-036 Gửi body rỗng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 12ms]
+  Pass  A-036 spec oracle
+  -
+  | 'A-036', 200
+  -
+
+Sub-folder A-037 User A, B, C cập nhật hồ sơ đồng thời
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 11ms]
+  Pass  A-037 spec oracle
+  -
+  | 'A-037', 200
+  -
+
+Sub-folder A-038 Đổi mật khẩu rồi cập nhật profile
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 3ms]
+  Pass  A-038 spec oracle
+  -
+  | 'A-038', 200
+  -
+
+Sub-folder A-039 Tên có emoji
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-039 spec oracle
+  -
+  | 'A-039', 200
+  -
+
+Sub-folder A-040 Địa chỉ có emoji
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/users/me [200 OK, 296B, 13ms]
+  Pass  A-040 spec oracle
+  -
+  | 'A-040', 200
+  -
+
+Folder C FR-18 Admin order status (40 TC)
+Sub-folder C-001 Admin: pending → confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/107/status [200 OK, 301B, 13ms]
+  Pass  C-001 spec oracle
+  -
+  | 'C-001', 200
+  -
+
+Sub-folder C-002 Admin: confirmed → shipping
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/121/status [200 OK, 301B, 13ms]
+  Pass  C-002 spec oracle
+  -
+  | 'C-002', 200
+  -
+
+Sub-folder C-003 Admin: shipping → delivered
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/122/status [200 OK, 301B, 12ms]
+  Pass  C-003 spec oracle
+  -
+  | 'C-003', 200
+  -
+
+Sub-folder C-004 Admin: pending → canceled
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/108/status [200 OK, 301B, 13ms]
+  Pass  C-004 spec oracle
+  -
+  | 'C-004', 200
+  -
+
+Sub-folder C-005 Admin: confirmed → canceled
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/123/status [200 OK, 301B, 15ms]
+  Pass  C-005 spec oracle
+  -
+  | 'C-005', 200
+  -
+
+Sub-folder C-006 Admin: shipping → canceled (bị từ chối)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/120/status [400 Bad Request, 338B, 3ms]
+  Pass  C-006 spec oracle
+  -
+  | 'C-006', 400
+  -
+
+Sub-folder C-007 Admin: delivered → canceled (bị từ chối)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/125/status [400 Bad Request, 339B, 2ms]
+  Pass  C-007 spec oracle
+  -
+  | 'C-007', 400
+  -
+
+Sub-folder C-008 Admin: canceled → pending (bị từ chối)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/126/status [400 Bad Request, 337B, 2ms]
+  Pass  C-008 spec oracle
+  -
+  | 'C-008', 400
+  -
+
+Sub-folder C-009 Admin: delivered → confirmed (bị từ chối)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/125/status [400 Bad Request, 340B, 3ms]
+  Pass  C-009 spec oracle
+  -
+  | 'C-009', 400
+  -
+
+Sub-folder C-010 Admin: status = returned (không hợp lệ)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 337B, 2ms]
+  Pass  C-010 spec oracle
+  -
+  | 'C-010', 400
+  -
+
+Sub-folder C-011 Thiếu trường status
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 338B, 3ms]
+  Pass  C-011 spec oracle
+  -
+  | 'C-011', 400
+  -
+
+Sub-folder C-012 Trường status = null
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 333B, 3ms]
+  Pass  C-012 spec oracle
+  -
+  | 'C-012', 400
+  -
+
+Sub-folder C-013 Trường status rỗng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 329B, 2ms]
+  Pass  C-013 spec oracle
+  -
+  | 'C-013', 400
+  -
+
+Sub-folder C-014 Trường status là số
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 330B, 3ms]
+  Pass  C-014 spec oracle
+  -
+  | 'C-014', 400
+  -
+
+Sub-folder C-015 Trường status viết hoa lẫn lộn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 338B, 2ms]
+  Pass  C-015 spec oracle
+  -
+  | 'C-015', 400
+  -
+
+Sub-folder C-016 Trường status có khoảng trắng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 340B, 3ms]
+  Pass  C-016 spec oracle
+  -
+  | 'C-016', 400
+  -
+
+Sub-folder C-017 Status chứa SQL injection
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 352B, 3ms]
+  Pass  C-017 spec oracle
+  -
+  | 'C-017', 400
+  -
+
+Sub-folder C-018 Status chứa XSS
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 347B, 2ms]
+  Pass  C-018 spec oracle
+  -
+  | 'C-018', 400
+  -
+
+Sub-folder C-019 Gửi thêm trường lạ trong body
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [200 OK, 301B, 13ms]
+  Pass  C-019 spec oracle
+  -
+  | 'C-019', 200
+  -
+
+Sub-folder C-020 Thiếu JWT
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/107/status [401 Unauthorized, 301B, 2ms]
+  Pass  C-020 spec oracle
+  -
+  | 'C-020', 401
+  -
+
+Sub-folder C-021 JWT sai định dạng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/107/status [403 Forbidden, 295B, 3ms]
+  Pass  C-021 spec oracle
+  -
+  | 'C-021', 403
+  -
+
+Sub-folder C-022 JWT hết hạn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/107/status [403 Forbidden, 295B, 2ms]
+  Pass  C-022 spec oracle
+  -
+  | 'C-022', 403
+  -
+
+Sub-folder C-023 Token user thường bị từ chối (SEC-03)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/114/status [200 OK, 301B, 14ms]
+  8. C-023 spec oracle
+  -
+  | 'C-023', 200
+  -
+
+Sub-folder C-024 Token user khác bị từ chối
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/114/status [400 Bad Request, 340B, 2ms]
+  9. C-024 spec oracle
+  -
+  | 'C-024', 400
+  -
+
+Sub-folder C-025 ID đơn = 0
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/0/status [404 Not Found, 301B, 3ms]
+  Pass  C-025 spec oracle
+  -
+  | 'C-025', 404
+  -
+
+Sub-folder C-026 ID đơn âm
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/-1/status [404 Not Found, 301B, 4ms]
+  Pass  C-026 spec oracle
+  -
+  | 'C-026', 404
+  -
+
+Sub-folder C-027 ID đơn dạng thập phân
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/1.5/status [404 Not Found, 301B, 3ms]
+  Pass  C-027 spec oracle
+  -
+  | 'C-027', 404
+  -
+
+Sub-folder C-028 ID đơn là chữ cái
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/abc/status [404 Not Found, 301B, 2ms]
+  Pass  C-028 spec oracle
+  -
+  | 'C-028', 404
+  -
+
+Sub-folder C-029 ID đơn chứa SQL injection
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/1%27%20OR%201=1/status [404 Not Found, 301B, 3ms]
+  Pass  C-029 spec oracle
+  -
+  | 'C-029', 404
+  -
+
+Sub-folder C-030 ID đơn không tồn tại
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/999999/status [404 Not Found, 301B, 2ms]
+  Pass  C-030 spec oracle
+  -
+  | 'C-030', 404
+  -
+
+Sub-folder C-031 Thiếu ID trên đường dẫn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/status [404 Not Found, 466B, 2ms]
+  Pass  C-031 spec oracle
+  -
+  | 'C-031', 404
+  -
+
+Sub-folder C-032 Gọi bằng GET thay vì PUT
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  GET http://127.0.0.1:3000/api/admin/orders/107/status [404 Not Found, 470B, 2ms]
+ 10. C-032 spec oracle
+  -
+  | 'C-032', 404
+  -
+
+Sub-folder C-033 Kiểm tra schema/message phản hồi
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/109/status [200 OK, 301B, 18ms]
+  Pass  C-033 spec oracle
+  -
+  | 'C-033', 200
+  -
+
+Sub-folder C-034 Trạng thái lưu đúng sau chuyển tiếp
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/110/status [200 OK, 301B, 12ms]
+  Pass  C-034 spec oracle
+  -
+  | 'C-034', 200
+  -
+
+Sub-folder C-035 Cập nhật trạng thái đồng thời (race)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/111/status [200 OK, 301B, 9ms]
+  Pass  C-035 spec oracle
+  -
+  | 'C-035', 200
+  -
+
+Sub-folder C-036 Chuyển pending → confirmed hai lần liên tiếp
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/124/status [400 Bad Request, 340B, 3ms]
+  Pass  C-036 spec oracle
+  -
+  | 'C-036', 400
+  -
+
+Sub-folder C-037 Token admin có khoảng trắng thừa
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/112/status [403 Forbidden, 295B, 2ms]
+  Pass  C-037 spec oracle
+  -
+  | 'C-037', 403
+  -
+
+Sub-folder C-038 Body là mảng JSON thay vì object
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 340B, 3ms]
+  Pass  C-038 spec oracle
+  -
+  | 'C-038', 400
+  -
+
+Sub-folder C-039 Giá trị status quá dài
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/115/status [400 Bad Request, 853B, 2ms]
+  Pass  C-039 spec oracle
+  -
+  | 'C-039', 400
+  -
+
+Sub-folder C-040 Đổi trạng thái ngay sau khi tạo đơn bằng checkout
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/admin/orders/113/status [200 OK, 301B, 11ms]
+  Pass  C-040 spec oracle
+  -
+  | 'C-040', 200
+  -
+
+Folder B FR-10 Cancel order (40 TC)
+Sub-folder B-001 Hủy đơn pending của chính mình
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/86/cancel [200 OK, 308B, 9ms]
+  Pass  B-001 spec oracle
+  -
+  | 'B-001', 200
+  -
+
+Sub-folder B-002 Hủy cùng một đơn hai lần
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/116/cancel [400 Bad Request, 313B, 3ms]
+  Pass  B-002 spec oracle
+  -
+  | 'B-002', 400
+  -
+
+Sub-folder B-003 Hủy đơn confirmed của chính mình
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/117/cancel [200 OK, 308B, 15ms]
+  Pass  B-003 spec oracle
+  -
+  | 'B-003', 200
+  -
+
+Sub-folder B-004 Hủy đơn đang shipping
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/120/cancel [200 OK, 308B, 14ms]
+ 11. B-004 spec oracle
+  -
+  | 'B-004', 200
+  -
+
+Sub-folder B-005 Hủy đơn delivered
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/125/cancel [400 Bad Request, 313B, 3ms]
+  Pass  B-005 spec oracle
+  -
+  | 'B-005', 400
+  -
+
+Sub-folder B-006 Hủy đơn đã canceled
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/126/cancel [400 Bad Request, 313B, 2ms]
+  Pass  B-006 spec oracle
+  -
+  | 'B-006', 400
+  -
+
+Sub-folder B-007 Hủy ngay sau khi checkout
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/87/cancel [200 OK, 308B, 14ms]
+  Pass  B-007 spec oracle
+  -
+  | 'B-007', 200
+  -
+
+Sub-folder B-008 ID đơn là số hợp lệ
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/88/cancel [200 OK, 308B, 11ms]
+  Pass  B-008 spec oracle
+  -
+  | 'B-008', 200
+  -
+
+Sub-folder B-009 ID đơn = 0
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/0/cancel [404 Not Found, 301B, 2ms]
+  Pass  B-009 spec oracle
+  -
+  | 'B-009', 404
+  -
+
+Sub-folder B-010 ID đơn âm
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/-1/cancel [404 Not Found, 301B, 2ms]
+  Pass  B-010 spec oracle
+  -
+  | 'B-010', 404
+  -
+
+Sub-folder B-011 ID đơn dạng thập phân
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/1.5/cancel [404 Not Found, 301B, 3ms]
+  Pass  B-011 spec oracle
+  -
+  | 'B-011', 404
+  -
+
+Sub-folder B-012 ID đơn là chữ cái
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/abc/cancel [404 Not Found, 301B, 2ms]
+  Pass  B-012 spec oracle
+  -
+  | 'B-012', 404
+  -
+
+Sub-folder B-013 ID đơn chứa SQL injection
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/1%27%20OR%20%271%27%3D%271/cancel [404 Not Found, 301B, 2ms]
+  Pass  B-013 spec oracle
+  -
+  | 'B-013', 404
+  -
+
+Sub-folder B-014 ID đơn chứa XSS
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/%3Cscript%3E/cancel [404 Not Found, 301B, 3ms]
+  Pass  B-014 spec oracle
+  -
+  | 'B-014', 404
+  -
+
+Sub-folder B-015 ID đơn rất lớn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/999999999/cancel [404 Not Found, 301B, 4ms]
+  Pass  B-015 spec oracle
+  -
+  | 'B-015', 404
+  -
+
+Sub-folder B-016 ID đơn không tồn tại
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/999999/cancel [404 Not Found, 301B, 3ms]
+  Pass  B-016 spec oracle
+  -
+  | 'B-016', 404
+  -
+
+Sub-folder B-017 Thiếu ID trên đường dẫn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/cancel [404 Not Found, 460B, 1ms]
+  Pass  B-017 spec oracle
+  -
+  | 'B-017', 404
+  -
+
+Sub-folder B-018 URL có query string thừa
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/89/cancel?debug=1 [200 OK, 308B, 13ms]
+  Pass  B-018 spec oracle
+  -
+  | 'B-018', 200
+  -
+
+Sub-folder B-019 URL có dấu / ở cuối
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/118/cancel [200 OK, 308B, 11ms]
+  Pass  B-019 spec oracle
+  -
+  | 'B-019', 200
+  -
+
+Sub-folder B-020 Thiếu JWT
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/90/cancel [401 Unauthorized, 301B, 2ms]
+  Pass  B-020 spec oracle
+  -
+  | 'B-020', 401
+  -
+
+Sub-folder B-021 JWT sai định dạng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/91/cancel [403 Forbidden, 295B, 2ms]
+  Pass  B-021 spec oracle
+  -
+  | 'B-021', 403
+  -
+
+Sub-folder B-022 JWT hết hạn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/92/cancel [403 Forbidden, 295B, 2ms]
+  Pass  B-022 spec oracle
+  -
+  | 'B-022', 403
+  -
+
+Sub-folder B-023 Hủy đơn của user khác (IDOR)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/85/cancel [404 Not Found, 301B, 3ms]
+  Pass  B-023 spec oracle
+  -
+  | 'B-023', 404
+  -
+
+Sub-folder B-024 Dùng token admin để hủy
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/93/cancel [404 Not Found, 301B, 3ms]
+  Pass  B-024 spec oracle
+  -
+  | 'B-024', 404
+  -
+
+Sub-folder B-025 Header Authorization viết thường
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/94/cancel [200 OK, 308B, 11ms]
+  Pass  B-025 spec oracle
+  -
+  | 'B-025', 200
+  -
+
+Sub-folder B-026 Thiếu tiền tố Bearer
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/95/cancel [401 Unauthorized, 301B, 2ms]
+  Pass  B-026 spec oracle
+  -
+  | 'B-026', 401
+  -
+
+Sub-folder B-027 Bearer token rỗng
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/96/cancel [401 Unauthorized, 301B, 1ms]
+  Pass  B-027 spec oracle
+  -
+  | 'B-027', 401
+  -
+
+Sub-folder B-028 Gọi bằng GET thay vì PUT
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  GET http://127.0.0.1:3000/api/orders/97/cancel [404 Not Found, 463B, 2ms]
+ 12. B-028 spec oracle
+  -
+  | 'B-028', 404
+  -
+
+Sub-folder B-029 Gửi body JSON không mong đợi
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/98/cancel [200 OK, 308B, 13ms]
+  Pass  B-029 spec oracle
+  -
+  | 'B-029', 200
+  -
+
+Sub-folder B-030 Kiểm tra schema phản hồi thành công
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/99/cancel [200 OK, 308B, 12ms]
+  Pass  B-030 spec oracle
+  -
+  | 'B-030', 200
+  -
+
+Sub-folder B-031 Trạng thái lưu thành canceled
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/100/cancel [200 OK, 308B, 12ms]
+  Pass  B-031 spec oracle
+  -
+  | 'B-031', 200
+  -
+
+Sub-folder B-032 Lịch sử đơn phản ánh đã hủy
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/101/cancel [200 OK, 308B, 12ms]
+  Pass  B-032 spec oracle
+  -
+  | 'B-032', 200
+  -
+
+Sub-folder B-033 Hủy đồng thời (race)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/102/cancel [200 OK, 308B, 13ms]
+  Pass  B-033 spec oracle
+  -
+  | 'B-033', 200
+  -
+
+Sub-folder B-034 Hủy sau khi admin confirmed
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/119/cancel [200 OK, 308B, 14ms]
+  Pass  B-034 spec oracle
+  -
+  | 'B-034', 200
+  -
+
+Sub-folder B-035 Hủy sau khi admin chuyển shipping
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/120/cancel [400 Bad Request, 313B, 3ms]
+  Pass  B-035 spec oracle
+  -
+  | 'B-035', 400
+  -
+
+Sub-folder B-036 Thử lại sau khi mất kết nối
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/103/cancel [200 OK, 308B, 12ms]
+  Pass  B-036 spec oracle
+  -
+  | 'B-036', 200
+  -
+
+Sub-folder B-037 Đường dẫn Unicode trong URL
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/%E2%82%AC123/cancel [404 Not Found, 301B, 4ms]
+  Pass  B-037 spec oracle
+  -
+  | 'B-037', 404
+  -
+
+Sub-folder B-038 Token Bearer có khoảng trắng thừa
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/104/cancel [403 Forbidden, 295B, 2ms]
+  Pass  B-038 spec oracle
+  -
+  | 'B-038', 403
+  -
+
+Sub-folder B-039 Hủy đơn khi phản hồi chậm (timeout)
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/105/cancel [200 OK, 308B, 13ms]
+  Pass  B-039 spec oracle
+  -
+  | 'B-039', 200
+  -
+
+Sub-folder B-040 Gửi body JSON khi hủy đơn
+  -
+  | 'X-Student-Id applied:', '23127173'
+  -
+  PUT http://127.0.0.1:3000/api/orders/106/cancel [200 OK, 308B, 11ms]
+  Pass  B-040 spec oracle
+  -
+  | 'B-040', 200
+  -
+
+---------------------------------------------------------------
+|                         |        executed |          failed |
+--------------------------+-----------------+------------------
+|              iterations |               1 |               0 |
+--------------------------+-----------------+------------------
+|                requests |             182 |               0 |
+--------------------------+-----------------+------------------
+|            test-scripts |             182 |               0 |
+--------------------------+-----------------+------------------
+|      prerequest-scripts |             182 |               0 |
+--------------------------+-----------------+------------------
+|              assertions |             182 |              12 |
+---------------------------------------------------------------
+| total run duration: 10.9s                                   |
+---------------------------------------------------------------
+| total data received: 9.31kB (approx)                        |
+---------------------------------------------------------------
+| average response time: 9ms [min: 1ms, max: 46ms, s.d.: 5ms] |
+---------------------------------------------------------------
+
+   #  failure         detail                                                                                    
+                                                                                                                
+ 01.  AssertionError  A-021 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-021 SĐT quá ngắn"                                     
+                                                                                                                
+ 02.  AssertionError  A-022 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-022 SĐT quá dài"                                      
+                                                                                                                
+ 03.  AssertionError  A-023 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-023 SĐT chứa chữ cái"                                 
+                                                                                                                
+ 04.  AssertionError  A-025 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-025 SĐT chỉ có khoảng trắng"                          
+                                                                                                                
+ 05.  AssertionError  A-031 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-031 Gán trường role từ client (SEC-06)"               
+                                                                                                                
+ 06.  AssertionError  A-032 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-032 Gán trường isAdmin từ client"                     
+                                                                                                                
+ 07.  AssertionError  A-034 spec oracle                                                                         
+                      expected 200 to be one of [ 400, 415 ]                                                    
+                      at assertion:0 in test-script                                                             
+                      inside "A FR-04 Profile (40 TC) / A-034 Thiếu header Content-Type"                        
+                                                                                                                
+ 08.  AssertionError  C-023 spec oracle                                                                         
+                      expected response to have status code 403 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "C FR-18 Admin order status (40 TC) / C-023 Token user thường bị từ chối (SEC-03)" 
+                                                                                                                
+ 09.  AssertionError  C-024 spec oracle                                                                         
+                      expected response to have status code 403 but got 400                                     
+                      at assertion:0 in test-script                                                             
+                      inside "C FR-18 Admin order status (40 TC) / C-024 Token user khác bị từ chối"            
+                                                                                                                
+ 10.  AssertionError  C-032 spec oracle                                                                         
+                      expected response to have status code 405 but got 404                                     
+                      at assertion:0 in test-script                                                             
+                      inside "C FR-18 Admin order status (40 TC) / C-032 Gọi bằng GET thay vì PUT"              
+                                                                                                                
+ 11.  AssertionError  B-004 spec oracle                                                                         
+                      expected response to have status code 400 but got 200                                     
+                      at assertion:0 in test-script                                                             
+                      inside "B FR-10 Cancel order (40 TC) / B-004 Hủy đơn đang shipping"                       
+                                                                                                                
+ 12.  AssertionError  B-028 spec oracle                                                                         
+                      expected response to have status code 405 but got 404                                     
+                      at assertion:0 in test-script                                                             
+                      inside "B FR-10 Cancel order (40 TC) / B-028 Gọi bằng GET thay vì PUT"                    

@@ -1,0 +1,2511 @@
+[
+  {
+    "id": "A-001",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Cập nhật profile hợp lệ đầy đủ",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "Tran Hai Duc",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-002",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên đúng độ dài tối thiểu",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "A",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-003",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên đúng độ dài tối đa",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-004",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên tiếng Việt có dấu",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "Nguyễn Văn A",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-005",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên có khoảng trắng đầu/cuối",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "  HW6 User  ",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-006",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Thiếu trường name",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-007",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Trường name = null",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": null,
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-008",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Trường name là số",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": 12345,
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-009",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên chứa payload SQL injection",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200/400 — dữ liệu an toàn, không lỗi SQL (SEC-05)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "' OR 1=1 --",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200,
+      400
+    ]
+  },
+  {
+    "id": "A-010",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên chứa payload XSS",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200/400 — dữ liệu an toàn (SEC-05)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "<script>alert(1)</script>",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200,
+      400
+    ]
+  },
+  {
+    "id": "A-011",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Địa chỉ đúng định dạng Việt Nam",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyễn Văn Cừ, Phường 5, Quận 5, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-012",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Địa chỉ chuỗi rỗng",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-013",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Thiếu trường shipping_address",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-014",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Trường shipping_address = null",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": null,
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-015",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Địa chỉ quá dài",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-016",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Địa chỉ chứa payload SQL injection",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200/400 — dữ liệu an toàn (SEC-05)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "'; DROP TABLE users; --",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200,
+      400
+    ]
+  },
+  {
+    "id": "A-017",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Địa chỉ chứa payload XSS",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200/400 — dữ liệu an toàn (SEC-05)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "<img onerror=alert(1)>",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200,
+      400
+    ]
+  },
+  {
+    "id": "A-018",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT hợp lệ 10 chữ số",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-019",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT hợp lệ 11 chữ số",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "09123456789"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-020",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT bắt đầu bằng số 0",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0123456789"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-021",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT quá ngắn",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "123"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "A-022",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT quá dài",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "012345678901"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "A-023",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT chứa chữ cái",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "09abc45678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "A-024",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT chứa ký tự đặc biệt",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "09-123-4567"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-025",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "SĐT chỉ có khoảng trắng",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "   "
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "A-026",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Trường phone = null",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": null
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-027",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Thiếu JWT",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=none",
+    "expected": "401 — thiếu token (SEC-02)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "none",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      401
+    ]
+  },
+  {
+    "id": "A-028",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "JWT sai định dạng",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=invalid",
+    "expected": "403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "invalid",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      403
+    ]
+  },
+  {
+    "id": "A-029",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "JWT hết hạn",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=invalid",
+    "expected": "403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "invalid",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      403
+    ]
+  },
+  {
+    "id": "A-030",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Token user khác không sửa được hồ sơ người khác",
+    "source": "AI sinh",
+    "pre": "API scope theo token — chỉ sửa hồ sơ của chính mình (FR-04).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật hồ sơ user trong token (FR-04)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-031",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Gán trường role từ client (SEC-06)",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400 — không cho client đổi role (SEC-06, FR-04)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678",
+      "role": "admin"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "A-032",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Gán trường isAdmin từ client",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400 — không cho client leo quyền (SEC-06, FR-04)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678",
+      "isAdmin": true
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "A-033",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Gửi thêm trường lạ không có trong đặc tả",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678",
+      "hacker_field": "x"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-034",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Thiếu header Content-Type",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "400/415 — thiếu hoặc sai Content-Type",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": "no-content-type",
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      400,
+      415
+    ]
+  },
+  {
+    "id": "A-035",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Kiểm tra schema/message phản hồi thành công",
+    "source": "AI sinh",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — body có message thành công theo đặc tả",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-036",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Gửi body rỗng",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI ít nghĩ tới body hoàn toàn rỗng khi API vẫn yêu cầu JWT.",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — các field §2.2 là tùy chọn (FR-04)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {},
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-037",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "User A, B, C cập nhật hồ sơ đồng thời",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI không mô phỏng nhiều user cập nhật đồng thời.",
+    "pre": "Newman chạy tuần tự; TC mô phỏng nhiều user bằng một request hợp lệ (giới hạn công cụ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-038",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Đổi mật khẩu rồi cập nhật profile",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI không nối luồng đổi mật khẩu rồi cập nhật profile ngay sau đó.",
+    "pre": "User đã đăng nhập; TC giả định đổi mật khẩu trước đó vẫn cập nhật profile được (FR-04).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-039",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Tên có emoji",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chỉ test emoji ở nhóm student cũ, chưa tách riêng tên.",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "User 😀",
+      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "A-040",
+    "pool": "A",
+    "endpoint": "PUT /api/users/me",
+    "title": "Địa chỉ có emoji",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa thử emoji trong địa chỉ giao hàng.",
+    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "request": "PUT /api/users/me; auth=user",
+    "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
+    "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
+    "auth": "user",
+    "body": {
+      "name": "HW6 User",
+      "shipping_address": "Nhà 🏠 Q1",
+      "phone": "0912345678"
+    },
+    "extraHeaders": null,
+    "path": "/api/users/me",
+    "method": "PUT",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-001",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn pending của chính mình",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{pendingOrderId}}/cancel; auth=user",
+    "expected": "200 — hủy pending thành công (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{pendingOrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{pendingOrderId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-002",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy cùng một đơn hai lần",
+    "source": "AI sinh",
+    "pre": "Đơn đã bị hủy một lần trong setup.",
+    "request": "PUT /api/orders/{{doubleCancelOrderId}}/cancel; auth=user",
+    "expected": "400 — không hủy lại đơn đã canceled (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{doubleCancelOrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{doubleCancelOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "B-003",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn confirmed của chính mình",
+    "source": "AI sinh",
+    "pre": "Đơn confirmed thuộc user.",
+    "request": "PUT /api/orders/{{confirmedCancelId}}/cancel; auth=user",
+    "expected": "200 — hủy confirmed thành công (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{confirmedCancelId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{confirmedCancelId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-004",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn đang shipping",
+    "source": "AI sinh",
+    "pre": "Đơn shipping (FR-10: user không được hủy).",
+    "request": "PUT /api/orders/{{shippingOrderId}}/cancel; auth=user",
+    "expected": "400 — user không hủy khi shipping (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{shippingOrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{shippingOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "B-005",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn delivered",
+    "source": "AI sinh",
+    "pre": "Đơn delivered (trạng thái kết thúc).",
+    "request": "PUT /api/orders/{{deliveredOrderId}}/cancel; auth=user",
+    "expected": "400 — không hủy trạng thái kết thúc (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{deliveredOrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{deliveredOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "B-006",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn đã canceled",
+    "source": "AI sinh",
+    "pre": "Đơn đã canceled.",
+    "request": "PUT /api/orders/{{canceledOrderId}}/cancel; auth=user",
+    "expected": "400 — không hủy lại (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{canceledOrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{canceledOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "B-007",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy ngay sau khi checkout",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b007PendingId}}/cancel; auth=user",
+    "expected": "200 — hủy pending ngay sau checkout (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b007PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b007PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-008",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn là số hợp lệ",
+    "source": "AI sinh",
+    "pre": "ID đơn là số hợp lệ.",
+    "request": "PUT /api/orders/{{b008PendingId}}/cancel; auth=user",
+    "expected": "200 — hủy thành công (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b008PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b008PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-009",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn = 0",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/0/cancel; auth=user",
+    "expected": "404 — ID không hợp lệ/không thuộc user",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/0/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-010",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn âm",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/-1/cancel; auth=user",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/-1/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-011",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn dạng thập phân",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/1.5/cancel; auth=user",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/1.5/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-012",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn là chữ cái",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/abc/cancel; auth=user",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/abc/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-013",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn chứa SQL injection",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/1%27%20OR%20%271%27%3D%271/cancel; auth=user",
+    "expected": "404 — ID không hợp lệ (SEC-05)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/1%27%20OR%20%271%27%3D%271/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-014",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn chứa XSS",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/%3Cscript%3E/cancel; auth=user",
+    "expected": "404 — ID không hợp lệ (SEC-05)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/%3Cscript%3E/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-015",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn rất lớn",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/999999999/cancel; auth=user",
+    "expected": "404 — ID không tồn tại",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/999999999/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-016",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "ID đơn không tồn tại",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/999999/cancel; auth=user",
+    "expected": "404 — ID không tồn tại",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/999999/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-017",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Thiếu ID trên đường dẫn",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/cancel; auth=user",
+    "expected": "404 — thiếu ID trên path",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-018",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "URL có query string thừa",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b018PendingId}}/cancel?debug=1; auth=user",
+    "expected": "200 — query string thừa vẫn hủy được (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b018PendingId}}/cancel?debug=1",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-019",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "URL có dấu / ở cuối",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b019ConfirmedId}}/cancel/; auth=user",
+    "expected": "200 — hủy confirmed (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b019ConfirmedId}}/cancel/",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-020",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Thiếu JWT",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b020PendingId}}/cancel; auth=none",
+    "expected": "401 — thiếu JWT (SEC-02)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "none",
+    "path": "/api/orders/{{b020PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b020PendingId}}",
+    "statusCodes": [
+      401
+    ]
+  },
+  {
+    "id": "B-021",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "JWT sai định dạng",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b021PendingId}}/cancel; auth=invalid",
+    "expected": "401/403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "invalid",
+    "path": "/api/orders/{{b021PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b021PendingId}}",
+    "statusCodes": [
+      401,
+      403
+    ]
+  },
+  {
+    "id": "B-022",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "JWT hết hạn",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b022PendingId}}/cancel; auth=invalid",
+    "expected": "401/403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "invalid",
+    "path": "/api/orders/{{b022PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b022PendingId}}",
+    "statusCodes": [
+      401,
+      403
+    ]
+  },
+  {
+    "id": "B-023",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn của user khác (IDOR)",
+    "source": "AI sinh",
+    "pre": "Đơn thuộc user2; token test user (IDOR).",
+    "request": "PUT /api/orders/{{user2OrderId}}/cancel; auth=user",
+    "expected": "403/404 — không hủy đơn người khác (FR-11)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{user2OrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{user2OrderId}}",
+    "statusCodes": [
+      403,
+      404
+    ]
+  },
+  {
+    "id": "B-024",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Dùng token admin để hủy",
+    "source": "AI sinh",
+    "pre": "Token admin trên endpoint user cancel.",
+    "request": "PUT /api/orders/{{b024PendingId}}/cancel; auth=admin",
+    "expected": "403/404 — không hủy đơn user khác (FR-11)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "admin",
+    "path": "/api/orders/{{b024PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b024PendingId}}",
+    "statusCodes": [
+      403,
+      404
+    ]
+  },
+  {
+    "id": "B-025",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Header Authorization viết thường",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b025PendingId}}/cancel; auth=lowercase",
+    "expected": "200 — HTTP header name không phân biệt hoa thường (RFC 7230)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "lowercase",
+    "path": "/api/orders/{{b025PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b025PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-026",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Thiếu tiền tố Bearer",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b026PendingId}}/cancel; auth=no-bearer",
+    "expected": "401 — thiếu tiền tố Bearer (SEC-02)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "no-bearer",
+    "path": "/api/orders/{{b026PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b026PendingId}}",
+    "statusCodes": [
+      401
+    ]
+  },
+  {
+    "id": "B-027",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Bearer token rỗng",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b027PendingId}}/cancel; auth=empty-bearer",
+    "expected": "401/403 — Bearer rỗng (SEC-02)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "empty-bearer",
+    "path": "/api/orders/{{b027PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b027PendingId}}",
+    "statusCodes": [
+      401,
+      403
+    ]
+  },
+  {
+    "id": "B-028",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Gọi bằng GET thay vì PUT",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "GET /api/orders/{{b028PendingId}}/cancel; auth=user",
+    "expected": "405 — sai phương thức HTTP",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b028PendingId}}/cancel",
+    "method": "GET",
+    "orderVar": null,
+    "statusCodes": [
+      405
+    ]
+  },
+  {
+    "id": "B-029",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Gửi body JSON không mong đợi",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b029PendingId}}/cancel; auth=user",
+    "expected": "200 — body thừa không cản hủy (api_spec §4.6)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "body": {
+      "note": "extra"
+    },
+    "path": "/api/orders/{{b029PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b029PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-030",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Kiểm tra schema phản hồi thành công",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b030PendingId}}/cancel; auth=user",
+    "expected": "200 — hủy thành công + schema hợp lệ (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b030PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b030PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-031",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Trạng thái lưu thành canceled",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b031PendingId}}/cancel; auth=user",
+    "expected": "200 — status = canceled (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b031PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b031PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-032",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Lịch sử đơn phản ánh đã hủy",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b032PendingId}}/cancel; auth=user",
+    "expected": "200 — hủy thành công (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b032PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b032PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-033",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đồng thời (race)",
+    "source": "AI sinh",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b033PendingId}}/cancel; auth=user",
+    "expected": "200 — hủy thành công (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b033PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b033PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-034",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy sau khi admin confirmed",
+    "source": "AI sinh",
+    "pre": "Admin đã confirmed.",
+    "request": "PUT /api/orders/{{b034ConfirmedId}}/cancel; auth=user",
+    "expected": "200 — user hủy confirmed (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b034ConfirmedId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b034ConfirmedId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-035",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy sau khi admin chuyển shipping",
+    "source": "AI sinh",
+    "pre": "Đơn shipping.",
+    "request": "PUT /api/orders/{{shippingOrderId}}/cancel; auth=user",
+    "expected": "400 — user không hủy shipping (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{shippingOrderId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{shippingOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "B-036",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Thử lại sau khi mất kết nối",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI không mô phỏng retry sau mất kết nối.",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b036PendingId}}/cancel; auth=user",
+    "expected": "200 — retry hủy pending (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b036PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b036PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-037",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Đường dẫn Unicode trong URL",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa thử ID đơn dạng Unicode trên path.",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/%E2%82%AC123/cancel; auth=user",
+    "expected": "404 — path/ID không hợp lệ",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/%E2%82%AC123/cancel",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "B-038",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Token Bearer có khoảng trắng thừa",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa thử Bearer token có khoảng trắng.",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b038PendingId}}/cancel; auth=bearer-space",
+    "expected": "401/403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "bearer-space",
+    "path": "/api/orders/{{b038PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b038PendingId}}",
+    "statusCodes": [
+      401,
+      403
+    ]
+  },
+  {
+    "id": "B-039",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Hủy đơn khi phản hồi chậm (timeout)",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI không kiểm tra hành vi khi phản hồi chậm.",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b039PendingId}}/cancel; auth=user",
+    "expected": "200 — hủy pending (FR-10)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "path": "/api/orders/{{b039PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b039PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "B-040",
+    "pool": "B",
+    "endpoint": "PUT /api/orders/:id/cancel",
+    "title": "Gửi body JSON khi hủy đơn",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI giả định endpoint hủy đơn không có body.",
+    "pre": "User có đơn ở trạng thái phù hợp FR-10.",
+    "request": "PUT /api/orders/{{b040PendingId}}/cancel; auth=user",
+    "expected": "200 — body thừa vẫn hủy được (api_spec §4.6)",
+    "spec": "FR-10, SEC-02; api_spec §4.6; README FR-10",
+    "auth": "user",
+    "body": {
+      "reason": "test"
+    },
+    "path": "/api/orders/{{b040PendingId}}/cancel",
+    "method": "PUT",
+    "orderVar": "{{b040PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-001",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: pending → confirmed",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c001PendingId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "200 — pending → confirmed (FR-10, FR-18)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c001PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c001PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-002",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: confirmed → shipping",
+    "source": "AI sinh",
+    "pre": "Đơn confirmed.",
+    "request": "PUT /api/admin/orders/{{c002ConfirmedId}}/status; auth=admin; body {\"status\":\"shipping\"}",
+    "expected": "200 — confirmed → shipping (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "shipping"
+    },
+    "path": "/api/admin/orders/{{c002ConfirmedId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c002ConfirmedId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-003",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: shipping → delivered",
+    "source": "AI sinh",
+    "pre": "Đơn shipping.",
+    "request": "PUT /api/admin/orders/{{c003ShippingId}}/status; auth=admin; body {\"status\":\"delivered\"}",
+    "expected": "200 — shipping → delivered (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "delivered"
+    },
+    "path": "/api/admin/orders/{{c003ShippingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c003ShippingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-004",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: pending → canceled",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c004PendingId}}/status; auth=admin; body {\"status\":\"canceled\"}",
+    "expected": "200 — pending → canceled (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "canceled"
+    },
+    "path": "/api/admin/orders/{{c004PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c004PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-005",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: confirmed → canceled",
+    "source": "AI sinh",
+    "pre": "Đơn confirmed.",
+    "request": "PUT /api/admin/orders/{{c005ConfirmedId}}/status; auth=admin; body {\"status\":\"canceled\"}",
+    "expected": "200 — confirmed → canceled (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "canceled"
+    },
+    "path": "/api/admin/orders/{{c005ConfirmedId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c005ConfirmedId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-006",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: shipping → canceled (bị từ chối)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{shippingOrderId}}/status; auth=admin; body {\"status\":\"canceled\"}",
+    "expected": "400 — shipping → canceled không hợp lệ (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "canceled"
+    },
+    "path": "/api/admin/orders/{{shippingOrderId}}/status",
+    "method": "PUT",
+    "orderVar": "{{shippingOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-007",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: delivered → canceled (bị từ chối)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{deliveredOrderId}}/status; auth=admin; body {\"status\":\"canceled\"}",
+    "expected": "400 — delivered là trạng thái kết thúc (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "canceled"
+    },
+    "path": "/api/admin/orders/{{deliveredOrderId}}/status",
+    "method": "PUT",
+    "orderVar": "{{deliveredOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-008",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: canceled → pending (bị từ chối)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{canceledOrderId}}/status; auth=admin; body {\"status\":\"pending\"}",
+    "expected": "400 — canceled → pending không hợp lệ (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "pending"
+    },
+    "path": "/api/admin/orders/{{canceledOrderId}}/status",
+    "method": "PUT",
+    "orderVar": "{{canceledOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-009",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: delivered → confirmed (bị từ chối)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{deliveredOrderId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "400 — delivered → confirmed không hợp lệ (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{deliveredOrderId}}/status",
+    "method": "PUT",
+    "orderVar": "{{deliveredOrderId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-010",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Admin: status = returned (không hợp lệ)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"returned\"}",
+    "expected": "400 — status không thuộc enum (api_spec §6.2)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "returned"
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-011",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Thiếu trường status",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {}",
+    "expected": "400 — thiếu status",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {},
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-012",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Trường status = null",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":null}",
+    "expected": "400 — status null",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": null
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-013",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Trường status rỗng",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"\"}",
+    "expected": "400 — status rỗng",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": ""
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-014",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Trường status là số",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":1}",
+    "expected": "400 — status không phải chuỗi enum",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": 1
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-015",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Trường status viết hoa lẫn lộn",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"Confirmed\"}",
+    "expected": "400 — status sai enum (case-sensitive)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "Confirmed"
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-016",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Trường status có khoảng trắng",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\" confirmed \"}",
+    "expected": "400 — status có khoảng trắng",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": " confirmed "
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-017",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Status chứa SQL injection",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"'; DROP TABLE orders;--\"}",
+    "expected": "400 — status SQL injection không hợp lệ (SEC-05)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "'; DROP TABLE orders;--"
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-018",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Status chứa XSS",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"<script>x</script>\"}",
+    "expected": "400 — status XSS không hợp lệ (SEC-05)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "<script>x</script>"
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-019",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Gửi thêm trường lạ trong body",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"confirmed\",\"extra_field\":\"ignored\"}",
+    "expected": "200 — trường lạ bị bỏ qua, status hợp lệ (api_spec §6.2)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed",
+      "extra_field": "ignored"
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-020",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Thiếu JWT",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c001PendingId}}/status; auth=none; body {\"status\":\"confirmed\"}",
+    "expected": "401 — thiếu JWT (SEC-02)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "none",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c001PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c001PendingId}}",
+    "statusCodes": [
+      401
+    ]
+  },
+  {
+    "id": "C-021",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "JWT sai định dạng",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c001PendingId}}/status; auth=invalid; body {\"status\":\"confirmed\"}",
+    "expected": "403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "invalid",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c001PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c001PendingId}}",
+    "statusCodes": [
+      403
+    ]
+  },
+  {
+    "id": "C-022",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "JWT hết hạn",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c001PendingId}}/status; auth=invalid; body {\"status\":\"confirmed\"}",
+    "expected": "403 — token không hợp lệ (SEC-02)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "invalid",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c001PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c001PendingId}}",
+    "statusCodes": [
+      403
+    ]
+  },
+  {
+    "id": "C-023",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Token user thường bị từ chối (SEC-03)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{authorizationOrderId}}/status; auth=user; body {\"status\":\"confirmed\"}",
+    "expected": "403 — user không phải admin (SEC-03, FR-12)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "user",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{authorizationOrderId}}/status",
+    "method": "PUT",
+    "orderVar": "{{authorizationOrderId}}",
+    "statusCodes": [
+      403
+    ]
+  },
+  {
+    "id": "C-024",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Token user khác bị từ chối",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{authorizationOrderId}}/status; auth=user; body {\"status\":\"confirmed\"}",
+    "expected": "403 — user không phải admin (SEC-03, FR-12)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "user",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{authorizationOrderId}}/status",
+    "method": "PUT",
+    "orderVar": "{{authorizationOrderId}}",
+    "statusCodes": [
+      403
+    ]
+  },
+  {
+    "id": "C-025",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "ID đơn = 0",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/0/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/0/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-026",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "ID đơn âm",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/-1/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/-1/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-027",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "ID đơn dạng thập phân",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/1.5/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — ID thập phân không hợp lệ",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/1.5/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-028",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "ID đơn là chữ cái",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/abc/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/abc/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-029",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "ID đơn chứa SQL injection",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/1%27%20OR%201=1/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — ID không hợp lệ",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/1%27%20OR%201=1/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-030",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "ID đơn không tồn tại",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/999999/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — order không tồn tại",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/999999/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-031",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Thiếu ID trên đường dẫn",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "404 — thiếu ID",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/status",
+    "method": "PUT",
+    "orderVar": null,
+    "statusCodes": [
+      404
+    ]
+  },
+  {
+    "id": "C-032",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Gọi bằng GET thay vì PUT",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "GET /api/admin/orders/{{c001PendingId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "405 — sai phương thức HTTP",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c001PendingId}}/status",
+    "method": "GET",
+    "orderVar": null,
+    "statusCodes": [
+      405
+    ]
+  },
+  {
+    "id": "C-033",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Kiểm tra schema/message phản hồi",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c033PendingId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "200 — pending → confirmed (FR-18)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c033PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c033PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-034",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Trạng thái lưu đúng sau chuyển tiếp",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c034PendingId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "200 — trạng thái lưu đúng (FR-18)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c034PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c034PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-035",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Cập nhật trạng thái đồng thời (race)",
+    "source": "AI sinh",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c035PendingId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "200 — chuyển trạng thái hợp lệ (FR-18)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c035PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c035PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  },
+  {
+    "id": "C-036",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Chuyển pending → confirmed hai lần liên tiếp",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa thử chuyển tiếp trùng lặp sau khi đã confirmed.",
+    "pre": "Đã confirmed; gọi confirmed lần 2.",
+    "request": "PUT /api/admin/orders/{{c036ConfirmedId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "400 — chuyển tiếp trùng/không hợp lệ (FR-10)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c036ConfirmedId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c036ConfirmedId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-037",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Token admin có khoảng trắng thừa",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa thử token admin có khoảng trắng.",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{c037PendingId}}/status; auth=bearer-space; body {\"status\":\"confirmed\"}",
+    "expected": "401/403 — token admin không hợp lệ (SEC-02)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "bearer-space",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c037PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c037PendingId}}",
+    "statusCodes": [
+      401,
+      403
+    ]
+  },
+  {
+    "id": "C-038",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Body là mảng JSON thay vì object",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa gửi body dạng mảng JSON.",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body [\"confirmed\"]",
+    "expected": "400 — body phải là object {\"status\":...}",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": [
+      "confirmed"
+    ],
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-039",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Giá trị status quá dài",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa thử chuỗi status vượt độ dài enum.",
+    "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}",
+    "expected": "400 — status quá dài/không thuộc enum",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
+    "method": "PUT",
+    "orderVar": "{{adminBodyTestId}}",
+    "statusCodes": [
+      400
+    ]
+  },
+  {
+    "id": "C-040",
+    "pool": "C",
+    "endpoint": "PUT /api/admin/orders/:id/status",
+    "title": "Đổi trạng thái ngay sau khi tạo đơn bằng checkout",
+    "source": "Sinh viên bổ sung",
+    "gapNote": "AI chưa gắn chặt chuyển trạng thái ngay sau fixture checkout.",
+    "pre": "Đơn pending vừa checkout.",
+    "request": "PUT /api/admin/orders/{{c040PendingId}}/status; auth=admin; body {\"status\":\"confirmed\"}",
+    "expected": "200 — pending → confirmed ngay sau checkout (FR-18)",
+    "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
+    "auth": "admin",
+    "body": {
+      "status": "confirmed"
+    },
+    "path": "/api/admin/orders/{{c040PendingId}}/status",
+    "method": "PUT",
+    "orderVar": "{{c040PendingId}}",
+    "statusCodes": [
+      200
+    ]
+  }
+]

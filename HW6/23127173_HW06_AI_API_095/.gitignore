@@ -1,0 +1,20 @@
+# Local secrets and machine-specific Postman environments.
+api-testing/postman/environments/*.local.json
+api-testing/postman/environments/*.private.json
+api-testing/postman/environments/*secret*.json
+*.env
+*.env.*
+!.env.example
+
+# Dependencies, package-manager diagnostics and temporary Newman artifacts.
+api-testing/node_modules/
+npm-debug.log*
+api-testing/newman/tmp/
+api-testing/newman/*.json
+evidence/**/capture-html/
+
+# OS/editor noise and final archive produced only at packaging time.
+.DS_Store
+Thumbs.db
+*.tmp
+*.zip

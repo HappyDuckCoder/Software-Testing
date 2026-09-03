@@ -1,0 +1,5 @@
+{
+  "markdown-pdf.outputDirectory": "doc/pdf",
+  "markdown-pdf.displayHeaderFooter": false,
+  "markdown-pdf.emoji": true
+}

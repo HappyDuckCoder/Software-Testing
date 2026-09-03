@@ -1,0 +1,23 @@
+{
+  "name": "hw6-api-testing",
+  "private": true,
+  "scripts": {
+    "generate:matrix": "node ../test-cases/scripts/generate-matrix.mjs",
+    "generate:collection": "node scripts/generate-collection.mjs",
+    "generate:all": "npm run generate:matrix && npm run generate:collection",
+    "test": "node scripts/run-newman.mjs",
+    "test:core": "npm run test",
+    "test:full120": "npm run test",
+    "test:ci-pass": "node scripts/run-newman-ci-pass.mjs",
+    "test:ci-fail": "node scripts/run-newman-ci-fail.mjs",
+    "evidence:postman": "node scripts/generate-postman-evidence.mjs",
+    "generate:excel": "node ../test-cases/scripts/generate-excel-summary.mjs",
+    "export:report-pdf": "node ../doc/pdf/export-main-report.mjs"
+  },
+  "devDependencies": {
+    "md-to-pdf": "^5.2.5",
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1",
+    "xlsx": "^0.18.5"
+  }
+}

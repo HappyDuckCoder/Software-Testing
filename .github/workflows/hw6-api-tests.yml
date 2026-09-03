@@ -1,0 +1,68 @@
+name: HW6 EShop API tests
+
+on:
+  push:
+    branches: [homework6]
+    paths:
+      - 'HW6/**'
+      - '.github/workflows/hw6-api-tests.yml'
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'full-pass = 182 req, job xanh | full-fail = 182 req, ~12 assert fail'
+        required: true
+        type: choice
+        options:
+          - full-pass
+          - full-fail
+        default: full-fail
+
+jobs:
+  newman:
+    name: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.suite || 'full-pass' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Checkout EShop SUT
+        uses: actions/checkout@v4
+        with:
+          repository: ttbhanh/eshop-sut
+          path: eshop-sut
+      - name: Install SUT and Newman dependencies
+        run: |
+          npm ci --prefix eshop-sut/backend
+          npm ci --prefix HW6/23127173_HW06_AI_API_095/api-testing
+      - name: Start SUT and wait for health check
+        run: |
+          node eshop-sut/backend/server.js > eshop.log 2>&1 &
+          for i in {1..20}; do curl -fsS http://127.0.0.1:3000/api/products && break; sleep 1; done
+      - name: Resolve suite mode
+        id: suite
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.suite }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=full-pass" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Generate collection
+        working-directory: HW6/23127173_HW06_AI_API_095/api-testing
+        env:
+          COLLECTION_MODE: ${{ steps.suite.outputs.mode == 'full-fail' && 'oracle' || 'observation' }}
+        run: node scripts/generate-collection.mjs
+      - name: Run Newman full pass
+        if: steps.suite.outputs.mode == 'full-pass'
+        working-directory: HW6/23127173_HW06_AI_API_095/api-testing
+        run: node scripts/run-newman-ci-pass.mjs
+      - name: Run Newman full fail
+        if: steps.suite.outputs.mode == 'full-fail'
+        working-directory: HW6/23127173_HW06_AI_API_095/api-testing
+        run: node scripts/run-newman-ci-fail.mjs
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hw6-newman-${{ steps.suite.outputs.mode }}
+          path: HW6/23127173_HW06_AI_API_095/api-testing/newman
