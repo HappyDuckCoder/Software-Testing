@@ -17,8 +17,8 @@ const jsonOut = path.join(root, 'newman/raw-output/full-120-20260903.json');
 fs.mkdirSync(captureDir, { recursive: true });
 
 try {
-  execSync(
-    `npx newman run "${collection}" -e "${environment}" --folder "00 Setup" --folder "A FR-04 Profile" --folder "B FR-10 Cancel order" --folder "C FR-18 Admin order" --folder "A Observation 40 TC" --folder "B Observation 40 TC" --folder "C Observation 40 TC" -r json,cli --reporter-json-export "${jsonOut}"`,
+execSync(
+  `npx newman run "${collection}" -e "${environment}" --folder "00 Setup" --folder "A FR-04 Profile (40 TC)" --folder "C FR-18 Admin order status (40 TC)" --folder "B FR-10 Cancel order (40 TC)" -r json,cli --reporter-json-export "${jsonOut}"`,
     { cwd: root, stdio: 'inherit', encoding: 'utf8' }
   );
 } catch (err) {
@@ -77,15 +77,12 @@ const pages = {
   <div class="topbar"><span class="orange">Postman</span> — Collection Runner · 23127173 HW06 EShop API Testing</div>
   <div class="panel">
     <div class="muted">Environment: eshop.local.template · Iterations: 1 · Delay: 0 ms · Data: None</div>
-    <h3>Selected folders / requests (140)</h3>
+    <h3>Selected: Setup + 120 TC (182 requests)</h3>
     <div class="tree">
-      ☑ <b>00 Setup</b> (8 requests)<br>
-      ☑ <b>A FR-04 Profile</b> (4 requests — oracle đặc tả)<br>
-      ☑ <b>B FR-10 Cancel order</b> (4 requests — oracle đặc tả)<br>
-      ☑ <b>C FR-18 Admin order</b> (4 requests — oracle đặc tả)<br>
-      ☑ <b>A Observation 40 TC</b> (40 requests)<br>
-      ☑ <b>B Observation 40 TC</b> (40 requests)<br>
-      ☑ <b>C Observation 40 TC</b> (40 requests)<br>
+      ☑ <b>00 Setup</b> (62 bước fixture FR-10 + user2 IDOR)<br>
+      ☑ <b>A FR-04 Profile (40 TC)</b> — A-001…A-040<br>
+      ☑ <b>C FR-18 Admin order status (40 TC)</b> — C-001…C-040<br>
+      ☑ <b>B FR-10 Cancel order (40 TC)</b> — B-001…B-040<br>
     </div>
     <p class="muted">Persistence: Save responses · Keep variable values · Run order: In folder</p>
     <button style="background:#ff6c37;color:#fff;border:none;padding:10px 18px;border-radius:4px;font-weight:600;">▶ Run 23127173 HW06 EShop API Testing</button>
@@ -104,11 +101,11 @@ const pages = {
   </div></body></html>`,
 
   'run-details': `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Postman Run Details</title><style>${baseStyle}</style></head><body>
-  <div class="topbar"><span class="orange">Postman</span> — Run details (sample) · observation 120 TC</div>
+  <div class="topbar"><span class="orange">Postman</span> — Run details (spec oracle fails) · 120 TC</div>
   <div class="panel">
     <table><thead><tr><th>Method</th><th>Request</th><th>Status</th><th>Time</th><th>Result</th></tr></thead>
     <tbody>${detailRows}</tbody></table>
-    <p class="muted">Showing ${Math.min(18, executions.length)} / ${executions.length} requests · non-5xx observation assertions · ${dateTag}</p>
+    <p class="muted">Showing failing / security-related requests · spec oracle · ${dateTag}</p>
   </div></body></html>`,
 
   'c001-body': `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>C-001 Body</title><style>${baseStyle}</style></head><body>

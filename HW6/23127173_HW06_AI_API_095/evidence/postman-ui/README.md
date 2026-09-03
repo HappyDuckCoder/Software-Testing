@@ -1,12 +1,10 @@
-# Postman runner evidence
+# Postman UI evidence (03/09/2026)
 
-Ảnh **03/09/2026** — collection assert oracle đặc tả. Run full: **141 assertion, 5 failed** (khớp Newman).
-
-| No. | Filename | Nội dung |
+| # | File | Nội dung |
 | --- | --- | --- |
-| 1 | `postman-runner-config-20260903.png` | Setup + core + 120 observation (140 req) |
-| 2 | `postman-run-results-20260903.png` | Summary passed/failed |
-| 3 | `postman-run-details-negative-cases-20260903.png` | Chi tiết case FAIL (SEC-06, FR-10, SEC-03) |
+| 1 | `postman-runner-config-20260903.png` | Setup 62 + A/C/B 120 TC (182 req) |
+| 2 | `postman-run-results-20260903.png` | Summary passed/failed (spec oracle) |
+| 3 | `postman-run-details-negative-cases-20260903.png` | Chi tiết case FAIL (SEC-06, FR-10, SEC-03, FR-04…) |
 | 4–5 | `postman-c001-request-body/headers-20260903.png` | Traceability C-001 |
 
-Tái lập: `cd api-testing && node scripts/generate-postman-evidence.mjs`
+Sinh bằng `npm run evidence:postman` (Newman JSON + HTML helper + Playwright).

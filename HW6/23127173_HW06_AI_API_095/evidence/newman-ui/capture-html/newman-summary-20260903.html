@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Newman full 120 spec oracle</title>
+  <style>
+    body { font-family: Consolas, 'Segoe UI', monospace; background: #0c0c0c; color: #cccccc; margin: 16px; font-size: 13px; line-height: 1.5; }
+    .title { color: #569cd6; font-weight: bold; }
+    .pass { color: #4ec9b0; }
+    .fail { color: #f44747; }
+    .dim { color: #808080; }
+    table { border-collapse: collapse; margin-top: 12px; width: 100%; }
+    td, th { border: 1px solid #333; padding: 6px 10px; text-align: left; }
+    th { background: #1e1e1e; }
+  </style>
+</head>
+<body>
+  <div class="title">newman run 23127173_HW06_EShop_API.postman_collection.json</div>
+  <div class="dim">03/09/2026 · host 127.0.0.1:3000 · X-Student-Id: 23127173 · spec oracle</div>
+  <br>
+  <table>
+    <tr><th></th><th>executed</th><th>failed</th></tr>
+    <tr><td>requests</td><td>182</td><td>0</td></tr>
+    <tr><td>assertions</td><td>182</td><td class="fail">12</td></tr>
+  </table>
+  <br>
+  <div class="fail">12 assertion failures (spec oracle — SUT vi phạm đặc tả):</div>
+  <div>A-021, A-022, A-023, A-025 · FR-04 SĐT</div>
+  <div>A-031, A-032 · SEC-06</div>
+  <div>A-034 · Content-Type</div>
+  <div>B-004 · FR-10 shipping cancel</div>
+  <div>B-028 · HTTP 405</div>
+  <div>C-023, C-024 · SEC-03</div>
+  <div>C-032 · HTTP 405</div>
+  <br>
+  <div class="pass">170 assertions passed · Setup 62 + TC 120 · folder order A → C → B</div>
+</body>
+</html>

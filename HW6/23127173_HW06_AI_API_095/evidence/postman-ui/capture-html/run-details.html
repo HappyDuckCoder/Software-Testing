@@ -16,26 +16,22 @@
   .tab { display: inline-block; padding: 8px 12px; border-bottom: 2px solid #ff6c37; font-weight: 600; }
   .kv { font-family: Consolas, monospace; font-size: 13px; }
 </style></head><body>
-  <div class="topbar"><span class="orange">Postman</span> — Run details (sample) · observation 120 TC</div>
+  <div class="topbar"><span class="orange">Postman</span> — Run details (spec oracle fails) · 120 TC</div>
   <div class="panel">
     <table><thead><tr><th>Method</th><th>Request</th><th>Status</th><th>Time</th><th>Result</th></tr></thead>
-    <tbody><tr class="fail"><td>PUT</td><td>A-004 Reject role mass assignment (SEC-06)</td><td>200</td><td>3 ms</td><td>FAIL</td></tr>
-<tr class="fail"><td>PUT</td><td>B-004 Reject cancellation after shipping</td><td>200</td><td>14 ms</td><td>FAIL</td></tr>
-<tr class="fail"><td>PUT</td><td>C-003 User token denied admin status update (SEC-03)</td><td>200</td><td>19 ms</td><td>FAIL</td></tr>
-<tr class="pass"><td>PUT</td><td>A-004 FR-04 observation (verify oracle)</td><td>200</td><td>12 ms</td><td>PASS</td></tr>
-<tr class="fail"><td>PUT</td><td>A-031 FR-04 observation (verify oracle)</td><td>200</td><td>17 ms</td><td>FAIL</td></tr>
-<tr class="fail"><td>PUT</td><td>A-032 FR-04 observation (verify oracle)</td><td>200</td><td>3 ms</td><td>FAIL</td></tr>
-<tr class="pass"><td>PUT</td><td>B-001 FR-10 observation (verify oracle)</td><td>404</td><td>5 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-002 FR-10 observation (verify oracle)</td><td>404</td><td>4 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-003 FR-10 observation (verify oracle)</td><td>404</td><td>4 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-004 FR-10 observation (verify oracle)</td><td>400</td><td>4 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-005 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-006 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-007 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-008 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-009 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-010 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-011 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>B-012 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr></tbody></table>
-    <p class="muted">Showing 18 / 140 requests · non-5xx observation assertions · 20260903</p>
+    <tbody><tr class="pass"><td>PUT</td><td>A-004 Tên tiếng Việt có dấu</td><td>200</td><td>11 ms</td><td>PASS</td></tr>
+<tr class="fail"><td>PUT</td><td>A-021 SĐT quá ngắn</td><td>200</td><td>13 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-022 SĐT quá dài</td><td>200</td><td>13 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-023 SĐT chứa chữ cái</td><td>200</td><td>14 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-025 SĐT chỉ có khoảng trắng</td><td>200</td><td>23 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-031 Gán trường role từ client (SEC-06)</td><td>200</td><td>3 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-032 Gán trường isAdmin từ client</td><td>200</td><td>4 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-034 Thiếu header Content-Type</td><td>200</td><td>3 ms</td><td>FAIL</td></tr>
+<tr class="pass"><td>PUT</td><td>C-003 Admin: shipping → delivered</td><td>200</td><td>36 ms</td><td>PASS</td></tr>
+<tr class="fail"><td>PUT</td><td>C-023 Token user thường bị từ chối (SEC-03)</td><td>200</td><td>14 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>C-024 Token user khác bị từ chối</td><td>400</td><td>4 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>GET</td><td>C-032 Gọi bằng GET thay vì PUT</td><td>404</td><td>2 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>B-004 Hủy đơn đang shipping</td><td>200</td><td>14 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>GET</td><td>B-028 Gọi bằng GET thay vì PUT</td><td>404</td><td>2 ms</td><td>FAIL</td></tr></tbody></table>
+    <p class="muted">Showing failing / security-related requests · spec oracle · 20260903</p>
   </div></body></html>

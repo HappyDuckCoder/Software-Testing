@@ -54,17 +54,18 @@
 | **AI-020** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «không chạy smoke, chạy real 120 case Newman, chụp minh chứng mới» | Restart EShop; Newman `--folder "00 Setup"` + 3 folder observation (120 TC): `full-120-20260903.txt`, HTML `full-120/report.html`, ảnh `newman-full-120-terminal/report-20260903.png`; script `npm run test:full120`. Kết quả: **128 req, 128 assertion, 0 fail**, 11.9s, host `127.0.0.1:3000`, `X-Student-Id: 23127173`. | INCOMPLETE | Run thật trên SUT local; thay minh chứng observation cũ (01/09). Observation vẫn chỉ assert non-5xx — chưa map oracle từng ID trong ma trận. | SV tiếp tục map assertion theo `execution-mapping.md`; không dùng 128 pass để khẳng định đủ oracle. |
 | **AI-021** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «commit Newman; làm tương tự Postman cap minh chứng mới; cập nhật audit; commit lại» | Commit `08e9730` (Newman full 120). Restart EShop; script `generate-postman-evidence.mjs` + `npm run evidence:postman`: Newman JSON `full-120-20260903.json`, 5 PNG `postman-*-20260903.png` (128 passed, 12.1s). Xóa ảnh 01/09. | INCOMPLETE | Kết quả run thật trên cùng collection Postman. Ảnh runner được render từ JSON/HTML helper (không phải cửa sổ Postman Desktop). Ảnh 4–5 vẫn là config traceability. | Nếu đề bắt buộc screenshot Postman Desktop gốc, SV chụp lại Runner trên app; giữ script + JSON để đối chiếu. |
 | **AI-022** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «vi phạm đặc tả thì fail; cập nhật TC, minh chứng, audit, commit» | Bỏ dual-mode baseline/compliance; core assert spec (400/403); observation A-031/A-032/B-004 map SEC-06/FR-10; `npm run test:core` **3 fail**, `test:full120` **5 fail**; cập nhật bug-report, ma trận, raw/HTML, ảnh Newman/Postman 03/09. | VALID | Fail phản ánh đúng vi phạm đặc tả trên SUT; bug report khớp Newman. | Tiếp tục map oracle từng ID observation; tạo GitHub Issue. |
+| **AI-023** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «review lại theo spec, thiết kế lại TC, cập nhật minh chứng/audit/commit» | Viết lại `oracle-utils.mjs` (map đủ A/B/C-001…040); `generate-collection.mjs` (62 setup fixture riêng, user2 IDOR, folder C trước B); ma trận + `oracle-execution.json`; Newman **182 req / 182 assertion / 12 fail** (6 bug spec); raw `full-120-spec-20260903.txt`, HTML, PNG Newman/Postman 03/09. | VALID | Oracle bám `api_specification.md` + README FR-04/10/18/SEC; ID Postman trùng ma trận; fail do SUT không phải fixture xung đột. | Excel từng ID; GitHub Issue; Postman Desktop gốc nếu đề bắt buộc. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 22 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 15 | 68% |
+| Tổng artifact AI sinh đã audit | 23 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 16 | 70% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 32% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 30% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006 (assertion chưa map hết 120 ID), AI-009/AI-012 (Postman evidence — AI-021), AI-016 (observation chưa map hết), AI-020 (run cũ observation-only — đã sửa AI-022), AI-021 (Postman PNG helper). AI-022: core oracle đặc tả + fail đúng 3 bug.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006 (assertion chưa map hết 120 ID — đã xử lý AI-023), AI-009/AI-012 (Postman evidence — AI-021), AI-016 (observation cũ), AI-020 (observation-only — đã thay AI-023), AI-021 (Postman PNG helper). AI-022/AI-023: oracle đặc tả + fail đúng bug trên Newman.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 
