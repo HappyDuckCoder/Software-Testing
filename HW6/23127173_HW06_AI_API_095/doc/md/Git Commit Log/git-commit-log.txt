@@ -2,6 +2,7 @@
 
 Nguồn: `git log --oneline -- HW6/23127173_HW06_AI_API_095` · cập nhật 03/09/2026.
 
+5264f69 Them Excel test summary, main report PDF styled, dong bo doc/audit AI-035..037.
 a245b1e Thay Postman evidence bang 6 anh Desktop goc va dong bo doc/audit.
 a7bea2d Update API testing artifacts and reports
 6d9bd8e Review TC lan 2: sua C-017/18/19, bug report co Postman, test-case-review.
