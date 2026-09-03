@@ -1,40 +1,46 @@
-# HW06-AI API Testing - Submission README
+# HW06-AI — Kiểm thử API EShop
 
 | Mục | Giá trị |
 | --- | --- |
 | Họ tên | Trần Hải Đức |
 | MSSV | 23127173 |
-| Bài tập | HW06-AI - API Testing on EShop |
-| SUT | EShop (`http://localhost:3000`) |
-| Tên ZIP | `23127173_HW06_AI_API_095.zip` |
-| Điểm tự đánh giá | 095/100 (tạm thời) |
-| Trạng thái | Có Postman Runner, Newman local và GitHub Actions baseline evidence; các deliverable còn thiếu được liệt kê tại `checklist.md`. |
+| SUT | EShop — `http://localhost:3000` |
+| ZIP nộp | `23127173_HW06_AI_API_095.zip` |
+| Tự đánh giá | 095/100 (tạm) |
 
-## API dự kiến
+## Trạng thái nhanh
 
-| Pool | Feature/API dự kiến | Ý nghĩa API | Lý do |
-| --- | --- | --- | --- |
-| A | FR-04 - `PUT /api/users/me` | Cập nhật thông tin hồ sơ của chính người dùng đã đăng nhập. | Dùng lại nền tảng HW2; có domain partitions cho tên, địa chỉ, số điện thoại và kiểm soát JWT/ownership. |
-| B | FR-10 - `PUT /api/orders/:id/cancel` | Hủy một đơn thuộc người dùng hiện tại và chuyển trạng thái sang `canceled` nếu thỏa điều kiện. | Kiểm thử transition/cancellation của đơn hàng. |
-| C | FR-18 - `PUT /api/admin/orders/:id/status` | Admin cập nhật trạng thái của một đơn, ví dụ `pending` sang `confirmed`. | Có role authorization, IDOR và state transition phía admin. |
+| Đã xong | Chưa xong |
+| --- | --- |
+| 120 TC (35 AI + 5 SV × 3 API), oracle theo **đặc tả** | Assertion Postman cho từng ID |
+| Postman + Newman + CI baseline | GitHub Issues, CI fail, Excel, PDF/ZIP |
+| 3 bug compliance (SEC-06, FR-10, SEC-03) | Diagram generator tự vẽ |
 
-Ba endpoint trên không trùng bộ của Vân: `POST /register`, `GET /api/products/:id`, `POST /api/checkout`. Phạm vi này đã được dùng để thực thi suite HW06; cần xác nhận lại với nhóm nếu danh sách phân công thay đổi.
+Chi tiết: `checklist.md`, `test-cases/test-case-matrix.md`.
 
-## Cấu trúc
+## Ba API
+
+| Pool | Endpoint | Ý nghĩa |
+| --- | --- | --- |
+| A | `PUT /api/users/me` | Cập nhật hồ sơ user (FR-04) |
+| B | `PUT /api/orders/:id/cancel` | Hủy đơn (FR-10) |
+| C | `PUT /api/admin/orders/:id/status` | Admin đổi trạng thái (FR-18) |
+
+Không trùng Vân: `/register`, `/api/products/:id`, `POST /api/checkout`.
+
+## Cấu trúc thư mục
 
 ```text
 23127173_HW06_AI_API_095/
-|- api-testing/             # Postman collection, environment, data, Newman output
-|- ci-cd/                   # workflow và báo cáo CI/CD
-|- doc/md/                  # main report, audit, critique, commit log
-|- doc/pdf/                 # PDF xuất cuối cùng
-|- evidence/                # ảnh header, Postman, Newman, CI/CD, issue thật
-|- issues/                  # bug report Markdown
-|- test-cases/              # workbook Excel và test summary
-|- agent-skills/            # design/pseudocode của test generator
-|- scripts/                 # hướng dẫn thực thi/đóng gói
-|- roadmap.md
-`- checklist.md
+├── api-testing/      # Postman, Newman
+├── ci-cd/
+├── doc/md/           # báo cáo, AI audit
+├── evidence/
+├── issues/
+├── test-cases/       # ma trận 120 TC + CSV
+├── agent-skills/
+├── checklist.md
+└── roadmap.md
 ```
 
-Không thay thế raw Newman output, ảnh header, issue screenshot, pipeline link hoặc sơ đồ tự vẽ bằng nội dung sinh bởi AI.
+Evidence thật (Newman, ảnh Postman/CI) không được thay bằng nội dung AI sinh.

@@ -1,126 +1,126 @@
-# Executable mapping for HW06 test cases
+# Ánh xạ thực thi test case HW06
 
-Rows marked “requirement oracle” are deliberately expected to fail in compliance mode until the SUT defect is fixed. Rows with ambiguous validations remain `INCOMPLETE` in the audit and require student verification before assertion finalization.
+Bảng dưới map từng ID sang điều kiện tiên quyết, request và **kết quả mong đợi theo đặc tả**. Các dòng ghi *oracle đặc tả* là case compliance — có thể fail trên SUT hiện tại nếu backend chưa đúng FR/SEC.
 
-| ID | Fixture/precondition | Request mapping | Expected status/oracle | Student Verify |
+| ID | Điều kiện trước khi chạy | Request | Kết quả mong đợi (theo spec) | Tham chiếu đặc tả |
 | --- | --- | --- | --- | --- |
-| A-001 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-002 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-003 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-004 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-005 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-006 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-007 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-008 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-009 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-010 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-011 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-012 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-013 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-014 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-015 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-016 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-017 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-018 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-019 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-020 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-021 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-022 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-023 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-024 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-025 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-026 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-027 | Login user unless auth-negative case. | PUT /api/users/me; No Authorization header; mutate field named by case. | 401 |  |
-| A-028 | Login user unless auth-negative case. | PUT /api/users/me; Bearer invalid/expired JWT; mutate field named by case. | 403 |  |
-| A-029 | Login user unless auth-negative case. | PUT /api/users/me; Bearer invalid/expired JWT; mutate field named by case. | 403 |  |
-| A-030 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-031 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 400 requirement oracle (SUT observed 200) |  |
-| A-032 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 400 requirement oracle (SUT observed 200) |  |
-| A-033 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-034 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-035 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-036 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-037 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-038 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-039 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| A-040 | Login user unless auth-negative case. | PUT /api/users/me; Bearer {{userToken}}; mutate field named by case. | 200 observed baseline |  |
-| B-001 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-002 | Fresh order already canceled. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 400 |  |
-| B-003 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-004 | Fresh order transitioned pending→confirmed→shipping. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 400 requirement oracle (SUT observed 200) |  |
-| B-005 | Fresh delivered order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 400 |  |
-| B-006 | Fresh order already canceled. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 400 |  |
-| B-007 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-008 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-009 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-010 | Use invalid/nonexistent order id. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 404 |  |
-| B-011 | Use invalid/nonexistent order id. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 404 |  |
-| B-012 | Use invalid/nonexistent order id. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 404 |  |
-| B-013 | Use invalid/nonexistent order id. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 404 |  |
-| B-014 | Use invalid/nonexistent order id. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 404 |  |
-| B-015 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-016 | Use invalid/nonexistent order id. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 404 |  |
-| B-017 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-018 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-019 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-020 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; No Authorization header. | 401 |  |
-| B-021 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer invalid/expired JWT. | 403 |  |
-| B-022 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer invalid/expired JWT. | 403 |  |
-| B-023 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-024 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-025 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-026 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-027 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-028 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-029 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-030 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-031 | Fresh order already canceled. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 400 |  |
-| B-032 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-033 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-034 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-035 | Fresh order transitioned pending→confirmed→shipping. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 400 requirement oracle (SUT observed 200) |  |
-| B-036 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-037 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-038 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-039 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| B-040 | Fresh user-owned pending/confirmed order. | PUT /api/orders/{id}/cancel; Bearer {{userToken}}. | 200 |  |
-| C-001 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-002 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-003 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-004 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-005 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-006 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-007 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-008 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-009 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-010 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-011 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-012 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-013 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-014 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-015 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-016 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-017 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-018 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-019 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-020 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; No Authorization header; body {status: target}. | 401 |  |
-| C-021 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer invalid/expired JWT; body {status: target}. | 403 |  |
-| C-022 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer invalid/expired JWT; body {status: target}. | 403 |  |
-| C-023 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{userToken}}; body {status: target}. | 403 requirement oracle (SUT observed 200) |  |
-| C-024 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{userToken}}; body {status: target}. | 403 requirement oracle (SUT observed 200) |  |
-| C-025 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-026 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-027 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-028 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-029 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-030 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-031 | Use invalid/nonexistent order id. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 404 |  |
-| C-032 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-033 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-034 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-035 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-036 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-037 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 400 |  |
-| C-038 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-039 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
-| C-040 | Create fresh order and move it to the source state named by case. | PUT /api/admin/orders/{id}/status; Bearer {{adminToken}}; body {status: target}. | 200 |  |
+| A-001 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-002 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-003 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-004 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-005 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-006 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-007 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-008 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-009 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200/400 — dữ liệu được lưu an toàn, không lỗi SQL (SEC-05) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-010 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200/400 — dữ liệu được lưu an toàn, không lỗi SQL (SEC-05) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-011 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-012 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-013 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-014 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-015 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-016 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200/400 — dữ liệu được lưu an toàn, không lỗi SQL (SEC-05) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-017 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200/400 — dữ liệu được lưu an toàn, không lỗi SQL (SEC-05) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-018 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-019 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-020 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-021 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-022 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-023 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-024 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-025 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400 — SĐT không hợp lệ (FR-04: 10–11 chữ số, bắt đầu bằng 0) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-026 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-027 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Không gửi Authorization; body theo mô tả case. | 401 — thiếu token (SEC-02) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-028 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer <token không hợp lệ/hết hạn>; body theo mô tả case. | 403 — token không hợp lệ (SEC-02) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-029 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer <token không hợp lệ/hết hạn>; body theo mô tả case. | 403 — token không hợp lệ (SEC-02) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-030 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 403 — không sửa được hồ sơ người khác (FR-04) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-031 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400 — không cho client đổi role (SEC-06, FR-04) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-032 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400 — không cho client đổi role (SEC-06, FR-04) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-033 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — cập nhật thành công (FR-04, api_spec §2.2) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-034 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 400/415 — thiếu hoặc sai Content-Type | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-035 | Đăng nhập user test@eshop.com, có JWT hợp lệ. | PUT /api/users/me; Authorization: Bearer {{userToken}}; body theo mô tả case. | 200 — body có message thành công theo đặc tả | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-036 | User A đã đăng nhập. | PUT /api/users/me; Bearer {{userToken}}; body {} | 200 — không đổi field nào hoặc 400 nếu server từ chối body rỗng (đặc tả §2.2 chỉ liệt kê field tùy chọn) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-037 | Ba tài khoản A, B, C đều có JWT riêng. | Gửi 3 PUT /api/users/me song song, mỗi token chỉ sửa hồ sơ của mình. | 200 cho từng user — không ghi đè dữ liệu user khác (FR-04, SEC-02) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-038 | User A đổi mật khẩu qua flow reset/forgot, login lại. | PUT /api/users/me với token mới sau đổi mật khẩu. | 200 — cập nhật profile bình thường với session mới (FR-04) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-039 | User A đã đăng nhập. | PUT /api/users/me; name chứa emoji 😀 | 200 — lưu Unicode/emoji trong tên (đặc tả không cấm) | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| A-040 | User A đã đăng nhập. | PUT /api/users/me; shipping_address chứa emoji 🏠 | 200 — lưu Unicode/emoji trong địa chỉ | FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04 |
+| B-001 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-002 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-003 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-004 | Đơn đã pending → confirmed → shipping. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 400 — user không được hủy khi shipping (FR-10, README dòng 161) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-005 | Đơn ở trạng thái final hoặc đã canceled. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 400 — không hủy được trạng thái kết thúc (FR-10) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-006 | Đơn ở trạng thái final hoặc đã canceled. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 400 — không hủy được trạng thái kết thúc (FR-10) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-007 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-008 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-009 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-010 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-011 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-012 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-013 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-014 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-015 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-016 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 404 — ID không hợp lệ hoặc không thuộc user | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-017 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-018 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-019 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-020 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Không gửi Authorization. | 401 (SEC-02) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-021 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer <token không hợp lệ>. | 401/403 — token không hợp lệ (SEC-02) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-022 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer <token không hợp lệ>. | 401/403 — token không hợp lệ (SEC-02) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-023 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 403/404 — không hủy đơn người khác (SEC-02, FR-11) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-024 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-025 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-026 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-027 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 401/403 — token không hợp lệ (SEC-02) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-028 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 405 — sai phương thức HTTP | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-029 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-030 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-031 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-032 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-033 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-034 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-035 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer {{userToken}}. | 200 — hủy thành công, status = canceled (FR-10, api_spec §4.6) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-036 | User có đơn pending; mô phỏng timeout/mất kết nối lần 1. | Gọi lại PUT cancel lần 2 với cùng orderId. | 200 — hủy thành công ở lần gọi hợp lệ (FR-10) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-037 | User đã đăng nhập. | PUT /api/orders/%E2%82%AC123/cancel hoặc path Unicode tương đương. | 404 — path/ID không parse được (SEC-05 không áp dụng nếu không chạm DB) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-038 | User có đơn pending/confirmed thuộc chính mình. | PUT /api/orders/{orderId}/cancel; Authorization: Bearer␠␠{{userToken}}. | 401/403 — token không hợp lệ (SEC-02) | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-039 | Đơn pending sẵn sàng hủy. | PUT cancel với timeout client ngắn (quan sát thời gian phản hồi). | 200 trong thời gian hợp lý — đặc tả không nêu SLA; ghi nhận quan sát thực tế | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| B-040 | Đơn pending của user. | PUT cancel kèm body JSON {"reason":"test"} | 200 — hủy thành công, body thừa bị bỏ qua hoặc 400 nếu server từ chối | FR-10, SEC-02; api_spec §4.6; README FR-10 |
+| C-001 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-002 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-003 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-004 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-005 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-006 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-007 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-008 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-009 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-010 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-011 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-012 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-013 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-014 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-015 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-016 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-017 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-018 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-019 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-020 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Không gửi Authorization; body {"status":"<target>"} | 401 (SEC-02) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-021 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer <token không hợp lệ>; body {"status":"<target>"} | 403 (SEC-02) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-022 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer <token không hợp lệ>; body {"status":"<target>"} | 403 (SEC-02) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-023 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{userToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-024 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{userToken}}; body {"status":"<target>"} | 400 — chuyển tiếp không hợp lệ (FR-10 state machine) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-025 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-026 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-027 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-028 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-029 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-030 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-031 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 404 — orderId không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-032 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 405 — sai phương thức | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-033 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-034 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-035 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer {{adminToken}}; body {"status":"<target>"} | 200 — chuyển trạng thái hợp lệ (FR-10, FR-18, api_spec §6.2) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-036 | Đơn đã pending → confirmed thành công. | PUT status {"status":"confirmed"} lần 2 | 400 — chuyển tiếp trùng/không hợp lệ (FR-10) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-037 | Admin login; đơn test ở trạng thái nguồn phù hợp. | PUT /api/admin/orders/{orderId}/status; Authorization: Bearer␠␠{{adminToken}}; body {"status":"<target>"} | 400 — status/body không hợp lệ | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-038 | Admin token hợp lệ; đơn pending. | PUT body là JSON array ["confirmed"] | 400 — body phải là object {"status":...} | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-039 | Admin token; đơn pending. | PUT body status chuỗi 500+ ký tự | 400 — status không thuộc enum pending|confirmed|shipping|delivered|canceled | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |
+| C-040 | Vừa checkout tạo đơn pending (fixture). | PUT {"status":"confirmed"} ngay sau checkout | 200 — admin xác nhận đơn mới (FR-18, FR-10) | FR-10, FR-12, FR-18, SEC-03; api_spec §6.2 |

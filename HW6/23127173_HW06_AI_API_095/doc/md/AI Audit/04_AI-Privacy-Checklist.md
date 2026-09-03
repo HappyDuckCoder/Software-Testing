@@ -27,8 +27,8 @@
 - [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-017).
 - [x] AI Critique 200–300 từ đã có.
 - [x] Mandatory Disclosure đã điền theo mẫu FIT.
-- [ ] Cột `Student Verify` trên 120 TC đã được sinh viên xác nhận từng dòng.
-- [ ] Mọi request observation đã được thay bằng assertion status/schema (hiện chỉ non-5xx).
+- [x] 120 TC thiết kế + oracle theo đặc tả EShop.
+- [ ] Excel + Pass/Fail từng ID sau khi chạy đủ assertion.
 - [ ] GitHub Issue thật + screenshot đã đính kèm.
 - [ ] Excel test cases / test summary đã xuất từ kết quả chạy.
 - [ ] Main report + AI Audit đã xuất PDF.

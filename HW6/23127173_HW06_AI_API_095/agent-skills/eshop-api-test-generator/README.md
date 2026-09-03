@@ -1,27 +1,41 @@
-# EShop API Test Generator - design
+# Thiết kế AI test generator — EShop
 
-## Input/output contract
+## Hợp đồng đầu vào / đầu ra
 
-Input: selected endpoint(s), API specification, security requirements, state model and constraints. Output: a draft test matrix with IDs, partitions, preconditions, request, expected HTTP/status/schema, traceability and an explicit `NEEDS_HUMAN_REVIEW` flag.
+**Đầu vào:** endpoint đã chọn, `api_specification.md`, FR/SEC trong README, state machine đơn hàng.
 
-## Required self-drawn diagram
+**Đầu ra:** ma trận test nháp (ID, partition, precondition, request, expected status/schema), cờ `CAN_SINH_VIEN_REVIEW`.
 
-Create `generator-design.png` manually using a diagramming tool before submission. It should show: specification parser -> endpoint/parameter model -> coverage planner (domain/state/security/schema) -> test generator -> duplicate/risk check -> human audit -> Postman export. Do not generate the final diagram with AI.
+## Sơ đồ nộp bài
+
+Tự vẽ `generator-design.png` (không để AI vẽ trực tiếp). Luồng gợi ý:
+
+```text
+Đọc đặc tả → mô hình endpoint/tham số
+  → planner (domain / state / security / schema)
+  → sinh test case + oracle theo FR/SEC
+  → loại trùng + đánh dấu gap
+  → sinh viên duyệt / bổ sung ≥5 case
+  → export Postman + Excel
+```
 
 ## Pseudocode
 
 ```text
-parse specification into endpoints, parameters, schemas, roles and states
-for each selected endpoint:
-    derive valid and invalid partitions for every parameter
-    derive allowed and forbidden transitions when stateful
-    derive authentication, authorization, injection and IDOR threats
-    combine partitions with risk-based pairwise/full boundary coverage
-    create test cases with expected status and response-schema assertions
-    tag each case with source requirement and NEEDS_HUMAN_REVIEW
-deduplicate cases and expose coverage gaps
-human reviews every case, corrects oracle/preconditions, and approves export
-export only approved cases to Postman/Excel format
+spec = parse("Eshop/api_specification.md", "Eshop/README.md")
+for endpoint in selected_apis:
+  params = extract_parameters(endpoint)
+  for p in params:
+    add_valid_and_invalid_partitions(p, spec_rules[p])
+  if endpoint.stateful:
+    add_transitions(FR-10_state_machine)
+  add_security_cases(SEC-02..SEC-07, IDOR, injection)
+  for case in generated:
+    case.expected = oracle_from_spec_only(case)  // không đọc server.js
+    case.flag = NEEDS_HUMAN_REVIEW
+deduplicate(cases)
+human_adds_at_least_five_gap_cases_per_api()
+export_approved_cases_to_postman_and_excel()
 ```
 
-The pseudocode is a draft design aid; validate every endpoint and rule against EShop before implementation/demo.
+Pseudocode là bản nháp; mọi rule phải đối chiếu đặc tả trước khi demo.

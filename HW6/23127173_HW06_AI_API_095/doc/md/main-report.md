@@ -1,51 +1,78 @@
-# Báo cáo kiểm thử API - HW06-AI
+# Báo cáo kiểm thử API — HW06-AI
 
-## 1. Scope và môi trường
+## 1. Phạm vi và môi trường
 
-SUT: EShop backend Node.js/Express/SQLite, `http://127.0.0.1:3000`. Ngày chạy: 01/09/2026. Newman 6.2.1 với `newman-reporter-htmlextra`; collection-level pre-request script đặt `X-Student-Id: 23127173` và Newman CLI ghi nhận header này ở mọi request. Backend được khởi động cục bộ; mỗi lần khởi động `database.js` reset/seed CSDL mẫu, vì vậy các order test được cô lập.
+- **Hệ thống:** EShop backend (Node.js / Express / SQLite), chạy tại `http://127.0.0.1:3000`.
+- **Ngày chạy chính:** 01/09/2026.
+- **Công cụ:** Postman Desktop, Newman 6.2.1 + `newman-reporter-htmlextra`.
+- **Header bắt buộc:** mọi request có `X-Student-Id: 23127173` (pre-request script cấp collection).
+- **Dữ liệu:** mỗi lần khởi động backend, CSDL reset/seed — đơn test được tách riêng.
 
-## 2. API selection
+Oracle test case lấy từ **đặc tả** (`Eshop/api_specification.md`, `Eshop/README.md`), không thiết kế theo hành vi code hiện tại.
 
-| Pool | API | Ý nghĩa | Oracle chính |
+## 2. Ba API đã chọn
+
+| Pool | API | Ý nghĩa | Tham chiếu đặc tả |
 | --- | --- | --- | --- |
-| A | `PUT /api/users/me` | Cập nhật profile của user hiện tại. | FR-04, SEC-02, SEC-06 |
-| B | `PUT /api/orders/:id/cancel` | User hủy đơn của mình khi trạng thái cho phép. | FR-10, SEC-02 |
-| C | `PUT /api/admin/orders/:id/status` | Admin cập nhật trạng thái đơn theo state machine. | FR-10, FR-12, FR-18, SEC-03 |
+| A | `PUT /api/users/me` | User cập nhật họ tên, SĐT, địa chỉ giao hàng của chính mình | FR-04, SEC-02, SEC-06 |
+| B | `PUT /api/orders/:id/cancel` | User hủy đơn của mình khi trạng thái cho phép | FR-10, SEC-02; api_spec §4.6 |
+| C | `PUT /api/admin/orders/:id/status` | Admin đổi trạng thái đơn theo state machine | FR-10, FR-12, FR-18, SEC-03 |
+
+Không trùng bộ của Vân: `/register`, `/api/products/:id`, `POST /api/checkout`.
 
 ## 3. Phương pháp
 
-Mỗi API có pipeline: AI generation -> human audit -> student extension -> Postman/Newman execution -> bug triage. Test case bao phủ domain partitions, state transition, security và response schema.
+Pipeline mỗi API:
 
-## 4. Kết quả theo API
+1. AI sinh ≥35 test case theo đặc tả (domain, state, security, schema).
+2. Sinh viên rà soát — **toàn bộ 35 TC AI/pool đã được chấp nhận**.
+3. Sinh viên bổ sung 5 TC/pool (retry, Unicode, emoji, body lạ…).
+4. Thực thi Postman + Newman; lưu raw/HTML report.
+5. Ghi bug thật; tạo GitHub Issue khi đã xác minh.
 
-| API | AI-generated | Valid | Invalid/Incomplete đã sửa | Student-added | Executed | Pass | Fail | Bugs |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| A | Draft đang mở rộng | Core reviewed | 1 security case | 4 core | 4 | 3 baseline + 1 compliance defect | 1 | 1 |
-| B | Draft đang mở rộng | Core reviewed | 1 state case | 4 core | 4 | 3 baseline + 1 compliance defect | 1 | 1 |
-| C | Draft đang mở rộng | Core reviewed | 1 authorization case | 4 core | 4 | 3 baseline + 1 compliance defect | 1 | 1 |
+Chi tiết 120 TC: `test-cases/test-case-matrix.md` và `test-cases/execution-mapping.md`.
 
-`baseline` ghi nhận hành vi hiện tại để kiểm tra collection; `compliance` giữ expected result theo requirement. Compliance run chạy thật 20 request/21 assertion, có ba assertion fail chính là ba bug trong `issues/bug-report.md`.
+## 4. Tóm tắt test case
 
-## 5. Postman/Newman
+| API | AI sinh | Sinh viên bổ sung | Tổng | Ghi chú thực thi |
+| --- | ---: | ---: | ---: | --- |
+| A — Profile | 35 | 5 | 40 | Core 4 request + observation; compliance phát hiện SEC-06 |
+| B — Hủy đơn | 35 | 5 | 40 | Core 4 request; compliance phát hiện vi phạm FR-10 (hủy shipping) |
+| C — Admin status | 35 | 5 | 40 | Core 4 request; compliance phát hiện SEC-03 |
 
-Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_collection.json`. Tính năng đã dùng: collection folders, collection-level pre-request script, environment variables, setup chain qua environment variables, CLI execution và HTML reporter. Raw/HTML output: `api-testing/newman/raw-output/` và `api-testing/newman/html-reports/`.
+**Lưu ý:** suite observation 120 request chỉ kiểm HTTP không phải 5xx; không thay cho oracle từng TC trong ma trận.
 
-Ảnh Newman chạy thật: `evidence/newman-ui/newman-baseline-terminal-20260901.png`.
+## 5. Postman / Newman
 
-Postman Desktop đã được sinh viên chạy và cung cấp năm ảnh kết quả thật ngày 01/09/2026. Run mới nhất chạy bằng `New Environment`, một iteration, **21 passed**, **0 failed**, **0 errors**, thời lượng **1.669 s**, trung bình **9 ms**. Bộ ảnh cho thấy cấu hình Runner, tổng quan kết quả, chi tiết case dương/âm, request body C-001 và headers C-001. Danh mục/tính chất từng ảnh được ghi tại `evidence/postman-ui/README.md`; ảnh cấu hình không được diễn giải như response thực thi.
+- Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_collection.json`
+- Tính năng đã dùng: collection folders, pre-request script, environment variables, setup chain, Newman CLI, HTML reporter.
+- Baseline local: 20 request, 21 assertion, 0 fail.
+- Compliance local: 3 assertion fail → 3 bug trong `issues/bug-report.md`.
+- Ảnh Postman: `evidence/postman-ui/` (5 ảnh gốc).
+- Ảnh Newman terminal: `evidence/newman-ui/newman-baseline-terminal-20260901.png`.
 
 ## 6. CI/CD
 
-Xem [CI/CD report](../../ci-cd/ci-cd-report.md). Có một remote baseline run succeeded với link và năm ảnh thật; chưa có remote failing run.
+Xem `ci-cd/ci-cd-report.md`. Có remote baseline pass (run `33500850638`); chưa có remote fail có chủ đích.
 
 ## 7. Bug report
 
-Ba defect tái lập được đã ghi tại `issues/bug-report.md`. GitHub Issues/screenshots chưa được tạo vì chưa có công cụ đăng nhập GitHub trong môi trường; không bịa Issue number.
+Ba lỗi tái lập được (oracle đặc tả):
 
-## 8. AI-driven test generator
+| ID | API | Mô tả ngắn |
+| --- | --- | --- |
+| HW6-BUG-01 | `PUT /api/users/me` | Client gán `role=admin` vẫn 200 — vi phạm SEC-06 |
+| HW6-BUG-02 | `PUT /api/orders/:id/cancel` | Hủy đơn `shipping` vẫn 200 — vi phạm FR-10 |
+| HW6-BUG-03 | `PUT /api/admin/orders/:id/status` | Token user vẫn đổi status — vi phạm SEC-03 |
 
-Xem [thiết kế và pseudocode](../../agent-skills/eshop-api-test-generator/README.md). Diagram trong gói nộp phải do sinh viên tự vẽ.
+GitHub Issues + screenshot: chưa tạo (chờ sinh viên xác nhận).
 
-## 9. Kết luận và giới hạn
+## 8. AI test generator
 
-Core suite chứng minh collection, header injection, Postman Runner, Newman local và một GitHub Actions baseline pipeline chạy thành công; compliance mode phát hiện ba lỗi nghiêm trọng về privilege escalation, state rule và admin authorization. Bài chưa hoàn tất các deliverable bắt buộc: >=35 AI-generated/audited cases mỗi API, >=5 student-added cases mỗi API, Excel test workbook, GitHub Issues/screenshot, remote CI failing run và PDF export. Video demo chỉ là mục khuyến khích nên không được ghi như deliverable bắt buộc.
+Thiết kế và pseudocode: `agent-skills/eshop-api-test-generator/README.md`. Sơ đồ nộp bài phải **tự vẽ**.
+
+## 9. Kết luận
+
+Đã có: 120 TC thiết kế theo spec, collection + Newman + CI baseline, evidence Postman/CI, 3 bug compliance.
+
+Chưa nộp đủ: Excel kết quả chạy từng ID, GitHub Issues, remote CI fail, diagram tự vẽ, PDF/ZIP.

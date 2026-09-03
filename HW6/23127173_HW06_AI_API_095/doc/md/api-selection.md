@@ -1,9 +1,13 @@
-# API selection
+# Lựa chọn API — HW06
 
-| Pool | Feature | Endpoint | Ý nghĩa API | Preconditions | Trạng thái xác nhận |
-| --- | --- | --- | --- | --- | --- |
-| A | FR-04 Personal profile | `PUT /api/users/me` | User sửa name, shipping address và phone của chính mình. | JWT của user; profile test có thể khôi phục | Đã chọn - dùng lại HW2 |
-| B | FR-10 Cancel order | `PUT /api/orders/:id/cancel` | User hủy đơn do mình sở hữu; hệ thống đổi trạng thái sang `canceled` khi được phép. | JWT owner và đơn chưa giao | Đã chọn - dùng lại HW2 |
-| C | FR-18 Admin order status | `PUT /api/admin/orders/:id/status` | Admin chuyển trạng thái đơn theo máy trạng thái nghiệp vụ. | JWT admin, order test và state hợp lệ | Đã chọn - dùng lại HW2 |
+Oracle và test case thiết kế theo **đặc tả EShop**, không căn cứ hành vi code backend.
 
-Lý do: bộ này bao phủ ba pool bắt buộc, tận dụng FR-04/FR-10/FR-18 đã làm ở HW2, và không trùng `POST /register`, `GET /api/products/:id`, `POST /api/checkout` của Vân. Xác minh endpoint/response từ `Eshop/api_specification.md`, implementation và SUT đang chạy trước khi sinh test.
+| Pool | Chức năng | Endpoint | Ý nghĩa | Điều kiện tiên quyết |
+| --- | --- | --- | --- | --- |
+| A | FR-04 — Hồ sơ cá nhân | `PUT /api/users/me` | User sửa họ tên, SĐT, địa chỉ giao hàng của **chính mình** | JWT user hợp lệ |
+| B | FR-10 — Hủy đơn | `PUT /api/orders/:id/cancel` | User hủy đơn thuộc mình; chỉ khi trạng thái cho phép (pending/confirmed) | JWT owner; đơn chưa shipping/delivered |
+| C | FR-18 — Admin đơn hàng | `PUT /api/admin/orders/:id/status` | Admin đổi trạng thái theo state machine FR-10 | JWT admin; đơn test ở trạng thái nguồn hợp lệ |
+
+**Không trùng Vân:** `POST /register`, `GET /api/products/:id`, `POST /api/checkout`.
+
+**Tham chiếu đặc tả:** `Eshop/api_specification.md` (§2.2, §4.6, §6.2), `Eshop/README.md` (FR-04, FR-10, FR-12, FR-18, SEC-02, SEC-03, SEC-06).

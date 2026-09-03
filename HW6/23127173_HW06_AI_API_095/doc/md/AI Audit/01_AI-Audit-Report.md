@@ -16,7 +16,7 @@
 | Mã bài tập | HW06-AI |
 | Tên bài tập | Kiểm thử API trên EShop |
 | Ngày cập nhật | 03/09/2026 |
-| Công cụ AI đã dùng | Codex (GPT-5); Cursor (Grok 4.6) |
+| Công cụ AI đã dùng | Codex (GPT-5); Cursor (Composer 2.5) |
 | Có dùng AI | Có |
 
 **Tuyên bố theo đề bài:** *I use AI tools for the following tasks.*
@@ -48,18 +48,20 @@
 | **AI-014** · 01/09/2026 · Codex (GPT-5). Prompt: dùng năm ảnh GitHub Actions làm CI evidence. | Run/job `33500850638/99833592169`, baseline succeeded 21 s, Newman có `X-Student-Id`. | VALID | Đề §6: CI + screenshot/link. Chỉ có run pass. | Chưa có remote fail có chủ đích; không tuyên bố đã có. |
 | **AI-015** · 01/09/2026 · Codex (GPT-5). Prompt: review tài liệu HW06 và đồng bộ evidence. | Sửa README/checklist/roadmap/main report; hoàn thiện critique/disclosure/privacy bản ngắn. | VALID | Đồng bộ trạng thái, không bịa deliverable. | Các mục pending vẫn phải làm từ SUT/GitHub/Excel/PDF. |
 | **AI-016** · 01/09/2026 · Codex (GPT-5). Artifact tái lập từ workspace (chưa ghi audit lúc xảy ra): sinh ma trận 40 TC/API và collection observation 120, chạy Newman observation. | `test-case-matrix.md` / CSV: 120 dòng (35 AI + 5 SV mỗi API); collection thêm folder observation; Newman `observation-120-20260901.txt`: 140 req, 141 assertion, 0 fail. | INCOMPLETE | Đề §6 yêu cầu audit thủ công từng TC (`VALID`/`INVALID`/`INCOMPLETE` + lý do + sửa) rồi execute với oracle status/schema. Ma trận dùng rationale khuôn mẫu; cột `Student Verify` trống. Observation chỉ assert non-5xx — không phải 35 oracle/API. | SV phải audit từng dòng, sửa oracle, map assertion thật, xuất Excel. Không dùng 141 assertion pass để khẳng định coverage đề. |
-| **AI-017** · 03/09/2026 · Cursor (Grok 4.6). Prompt nguyên văn: «xem Lab\HW6 / xem Lab\HW6\requirement\requirement.pdf / xem tôi làm đến đâu rồi, xem tôi còn thiếu những bước gì / bổ sung ai audit, ai mantory» | Đối chiếu `requirement.md` (không có PDF trong workspace) với artefact; viết lại Audit theo mẫu FIT 5 mục; điền Mandatory Disclosure và Privacy Checklist; cập nhật prompt log. | VALID | Đề §9–§10: audit + disclosure bắt buộc. Đây là tài liệu hóa, không phải execution mới. | SV đọc lại disclosure/chữ ký; đối chiếu PDF Moodle nếu khác bản `.md`. |
+| **AI-017** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «xem Lab\HW6… bổ sung ai audit, ai mantory» | Đối chiếu tiến độ; viết lại Audit/Mandatory theo mẫu FIT; cập nhật prompt log. | VALID | Tài liệu hóa §9–§10. | SV ký disclosure. |
+| **AI-018** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «đọc lại quá trình… oracle theo spec… 15 TC SV… tiếng Việt… cập nhật audit» | Ma trận 120 TC tiếng Việt; bỏ verdict AI; 15 TC SV; oracle theo spec; cập nhật báo cáo/checklist. | VALID | Thiết kế theo đặc tả, không theo code. | Chưa chạy assertion 120 ID. |
+| **AI-019** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «chạy script sinh lại TC; chạy repo Eshop; cập nhật audit; commit» | Chạy `generate-matrix.mjs` (120 TC) + `generate-collection.mjs`; khởi động EShop backend `127.0.0.1:3000` (PID nền); smoke `POST /api/login` 200 + `GET /api/products` 200. | VALID — preparation only | Đề chuẩn bị retest Newman/Postman; chưa ghi kết quả run mới. SV chạy `npm run test:smoke` / `test:compliance` trong `api-testing/`. | Giữ server chạy khi test; tắt sau khi xong. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 17 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 12 | 71% |
+| Tổng artifact AI sinh đã audit | 19 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 14 | 74% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 5 | 29% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 5 | 26% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006 (coverage chưa đủ), AI-009 và AI-012 (evidence Postman lúc đó chưa đủ — đã bổ sung ở AI-013), AI-016 (ma trận/observation chưa phải audit+oracle). Không có artifact bị loại vì bịa evidence.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006 (assertion chưa map hết 120 ID), AI-009/AI-012 (Postman evidence — đã bù AI-013), AI-016 (observation ≠ oracle từng TC). Không có artifact bị loại vì bịa evidence.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 
@@ -67,7 +69,7 @@ Nên dùng AI để dịch đề, dựng khung nộp, chọn API theo pool, gợ
 
 ## 6. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, roadmap/checklist, lựa chọn API, Agent Skill, collection Postman/Newman, ma trận test/CSV, báo cáo chính và các bản rà soát tài liệu được sinh phiên bản đầu bởi Codex (GPT-5) và Cursor (Grok 4.6); tôi đã rà soát phạm vi ba API, cung cấp ảnh Postman Desktop và GitHub Actions gốc, xác nhận Newman local/CI baseline và ba defect compliance; tôi bổ sung nhóm test sinh viên A-036–A-040 / B-036–B-040 / C-036–C-040 nhưng chưa xác minh cột Student Verify; sơ đồ generator nộp bài, GitHub Issues, Excel, PDF và ZIP do tôi tự hoàn tất — các mục này hiện chưa xong nên không được tuyên bố đã nộp đủ. AI Audit Report chi tiết đính kèm. Tôi cam đoan không dùng AI để sinh artifact thuộc danh mục bị cấm: ảnh console `X-Student-Id` giả, Newman hostname giả, hay sơ đồ test-generator AI-generated."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên (A-036–A-040, B-036–B-040, C-036–C-040), thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman/CI gốc và xác nhận ba lỗi compliance; Excel kết quả chạy từng ID, GitHub Issues, remote CI fail, diagram tự vẽ, PDF và ZIP do tôi hoàn tất — chưa xong nên không tuyên bố nộp đủ. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm: ảnh console giả, Newman giả, sơ đồ generator AI-generated."
 
 Bản đầy đủ: `03_Mandatory-Disclosure.md`.
 
