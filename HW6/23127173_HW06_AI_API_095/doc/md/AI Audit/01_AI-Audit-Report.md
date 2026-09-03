@@ -1,33 +1,88 @@
-# AI Audit Report - HW06
+**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-## Thông tin sinh viên
+**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
+
+# AI Audit Report — HW06-AI API Testing
+
+*Phụ lục bắt buộc. Mỗi artifact AI sinh được gắn verdict `VALID` / `INVALID` / `INCOMPLETE`. Bằng chứng thực thi (Newman, Postman, CI) chỉ được ghi khi đã chạy thật.*
+
+## 1. Thông tin sinh viên
 
 | Mục | Giá trị |
 | --- | --- |
+| Họ tên sinh viên (in hoa) | TRẦN HẢI ĐỨC |
 | MSSV | 23127173 |
-| Mã bài | HW06-AI |
+| Lớp / Khoá | Chưa điền |
+| Mã bài tập | HW06-AI |
+| Tên bài tập | Kiểm thử API trên EShop |
+| Ngày cập nhật | 03/09/2026 |
+| Công cụ AI đã dùng | Codex (GPT-5); Cursor (Grok 4.6) |
 | Có dùng AI | Có |
 
-## Nhật ký tương tác
+**Tuyên bố theo đề bài:** *I use AI tools for the following tasks.*
 
-| ID | Thời gian (UTC+7) | Tool | Prompt/Yêu cầu | Output | Verdict và phần phải kiểm tra |
-| --- | --- | --- | --- | --- | --- |
-| AI-001 | 01/09/2026 | Codex (GPT-5) | Đọc `Lab/HW6/requirement/requirement.pdf`, dịch sang Markdown; tạo khung nộp bài, roadmap, checklist, cập nhật audit và commit. | Bản dịch `requirement.md`; cấu trúc khởi tạo với các template báo cáo, audit, Postman/Newman, CI/CD, evidence và test generator. | **INCOMPLETE - setup/document drafting only.** Sinh viên phải đối chiếu bản dịch với PDF, chốt API không trùng nhóm, tạo/audit TC, chạy SUT/Postman/Newman thật, tự vẽ diagram, tạo issue/CI evidence thật và cập nhật log cho mọi tương tác tiếp theo. |
-| AI-002 | 01/09/2026 | Codex (GPT-5) | Chọn 3 API ưu tiên lấy từ HW2, không trùng `/register`, `/api/products/:id`, `POST /api/checkout` của Vân. | Chọn `PUT /api/users/me` (A/FR-04), `PUT /api/orders/:id/cancel` (B/FR-10), `PUT /api/admin/orders/:id/status` (C/FR-18); cập nhật README và API selection. | **VALID - scope selection, pending verification.** Sinh viên phải xác nhận lại không trùng nhóm, kiểm tra behavior/response từ SUT thực tế và không xem các bug hay điều kiện suy ra từ HW2 là bằng chứng HW6. |
-| AI-003 | 01/09/2026 | Codex (GPT-5) | Thêm cột ý nghĩa API cho ba API đã chọn. | Bổ sung mô tả ngắn gọn về chức năng nghiệp vụ của từng endpoint trong README và API selection. | **VALID - documentation.** Sinh viên cần đối chiếu mô tả với SUT/đặc tả thực tế trước khi dùng làm oracle. |
-| AI-004 | 01/09/2026 | Codex (GPT-5) | Lưu workflow do sinh viên cung cấp và tạo skill tương ứng; cập nhật AI Audit. | Lưu bản SVG tham chiếu của workflow và tạo skill `postman-newman-api-testing-workflow` hướng dẫn quy trình từ phân tích API đến Postman, Newman, CI, evidence, report và audit. | **VALID - workflow documentation.** Sơ đồ gốc là do sinh viên cung cấp; SVG chỉ lưu lại workflow tham chiếu. Sinh viên vẫn phải tự tạo ảnh console, Newman/CI evidence, GitHub Issue và diagram nộp bài theo hoạt động thật. |
-| AI-005 | 01/09/2026 | Codex (GPT-5) | Nâng cấp SKILL đầy đủ, chuyên nghiệp, phù hợp requirement và thiết kế test API. | Mở rộng skill với endpoint modeling, staged AI generation, audit, coverage gate, Postman/Newman/CI implementation, evidence integrity; thêm test-case contract và implementation reference. | **VALID - process design.** Đây là hướng dẫn và template, không phải test result/oracle đã xác minh. Sinh viên phải review spec/SUT, tự vẽ diagram nộp bài và ghi AI interaction tiếp theo. |
-| AI-006 | 01/09/2026 | Codex (GPT-5) | Hoàn thành HW6: chạy EShop, tạo/running Postman-Newman suite, CI, docs và evidence. | Cài Newman cục bộ; tạo collection có `X-Student-Id`; chạy baseline 20 requests/21 assertions pass; chạy compliance và tái lập 3 defect: role mass assignment, cancel shipping, user gọi admin status. Tạo CI workflow và cập nhật báo cáo. | **VALID - partial execution and documentation.** Raw/HTML report là kết quả thật. Chưa có Postman Desktop Console screenshot, GitHub Issues/screenshot, remote CI run, Excel workbook, full >=35/audit/+5 case mỗi API, PDF/video; các mục này không được tuyên bố hoàn tất. |
-| AI-007 | 01/09/2026 | Codex (GPT-5) | Cập nhật flow skill theo sơ đồ mới. | Thay workflow reference và bổ sung gate: cập nhật local bug report -> chờ user verify -> tạo GitHub Issue; CI fail phải được chẩn đoán, sửa, commit/push lại trước khi ghi healthy. | **VALID - workflow governance.** Gate bảo vệ các thay đổi bên ngoài; không tự tạo Issue hoặc push chỉ dựa trên defect local. |
-| AI-008 | 01/09/2026 | Codex (GPT-5) | Ignore các file cần thiết cho HW6. | Cập nhật `.gitignore` để loại secret/local environment, `node_modules`, log/cache tạm, file OS/editor và ZIP; giữ collection, raw/HTML Newman report, evidence, workflow và tài liệu nộp. | **VALID - repository hygiene.** Không xóa artifact đã có; những report thực tế cần nộp vẫn được phép theo dõi trong Git. |
-| AI-009 | 01/09/2026 | Codex (GPT-5) | Chụp ảnh chạy Postman/Newman và cập nhật audit. | Cài/kiểm tra Postman Desktop nhưng ứng dụng không khởi động; chụp Terminal từ baseline Newman thật, hiển thị `X-Student-Id`, `127.0.0.1:3000`, 20 requests, 21 assertions, 0 failures. | **VALID - Newman execution evidence; INCOMPLETE - Postman Console.** Ảnh Terminal là thật và được lưu tại `evidence/newman-ui/`; không dùng ảnh VS Code thay cho Postman Console. Sinh viên cần mở Postman Desktop thành công và chụp Console trước khi nộp. |
-| AI-010 | 01/09/2026 | Codex (GPT-5) | Sinh viên cung cấp ảnh Postman Desktop để review, bổ sung evidence, xóa ảnh không phải evidence, cập nhật audit và commit. | Review ảnh thật: Runner cấu hình; kết quả 1 iteration với 21 passed, 0 failed, 0 errors, 2.989 s, avg 10 ms; request `POST /api/checkout` trả 200 và hiện `X-Student-Id: 23127173`; response có `Checkout successful`/`orderId`. Xóa 8 ảnh local chỉ là import/tổng quan, tạo hướng dẫn evidence và yêu cầu redaction JWT. | **VALID - Postman execution verified from student-supplied evidence.** Không ghi ảnh chat thành file giả: cần chép file ảnh gốc vào `evidence/postman-ui/` trước khi đóng gói. Token Bearer phải được che; các ảnh request chưa Send không được tính là evidence thực thi. |
-| AI-011 | 01/09/2026 | Codex (GPT-5) | Sinh viên cung cấp capture Runner mới sau khi tạo environment để làm rõ lỗi chạy request riêng lẻ. | Capture thật cho thấy một Runner iteration dùng `New Environment`, 21 passed, 0 failed, 0 errors, 1.604 s, avg 9 ms; `SETUP-04 Create shipping order` trả 200 và `orderId: 34`. | **VALID - execution evidence and diagnosis confirmed.** Các biến token/order ID chỉ có trong run context/environment sau setup chain; `403` của request đơn lẻ với placeholder chưa resolve không phải kết quả pass và không dùng làm positive evidence. |
-| AI-012 | 01/09/2026 | Codex (GPT-5) | Sinh viên bắt buộc dùng bộ năm ảnh Postman: Runner config, run summary, run details, C-001 body, C-001 headers. | Lưu trực tiếp từ Postman Desktop đang active: `postman-run-results-20260901.png` (run thật, 21 passed) và `postman-c001-request-headers-20260901.png` (traceability). Cập nhật inventory năm ảnh; loại ảnh chụp nhầm VS Code và ảnh headers có secret không redacted. | **VALID - two local Postman captures; INCOMPLETE - three chat-rendered originals.** Không thay thế ba ảnh còn lại bằng ảnh sinh/gia công. Chỉ dùng những ảnh đó khi file gốc được đưa vào workspace. |
-| AI-013 | 01/09/2026 | Codex (GPT-5) | Sinh viên đã lưu trực tiếp năm ảnh gốc vào `evidence/postman-ui/` và yêu cầu tự kiểm điểm, cập nhật audit/critique/commit. | Phát hiện `1.png`–`5.png`, xác minh ảnh 1 là Runner; đổi tên theo nội dung, thay hai capture trùng bằng ảnh gốc, cập nhật evidence inventory và báo cáo. | **VALID - complete five-image Postman evidence set.** Agent trước đó đã không kiểm tra lại thư mục sau thông báo của sinh viên; lỗi quy trình này được ghi tại critique. |
-| AI-014 | 01/09/2026 | Codex (GPT-5) | Sinh viên lưu năm ảnh GitHub Actions và yêu cầu dùng làm CI evidence. | Phát hiện `1.png`–`5.png` ở `evidence/ci-cd/`, đổi tên theo các bước; ghi run/job `33500850638/99833592169`, baseline succeeded 21 s, EShop checkout, dependency install, Newman `X-Student-Id: 23127173` và job xanh. | **VALID - remote CI evidence.** Có cảnh báo Node 20/dependency vulnerabilities nhưng job thành công; không có ảnh remote failing run nên không tuyên bố có. |
-| AI-015 | 01/09/2026 | Codex (GPT-5) | Review lại toàn bộ tài liệu HW06 và đồng bộ trạng thái với evidence hiện có. | Sửa README/skill catalog/checklist/roadmap/main report/header evidence/API testing README; hoàn thiện AI Critique và mandatory disclosure/privacy checklist. | **VALID - documentation consistency review.** Các mục chưa có evidence (coverage ngưỡng đề, workbook, GitHub Issues, CI fail, diagram, PDF/video) vẫn được ghi pending. |
+## 2. Hướng dẫn đã áp dụng
 
-## Quy tắc cập nhật
+- Một hàng cho mỗi tương tác/artifact: tool, thời gian, prompt, output, verdict, lý do, phần sinh viên phải kiểm tra/sửa.
+- Không paraphrase thành bằng chứng thực thi. Ảnh Postman/CI do sinh viên cung cấp; raw/HTML Newman lấy từ lần chạy thật.
+- Không ghi hoạt động chưa xảy ra (GitHub Issue, Excel, PDF, ZIP, diagram tự vẽ, remote CI fail).
+- `Lab/HW6/requirement/requirement.pdf` không có trong workspace; bản dùng để đối chiếu là `Lab/HW6/requirement/requirement.md`.
 
-Mỗi lần dùng AI, bổ sung timestamp, tool, prompt đầy đủ, output, verdict `VALID`/`INVALID`/`INCOMPLETE`, lý do và phần sinh viên đã kiểm tra/sửa. Không ghi một hoạt động chưa diễn ra như bằng chứng thực thi.
+## 3. Bảng Audit — 1 hàng / artifact
+
+| (1) Prompt + Công cụ | (2) Output AI | (3) Verdict | (4) Lý do (đối chiếu đề / ISTQB) | (5) Bản SV sửa / phải làm |
+| --- | --- | --- | --- | --- |
+| **AI-001** · 01/09/2026 · Codex (GPT-5). Prompt: đọc `Lab/HW6/requirement/requirement.pdf`, dịch sang Markdown; tạo khung nộp, roadmap, checklist, cập nhật audit và commit. | Bản dịch `requirement.md`; cây thư mục template (báo cáo, audit, Postman/Newman, CI/CD, evidence, generator). | INCOMPLETE | Bloom G9.2 Apply: khung chưa phải test case đã audit/execute. Đề §6 yêu cầu pipeline generate → audit → extend → execute cho từng API. | Đối chiếu PDF gốc trên Moodle với `requirement.md`; không dùng khung như kết quả kiểm thử. |
+| **AI-002** · 01/09/2026 · Codex (GPT-5). Prompt: chọn 3 API ưu tiên từ HW2, không trùng `/register`, `/api/products/:id`, `POST /api/checkout` của Vân. | Chọn `PUT /api/users/me` (A/FR-04), `PUT /api/orders/:id/cancel` (B/FR-10), `PUT /api/admin/orders/:id/status` (C/FR-18). | VALID | Đề §5: đúng 1 API/pool A–C, không trùng nhóm. | Xác nhận lại với nhóm nếu danh sách phân công đổi; không dùng bug HW2 làm evidence HW6. |
+| **AI-003** · 01/09/2026 · Codex (GPT-5). Prompt: thêm cột ý nghĩa API cho ba API đã chọn. | Mô tả nghiệp vụ ngắn trong README và `api-selection.md`. | VALID | Tài liệu hóa phạm vi; chưa phải oracle đã chạy. | Đối chiếu `Eshop/api_specification.md` và SUT trước khi khóa expected status. |
+| **AI-004** · 01/09/2026 · Codex (GPT-5). Prompt: lưu workflow do SV cung cấp và tạo skill tương ứng. | Skill `postman-newman-api-testing-workflow`; SVG tham chiếu workflow. | VALID | Đề §7 khuyến khích Agent Skill; sơ đồ nộp bài phải tự vẽ (§11). | SVG chỉ là tham chiếu. SV tự vẽ `generator-design.png` bằng công cụ diagram. |
+| **AI-005** · 01/09/2026 · Codex (GPT-5). Prompt: nâng cấp SKILL đầy đủ theo requirement. | Mở rộng skill: endpoint model, staged generation, audit, coverage gate, Postman/Newman/CI, evidence integrity. | VALID | G9.5 Create: thiết kế quy trình, không phải kết quả test. | Review skill trước khi demo; pseudocode trong `eshop-api-test-generator/README.md` vẫn là bản nháp. |
+| **AI-006** · 01/09/2026 · Codex (GPT-5). Prompt: hoàn thành HW6: chạy EShop, Postman-Newman, CI, docs, evidence. | Newman local; collection có `X-Student-Id: 23127173`; baseline 20 req / 21 assertion pass; compliance tái lập 3 defect; workflow CI. | INCOMPLETE | Đề §6: >=35 TC AI/API + audit + >=5 SV. Core suite chứng minh header/setup, chưa đạt ngưỡng coverage. | Giữ raw/HTML thật. Không tuyên bố đủ 35+5 mỗi API từ baseline. |
+| **AI-007** · 01/09/2026 · Codex (GPT-5). Prompt: cập nhật flow skill theo sơ đồ mới. | Gate: bug local → SV verify → GitHub Issue; CI fail phải được chẩn đoán trước khi ghi healthy. | VALID | Đề §11 cấm bịa Issue/evidence. | Không tạo Issue hay push fail run khi SV chưa ủy quyền. |
+| **AI-008** · 01/09/2026 · Codex (GPT-5). Prompt: ignore các file cần thiết cho HW6. | `.gitignore`: secret, `node_modules`, cache, ZIP; giữ collection, Newman, evidence, workflow. | VALID | Vệ sinh repo, không xóa artefact nộp. | Kiểm tra file nộp không bị ignore nhầm. |
+| **AI-009** · 01/09/2026 · Codex (GPT-5). Prompt: chụp ảnh Postman/Newman. | Terminal Newman baseline thật: `X-Student-Id`, `127.0.0.1:3000`, 20 req, 21 assertion, 0 fail. Postman Desktop khi đó không khởi động. | INCOMPLETE | Đề §11: ảnh console pre-request/`X-Student-Id` phải thật. Newman đạt; Postman Console lúc đó chưa có. | Bổ sung sau bởi ảnh SV (AI-013). Không dùng ảnh VS Code thay Postman. |
+| **AI-010** · 01/09/2026 · Codex (GPT-5). Prompt: SV cung cấp ảnh Postman để review. | Review Runner 21 passed; `POST /api/checkout` 200 + `X-Student-Id: 23127173`. Xóa ảnh import; yêu cầu redaction JWT. | VALID | Evidence do SV chụp, AI chỉ rà soát/đổi tên. | Che Bearer token; ảnh chưa Send không tính execution. |
+| **AI-011** · 01/09/2026 · Codex (GPT-5). Prompt: capture Runner mới sau khi tạo environment. | 21 passed, 0 failed, 1.604 s; `SETUP-04` trả 200 `orderId: 34`. | VALID | Biến token/orderId chỉ resolve sau setup chain. | `403` của request lẻ với placeholder không phải pass evidence. |
+| **AI-012** · 01/09/2026 · Codex (GPT-5). Prompt: bắt buộc dùng bộ năm ảnh Postman. | Lưu 2 capture local; 3 ảnh chat-rendered chưa có file gốc. | INCOMPLETE | Thiếu file gốc thì không được dựng lại ảnh. | Hoàn tất ở AI-013 khi SV lưu `1.png`–`5.png`. |
+| **AI-013** · 01/09/2026 · Codex (GPT-5). Prompt: SV đã lưu năm ảnh gốc; tự kiểm điểm. | Đổi tên `postman-runner-config`, `postman-run-results`, `postman-run-details-negative-cases`, `postman-c001-request-body/headers`. | VALID | ISTQB: evidence phải truy vết được. Ảnh 4–5 là cấu hình, không phải sent-result. | Giữ nguyên bộ năm ảnh SV; không thay bằng ảnh AI. |
+| **AI-014** · 01/09/2026 · Codex (GPT-5). Prompt: dùng năm ảnh GitHub Actions làm CI evidence. | Run/job `33500850638/99833592169`, baseline succeeded 21 s, Newman có `X-Student-Id`. | VALID | Đề §6: CI + screenshot/link. Chỉ có run pass. | Chưa có remote fail có chủ đích; không tuyên bố đã có. |
+| **AI-015** · 01/09/2026 · Codex (GPT-5). Prompt: review tài liệu HW06 và đồng bộ evidence. | Sửa README/checklist/roadmap/main report; hoàn thiện critique/disclosure/privacy bản ngắn. | VALID | Đồng bộ trạng thái, không bịa deliverable. | Các mục pending vẫn phải làm từ SUT/GitHub/Excel/PDF. |
+| **AI-016** · 01/09/2026 · Codex (GPT-5). Artifact tái lập từ workspace (chưa ghi audit lúc xảy ra): sinh ma trận 40 TC/API và collection observation 120, chạy Newman observation. | `test-case-matrix.md` / CSV: 120 dòng (35 AI + 5 SV mỗi API); collection thêm folder observation; Newman `observation-120-20260901.txt`: 140 req, 141 assertion, 0 fail. | INCOMPLETE | Đề §6 yêu cầu audit thủ công từng TC (`VALID`/`INVALID`/`INCOMPLETE` + lý do + sửa) rồi execute với oracle status/schema. Ma trận dùng rationale khuôn mẫu; cột `Student Verify` trống. Observation chỉ assert non-5xx — không phải 35 oracle/API. | SV phải audit từng dòng, sửa oracle, map assertion thật, xuất Excel. Không dùng 141 assertion pass để khẳng định coverage đề. |
+| **AI-017** · 03/09/2026 · Cursor (Grok 4.6). Prompt nguyên văn: «xem Lab\HW6 / xem Lab\HW6\requirement\requirement.pdf / xem tôi làm đến đâu rồi, xem tôi còn thiếu những bước gì / bổ sung ai audit, ai mantory» | Đối chiếu `requirement.md` (không có PDF trong workspace) với artefact; viết lại Audit theo mẫu FIT 5 mục; điền Mandatory Disclosure và Privacy Checklist; cập nhật prompt log. | VALID | Đề §9–§10: audit + disclosure bắt buộc. Đây là tài liệu hóa, không phải execution mới. | SV đọc lại disclosure/chữ ký; đối chiếu PDF Moodle nếu khác bản `.md`. |
+
+## 4. Tổng kết độ chính xác AI
+
+| Chỉ số | Số lượng | Tỉ lệ |
+| --- | ---: | ---: |
+| Tổng artifact AI sinh đã audit | 17 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 12 | 71% |
+| INVALID (sai, loại bỏ) | 0 | 0% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 5 | 29% |
+
+Phân loại INCOMPLETE: AI-001 (setup), AI-006 (coverage chưa đủ), AI-009 và AI-012 (evidence Postman lúc đó chưa đủ — đã bổ sung ở AI-013), AI-016 (ma trận/observation chưa phải audit+oracle). Không có artifact bị loại vì bịa evidence.
+
+## 5. Kết luận — khi nào nên / không nên dùng AI
+
+Nên dùng AI để dịch đề, dựng khung nộp, chọn API theo pool, gợi ý phân vùng domain/state/security, viết skill/pseudocode, và gom collection setup có `X-Student-Id`. Không nên dùng AI để biến số assertion pass thành coverage, tự tạo GitHub Issue, bịa screenshot, hoặc khóa oracle khi đặc tả mơ hồ. Observation 120 request chỉ chứng minh SUT không trả 5xx; không thay 35 test đã audit mỗi API. Sinh viên phải sửa từng TC, chạy assertion thật, rồi mới đóng gói.
+
+## 6. Mandatory Disclosure (dán nguyên văn)
+
+"Khung nộp bài, roadmap/checklist, lựa chọn API, Agent Skill, collection Postman/Newman, ma trận test/CSV, báo cáo chính và các bản rà soát tài liệu được sinh phiên bản đầu bởi Codex (GPT-5) và Cursor (Grok 4.6); tôi đã rà soát phạm vi ba API, cung cấp ảnh Postman Desktop và GitHub Actions gốc, xác nhận Newman local/CI baseline và ba defect compliance; tôi bổ sung nhóm test sinh viên A-036–A-040 / B-036–B-040 / C-036–C-040 nhưng chưa xác minh cột Student Verify; sơ đồ generator nộp bài, GitHub Issues, Excel, PDF và ZIP do tôi tự hoàn tất — các mục này hiện chưa xong nên không được tuyên bố đã nộp đủ. AI Audit Report chi tiết đính kèm. Tôi cam đoan không dùng AI để sinh artifact thuộc danh mục bị cấm: ảnh console `X-Student-Id` giả, Newman hostname giả, hay sơ đồ test-generator AI-generated."
+
+Bản đầy đủ: `03_Mandatory-Disclosure.md`.
+
+## 7. Chữ ký
+
+| Mục | Giá trị |
+| --- | --- |
+| Họ tên sinh viên (in hoa) | TRẦN HẢI ĐỨC |
+| MSSV | 23127173 |
+| Lớp / Khoá | Chưa điền |
+| Môn học | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Giảng viên | Chưa điền |
+| Ngày | 03/09/2026 |
+| Chữ ký | Trần Hải Đức |
+
+## 8. Quy tắc cập nhật
+
+Mỗi lần dùng AI, thêm một hàng: timestamp, tool, prompt, output, verdict, lý do, phần đã kiểm tra/sửa. Không ghi bằng chứng thực thi chưa xảy ra.
