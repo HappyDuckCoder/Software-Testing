@@ -1,6 +1,6 @@
 # Ánh xạ thực thi test case HW06
 
-Bảng dưới map từng ID sang điều kiện tiên quyết, request và **kết quả mong đợi theo đặc tả**. Các dòng ghi *oracle đặc tả* là case compliance — có thể fail trên SUT hiện tại nếu backend chưa đúng FR/SEC.
+Bảng dưới map từng ID sang điều kiện tiên quyết, request và **kết quả mong đợi theo đặc tả**. Newman/Postman assert theo oracle này — vi phạm đặc tả → **FAIL** (không còn baseline che lỗi).
 
 | ID | Điều kiện trước khi chạy | Request | Kết quả mong đợi (theo spec) | Tham chiếu đặc tả |
 | --- | --- | --- | --- | --- |

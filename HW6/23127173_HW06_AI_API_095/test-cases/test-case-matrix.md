@@ -130,3 +130,15 @@ Mỗi API có **40** test case: **35 do AI sinh** (sinh viên đã rà soát và
 - **35 TC AI/pool:** đã được sinh viên duyệt; không ghi lại cột verdict vì toàn bộ được chấp nhận dùng tiếp.
 - **5 TC sinh viên/pool:** tập trung retry, Unicode, token lỗi, concurrency, emoji, body lạ — những góc AI ít đề xuất.
 - Tham chiếu đặc tả chính: FR-04 (profile), FR-10 (state machine), FR-18 (admin order), SEC-02/03/06.
+
+## Newman — oracle đặc tả (03/09/2026)
+
+Collection assert **theo đặc tả**, không còn chế độ baseline che lỗi. Trên SUT hiện tại, các case sau **FAIL** (đúng kỳ vọng test — phát hiện bug):
+
+| TC / Request | Bug ID | Oracle đặc tả | SUT thực tế |
+| --- | --- | --- | --- |
+| Core A-004 / Obs A-031, A-032 | HW6-BUG-01 | 400 — client không đổi `role` (SEC-06) | 200 |
+| Core B-004 / Obs B-004 | HW6-BUG-02 | 400 — không hủy đơn `shipping` (FR-10) | 200 |
+| Core C-003 | HW6-BUG-03 | 403 — user token không đổi admin status (SEC-03) | 200 |
+
+Observation A-031/A-032/B-004 lặp lại cùng oracle (SEC-06, FR-10). SEC-03 chỉ assert ở core C-003 để tránh xung đột fixture.

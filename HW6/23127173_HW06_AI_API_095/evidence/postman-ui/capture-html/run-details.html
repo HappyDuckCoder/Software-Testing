@@ -19,23 +19,23 @@
   <div class="topbar"><span class="orange">Postman</span> — Run details (sample) · observation 120 TC</div>
   <div class="panel">
     <table><thead><tr><th>Method</th><th>Request</th><th>Status</th><th>Time</th><th>Result</th></tr></thead>
-    <tbody><tr class="pass"><td>POST</td><td>SETUP-01 Login user</td><td>200</td><td>58 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>POST</td><td>SETUP-02 Login admin</td><td>200</td><td>5 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>POST</td><td>SETUP-03 Create pending order</td><td>200</td><td>51 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>POST</td><td>SETUP-04 Create shipping order</td><td>200</td><td>14 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>POST</td><td>SETUP-04b Create admin pending order</td><td>200</td><td>22 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>POST</td><td>SETUP-04c Create authorization pending order</td><td>200</td><td>26 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>SETUP-05 Move order to confirmed</td><td>200</td><td>25 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>SETUP-06 Move order to shipping</td><td>200</td><td>25 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-001 FR-04 observation (verify oracle)</td><td>200</td><td>25 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-002 FR-04 observation (verify oracle)</td><td>200</td><td>28 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-003 FR-04 observation (verify oracle)</td><td>200</td><td>12 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-004 FR-04 observation (verify oracle)</td><td>200</td><td>31 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-005 FR-04 observation (verify oracle)</td><td>200</td><td>26 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-006 FR-04 observation (verify oracle)</td><td>200</td><td>14 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-007 FR-04 observation (verify oracle)</td><td>200</td><td>13 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-008 FR-04 observation (verify oracle)</td><td>200</td><td>13 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-009 FR-04 observation (verify oracle)</td><td>200</td><td>13 ms</td><td>PASS</td></tr>
-<tr class="pass"><td>PUT</td><td>A-010 FR-04 observation (verify oracle)</td><td>200</td><td>22 ms</td><td>PASS</td></tr></tbody></table>
-    <p class="muted">Showing 18 / 128 requests · non-5xx observation assertions · 20260903</p>
+    <tbody><tr class="fail"><td>PUT</td><td>A-004 Reject role mass assignment (SEC-06)</td><td>200</td><td>3 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>B-004 Reject cancellation after shipping</td><td>200</td><td>14 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>C-003 User token denied admin status update (SEC-03)</td><td>200</td><td>19 ms</td><td>FAIL</td></tr>
+<tr class="pass"><td>PUT</td><td>A-004 FR-04 observation (verify oracle)</td><td>200</td><td>12 ms</td><td>PASS</td></tr>
+<tr class="fail"><td>PUT</td><td>A-031 FR-04 observation (verify oracle)</td><td>200</td><td>17 ms</td><td>FAIL</td></tr>
+<tr class="fail"><td>PUT</td><td>A-032 FR-04 observation (verify oracle)</td><td>200</td><td>3 ms</td><td>FAIL</td></tr>
+<tr class="pass"><td>PUT</td><td>B-001 FR-10 observation (verify oracle)</td><td>404</td><td>5 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-002 FR-10 observation (verify oracle)</td><td>404</td><td>4 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-003 FR-10 observation (verify oracle)</td><td>404</td><td>4 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-004 FR-10 observation (verify oracle)</td><td>400</td><td>4 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-005 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-006 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-007 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-008 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-009 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-010 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-011 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr>
+<tr class="pass"><td>PUT</td><td>B-012 FR-10 observation (verify oracle)</td><td>404</td><td>3 ms</td><td>PASS</td></tr></tbody></table>
+    <p class="muted">Showing 18 / 140 requests · non-5xx observation assertions · 20260903</p>
   </div></body></html>

@@ -63,7 +63,7 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | Core Newman + CI pass | ✅ |
 | Full 120 TC Newman (setup + observation) | ✅ (03/09) |
 | Postman runner evidence (5 ảnh, full 120) | ✅ (03/09) |
-| Assertion map 120 ID trong Postman | ⏳ |
+| Assertion oracle đặc tả (core + mapped) | ✅ (03/09, 3–5 fail) |
 | Excel + GitHub Issue + CI fail + PDF/ZIP | ⏳ |
 
 ## 8. Mandatory Disclosure (dán nguyên văn)

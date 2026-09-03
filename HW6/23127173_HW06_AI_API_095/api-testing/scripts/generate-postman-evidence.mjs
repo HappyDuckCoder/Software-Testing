@@ -16,10 +16,15 @@ const jsonOut = path.join(root, 'newman/raw-output/full-120-20260903.json');
 
 fs.mkdirSync(captureDir, { recursive: true });
 
-execSync(
-  `npx newman run "${collection}" -e "${environment}" --folder "00 Setup" --folder "A Observation 40 TC" --folder "B Observation 40 TC" --folder "C Observation 40 TC" -r json,cli --reporter-json-export "${jsonOut}"`,
-  { cwd: root, stdio: 'inherit', encoding: 'utf8' }
-);
+try {
+  execSync(
+    `npx newman run "${collection}" -e "${environment}" --folder "00 Setup" --folder "A FR-04 Profile" --folder "B FR-10 Cancel order" --folder "C FR-18 Admin order" --folder "A Observation 40 TC" --folder "B Observation 40 TC" --folder "C Observation 40 TC" -r json,cli --reporter-json-export "${jsonOut}"`,
+    { cwd: root, stdio: 'inherit', encoding: 'utf8' }
+  );
+} catch (err) {
+  if (err.status === undefined || err.status === 0) throw err;
+  console.log('Newman finished with failing assertions (expected for spec oracle).');
+}
 
 const report = JSON.parse(fs.readFileSync(jsonOut, 'utf8'));
 const run = report.run;
@@ -31,6 +36,7 @@ const avgMs = Math.round(
 );
 
 const detailRows = executions
+  .filter((item) => (item.assertions ?? []).some((a) => a.error) || /A-004|B-004|C-003|A-031|A-032|SEC-06|FR-10|SEC-03/.test(item.item?.name ?? ''))
   .slice(0, 18)
   .map((item) => {
     const name = item.item?.name ?? 'unknown';
@@ -71,10 +77,12 @@ const pages = {
   <div class="topbar"><span class="orange">Postman</span> — Collection Runner · 23127173 HW06 EShop API Testing</div>
   <div class="panel">
     <div class="muted">Environment: eshop.local.template · Iterations: 1 · Delay: 0 ms · Data: None</div>
-    <h3>Selected folders / requests (128)</h3>
+    <h3>Selected folders / requests (140)</h3>
     <div class="tree">
       ☑ <b>00 Setup</b> (8 requests)<br>
-      &nbsp;&nbsp;☑ SETUP-01 Login user … SETUP-06 Move order to shipping<br>
+      ☑ <b>A FR-04 Profile</b> (4 requests — oracle đặc tả)<br>
+      ☑ <b>B FR-10 Cancel order</b> (4 requests — oracle đặc tả)<br>
+      ☑ <b>C FR-18 Admin order</b> (4 requests — oracle đặc tả)<br>
       ☑ <b>A Observation 40 TC</b> (40 requests)<br>
       ☑ <b>B Observation 40 TC</b> (40 requests)<br>
       ☑ <b>C Observation 40 TC</b> (40 requests)<br>

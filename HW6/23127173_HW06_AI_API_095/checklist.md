@@ -12,7 +12,8 @@
 - [x] Sinh viên duyệt toàn bộ TC AI (không giữ cột verdict — đã OK hết).
 - [x] Bổ sung 5 TC sinh viên + ghi lý do AI bỏ sót (`test-case-matrix.md`).
 - [x] Map oracle theo spec trong `execution-mapping.md`.
-- [ ] Gắn assertion Postman/Newman cho từng ID (hiện mới có core + observation).
+- [x] Gắn assertion oracle đặc tả cho core + case SEC-06/FR-10 mapped (A-031/A-032).
+- [ ] Map assertion đầy đủ 120 ID observation.
 - [x] Chạy core suite; có Newman raw/HTML.
 - [x] Chạy full 120 TC Newman (`npm run test:full120`): 128 req, 128 assertion, 0 fail — raw/HTML/ảnh 03/09/2026.
 - [ ] Tạo GitHub Issue + screenshot cho 3 bug compliance.

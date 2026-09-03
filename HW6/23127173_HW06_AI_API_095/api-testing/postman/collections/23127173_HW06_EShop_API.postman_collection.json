@@ -635,7 +635,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "if (pm.environment.get('mode') === 'compliance') { pm.test(\"role cannot be changed by client\", function () { pm.response.to.have.status(400); }); } else { pm.test('known SEC-06 defect is observed',()=>pm.expect(pm.response.code).to.eql(200)); }"
+                  "pm.test(\"role cannot be changed by client (SEC-06)\", function () { pm.response.to.have.status(400); });"
                 ]
               }
             }
@@ -812,7 +812,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "if (pm.environment.get('mode') === 'compliance') { pm.test(\"shipping order cannot be canceled\", function () { pm.response.to.have.status(400); }); } else { pm.test('known FR-10 defect is observed',()=>pm.expect(pm.response.code).to.eql(200)); }"
+                  "pm.test(\"shipping order cannot be canceled (FR-10)\", function () { pm.response.to.have.status(400); });"
                 ]
               }
             }
@@ -975,7 +975,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "if (pm.environment.get('mode') === 'compliance') { pm.test(\"user cannot update admin order status\", function () { pm.response.to.have.status(403); }); } else { pm.test('known SEC-03 defect is observed',()=>pm.expect(pm.response.code).to.eql(200)); }"
+                  "pm.test(\"user cannot update admin order status (SEC-03)\", function () { pm.response.to.have.status(403); });"
                 ]
               }
             }
@@ -2646,7 +2646,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"name\":\"HW6 Observation 31\",\"shipping_address\":\"Address 31\",\"phone\":\"0900000030\"}",
+              "raw": "{\"name\":\"HW6\",\"shipping_address\":\"Addr\",\"phone\":\"0912345678\",\"role\":\"admin\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2676,8 +2676,8 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
-                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                  "pm.test(\"spec oracle A-031 expects HTTP 400\", function () { pm.response.to.have.status(400); });",
+                  "console.log('SPEC', pm.info.requestName, pm.response.code, pm.response.text());"
                 ]
               }
             }
@@ -2699,7 +2699,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"name\":\"HW6 Observation 32\",\"shipping_address\":\"Address 32\",\"phone\":\"0900000031\"}",
+              "raw": "{\"name\":\"HW6\",\"shipping_address\":\"Addr\",\"phone\":\"0912345678\",\"isAdmin\":true}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2729,8 +2729,8 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
-                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                  "pm.test(\"spec oracle A-032 expects HTTP 400\", function () { pm.response.to.have.status(400); });",
+                  "console.log('SPEC', pm.info.requestName, pm.response.code, pm.response.text());"
                 ]
               }
             }
@@ -3315,7 +3315,7 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/api/orders/999003/cancel",
+              "raw": "{{baseUrl}}/api/orders/{{shippingOrderId}}/cancel",
               "protocol": "http",
               "host": [
                 "127",
@@ -3327,7 +3327,7 @@
               "path": [
                 "api",
                 "orders",
-                "999003",
+                "{{shippingOrderId}}",
                 "cancel"
               ]
             }
@@ -3338,8 +3338,8 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('observation received non-5xx response',()=>pm.expect(pm.response.code).to.be.below(500));",
-                  "console.log('OBSERVATION', pm.info.requestName, pm.response.code, pm.response.text());"
+                  "pm.test(\"spec oracle B-004 expects HTTP 400\", function () { pm.response.to.have.status(400); });",
+                  "console.log('SPEC', pm.info.requestName, pm.response.code, pm.response.text());"
                 ]
               }
             }

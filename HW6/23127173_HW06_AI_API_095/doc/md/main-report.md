@@ -3,7 +3,7 @@
 ## 1. Phạm vi và môi trường
 
 - **Hệ thống:** EShop backend (Node.js / Express / SQLite), chạy tại `http://127.0.0.1:3000`.
-- **Ngày chạy chính:** 03/09/2026 (full 120 TC); baseline/compliance: 01/09/2026.
+- **Ngày chạy chính:** 03/09/2026 — oracle đặc tả, **5 assertion fail** trên full run (3 bug).
 - **Công cụ:** Postman Desktop, Newman 6.2.1 + `newman-reporter-htmlextra`.
 - **Header bắt buộc:** mọi request có `X-Student-Id: 23127173` (pre-request script cấp collection).
 - **Dữ liệu:** mỗi lần khởi động backend, CSDL reset/seed — đơn test được tách riêng.
@@ -40,15 +40,14 @@ Chi tiết 120 TC: `test-cases/test-case-matrix.md` và `test-cases/execution-ma
 | B — Hủy đơn | 35 | 5 | 40 | Core 4 request; compliance phát hiện vi phạm FR-10 (hủy shipping) |
 | C — Admin status | 35 | 5 | 40 | Core 4 request; compliance phát hiện SEC-03 |
 
-**Lưu ý:** suite observation 120 request chỉ kiểm HTTP không phải 5xx; không thay cho oracle từng TC trong ma trận.
+**Lưu ý:** Core + observation map SEC-06/FR-10 tại A-004/B-004/A-031/A-032; SEC-03 tại core C-003. Fail = SUT vi phạm đặc tả (bug report).
 
 ## 5. Postman / Newman
 
 - Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_collection.json`
 - Tính năng đã dùng: collection folders, pre-request script, environment variables, setup chain, Newman CLI, HTML reporter.
-- **Full 120 TC (Newman):** 128 request (8 setup + 120 observation A/B/C), 128 assertion, 0 fail, 11.9s — raw `api-testing/newman/raw-output/full-120-20260903.txt`, HTML `api-testing/newman/html-reports/full-120/report.html`, lệnh `npm run test:full120`.
-- Baseline local: 20 request, 21 assertion, 0 fail.
-- Compliance local: 3 assertion fail → 3 bug trong `issues/bug-report.md`.
+- **Full 120+core (Newman):** 140 request, **141 assertion, 5 fail** (HW6-BUG-01/02/03 + A-031/A-032).
+- Core spec: `npm run test:core` — 21 assertion, **3 fail**.
 - Ảnh Postman: `evidence/postman-ui/` (5 ảnh **03/09/2026**, full 120 TC run).
 - Ảnh Newman: `evidence/newman-ui/newman-full-120-terminal-20260903.png`, `evidence/newman-ui/newman-full-120-report-20260903.png`.
 

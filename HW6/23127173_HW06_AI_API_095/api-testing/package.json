@@ -2,9 +2,11 @@
   "name": "hw6-api-testing",
   "private": true,
   "scripts": {
-    "test:smoke": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/smoke/report.html",
-    "test:compliance": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/compliance/report.html",
-    "test:full120": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json --folder \"00 Setup\" --folder \"A Observation 40 TC\" --folder \"B Observation 40 TC\" --folder \"C Observation 40 TC\" -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/full-120/report.html",
+    "generate:collection": "node scripts/generate-collection.mjs",
+    "test:core": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json --folder \"00 Setup\" --folder \"A FR-04 Profile\" --folder \"B FR-10 Cancel order\" --folder \"C FR-18 Admin order\" -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/core/report.html",
+    "test:smoke": "npm run test:core",
+    "test:compliance": "npm run test:core",
+    "test:full120": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json --folder \"00 Setup\" --folder \"A FR-04 Profile\" --folder \"B FR-10 Cancel order\" --folder \"C FR-18 Admin order\" --folder \"A Observation 40 TC\" --folder \"B Observation 40 TC\" --folder \"C Observation 40 TC\" -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/full-120/report.html",
     "evidence:postman": "node scripts/generate-postman-evidence.mjs"
   },
   "devDependencies": {
