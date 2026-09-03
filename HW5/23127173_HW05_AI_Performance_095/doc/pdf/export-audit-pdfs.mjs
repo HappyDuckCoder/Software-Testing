@@ -23,9 +23,8 @@ const { filename: auditFile } = await mdToPdf(
     launch_options: launchOptions,
     pdf_options: {
       format: 'A4',
-      landscape: true,
       printBackground: true,
-      margin: { top: '16mm', right: '14mm', bottom: '18mm', left: '14mm' },
+      margin: { top: '18mm', right: '16mm', bottom: '20mm', left: '16mm' },
     },
     dest: path.join(__dirname, 'AI-Audit-Report.pdf'),
   }
