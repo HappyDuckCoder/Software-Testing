@@ -30,7 +30,7 @@
 | Assertion | **182** — **12 FAIL** (6 nhóm bug spec) |
 | Excel summary | **108 PASS / 12 FAIL** |
 | Postman Desktop | 6 ảnh gốc + Console `X-Student-Id` |
-| Tự đánh giá | **096 / 100** (trừ Issue + CI fail chưa chụp) |
+| Tự đánh giá | **098 / 100** (trừ GitHub Issue chưa tạo) |
 
 Oracle thiết kế theo **đặc tả**, không suy từ code backend. Vi phạm spec → assertion **FAIL** trên Newman/Postman.
 
@@ -132,11 +132,11 @@ Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCo
 
 | Run | Kết quả job | Newman | Evidence |
 | --- | --- | --- | --- |
-| Remote **pass** (03/09) | ✅ | `evidence/ci-cd/ci-06`…`ci-10` |
-| Remote **fail** (`full-fail`) | ⏳ Chờ chụp | `ci-cd/HOW-TO-CAPTURE-CI.md` |
-| Local full oracle (03/09) | — | 182 req, **12 fail** · Newman raw |
+| Remote **pass** (#8 · 03/09) | ✅ Succeeded | observation · **0 fail** | `ci-pass-01`…`ci-pass-03` |
+| Remote **fail** (#7 · 03/09) | ❌ Failed (kỳ vọng) | oracle · **~12 fail** | `ci-fail-01`…`ci-fail-03` |
+| Local full oracle (03/09) | — | 182 req, **12 fail** · Newman raw | `evidence/newman-ui/` |
 
-Chưa đủ fail remote — SV chạy workflow **`oracle-fail`** rồi bổ sung ảnh `ci-fail-*`.
+Minh chứng CI: 6 ảnh trong `evidence/ci-cd/` · chi tiết `ci-cd/ci-cd-report.md`.
 
 ---
 
@@ -157,7 +157,7 @@ Chi tiết: `issues/bug-report.md`. GitHub Issues: **chưa tạo** (SV tự mở
 
 ## 10. Kết luận
 
-Đã hoàn thành pipeline 3 API và assert oracle local (**182/12**). CI remote **pass** có ảnh (`ci-06`…`ci-10`); **fail** chờ chụp job `oracle-fail`. Còn: GitHub Issues, ZIP Moodle.
+Đã hoàn thành pipeline 3 API và assert oracle local (**182/12**). CI remote **pass** (#8) và **fail** (#7) đều có ảnh (`ci-pass-*`, `ci-fail-*`). Còn: GitHub Issues, ZIP Moodle.
 
 ---
 

@@ -29,6 +29,14 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-038 | 03/09 | Bổ sung báo cáo §6/§14 + README self-assessment | Cursor (Composer 2.5) |
 | AI-039 | 03/09 | 5 ảnh CI GitHub Actions | Cursor (Composer 2.5) |
 | AI-040 | 03/09 | Xóa ci-01..05; giữ ci-06..10 pass | Cursor (Composer 2.5) |
+| AI-041 | 03/09 | 6 ảnh CI pass+fail; thay ci-06..10 | Cursor (Composer 2.5) |
+
+## Prompt AI-041 (03/09/2026)
+
+```text
+đã có 6 ảnh minh chứng mới có cả pass cả fail, bỏ các minh chứng cicd hiện tại thay bằng 6 ảnh mới
+cập nhật các doc liên quan, cập nhật ai audit
+```
 
 ## Prompt AI-039 (03/09/2026)
 

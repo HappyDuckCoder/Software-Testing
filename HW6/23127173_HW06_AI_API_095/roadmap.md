@@ -24,6 +24,6 @@
 
 ## Trạng thái sau khi review (03/09/2026)
 
-**Đã hoàn thành:** bước 1–7 (scope, 120 TC oracle spec, collection + `X-Student-Id` + Console, Newman **182 req / 12 fail**, Postman Desktop 6 ảnh, Excel **108/12**, PDF `doc/pdf/`, flowchart `hw6-api-testing-workflow.png`, CI baseline pass — bước 9 một phần). Evidence: `evidence/postman-ui/`, `evidence/newman-ui/`, `evidence/ci-cd/`, `test-cases/23127173_HW06_test-summary-20260903.xlsx`.
+**Đã hoàn thành:** bước 1–7 và bước 9 (CI pass #8 + fail #7 — 6 ảnh). Evidence: `evidence/postman-ui/`, `evidence/newman-ui/`, `evidence/ci-cd/`, `test-cases/23127173_HW06_test-summary-20260903.xlsx`.
 
-**Chưa hoàn thành:** GitHub Issues (6 nhóm bug), remote CI fail có chủ đích. ZIP nộp Moodle: sinh viên tự đóng gói (không bắt buộc tiêu chí nội bộ).
+**Chưa hoàn thành:** GitHub Issues (6 nhóm bug). ZIP nộp Moodle: sinh viên tự đóng gói (không bắt buộc tiêu chí nội bộ).

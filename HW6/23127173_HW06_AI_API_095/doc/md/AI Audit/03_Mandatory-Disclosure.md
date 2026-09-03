@@ -60,15 +60,14 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | PDF (main + audit + critique) | ✅ `doc/pdf/` |
 | Flowchart workflow (tự vẽ) | ✅ `doc/pdf/hw6-api-testing-workflow.png` |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
-| CI remote pass (03/09) | ✅ `ci-06`…`ci-10` |
-| CI remote fail | ⏳ Chờ chụp `oracle-fail` |
+| CI remote pass (03/09) | ✅ `ci-pass-01`…`ci-pass-03` (run #8) |
+| CI remote fail (03/09) | ✅ `ci-fail-01`…`ci-fail-03` (run #7) |
 | GitHub Issues | ⏳ |
-| CI remote fail (03/09) | ✅ |
 | ZIP nộp Moodle | SV tự đóng (không bắt buộc tiêu chí) |
 
 ## 8. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman. GitHub Issues và remote CI fail chưa xong. ZIP do tôi tự đóng gói. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman (182 req / 12 fail); CI remote pass (#8) và fail (#7) đã chụp. GitHub Issues chưa xong. ZIP do tôi tự đóng gói. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
 
 ## 9. Cam đoan
 
