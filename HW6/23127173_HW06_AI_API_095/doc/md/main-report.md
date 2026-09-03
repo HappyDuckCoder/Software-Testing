@@ -143,7 +143,7 @@ Minh chứng CI: 6 ảnh trong `evidence/ci-cd/` · chi tiết `ci-cd/ci-cd-repo
 ## 9. Bug report — sáu nhóm lỗi đặc tả
 
 | ID | Mô tả | TC liên quan (ví dụ) | GitHub Issue |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | HW6-BUG-01 | SEC-06 — client gán `role`/`isAdmin` vẫn 200 | A-031, A-032 | [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18) |
 | HW6-BUG-02 | FR-10 — hủy đơn `shipping` vẫn 200 | B-004, B-028 | [#19](https://github.com/HappyDuckCoder/Software-Testing/issues/19) |
 | HW6-BUG-03 | SEC-03 — token user gọi admin API vẫn 200 | C-023, C-024 | [#20](https://github.com/HappyDuckCoder/Software-Testing/issues/20) |
@@ -155,7 +155,21 @@ Chi tiết, URL và sáu screenshot trang issue thật: `issues/bug-report.md` v
 
 ---
 
-## 10. Kết luận
+## 10. Bảng tự đánh giá (đề §14)
+
+| Hạng mục | Nội dung | Điểm tối đa | Tự chấm |
+| --- | --- | ---: | ---: |
+| API 1 — Profile | 40 TC, oracle spec, Newman/Postman, 4 bug có GitHub Issue | 30 | 29 |
+| API 2 — Hủy đơn | 40 TC, oracle FR-10, 2 bug có GitHub Issue | 30 | 29 |
+| API 3 — Admin status | 40 TC, oracle FR-18/SEC, 2 bug có GitHub Issue | 30 | 28 |
+| Agent Skill — test generator | Skill + flowchart + pseudocode | 10 | 9 |
+| **Tổng** | | **100** | **95** |
+
+Tự chấm **95/100** — trừ nhẹ theo giới hạn đã ghi trong AI Audit (observation cũ, helper Postman). Tên ZIP nộp: `23127173_HW06_AI_API_095.zip`.
+
+---
+
+## 11. Kết luận
 
 Đã hoàn thành pipeline 3 API và assert oracle local (**182/12**). CI remote **pass** (#8) và **fail** (#7) đều có ảnh (`ci-pass-*`, `ci-fail-*`); sáu GitHub Issues [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23) đã có evidence. Còn: ZIP Moodle.
 
