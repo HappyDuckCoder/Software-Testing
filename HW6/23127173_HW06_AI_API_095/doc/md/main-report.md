@@ -39,7 +39,7 @@ Chi tiết: `test-cases/test-case-matrix.md`, `test-cases/execution-mapping.md`.
 
 - Collection: `api-testing/postman/collections/23127173_HW06_EShop_API.postman_collection.json`
 - **Full run:** 182 request (62 setup + 120 TC), **182 assertion, 12 fail**.
-- Lệnh: `npm run test:core` trong `api-testing/`.
+- Lệnh: `npm run test` trong `api-testing/`.
 - Minh chứng Newman: `evidence/newman-ui/` (03/09/2026).
 - Minh chứng Postman: `evidence/postman-ui/` — 5 ảnh, **170 pass / 12 fail** (cùng run spec oracle).
 

@@ -19,7 +19,7 @@ Thư mục này chứa ma trận **120 test case** (40/API × 3 API) và bản m
 ## Việc còn lại trước khi nộp
 
 - [ ] Xuất file Excel kèm cột **Kết quả thực tế** sau khi chạy Postman/Newman.
-- [ ] Cập nhật Pass/Fail cho từng ID sau mỗi lần chạy compliance/baseline.
+- [ ] Cập nhật Pass/Fail cho từng ID sau `npm run test` (182 assertion, 12 fail hiện tại).
 
 Sinh lại ma trận từ script:
 

@@ -11,6 +11,7 @@ api-testing/node_modules/
 npm-debug.log*
 api-testing/newman/tmp/
 api-testing/newman/*.json
+evidence/**/capture-html/
 
 # OS/editor noise and final archive produced only at packaging time.
 .DS_Store

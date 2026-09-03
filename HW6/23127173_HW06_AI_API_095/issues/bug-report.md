@@ -15,9 +15,9 @@ Oracle theo `Eshop/api_specification.md` + `Eshop/README.md` (FR-04, FR-10, FR-1
 
 | Artefact | Đường dẫn |
 | --- | --- |
-| Raw CLI | `api-testing/newman/raw-output/full-120-spec-20260903.txt` |
+| Raw CLI | `api-testing/newman/raw-output/full-120-20260903.txt` |
 | JSON | `api-testing/newman/raw-output/full-120-20260903.json` |
-| HTML report | `api-testing/newman/html-reports/core/report.html`, `full-120/report.html` |
+| HTML report | `api-testing/newman/html-reports/report.html` |
 | Ảnh terminal summary | `evidence/newman-ui/newman-full-120-terminal-20260903.png` |
 | Ảnh HTML report | `evidence/newman-ui/newman-full-120-report-20260903.png` |
 

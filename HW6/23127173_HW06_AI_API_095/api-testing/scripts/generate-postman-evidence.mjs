@@ -18,7 +18,7 @@ fs.mkdirSync(captureDir, { recursive: true });
 
 try {
 execSync(
-  `npx newman run "${collection}" -e "${environment}" --folder "00 Setup" --folder "A FR-04 Profile (40 TC)" --folder "C FR-18 Admin order status (40 TC)" --folder "B FR-10 Cancel order (40 TC)" -r json,cli --reporter-json-export "${jsonOut}"`,
+  `npx newman run "${collection}" -e "${environment}" --folder "00 Setup" --folder "A FR-04 Profile (40 TC)" --folder "C FR-18 Admin order status (40 TC)" --folder "B FR-10 Cancel order (40 TC)" --disable-unicode -r json,cli --reporter-json-export "${jsonOut}"`,
     { cwd: root, stdio: 'inherit', encoding: 'utf8' }
   );
 } catch (err) {

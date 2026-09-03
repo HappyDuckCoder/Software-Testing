@@ -13,6 +13,13 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-022 | 03/09 | Oracle đặc tả → fail; minh chứng + commit | Cursor (Composer 2.5) |
 | AI-023 | 03/09 | Redesign 120 TC bám spec; fixture riêng; 12 fail Newman | Cursor (Composer 2.5) |
 | AI-024 | 03/09 | Review TC + document; bug report có Postman | Cursor (Composer 2.5) |
+| AI-025 | 03/09 | Giải thích seed DB / trạng thái SUT | Cursor (Composer 2.5) |
+| AI-026 | 03/09 | Giải thích test xanh vs bug report | Cursor (Composer 2.5) |
+| AI-027 | 03/09 | Giải thích Postman không export HTML runner | Cursor (Composer 2.5) |
+| AI-028 | 03/09 | Xác nhận đồng bộ `api-testing/` sau redesign | Cursor (Composer 2.5) |
+| AI-029 | 03/09 | Dọn artifact trùng; giữ bản final 03/09 | Cursor (Composer 2.5) |
+| AI-030 | 03/09 | Giải thích lỗi font terminal Newman | Cursor (Composer 2.5) |
+| AI-031 | 03/09 | Fix UTF-8 raw output + cập nhật audit đủ prompt | Cursor (Composer 2.5) |
 
 ## Prompt AI-018 (03/09/2026)
 
@@ -30,7 +37,17 @@ sửa lại toàn bộ document là 100% tiếng việt...
 cập nhật aiaudit, mandatory vì dụng model mới
 ```
 
-## Prompt AI-019 (03/09/2026)
+## Prompt AI-031 (03/09/2026)
+
+```text
+fix lại chỗ đó, tất cả các prompt đều phải cập nhật audit
+```
+
+## Prompt AI-029 (03/09/2026)
+
+```text
+xóa các file không cần thiết đi, cái nào chạy nhiều lần thì dữ bản final thôi
+```
 
 ```text
 chạy script sinh lại các TC để chuẩn bị test lại newman, postman

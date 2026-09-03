@@ -58,16 +58,24 @@
 
 | **AI-024** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «review lại TC và document; cập nhật bug report có Postman» | Review lần 2: sửa map C-017/C-018/C-019, A-011; thêm `test-case-review.md`; bug report cột Postman + 5 ảnh; cập nhật checklist/main-report. | VALID | TC khớp tiêu đề ma trận; tài liệu đồng bộ 182 req / 12 fail. | Excel; GitHub Issue; Postman Desktop gốc nếu bắt buộc. |
 
+| **AI-025** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «bạn đã chạy seed lại chưa» | Xác nhận: setup collection đăng ký/login lại user fixture mỗi lần chạy Newman; không có lệnh seed DB riêng — SUT dùng SQLite runtime, fixture trong folder `00 Setup`. | VALID | Giải thích trạng thái SUT trước retest; không bịa seed script. | Restart EShop nếu DB cũ gây xung đột fixture. |
+| **AI-026** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «ủa tôi thấy test xanh hết mà sao lại có bug report» | Giải thích: run observation cũ chỉ assert non-5xx (128 pass); bug report từ oracle đặc tả sau AI-022/023 (12 fail có chủ đích). | VALID | Phân biệt pass kỹ thuật vs vi phạm spec — đúng ISTQB oracle. | Không dùng run observation cũ làm evidence cuối. |
+| **AI-027** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «postman có export cả html để chụp như vậy hả» | Trả lời: Postman Desktop không export Runner HTML; 5 PNG sinh bằng Newman JSON → HTML helper → Playwright (`generate-postman-evidence.mjs`). | VALID | Minh bạch nguồn evidence; audit đánh INCOMPLETE nếu đề bắt buộc screenshot Desktop gốc. | Chụp Postman Desktop thật nếu giảng viên yêu cầu. |
+| **AI-028** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «cập nhật lại data mới ở api-testing chưa» | Xác nhận đồng bộ: collection 62 setup + 120 TC, `oracle-execution.json`, raw/HTML final 03/09, script `npm run test` / `evidence:postman`. | VALID | Artifact `api-testing/` khớp redesign AI-023. | Chạy lại Newman sau mỗi sửa oracle. |
+| **AI-029** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «xóa các file không cần thiết; giữ bản final» | Xóa baseline/compliance/core/full-120-spec cũ, HTML thư mục cũ, `capture-html/`; giữ `full-120-20260903.txt/json`, `report.html`, PNG final; cập nhật README, `.gitignore`, bug-report, checklist. | VALID | Giảm artifact trùng; path nộp bài rõ ràng. | Commit cleanup; kiểm tra CI workflow còn trỏ path cũ. |
+| **AI-030** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «lỗi gì đây» (ảnh terminal Newman) | Phân tích: (1) chữ `â"œ` = lỗi encoding Windows khi redirect CLI UTF-8; (2) **12 failed** = bug spec mong đợi, không phải crash Newman. | VALID | Phân biệt lỗi hiển thị vs kết quả test. | Fix encoding raw output (AI-031). |
+| **AI-031** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «fix lại chỗ đó; tất cả prompt phải cập nhật audit» | Thêm `scripts/run-newman.mjs` (UTF-8 + `--disable-unicode` + ghi `full-120-20260903.txt/json`); cập nhật `npm run test`; tái chạy Newman **182/182/12 fail**; bổ sung audit AI-025…AI-031 + prompt log. | VALID | Raw CLI đọc được tiếng Việt và bảng ASCII trên Windows; audit đủ mọi prompt phiên 03/09 chiều. | Commit; cập nhật PNG Newman nếu cần khớp raw mới. |
+
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 24 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 17 | 71% |
+| Tổng artifact AI sinh đã audit | 31 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 24 | 77% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 29% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 23% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ — đã thay AI-023), AI-009/AI-012/AI-021 (Postman PNG helper). AI-022/AI-023/AI-024: oracle spec + review TC + bug report có Newman/Postman.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ — đã thay AI-023), AI-009/AI-012/AI-021 (Postman PNG helper). AI-022…AI-031: oracle spec, review, cleanup, encoding fix.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 

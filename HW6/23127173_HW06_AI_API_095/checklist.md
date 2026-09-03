@@ -14,7 +14,7 @@
 - [x] Map oracle từng ID: `oracle-utils.mjs`, `oracle-execution.json`, `execution-mapping.md`.
 - [x] Review TC lần 2: `test-cases/test-case-review.md`.
 - [x] Gắn assertion oracle đặc tả cho 120 TC (ID trùng ma trận).
-- [x] Newman full run: **182 req, 182 assertion, 12 fail** — raw/HTML/ảnh 03/09/2026.
+- [x] Newman full run: **182 req, 182 assertion, 12 fail** — `npm run test`.
 - [x] Postman evidence 5 ảnh (cùng run, spec oracle).
 - [ ] Tạo GitHub Issue + screenshot cho 6 nhóm bug.
 

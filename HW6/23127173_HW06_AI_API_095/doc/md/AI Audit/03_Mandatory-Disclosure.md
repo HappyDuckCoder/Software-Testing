@@ -28,6 +28,7 @@
 2. Rà tiến độ, bổ sung AI Audit/Mandatory (Composer 2.5, 03/09 sáng).
 3. Đọc spec EShop, ma trận TC tiếng Việt, 15 TC SV (Composer 2.5, 03/09).
 4. Sinh lại TC/collection; khởi động EShop `127.0.0.1:3000` chuẩn bị retest (Composer 2.5, 03/09).
+5. Newman full 120 oracle spec; cleanup artifact; fix encoding raw CLI (Composer 2.5, 03/09 chiều).
 
 ## 4. Phần việc cụ thể
 

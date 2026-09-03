@@ -1,9 +1,20 @@
 # API test artifacts
 
-- `postman/collections/`: reviewed collection JSON.
-- `postman/environments/`: scrubbed shareable environment; keep local secrets untracked.
-- `data/`: safe data-driven inputs.
-- `newman/raw-output/`: actual CLI output.
-- `newman/html-reports/`: actual HTML reports.
+| Thư mục | Nội dung |
+| --- | --- |
+| `postman/collections/` | Collection final: 62 setup + 120 TC |
+| `postman/environments/` | Environment template |
+| `newman/raw-output/` | `full-120-20260903.txt` + `.json` (final run) |
+| `newman/html-reports/` | `report.html` |
 
-The committed collection has a collection-level pre-request script that sends `X-Student-Id: 23127173` on every request. Local Newman output and remote CI evidence record this header; see `../evidence/newman-ui/` and `../evidence/ci-cd/`.
+## Lệnh
+
+```bash
+npm run generate:all   # sinh ma trận + collection
+npm run test           # Newman full 120 + setup (182 assertion)
+npm run evidence:postman  # JSON + PNG Postman (../evidence/postman-ui/)
+```
+
+**Final run (03/09/2026):** 182 request, 182 assertion, **12 fail** (oracle đặc tả). Script `scripts/run-newman.mjs` ghi UTF-8 + `--disable-unicode` (tránh lỗi font Windows).
+
+Pre-request script: `X-Student-Id: 23127173`. Minh chứng: `../evidence/newman-ui/`, `../evidence/postman-ui/`.

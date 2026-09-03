@@ -5,10 +5,9 @@
     "generate:matrix": "node ../test-cases/scripts/generate-matrix.mjs",
     "generate:collection": "node scripts/generate-collection.mjs",
     "generate:all": "npm run generate:matrix && npm run generate:collection",
-    "test:core": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json --folder \"00 Setup\" --folder \"A FR-04 Profile (40 TC)\" --folder \"C FR-18 Admin order status (40 TC)\" --folder \"B FR-10 Cancel order (40 TC)\" -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/core/report.html",
-    "test:smoke": "npm run test:core",
-    "test:compliance": "npm run test:core",
-    "test:full120": "npm run test:core",
+    "test": "node scripts/run-newman.mjs",
+    "test:core": "npm run test",
+    "test:full120": "npm run test",
     "evidence:postman": "node scripts/generate-postman-evidence.mjs"
   },
   "devDependencies": {
