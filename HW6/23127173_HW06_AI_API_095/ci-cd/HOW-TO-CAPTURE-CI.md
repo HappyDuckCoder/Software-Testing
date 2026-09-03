@@ -34,9 +34,9 @@ Job **`full-pass`** tự chạy sau push → chụp ảnh pass nếu cần.
 
 **Fail** (`full-fail`): overview (Failed), checkout, install, health, Newman log + summary **12 failed assertions**.
 
-Lưu pass: `ci-06`…`ci-10` (đã có) hoặc chụp lại từ job `full-pass`.
+Lưu pass: prefix **`ci-pass-*`** trong `evidence/ci-cd/` (đã có: `ci-pass-01`…`ci-pass-03`, run #8).
 
-Lưu fail: prefix **`ci-fail-*`** trong `evidence/ci-cd/`.
+Lưu fail: prefix **`ci-fail-*`** (đã có: `ci-fail-01`…`ci-fail-03`, run #7).
 
 ## 4. Test local
 

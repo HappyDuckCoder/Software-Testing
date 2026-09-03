@@ -2,14 +2,16 @@
 
 ## Configuration
 
-Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6-api-tests.yml). Hai job **full 120 TC**: `full-pass` (observation, 0 fail) và `full-fail` (oracle, ~12 fail).
+Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6-api-tests.yml). Một job `newman` mỗi lần chạy — **`full-pass`** (observation, 0 fail) hoặc **`full-fail`** (oracle, ~12 fail), cùng full 120 TC (182 request).
 
-## Evidence remote
+## Evidence remote (03/09/2026)
 
-| Run | Trạng thái | Evidence |
-| --- | --- | --- |
-| **Pass** (03/09) | ✅ Có ảnh | `evidence/ci-cd/ci-06`…`ci-10` |
-| **Fail** (`full-fail`) | ⏳ Chờ SV chụp | Run workflow → `full-fail` |
+| Run | GitHub Actions | Trạng thái job | Evidence |
+| --- | --- | --- | --- |
+| **Fail** | [#7](https://github.com/HappyDuckCoder/Software-Testing/actions) · `full-fail` | ❌ Failed (kỳ vọng) | `ci-fail-01`…`ci-fail-03` |
+| **Pass** | [#8](https://github.com/HappyDuckCoder/Software-Testing/actions) · `full-pass` | ✅ Succeeded | `ci-pass-01`…`ci-pass-03` |
+
+Tất cả ảnh trong `evidence/ci-cd/`. Artifact: `hw6-newman-full-fail.zip` (run fail).
 
 ## Local (chuẩn nộp bài)
 
@@ -19,5 +21,5 @@ Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6
 
 ## Ghi chú
 
-- Ảnh `ci-01`…`ci-05` (baseline 01/09) đã xóa — suite cũ, không dùng.
-- Fail CI phải từ job `oracle-fail` mới (182/12), không dùng run baseline lỗi trước đó.
+- Workflow trên nhánh `main` (Run workflow); push `homework6` auto chạy `full-pass`.
+- Ảnh `ci-01`…`ci-10` đã xóa — thay bằng bộ pass/fail mới (run #7 / #8).
