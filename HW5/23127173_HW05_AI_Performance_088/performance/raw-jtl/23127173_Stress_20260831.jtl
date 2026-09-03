@@ -1,0 +1,121 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1788442494943,3146,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-1,,true,,2925,901,4,4,null,0,0,20
+1788442496002,26,POST /api/login,200,OK,Stress virtual users 1-1,text,true,,639,234,2,2,http://localhost:3000/api/login,25,0,18
+1788442497063,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-1,text,true,,2006,291,3,3,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442498076,13,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-1,text,true,,280,376,4,4,http://localhost:3000/api/orders/2412/cancel,13,0,1
+1788442495924,3029,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-2,,true,,2925,901,4,4,null,0,0,4
+1788442496926,3,POST /api/login,200,OK,Stress virtual users 1-2,text,true,,639,234,3,3,http://localhost:3000/api/login,3,0,1
+1788442497931,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-2,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442498935,18,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-2,text,true,,280,376,4,4,http://localhost:3000/api/orders/2424/cancel,18,0,2
+1788442496925,3026,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-3,,true,,2925,901,4,4,null,0,0,5
+1788442497926,3,POST /api/login,200,OK,Stress virtual users 1-3,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442498931,5,GET /api/orders/my-orders,200,OK,Stress virtual users 1-3,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,4,0,2
+1788442499937,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-3,text,true,,280,376,4,4,http://localhost:3000/api/orders/2436/cancel,14,0,2
+1788442497923,3025,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-4,,true,,2925,901,4,4,null,0,0,4
+1788442498925,3,POST /api/login,200,OK,Stress virtual users 1-4,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442499929,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-4,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442500934,15,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-4,text,true,,280,376,4,4,http://localhost:3000/api/orders/2448/cancel,14,0,2
+1788442498923,3033,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-5,,true,,2925,901,4,4,null,0,0,5
+1788442499925,4,POST /api/login,200,OK,Stress virtual users 1-5,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,2
+1788442500931,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-5,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442501936,21,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-5,text,true,,280,376,4,4,http://localhost:3000/api/orders/2460/cancel,21,0,2
+1788442499922,3029,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-6,,true,,2925,901,4,4,null,0,0,4
+1788442500926,3,POST /api/login,200,OK,Stress virtual users 1-6,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442501931,5,GET /api/orders/my-orders,200,OK,Stress virtual users 1-6,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,4,0,1
+1788442502938,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-6,text,true,,280,376,4,4,http://localhost:3000/api/orders/2472/cancel,13,0,2
+1788442500923,3029,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-7,,true,,2925,901,4,4,null,0,0,5
+1788442501925,4,POST /api/login,200,OK,Stress virtual users 1-7,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,2
+1788442502931,4,GET /api/orders/my-orders,200,OK,Stress virtual users 1-7,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442503938,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-7,text,true,,280,376,4,4,http://localhost:3000/api/orders/2484/cancel,13,0,2
+1788442501923,3031,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-8,,true,,2925,901,4,4,null,0,0,5
+1788442502925,4,POST /api/login,200,OK,Stress virtual users 1-8,text,true,,639,234,4,4,http://localhost:3000/api/login,4,0,2
+1788442503931,6,GET /api/orders/my-orders,200,OK,Stress virtual users 1-8,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,6,0,2
+1788442504939,15,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-8,text,true,,280,376,4,4,http://localhost:3000/api/orders/2496/cancel,14,0,1
+1788442502921,3027,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-9,,true,,2925,901,4,4,null,0,0,3
+1788442503923,4,POST /api/login,200,OK,Stress virtual users 1-9,text,true,,639,234,4,4,http://localhost:3000/api/login,4,0,1
+1788442504929,4,GET /api/orders/my-orders,200,OK,Stress virtual users 1-9,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,4,0,1
+1788442505935,13,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-9,text,true,,280,376,4,4,http://localhost:3000/api/orders/2508/cancel,12,0,1
+1788442503920,3028,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-10,,true,,2925,901,4,4,null,0,0,4
+1788442504922,3,POST /api/login,200,OK,Stress virtual users 1-10,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442505927,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-10,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442506931,17,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-10,text,true,,280,376,4,4,http://localhost:3000/api/orders/2520/cancel,17,0,2
+1788442504920,3029,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-11,,true,,2925,901,4,4,null,0,0,5
+1788442505922,3,POST /api/login,200,OK,Stress virtual users 1-11,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442506928,4,GET /api/orders/my-orders,200,OK,Stress virtual users 1-11,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,2
+1788442507933,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-11,text,true,,280,376,4,4,http://localhost:3000/api/orders/2532/cancel,15,0,2
+1788442505920,3024,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-12,,true,,2925,901,4,4,null,0,0,4
+1788442506922,3,POST /api/login,200,OK,Stress virtual users 1-12,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442507926,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-12,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442508930,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-12,text,true,,280,376,4,4,http://localhost:3000/api/orders/2544/cancel,14,0,2
+1788442506919,3026,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-13,,true,,2925,901,4,4,null,0,0,3
+1788442507921,3,POST /api/login,200,OK,Stress virtual users 1-13,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442508925,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-13,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442509931,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-13,text,true,,280,376,4,4,http://localhost:3000/api/orders/2556/cancel,13,0,1
+1788442507917,3022,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-14,,true,,2925,901,4,4,null,0,0,3
+1788442508918,3,POST /api/login,200,OK,Stress virtual users 1-14,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442509922,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-14,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442510924,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-14,text,true,,280,376,4,4,http://localhost:3000/api/orders/2568/cancel,14,0,1
+1788442508917,3026,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-15,,true,,2925,901,4,4,null,0,0,4
+1788442509918,4,POST /api/login,200,OK,Stress virtual users 1-15,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,2
+1788442510922,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-15,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442511926,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-15,text,true,,280,376,4,4,http://localhost:3000/api/orders/2580/cancel,16,0,1
+1788442509917,3028,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-16,,true,,2925,901,4,4,null,0,0,2
+1788442510919,2,POST /api/login,200,OK,Stress virtual users 1-16,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442511922,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-16,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442512928,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-16,text,true,,280,376,4,4,http://localhost:3000/api/orders/2592/cancel,15,0,0
+1788442510915,3026,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-17,,true,,2925,901,4,4,null,0,0,2
+1788442511916,3,POST /api/login,200,OK,Stress virtual users 1-17,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442512921,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-17,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,0
+1788442513925,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-17,text,true,,280,376,4,4,http://localhost:3000/api/orders/2604/cancel,16,0,1
+1788442511914,3024,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-18,,true,,2925,901,4,4,null,0,0,4
+1788442512916,2,POST /api/login,200,OK,Stress virtual users 1-18,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442513919,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-18,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,2
+1788442514925,13,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-18,text,true,,280,376,4,4,http://localhost:3000/api/orders/2616/cancel,13,0,1
+1788442512915,3026,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-19,,true,,2925,901,4,4,null,0,0,3
+1788442513917,3,POST /api/login,200,OK,Stress virtual users 1-19,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442514921,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-19,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442515925,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-19,text,true,,280,376,4,4,http://localhost:3000/api/orders/2628/cancel,16,0,1
+1788442513914,3021,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-20,,true,,2925,901,4,4,null,0,0,4
+1788442514915,3,POST /api/login,200,OK,Stress virtual users 1-20,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442515919,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-20,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442516922,13,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-20,text,true,,280,376,4,4,http://localhost:3000/api/orders/2640/cancel,13,0,2
+1788442514914,3024,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-21,,true,,2925,901,4,4,null,0,0,3
+1788442515916,3,POST /api/login,200,OK,Stress virtual users 1-21,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442516920,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-21,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442517924,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-21,text,true,,280,376,4,4,http://localhost:3000/api/orders/2652/cancel,14,0,1
+1788442515913,3027,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-22,,true,,2925,901,4,4,null,0,0,4
+1788442516914,3,POST /api/login,200,OK,Stress virtual users 1-22,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,2
+1788442517919,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-22,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442518923,17,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-22,text,true,,280,376,4,4,http://localhost:3000/api/orders/2664/cancel,17,0,1
+1788442516912,3024,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-23,,true,,2925,901,4,4,null,0,0,4
+1788442517913,3,POST /api/login,200,OK,Stress virtual users 1-23,text,true,,639,234,4,4,http://localhost:3000/api/login,3,0,1
+1788442518919,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-23,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442519922,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-23,text,true,,280,376,4,4,http://localhost:3000/api/orders/2676/cancel,14,0,2
+1788442517912,3023,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-24,,true,,2925,901,4,4,null,0,0,3
+1788442518915,3,POST /api/login,200,OK,Stress virtual users 1-24,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442519918,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-24,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442520921,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-24,text,true,,280,376,4,4,http://localhost:3000/api/orders/2688/cancel,13,0,1
+1788442518913,3025,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-25,,true,,2925,901,4,4,null,0,0,1
+1788442519915,2,POST /api/login,200,OK,Stress virtual users 1-25,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,0
+1788442520918,1,GET /api/orders/my-orders,200,OK,Stress virtual users 1-25,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,1,0,0
+1788442521921,17,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-25,text,true,,280,376,4,4,http://localhost:3000/api/orders/2700/cancel,17,0,1
+1788442519912,3023,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-26,,true,,2925,901,4,4,null,0,0,3
+1788442520914,3,POST /api/login,200,OK,Stress virtual users 1-26,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442521917,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-26,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442522921,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-26,text,true,,280,376,4,4,http://localhost:3000/api/orders/2712/cancel,13,0,1
+1788442520911,3020,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-27,,true,,2925,901,4,4,null,0,0,2
+1788442521913,2,POST /api/login,200,OK,Stress virtual users 1-27,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,0
+1788442522916,2,GET /api/orders/my-orders,200,OK,Stress virtual users 1-27,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442523919,12,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-27,text,true,,280,376,4,4,http://localhost:3000/api/orders/2724/cancel,12,0,1
+1788442521911,3024,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-28,,true,,2925,901,3,3,null,0,0,4
+1788442522913,3,POST /api/login,200,OK,Stress virtual users 1-28,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442523916,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-28,text,true,,2006,291,4,4,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442524921,14,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-28,text,true,,280,376,3,3,http://localhost:3000/api/orders/2736/cancel,14,0,2
+1788442522909,3025,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-29,,true,,2925,901,2,2,null,0,0,3
+1788442523910,3,POST /api/login,200,OK,Stress virtual users 1-29,text,true,,639,234,4,4,http://localhost:3000/api/login,2,0,1
+1788442524914,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-29,text,true,,2006,291,3,3,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442525918,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-29,text,true,,280,376,2,2,http://localhost:3000/api/orders/2748/cancel,16,0,1
+1788442523910,3026,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Stress virtual users 1-30,,true,,2925,901,1,1,null,0,0,5
+1788442524912,3,POST /api/login,200,OK,Stress virtual users 1-30,text,true,,639,234,3,3,http://localhost:3000/api/login,3,0,2
+1788442525916,3,GET /api/orders/my-orders,200,OK,Stress virtual users 1-30,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442526920,16,PUT /api/orders/:id/cancel,200,OK,Stress virtual users 1-30,text,true,,280,376,1,1,http://localhost:3000/api/orders/2760/cancel,15,0,2

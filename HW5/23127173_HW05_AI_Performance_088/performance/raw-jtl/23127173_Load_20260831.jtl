@@ -1,0 +1,41 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1788442392742,4663,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-1,,true,,2925,901,3,3,null,0,0,21
+1788442394309,27,POST /api/login,200,OK,Load virtual users 1-1,text,true,,639,234,1,1,http://localhost:3000/api/login,26,0,19
+1788442395862,2,GET /api/orders/my-orders,200,OK,Load virtual users 1-1,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442397373,32,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-1,text,true,,280,376,3,3,http://localhost:3000/api/orders/1812/cancel,31,0,1
+1788442394728,4548,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-2,,true,,2925,901,3,3,null,0,0,5
+1788442396230,5,POST /api/login,200,OK,Load virtual users 1-2,text,true,,639,234,2,2,http://localhost:3000/api/login,4,0,2
+1788442397737,4,GET /api/orders/my-orders,200,OK,Load virtual users 1-2,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,4,0,1
+1788442399243,33,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-2,text,true,,280,376,3,3,http://localhost:3000/api/orders/1824/cancel,32,0,2
+1788442396726,4534,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-3,,true,,2925,901,3,3,null,0,0,6
+1788442398227,4,POST /api/login,200,OK,Load virtual users 1-3,text,true,,639,234,2,2,http://localhost:3000/api/login,4,0,2
+1788442399732,4,GET /api/orders/my-orders,200,OK,Load virtual users 1-3,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,4,0,2
+1788442401239,21,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-3,text,true,,280,376,3,3,http://localhost:3000/api/orders/1836/cancel,21,0,2
+1788442398727,4543,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-4,,true,,2925,901,3,3,null,0,0,3
+1788442400228,3,POST /api/login,200,OK,Load virtual users 1-4,text,true,,639,234,2,2,http://localhost:3000/api/login,3,0,1
+1788442401734,3,GET /api/orders/my-orders,200,OK,Load virtual users 1-4,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442403240,31,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-4,text,true,,280,376,3,3,http://localhost:3000/api/orders/1848/cancel,30,0,1
+1788442400727,4529,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-5,,true,,2925,901,3,3,null,0,0,4
+1788442402229,4,POST /api/login,200,OK,Load virtual users 1-5,text,true,,639,234,2,2,http://localhost:3000/api/login,3,0,1
+1788442403735,5,GET /api/orders/my-orders,200,OK,Load virtual users 1-5,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,4,0,2
+1788442405241,16,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-5,text,true,,280,376,3,3,http://localhost:3000/api/orders/1860/cancel,16,0,1
+1788442402724,4544,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-6,,true,,2925,901,3,3,null,0,0,4
+1788442404227,3,POST /api/login,200,OK,Load virtual users 1-6,text,true,,639,234,2,2,http://localhost:3000/api/login,3,0,1
+1788442405732,4,GET /api/orders/my-orders,200,OK,Load virtual users 1-6,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,4,0,1
+1788442407238,31,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-6,text,true,,280,376,3,3,http://localhost:3000/api/orders/1872/cancel,30,0,2
+1788442404725,4552,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-7,,true,,2925,901,3,3,null,0,0,3
+1788442406227,3,POST /api/login,200,OK,Load virtual users 1-7,text,true,,639,234,2,2,http://localhost:3000/api/login,2,0,1
+1788442407731,3,GET /api/orders/my-orders,200,OK,Load virtual users 1-7,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442409237,40,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-7,text,true,,280,376,3,3,http://localhost:3000/api/orders/1884/cancel,40,0,1
+1788442406723,4544,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-8,,true,,2925,901,3,3,null,0,0,3
+1788442408224,4,POST /api/login,200,OK,Load virtual users 1-8,text,true,,639,234,2,2,http://localhost:3000/api/login,4,0,1
+1788442409729,3,GET /api/orders/my-orders,200,OK,Load virtual users 1-8,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442411234,33,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-8,text,true,,280,376,3,3,http://localhost:3000/api/orders/1896/cancel,33,0,1
+1788442408724,4544,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-9,,true,,2925,901,2,2,null,0,0,5
+1788442410225,4,POST /api/login,200,OK,Load virtual users 1-9,text,true,,639,234,2,2,http://localhost:3000/api/login,3,0,2
+1788442411730,3,GET /api/orders/my-orders,200,OK,Load virtual users 1-9,text,true,,2006,291,2,2,http://localhost:3000/api/orders/my-orders,3,0,1
+1788442413234,34,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-9,text,true,,280,376,2,2,http://localhost:3000/api/orders/1908/cancel,33,0,2
+1788442410723,4540,E2E login - orders - cancel,200,"Number of samples in transaction : 3, number of failing samples : 0",Load virtual users 1-10,,true,,2925,901,1,1,null,0,0,3
+1788442412225,3,POST /api/login,200,OK,Load virtual users 1-10,text,true,,639,234,2,2,http://localhost:3000/api/login,3,0,1
+1788442413730,3,GET /api/orders/my-orders,200,OK,Load virtual users 1-10,text,true,,2006,291,1,1,http://localhost:3000/api/orders/my-orders,2,0,1
+1788442415234,29,PUT /api/orders/:id/cancel,200,OK,Load virtual users 1-10,text,true,,280,376,1,1,http://localhost:3000/api/orders/1920/cancel,29,0,1
