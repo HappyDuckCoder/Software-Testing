@@ -2,14 +2,14 @@
 
 ## Configuration
 
-Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6-api-tests.yml). Hai job: **`pass-smoke`** (setup, 0 fail) và **`oracle-fail`** (full 120 oracle, ~12 fail).
+Workflow: [`.github/workflows/hw6-api-tests.yml`](../../../.github/workflows/hw6-api-tests.yml). Hai job **full 120 TC**: `full-pass` (observation, 0 fail) và `full-fail` (oracle, ~12 fail).
 
 ## Evidence remote
 
 | Run | Trạng thái | Evidence |
 | --- | --- | --- |
 | **Pass** (03/09) | ✅ Có ảnh | `evidence/ci-cd/ci-06`…`ci-10` |
-| **Fail** (oracle-fail) | ⏳ Chờ SV chụp | Chạy workflow → `oracle-fail` → xem `HOW-TO-CAPTURE-CI.md` |
+| **Fail** (`full-fail`) | ⏳ Chờ SV chụp | Run workflow → `full-fail` |
 
 ## Local (chuẩn nộp bài)
 

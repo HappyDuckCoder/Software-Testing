@@ -25,7 +25,7 @@
 
 - [x] Header `X-Student-Id: 23127173` trên mọi request.
 - [x] CI remote **pass** — `evidence/ci-cd/ci-06`…`ci-10`.
-- [ ] CI remote **fail** — chạy job `oracle-fail`, chụp ảnh (xem `ci-cd/HOW-TO-CAPTURE-CI.md`).
+- [ ] CI remote **fail** — Run workflow → **`full-fail`**, chụp `ci-fail-*`.
 - [x] Excel test summary sau khi chạy đủ assertion.
 - [x] Sơ đồ workflow (`doc/pdf/hw6-api-testing-workflow.png`).
 - [x] AI Audit + Mandatory Disclosure cập nhật (03/09/2026).

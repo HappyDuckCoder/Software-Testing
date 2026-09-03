@@ -7,18 +7,18 @@ on:
   workflow_dispatch:
     inputs:
       suite:
-        description: 'pass-smoke = CI pass (setup 0 fail) | oracle-fail = CI fail (full 120 oracle, ~12 fail)'
+        description: 'full-pass = full 120 TC, job xanh | full-fail = full 120 TC oracle, ~12 fail'
         required: true
         type: choice
         options:
-          - pass-smoke
-          - oracle-fail
-        default: oracle-fail
+          - full-pass
+          - full-fail
+        default: full-fail
 
 jobs:
-  pass-smoke:
-    name: pass-smoke
-    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.suite == 'pass-smoke')
+  full-pass:
+    name: full-pass
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.suite == 'full-pass')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,22 +38,24 @@ jobs:
         run: |
           node eshop-sut/backend/server.js > eshop.log 2>&1 &
           for i in {1..20}; do curl -fsS http://127.0.0.1:3000/api/products && break; sleep 1; done
-      - name: Generate collection
+      - name: Generate collection (observation — no 5xx)
         working-directory: HW6/23127173_HW06_AI_API_095/api-testing
+        env:
+          COLLECTION_MODE: observation
         run: node scripts/generate-collection.mjs
-      - name: Run Newman pass smoke (setup only)
+      - name: Run Newman full pass (182 req, 0 fail)
         working-directory: HW6/23127173_HW06_AI_API_095/api-testing
         run: node scripts/run-newman-ci-pass.mjs
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hw6-newman-ci-pass
+          name: hw6-newman-full-pass
           path: HW6/23127173_HW06_AI_API_095/api-testing/newman
 
-  oracle-fail:
-    name: oracle-fail
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.suite == 'oracle-fail'
+  full-fail:
+    name: full-fail
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.suite == 'full-fail'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -73,15 +75,17 @@ jobs:
         run: |
           node eshop-sut/backend/server.js > eshop.log 2>&1 &
           for i in {1..20}; do curl -fsS http://127.0.0.1:3000/api/products && break; sleep 1; done
-      - name: Generate collection
+      - name: Generate collection (oracle spec)
         working-directory: HW6/23127173_HW06_AI_API_095/api-testing
+        env:
+          COLLECTION_MODE: oracle
         run: node scripts/generate-collection.mjs
-      - name: Run Newman oracle fail (full 120 TC — expect assertion failures)
+      - name: Run Newman full fail (182 req, ~12 assert fail)
         working-directory: HW6/23127173_HW06_AI_API_095/api-testing
         run: node scripts/run-newman-ci-fail.mjs
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hw6-newman-ci-oracle-fail
+          name: hw6-newman-full-fail
           path: HW6/23127173_HW06_AI_API_095/api-testing/newman

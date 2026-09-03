@@ -36,6 +36,15 @@ const urlFromPath = (pathPart) => {
 
 const assert = (name, code) => `pm.test(${JSON.stringify(name)}, function () { pm.response.to.have.status(${code}); });`;
 
+const collectionMode = process.env.COLLECTION_MODE || 'oracle';
+
+const tcAssertScript = (row) => {
+  if (collectionMode === 'observation') {
+    return `pm.test(${JSON.stringify(`${row.id} no 5xx`)}, function () { pm.expect(pm.response.code).to.be.below(500); });`;
+  }
+  return assertScript(row.id, row.statusCodes);
+};
+
 function authHeaders(auth, extra) {
   const h = [];
   if (extra !== 'no-content-type') h.push({ key: 'Content-Type', value: 'application/json' });
@@ -202,7 +211,7 @@ function tcRequest(row) {
       listen: 'test',
       script: {
         type: 'text/javascript',
-        exec: [assertScript(row.id, row.statusCodes), `console.log('${row.id}', pm.response.code);`],
+        exec: [tcAssertScript(row), `console.log('${row.id}', pm.response.code);`],
       },
     }],
   };
@@ -237,4 +246,4 @@ await writeFile(
   path.resolve(root, '../postman/collections/23127173_HW06_EShop_API.postman_collection.json'),
   JSON.stringify(collection, null, 2),
 );
-console.log('Collection:', setup.length, 'setup +', poolA.length + poolB.length + poolC.length, 'TC');
+console.log('Collection:', setup.length, 'setup +', poolA.length + poolB.length + poolC.length, 'TC', `mode=${collectionMode}`);

@@ -2,38 +2,39 @@
 
 Workflow: `.github/workflows/hw6-api-tests.yml`
 
-## 1. Push commit workflow mới lên `homework6`
+Hai job — **cùng full 120 TC** (182 request), không smoke:
 
-Sau khi push, job **`pass-smoke`** tự chạy (chỉ folder `00 Setup` — kỳ vọng **0 fail**, job ✅).
+| Job | Collection | Kết quả job | Newman |
+| --- | --- | --- | --- |
+| **`full-pass`** | observation (no 5xx) | ✅ Xanh | 182 req, **0 fail** |
+| **`full-fail`** | oracle đặc tả | ❌ Đỏ | 182 req, **~12 fail** |
 
-## 2. Chạy CI fail thủ công (để chụp ảnh)
+## 1. Push lên `homework6`
 
-1. Mở https://github.com/HappyDuckCoder/Software-Testing/actions/workflows/hw6-api-tests.yml
+Job **`full-pass`** tự chạy sau push → chụp ảnh pass nếu cần.
+
+## 2. Chạy CI fail (chụp minh chứng)
+
+1. https://github.com/HappyDuckCoder/Software-Testing/actions/workflows/hw6-api-tests.yml
 2. **Run workflow** → branch `homework6`
-3. Chọn **`oracle-fail`** → Run workflow
-4. Đợi job **`oracle-fail`** ❌ Failed (đúng — ~**182 req / 12 assert fail**, khớp local)
+3. Chọn **`full-fail`** → Run
+4. Job **`full-fail`** ❌ Failed — summary **182 / 12 fail**
 
-## 3. Ảnh nên chụp (job `oracle-fail`)
+## 3. Ảnh nên chụp
 
-| # | Bước | Ghi chú |
-| --- | --- | --- |
-| 1 | Run overview | Tên job `oracle-fail`, trạng thái Failed |
-| 2 | Checkout EShop SUT | |
-| 3 | Install dependencies | |
-| 4 | Start SUT health check | JSON products |
-| 5 | **Run Newman oracle fail** | Log `X-Student-Id applied: 23127173` |
-| 6 | **Summary cuối** | Bảng `182` requests / **`12` failed assertions** |
+**Pass** (`full-pass`): overview, checkout, install, health, Newman summary **0 failed**.
 
-Lưu vào `evidence/ci-cd/` với prefix **`ci-fail-*`** (không ghi đè `ci-06`…`ci-10` — đã là pass).
+**Fail** (`full-fail`): overview (Failed), checkout, install, health, Newman log + summary **12 failed assertions**.
 
-## 4. CI pass
+Lưu pass: `ci-06`…`ci-10` (đã có) hoặc chụp lại từ job `full-pass`.
 
-Đã có: `ci-06`…`ci-10`. Chụp lại (nếu cần): Run workflow → **`pass-smoke`** → job ✅.
+Lưu fail: prefix **`ci-fail-*`** trong `evidence/ci-cd/`.
 
-## 5. Test local trước khi push
+## 4. Test local
 
 ```powershell
 cd api-testing
-npm run test:ci-pass   # expect exit 0
-npm run test:ci-fail   # expect exit non-zero, ~12 fail
+$env:COLLECTION_MODE='observation'; node scripts/generate-collection.mjs; npm run test:ci-pass
+$env:COLLECTION_MODE='oracle'; node scripts/generate-collection.mjs; npm run test:ci-fail
+npm run generate:collection   # khôi phục oracle cho local
 ```

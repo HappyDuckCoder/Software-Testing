@@ -9,9 +9,16 @@ const dateTag = process.env.NEWMAN_DATE_TAG || '20260903';
 
 const collection = 'postman/collections/23127173_HW06_EShop_API.postman_collection.json';
 const environment = 'postman/environments/eshop.local.template.postman_environment.json';
-const txtOut = path.join(root, `newman/raw-output/ci-oracle-fail-${dateTag}.txt`);
-const jsonOut = path.join(root, `newman/raw-output/ci-oracle-fail-${dateTag}.json`);
-const htmlOut = path.join(root, 'newman/html-reports/ci-oracle-fail/report.html');
+const txtOut = path.join(root, `newman/raw-output/ci-full-fail-${dateTag}.txt`);
+const jsonOut = path.join(root, `newman/raw-output/ci-full-fail-${dateTag}.json`);
+const htmlOut = path.join(root, 'newman/html-reports/ci-full-fail/report.html');
+
+const folders = [
+  '--folder "00 Setup"',
+  '--folder "A FR-04 Profile (40 TC)"',
+  '--folder "C FR-18 Admin order status (40 TC)"',
+  '--folder "B FR-10 Cancel order (40 TC)"',
+];
 
 const quote = (value) => `"${value.replace(/"/g, '\\"')}"`;
 
@@ -20,10 +27,7 @@ const command = [
   quote(collection),
   '-e',
   quote(environment),
-  '--folder "00 Setup"',
-  '--folder "A FR-04 Profile (40 TC)"',
-  '--folder "C FR-18 Admin order status (40 TC)"',
-  '--folder "B FR-10 Cancel order (40 TC)"',
+  ...folders,
   '--disable-unicode',
   '-r cli,json,htmlextra',
   `--reporter-json-export ${quote(jsonOut)}`,
@@ -54,5 +58,5 @@ output = output.replace(/\r?\n?\(node:\d+\).*DeprecationWarning[\s\S]*?(?=\r?\n\
 fs.writeFileSync(txtOut, output, { encoding: 'utf8' });
 process.stdout.write(output);
 
-console.log('\nCI oracle-fail finished — non-zero exit expected (spec violations).');
+console.log('\nCI full-fail finished — non-zero exit expected (~12 oracle assert fail).');
 process.exit(exitCode);

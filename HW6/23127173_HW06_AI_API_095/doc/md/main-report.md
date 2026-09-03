@@ -133,7 +133,7 @@ Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCo
 | Run | Kết quả job | Newman | Evidence |
 | --- | --- | --- | --- |
 | Remote **pass** (03/09) | ✅ | `evidence/ci-cd/ci-06`…`ci-10` |
-| Remote **fail** (`oracle-fail`) | ⏳ Chờ chụp | `ci-cd/HOW-TO-CAPTURE-CI.md` |
+| Remote **fail** (`full-fail`) | ⏳ Chờ chụp | `ci-cd/HOW-TO-CAPTURE-CI.md` |
 | Local full oracle (03/09) | — | 182 req, **12 fail** · Newman raw |
 
 Chưa đủ fail remote — SV chạy workflow **`oracle-fail`** rồi bổ sung ảnh `ci-fail-*`.
