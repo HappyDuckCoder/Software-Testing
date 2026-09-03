@@ -2,6 +2,7 @@
 
 Nguồn: `git log --oneline -- HW6/23127173_HW06_AI_API_095` · cập nhật 03/09/2026.
 
+99e0255 Cap nhat git commit log sau commit b4820d4 (CI evidence AI-041).
 b4820d4 Thay 6 anh CI pass+fail (run #7/#8); xoa ci-06..10; dong bo doc/audit AI-041.
 80a8b6b Add new settings for markdown PDF generation and include AI Audit and Critique reports
 0c109d5 Cap nhat git commit log them commit 940718b.
