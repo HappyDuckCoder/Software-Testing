@@ -362,25 +362,49 @@ $csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\
 & $jmeter -J"hw5.data.file=$csv" -t "$submission\performance\test-plans\23127173_Endurance_20260831.jmx"
 ```
 
+**Lệnh lọc JTL chỉ còn dòng workflow cha (demo / đọc nhanh):**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095
+.\scripts\extract-parent-jtl.ps1 -AllScenarios
+```
+
+Mở file đã lọc (Endurance — 1.200 dòng + header):
+
+```
+performance\raw-jtl\23127173_Endurance_20260831_parents-only.jtl
+```
+
 **Nói:**
 
-> Endurance ~601 giây, 1.200 workflow, peak RAM backend 79,14 MB trong workload này. Đây là cấu hình máy từ DXDIAG — không gọi đó là giới hạn production.
+> Endurance ~601 giây, **1.200 workflow cha**, peak RAM backend 79,14 MB. JTL gốc có 4.800 dòng vì mỗi workflow ghi thêm 3 HTTP sampler — em lọc bằng script `extract-parent-jtl.ps1` để xem đúng 1.200 dòng cha; file gốc vẫn giữ để chứng minh latency từng API. Cấu hình máy từ DXDIAG — không gọi đó là giới hạn production.
 
 **Sau mục này:** Đóng JMeter Endurance.
 
 ---
 
-## Mục 10 — Phân tích AI
+## Mục 10 — Phân tích AI và đọc JTL
 
 **Thời gian:** 6:45 – 7:35
 
-**Màn hình:** `main-report.md` → §7 Phân tích AI.
+**Màn hình:** Cạnh nhau hoặc lần lượt:
 
-**Lệnh:** Không cần.
+```
+performance\raw-jtl\23127173_Endurance_20260831.jtl          # gốc — 4.800 sample
+performance\raw-jtl\23127173_Endurance_20260831_parents-only.jtl   # 1.200 workflow
+doc\md\main-report.md → §7 Phân tích AI
+```
+
+**Lệnh (nếu chưa chạy ở Mục 9):**
+
+```powershell
+Set-Location D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095
+.\scripts\extract-parent-jtl.ps1
+```
 
 **Nói:**
 
-> AI dễ nhầm 4.800 sample là 4.800 workflow; thực tế 1.200 workflow × 3 sampler + dòng cha. p95 E2E ~4,8 giây gồm think-time JMeter; endpoint riêng chỉ vài chục ms.
+> Cả bốn JTL gốc đều **0 lỗi**, toàn HTTP 200. AI dễ nhầm 4.800 sample là 4.800 workflow; thực tế **1.200 workflow cha** — mỗi dòng trong file `parents-only` là một lần E2E hoàn chỉnh. p95 ~4,8 giây là transaction có think-time; mở JTL gốc thì login/orders/cancel chỉ vài đến vài chụm ms. Stress p95 thấp hơn Load vì think-time ngắn hơn, không phải backend nhanh hơn khi tải cao.
 
 ---
 

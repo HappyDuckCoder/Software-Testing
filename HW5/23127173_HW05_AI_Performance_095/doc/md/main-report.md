@@ -92,20 +92,23 @@ Ba kế hoạch bắt buộc dùng **ba loại listener khác nhau**:
 
 ## 4. Bằng chứng và quy ước số liệu
 
-Nhật ký JTL thô và báo cáo HTML là nguồn chính. **Workflow** chỉ đếm transaction cha `E2E login - orders - cancel`; mỗi workflow có ba HTTP sampler nên JTL có bốn sample/workflow. p95 tính nearest-rank từ dòng parent trong JTL thô.
+Nhật ký JTL thô và báo cáo HTML là nguồn chính. **Workflow** chỉ đếm transaction cha `E2E login - orders - cancel`; mỗi workflow có ba HTTP sampler nên JTL gốc có bốn sample/workflow. p95 tính nearest-rank từ dòng parent trong JTL thô.
 
-| Kịch bản | JTL thô | Báo cáo HTML | Workflow cha / tổng sample |
-| --- | --- | --- | ---: |
-| Load | `23127173_Load_20260831.jtl` | `html-reports/23127173_Load_20260831/` | 10 / 40 |
-| Stress | `23127173_Stress_20260831.jtl` | `html-reports/23127173_Stress_20260831/` | 30 / 120 |
-| Spike | `23127173_Spike_20260831.jtl` | `html-reports/23127173_Spike_20260831/` | 50 / 200 |
-| Endurance | `23127173_Endurance_20260831.jtl` | `html-reports/23127173_Endurance_20260831/` | 1.200 / 4.800 |
+| Kịch bản | JTL thô (nộp) | JTL cha (lọc) | Báo cáo HTML | Workflow cha / tổng sample |
+| --- | --- | --- | --- | ---: |
+| Load | `23127173_Load_20260831.jtl` | `*_Load_*_parents-only.jtl` | `html-reports/23127173_Load_20260831/` | 10 / 40 |
+| Stress | `23127173_Stress_20260831.jtl` | `*_Stress_*_parents-only.jtl` | `html-reports/23127173_Stress_20260831/` | 30 / 120 |
+| Spike | `23127173_Spike_20260831.jtl` | `*_Spike_*_parents-only.jtl` | `html-reports/23127173_Spike_20260831/` | 50 / 200 |
+| Endurance | `23127173_Endurance_20260831.jtl` | `*_Endurance_*_parents-only.jtl` | `html-reports/23127173_Endurance_20260831/` | 1.200 / 4.800 |
+
+Bản `*_parents-only.jtl` do script `scripts/extract-parent-jtl.ps1` lọc từ JTL gốc — **không thay thế** log thô; dùng khi cần xem đúng 1.200 (hoặc 10/30/50) dòng workflow.
 
 **Ảnh minh chứng:**
 
 - JMeter + Task Manager cùng khung: `evidence/resource-monitor/` (Load, Stress, Spike, Endurance).
 - Giao diện CLI/GUI JMeter: `evidence/jmeter-ui/` (8 ảnh).
-**Kiểm tra chéo:** Baseline comparator đọc JTL endurance rerun — 1.200 workflow, p95 4.826 ms, tỷ lệ lỗi 0%, tăng p95 3,58% so với Load 4.659 ms (dưới ngưỡng 20%).
+
+**Kiểm tra chéo:** Baseline comparator đọc `23127173_Endurance_20260831.jtl` — 1.200 workflow cha, p95 4.840 ms, tỷ lệ lỗi 0%, tăng p95 3,58% so với Load 4.659 ms (dưới ngưỡng 20%).
 
 ---
 
@@ -164,7 +167,7 @@ Chi tiết: `evidence/endurance/endurance-memory-samples-20260831.csv`.
 
 ## 8. Đề xuất kiểm thử hiệu năng liên tục (Nhiệm vụ 3)
 
-![Luồng kiểm thử hiệu năng liên tục](../../continuous-performance-testing/workflow.png)
+![Luồng kiểm thử hiệu năng liên tục](assets/workflow.png)
 
 Workflow triển khai tại `.github/workflows/github-actions-performance.yml` — **đã chạy thật trên GitHub Actions**.
 

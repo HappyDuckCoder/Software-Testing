@@ -5,7 +5,7 @@
 | `main-report.pdf` | `doc/md/main-report.md` + `doc/pdf/main-report.css` |
 | `AI-Audit-Report.pdf` | `doc/md/AI Audit/01_AI-Audit-Report.md` |
 | `AI-Critique.pdf` | `doc/md/AI Audit/02_AI-Critique.md` |
-| `workflow.png` | `continuous-performance-testing/workflow.png` |
+| `workflow.png` | `doc/md/assets/workflow.png` (copy từ `continuous-performance-testing/workflow.png` khi export) |
 
 ## Xuất PDF báo cáo chính
 

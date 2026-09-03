@@ -276,6 +276,18 @@
 
 </div>
 
+<div class="audit-entry">
+
+#### AI-022 · 03/09/2026 · Cursor (Composer)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | «Bổ sung script lọc JTL parent-only; cập nhật doc, report, kịch bản video, audit; commit» |
+| Output AI | `scripts/extract-parent-jtl.ps1`; bốn file `*_parents-only.jtl`; cập nhật main-report §4, raw-jtl README, video Mục 9–10, sửa tham chiếu rerun lỗi thời. |
+| Verdict / SV | **HỢP LỆ — tiện ích đọc JTL.** Bản lọc không thay JTL gốc; SV demo script trong video Mục 9–10. |
+
+</div>
+
 ## 3. Quy tắc cập nhật
 
 Mỗi lần dùng AI tiếp theo, thêm một dòng: ngày giờ, công cụ, prompt, đầu ra, verdict, lý do và phần SV đã kiểm chứng. Không ghi dữ liệu thực thi chưa xảy ra.

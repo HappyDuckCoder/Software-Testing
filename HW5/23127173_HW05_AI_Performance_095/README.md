@@ -66,6 +66,7 @@ Peak bộ nhớ backend quan sát: **79,14 MB**. p95 workflow **gồm think-time
 | `doc/md/AI Audit/` | AI Audit, Mandatory Disclosure, Privacy Checklist |
 | `doc/md/AI Audit/02_AI-Critique.md` | Phê bình AI (200–300 từ) |
 | `performance/test-plans/` | 3 JMX bắt buộc + Endurance |
+| `performance/raw-jtl/` | JTL gốc + `*_parents-only.jtl` (script `scripts/extract-parent-jtl.ps1`) |
 | `continuous-performance-testing/` | Pipeline CI + [ci-cd-report.md](continuous-performance-testing/ci-cd-report.md) |
 
 Evidence thật (JTL, HTML, ảnh) không được thay bằng nội dung AI sinh.

@@ -6,7 +6,7 @@
 - [x] Xác minh SUT local, cổng 3000, phần cứng và DXDIAG.
 - [x] CSV test, reset/seed độc lập, kiểm tra JWT và orderId.
 - [x] Load, Stress, Spike đúng tên; CSV, assertion, trích JWT/orderId; ba listener khác nhau.
-- [x] JTL thô và HTML report cho ba kịch bản; JTL rerun đối chiếu ảnh.
+- [x] JTL thô và HTML report cho ba kịch bản; script `extract-parent-jtl.ps1` lọc dòng cha.
 - [x] Ảnh JMeter + Task Manager (Load, Stress, Spike, Endurance); ảnh CLI/GUI JMeter.
 - [x] Endurance 601,15 giây; 61 mẫu RAM; báo cáo RPS và peak working set.
 - [x] Phân tích AI, truy tìm diễn giải sai, đánh giá đề xuất tối ưu; AI Critique ≤300 từ.
