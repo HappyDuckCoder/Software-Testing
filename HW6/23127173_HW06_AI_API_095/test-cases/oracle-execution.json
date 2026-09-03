@@ -243,7 +243,7 @@
     "auth": "user",
     "body": {
       "name": "HW6 User",
-      "shipping_address": "123 Nguyen Van Cu, Q1, TP.HCM",
+      "shipping_address": "123 Nguyễn Văn Cừ, Phường 5, Quận 5, TP.HCM",
       "phone": "0912345678"
     },
     "extraHeaders": null,
@@ -837,7 +837,7 @@
     "title": "User A, B, C cập nhật hồ sơ đồng thời",
     "source": "Sinh viên bổ sung",
     "gapNote": "AI không mô phỏng nhiều user cập nhật đồng thời.",
-    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "pre": "Newman chạy tuần tự; TC mô phỏng nhiều user bằng một request hợp lệ (giới hạn công cụ).",
     "request": "PUT /api/users/me; auth=user",
     "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
     "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
@@ -861,7 +861,7 @@
     "title": "Đổi mật khẩu rồi cập nhật profile",
     "source": "Sinh viên bổ sung",
     "gapNote": "AI không nối luồng đổi mật khẩu rồi cập nhật profile ngay sau đó.",
-    "pre": "User test@eshop.com đã đăng nhập (JWT hợp lệ).",
+    "pre": "User đã đăng nhập; TC giả định đổi mật khẩu trước đó vẫn cập nhật profile được (FR-04).",
     "request": "PUT /api/users/me; auth=user",
     "expected": "200 — cập nhật thành công (FR-04, api_spec §2.2)",
     "spec": "FR-04, SEC-02, SEC-06; api_spec §2.2; README FR-04",
@@ -2004,18 +2004,18 @@
     "title": "Status chứa SQL injection",
     "source": "AI sinh",
     "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
-    "request": "PUT /api/admin/orders/1%27%20OR%201=1/status; auth=admin; body {\"status\":\"confirmed\"}",
-    "expected": "404 — ID không hợp lệ (SEC-05)",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"'; DROP TABLE orders;--\"}",
+    "expected": "400 — status SQL injection không hợp lệ (SEC-05)",
     "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
     "auth": "admin",
     "body": {
-      "status": "confirmed"
+      "status": "'; DROP TABLE orders;--"
     },
-    "path": "/api/admin/orders/1%27%20OR%201=1/status",
+    "path": "/api/admin/orders/{{adminBodyTestId}}/status",
     "method": "PUT",
-    "orderVar": null,
+    "orderVar": "{{adminBodyTestId}}",
     "statusCodes": [
-      404
+      400
     ]
   },
   {
@@ -2025,12 +2025,12 @@
     "title": "Status chứa XSS",
     "source": "AI sinh",
     "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
-    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"'; DROP--\"}",
-    "expected": "400 — status không hợp lệ",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"<script>x</script>\"}",
+    "expected": "400 — status XSS không hợp lệ (SEC-05)",
     "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
     "auth": "admin",
     "body": {
-      "status": "'; DROP--"
+      "status": "<script>x</script>"
     },
     "path": "/api/admin/orders/{{adminBodyTestId}}/status",
     "method": "PUT",
@@ -2046,18 +2046,19 @@
     "title": "Gửi thêm trường lạ trong body",
     "source": "AI sinh",
     "pre": "Admin đăng nhập; đơn ở trạng thái nguồn phù hợp FR-10.",
-    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"<script>x</script>\"}",
-    "expected": "400 — status không hợp lệ",
+    "request": "PUT /api/admin/orders/{{adminBodyTestId}}/status; auth=admin; body {\"status\":\"confirmed\",\"extra_field\":\"ignored\"}",
+    "expected": "200 — trường lạ bị bỏ qua, status hợp lệ (api_spec §6.2)",
     "spec": "FR-10, FR-12, FR-18, SEC-03; api_spec §6.2",
     "auth": "admin",
     "body": {
-      "status": "<script>x</script>"
+      "status": "confirmed",
+      "extra_field": "ignored"
     },
     "path": "/api/admin/orders/{{adminBodyTestId}}/status",
     "method": "PUT",
     "orderVar": "{{adminBodyTestId}}",
     "statusCodes": [
-      400
+      200
     ]
   },
   {

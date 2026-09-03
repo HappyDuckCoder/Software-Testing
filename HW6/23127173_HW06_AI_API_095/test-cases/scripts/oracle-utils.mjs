@@ -64,6 +64,9 @@ export function mapProfile(c) {
       body = { ...profileBody, name: '<script>alert(1)</script>' };
       expected = '200/400 — dữ liệu an toàn (SEC-05)';
       break;
+    case 'A-011':
+      body = { ...profileBody, shipping_address: '123 Nguyễn Văn Cừ, Phường 5, Quận 5, TP.HCM' };
+      break;
     case 'A-012':
       body = { ...profileBody, shipping_address: '' };
       break;
@@ -149,6 +152,12 @@ export function mapProfile(c) {
     case 'A-036':
       body = {};
       expected = '200 — các field §2.2 là tùy chọn (FR-04)';
+      break;
+    case 'A-037':
+      pre = 'Newman chạy tuần tự; TC mô phỏng nhiều user bằng một request hợp lệ (giới hạn công cụ).';
+      break;
+    case 'A-038':
+      pre = 'User đã đăng nhập; TC giả định đổi mật khẩu trước đó vẫn cập nhật profile được (FR-04).';
       break;
     case 'A-039':
       body = { ...profileBody, name: 'User 😀' };
@@ -259,9 +268,9 @@ const adminCases = {
   'C-014': { orderVar: '{{adminBodyTestId}}', body: { status: 1 }, expected: '400 — status không phải chuỗi enum' },
   'C-015': { orderVar: '{{adminBodyTestId}}', body: { status: 'Confirmed' }, expected: '400 — status sai enum (case-sensitive)' },
   'C-016': { orderVar: '{{adminBodyTestId}}', body: { status: ' confirmed ' }, expected: '400 — status có khoảng trắng' },
-  'C-017': { path: '/api/admin/orders/1%27%20OR%201=1/status', body: { status: 'confirmed' }, expected: '404 — ID không hợp lệ (SEC-05)' },
-  'C-018': { orderVar: '{{adminBodyTestId}}', body: { status: "'; DROP--" }, expected: '400 — status không hợp lệ' },
-  'C-019': { orderVar: '{{adminBodyTestId}}', body: { status: '<script>x</script>' }, expected: '400 — status không hợp lệ' },
+  'C-017': { orderVar: '{{adminBodyTestId}}', body: { status: "'; DROP TABLE orders;--" }, expected: '400 — status SQL injection không hợp lệ (SEC-05)' },
+  'C-018': { orderVar: '{{adminBodyTestId}}', body: { status: '<script>x</script>' }, expected: '400 — status XSS không hợp lệ (SEC-05)' },
+  'C-019': { orderVar: '{{adminBodyTestId}}', body: { status: 'confirmed', extra_field: 'ignored' }, expected: '200 — trường lạ bị bỏ qua, status hợp lệ (api_spec §6.2)' },
   'C-020': { orderVar: '{{c001PendingId}}', auth: 'none', body: { status: 'confirmed' }, expected: '401 — thiếu JWT (SEC-02)' },
   'C-021': { orderVar: '{{c001PendingId}}', auth: 'invalid', body: { status: 'confirmed' }, expected: '403 — token không hợp lệ (SEC-02)' },
   'C-022': { orderVar: '{{c001PendingId}}', auth: 'invalid', body: { status: 'confirmed' }, expected: '403 — token không hợp lệ (SEC-02)' },

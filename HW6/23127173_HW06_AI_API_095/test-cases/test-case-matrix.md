@@ -100,9 +100,9 @@ Mỗi API có **40** test case (35 AI + 5 sinh viên). Oracle lấy từ `Eshop/
 | C-014 | C | PUT /api/admin/orders/:id/status | Trường status là số | AI sinh | 400 | FR-10, FR-12, FR-18, SEC-03 |
 | C-015 | C | PUT /api/admin/orders/:id/status | Trường status viết hoa lẫn lộn | AI sinh | 400 | FR-10, FR-12, FR-18, SEC-03 |
 | C-016 | C | PUT /api/admin/orders/:id/status | Trường status có khoảng trắng | AI sinh | 400 | FR-10, FR-12, FR-18, SEC-03 |
-| C-017 | C | PUT /api/admin/orders/:id/status | Status chứa SQL injection | AI sinh | 404 | FR-10, FR-12, FR-18, SEC-03 |
+| C-017 | C | PUT /api/admin/orders/:id/status | Status chứa SQL injection | AI sinh | 400 | FR-10, FR-12, FR-18, SEC-03 |
 | C-018 | C | PUT /api/admin/orders/:id/status | Status chứa XSS | AI sinh | 400 | FR-10, FR-12, FR-18, SEC-03 |
-| C-019 | C | PUT /api/admin/orders/:id/status | Gửi thêm trường lạ trong body | AI sinh | 400 | FR-10, FR-12, FR-18, SEC-03 |
+| C-019 | C | PUT /api/admin/orders/:id/status | Gửi thêm trường lạ trong body | AI sinh | 200 | FR-10, FR-12, FR-18, SEC-03 |
 | C-020 | C | PUT /api/admin/orders/:id/status | Thiếu JWT | AI sinh | 401 | FR-10, FR-12, FR-18, SEC-03 |
 | C-021 | C | PUT /api/admin/orders/:id/status | JWT sai định dạng | AI sinh | 403 | FR-10, FR-12, FR-18, SEC-03 |
 | C-022 | C | PUT /api/admin/orders/:id/status | JWT hết hạn | AI sinh | 403 | FR-10, FR-12, FR-18, SEC-03 |
@@ -138,6 +138,8 @@ Mỗi API có **40** test case (35 AI + 5 sinh viên). Oracle lấy từ `Eshop/
 
 ## Ghi chú
 
-- ID Postman/Newman **trùng** ID ma trận (A-001…A-040, …).
+- TC sinh viên A-037/A-038/B-039: một số kịch bản (đồng thời, timeout) chỉ mô phỏng một phần trong Newman tuần tự.
+- C-019: trường lạ trong body — oracle 200 nếu `status` hợp lệ (api_spec §6.2 chỉ định nghĩa `status`).
+- C-029: SQL injection trên **orderId** path (404), khác C-017 (SQL trong **status** body → 400).
 - TC có oracle `401/403` hoặc `200/400` dùng assertion `oneOf` theo đặc tả.
 - Chi tiết request/precondition: `execution-mapping.md` và `oracle-execution.json`.

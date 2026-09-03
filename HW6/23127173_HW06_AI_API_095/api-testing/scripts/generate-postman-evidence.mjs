@@ -36,7 +36,7 @@ const avgMs = Math.round(
 );
 
 const detailRows = executions
-  .filter((item) => (item.assertions ?? []).some((a) => a.error) || /A-004|B-004|C-003|A-031|A-032|SEC-06|FR-10|SEC-03/.test(item.item?.name ?? ''))
+  .filter((item) => (item.assertions ?? []).some((a) => a.error) || /A-0(21|22|23|25|31|32|34)|B-004|B-028|C-023|C-024|C-032|SEC-06|FR-10|SEC-03|FR-04/.test(item.item?.name ?? ''))
   .slice(0, 18)
   .map((item) => {
     const name = item.item?.name ?? 'unknown';

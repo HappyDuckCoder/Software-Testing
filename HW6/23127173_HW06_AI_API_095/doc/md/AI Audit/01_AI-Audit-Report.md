@@ -56,16 +56,18 @@
 | **AI-022** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «vi phạm đặc tả thì fail; cập nhật TC, minh chứng, audit, commit» | Bỏ dual-mode baseline/compliance; core assert spec (400/403); observation A-031/A-032/B-004 map SEC-06/FR-10; `npm run test:core` **3 fail**, `test:full120` **5 fail**; cập nhật bug-report, ma trận, raw/HTML, ảnh Newman/Postman 03/09. | VALID | Fail phản ánh đúng vi phạm đặc tả trên SUT; bug report khớp Newman. | Tiếp tục map oracle từng ID observation; tạo GitHub Issue. |
 | **AI-023** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «review lại theo spec, thiết kế lại TC, cập nhật minh chứng/audit/commit» | Viết lại `oracle-utils.mjs` (map đủ A/B/C-001…040); `generate-collection.mjs` (62 setup fixture riêng, user2 IDOR, folder C trước B); ma trận + `oracle-execution.json`; Newman **182 req / 182 assertion / 12 fail** (6 bug spec); raw `full-120-spec-20260903.txt`, HTML, PNG Newman/Postman 03/09. | VALID | Oracle bám `api_specification.md` + README FR-04/10/18/SEC; ID Postman trùng ma trận; fail do SUT không phải fixture xung đột. | Excel từng ID; GitHub Issue; Postman Desktop gốc nếu đề bắt buộc. |
 
+| **AI-024** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «review lại TC và document; cập nhật bug report có Postman» | Review lần 2: sửa map C-017/C-018/C-019, A-011; thêm `test-case-review.md`; bug report cột Postman + 5 ảnh; cập nhật checklist/main-report. | VALID | TC khớp tiêu đề ma trận; tài liệu đồng bộ 182 req / 12 fail. | Excel; GitHub Issue; Postman Desktop gốc nếu bắt buộc. |
+
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 23 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 16 | 70% |
+| Tổng artifact AI sinh đã audit | 24 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 17 | 71% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 30% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 29% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006 (assertion chưa map hết 120 ID — đã xử lý AI-023), AI-009/AI-012 (Postman evidence — AI-021), AI-016 (observation cũ), AI-020 (observation-only — đã thay AI-023), AI-021 (Postman PNG helper). AI-022/AI-023: oracle đặc tả + fail đúng bug trên Newman.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ — đã thay AI-023), AI-009/AI-012/AI-021 (Postman PNG helper). AI-022/AI-023/AI-024: oracle spec + review TC + bug report có Newman/Postman.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 

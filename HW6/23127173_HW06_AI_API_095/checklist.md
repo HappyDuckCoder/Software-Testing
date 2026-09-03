@@ -1,27 +1,26 @@
-# Checklist HW06 — Kiểm thử API
+# Checklist HW6 — Kiểm thử API
 
 ## Chuẩn bị
 
 - [x] Chọn 3 API pool A/B/C, không trùng bộ của Vân.
-- [x] SUT chạy tại `127.0.0.1:3000` (khởi động lại 03/09/2026).
+- [x] SUT chạy tại `127.0.0.1:3000`.
 - [ ] Xuất git commit log đầy đủ trước khi đóng ZIP.
 
 ## Mỗi API (×3)
 
 - [x] AI sinh ≥35 TC theo **đặc tả** (`api_specification.md`, README FR/SEC).
-- [x] Sinh viên duyệt toàn bộ TC AI (không giữ cột verdict — đã OK hết).
+- [x] Sinh viên duyệt toàn bộ TC AI.
 - [x] Bổ sung 5 TC sinh viên + ghi lý do AI bỏ sót (`test-case-matrix.md`).
-- [x] Map oracle theo spec trong `execution-mapping.md`.
-- [x] Gắn assertion oracle đặc tả cho core + case SEC-06/FR-10 mapped (A-031/A-032).
-- [ ] Map assertion đầy đủ 120 ID observation.
-- [x] Chạy core suite; có Newman raw/HTML.
-- [x] Chạy full 120 TC Newman (`npm run test:full120`): 128 req, 128 assertion, 0 fail — raw/HTML/ảnh 03/09/2026.
-- [ ] Tạo GitHub Issue + screenshot cho 3 bug compliance.
+- [x] Map oracle từng ID: `oracle-utils.mjs`, `oracle-execution.json`, `execution-mapping.md`.
+- [x] Review TC lần 2: `test-cases/test-case-review.md`.
+- [x] Gắn assertion oracle đặc tả cho 120 TC (ID trùng ma trận).
+- [x] Newman full run: **182 req, 182 assertion, 12 fail** — raw/HTML/ảnh 03/09/2026.
+- [x] Postman evidence 5 ảnh (cùng run, spec oracle).
+- [ ] Tạo GitHub Issue + screenshot cho 6 nhóm bug.
 
 ## Toàn bài
 
 - [x] Header `X-Student-Id: 23127173` trên mọi request.
-- [x] Postman Desktop: 5 ảnh evidence (cập nhật 03/09/2026, full 120 TC).
 - [x] CI remote baseline pass; chưa có remote fail có chủ đích.
 - [ ] Excel test summary sau khi chạy đủ assertion.
 - [ ] Sơ đồ generator tự vẽ.

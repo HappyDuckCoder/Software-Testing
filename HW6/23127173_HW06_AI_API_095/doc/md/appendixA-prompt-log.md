@@ -12,6 +12,7 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-021 | 03/09 | Postman evidence 5 ảnh | Cursor (Composer 2.5) |
 | AI-022 | 03/09 | Oracle đặc tả → fail; minh chứng + commit | Cursor (Composer 2.5) |
 | AI-023 | 03/09 | Redesign 120 TC bám spec; fixture riêng; 12 fail Newman | Cursor (Composer 2.5) |
+| AI-024 | 03/09 | Review TC + document; bug report có Postman | Cursor (Composer 2.5) |
 
 ## Prompt AI-018 (03/09/2026)
 

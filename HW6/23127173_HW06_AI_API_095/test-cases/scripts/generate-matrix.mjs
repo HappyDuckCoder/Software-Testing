@@ -213,7 +213,9 @@ const matrixMd = [
   '',
   '## Ghi chú',
   '',
-  '- ID Postman/Newman **trùng** ID ma trận (A-001…A-040, …).',
+  '- TC sinh viên A-037/A-038/B-039: một số kịch bản (đồng thời, timeout) chỉ mô phỏng một phần trong Newman tuần tự.',
+  '- C-019: trường lạ trong body — oracle 200 nếu `status` hợp lệ (api_spec §6.2 chỉ định nghĩa `status`).',
+  '- C-029: SQL injection trên **orderId** path (404), khác C-017 (SQL trong **status** body → 400).',
   '- TC có oracle `401/403` hoặc `200/400` dùng assertion `oneOf` theo đặc tả.',
   '- Chi tiết request/precondition: `execution-mapping.md` và `oracle-execution.json`.',
 ].join('\n');

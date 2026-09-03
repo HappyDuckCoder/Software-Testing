@@ -3783,7 +3783,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"name\":\"HW6 User\",\"shipping_address\":\"123 Nguyen Van Cu, Q1, TP.HCM\",\"phone\":\"0912345678\"}",
+              "raw": "{\"name\":\"HW6 User\",\"shipping_address\":\"123 Nguyễn Văn Cừ, Phường 5, Quận 5, TP.HCM\",\"phone\":\"0912345678\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -6250,7 +6250,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"status\":\"confirmed\"}",
+              "raw": "{\"status\":\"'; DROP TABLE orders;--\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -6258,7 +6258,7 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/api/admin/orders/1%27%20OR%201=1/status",
+              "raw": "{{baseUrl}}/api/admin/orders/{{adminBodyTestId}}/status",
               "protocol": "http",
               "host": [
                 "127",
@@ -6271,7 +6271,7 @@
                 "api",
                 "admin",
                 "orders",
-                "1%27%20OR%201=1",
+                "{{adminBodyTestId}}",
                 "status"
               ]
             }
@@ -6282,7 +6282,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test(\"C-017 spec oracle\", function () { pm.response.to.have.status(404); });",
+                  "pm.test(\"C-017 spec oracle\", function () { pm.response.to.have.status(400); });",
                   "console.log('C-017', pm.response.code);"
                 ]
               }
@@ -6305,7 +6305,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"status\":\"'; DROP--\"}",
+              "raw": "{\"status\":\"<script>x</script>\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -6360,7 +6360,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"status\":\"<script>x</script>\"}",
+              "raw": "{\"status\":\"confirmed\",\"extra_field\":\"ignored\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -6392,7 +6392,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test(\"C-019 spec oracle\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"C-019 spec oracle\", function () { pm.response.to.have.status(200); });",
                   "console.log('C-019', pm.response.code);"
                 ]
               }
