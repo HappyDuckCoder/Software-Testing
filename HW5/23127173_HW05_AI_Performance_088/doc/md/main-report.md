@@ -207,7 +207,7 @@ Luồng trên runner:
 | 6 | Agent Skills | 10 | 2 |
 | | **Tổng** | **100** | **88** |
 
-Tự chấm **088**; Agent Skills chỉ **2/10** vì không có video demo. Video YouTube chính ≥6 phút theo đề §6 cũng chưa có, nên đây là tự chấm do sinh viên quyết định và phải được nêu minh bạch.
+Tự chấm **088**; video HW5 chính ≥6 phút đã nộp tại [YouTube](https://youtu.be/TF93U3aXK9M). Agent Skills chỉ **2/10** vì không nộp video demo riêng.
 
 ---
 
@@ -217,12 +217,10 @@ Tự chấm **088**; Agent Skills chỉ **2/10** vì không có video demo. Vide
 
 **Không có bug thật** trong các lần chạy → không tạo GitHub Issue (theo đề, không bị trừ điểm).
 
-**Còn thiếu trước khi nộp Moodle:**
+**Trạng thái trước khi nộp Moodle:**
 
-- Video YouTube unlisted ≥ 6 phút (tiếng Việt, tool + monitor cùng khung).
-- Video demo Agent Skill end-to-end (không nộp; Agent Skills tự chấm 2/10).
+- Video YouTube HW5 ≥ 6 phút: [https://youtu.be/TF93U3aXK9M](https://youtu.be/TF93U3aXK9M).
+- Không nộp video demo Agent Skill riêng; Agent Skills tự chấm 2/10.
 - Đóng ZIP `23127173_HW05_AI_Performance_088.zip`.
-
-Video requirement do sinh viên cung cấp: [https://youtu.be/TF93U3aXK9M](https://youtu.be/TF93U3aXK9M). Đây là link tham khảo, không được khai báo là video minh họa đã quay.
 
 Tài liệu AI: `doc/md/AI Audit/`. Báo cáo này **không thay thế** artefact thô (JTL, HTML, ảnh).

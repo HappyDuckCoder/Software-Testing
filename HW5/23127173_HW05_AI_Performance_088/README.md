@@ -22,18 +22,18 @@
 | Agent Skills | 3 skill; không có video demo | 10 | 2 |
 | **Tổng** | | **100** | **88** |
 
-Tự chấm **088**. Agent Skills chỉ tự chấm **2/10** vì không nộp video demo. Video YouTube chính ≥6 phút theo §6 cũng chưa có, đây là giới hạn phải nêu rõ khi nộp. Tên ZIP `_088` khớp mức tự chấm.
+Tự chấm **088**. Video HW5 chính ≥6 phút đã nộp tại [YouTube](https://youtu.be/TF93U3aXK9M). Agent Skills tự chấm **2/10** vì không nộp video demo riêng. Tên ZIP `_088` khớp mức tự chấm.
 
 ## Trạng thái nhanh
 
 | Đã xong | Chưa xong |
 | --- | --- |
-| 4 JMX, 4 JTL, 4 HTML report | Video chính ≥ 6 phút (YouTube unlisted) |
-| Ảnh JMeter + Task Manager, DXDIAG, CLI/GUI | Video demo Agent Skill |
+| 4 JMX, 4 JTL, 4 HTML report | [Video chính ≥ 6 phút](https://youtu.be/TF93U3aXK9M) |
+| Ảnh JMeter + Task Manager, DXDIAG, CLI/GUI | Video demo Agent Skill (không nộp; tự chấm 2/10) |
 | Endurance 601 s + 61 mẫu RAM | ZIP Moodle (SV tự đóng) |
 | AI Audit, Mandatory, Critique, PDF | |
 
-Video requirement tham khảo: [YouTube](https://youtu.be/TF93U3aXK9M). Link này không phải video minh họa hay video demo Agent Skill của bài nộp.
+Video HW5 chính: [YouTube](https://youtu.be/TF93U3aXK9M). Không nộp video demo Agent Skill riêng; phần này được tự chấm 2/10.
 
 Chi tiết: `checklist.md`, `doc/md/main-report.md`.
 

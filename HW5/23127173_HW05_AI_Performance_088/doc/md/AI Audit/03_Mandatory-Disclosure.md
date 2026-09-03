@@ -54,8 +54,8 @@
 | AI Audit + Critique + Mandatory | ✅ |
 | PDF (`doc/pdf/`) | ✅ sau phiên Cursor 03/09 |
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
-| Video YouTube ≥ 6 phút | ❌ chưa quay; [video requirement](https://youtu.be/TF93U3aXK9M) chỉ tham khảo |
-| Video demo Agent Skill | ❌ không nộp; Agent Skills tự chấm 2/10 |
+| Video YouTube ≥ 6 phút | ✅ [HW5 video](https://youtu.be/TF93U3aXK9M) do sinh viên xác nhận đã nộp |
+| Video demo Agent Skill | Không nộp riêng; Agent Skills tự chấm 2/10 |
 | GitHub Issue | Không có bug thật |
 | ZIP nộp Moodle | SV tự đóng: `23127173_HW05_AI_Performance_088.zip` |
 

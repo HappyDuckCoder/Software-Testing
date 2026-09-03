@@ -18,8 +18,7 @@
 
 ## Còn phải làm trước khi nộp Moodle
 
-- [ ] Video YouTube unlisted ≥ 6 phút (tiếng Việt, tool + monitor cùng khung).
-- [ ] Video demo Agent Skill end-to-end trên một nhóm endpoint — không nộp, Agent Skills tự chấm 2/10.
-- [x] Gắn video requirement tham khảo: [YouTube](https://youtu.be/TF93U3aXK9M); không dùng làm link video nộp bài.
+- [x] Video YouTube HW5 ≥ 6 phút: [YouTube](https://youtu.be/TF93U3aXK9M).
+- [x] Không nộp video demo Agent Skill riêng; Agent Skills tự chấm 2/10.
 - [ ] Đóng ZIP `23127173_HW05_AI_Performance_088.zip`.
 - [ ] GitHub Issue — chỉ khi có bug thật; hiện không có defect.

@@ -312,6 +312,18 @@
 
 </div>
 
+<div class="audit-entry">
+
+#### AI-025 · 03/09/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Link YouTube là video HW5 ≥6 phút đã nộp; bỏ demo Agent Skill và chấm mục này 2/10.” |
+| Output AI | Đồng bộ README, report, checklist, evidence và disclosure: [link YouTube](https://youtu.be/TF93U3aXK9M) là video HW5 chính; không khai báo video Agent Skill riêng. |
+| Verdict / SV | **HỢP LỆ — xác nhận của sinh viên.** Agent Skills vẫn tự chấm 2/10 vì không nộp video demo riêng. |
+
+</div>
+
 ## 3. Quy tắc cập nhật
 
 Mỗi lần dùng AI tiếp theo, thêm một dòng: ngày giờ, công cụ, prompt, đầu ra, verdict, lý do và phần SV đã kiểm chứng. Không ghi dữ liệu thực thi chưa xảy ra.
