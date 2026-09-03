@@ -13,6 +13,7 @@
 | **Hệ thống** | EShop API — `http://127.0.0.1:3000` |
 | **Ngày chạy chính** | 03/09/2026 |
 | **Oracle** | `Eshop/api_specification.md` + README FR/SEC |
+| **Repository** | [Software-Testing / homework6](https://github.com/HappyDuckCoder/Software-Testing/tree/homework6/HW6/23127173_HW06_AI_API_095) |
 
 </div>
 
@@ -22,12 +23,14 @@
 
 | Chỉ số | Giá trị |
 | --- | --- |
+| Số API kiểm thử | **3** (pool A / B / C) |
 | Test case thực thi | **120** (A/B/C × 40) |
 | Setup request | 62 |
 | Tổng request Newman | **182** |
 | Assertion | **182** — **12 FAIL** (6 nhóm bug spec) |
 | Excel summary | **108 PASS / 12 FAIL** |
 | Postman Desktop | 6 ảnh gốc + Console `X-Student-Id` |
+| Tự đánh giá | **095 / 100** (trừ Issue + CI fail remote) |
 
 Oracle thiết kế theo **đặc tả**, không suy từ code backend. Vi phạm spec → assertion **FAIL** trên Newman/Postman.
 
@@ -74,9 +77,29 @@ Chi tiết ma trận: `test-cases/test-case-matrix.md`, `test-cases/execution-ma
 | C — Admin status | 35 | 5 | 40 | FR-18 / SEC-03 |
 | **Tổng** | **105** | **15** | **120** | |
 
+Ma trận CSV: `test-cases/test-case-source.csv` · Kết quả chạy: `test-cases/23127173_HW06_test-summary-20260903.xlsx`.
+
 ---
 
-## 5. Thực thi Postman / Newman
+## 5. Tính năng Postman đã sử dụng
+
+| Tính năng | Cách dùng trong HW06 |
+| --- | --- |
+| **Collection** | Một collection chính, folder `00 Setup` + 3 folder API (A/B/C), 182 request |
+| **Environment** | `baseUrl`, token/orderId biến động; template `eshop.local.template.postman_environment.json` |
+| **Collection variables** | `studentId`, `baseUrl`, token sau login, orderId sau checkout |
+| **Pre-request Script** | Collection-level: gắn `X-Student-Id: 23127173` mọi request (đề §6, §11) |
+| **Test scripts** | Assert HTTP status theo oracle đặc tả từng TC ID |
+| **Runner** | Full run 120 TC + setup; evidence Desktop 170 pass / 12 fail |
+| **Console** | Xác minh log `X-Student-Id applied: 23127173` (ảnh evidence §11) |
+| **Newman CLI** | `npm run test` — raw TXT/JSON + HTML report (`newman-reporter-htmlextra`) |
+| **Export/import** | Collection JSON nộp trong `api-testing/postman/collections/` |
+
+Không dùng Monitor/Mock Server trong phạm vi bài này.
+
+---
+
+## 6. Thực thi Postman / Newman
 
 | Hạng mục | Đường dẫn / giá trị |
 | --- | --- |
@@ -85,19 +108,38 @@ Chi tiết ma trận: `test-cases/test-case-matrix.md`, `test-cases/execution-ma
 | Newman raw | `api-testing/newman/raw-output/full-120-20260903.txt` |
 | HTML report | `api-testing/newman/html-reports/report.html` |
 | Evidence Newman | `evidence/newman-ui/` |
-| Evidence Postman | `evidence/postman-ui/` — 6 ảnh Desktop (170 pass / 12 fail + Console) |
-| Excel summary | `test-cases/23127173_HW06_test-summary-20260903.xlsx` |
-| Flowchart | `doc/pdf/hw6-api-testing-workflow.png` |
+| Evidence Postman | `evidence/postman-ui/` — 6 ảnh Desktop |
+| Flowchart workflow | `doc/pdf/hw6-api-testing-workflow.png` |
 
 ---
 
-## 6. CI/CD
+## 7. AI-driven test generator (Agent Skill)
 
-Workflow GitHub Actions: baseline **pass** trên remote. Chưa có run **fail** có chủ đích trên CI remote. Chi tiết: `ci-cd/ci-cd-report.md`.
+| Hạng mục | Vị trí |
+| --- | --- |
+| Skill | `agent-skills/eshop-api-test-generator/` |
+| Workflow skill | `agent-skills/postman-newman-api-testing-workflow/` |
+| Sơ đồ tự vẽ | `doc/pdf/hw6-api-testing-workflow.png` |
+| Pseudocode | `agent-skills/eshop-api-test-generator/README.md` |
+
+Luồng: đọc đặc tả → planner (domain/state/security/schema) → sinh TC + oracle → sinh viên duyệt/bổ sung ≥5 TC → export Postman + Excel.
 
 ---
 
-## 7. Bug report — sáu nhóm lỗi đặc tả
+## 8. CI/CD
+
+Workflow: [`.github/workflows/hw6-api-tests.yml`](https://github.com/HappyDuckCoder/Software-Testing/blob/homework6/.github/workflows/hw6-api-tests.yml).
+
+| Run | Kết quả | Link / evidence |
+| --- | --- | --- |
+| Remote baseline pass (01/09) | 20 req, 0 fail | [Actions run 33500850638](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33500850638) · `evidence/ci-cd/` |
+| Local full oracle (03/09) | 182 req, **12 fail** | `ci-cd/ci-cd-report.md` |
+
+Chưa có remote **fail** run có chủ đích (đề §6).
+
+---
+
+## 9. Bug report — sáu nhóm lỗi đặc tả
 
 | ID | Mô tả | TC liên quan (ví dụ) |
 | --- | --- | --- |
@@ -108,14 +150,14 @@ Workflow GitHub Actions: baseline **pass** trên remote. Chưa có run **fail** 
 | HW6-BUG-05 | Thiếu `Content-Type` vẫn 200 | A-025 |
 | HW6-BUG-06 | GET thay PUT trả 404 thay vì 405 | A-034, C-032 |
 
-Chi tiết đầy đủ: `issues/bug-report.md`. GitHub Issues: **chưa tạo**.
+Chi tiết: `issues/bug-report.md`. GitHub Issues: **chưa tạo** (SV tự mở trên repo public).
 
 ---
 
-## 8. Kết luận
+## 10. Kết luận
 
-Đã hoàn thành redesign 120 TC bám đặc tả, fixture tách biệt, assert oracle trên Newman (**182 req / 12 fail**). Excel test summary và báo cáo PDF đã có. Còn lại: tạo GitHub Issues cho 6 nhóm bug, remote CI fail có chủ đích. ZIP nộp Moodle do sinh viên tự đóng gói.
+Đã hoàn thành pipeline generate → audit → extend → execute cho 3 API, assert oracle trên Newman (**182 req / 12 fail**). Báo cáo PDF, Excel summary, flowchart và AI Audit (Markdown) đã có. Còn lại ngoài phạm vi báo cáo: GitHub Issues + screenshot, remote CI fail, ZIP Moodle.
 
 ---
 
-*Báo cáo này kèm AI Audit Report (`doc/md/AI Audit/`) theo yêu cầu đề bài.*
+*Báo cáo kèm AI Audit Report (`doc/md/AI Audit/`), Mandatory Disclosure và AI Critique theo đề §9–§10.*

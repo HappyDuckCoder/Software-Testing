@@ -24,7 +24,7 @@
 
 ## 3. Trước khi nộp bài
 
-- [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-036).
+- [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-038).
 - [x] AI Critique 200–300 từ đã có (`02_AI-Critique.md` + PDF).
 - [x] Mandatory Disclosure đã điền theo mẫu FIT.
 - [x] 120 TC + oracle spec + Pass/Fail từng ID (Excel 108/12).

@@ -76,18 +76,20 @@
 
 | **AI-036** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «review lại toàn bộ các doc, cập nhật ai audit» | Rà soát đồng bộ: `01_AI-Audit-Report`, `02_AI-Critique`, `03_Mandatory-Disclosure`, `04_AI-Privacy-Checklist`, `roadmap.md`, `checklist.md`, `test-case-review.md`, `git-commit-log.txt`, `appendixA-prompt-log.md`; sửa disclosure §6 (6 bug / 12 fail, không còn «ba lỗi compliance»); đánh dấu Excel/PDF/flowchart ✅. | VALID | Loại bỏ mâu thuẫn giữa doc (observation cũ vs oracle spec; Excel/PDF pending vs done). | GitHub Issue + CI fail remote. |
 
-| **AI-037** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «chỉ export main report đẹp hơn; cập nhật git commit log; cập nhật audit; commit» | Thiết kế lại `main-report.md` (cover FIT, bảng tóm tắt, bug + TC); CSS `doc/pdf/main-report.css` + `md-to-pdf.config.json`; xuất **chỉ** `doc/pdf/main-report.pdf`; cập nhật `git-commit-log.txt` (thêm `aa3c475`, `14bedc4`). | VALID | PDF báo cáo chính đọc được, bám nội dung thật 182/12; không xuất audit/critique PDF trong batch này. | GitHub Issue; ZIP nộp. |
+| **AI-037** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «chỉ export main report đẹp hơn; cập nhật git commit log; cập nhật audit; commit» | Thiết kế lại `main-report.md` (cover FIT, bảng tóm tắt, bug + TC); CSS `doc/pdf/main-report.css`; xuất **chỉ** `doc/pdf/main-report.pdf`; cập nhật `git-commit-log.txt`. | VALID | PDF báo cáo chính đọc được, bám nội dung thật 182/12. | GitHub Issue; ZIP nộp. |
+
+| **AI-038** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «bổ sung các thứ liên quan đến báo cáo; cập nhật audit; commit» | Bổ sung `main-report.md`: link GitHub public, bảng Postman features (§6), Agent Skill/generator, CI links, tự đánh giá; cập nhật `README.md` bảng self-assessment §14 + số API/TC/bug; tái xuất `main-report.pdf`. | VALID | Đáp ứng đề §6 (Postman features), §14 (README self-assessment, link repo). Không bịa Issue/CI fail. | SV: GitHub Issue, CI fail remote, điền Lớp/GV nếu cần. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 37 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 30 | 81% |
+| Tổng artifact AI sinh đã audit | 38 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 31 | 82% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 19% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 18% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper — đã thay Desktop AI-032/033). AI-022…AI-037: oracle spec, cleanup, encoding, Postman Desktop §11, Excel, main-report PDF, doc sync.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper — đã thay Desktop AI-032/033). AI-022…AI-038: oracle spec, báo cáo §6/§14, main-report PDF, doc sync.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 

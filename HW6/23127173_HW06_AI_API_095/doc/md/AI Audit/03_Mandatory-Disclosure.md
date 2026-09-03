@@ -30,6 +30,7 @@
 4. Postman Desktop 6 ảnh + Console `X-Student-Id` (Composer 2.5, 03/09 chiều).
 5. Excel test summary + PDF + flowchart (Composer 2.5, 03/09).
 6. Review toàn bộ doc + đồng bộ audit (Composer 2.5, 03/09).
+7. Bổ sung báo cáo §6/§14: Postman features, self-assessment, link GitHub (Composer 2.5, 03/09).
 
 ## 4. Phần việc cụ thể
 

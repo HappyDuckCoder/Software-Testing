@@ -4,18 +4,34 @@
 | --- | --- |
 | Họ tên | Trần Hải Đức |
 | MSSV | 23127173 |
-| SUT | EShop — `http://localhost:3000` |
+| SUT | EShop — `http://127.0.0.1:3000` |
+| Repository | https://github.com/HappyDuckCoder/Software-Testing/tree/homework6/HW6/23127173_HW06_AI_API_095 |
 | ZIP nộp | `23127173_HW06_AI_API_095.zip` |
-| Tự đánh giá | 095/100 (tạm) |
+| Tự đánh giá | **095 / 100** |
+
+## Bảng tự đánh giá (đề §14)
+
+| Hạng mục | Nội dung | Điểm tối đa | Tự chấm |
+| --- | --- | ---: | ---: |
+| API 1 — Profile | 40 TC, oracle spec, Newman/Postman, 4 bug liên quan | 30 | 28 |
+| API 2 — Hủy đơn | 40 TC, oracle FR-10, 2 bug | 30 | 28 |
+| API 3 — Admin status | 40 TC, oracle FR-18/SEC, 2 bug | 30 | 28 |
+| Agent Skill — test generator | Skill + flowchart + pseudocode | 10 | 9 |
+| **Tổng** | | **100** | **93–95** |
+
+**Số liệu tổng hợp:** 3 API · 120 test case (105 AI + 15 SV) · 6 nhóm bug (12 assertion fail) · Newman 182 request.
+
+Trừ điểm tạm thời: chưa có GitHub Issue + remote CI fail (§6).
 
 ## Trạng thái nhanh
 
 | Đã xong | Chưa xong |
 | --- | --- |
-| 120 TC, oracle spec, Newman 12 fail, Postman 6 ảnh, Excel + PDF | GitHub Issues, CI fail remote |
-| Flowchart (`doc/pdf/hw6-api-testing-workflow.png`) | |
+| 120 TC oracle spec, Newman 12 fail, Postman 6 ảnh | GitHub Issues + screenshot |
+| Excel summary, main report PDF, flowchart | Remote CI fail có chủ đích |
+| AI Audit / Mandatory / Critique (Markdown) | ZIP Moodle (SV tự đóng) |
 
-Chi tiết: `checklist.md`, `test-cases/test-case-matrix.md`.
+Chi tiết: `checklist.md`, `doc/md/main-report.md`.
 
 ## Ba API
 
@@ -27,6 +43,19 @@ Chi tiết: `checklist.md`, `test-cases/test-case-matrix.md`.
 
 Không trùng Vân: `/register`, `/api/products/:id`, `POST /api/checkout`.
 
+## Tài liệu chính
+
+| File | Mô tả |
+| --- | --- |
+| `doc/md/main-report.md` | Báo cáo chính (+ PDF `doc/pdf/main-report.pdf`) |
+| `doc/md/AI Audit/` | AI Audit, Mandatory Disclosure, Privacy Checklist |
+| `doc/md/AI Audit/02_AI-Critique.md` | AI Critique 200–300 từ |
+| `test-cases/test-case-matrix.md` | Ma trận 120 TC |
+| `issues/bug-report.md` | 6 nhóm bug spec |
+| `ci-cd/ci-cd-report.md` | CI/CD evidence |
+
+Evidence thật (Newman, ảnh Postman/CI) không được thay bằng nội dung AI sinh.
+
 ## Cấu trúc thư mục
 
 ```text
@@ -34,12 +63,11 @@ Không trùng Vân: `/register`, `/api/products/:id`, `POST /api/checkout`.
 ├── api-testing/      # Postman, Newman
 ├── ci-cd/
 ├── doc/md/           # báo cáo, AI audit
+├── doc/pdf/          # main-report.pdf, flowchart
 ├── evidence/
 ├── issues/
-├── test-cases/       # ma trận 120 TC + CSV
+├── test-cases/
 ├── agent-skills/
 ├── checklist.md
 └── roadmap.md
 ```
-
-Evidence thật (Newman, ảnh Postman/CI) không được thay bằng nội dung AI sinh.

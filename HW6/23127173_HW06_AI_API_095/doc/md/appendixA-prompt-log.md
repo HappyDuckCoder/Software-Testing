@@ -26,6 +26,15 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-035 | 03/09 | Excel test summary + PDF + flowchart | Cursor (Composer 2.5) |
 | AI-036 | 03/09 | Review toàn bộ doc + đồng bộ AI Audit | Cursor (Composer 2.5) |
 | AI-037 | 03/09 | Main report PDF styled + git commit log + commit | Cursor (Composer 2.5) |
+| AI-038 | 03/09 | Bổ sung báo cáo §6/§14 + README self-assessment | Cursor (Composer 2.5) |
+
+## Prompt AI-038 (03/09/2026)
+
+```text
+bổ sung các thứ liên quan đến báo cáo thì bạn bổ sung cho tôi
+cập nhật audit
+commit
+```
 
 ## Prompt AI-037 (03/09/2026)
 
