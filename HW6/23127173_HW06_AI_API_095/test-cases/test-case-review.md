@@ -63,4 +63,4 @@ Rà soát lần 2: oracle bám **đặc tả**, không bám code backend.
 
 - [x] Excel kết quả từng ID: `23127173_HW06_test-summary-20260903.xlsx` (108 PASS / 12 FAIL)
 - [x] Postman Desktop 6 ảnh gốc + Console `X-Student-Id` (`evidence/postman-ui/`)
-- [ ] GitHub Issue + screenshot gốc (6 nhóm bug spec)
+- [x] GitHub Issue + screenshot gốc (6 nhóm bug spec): [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23)

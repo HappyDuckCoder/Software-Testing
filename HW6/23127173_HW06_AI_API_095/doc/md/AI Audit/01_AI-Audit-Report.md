@@ -88,24 +88,26 @@
 
 | **AI-042** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «link pass/fail CI; cập nhật doc/audit; push main» | SV cung cấp URL run [#7 fail](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) và [#8 pass](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307); gắn link vào `ci-cd-report`, `main-report` §8, `checklist`, Mandatory/Privacy; merge/push `main`. | VALID | Link trỏ đúng run thật trên GitHub Actions (Failed 51s / Success 40s). | GitHub Issues; ZIP nộp. |
 
+| **AI-043** · 03/09/2026 · Codex (GPT-5). Prompt: đọc requirement/hiện trạng; tạo 6 issue mới từ `issues/bug-report.md`; capture evidence; cập nhật docs/audit và commit. | Đối chiếu đề §6/§14 với 120 TC và Newman 182/12; kiểm tra 11 issue cũ để tránh tái sử dụng; sau xác nhận cuối của SV, tạo issue public [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23), lưu 6 ảnh trang issue, thêm URL/evidence vào report và checklist. | VALID | Nội dung issue dùng oracle spec và kết quả run đã có; trang GitHub và screenshot được tạo/capture thật, không bịa request, response hoặc bằng chứng runtime. Việc đăng public là external action nên chỉ thực hiện sau xác nhận cuối của SV. | SV kiểm tra lại issue trước khi nộp và tự đóng ZIP Moodle. |
+
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 42 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 35 | 83% |
+| Tổng artifact AI sinh đã audit | 43 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 36 | 84% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
 | INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 17% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper). AI-022…AI-042: oracle spec, CI evidence, doc sync.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper). AI-022…AI-043: oracle spec, CI evidence, GitHub Issues và doc sync.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 
-Nên dùng AI để dịch đề, dựng khung nộp, chọn API theo pool, gợi ý phân vùng domain/state/security, viết skill/pseudocode, và gom collection setup có `X-Student-Id`. Không nên dùng AI để biến số assertion pass thành coverage, tự tạo GitHub Issue, bịa screenshot, hoặc khóa oracle khi đặc tả mơ hồ. Observation 120 request chỉ chứng minh SUT không trả 5xx; không thay 35 test đã audit mỗi API. Sinh viên phải sửa từng TC, chạy assertion thật, rồi mới đóng gói.
+Nên dùng AI để dịch đề, dựng khung nộp, chọn API theo pool, gợi ý phân vùng domain/state/security, viết skill/pseudocode, và gom collection setup có `X-Student-Id`. Không nên dùng AI để biến số assertion pass thành coverage, bịa screenshot/issue, hoặc khóa oracle khi đặc tả mơ hồ. AI chỉ được đăng issue sau khi sinh viên đã đọc nội dung và xác nhận action công khai; observation 120 request không thay 35 test đã audit mỗi API. Sinh viên phải sửa từng TC, chạy assertion thật, rồi mới đóng gói.
 
 ## 6. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman (182 req / 12 fail); CI remote pass (#8) và fail (#7) đã chụp. GitHub Issues chưa xong. ZIP do tôi tự đóng gói. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman (182 req / 12 fail); CI remote pass (#8) và fail (#7) đã chụp. Sau xác nhận cuối của tôi, Codex đã gửi sáu GitHub Issue bám bug report thật (#18–#23) và capture trang issue; AI Audit Report ghi rõ hoạt động này. ZIP do tôi tự đóng gói. Tôi cam đoan không dùng AI tạo artifact bị cấm."
 
 Bản đầy đủ: `03_Mandatory-Disclosure.md`.
 

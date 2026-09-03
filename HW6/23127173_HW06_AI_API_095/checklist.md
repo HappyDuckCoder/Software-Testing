@@ -19,7 +19,7 @@
 - [x] Gắn assertion oracle đặc tả cho 120 TC (ID trùng ma trận).
 - [x] Newman full run: **182 req, 182 assertion, 12 fail** — `npm run test`.
 - [x] Postman evidence **6 ảnh Desktop gốc** (03/09: Runner 170/12 fail + Console `X-Student-Id`).
-- [ ] Tạo GitHub Issue + screenshot cho 6 nhóm bug.
+- [x] Tạo 6 GitHub Issue thật + screenshot: [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18), [#19](https://github.com/HappyDuckCoder/Software-Testing/issues/19), [#20](https://github.com/HappyDuckCoder/Software-Testing/issues/20), [#21](https://github.com/HappyDuckCoder/Software-Testing/issues/21), [#22](https://github.com/HappyDuckCoder/Software-Testing/issues/22), [#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23).
 
 ## Toàn bài
 

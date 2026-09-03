@@ -19,7 +19,7 @@
 
 | Công cụ | Việc AI làm | Việc sinh viên làm |
 | --- | --- | --- |
-| Codex (GPT-5) | Khung nộp, chọn API, collection/Newman/CI, skill, evidence 01/09 | Chạy SUT, cung cấp ảnh Postman/CI, xác nhận bug |
+| Codex (GPT-5) | Khung nộp, chọn API, collection/Newman/CI, skill, evidence 01/09; ghi sáu issue theo nội dung sinh viên duyệt 03/09 | Chạy SUT, cung cấp ảnh Postman/CI, xác nhận bug và xác nhận cuối trước khi đăng issue |
 | Cursor (Composer 2.5) | Audit/disclosure FIT; ma trận 120 TC; oracle spec; script Excel; cập nhật báo cáo/PDF 03/09 | Duyệt 105 TC AI; 15 TC bổ sung; chụp Postman Desktop/Console; flowchart tự vẽ; ZIP nộp |
 
 ## 3. Prompt chính (đầy đủ ở `appendixA-prompt-log.md`)
@@ -31,6 +31,7 @@
 5. Excel test summary + PDF + flowchart (Composer 2.5, 03/09).
 6. Review toàn bộ doc + đồng bộ audit (Composer 2.5, 03/09).
 7. Bổ sung báo cáo §6/§14: Postman features, self-assessment, link GitHub (Composer 2.5, 03/09).
+8. Đọc requirement/hiện trạng, tạo sáu issue từ bug report, capture trang issue, cập nhật docs/audit và commit (Codex GPT-5, 03/09).
 
 ## 4. Phần việc cụ thể
 
@@ -38,7 +39,7 @@
 
 **Sinh viên tự làm / quyết định:** duyệt toàn bộ TC AI; 15 TC bổ sung; chụp Postman Desktop/Console; flowchart `hw6-api-testing-workflow.png`; xuất PDF bằng extension Markdown PDF; đóng ZIP.
 
-**AI không làm:** ảnh Postman/CI gốc, GitHub Issue, flowchart tự vẽ, ZIP nộp Moodle.
+**AI không làm:** ảnh Postman/CI gốc, flowchart tự vẽ, ZIP nộp Moodle. Sáu GitHub Issue được Codex gửi qua UI **sau khi sinh viên xác nhận cuối**; nội dung bám bug report/Newman thật và ảnh evidence là capture trực tiếp trang GitHub.
 
 ## 5. Cách xác minh
 
@@ -62,12 +63,12 @@ Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, 
 | Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
 | CI remote pass (03/09) | ✅ [run #8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · `ci-pass-01`…`03` |
 | CI remote fail (03/09) | ✅ [run #7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · `ci-fail-01`…`03` |
-| GitHub Issues | ⏳ |
+| GitHub Issues | ✅ [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23), 6 screenshot thật |
 | ZIP nộp Moodle | SV tự đóng (không bắt buộc tiêu chí) |
 
 ## 8. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman (182 req / 12 fail); CI remote pass (#8) và fail (#7) đã chụp. GitHub Issues chưa xong. ZIP do tôi tự đóng gói. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman (182 req / 12 fail); CI remote pass (#8) và fail (#7) đã chụp. Sau khi tôi xác nhận cuối, Codex đã gửi sáu GitHub Issue bám bug report thật (#18–#23) và capture lại trang issue; AI Audit Report ghi rõ hoạt động này. ZIP do tôi tự đóng gói. Tôi cam đoan không dùng AI tạo artifact bị cấm."
 
 ## 9. Cam đoan
 

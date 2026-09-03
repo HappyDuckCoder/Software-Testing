@@ -7,29 +7,29 @@
 | SUT | EShop — `http://127.0.0.1:3000` |
 | Repository | https://github.com/HappyDuckCoder/Software-Testing/tree/homework6/HW6/23127173_HW06_AI_API_095 |
 | ZIP nộp | `23127173_HW06_AI_API_095.zip` |
-| Tự đánh giá | **098 / 100** |
+| Tự đánh giá | **095 / 100** |
 
 ## Bảng tự đánh giá (đề §14)
 
 | Hạng mục | Nội dung | Điểm tối đa | Tự chấm |
 | --- | --- | ---: | ---: |
-| API 1 — Profile | 40 TC, oracle spec, Newman/Postman, 4 bug liên quan | 30 | 28 |
-| API 2 — Hủy đơn | 40 TC, oracle FR-10, 2 bug | 30 | 28 |
-| API 3 — Admin status | 40 TC, oracle FR-18/SEC, 2 bug | 30 | 28 |
+| API 1 — Profile | 40 TC, oracle spec, Newman/Postman, 4 bug có GitHub Issue | 30 | 29 |
+| API 2 — Hủy đơn | 40 TC, oracle FR-10, 2 bug có GitHub Issue | 30 | 29 |
+| API 3 — Admin status | 40 TC, oracle FR-18/SEC, 2 bug có GitHub Issue | 30 | 28 |
 | Agent Skill — test generator | Skill + flowchart + pseudocode | 10 | 9 |
-| **Tổng** | | **100** | **97** |
+| **Tổng** | | **100** | **95** |
 
 **Số liệu tổng hợp:** 3 API · 120 test case (105 AI + 15 SV) · 6 nhóm bug (12 assertion fail local) · Newman 182 request · CI [pass #8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) + [fail #7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556).
 
-Trừ điểm tạm thời: GitHub Issue chưa tạo (§6).
+Tự chấm 95 để phản ánh các giới hạn đã audit; tên ZIP `_095` khớp mức tự chấm.
 
 ## Trạng thái nhanh
 
 | Đã xong | Chưa xong |
 | --- | --- |
-| 120 TC oracle spec, Newman 12 fail, Postman 6 ảnh | GitHub Issues + screenshot |
-| Excel summary, main report PDF, CI pass + fail (6 ảnh) | ZIP Moodle (SV tự đóng) |
-| AI Audit / Mandatory / Critique (Markdown) | |
+| 120 TC oracle spec, Newman 12 fail, Postman 6 ảnh | ZIP Moodle (SV tự đóng) |
+| Excel summary, main report PDF, CI pass + fail (6 ảnh) | |
+| AI Audit / Mandatory / Critique + 6 GitHub Issues/screenshot | |
 
 Chi tiết: `checklist.md`, `doc/md/main-report.md`.
 

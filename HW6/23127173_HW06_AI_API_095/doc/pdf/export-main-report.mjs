@@ -15,6 +15,9 @@ const { filename } = await mdToPdf(
   {
     css,
     body_class: ['main-report'],
+    launch_options: process.env.PUPPETEER_EXECUTABLE_PATH
+      ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH }
+      : undefined,
     pdf_options: {
       format: 'A4',
       printBackground: true,

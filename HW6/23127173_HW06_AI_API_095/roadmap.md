@@ -26,4 +26,6 @@
 
 **Đã hoàn thành:** bước 1–7 và bước 9 (CI pass #8 + fail #7 — 6 ảnh). Evidence: `evidence/postman-ui/`, `evidence/newman-ui/`, `evidence/ci-cd/`, `test-cases/23127173_HW06_test-summary-20260903.xlsx`.
 
-**Chưa hoàn thành:** GitHub Issues (6 nhóm bug). ZIP nộp Moodle: sinh viên tự đóng gói (không bắt buộc tiêu chí nội bộ).
+**Đã hoàn thành:** bước 8 — sáu issue public [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18) đến [#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23), có sáu ảnh capture thật trong `evidence/github-issues/`.
+
+**Còn lại:** ZIP nộp Moodle: sinh viên tự đóng gói (không bắt buộc tiêu chí nội bộ).

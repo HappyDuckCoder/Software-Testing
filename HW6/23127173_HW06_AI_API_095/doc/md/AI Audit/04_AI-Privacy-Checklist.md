@@ -20,17 +20,17 @@
 - [x] Environment local (`.postman_environment.json` có secret) không commit; dùng template.
 - [x] Ghi tương tác vào `01_AI-Audit-Report.md` và `appendixA-prompt-log.md`.
 - [x] Phân biệt raw Newman / ảnh SV với nội dung AI draft.
-- [x] Không tạo GitHub Issue hay push fail CI khi chưa được sinh viên ủy quyền.
+- [x] Chỉ tạo GitHub Issue sau khi sinh viên ủy quyền và xác nhận cuối; sáu issue #18–#23 là post thật, có capture trực tiếp.
 
 ## 3. Trước khi nộp bài
 
-- [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-042).
+- [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-043).
 - [x] AI Critique 200–300 từ đã có (`02_AI-Critique.md` + PDF).
 - [x] Mandatory Disclosure đã điền theo mẫu FIT.
 - [x] 120 TC + oracle spec + Pass/Fail từng ID (Excel 108/12).
 - [x] CI remote pass — [run #8](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739588307) · `ci-pass-01`…`03`.
 - [x] CI remote fail — [run #7](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33739445556) · `ci-fail-01`…`03`.
-- [ ] GitHub Issue thật + screenshot.
+- [x] GitHub Issue thật + screenshot: [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23).
 - [x] Excel test summary: `23127173_HW06_test-summary-20260903.xlsx`.
 - [x] Main report + AI Audit + Critique PDF (`doc/pdf/`).
 - [x] Git commit log từ lịch sử repo thật.

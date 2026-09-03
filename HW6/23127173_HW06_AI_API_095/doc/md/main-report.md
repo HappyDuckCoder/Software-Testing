@@ -30,7 +30,7 @@
 | Assertion | **182** — **12 FAIL** (6 nhóm bug spec) |
 | Excel summary | **108 PASS / 12 FAIL** |
 | Postman Desktop | 6 ảnh gốc + Console `X-Student-Id` |
-| Tự đánh giá | **098 / 100** (trừ GitHub Issue chưa tạo) |
+| Tự đánh giá | **095 / 100** |
 
 Oracle thiết kế theo **đặc tả**, không suy từ code backend. Vi phạm spec → assertion **FAIL** trên Newman/Postman.
 
@@ -142,22 +142,22 @@ Minh chứng CI: 6 ảnh trong `evidence/ci-cd/` · chi tiết `ci-cd/ci-cd-repo
 
 ## 9. Bug report — sáu nhóm lỗi đặc tả
 
-| ID | Mô tả | TC liên quan (ví dụ) |
+| ID | Mô tả | TC liên quan (ví dụ) | GitHub Issue |
 | --- | --- | --- |
-| HW6-BUG-01 | SEC-06 — client gán `role`/`isAdmin` vẫn 200 | A-031, A-032 |
-| HW6-BUG-02 | FR-10 — hủy đơn `shipping` vẫn 200 | B-004, B-028 |
-| HW6-BUG-03 | SEC-03 — token user gọi admin API vẫn 200 | C-023, C-024 |
-| HW6-BUG-04 | FR-04 — không validate SĐT | A-021, A-022, A-023 |
-| HW6-BUG-05 | Thiếu `Content-Type` vẫn 200 | A-025 |
-| HW6-BUG-06 | GET thay PUT trả 404 thay vì 405 | A-034, C-032 |
+| HW6-BUG-01 | SEC-06 — client gán `role`/`isAdmin` vẫn 200 | A-031, A-032 | [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18) |
+| HW6-BUG-02 | FR-10 — hủy đơn `shipping` vẫn 200 | B-004, B-028 | [#19](https://github.com/HappyDuckCoder/Software-Testing/issues/19) |
+| HW6-BUG-03 | SEC-03 — token user gọi admin API vẫn 200 | C-023, C-024 | [#20](https://github.com/HappyDuckCoder/Software-Testing/issues/20) |
+| HW6-BUG-04 | FR-04 — không validate SĐT | A-021, A-022, A-023 | [#21](https://github.com/HappyDuckCoder/Software-Testing/issues/21) |
+| HW6-BUG-05 | Thiếu `Content-Type` vẫn 200 | A-034 | [#22](https://github.com/HappyDuckCoder/Software-Testing/issues/22) |
+| HW6-BUG-06 | GET thay PUT trả 404 thay vì 405 | B-028, C-032 | [#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23) |
 
-Chi tiết: `issues/bug-report.md`. GitHub Issues: **chưa tạo** (SV tự mở trên repo public).
+Chi tiết, URL và sáu screenshot trang issue thật: `issues/bug-report.md` và `evidence/github-issues/`.
 
 ---
 
 ## 10. Kết luận
 
-Đã hoàn thành pipeline 3 API và assert oracle local (**182/12**). CI remote **pass** (#8) và **fail** (#7) đều có ảnh (`ci-pass-*`, `ci-fail-*`). Còn: GitHub Issues, ZIP Moodle.
+Đã hoàn thành pipeline 3 API và assert oracle local (**182/12**). CI remote **pass** (#8) và **fail** (#7) đều có ảnh (`ci-pass-*`, `ci-fail-*`); sáu GitHub Issues [#18](https://github.com/HappyDuckCoder/Software-Testing/issues/18)–[#23](https://github.com/HappyDuckCoder/Software-Testing/issues/23) đã có evidence. Còn: ZIP Moodle.
 
 ---
 

@@ -61,6 +61,19 @@ cập nhật audit
 commit
 ```
 
+## Prompt AI-043 (03/09/2026)
+
+```text
+đọc lại requirement của HW6 và hiện trạng bài làm hiện tại
+truy cập github https://github.com/HappyDuckCoder/Software-Testing/issues
+sau đó bổ sung các issue Lab\HW6\23127173_HW06_AI_API_095\issues\bug-report.md
+sau đó cập nhật doc các doc liên quan, dùng extention markdown pdf để export lại nếu cần
+bổ sung ai audit
+commit
+```
+
+**Theo xác nhận cuối của sinh viên:** tạo sáu issue mới hoàn toàn từ bug report, capture minh chứng thật và thêm link GitHub Issue vào bài làm.
+
 ## Prompt AI-037 (03/09/2026)
 
 ```text

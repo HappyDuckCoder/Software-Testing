@@ -6,4 +6,4 @@ Thứ hai, AI hay gom “đủ số lượng” bằng observation chỉ kiểm 
 
 Về khoảng trống AI: 15 test sinh viên bổ sung (body rỗng, emoji, retry mạng, path Unicode, token whitespace, chuyển tiếp trùng…) là những góc spec không cấm nhưng AI ít liệt kê, vì prompt thường tập trung happy path và enum cơ bản. Sinh viên duyệt hết 105 case AI nên không cần giữ cột verdict — tiết kiệm thời gian nhưng vẫn phải hiểu từng dòng trước khi chạy.
 
-Bài học hợp tác: luôn mở README FR/SEC trước khi khóa oracle; tách “chạy được” và “đúng spec”; không tin số assertion pass của observation. AI phù hợp sinh nháp và checklist; sinh viên giữ quyền quyết định TC bổ sung, evidence thật (Postman Desktop, Console, CI) và GitHub Issue.
+Bài học hợp tác: luôn mở README FR/SEC trước khi khóa oracle; tách “chạy được” và “đúng spec”; không tin số assertion pass của observation. AI phù hợp sinh nháp và checklist; sinh viên giữ quyền quyết định TC bổ sung, evidence thật (Postman Desktop, Console, CI) và xác nhận cuối trước khi AI đăng GitHub Issue công khai.
