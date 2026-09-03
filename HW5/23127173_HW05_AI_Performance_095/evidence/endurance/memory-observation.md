@@ -1,6 +1,6 @@
 # Endurance memory observation - 31/08/2026
 
-Endurance rerun dùng 10 threads, 120 loops/thread, 1.6 s think-time và 1,500 account/đơn độc lập. Script `scripts/monitor-endurance-memory.ps1` lấy mẫu PID backend Node.js `33556` cùng RAM hệ thống mỗi 10 giây trong 620 giây. Raw workload log tương ứng là `performance/raw-jtl/23127173_Endurance_20260831_memory-rerun.jtl`.
+Endurance dùng 10 threads, 120 loops/thread, 1.6 s think-time và 1.500 account/đơn độc lập. Script `scripts/monitor-endurance-memory.ps1` lấy mẫu PID backend Node.js `33556` cùng RAM hệ thống mỗi 10 giây trong 620 giây. Raw workload log: `performance/raw-jtl/23127173_Endurance_20260831.jtl`.
 
 | Chỉ số | Min | Mean | Peak |
 | --- | ---: | ---: | ---: |

@@ -1,0 +1,13 @@
+{
+  "name": "hw5-pdf-export",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export:main": "node export-main-report.mjs",
+    "export:audit": "node export-audit-pdfs.mjs",
+    "export:all": "node export-main-report.mjs && node export-audit-pdfs.mjs"
+  },
+  "dependencies": {
+    "md-to-pdf": "^5.2.5"
+  }
+}

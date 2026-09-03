@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const hwRoot = path.resolve(__dirname, '../..');
-const require = createRequire(path.join(hwRoot, 'api-testing/package.json'));
+const require = createRequire(path.join(__dirname, 'package.json'));
 const mdToPdf = require('md-to-pdf').default ?? require('md-to-pdf');
 
 const launchOptions = process.env.PUPPETEER_EXECUTABLE_PATH

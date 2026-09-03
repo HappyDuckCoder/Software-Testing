@@ -24,4 +24,4 @@ $env:PUPPETEER_EXECUTABLE_PATH = 'C:\Program Files\Google\Chrome\Application\chr
 node ../doc/pdf/export-audit-pdfs.mjs
 ```
 
-Hai file đích là `AI-Audit-Report.pdf` và `AI-Critique.pdf` trong thư mục này. Biến môi trường trên cũng được `export-main-report.mjs` hỗ trợ khi Puppeteer chưa có Chrome trong cache.
+Hai file đích là `AI-Audit-Report.pdf` (khổ ngang, CSS `audit-report.css`) và `AI-Critique.pdf` (khổ dọc, CSS `ai-critique.css`) trong thư mục này.

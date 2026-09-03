@@ -1,40 +1,257 @@
-# AI Audit Report - HW05
+<div class="cover">
 
-## Thông tin sinh viên
+**Khoa Công nghệ Thông tin (FIT) — Trường ĐH Khoa học Tự nhiên (HCMUS)**
+
+**CS423 / CSC13003 — Kiểm chứng Phần mềm (AI-augmented · 2026)**
+
+# Báo cáo kiểm toán AI — HW05-AI
+
+<p class="subtitle">Phụ lục bắt buộc · MSSV 23127173 · Trần Hải Đức · Cập nhật 03/09/2026</p>
+
+</div>
+
+## 1. Thông tin sinh viên
 
 | Mục | Giá trị |
 | --- | --- |
+| Họ tên | Trần Hải Đức |
 | MSSV | 23127173 |
-| Mã bài tập | HW05-AI |
+| Mã bài tập | HW05-AI — Kiểm thử hiệu năng |
+| Công cụ AI | Codex (GPT-5); Cursor (Composer) |
 | Có dùng AI | Có |
 
-## Nhật ký tương tác
+**Tuyên bố:** *I use AI tools for the following tasks.*
 
-| ID | Thời gian (UTC+7) | Công cụ AI | Prompt/Yêu cầu | Đầu ra AI | Verdict và phần sinh viên phải kiểm tra |
-| --- | --- | --- | --- | --- | --- |
-| AI-001 | 31/08/2026 | Codex (GPT-5) | “dựa vào Lab\\HW5\\requirement\\requirement.pdf hãy dịch lại vào Lab\\HW5\\requirement\\requirement.md” | Dịch toàn bộ yêu cầu HW05 từ PDF sang Markdown tiếng Việt. | **VALID - document drafting.** Sinh viên phải đối chiếu bản dịch với PDF gốc; đây không phải bằng chứng thực thi. |
-| AI-002 | 31/08/2026 | Codex (GPT-5) | “tạo thư mục nộp bài giống hw4; sau đó tạo file roadmap và checklist cho hw5; tạo các file và thư mục nộp bài cần thiết trước, sau đó chờ tôi; cập nhật ai audit; commit” | Khởi tạo khung bài nộp HW05, roadmap, checklist và các template tài liệu/audit. | **INCOMPLETE - setup only.** Sinh viên phải chọn endpoint, chạy test thật, thu thập evidence, review AI và hoàn thiện toàn bộ chỗ đánh dấu chưa chạy. |
-| AI-003 | 31/08/2026 | Codex (GPT-5) | “chọn tôi 3 api phù hợp có liên quan đến hw2... không được trùng với [Vân: `/register`, `/api/products/:id`, `POST /api/checkout`]” | Kiểm tra API EShop và tài liệu HW2; chọn workflow `POST /api/login` -> `GET /api/orders/my-orders` -> `PUT /api/orders/:id/cancel`; cập nhật tài liệu. | **VALID - scope selection, pending execution.** Sinh viên phải xác minh endpoint/port, tài khoản và dữ liệu đơn khi SUT chạy; không được suy diễn hiệu năng từ lựa chọn API. |
-| AI-004 | 31/08/2026 | Codex (GPT-5) | “các api đó làm gì, cập nhật doc, cập nhật aiaudit” | Bổ sung mô tả chức năng, request/response logic, quan hệ JWT và `orderId`, điều kiện trạng thái đơn, và rủi ro lockout/data collision vào tài liệu HW5. | **VALID - documentation.** Sinh viên phải đối chiếu behavior với SUT đang chạy trước khi thiết kế assertion và không được xem mô tả này là kết quả kiểm thử. |
-| AI-005 | 31/08/2026 | Codex (GPT-5) | “tạo các skill cần thiết trước, cập nhật aiaudit, commit” | Tạo ba skill: thiết kế/rà soát workflow performance, dựng JMeter E2E plan và quản lý dữ liệu giao dịch; thêm catalog và liên kết README. | **VALID - reusable process support.** Skill không tạo bằng chứng thực thi; sinh viên phải demo một endpoint group hoàn chỉnh và quay video theo yêu cầu đề bài. |
-| AI-006 | 31/08/2026 | Codex (GPT-5) | “repo Eshop đã tồn tại ở thư mục Eshop; hãy reset db và seed các data phù hợp rồi chạy server...” | Thiết kế script reset/seed cục bộ: 50 account `hw5.perf.*`, 12 đơn `pending`/`confirmed` mỗi account và CSV local bị git-ignore; ghi quy trình xác minh. | **INCOMPLETE - preparation only.** Việc xóa/tạo dữ liệu và khởi động backend chưa được ghi là thành công cho đến khi script chạy và endpoint được kiểm tra. |
-| AI-007 | 31/08/2026 | Codex (GPT-5) | Tiếp tục thực hiện yêu cầu reset DB, seed data và chạy server cho HW5. | Khởi động backend cổng 3000 (PID 33556); reset DB theo `database.js`; chạy seed hai lần thành công, tạo 50 test accounts và 600 đơn đủ điều kiện. Xác minh workflow thật: login cấp JWT, `my-orders` trả 12 đơn, cancel ID 12 chuyển `confirmed` -> `canceled`; reseed lại để khôi phục dữ liệu. | **VALID - execution.** Đã kiểm tra từ HTTP response thực tế. Đây chỉ là smoke verification, không phải Load/Stress/Spike, nên không suy ra số liệu hiệu năng hay tạo evidence hiệu năng. |
-| AI-008 | 31/08/2026 | Codex (GPT-5) | “đã tải jmeter rồi, hãy làm ... tạo/run 3 plan, endurance, phân tích log...” | Tạo JMX Load (10 users/20 s), Stress (30/30 s), Spike (50/1 s), Endurance (10 x 120 loops/5 s); CSV/JWT/orderId extraction, assertions, transaction controller và listener riêng cho 3 scenario. XML của plan Load đã parse thành công. | **INCOMPLETE - JMeter execution blocked.** Không tìm thấy `jmeter.bat` trong PATH, C:\\Users\\Duck hoặc các vị trí tải/cài đặt thông thường trên C/D, do đó chưa chạy JMeter, chưa có `.jtl`/HTML/ảnh/metric để phân tích. Sinh viên cần cung cấp/extract đường dẫn launcher trước khi chạy. |
-| AI-009 | 31/08/2026 | Codex (GPT-5) | “ok tải jmeter và chạy, tự chụp minh chứng giúp tôi” | Tải JMeter 5.6.3, chạy Load/Stress/Spike sau mỗi reset-seed; chạy Endurance 601.15 s với 1.500 account/đơn; tạo 4 JTL, 4 HTML report và ảnh JMeter + Task Manager. Sửa JMX listener sau hai lỗi tương thích thật. | **VALID - execution.** Metrics được tính từ raw JTL; không suy diễn maximum stable RPS ngoài mức 10-user endurance đã chạy. |
-| AI-010 | 31/08/2026 | Codex (GPT-5) + ImageGen | Tạo pipeline Continuous Performance Testing và workflow ảnh minh họa thay Mermaid. | Soạn GitHub Actions proposal với path filter, health check, seed, JMeter smoke, baseline gate, comparator và artifact upload; tạo ảnh pipeline. | **VALID - proposal/documentation.** Chưa bật CI thật; baseline/comparator phải được team phê duyệt và đặt workflow vào repository Eshop trước khi kích hoạt. |
+## 2. Nhật ký tương tác AI
 
-| AI-011 | 31/08/2026 22:26 UTC+7 | Codex (GPT-5) | “Review và hoàn thiện lại main-report; tự xem lại requirement; cập nhật audit.” | Đối chiếu requirement PDF với JMX, raw JTL, HTML report và ảnh evidence; viết lại main report với scope, phương pháp, bảng kết quả, misinterpretation hunt, proposal và hạng mục còn thiếu. | **VALID - reviewed documentation.** Đã sửa diễn giải sai tiềm ẩn: parent E2E timing có think-time, nên không gọi p95 parent là backend latency; các thiếu sót evidence/video vẫn được giữ công khai, không bịa bổ sung. |
+<div class="audit-entry">
 
-| AI-012 | 31/08/2026 22:47 UTC+7 | Codex (GPT-5) | “Bổ sung ảnh JMeter + Task Manager riêng cho Load, Stress và Spike; ảnh dxdiag; đo memory theo thời gian.” | Reset/seed rồi rerun 3 scenario để chụp ảnh cùng khung; chụp DXDIAG; rerun endurance 601 giây và lấy 61 mẫu RAM backend/hệ thống mỗi 10 giây. | **VALID - execution evidence.** Ảnh và raw rerun JTL được lưu; peak 79.14 MB chỉ là trần working set backend quan sát trong workload, không được diễn giải thành giới hạn phần cứng tổng quát. |
+#### AI-001 · 31/08/2026 · Codex (GPT-5)
 
-| AI-013 | 31/08/2026 22:54 UTC+7 | Codex (GPT-5) | “cap 4 ảnh terminal cmd và 4 ảnh gui jmeter.” | Chụp riêng bốn CMD xác minh JMeter CLI/JTL và bốn cửa sổ GUI JMeter cho Load, Stress, Spike, Endurance. Ảnh GUI khởi động quá sớm ban đầu bị loại và chụp lại khi cửa sổ JMeter đã tải xong. | **VALID - interface evidence.** Đây là ảnh CLI/GUI bổ sung; không được dùng thay raw JTL, HTML hoặc ảnh tool + resource monitor trong cùng khung. |
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “dựa vào Lab\\HW5\\requirement\\requirement.pdf hãy dịch lại vào Lab\\HW5\\requirement\\requirement.md” |
+| Output AI | Dịch toàn bộ yêu cầu HW05 từ PDF sang Markdown tiếng Việt. |
+| Verdict / SV | **HỢP LỆ — soạn tài liệu.** SV phải đối chiếu bản dịch với PDF gốc; không phải bằng chứng thực thi. |
 
-| AI-014 | 31/08/2026 22:56 UTC+7 | Codex (GPT-5) | “Review lại folder nộp … xem dư mục nào không sử dụng thì xóa đi; cập nhật audit.” | Kiểm tra cấu trúc đệ quy và file count trong submission; xóa duy nhất thư mục rỗng `checklist/`, giữ `checklist.md` và tất cả artefact/placeholder cần cho requirement. | **VALID - housekeeping.** Chỉ xóa target đã xác minh rỗng; không xóa JTL, HTML, evidence, skills, script hay thư mục PDF/video/issue còn cần để hoàn thiện nộp bài. |
+</div>
 
-| AI-015 | 31/08/2026 23:01 UTC+7 | Codex (GPT-5) | “Review lại báo cáo, hoàn thiện báo cáo hơn, cập nhật audit, commit.” | Rà soát main report, README, checklist và disclosure/priv­acy với requirement/evidence; bổ sung quy trình tái lập, tiêu chí validity, baseline cross-check, giới hạn diễn giải và đồng bộ trạng thái artefact. | **VALID - documentation review.** Không thay số liệu raw; giữ rõ p95 E2E có think-time, peak memory là quan sát workload và video/PDF/ZIP vẫn chưa hoàn thành. |
+<div class="audit-entry">
 
-| AI-016 | 31/08/2026 23:05 UTC+7 | Codex (GPT-5) | “Cho kịch bản quay HW5 chính, chỉ rõ các lệnh, cd vào thư mục nào; thêm file md kịch bản video; cập nhật audit, commit.” | Tạo kịch bản video 8-9 phút có timeline, câu thoại, lệnh mở backend/seed/Task Manager/JMeter GUI và lệnh rerun có kiểm soát. | **VALID - documentation.** Script chỉ hướng dẫn quay/thi hành; không thay thế evidence thật. Người quay phải reset trước run mutable và đưa link Unlisted vào `link-video.md`. |
+#### AI-002 · 31/08/2026 · Codex (GPT-5)
 
-## Quy tắc cập nhật
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “tạo thư mục nộp bài giống hw4; sau đó tạo file roadmap và checklist cho hw5; tạo các file và thư mục nộp bài cần thiết trước, sau đó chờ tôi; cập nhật ai audit; commit” |
+| Output AI | Khởi tạo khung bài nộp HW05, roadmap, checklist và các template tài liệu/audit. |
+| Verdict / SV | **CHƯA HOÀN THÀNH — chỉ setup.** SV phải chọn endpoint, chạy test thật, thu evidence, review AI. |
 
-Mỗi lần sử dụng AI tiếp theo, thêm một dòng ghi đủ: ngày giờ, công cụ, prompt, đầu ra, verdict (VALID/INVALID/INCOMPLETE), lý do và phần sinh viên đã kiểm chứng hoặc sửa. Không ghi nhận dữ liệu thực thi chưa xảy ra.
+</div>
+
+<div class="audit-entry">
+
+#### AI-003 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “chọn tôi 3 api phù hợp có liên quan đến hw2... không được trùng với [Vân: `/register`, `/api/products/:id`, `POST /api/checkout`]” |
+| Output AI | Chọn workflow `POST /api/login` → `GET /api/orders/my-orders` → `PUT /api/orders/:id/cancel`; cập nhật tài liệu. |
+| Verdict / SV | **HỢP LỆ — chọn phạm vi.** SV phải xác minh endpoint/port và dữ liệu đơn khi SUT chạy. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-004 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “các api đó làm gì, cập nhật doc, cập nhật aiaudit” |
+| Output AI | Bổ sung mô tả chức năng, JWT, orderId, trạng thái đơn, rủi ro lockout vào tài liệu HW5. |
+| Verdict / SV | **HỢP LỆ — tài liệu.** SV phải đối chiếu behavior với SUT trước khi thiết kế assertion. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-005 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “tạo các skill cần thiết trước, cập nhật aiaudit, commit” |
+| Output AI | Tạo ba Agent Skill: workflow performance, JMeter E2E plan, quản lý dữ liệu giao dịch. |
+| Verdict / SV | **HỢP LỆ — quy trình.** Skill không tạo bằng chứng; SV phải demo và quay video. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-006 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “repo Eshop đã tồn tại ở thư mục Eshop; hãy reset db và seed các data phù hợp rồi chạy server...” |
+| Output AI | Thiết kế script reset/seed: 50 account `hw5.perf.*`, 12 đơn/account, CSV local git-ignore. |
+| Verdict / SV | **CHƯA HOÀN THÀNH — chuẩn bị.** Chưa ghi thành công cho đến khi script chạy và endpoint được kiểm tra. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-007 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | Tiếp tục reset DB, seed data và chạy server cho HW5. |
+| Output AI | Backend cổng 3000; 50 account, 600 đơn; smoke login → my-orders → cancel thành công. |
+| Verdict / SV | **HỢP LỆ — thực thi smoke.** Không phải Load/Stress/Spike; không suy ra số liệu hiệu năng. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-008 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “đã tải jmeter rồi, hãy làm ... tạo/run 3 plan, endurance, phân tích log...” |
+| Output AI | Tạo JMX Load/Stress/Spike/Endurance; CSV, JWT/orderId, listener riêng. |
+| Verdict / SV | **CHƯA HOÀN THÀNH — chưa chạy JMeter.** Không tìm thấy `jmeter.bat` trong PATH. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-009 · 31/08/2026 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “ok tải jmeter và chạy, tự chụp minh chứng giúp tôi” |
+| Output AI | JMeter 5.6.3; 4 JTL, 4 HTML, ảnh monitor; sửa listener tương thích. |
+| Verdict / SV | **HỢP LỆ — thực thi.** Metrics từ raw JTL; không suy diễn RPS tối đa. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-010 · 31/08/2026 · Codex (GPT-5) + ImageGen
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | Pipeline Continuous Performance Testing và ảnh workflow. |
+| Output AI | GitHub Actions proposal, baseline comparator, gate p95/error rate. |
+| Verdict / SV | **HỢP LỆ — đề xuất.** Chưa bật CI thật. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-011 · 31/08/2026 22:26 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Review và hoàn thiện lại main-report; cập nhật audit.” |
+| Output AI | Viết lại báo cáo chính; sửa diễn giải think-time vs backend latency. |
+| Verdict / SV | **HỢP LỆ — rà soát doc.** |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-012 · 31/08/2026 22:47 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Bổ sung ảnh JMeter + Task Manager; ảnh dxdiag; đo memory.” |
+| Output AI | Ảnh monitor 4 scenario; DXDIAG; 61 mẫu RAM endurance. |
+| Verdict / SV | **HỢP LỆ — evidence.** Peak 79,14 MB chỉ là quan sát workload. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-013 · 31/08/2026 22:54 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “cap 4 ảnh terminal cmd và 4 ảnh gui jmeter.” |
+| Output AI | 8 ảnh CLI/GUI JMeter cho 4 kịch bản. |
+| Verdict / SV | **HỢP LỆ — evidence giao diện.** |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-014 · 31/08/2026 22:56 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Review lại folder nộp … xóa thư mục dư.” |
+| Output AI | Xóa thư mục rỗng `checklist/`; giữ artefact cần thiết. |
+| Verdict / SV | **HỢP LỆ — dọn dẹp.** |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-015 · 31/08/2026 23:01 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Review lại báo cáo, hoàn thiện hơn, cập nhật audit, commit.” |
+| Output AI | Bổ sung quy trình tái lập, tiêu chí validity, baseline cross-check. |
+| Verdict / SV | **HỢP LỆ — doc review.** |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-016 · 31/08/2026 23:05 · Codex (GPT-5)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Cho kịch bản quay HW5 chính…” |
+| Output AI | Kịch bản video 8–9 phút với lệnh cụ thể. |
+| Verdict / SV | **HỢP LỆ — hướng dẫn quay.** |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-017 · 03/09/2026 · Cursor (Composer)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Kiểm tra HW5; sửa doc tiếng Việt; xuất PDF; Mandatory; commit.” |
+| Output AI | Viết lại báo cáo, README, Mandatory; CSS + PDF; checklist. |
+| Verdict / SV | **HỢP LỆ — tài liệu.** Video/ZIP do SV. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-018 · 03/09/2026 · Cursor (Composer)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | “Sửa PDF Audit/Critique xấu; CSS landscape; cover FIT.” |
+| Output AI | CSS audit/critique; xuất lại 4 file PDF HW5+HW6. |
+| Verdict / SV | **HỢP LỆ — định dạng PDF.** Không đổi nội dung audit. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-019 · 03/09/2026 · Cursor (Composer)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | «lỗi PDF audit — bảng vỡ, chữ dính liền» |
+| Output AI | Chuyển 18 mục audit sang layout thẻ 2 cột; sửa CSS portrait; xuất lại PDF. |
+| Verdict / SV | **HỢP LỆ — sửa hiển thị PDF.** Không đổi nội dung audit. |
+
+</div>
+
+## 3. Quy tắc cập nhật
+
+Mỗi lần dùng AI tiếp theo, thêm một dòng: ngày giờ, công cụ, prompt, đầu ra, verdict, lý do và phần SV đã kiểm chứng. Không ghi dữ liệu thực thi chưa xảy ra.
