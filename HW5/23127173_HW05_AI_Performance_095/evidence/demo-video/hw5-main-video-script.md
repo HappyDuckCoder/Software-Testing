@@ -384,7 +384,7 @@ $csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\
 
 ---
 
-## Mục 11 — Pipeline CI
+## Mục 11 — Pipeline CI (đã chạy thật)
 
 **Thời gian:** 7:35 – 8:20
 
@@ -392,14 +392,17 @@ $csv = 'D:\code\Project\TestingProject\Lab\HW5\23127173_HW05_AI_Performance_095\
 
 ```
 continuous-performance-testing\workflow.png
-continuous-performance-testing\github-actions-performance.yml
+continuous-performance-testing\ci-cd-report.md
+evidence\ci-cd\hw5-ci-pass-03-job-success.png
 ```
+
+Mở link run (trình duyệt): https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33755210272
 
 **Lệnh:** Không cần.
 
 **Nói:**
 
-> Pipeline đề xuất: chạy khi backend/database đổi, seed, smoke JMeter, so baseline p95 và error rate. Gate fail nếu lỗi >1% hoặc p95 tăng >20%.
+> Pipeline CI đã triển khai trên GitHub Actions — job Load + Stress + Spike, không phải smoke. Run số 33755210272 pass trong 6 phút 40 giây: clone eshop-sut, seed lại trước mỗi kịch bản, so baseline Load, upload artefact JTL và HTML. Endurance vẫn chỉ chạy local vì khoảng 601 giây.
 
 ---
 

@@ -18,7 +18,7 @@
 | Stress test | Tương tự Load, tải cao hơn | 20 | 18 |
 | Spike test | Burst 50 user, ramp 1 s | 20 | 18 |
 | Phân tích AI + truy tìm diễn giải sai | Có trích số từ JTL thô | 10 | 9 |
-| Kiểm thử hiệu năng liên tục | Pipeline + flowchart + trade-off | 10 | 9 |
+| Kiểm thử hiệu năng liên tục | Pipeline + flowchart + CI pass | 10 | 10 |
 | Agent Skills | 3 skill; thiếu video demo | 10 | 4 |
 | **Tổng** | | **100** | **85→90** |
 
@@ -66,7 +66,7 @@ Peak bộ nhớ backend quan sát: **79,14 MB**. p95 workflow **gồm think-time
 | `doc/md/AI Audit/` | AI Audit, Mandatory Disclosure, Privacy Checklist |
 | `doc/md/AI Audit/02_AI-Critique.md` | Phê bình AI (200–300 từ) |
 | `performance/test-plans/` | 3 JMX bắt buộc + Endurance |
-| `continuous-performance-testing/` | Đề xuất CI hiệu năng |
+| `continuous-performance-testing/` | Pipeline CI + [ci-cd-report.md](continuous-performance-testing/ci-cd-report.md) |
 
 Evidence thật (JTL, HTML, ảnh) không được thay bằng nội dung AI sinh.
 
@@ -77,7 +77,7 @@ Evidence thật (JTL, HTML, ảnh) không được thay bằng nội dung AI sin
 ├── doc/md/              # báo cáo, AI audit
 ├── doc/pdf/             # main-report.pdf, AI-Audit-Report.pdf, AI-Critique.pdf
 ├── performance/         # JMX, JTL, HTML
-├── evidence/            # ảnh monitor, hardware, endurance
+├── evidence/            # ảnh monitor, hardware, endurance, ci-cd
 ├── continuous-performance-testing/
 ├── agent-skills/
 ├── checklist.md

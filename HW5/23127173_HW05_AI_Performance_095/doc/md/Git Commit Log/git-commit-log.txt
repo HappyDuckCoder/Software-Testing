@@ -20,5 +20,6 @@ Xuất từ nhánh `homework5-v2`, thư mục `HW5/23127173_HW05_AI_Performance_
 | `30b8b6d` | 31/08/2026 | JTL log ban đầu |
 | `66966ea` | 31/08/2026 | Kịch bản quay video HW5 |
 | `f3aea8a` | 03/09/2026 | Viết lại doc tiếng Việt, Mandatory Cursor, xuất PDF, checklist |
+| `e044a93` | 03/09/2026 | CI HW5: Load + Stress + Spike trên GitHub Actions (workflow sửa path eshop-sut) |
 
 Quy tắc: mỗi bước có ý nghĩa (JMX từng kịch bản, evidence, phân tích AI, đề xuất CI) có commit riêng trước khi nộp.

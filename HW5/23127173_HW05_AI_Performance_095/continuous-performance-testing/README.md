@@ -39,4 +39,6 @@ Baseline mẫu: `baseline.json` (từ lần chạy Load local).
 
 ## Trạng thái
 
-Workflow đã đặt tại `Lab/.github/workflows/github-actions-performance.yml`. Push nhánh `homework5-v2` (path `HW5/**`) hoặc **Run workflow** thủ công trên GitHub Actions.
+Workflow đã đặt tại `Lab/.github/workflows/github-actions-performance.yml`. Push nhánh `homework5-v2` (path `HW5/**`) hoặc **Run workflow** trên `main`.
+
+**Minh chứng CI pass:** [run #33755210272](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33755210272) · chi tiết [`ci-cd-report.md`](ci-cd-report.md) · ảnh `../evidence/ci-cd/`.

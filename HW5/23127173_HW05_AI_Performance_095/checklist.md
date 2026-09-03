@@ -10,7 +10,7 @@
 - [x] Ảnh JMeter + Task Manager (Load, Stress, Spike, Endurance); ảnh CLI/GUI JMeter.
 - [x] Endurance 601,15 giây; 61 mẫu RAM; báo cáo RPS và peak working set.
 - [x] Phân tích AI, truy tìm diễn giải sai, đánh giá đề xuất tối ưu; AI Critique ≤300 từ.
-- [x] Đề xuất kiểm thử hiệu năng liên tục, flowchart, baseline comparator, trade-off.
+- [x] Đề xuất kiểm thử hiệu năng liên tục, flowchart, baseline comparator, trade-off; **CI pass** [run #33755210272](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33755210272).
 - [x] Báo cáo chính, AI Audit, Mandatory Disclosure, Privacy Checklist, Agent Skills.
 - [x] README: workflow, kết quả, link GitHub, bảng tự đánh giá §15.
 - [x] PDF: `doc/pdf/main-report.pdf`, `AI-Audit-Report.pdf`, `AI-Critique.pdf`.

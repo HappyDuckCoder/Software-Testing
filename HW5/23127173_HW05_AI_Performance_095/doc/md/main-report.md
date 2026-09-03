@@ -166,15 +166,29 @@ Chi tiết: `evidence/endurance/endurance-memory-samples-20260831.csv`.
 
 ![Luồng kiểm thử hiệu năng liên tục](../../continuous-performance-testing/workflow.png)
 
-Gói `continuous-performance-testing/` đề xuất GitHub Actions:
+Workflow triển khai tại `.github/workflows/github-actions-performance.yml` — **đã chạy thật trên GitHub Actions**.
 
-1. Lọc PR thay đổi backend/database.
-2. Khởi động SUT, health check, reset/seed.
-3. Chạy JMeter smoke non-GUI.
-4. So sánh JTL với baseline — **fail** nếu tỷ lệ lỗi > 1% hoặc p95 tăng > 20%.
-5. Upload JTL/HTML làm artefact.
+| Mục | Chi tiết |
+| --- | --- |
+| Run minh chứng | [Actions run #33755210272](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33755210272) |
+| Job | **Load + Stress + Spike** (không smoke) |
+| Kết quả | ✅ Success · 6m 40s · 03/09/2026 |
+| Artefact | `hw5-performance-jtl-html` (3,07 MB — JTL/HTML ba kịch bản) |
+| Ảnh | `evidence/ci-cd/hw5-ci-pass-01`…`03` |
+| Báo cáo CI | `continuous-performance-testing/ci-cd-report.md` |
 
-**Đánh đổi:** Lọc theo đường dẫn tiết kiệm chi phí CI nhưng có thể bỏ sót thay đổi gián tiếp; ngưỡng quá chặt gây cảnh báo sai. Đây là **đề xuất**, chưa bật CI thật.
+Luồng trên runner:
+
+1. Checkout repo + clone `ttbhanh/eshop-sut`.
+2. Cài SUT, JMeter 5.6.3, khởi động backend cổng 3000.
+3. **Load** — seed → JMeter → so baseline (gate p95 / error rate).
+4. **Stress** — seed lại → JMeter.
+5. **Spike** — seed lại (50 account) → JMeter.
+6. Upload JTL/HTML.
+
+**Endurance (~601 s)** chỉ chạy local — không đưa vào CI.
+
+**Đánh đổi:** Runner CI khác máy local → baseline Load có thể cần rebaseline; lọc path tiết kiệm chi phí nhưng có thể bỏ sót thay đổi gián tiếp; ngưỡng 20% giảm báo động giả nhưng có thể bỏ lỡ regression nhỏ.
 
 ---
 
@@ -186,7 +200,7 @@ Gói `continuous-performance-testing/` đề xuất GitHub Actions:
 | 2 | Nhiệm vụ 1 — Kiểm thử Stress | 20 | 18 |
 | 3 | Nhiệm vụ 1 — Kiểm thử Spike | 20 | 18 |
 | 4 | Nhiệm vụ 2 — Phân tích AI + truy tìm diễn giải sai | 10 | 9 |
-| 5 | Nhiệm vụ 3 — Đề xuất kiểm thử hiệu năng liên tục | 10 | 9 |
+| 5 | Nhiệm vụ 3 — Đề xuất kiểm thử hiệu năng liên tục | 10 | 10 |
 | 6 | Agent Skills | 10 | 4 |
 | | **Tổng** | **100** | **85** |
 
@@ -196,7 +210,7 @@ Tự chấm tạm **090** khi cộng thêm PDF và tài liệu hoàn chỉnh; tr
 
 ## 10. Kết luận và trạng thái nộp bài
 
-**Đã có:** bốn JMX, CSV local, reset/seed, bốn JTL thô, bốn báo cáo HTML, ảnh monitor/phần cứng/JMeter, ba Agent Skill, đề xuất pipeline, AI Audit, AI Critique, PDF báo cáo.
+**Đã có:** bốn JMX, CSV local, reset/seed, bốn JTL thô, bốn báo cáo HTML, ảnh monitor/phần cứng/JMeter, ba Agent Skill, **CI Load+Stress+Spike pass** ([run #33755210272](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33755210272)), AI Audit, AI Critique, PDF báo cáo.
 
 **Không có bug thật** trong các lần chạy → không tạo GitHub Issue (theo đề, không bị trừ điểm).
 

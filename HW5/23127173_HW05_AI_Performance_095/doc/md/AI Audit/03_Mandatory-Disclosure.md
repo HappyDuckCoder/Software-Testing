@@ -20,14 +20,14 @@
 | Công cụ | Việc AI làm | Việc sinh viên làm |
 | --- | --- | --- |
 | Codex (GPT-5) | Khung nộp, chọn API, JMX/script, chạy JMeter, thu evidence, phân tích JTL, pipeline CI đề xuất (31/08) | Xác nhận chạy thật, kiểm tra JTL/HTML/ảnh, quyết định kết luận |
-| Cursor (Composer) | Rà soát HW5, viết lại doc tiếng Việt, Mandatory/Audit, CSS PDF, xuất PDF, cập nhật README/checklist (03/09) | Duyệt số liệu và nội dung trước commit; quay video; đóng ZIP nộp |
+| Cursor (Composer) | Rà soát HW5, doc tiếng Việt, PDF, CI workflow, minh chứng Actions (03/09) | Duyệt số liệu, chạy workflow, chụp ảnh CI, quay video |
 
 ## 3. Prompt chính (chi tiết ở `appendixA-prompt-log.md`)
 
 1. Dịch đề, dựng khung HW5, chọn workflow API (Codex, 31/08).
 2. Reset/seed, smoke test, tạo JMX, chạy Load/Stress/Spike/Endurance (Codex, 31/08).
 3. Thu ảnh monitor, DXDIAG, CLI/GUI JMeter; đo RAM endurance (Codex, 31/08).
-4. Rà soát HW5, sửa doc, xuất PDF đẹp, cập nhật Mandatory/Audit (Cursor, 03/09).
+4. Rà soát HW5, sửa doc, xuất PDF, sửa CI Load+Stress+Spike, cập nhật minh chứng Actions (Cursor, 03/09).
 
 ## 4. Phần việc cụ thể
 

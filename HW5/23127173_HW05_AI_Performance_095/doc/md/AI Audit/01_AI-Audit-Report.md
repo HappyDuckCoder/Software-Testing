@@ -140,7 +140,7 @@
 | --- | --- |
 | Prompt | Pipeline Continuous Performance Testing và ảnh workflow. |
 | Output AI | GitHub Actions proposal, baseline comparator, gate p95/error rate. |
-| Verdict / SV | **HỢP LỆ — đề xuất.** Chưa bật CI thật. |
+| Verdict / SV | **HỢP LỆ — đề xuất.** Đã triển khai CI thật — xem AI-020, AI-021. |
 
 </div>
 
@@ -249,6 +249,30 @@
 | Prompt | «lỗi PDF audit — bảng vỡ, chữ dính liền» |
 | Output AI | Chuyển 18 mục audit sang layout thẻ 2 cột; sửa CSS portrait; xuất lại PDF. |
 | Verdict / SV | **HỢP LỆ — sửa hiển thị PDF.** Không đổi nội dung audit. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-020 · 03/09/2026 · Cursor (Composer)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | «Sửa CI performance: chạy Load+Stress+Spike thật; lỗi cd Eshop/backend» |
+| Output AI | Workflow checkout `eshop-sut`; path `HW5/...`; JMeter 5.6.3; seed trước mỗi kịch bản; `HW5_BACKEND_DIR` trong reset-seed. |
+| Verdict / SV | **HỢP LỆ — CI.** Run [#33755210272](https://github.com/HappyDuckCoder/Software-Testing/actions/runs/33755210272) Success 6m40s. |
+
+</div>
+
+<div class="audit-entry">
+
+#### AI-021 · 03/09/2026 · Cursor (Composer)
+
+| Trường | Nội dung |
+| --- | --- |
+| Prompt | «Cập nhật minh chứng CI cho HW5; cập nhật audit» |
+| Output AI | `ci-cd-report.md`, ảnh `evidence/ci-cd/`, cập nhật main-report §8, README, checklist. |
+| Verdict / SV | **HỢP LỆ — evidence.** Link run + 3 ảnh; artefact `hw5-performance-jtl-html`. |
 
 </div>
 
