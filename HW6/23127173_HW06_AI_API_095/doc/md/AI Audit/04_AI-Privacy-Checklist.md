@@ -10,7 +10,7 @@
 
 - [x] Đã xác nhận chính sách AI của HW06 là mở; bắt buộc tuyên bố và AI Audit.
 - [x] Đã đọc thoả thuận/mẫu AI của môn (`Lab/AI Templates/md`).
-- [x] Hiểu artifact **không** được sinh bằng AI: ảnh console `X-Student-Id`, Newman hostname giả, sơ đồ generator nộp bài, GitHub Issue/screenshot giả.
+- [x] Hiểu artifact **không** được sinh bằng AI: ảnh console `X-Student-Id`, Newman hostname giả, flowchart AI-generated, GitHub Issue/screenshot giả.
 - [x] Dùng tài khoản test EShop local (`test@eshop.com` / `admin@eshop.com`), không đưa mật khẩu production hay dữ liệu cá nhân thật vào prompt.
 
 ## 2. Trong khi dùng AI
@@ -24,16 +24,15 @@
 
 ## 3. Trước khi nộp bài
 
-- [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-017).
-- [x] AI Critique 200–300 từ đã có.
+- [x] Mọi artifact AI sinh đã có hàng audit (AI-001 … AI-036).
+- [x] AI Critique 200–300 từ đã có (`02_AI-Critique.md` + PDF).
 - [x] Mandatory Disclosure đã điền theo mẫu FIT.
-- [x] 120 TC thiết kế + oracle theo đặc tả EShop.
-- [ ] Excel + Pass/Fail từng ID sau khi chạy đủ assertion.
-- [ ] GitHub Issue thật + screenshot đã đính kèm.
-- [ ] Excel test cases / test summary đã xuất từ kết quả chạy.
-- [ ] Main report + AI Audit đã xuất PDF.
-- [ ] Git commit log lấy từ lịch sử repo thật (tách generation/audit/extension/execution).
-- [ ] ZIP đúng tên `23127173_HW06_AI_API_<grade>.zip`.
+- [x] 120 TC + oracle spec + Pass/Fail từng ID (Excel 108/12).
+- [ ] GitHub Issue thật + screenshot đính kèm.
+- [x] Excel test summary: `23127173_HW06_test-summary-20260903.xlsx`.
+- [x] Main report + AI Audit + Critique PDF (`doc/pdf/`).
+- [x] Git commit log từ lịch sử repo thật.
+- [ ] ZIP Moodle (SV tự đóng — không bắt buộc tiêu chí nội bộ).
 - [x] Sẵn sàng vấn đáp ngẫu nhiên 5–7 phút (đề §13).
 
 ## 4. Cam đoan cuối cùng

@@ -4,7 +4,10 @@
 
 - [x] Chọn 3 API pool A/B/C, không trùng bộ của Vân.
 - [x] SUT chạy tại `127.0.0.1:3000`.
-- [ ] Xuất git commit log đầy đủ trước khi đóng ZIP.
+- [x] Excel test summary: `test-cases/23127173_HW06_test-summary-20260903.xlsx` (108/12).
+- [x] PDF báo cáo chính: `doc/pdf/main-report.pdf`.
+- [x] Flowchart workflow: `doc/pdf/hw6-api-testing-workflow.png`.
+- [x] Git commit log: `doc/md/Git Commit Log/git-commit-log.txt` (UTF-8, cập nhật 03/09).
 
 ## Mỗi API (×3)
 
@@ -22,7 +25,7 @@
 
 - [x] Header `X-Student-Id: 23127173` trên mọi request.
 - [x] CI remote baseline pass; chưa có remote fail có chủ đích.
-- [ ] Excel test summary sau khi chạy đủ assertion.
-- [ ] Sơ đồ generator tự vẽ.
+- [x] Excel test summary sau khi chạy đủ assertion.
+- [x] Sơ đồ workflow (`doc/pdf/hw6-api-testing-workflow.png`).
 - [x] AI Audit + Mandatory Disclosure cập nhật (03/09/2026).
-- [ ] PDF + ZIP nộp bài.
+- [x] PDF nộp bài: `doc/pdf/main-report.pdf`. ZIP: sinh viên tự đóng gói.

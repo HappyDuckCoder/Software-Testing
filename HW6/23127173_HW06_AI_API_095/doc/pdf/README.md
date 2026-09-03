@@ -1,3 +1,17 @@
-# PDF deliverables
+# PDF & sơ đồ nộp bài
 
-Export and visually verify final `main-report.pdf` and `AI-Audit-Appendix.pdf` here after the Markdown documents are complete. Do not place a PDF placeholder in the submission.
+| File | Nguồn |
+| --- | --- |
+| `main-report.pdf` | `doc/md/main-report.md` + `doc/pdf/main-report.css` |
+| `hw6-api-testing-workflow.png` | Flowchart workflow (tự vẽ) |
+
+## Xuất PDF báo cáo chính
+
+```powershell
+cd api-testing
+npm run export:report-pdf
+```
+
+Hoặc extension **Markdown PDF** trong Cursor: mở `doc/md/main-report.md` → Export PDF (output: `doc/pdf/`).
+
+AI Audit và Critique giữ ở Markdown (`doc/md/AI Audit/`); không bắt buộc xuất PDF riêng.

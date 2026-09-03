@@ -12,9 +12,8 @@
 
 | Đã xong | Chưa xong |
 | --- | --- |
-| 120 TC (35 AI + 5 SV × 3 API), oracle theo **đặc tả**, assert 120 ID | Excel, GitHub Issues, CI fail, PDF/ZIP |
-| Postman 6 ảnh Desktop + Newman + CI baseline | Diagram generator tự vẽ |
-| 6 nhóm bug spec (12 assertion fail) | |
+| 120 TC, oracle spec, Newman 12 fail, Postman 6 ảnh, Excel + PDF | GitHub Issues, CI fail remote |
+| Flowchart (`doc/pdf/hw6-api-testing-workflow.png`) | |
 
 Chi tiết: `checklist.md`, `test-cases/test-case-matrix.md`.
 

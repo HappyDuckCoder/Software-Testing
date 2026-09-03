@@ -20,57 +20,52 @@
 | Công cụ | Việc AI làm | Việc sinh viên làm |
 | --- | --- | --- |
 | Codex (GPT-5) | Khung nộp, chọn API, collection/Newman/CI, skill, evidence 01/09 | Chạy SUT, cung cấp ảnh Postman/CI, xác nhận bug |
-| Cursor (Composer 2.5) | Audit/disclosure FIT; ma trận 120 TC tiếng Việt; oracle theo spec; cập nhật báo cáo 03/09 | Duyệt 105 TC AI; định nghĩa 15 TC bổ sung; chạy test và nộp Excel/PDF/ZIP |
+| Cursor (Composer 2.5) | Audit/disclosure FIT; ma trận 120 TC; oracle spec; script Excel; cập nhật báo cáo/PDF 03/09 | Duyệt 105 TC AI; 15 TC bổ sung; chụp Postman Desktop/Console; flowchart tự vẽ; ZIP nộp |
 
 ## 3. Prompt chính (đầy đủ ở `appendixA-prompt-log.md`)
 
 1. Dịch đề, dựng khung HW6, chạy Newman/CI (Codex, 01/09).
 2. Rà tiến độ, bổ sung AI Audit/Mandatory (Composer 2.5, 03/09 sáng).
-3. Đọc spec EShop, ma trận TC tiếng Việt, 15 TC SV (Composer 2.5, 03/09).
-4. Sinh lại TC/collection; khởi động EShop `127.0.0.1:3000` chuẩn bị retest (Composer 2.5, 03/09).
-5. Newman full 120 oracle spec; cleanup artifact; fix encoding raw CLI (Composer 2.5, 03/09 chiều).
+3. Oracle spec, redesign 120 TC, Newman 12 fail (Composer 2.5, 03/09).
+4. Postman Desktop 6 ảnh + Console `X-Student-Id` (Composer 2.5, 03/09 chiều).
+5. Excel test summary + PDF + flowchart (Composer 2.5, 03/09).
+6. Review toàn bộ doc + đồng bộ audit (Composer 2.5, 03/09).
 
 ## 4. Phần việc cụ thể
 
-**AI đã hỗ trợ:** dịch requirement; 105 TC AI/pool; map oracle theo `api_specification.md` + README FR/SEC; collection có `X-Student-Id`; Newman baseline/compliance; CI workflow; rà soát evidence.
+**AI đã hỗ trợ:** dịch requirement; 105 TC AI/pool; map oracle theo `api_specification.md` + README FR/SEC; collection có `X-Student-Id`; Newman full run; script `generate-excel-summary.mjs`; rà soát/tái cấu trúc tài liệu.
 
-**Sinh viên tự làm / quyết định:** duyệt toàn bộ TC AI (không giữ verdict); 15 TC bổ sung:
+**Sinh viên tự làm / quyết định:** duyệt toàn bộ TC AI; 15 TC bổ sung; chụp Postman Desktop/Console; flowchart `hw6-api-testing-workflow.png`; xuất PDF bằng extension Markdown PDF; đóng ZIP.
 
-- **Pool A:** body rỗng; A/B/C cập nhật đồng thời; đổi MK rồi update profile; tên emoji; địa chỉ emoji.
-- **Pool B:** retry sau mất kết nối; path Unicode; token có khoảng trắng; timeout; body JSON khi hủy.
-- **Pool C:** confirmed trùng lặp; admin token whitespace; body mảng JSON; status quá dài; đổi trạng thái sau checkout.
-
-**AI không làm:** ảnh Postman/CI gốc, GitHub Issue, diagram tự vẽ, Excel kết quả chạy, PDF/ZIP.
+**AI không làm:** ảnh Postman/CI gốc, GitHub Issue, flowchart tự vẽ, ZIP nộp Moodle.
 
 ## 5. Cách xác minh
 
 - Oracle lấy từ đặc tả, **không** suy từ `server.js`.
-- Compliance run tái lập 3 bug SEC-06 / FR-10 / SEC-03.
+- Newman final: **182 req / 182 assert / 12 fail** — khớp Excel `108 PASS / 12 FAIL`.
 - Chỉ ghi Issue khi SV tạo trên GitHub thật.
 
 ## 6. Tuyên bố giới hạn
 
-Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, sơ đồ generator AI-generated, Issue/screenshot bịa.
+Không dùng AI tạo: ảnh console `X-Student-Id` giả, Newman output giả, flowchart AI-generated, Issue/screenshot bịa.
 
 ## 7. Trạng thái (03/09/2026)
 
 | Hạng mục | Trạng thái |
 | --- | --- |
-| 120 TC thiết kế (35 AI + 5 SV × 3 API) | ✅ |
-| TC AI đã duyệt (không cột verdict) | ✅ |
-| 15 TC sinh viên + lý do gap | ✅ |
-| Oracle theo spec | ✅ |
-| EShop backend sẵn sàng retest (`127.0.0.1:3000`) | ✅ (03/09) |
-| Core Newman + CI pass | ✅ |
-| Full 120 TC Newman (setup + observation) | ✅ (03/09) |
-| Postman runner + Console evidence (6 ảnh Desktop gốc) | ✅ (03/09) — AI-032/033 |
-| Postman Console `X-Student-Id` | ✅ (03/09) — AI-033 |
-| Assertion oracle đặc tả full 120 TC | ✅ (03/09, **12 fail**) |
-| Excel + GitHub Issue + CI fail + PDF/ZIP | ⏳ |
+| 120 TC + oracle spec + assert từng ID | ✅ |
+| Newman / Postman evidence | ✅ |
+| Excel test summary | ✅ `test-cases/23127173_HW06_test-summary-20260903.xlsx` |
+| PDF (main + audit + critique) | ✅ `doc/pdf/` |
+| Flowchart workflow (tự vẽ) | ✅ `doc/pdf/hw6-api-testing-workflow.png` |
+| Git commit log | ✅ `doc/md/Git Commit Log/git-commit-log.txt` |
+| CI remote baseline pass | ✅ |
+| GitHub Issue + CI fail remote | ⏳ |
+| ZIP nộp Moodle | SV tự đóng (không bắt buộc tiêu chí) |
 
 ## 8. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc và xác nhận sáu nhóm bug spec (12 assertion fail); Excel, GitHub Issues, remote CI fail, diagram, PDF và ZIP do tôi hoàn tất — chưa xong nên không tuyên bố nộp đủ. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman. GitHub Issues và remote CI fail chưa xong. ZIP do tôi tự đóng gói. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
 
 ## 9. Cam đoan
 

@@ -70,18 +70,24 @@
 
 | **AI-033** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «ảnh Postman Console X-Student-Id — ok chưa» | SV chụp Console: `X-Student-Id applied: 23127173` + SETUP-01 login 200; lưu `postman-console-student-id-20260903.png`; cập nhật header/checklist/disclosure. | VALID | Đáp ứng đề §11 — Console pre-request thật, không bịa. | Postman evidence đủ 6 ảnh Desktop. |
 
-| **AI-034** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «cập nhật audit, cập nhật doc, review doc, commit» | Rà soát đồng bộ main-report, README, roadmap, checklist, bug-report, mandatory disclosure; thay PNG HTML bằng 6 PNG Desktop gốc; commit nhánh `homework6`. | VALID | Tài liệu khớp 182 req / 12 fail / 6 ảnh Postman; audit AI-001…034. | Excel; GitHub Issue; PDF/ZIP. |
+| **AI-034** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «cập nhật audit, cập nhật doc, review doc, commit» | Rà soát đồng bộ main-report, README, roadmap, checklist, bug-report, mandatory disclosure; thay PNG HTML bằng 6 PNG Desktop gốc; commit nhánh `homework6`. | VALID | Tài liệu khớp 182 req / 12 fail / 6 ảnh Postman; audit AI-001…034. | GitHub Issue; Excel/PDF (AI-035). |
+
+| **AI-035** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «thêm Excel test summary, dùng flowchart có sẵn, tạo PDF» | Script `generate-excel-summary.mjs` + `npm run generate:excel` → `23127173_HW06_test-summary-20260903.xlsx` (**108 PASS / 12 FAIL**); copy flowchart → `doc/pdf/hw6-api-testing-workflow.png`; xuất PDF `main-report.pdf`, `AI-Audit-Report.pdf`, `AI-Critique.pdf`; cấu hình `.vscode/settings.json` (Markdown PDF → `doc/pdf/`). | VALID | Excel khớp Newman oracle; PDF từ markdown thật; flowchart do SV tự vẽ (skill asset), không AI-generated. | SV kiểm tra số liệu Excel; GitHub Issue; ZIP nộp. |
+
+| **AI-036** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «review lại toàn bộ các doc, cập nhật ai audit» | Rà soát đồng bộ: `01_AI-Audit-Report`, `02_AI-Critique`, `03_Mandatory-Disclosure`, `04_AI-Privacy-Checklist`, `roadmap.md`, `checklist.md`, `test-case-review.md`, `git-commit-log.txt`, `appendixA-prompt-log.md`; sửa disclosure §6 (6 bug / 12 fail, không còn «ba lỗi compliance»); đánh dấu Excel/PDF/flowchart ✅. | VALID | Loại bỏ mâu thuẫn giữa doc (observation cũ vs oracle spec; Excel/PDF pending vs done). | GitHub Issue + CI fail remote. |
+
+| **AI-037** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «chỉ export main report đẹp hơn; cập nhật git commit log; cập nhật audit; commit» | Thiết kế lại `main-report.md` (cover FIT, bảng tóm tắt, bug + TC); CSS `doc/pdf/main-report.css` + `md-to-pdf.config.json`; xuất **chỉ** `doc/pdf/main-report.pdf`; cập nhật `git-commit-log.txt` (thêm `aa3c475`, `14bedc4`). | VALID | PDF báo cáo chính đọc được, bám nội dung thật 182/12; không xuất audit/critique PDF trong batch này. | GitHub Issue; ZIP nộp. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 34 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 27 | 79% |
+| Tổng artifact AI sinh đã audit | 37 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 30 | 81% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 21% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 7 | 19% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper — đã thay Desktop AI-032/033). AI-022…AI-034: oracle spec, cleanup, encoding, Postman Desktop đủ §11.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006/AI-016/AI-020 (observation cũ), AI-009/AI-012/AI-021 (Postman helper — đã thay Desktop AI-032/033). AI-022…AI-037: oracle spec, cleanup, encoding, Postman Desktop §11, Excel, main-report PDF, doc sync.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 
@@ -89,7 +95,7 @@ Nên dùng AI để dịch đề, dựng khung nộp, chọn API theo pool, gợ
 
 ## 6. Mandatory Disclosure (dán nguyên văn)
 
-"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên (A-036–A-040, B-036–B-040, C-036–C-040), thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman/CI gốc và xác nhận ba lỗi compliance; Excel kết quả chạy từng ID, GitHub Issues, remote CI fail, diagram tự vẽ, PDF và ZIP do tôi hoàn tất — chưa xong nên không tuyên bố nộp đủ. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm: ảnh console giả, Newman giả, sơ đồ generator AI-generated."
+"Khung nộp bài, ma trận 120 test case, collection Postman/Newman, báo cáo và tài liệu audit được sinh với Codex (GPT-5) và Cursor (Composer 2.5); tôi đã duyệt toàn bộ 105 test case AI, tự bổ sung 15 test case sinh viên, thiết kế oracle theo đặc tả EShop (không theo code), cung cấp ảnh Postman Desktop/Console/CI gốc, Excel test summary (108 PASS / 12 FAIL), PDF báo cáo và flowchart workflow tự vẽ; sáu nhóm bug spec đã tái lập trên Newman (182 req / 12 fail). GitHub Issues và remote CI fail chưa xong. ZIP do tôi tự đóng gói. AI Audit Report đính kèm. Tôi cam đoan không dùng AI tạo artifact bị cấm."
 
 Bản đầy đủ: `03_Mandatory-Disclosure.md`.
 

@@ -1,3 +1,36 @@
-# Git commit log - HW06
+# Git commit log — HW06 (23127173_HW06_AI_API_095)
 
-Append `git log --oneline -- <submission-path>` before packaging. Create separate commits for generation, audit, extension and execution of each selected API as required.
+Nguồn: `git log --oneline -- HW6/23127173_HW06_AI_API_095` · cập nhật 03/09/2026.
+
+a245b1e Thay Postman evidence bang 6 anh Desktop goc va dong bo doc/audit.
+a7bea2d Update API testing artifacts and reports
+6d9bd8e Review TC lan 2: sua C-017/18/19, bug report co Postman, test-case-review.
+682a793 Redesign 120 TC bam spec: oracle map tung ID, fixture rieng, 12 fail Newman.
+693ea4d Assert oracle đặc tả: vi phạm spec → FAIL trên Newman/Postman.
+0304f8a Thay minh chứng Postman runner full 120 TC và cập nhật audit.
+08e9730 Chạy Newman full 120 TC và thay minh chứng execution mới.
+06e8afa Chuẩn hóa ma trận 120 TC tiếng Việt và chuẩn bị retest Newman/Postman.
+0ceaad6 Enhance AI Audit documentation and Mandatory Disclosure for HW06
+5f137d0 Replace SVG workflow diagram with PNG format for API testing workflow
+a500018 Add observation suite for API testing with 120 cases across multiple endpoints
+7ce7103 Map HW6 test cases to executable requests
+8948282 Add reviewed HW6 test case matrix
+a9d516b Synchronize HW6 documentation with evidence
+ee71e25 Add GitHub Actions CI evidence
+de7f6e7 Add complete student Postman evidence set
+3ad74fd Add captured Postman test evidence
+e71814f Record Postman environment run evidence
+f703a4a Document Postman execution evidence
+561fbf7 Add Newman execution screenshot
+6331846 Ignore local HW6 test artifacts
+9b7c1c2 Refine HW6 defect verification workflow
+8aba9b9 Document HW6 execution findings
+9787fb9 Configure HW6 Newman CI workflow
+56d9cf0 Record HW6 API compliance defects
+232c419 Execute HW6 API baseline suite
+34f51b7 Generate HW6 API test collection
+7abb435 Strengthen HW6 API testing skill
+3523680 Add Postman Newman workflow skill
+841366c Document HW6 API purposes
+aa3c475 Select HW6 API test scope
+14bedc4 Initialize HW6 API testing submission

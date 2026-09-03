@@ -23,6 +23,30 @@ Chi tiết audit: `AI Audit/01_AI-Audit-Report.md`.
 | AI-032 | 03/09 | Thay 5 ảnh Postman Desktop gốc; rà soát evidence thiếu | Cursor (Composer 2.5) |
 | AI-033 | 03/09 | Postman Console `X-Student-Id` — ảnh Desktop gốc | Cursor (Composer 2.5) |
 | AI-034 | 03/09 | Review doc + commit Postman evidence Desktop | Cursor (Composer 2.5) |
+| AI-035 | 03/09 | Excel test summary + PDF + flowchart | Cursor (Composer 2.5) |
+| AI-036 | 03/09 | Review toàn bộ doc + đồng bộ AI Audit | Cursor (Composer 2.5) |
+| AI-037 | 03/09 | Main report PDF styled + git commit log + commit | Cursor (Composer 2.5) |
+
+## Prompt AI-037 (03/09/2026)
+
+```text
+chỉ cần export main report, với export cho đẹp đẹp hơn một tí
+cập nhật Lab\HW6\23127173_HW06_AI_API_095\doc\md\Git Commit Log\git-commit-log.txt
+cập nhật audit
+commit
+```
+
+## Prompt AI-036 (03/09/2026)
+
+```text
+review lại toàn bộ các doc, cập nhật ai audit
+```
+
+## Prompt AI-035 (03/09/2026)
+
+```text
+thêm Excel test summary, dùng flowchart có sẵn, tạo PDF
+```
 
 ## Prompt AI-034 (03/09/2026)
 

@@ -8,10 +8,14 @@
     "test": "node scripts/run-newman.mjs",
     "test:core": "npm run test",
     "test:full120": "npm run test",
-    "evidence:postman": "node scripts/generate-postman-evidence.mjs"
+    "evidence:postman": "node scripts/generate-postman-evidence.mjs",
+    "generate:excel": "node ../test-cases/scripts/generate-excel-summary.mjs",
+    "export:report-pdf": "node ../doc/pdf/export-main-report.mjs"
   },
   "devDependencies": {
+    "md-to-pdf": "^5.2.5",
     "newman": "^6.2.1",
-    "newman-reporter-htmlextra": "^1.23.1"
+    "newman-reporter-htmlextra": "^1.23.1",
+    "xlsx": "^0.18.5"
   }
 }

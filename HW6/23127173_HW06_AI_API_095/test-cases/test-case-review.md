@@ -61,6 +61,6 @@ Rà soát lần 2: oracle bám **đặc tả**, không bám code backend.
 
 ## Việc còn lại (ngoài phạm vi TC)
 
-- Excel kết quả từng ID
-- GitHub Issue + screenshot gốc
-- Postman Desktop screenshot (nếu đề bắt buộc — hiện dùng runner render từ JSON)
+- [x] Excel kết quả từng ID: `23127173_HW06_test-summary-20260903.xlsx` (108 PASS / 12 FAIL)
+- [x] Postman Desktop 6 ảnh gốc + Console `X-Student-Id` (`evidence/postman-ui/`)
+- [ ] GitHub Issue + screenshot gốc (6 nhóm bug spec)

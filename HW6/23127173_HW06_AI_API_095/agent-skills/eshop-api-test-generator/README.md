@@ -8,7 +8,12 @@
 
 ## Sơ đồ nộp bài
 
-Tự vẽ `generator-design.png` (không để AI vẽ trực tiếp). Luồng gợi ý:
+Flowchart tự vẽ (không AI-generated):
+
+- Gốc: `agent-skills/postman-newman-api-testing-workflow/assets/hw6-api-testing-workflow.png`
+- Bản nộp: `doc/pdf/hw6-api-testing-workflow.png`
+
+Luồng gợi ý:
 
 ```text
 Đọc đặc tả → mô hình endpoint/tham số
