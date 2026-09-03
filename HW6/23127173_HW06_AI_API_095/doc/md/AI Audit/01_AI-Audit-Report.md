@@ -51,17 +51,18 @@
 | **AI-017** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «xem Lab\HW6… bổ sung ai audit, ai mantory» | Đối chiếu tiến độ; viết lại Audit/Mandatory theo mẫu FIT; cập nhật prompt log. | VALID | Tài liệu hóa §9–§10. | SV ký disclosure. |
 | **AI-018** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «đọc lại quá trình… oracle theo spec… 15 TC SV… tiếng Việt… cập nhật audit» | Ma trận 120 TC tiếng Việt; bỏ verdict AI; 15 TC SV; oracle theo spec; cập nhật báo cáo/checklist. | VALID | Thiết kế theo đặc tả, không theo code. | Chưa chạy assertion 120 ID. |
 | **AI-019** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «chạy script sinh lại TC; chạy repo Eshop; cập nhật audit; commit» | Chạy `generate-matrix.mjs` (120 TC) + `generate-collection.mjs`; khởi động EShop backend `127.0.0.1:3000` (PID nền); smoke `POST /api/login` 200 + `GET /api/products` 200. | VALID — preparation only | Đề chuẩn bị retest Newman/Postman; chưa ghi kết quả run mới. SV chạy `npm run test:smoke` / `test:compliance` trong `api-testing/`. | Giữ server chạy khi test; tắt sau khi xong. |
+| **AI-020** · 03/09/2026 · Cursor (Composer 2.5). Prompt: «không chạy smoke, chạy real 120 case Newman, chụp minh chứng mới» | Restart EShop; Newman `--folder "00 Setup"` + 3 folder observation (120 TC): `full-120-20260903.txt`, HTML `full-120/report.html`, ảnh `newman-full-120-terminal/report-20260903.png`; script `npm run test:full120`. Kết quả: **128 req, 128 assertion, 0 fail**, 11.9s, host `127.0.0.1:3000`, `X-Student-Id: 23127173`. | INCOMPLETE | Run thật trên SUT local; thay minh chứng observation cũ (01/09). Observation vẫn chỉ assert non-5xx — chưa map oracle từng ID trong ma trận. | SV tiếp tục map assertion theo `execution-mapping.md`; không dùng 128 pass để khẳng định đủ oracle. |
 
 ## 4. Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 | --- | ---: | ---: |
-| Tổng artifact AI sinh đã audit | 19 | 100% |
-| VALID (đúng hướng, dùng được sau rà soát) | 14 | 74% |
+| Tổng artifact AI sinh đã audit | 20 | 100% |
+| VALID (đúng hướng, dùng được sau rà soát) | 14 | 70% |
 | INVALID (sai, loại bỏ) | 0 | 0% |
-| INCOMPLETE (thiếu, phải sửa/bổ sung) | 5 | 26% |
+| INCOMPLETE (thiếu, phải sửa/bổ sung) | 6 | 30% |
 
-Phân loại INCOMPLETE: AI-001 (setup), AI-006 (assertion chưa map hết 120 ID), AI-009/AI-012 (Postman evidence — đã bù AI-013), AI-016 (observation ≠ oracle từng TC). Không có artifact bị loại vì bịa evidence.
+Phân loại INCOMPLETE: AI-001 (setup), AI-006 (assertion chưa map hết 120 ID), AI-009/AI-012 (Postman evidence — đã bù AI-013), AI-016 (observation ≠ oracle từng TC), AI-020 (full 120 run thật nhưng observation-only). Không có artifact bị loại vì bịa evidence.
 
 ## 5. Kết luận — khi nào nên / không nên dùng AI
 

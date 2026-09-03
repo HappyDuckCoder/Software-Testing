@@ -14,6 +14,7 @@
 - [x] Map oracle theo spec trong `execution-mapping.md`.
 - [ ] Gắn assertion Postman/Newman cho từng ID (hiện mới có core + observation).
 - [x] Chạy core suite; có Newman raw/HTML.
+- [x] Chạy full 120 TC Newman (`npm run test:full120`): 128 req, 128 assertion, 0 fail — raw/HTML/ảnh 03/09/2026.
 - [ ] Tạo GitHub Issue + screenshot cho 3 bug compliance.
 
 ## Toàn bài

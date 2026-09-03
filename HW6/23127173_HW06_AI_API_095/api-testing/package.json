@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "test:smoke": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/smoke/report.html",
-    "test:compliance": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/compliance/report.html"
+    "test:compliance": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/compliance/report.html",
+    "test:full120": "newman run postman/collections/23127173_HW06_EShop_API.postman_collection.json -e postman/environments/eshop.local.template.postman_environment.json --folder \"00 Setup\" --folder \"A Observation 40 TC\" --folder \"B Observation 40 TC\" --folder \"C Observation 40 TC\" -r cli,htmlextra --reporter-htmlextra-export newman/html-reports/full-120/report.html"
   },
   "devDependencies": {
     "newman": "^6.2.1",
